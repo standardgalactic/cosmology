@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RSVP Computational Notebooks</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#080810; color:#ccd; font-family:Georgia,serif; min-height:100vh; padding:40px 32px; }
+  h1 { font-size:1.6rem; color:#aac8ff; font-weight:normal; margin-bottom:6px; }
+  .tagline { color:#445; font-size:0.88rem; margin-bottom:32px; }
+  .intro { max-width:680px; color:#889; font-size:0.85rem; line-height:1.7; margin-bottom:36px; border-left:2px solid #224; padding-left:16px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:20px; max-width:1100px; }
+  .card { background:#0d0d1e; border:1px solid #1a2035; border-radius:6px; padding:22px; transition:border-color 0.2s; }
+  .card:hover { border-color:#335; }
+  .card-num { font-size:0.7rem; color:#446; font-family:monospace; margin-bottom:8px; letter-spacing:.1em; }
+  .card-title { font-size:1.05rem; color:#aaccff; margin-bottom:8px; }
+  .card-desc { font-size:0.8rem; color:#778; line-height:1.6; margin-bottom:14px; }
+  .card-tags { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:14px; }
+  .tag { font-size:0.68rem; background:#0a1020; border:1px solid #223; color:#667; padding:2px 7px; border-radius:2px; font-family:monospace; }
+  .card-link { display:inline-block; background:#12203a; border:1px solid #335; color:#88aadd; padding:6px 14px; text-decoration:none; font-size:0.78rem; border-radius:3px; }
+  .card-link:hover { background:#1e3055; color:#aac8ff; }
+  .card-feature { font-size:0.72rem; color:#556; margin-top:10px; }
+  h2 { font-size:0.85rem; color:#556; text-transform:uppercase; letter-spacing:.1em; margin:36px 0 16px; }
+  .eq-block { font-family:monospace; font-size:0.75rem; background:#0a0a18; border:1px solid #1a2030; padding:12px 16px; margin-bottom:24px; color:#88aacc; max-width:600px; line-height:1.8; }
+</style>
+</head>
+<body>
+<h1>RSVP Computational Notebooks</h1>
+<div class="tagline">Accessibility Relaxation and Friedmann Instability — Interactive Visualisations</div>
+
+<div class="intro">
+Seven browser-based notebooks making the mathematical claims of the RSVP monograph visually tangible. No installation required — open any notebook directly in a web browser. Each notebook is self-contained HTML with inline JavaScript, suitable for GitHub Pages hosting or direct sharing.
+</div>
+
+<div class="eq-block">
+RSVP field triplet:  (Φ, V, S)  — scalar, lamphrodyne flow, entropy
+Accessibility metric:  g^acc_ij = g_ij + κ ∂_iΦ ∂_jΦ
+Closure depth:  d_closure(Φ_c) = 2
+Redshift prediction:  C_RSVP = 0.3591 + η_eff + 3μ²α²/4 + β_curl·F + …
+Smoking gun:  C_{βz} ≠ 0  (when β_curl > 0)
+</div>
+
+<h2>Notebooks</h2>
+<div class="grid">
+
+<div class="card">
+  <div class="card-num">NOTEBOOK 01</div>
+  <div class="card-title">The Friedmann Saddle</div>
+  <div class="card-desc">3D saddle surface visualising the unstable rest point SM = (4/3, 2/3) in ATV self-similar coordinates. Release particles near SM and watch them roll away along the unstable manifold toward the Minkowski attractor M.</div>
+  <div class="card-tags"><span class="tag">STV-ODE</span><span class="tag">saddle geometry</span><span class="tag">phase portrait</span><span class="tag">eigenvectors</span></div>
+  <a href="01_friedmann_saddle.html" class="card-link">Open Notebook →</a>
+  <div class="card-feature">Controls: rotation, tilt, zoom, particle release, auto-rotate</div>
+</div>
+
+<div class="card">
+  <div class="card-num">NOTEBOOK 02</div>
+  <div class="card-title">Accessibility Landscape</div>
+  <div class="card-desc">Geodesics under the accessibility metric g^acc vs Euclidean straight lines. Drag κ to see paths bend away from high-|∇Φ| ridges. Click to set custom source point.</div>
+  <div class="card-tags"><span class="tag">accessibility metric</span><span class="tag">geodesics</span><span class="tag">entropy gradients</span><span class="tag">κ parameter</span></div>
+  <a href="02_accessibility_landscape.html" class="card-link">Open Notebook →</a>
+  <div class="card-feature">5 field presets, gradient arrow overlay, contour display</div>
+</div>
+
+<div class="card">
+  <div class="card-num">NOTEBOOK 03</div>
+  <div class="card-title">Depth-Two Closure</div>
+  <div class="card-desc">Step through the eigenvalue hierarchy λ_A^n = 2n/3, λ_B^n = (2n−5)/3 level by level. Watch the spectrum go: two negatives at depths 1–2, then all-positive from depth 3 onward. Animate to see d_closure = 2 emerge.</div>
+  <div class="card-tags"><span class="tag">closure depth</span><span class="tag">eigenvalues</span><span class="tag">CLIO hierarchy</span><span class="tag">finite determination</span></div>
+  <a href="03_depth_two_closure.html" class="card-link">Open Notebook →</a>
+  <div class="card-feature">Animated level-by-level reveal, eigenvalue table, status indicator</div>
+</div>
+
+<div class="card">
+  <div class="card-num">NOTEBOOK 04</div>
+  <div class="card-title">Redshift Without Dark Energy</div>
+  <div class="card-desc">Drag sliders for η_eff, μ, β_curl and watch the luminosity–redshift curves separate. ΛCDM predicts C = −0.1804; ATV predicts C = +0.3591; RSVP predicts a positive excess. Residual panel shows the third-order discrimination.</div>
+  <div class="card-tags"><span class="tag">redshift coefficient C</span><span class="tag">ΛCDM vs ATV vs RSVP</span><span class="tag">supernova prediction</span></div>
+  <a href="04_redshift_comparison.html" class="card-link">Open Notebook →</a>
+  <div class="card-feature">Three-theory comparison, residuals panel, live C value display</div>
+</div>
+
+<div class="card">
+  <div class="card-num">NOTEBOOK 05</div>
+  <div class="card-title">Lamphrodyne Relaxation</div>
+  <div class="card-desc">Real-time 2D simulation of the RSVP master system on a lattice. Watch entropy gradients appear, flows emerge, and structures smooth out. Select from 4 initial conditions and tune all physics parameters live.</div>
+  <div class="card-tags"><span class="tag">master system PDE</span><span class="tag">lattice simulation</span><span class="tag">field dynamics</span><span class="tag">structure formation</span></div>
+  <a href="05_lamphrodyne_relaxation.html" class="card-link">Open Notebook →</a>
+  <div class="card-feature">Live field metrics, flow arrows, 4 ICs, pause/nudge</div>
+</div>
+
+<div class="card">
+  <div class="card-num">NOTEBOOK 06</div>
+  <div class="card-title">Entropy–Vorticity Birefringence</div>
+  <div class="card-desc">Launch polarized rays through a medium with ∇S and ω fields. Watch polarization angle rotate as β_obs = ∫κ_A dη accumulates. The cross-correlation C_{βz} is estimated live — this is the RSVP smoking gun.</div>
+  <div class="card-tags"><span class="tag">birefringence</span><span class="tag">κ_A ∝ ∇S·ω</span><span class="tag">C_{βz} prediction</span><span class="tag">parity-odd sector</span></div>
+  <a href="06_entropy_vorticity_birefringence.html" class="card-link">Open Notebook →</a>
+  <div class="card-feature">4 vorticity presets, polarization ticks, live correlation estimate</div>
+</div>
+
+<div class="card" style="border-color:#224;">
+  <div class="card-num">NOTEBOOK 07</div>
+  <div class="card-title">Accessibility Relaxation Universe</div>
+  <div class="card-desc">Flagship simulator: 128×128 grid with full (Φ, V, S) master system. Watch void formation, accessibility basin emergence, entropy redistribution, and vorticity build-up. Six render modes including the birefringence source ∇S·ω.</div>
+  <div class="card-tags"><span class="tag">full simulation</span><span class="tag">cosmic web</span><span class="tag">void formation</span><span class="tag">live observables</span></div>
+  <a href="07_rsvp_universe.html" class="card-link">Open Flagship →</a>
+  <div class="card-feature">64/128/192 resolution, 4 ICs, 6 render modes, live C_RSVP estimate</div>
+</div>
+
+</div>
+
+<h2 style="margin-top:48px">Mathematical Reference</h2>
+<div class="eq-block">
+Eigenvalue spectrum at Friedmann saddle SM:
+  λ_A^n = 2n/3            (unstable modes, n ≥ 1)
+  λ_B^1 = −1              (gauge direction, removed by t₀ fixing)
+  λ_B^2 = −1/3            (physical stable direction)
+  λ_B^n = (2n−5)/3 > 0   (n ≥ 3, all positive)
+
+→  d_closure(Φ_c) = 2
+
+Redshift correction (Proposition 6.2, Rayleigh–Schrödinger):
+  C_RSVP = 0.3591 + η_eff + 3μ²α_Φ²/4 + β_curl·F(Φ_c,S₀) + O(ε²)
+
+Cross-correlation (Corollary E2, under Assumption 8.1):
+  β_curl > 0  ⟹  C_{βz} = ⟨δβ(n̂) δz(n̂')⟩ ≠ 0
+</div>
+
+<p style="color:#334;font-size:0.72rem;margin-top:24px">
+  Flyxion — Independent Researcher — May 2026 —
+  Companion to: <em>Accessibility Relaxation and Friedmann Instability: An RSVP Reinterpretation of Cosmological Saddle Geometry</em>
+</p>
+</body>
+</html>

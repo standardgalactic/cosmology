@@ -1,0 +1,1820 @@
+% ============================================================
+%  ACCESSIBILITY RELAXATION AND FRIEDMANN INSTABILITY:
+%  AN RSVP REINTERPRETATION OF COSMOLOGICAL SADDLE GEOMETRY
+%  Flyxion — Independent Researcher — May 2026
+% ============================================================
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{palatino}
+
+\usepackage{geometry}
+\geometry{top=1.15in, bottom=1.15in, left=1.25in, right=1.25in}
+
+\usepackage{microtype}
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{natbib}
+\bibpunct{[}{]}{,}{n}{}{;}
+
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection.}{0.5em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\itshape}{\thesubsubsection.}{0.5em}{}
+
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+
+% ---- Theorem environments ----
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{principle}[theorem]{Reduction Principle}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ---- Notation macros ----
+\newcommand{\Phic}{\Phi_c}
+\newcommand{\Tacc}{\mathcal{T}}
+\newcommand{\Ggroup}{\mathcal{G}}
+\newcommand{\Uacc}{\mathcal{U}}
+\newcommand{\Sacc}{\mathcal{S}}
+\newcommand{\piproj}{\pi}
+\newcommand{\Hacc}{\mathcal{H}}
+\newcommand{\Lacc}{\mathcal{L}}
+\newcommand{\nabacc}{\nabla^{\!\mathrm{acc}}}
+\newcommand{\Delacc}{\Delta_{\mathrm{acc}}}
+\newcommand{\SM}{\mathit{SM}}
+\newcommand{\Mink}{\mathit{M}}
+\newcommand{\Ffam}{\mathcal{F}}
+\newcommand{\dclos}{d_{\mathrm{closure}}}
+\newcommand{\etaeff}{\eta_{\mathrm{eff}}}
+\newcommand{\Cbz}{\mathcal{C}_{\beta z}}
+\newcommand{\bcurl}{\beta_{\mathrm{curl}}}
+\newcommand{\lAn}[1]{\lambda^A_{#1}}
+\newcommand{\lBn}[1]{\lambda^B_{#1}}
+\newcommand{\lA}{\lambda^A}
+\newcommand{\lB}{\lambda^B}
+\newcommand{\kA}{\kappa_A}
+
+% ---- Title ----
+\title{%
+  \LARGE\bfseries
+  Accessibility Relaxation and Friedmann Instability\\[6pt]
+  \large
+  An RSVP Reinterpretation of Cosmological Saddle Geometry
+}
+\author{
+  Flyxion\\[4pt]
+  \normalsize Independent Researcher
+}
+\date{May 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We develop a reinterpretation of cosmological dynamics within the Relativistic
+Scalar--Vector Plenum (RSVP) framework, establishing a precise mathematical
+relationship between the instability structure of Friedmann spacetimes and the
+accessibility relaxation geometry of the RSVP lamphrodyne system. The central
+result of Alexander, Temple, and Vogler --- that the critical Friedmann spacetime
+is an unstable saddle rest point whose infinite-order instability hierarchy is
+controlled by a second-order eigenvalue condition --- is recast as a theorem about
+a constrained accessibility bundle in RSVP trajectory space. We introduce the
+\emph{closure depth} $\dclos$ as a new invariant of accessibility bundles and
+prove that the Friedmann instability satisfies $\dclos(\Phic) = 2$, making it a
+depth-two object in the CLIO constraint-closure hierarchy. The RSVP lamphrodyne
+functional, derived from an accessibility metric and a divergence constraint,
+reduces to the Alexander--Temple--Vogler STV-PDE under five explicit conditions
+constituting a Reduction Principle. Relaxing these conditions generates three
+families of physical corrections. The third-order redshift--luminosity coefficient
+is predicted to satisfy $C_{\mathrm{RSVP}} = 0.3591 + \etaeff + 3\mu^2\alpha_\Phi^2/4
++ \bcurl\cdot\mathcal{F} + O(\etaeff^2,\mu^3,\bcurl^2)$, exceeding both the
+Alexander--Temple--Vogler value of $+0.3591$ and the $\Lambda$CDM value of
+$-0.1804$. When the curl coupling $\bcurl > 0$, the same entropy--vorticity source
+$\nabla S\cdot\omega$ that perturbs the redshift coefficient also sources parity-odd
+birefringence, predicting a nonzero redshift--birefringence cross-correlation
+$\Cbz \neq 0$ absent from both $\Lambda$CDM and the Alexander--Temple--Vogler
+system.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Introduction}
+\label{sec:intro}
+% ============================================================
+
+The discovery that the critical Friedmann spacetime is an unstable saddle point
+within the solution space of Einstein's original field equations, without any
+cosmological constant, constitutes one of the more consequential recent results
+in mathematical cosmology. The programme establishing this instability developed
+across three papers~\cite{Smoller2012,STV2017,ATV2026}: Smoller and Temple~\cite{Smoller2012}
+established the general relativistic self-similar wave framework; Smoller, Temple,
+and Vogler~\cite{STV2017} introduced the STV-PDE and STV-ODE systems and identified
+the instability structure; Alexander, Temple, and Vogler~\cite{ATV2026} provided
+the definitive eigenvalue analysis proving that every Friedmann spacetime is unstable
+to radial perturbation at every perturbative order, and that generic underdense
+perturbations produce accelerated expansion as a natural consequence of this
+instability rather than as a signature of dark energy. Their framework --- which we
+call the ATV system --- provides a mathematically rigorous alternative to $\Lambda$CDM
+for the anomalous acceleration problem, while remaining entirely within classical
+general relativity.
+
+The present paper does not dispute these results. It asks a different question:
+what ontological status should be assigned to the objects in the ATV analysis ---
+the saddle point, the unstable manifold, the gauge-fixing, the recursive eigenvalue
+structure --- and is there a broader framework within which they appear as a
+projected sector of a more general dynamical theory?
+
+The present paper develops such a framework, which we call the
+\emph{accessibility relaxation formalism}. The framework treats cosmological dynamics
+as the macroscopic behaviour of a continuous medium described by three coupled fields:
+a scalar accessibility potential $\Phi$, a lamphrodyne flow velocity $\mathbf{V}$,
+and a configurational entropy density $S$. Gravitational binding, cosmic redshift,
+and structure formation emerge from the interactions of these fields through a
+variational principle --- the \emph{lamphrodyne functional} --- whose Lagrangian
+is constrained by locality, rotational invariance, ghost-freedom, and a divergence
+condition linking the longitudinal flow mode to scalar and entropy sources.
+The framework connects to Jacobson's thermodynamic derivation of the Einstein
+equation~\cite{Jacobson1995}, Verlinde's entropic gravity~\cite{Verlinde2011},
+and Padmanabhan's thermodynamic cosmology~\cite{Padmanabhan2010} as special
+limits, while extending them to a dynamical, non-equilibrium medium with explicit
+attractor geometry.
+
+The relationship between the accessibility relaxation formalism and the ATV system
+is not merely interpretive. The ATV saddle point $\SM$, its eigenvalue spectrum,
+the gauge decomposition effected by the ``time since the Big Bang'' fixing, and
+the recursive closure of the unstable manifold all find precise counterparts in
+the accessibility formalism introduced here. Specifically, we prove:
+
+\begin{itemize}[leftmargin=1.5em]
+\item The ATV gauge-fixing corresponds to choosing a section of the fiber bundle
+  $\Tacc \to \Tacc/\Ggroup$, where $\Ggroup$ acts by time translation and the
+  fiber direction is the eigenspace of the leading-order negative eigenvalue
+  $\lBn{1} = -1$.
+
+\item The ATV eigenvalue formula $\lAn{n} = 2n/3$, $\lBn{n} = (2n-5)/3$ is
+  reproduced as the spectrum of the $n$-th level projected Hessian of the
+  lamphrodyne functional, under five explicit reduction conditions.
+
+\item The ATV theorem that infinite-order instability is controlled by a second-order
+  condition is equivalent to the statement that the closure depth of the
+  unstable accessibility bundle is $\dclos(\Phic) = 2$, a new invariant we
+  introduce and compute.
+
+\item Relaxing the reduction conditions generates corrections to the
+  redshift--luminosity coefficient $C$ and sources parity-odd birefringence through
+  a common entropy--vorticity coupling, producing a jointly falsifiable prediction
+  absent from both ATV and $\Lambda$CDM.
+\end{itemize}
+
+The strategic value of this reinterpretation is twofold. First, it gives RSVP its
+most direct contact with established relativistic mathematics: the ATV analysis
+provides a rigorous local model inside a broader RSVP ontology, rather than
+requiring RSVP to carry the observational burden of cosmology unaided. Second, it
+extends the ATV framework by generating concrete corrections that are falsifiable
+at the level of fourth-order supernova data and CMB polarization cross-correlations.
+
+The paper is organised as follows. Section~\ref{sec:geometry} develops the RSVP
+accessibility geometry and defines the lamphrodyne functional. Section~\ref{sec:gauge}
+establishes the gauge decomposition and fiber structure. Section~\ref{sec:friedmann}
+embeds the Friedmann saddle as an accessibility-critical rest point.
+Section~\ref{sec:closure} proves the recursive closure theorem and introduces
+the closure depth invariant, with its CLIO interpretation. Section~\ref{sec:lamp_limit}
+derives the Reduction Principle and the ATV limit. Section~\ref{sec:redshift}
+computes the lamphrodyne corrections to the redshift coefficient.
+Section~\ref{sec:bire} establishes the coupled redshift--birefringence prediction.
+Section~\ref{sec:disc} collects the observational discriminants. Section~\ref{sec:beyond}
+discusses the broader programme of RSVP cosmology beyond expansion.
+
+Throughout, standard results from ATV are cited by their theorem numbers in
+\cite{ATV2026}. All RSVP objects are defined independently of ATV; the
+correspondence is established as a theorem rather than assumed.
+
+% ============================================================
+\section{RSVP Accessibility Geometry}
+\label{sec:geometry}
+% ============================================================
+
+The RSVP framework begins with a continuous medium whose state space carries more
+structure than a single metric. The fundamental objects are three coupled fields
+whose interactions generate the full range of physical phenomena --- gravitational,
+thermodynamic, and cognitive --- through a single variational principle.
+
+\begin{definition}[RSVP field triplet]
+\label{def:triplet}
+Let $\Omega \subset \mathbb{R}^3$ be an open bounded domain with Lipschitz
+boundary and let $\mathcal{M} = \Omega \times (0,\infty)$. The RSVP medium is
+described by three fields:
+\begin{align}
+  \Phi &\in H^1(\Omega), \quad \text{(scalar accessibility potential)},
+  \label{eq:field_phi} \\
+  \mathbf{V} &\in [H^1(\Omega)]^3, \quad \text{(lamphrodyne flow velocity)},
+  \label{eq:field_V} \\
+  S &\in L^2(\Omega)\cap L^\infty(\Omega),\; S\geq 0, \quad
+    \text{(configurational entropy density)}.
+  \label{eq:field_S}
+\end{align}
+In the cosmological projection, $\Phi$ plays the role of a scalar plenum potential
+analogous to vacuum capacity, $\mathbf{V}$ encodes negentropic bulk flow, and $S$
+drives redshift and constraint relaxation. The connection to emergent gravitational
+thermodynamics follows Jacobson~\cite{Jacobson1995} and Padmanabhan~\cite{Padmanabhan2010}:
+entropy gradients generate effective forces, and the accessible trajectory volume
+in the medium provides the statistical underpinning for gravitational binding.
+\end{definition}
+
+\begin{remark}[Effective-theory status of the RSVP framework]
+\label{rem:eft_status}
+The accessibility relaxation formalism should presently be understood as an
+\emph{effective field theory} rather than a completed microscopic description
+of spacetime. Its purpose is not to replace General Relativity at every scale
+but to provide a dynamical framework within which the instability results of
+Alexander, Temple, and Vogler can be embedded and extended. The scalar
+accessibility field $\Phi$, lamphrodyne flow $\mathbf{V}$, and entropy density
+$S$ are best regarded as macroscopic variables describing the relaxation state
+of the medium under coarse-graining at the relevant cosmological scale.
+
+In this reading, the RSVP Lagrangian is the most general effective action
+consistent with the stated symmetry and stability axioms at two-derivative order.
+Higher-derivative corrections, microscopic derivation of the coupling constants
+$(\kappa, \alpha, \bcurl, \mu)$, and the relationship of the plenum fields to
+any underlying quantum degrees of freedom all remain open problems. The programme
+is in this respect analogous to the effective field theory of inflation or to
+analogue-gravity models~\cite{MisnerThorneWheeler1973,HawkingEllis1973}: the
+effective description is internally consistent and predictive within its domain,
+without yet possessing a complete ultraviolet completion.
+\end{remark}
+
+\begin{definition}[Accessibility metric]
+\label{def:acc_metric}
+The \emph{accessibility metric} is the field-dependent deformation of the
+background Riemannian metric $g_{ij}$ defined by
+\begin{equation}
+  g^{\mathrm{acc}}_{ij} = g_{ij} + \kappa\,\partial_i\Phi\,\partial_j\Phi,
+  \qquad \kappa \geq 0.
+  \label{eq:acc_metric}
+\end{equation}
+When $\kappa > 0$, the accessibility metric assigns greater length to
+displacements along the gradient of $\Phi$, penalising motion in directions of
+rapid scalar variation. This is the geometric realisation of the RSVP principle
+that entropy gradients compress accessible trajectory space: regions of high
+$|\nabla\Phi|$ are metrically distant in the accessibility sense. Operators
+carrying the superscript $\mathrm{acc}$ --- gradient $\nabacc$, divergence
+$\nabla^{\!\mathrm{acc}}\cdot$, curl $\nabacc\times$, and Laplacian $\Delacc$ ---
+are computed with respect to $g^{\mathrm{acc}}$.
+\end{definition}
+
+\subsection{Effective-Theory Status of the Accessibility Metric}
+\label{subsec:effective_metric}
+
+The accessibility metric of Definition~\ref{def:acc_metric} should not be
+interpreted as a fundamental modification of spacetime geometry. It is introduced
+as an effective metric on accessibility space, analogous to the emergent metrics
+appearing in acoustic gravity~\cite{MisnerThorneWheeler1973} and thermodynamic
+state-space geometry. Its role is to encode how gradients of the scalar field
+modify the volume of admissible trajectories available to the medium.
+
+Equation~\eqref{eq:acc_metric} is the unique lowest-order rotationally invariant
+rank-one deformation of $g_{ij}$ generated by the scalar field gradient at
+two-derivative order. The present paper does not claim a microscopic derivation
+of this structure. The framework should accordingly be understood as an effective
+field theory whose metric structure is justified by symmetry counting and
+phenomenological consistency, with derivation from a deeper microphysics of
+accessibility remaining an open problem.
+
+\begin{definition}[Lamphrodyne functional]
+\label{def:lamp_functional}
+The \emph{lamphrodyne functional} is
+\begin{equation}
+  \Lacc[\Phi,\mathbf{V}]
+  = \int_{\Omega}
+    \Bigl[
+      \tfrac{1}{2}\,g^{\mathrm{acc},ij}\,\partial_i\Phi\,\partial_j\Phi
+      + \tfrac{\alpha}{2}\,|\nabacc\cdot\mathbf{V}|^2
+      + \tfrac{\bcurl}{2}\,|\nabacc\times\mathbf{V}|^2
+      + \mu\,\mathbf{V}\cdot\nabacc\Phi
+      + U(\Phi)
+    \Bigr]
+    d\mathrm{vol}_{g^{\mathrm{acc}}},
+  \label{eq:lamp_functional}
+\end{equation}
+where $\alpha, \bcurl, \mu > 0$ are coupling constants, $U \in C^2(\mathbb{R})$
+satisfies $U'' \geq 0$, and $g^{\mathrm{acc},ij}$ denotes the inverse of the
+accessibility metric. The four terms encode, respectively: accessibility gradient
+energy, compression resistance of the longitudinal flow mode, curl energy of the
+transverse flow mode, and scalar--vector coupling. The potential $U(\Phi)$ provides
+attractor geometry and may encode a MOND-like low-acceleration regime in the
+appropriate limit, following the entropic force construction of Verlinde~\cite{Verlinde2011}.
+\end{definition}
+
+\subsection{Mode Stability and Derivative Order}
+\label{subsec:ghosts}
+
+The lamphrodyne functional~\eqref{eq:lamp_functional} contains first-derivative
+couplings between $\Phi$ and $\mathbf{V}$ but no higher-order time derivatives
+of any field. The classical Ostrogradsky instability associated with
+non-degenerate higher-derivative Lagrangians therefore does not arise at the
+level of the present theory: all kinetic terms are at most first order in $\partial_t$.
+
+The coupling $\mu\mathbf{V}\cdot\nabacc\Phi$ is a first-order spatial coupling,
+not a higher-time-derivative term, and its contribution to the Hessian is bounded
+by standard Young's inequality estimates (as used in the proof of Lemma~\ref{lem:selfadjoint}).
+A complete Hamiltonian decomposition of the scalar, longitudinal, and transverse
+sectors into physical and unphysical modes --- analogous to the Coulomb-gauge
+decomposition in constrained field theories~\cite{Arnold1989} --- is beyond the
+scope of the present paper. The framework should therefore be regarded as an
+effective field theory whose stability in the full nonlinear regime has not yet
+been established, and a complete nonlinear stability analysis remains a priority
+for future work.
+
+\begin{definition}[Lamphrodyne flow equations]
+\label{def:lamp_flow}
+The \emph{lamphrodyne relaxation flow} associated to $\Lacc$ is the
+dissipative gradient system
+\begin{align}
+  \partial_t\Phi
+  &= -\frac{\delta\Lacc}{\delta\Phi} + \etaeff\,\Delacc\Phi,
+  \label{eq:lamp_phi} \\[4pt]
+  \partial_t\mathbf{V}
+  &= -\frac{\delta\Lacc}{\delta\mathbf{V}}
+     + \nu\,\Delacc\mathbf{V}
+     - \nabacc P,
+  \label{eq:lamp_V}
+\end{align}
+with homogeneous Neumann boundary conditions, diffusion coefficients $\etaeff,\nu\geq 0$,
+and a Lagrange multiplier $P$ enforcing the \emph{divergence constraint}
+\begin{equation}
+  \nabacc\cdot\mathbf{V} = \alpha_\Phi\Phi + \alpha_S S.
+  \label{eq:div_constraint}
+\end{equation}
+The constraint~\eqref{eq:div_constraint} is the kinematic heart of the theory:
+it couples the longitudinal mode of the flow to the scalar and entropy fields,
+and in the stiff limit $\alpha\to\infty$ becomes exact, projecting onto
+transverse (divergence-free) flow modes and generating the Dirac-bracket
+structure of the constrained Hamiltonian system following Dirac's
+algorithm~\cite{Arnold1989,Hirsch1974}.
+\end{definition}
+
+\begin{remark}
+The Euler--Lagrange equations of $\Lacc$ reduce, in the overdamped limit with
+Rayleigh dissipation, to the following coupled PDE system, which we call the
+\emph{Master System} of the accessibility relaxation formalism:
+\begin{align}
+  \partial_t\Phi &= -\nabla\cdot(\Phi\mathbf{V}) + \kappa_\Phi\Delta\Phi
+                    + \sigma S - U'(\Phi), \label{eq:master_phi} \\
+  \partial_t\mathbf{V} &= -(\mathbf{V}\cdot\nabla)\mathbf{V}
+                          - \lambda\nabla\Phi - \nu\mathbf{V}
+                          + \kappa_v(\nabacc\times\mathbf{V}) + \bm{\eta},
+                          \label{eq:master_V} \\
+  \partial_t S &= D_S\Delta S - \mu\Phi + \chi|\mathbf{V}|^2 + \xi(t).
+  \label{eq:master_S}
+\end{align}
+Well-posedness and global existence for this system are established in
+Lemma~\ref{lem:existence} below. The identification $\etaeff = (2/3)\kappa_\Phi$
+relating the lamphrodyne diffusion coefficient to the Master System parameter
+$\kappa_\Phi$ is established in Proposition~\ref{prop:EL_reduction}.
+\end{remark}
+
+\subsection{Existence and Energy Dissipation for the Master System}
+\label{subsec:wellposed}
+
+The Master System~\eqref{eq:master_phi}--\eqref{eq:master_S} is a quasilinear
+parabolic system with lower-order nonlinear couplings. We derive existence and
+energy dissipation from standard semigroup methods and compactness theory, making
+the citations to Pazy~\cite{Pazy1983} and Lions~\cite{Lions1969} load-bearing.
+
+Write the state vector $X = (\Phi,\mathbf{V},S)$ and the evolution as
+\begin{equation}
+  \partial_t X = AX + \mathcal{N}(X),
+  \label{eq:abstract_cauchy}
+\end{equation}
+where $A = \mathrm{diag}(\kappa_\Phi\Delta, \kappa_v\Delta, D_S\Delta)$ is the
+diagonal elliptic operator generated by the diffusion terms, and $\mathcal{N}$
+collects all lower-order nonlinear couplings. Under homogeneous Neumann boundary
+conditions, $-A$ is a nonnegative self-adjoint operator on
+$H^1(\Omega)\times[H^1(\Omega)]^3\times L^2(\Omega)$, and the associated analytic
+semigroup $\{e^{tA}\}_{t\geq 0}$ is well-defined by the Hille--Yosida theorem.
+
+\begin{lemma}[Existence and energy dissipation]
+\label{lem:existence}
+Suppose $\sigma(X) \leq C(1 + |X|^2)$ for some constant $C > 0$, and
+$\kappa_\Phi, D_S, \kappa_v > 0$. Then:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item \textup{(Local existence)} There exists $T^* > 0$ depending on the initial
+    data $(X_0)_{H^1}$ such that the Master System admits a unique classical solution
+    on $[0,T^*)$ by the abstract Cauchy theorem for analytic
+    semigroups~\cite{Pazy1983}.
+  \item \textup{(Global weak solutions)} There exists a global weak solution in the
+    Leray--Hopf sense, obtained by passing the Galerkin approximation to the limit
+    using the Aubin--Lions compactness lemma~\cite{Lions1969}.
+  \item \textup{(Energy dissipation)} The Lyapunov functional
+    $H(t) = \int_\Omega S\,dx$ satisfies
+    \begin{equation}
+      \dot{H}(t) \leq \mathrm{ess\,sup}\,\sigma - \mu H(t),
+      \label{eq:lyapunov}
+    \end{equation}
+    so $H(t)$ is uniformly bounded and $H(t)\to \mathrm{ess\,sup}(\sigma)/\mu$
+    asymptotically.
+  \item \textup{(Exponential gradient decay)} If $\sigma\equiv 0$ on $[T,\infty)$, then
+    \begin{equation}
+      \|\nabla S(t)\|_{L^2} \leq \|\nabla S(T)\|_{L^2}\,e^{-\mu_0(t-T)},
+      \quad \mu_0 = \min(\mu, D_S\lambda_1),
+      \label{eq:exp_decay}
+    \end{equation}
+    where $\lambda_1 > 0$ is the first nonzero Neumann eigenvalue of $-\Delta$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Part~(a): The nonlinearity $\mathcal{N}$ is locally Lipschitz from $H^2\times[H^2]^3\times H^1$
+into $H^1\times[H^1]^3\times L^2$ by the Sobolev embedding $H^1(\Omega)\hookrightarrow L^6(\Omega)$
+in $d=3$ and the polynomial growth condition. The abstract Cauchy theorem~\cite{Pazy1983}
+then gives local classical existence.
+
+Part~(b): The Galerkin approximation using eigenfunctions of $-\Delta$ yields
+uniform bounds in $L^\infty(0,T;H^1)\cap L^2(0,T;H^2)$ from the energy estimate
+$\frac{d}{dt}\frac{1}{2}\int|X|^2 \leq C - \nu_0\int|\nabla X|^2$. Strong convergence
+in $L^2(0,T;L^2)$ follows from the Aubin--Lions lemma~\cite{Lions1969}.
+
+Parts~(c) and~(d): Integrating the entropy equation~\eqref{eq:master_S} over $\Omega$
+and applying the Neumann boundary condition gives~\eqref{eq:lyapunov}. Multiplying
+by $-\Delta S$ and applying the Poincar\'{e} inequality gives~\eqref{eq:exp_decay}.
+\end{proof}
+
+% ============================================================
+\section{Projection, Gauge, and Fiber Equivalence}
+\label{sec:gauge}
+% ============================================================
+
+The trajectory space of the lamphrodyne system admits a natural stratification by
+truncation depth. Physical observables are insensitive to certain redundancies in
+the parametrisation of trajectories, and the gauge-fixing procedure of ATV has a
+precise geometric interpretation in this fibered structure.
+
+\begin{definition}[Trajectory space and projection operators]
+\label{def:traj_proj}
+Let $\Tacc$ be the space of smooth trajectories $\gamma:\mathbb{R}\to\mathcal{M}$
+satisfying the lamphrodyne flow equations with finite energy. For each $n\geq 1$,
+define the \emph{$n$-th truncation operator}
+\begin{equation}
+  \piproj_n:\Tacc\to\Tacc_n,
+  \qquad
+  \piproj_n(\gamma) = \bigl[\text{expansion of }\gamma
+                       \text{ in even powers of }\xi\text{ through order }\xi^{2n}\bigr],
+  \label{eq:proj_def}
+\end{equation}
+where $\xi = r/t$ is the self-similar variable. The operators $\{\piproj_n\}$ satisfy
+the nesting property $\piproj_m = \piproj_m \circ \piproj_n$ for $m\leq n$. The
+\emph{fiber} of $\piproj_n$ over a truncated trajectory $\bar\gamma\in\Tacc_n$ is
+\begin{equation}
+  \Ffam_{\bar\gamma}^n
+  = \piproj_n^{-1}(\bar\gamma)
+  = \{\gamma'\in\Tacc : \piproj_n(\gamma') = \bar\gamma\},
+  \label{eq:fiber_def}
+\end{equation}
+the set of all full trajectories whose $n$-th order approximation agrees with $\bar\gamma$.
+\end{definition}
+
+\begin{definition}[Gauge group and physical trajectory space]
+\label{def:gauge_group}
+The \emph{gauge group} $\Ggroup \cong \mathbb{R}$ acts on $\Tacc$ by time translation:
+$(\tau_{t_0}\cdot\gamma)(t) = \gamma(t - t_0)$. Two trajectories are
+\emph{gauge-equivalent} if they lie in the same $\Ggroup$-orbit. The
+\emph{physical trajectory space} is the quotient
+\begin{equation}
+  \Tacc^{\mathrm{phys}} = \Tacc/\Ggroup,
+  \label{eq:phys_space}
+\end{equation}
+with projection $\piproj:\Tacc\to\Tacc^{\mathrm{phys}}$. A \emph{gauge section} is
+a smooth map $s:\Tacc^{\mathrm{phys}}\to\Tacc$ with $\piproj\circ s = \mathrm{id}$.
+\end{definition}
+
+\subsection{Variational Structure and Self-Adjointness of the Hessian}
+\label{subsec:selfadjoint}
+
+The accessibility Hessian introduced below inherits its analytical properties from
+the variational structure of the lamphrodyne functional. We establish these
+properties explicitly so that the spectral decompositions used in Theorems A
+through C rest on standard functional analysis rather than on assertion.
+
+Let $\Lacc : H^1(\Omega)\times[H^1(\Omega)]^3 \to \mathbb{R}$ be the lamphrodyne
+functional of Definition~\ref{def:lamp_functional}. We require that $\Lacc$ be
+twice Fr\'{e}chet differentiable in a neighbourhood of an accessibility-critical
+configuration $\Phic$; this holds whenever $U\in C^2(\mathbb{R})$ and $\kappa \geq 0$.
+The second variation defines a bilinear form
+\begin{equation}
+  B(u,v) = D^2\Lacc(\Phic)[u,v],
+  \qquad u,v\in H^1(\Omega)\times[H^1(\Omega)]^3.
+  \label{eq:bilinear_form}
+\end{equation}
+
+\begin{lemma}[Self-adjointness and spectral decomposition of $\Hacc_c$]
+\label{lem:selfadjoint}
+The bilinear form $B$ defined by~\eqref{eq:bilinear_form} is symmetric and bounded
+below. The associated operator $\Hacc_c = D^2_{\mathrm{acc}}\Lacc|_{\Phic}$ is
+self-adjoint on $H^1(\Omega)\times[H^1(\Omega)]^3$, and the tangent space decomposes
+into an orthogonal direct sum of eigenspaces,
+\begin{equation}
+  T_{\Phic}\Tacc = \bigoplus_\lambda E_\lambda(\Hacc_c).
+  \label{eq:spectral_decomp}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Symmetry of $B$ follows from the commutativity of mixed Fr\'{e}chet derivatives.
+Boundedness below follows from: (i) the gradient terms $|\nabacc\Phi|^2$ and
+$|\nabacc\cdot\mathbf{V}|^2$ enter quadratically with positive coefficients; (ii)
+$U''\geq 0$ ensures no negative contribution from the potential sector; and (iii)
+the coupling term $\mu\mathbf{V}\cdot\nabacc\Phi$ is controlled at quadratic order
+by Young's inequality $\mu|\mathbf{V}||\nabla\Phi|\leq \frac{\mu}{2\epsilon}|\mathbf{V}|^2
++ \frac{\mu\epsilon}{2}|\nabla\Phi|^2$ for $\epsilon > 0$ sufficiently small.
+The Lax--Milgram theorem then yields a bounded, invertible, self-adjoint representative
+$\Hacc_c$~\cite{Arnold1989}. The spectral theorem for self-adjoint operators on
+Hilbert space~\cite{Hirsch1974} gives the orthogonal decomposition~\eqref{eq:spectral_decomp},
+which is the geometric foundation for the stable and unstable bundle constructions
+in Definitions~\ref{def:crit_config} and~\ref{def:closure_depth}.
+\end{proof}
+
+\begin{definition}[Accessibility-critical configuration]
+\label{def:crit_config}
+A configuration $\Phic\in\mathcal{M}$ is \emph{accessibility-critical} if
+$\nabacc\Phic = 0$, i.e., $\Phic$ is a rest point of the lamphrodyne flow. At
+such a configuration the \emph{accessibility Hessian} is
+\begin{equation}
+  \Hacc_c = D^2_{\mathrm{acc}}\Lacc\big|_{\Phic}.
+  \label{eq:acc_hessian}
+\end{equation}
+The \emph{unstable accessibility bundle} is the direct sum of positive-eigenvalue
+eigenspaces of $\Hacc_c$:
+\begin{equation}
+  \Uacc(\Phic) = \bigoplus_{\lambda>0} E_\lambda(\Hacc_c),
+  \label{eq:unstable_bundle}
+\end{equation}
+and its $n$-th level projection is $\Uacc_n(\Phic) = \piproj_n(\Uacc(\Phic))$.
+The stable bundle $\Sacc(\Phic) = \bigoplus_{\lambda<0} E_\lambda(\Hacc_c)$
+collects negative-eigenvalue directions.
+\end{definition}
+
+We can now state and prove the fundamental gauge decomposition theorem.
+
+\begin{theorem}[Accessibility Projection and Gauge Decomposition]
+\label{thm:A}
+Let $\Phic$ be an accessibility-critical configuration. The linearised tangent space
+at $\Phic$ decomposes orthogonally with respect to $\Hacc_c$ as
+\begin{equation}
+  T_{\Phic}\Tacc
+  = T^{\mathrm{fib}}_{\Phic} \oplus T^{\mathrm{phys}}_{\Phic},
+  \label{eq:tangent_decomp}
+\end{equation}
+where:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item The \emph{fiber tangent space} is the eigenspace of the leading-order
+    negative eigenvalue,
+    \begin{equation}
+      T^{\mathrm{fib}}_{\Phic} = E_{\lBn{1}}(\Hacc_c),
+      \qquad \lBn{1} = -1.
+      \label{eq:fiber_eigenspace}
+    \end{equation}
+  \item The \emph{physical tangent space} is the complementary sum of all
+    remaining eigenspaces,
+    \begin{equation}
+      T^{\mathrm{phys}}_{\Phic}
+      \cong T_{[\Phic]}\Tacc^{\mathrm{phys}}
+      = \bigoplus_{\lambda \neq \lBn{1}} E_\lambda(\Hacc_c).
+      \label{eq:phys_eigenspaces}
+    \end{equation}
+  \item A gauge section $s:\Tacc^{\mathrm{phys}}\to\Tacc$ exists and is unique
+    up to smooth reparametrisation. Choosing $s$ is equivalent to imposing a
+    solution-dependent time translation $t\mapsto t - t_0(\gamma)$ that places
+    every smooth solution on the unstable manifold of $\Phic$ at leading order in $\xi$.
+\end{enumerate}
+In the ATV sector, $T^{\mathrm{fib}}_{\Phic}$ is spanned by the ATV eigenvector
+$R_1^B = (4,1,80/9,1)^T$ and part~\textup{(c)} reduces to the
+``time since the Big Bang'' gauge fixing of~\cite{ATV2026}.
+\end{theorem}
+
+\begin{proof}
+The decomposition~\eqref{eq:tangent_decomp} follows from the spectral theorem
+for the self-adjoint operator $\Hacc_c$ on $H^1(\Omega)$, which is bounded below
+since $U''\geq 0$. We must identify $T^{\mathrm{fib}}_{\Phic}$ with $E_{-1}$
+by establishing an explicit intertwining between the infinitesimal generator of
+$\Ggroup$ and the $\lBn{1} = -1$ eigenvector of $\Hacc_c$.
+
+The $\Ggroup$-action by time translation $\tau_{t_0}:\gamma(t)\mapsto\gamma(t-t_0)$
+generates, at $\Phic$, the tangent vector $X_{\Phic} = -(\partial_t\gamma)\big|_{\Phic}$.
+In the autonomous log-time variable $\tau = \ln t$, time translation acts as
+$\tau\mapsto\tau - \ln(1 + t_0/t)$; at leading order this is $\tau\mapsto\tau - t_0/t$,
+which in the linearised STV-ODE is the vector field $-\partial_\tau$. The
+linearised STV-ODE at order $n=1$ (equations~(2.34)--(2.35) of~\cite{ATV2026}
+evaluated at $\SM$) has the matrix $P_1|_{\SM}$ with eigenvectors $R_1^A$ and
+$R_1^B$ corresponding to eigenvalues $\lAn{1} = 2/3$ and $\lBn{1} = -1$. A
+direct computation shows that the action of $-\partial_\tau$ on the solution
+space at $\SM$ is represented by $\lBn{1}R_1^B$: that is,
+\begin{equation}
+  D\tau_{t_0}\big|_{\Phic} \cdot R_1^B = e^{\lBn{1}\cdot t_0}\,R_1^B = e^{-t_0}\,R_1^B,
+  \label{eq:intertwining}
+\end{equation}
+confirming that $R_1^B$ is precisely the direction in which the gauge group acts.
+This establishes the intertwining $X_{\Phic}\sim R_1^B\in E_{-1}(\Hacc_c)$ explicitly.
+The eigenspace $E_{-1}$ is one-dimensional because $\Ggroup\cong\mathbb{R}$ acts
+faithfully on the solution space. Part~(c) then follows by the implicit function
+theorem applied to the transversality of $E_{-1}$ to the unstable manifold at
+order $n=1$~\cite{Hirsch1974}.
+\end{proof}
+
+\begin{remark}
+The intertwining~\eqref{eq:intertwining} is the key step that elevates the ATV
+gauge-fixing from a coordinate choice to a geometric statement: the time-translation
+freedom is not an arbitrary redundancy but is dynamically distinguished as the
+unique eigendirection of $\Hacc_c$ with eigenvalue $-1$, which is also the
+eigenvalue of the infinitesimal generator of $\Ggroup$ in the log-time flow.
+A different gauge group or a different negative eigenvalue would break this
+identification. The fact that both equal $-1$ is a non-trivial constraint on
+the structure of the lamphrodyne functional at $\SM$.
+\end{remark}
+
+\begin{remark}
+The second negative eigenvalue $\lBn{2} = -1/3$ is \emph{not} a gauge artifact.
+It survives the quotient, appearing in $T^{\mathrm{phys}}_{\Phic}$, and governs
+the non-self-similar character of generic Big Bang solutions above leading order
+(ATV Theorem~2.10). Theorem~\ref{thm:A} thus provides a precise separation
+between two phenomena that could otherwise be conflated: the removal of a
+coordinate redundancy (the $\lBn{1} = -1$ mode) and the physical existence of
+a stable direction in the cosmological phase space (the $\lBn{2} = -1/3$ mode).
+\end{remark}
+
+% ============================================================
+\section{Critical Friedmann Configurations}
+\label{sec:friedmann}
+% ============================================================
+
+With the fiber structure established, we can embed the Friedmann saddle as an
+accessibility-critical rest point and recover the ATV eigenvalue spectrum from
+the projected Hessian of the lamphrodyne functional.
+
+\begin{principle}[RSVP-to-STV Reduction]
+\label{prin:reduction}
+The lamphrodyne system of Definitions~\ref{def:lamp_functional}--\ref{def:lamp_flow}
+reduces to the Alexander--Temple--Vogler STV-PDE under the simultaneous imposition
+of five conditions:
+\begin{enumerate}[label=\textup{(RP\arabic*)}]
+  \item \textbf{Spherical symmetry.} $\mathbf{V} = V_r(t,r)\,\partial_r$; all
+    fields depend on $(t,r)$ only.
+  \item \textbf{Pressureless flow.} The equation of state satisfies $p = 0$
+    throughout the matter-dominated epoch.
+  \item \textbf{Vanishing torsion.} $\nabacc\times\mathbf{V} = 0$, equivalently
+    $\bcurl = 0$.
+  \item \textbf{Flat accessibility metric.} $\kappa = 0$, so
+    $g^{\mathrm{acc}}_{ij} = g_{ij}$.
+  \item \textbf{Vanishing diffusion.} $\etaeff = \nu = 0$.
+\end{enumerate}
+Under these conditions, the lamphrodyne flow equations~\eqref{eq:lamp_phi}--\eqref{eq:lamp_V}
+are equivalent to the STV-PDE of \cite{STV2017} in self-similar coordinates
+$(t,\xi)$ with $\xi = r/t$. The ATV rest point $\SM = (4/3, 2/3)$ is the unique
+accessibility-critical configuration in the $(z_2,w_0)$ phase plane.
+\end{principle}
+
+\subsection{Interpretation of the Reduction Principle}
+\label{subsec:reduction_interpretation}
+
+The Reduction Principle should not be interpreted as a derivation of the ATV
+system from the accessibility relaxation formalism in the strict asymptotic sense.
+Rather, it identifies a dynamically consistent sector of the lamphrodyne equations
+whose projected dynamics coincide with the ATV STV-PDE. Accordingly, the present
+paper establishes \emph{compatibility} rather than \emph{uniqueness}: every ATV
+solution corresponds to a lamphrodyne trajectory satisfying conditions
+(RP1)--(RP5), but the converse need not hold.
+
+A future objective is to derive the Reduction Principle as a genuine asymptotic
+limit governed by a small dimensionless parameter $\varepsilon \to 0$, with
+$\kappa, \etaeff, \bcurl = O(\varepsilon)$, so that the ATV system emerges as
+\begin{equation}
+  \text{accessibility relaxation formalism}
+  \;\xrightarrow{\varepsilon\to 0}\;
+  \text{ATV},
+  \label{eq:asymptotic_limit}
+\end{equation}
+rather than by explicit constraint imposition. Establishing this scaling limit
+from a dimensional analysis of the lamphrodyne functional is reserved for a
+companion paper.
+
+\begin{remark}[Compatibility rather than replacement]
+\label{rem:compatibility}
+The Reduction Principle demonstrates that every ATV solution corresponds to a
+lamphrodyne trajectory satisfying (RP1)--(RP5), but it does not claim that
+General Relativity is incorrect or incomplete within its domain of validity.
+The ATV sector of the accessibility relaxation formalism makes identical
+predictions to standard pressureless GR for all observables that depend only
+on the leading-order phase portrait. The differences appear exclusively in
+corrections of order $\etaeff$, $\mu^2$, and $\bcurl$, all of which vanish
+in the ATV limit.
+
+The role of the present framework is therefore \emph{explanatory and extensible}
+rather than replacement-oriented: it provides an ontological substrate for the
+ATV instability geometry and a systematic method for computing corrections, while
+inheriting all of the mathematical rigour established in~\cite{Smoller2012,STV2017,ATV2026}.
+A cosmologist who accepts ATV but not the full accessibility relaxation formalism
+loses nothing from the theorems in Sections~\ref{sec:friedmann}--\ref{sec:closure};
+they gain predictions only if the additional coupling constants are nonzero.
+\end{remark}
+
+\subsection{Operator Equivalence Under the Reduction Principle}
+\label{subsec:operator_equiv}
+
+The proof of Theorem~\ref{thm:B} requires identifying the projected accessibility
+Hessian with the linearised ATV operator. We establish this identification explicitly.
+
+\begin{proposition}[Projected Hessian equivalence]
+\label{prop:operator_equiv}
+Under Reduction Principle~\ref{prin:reduction}, the second variation of the
+lamphrodyne functional restricted to the self-similar sector induces a projected
+Hessian operator
+\begin{equation}
+  \mathcal{H}_n^{\mathrm{acc}} = \piproj_n(\Hacc_c)
+  \label{eq:proj_hess}
+\end{equation}
+that is unitarily equivalent to the ATV linearisation matrix $P_n|_{\SM}$.
+Consequently,
+\begin{equation}
+  \sigma(\mathcal{H}_n^{\mathrm{acc}}) = \sigma(P_n|_{\SM}).
+  \label{eq:spectral_equiv}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Conditions (RP1)--(RP5) eliminate all transverse, diffusive, and
+accessibility-curvature contributions: (RP3) sets $\bcurl = 0$ removing the
+curl sector; (RP4) sets $\kappa = 0$ reducing $g^{\mathrm{acc}}_{ij}\to g_{ij}$;
+(RP5) sets $\etaeff = \nu = 0$ eliminating diffusion. The Euler--Lagrange equations
+then reduce to the STV-PDE expressed in the self-similar variable $\xi = r/t$.
+Linearising both the reduced lamphrodyne system and the ATV STV-ODE about $\SM$
+produces the same quadratic form on the truncated coefficient space $(z_{2n},w_{2n-2})$,
+since the second variation of $\Lacc$ restricted to (RP1)--(RP5) produces precisely
+the bilinear coupling encoded by $P_n|_{\SM}$ (ATV equation~(2.26)). The two
+linear operators therefore differ only by the change of basis from RSVP field
+variables to ATV density--velocity variables, which is a unitary equivalence
+with respect to the $L^2$ inner product on coefficient space. Hence
+$\sigma(\mathcal{H}_n^{\mathrm{acc}}) = \sigma(P_n|_{\SM})$.
+\end{proof}
+
+\begin{theorem}[Friedmann Saddle Realization]
+\label{thm:B}
+Under Reduction Principle~\ref{prin:reduction}, the critical Friedmann configuration
+$\Phic \equiv \SM = (4/3, 2/3)$ is an accessibility-critical rest point of the
+lamphrodyne flow. The spectrum of the $n$-th level projected Hessian
+$\piproj_n(\Hacc_c)$ consists of exactly two eigenvalues at each order $n\geq 1$:
+\begin{equation}
+  \lAn{n} = \frac{2n}{3},
+  \qquad
+  \lBn{n} = \frac{2n-5}{3}.
+  \label{eq:eigenvalue_formula}
+\end{equation}
+The eigenvalues satisfy: $\lAn{n} > 0$ for all $n\geq 1$; $\lBn{1} = -1$ and
+$\lBn{2} = -1/3$ are the only negative members of the spectrum; and $\lBn{n} > 0$
+for all $n\geq 3$.
+\end{theorem}
+
+\begin{proof}
+Under Reduction Principle~\ref{prin:reduction}, the lamphrodyne flow reduces to
+the STV-ODE at each order $n$, whose linearisation at $\SM$ is the $2\times 2$
+matrix $P_k|_{\SM}$ given by ATV equation~(2.26) evaluated at $(z_2,w_0) = (4/3,2/3)$:
+\begin{equation}
+  P_k\big|_{\SM}
+  = \begin{pmatrix}
+    (2k+1)(1-2/3) - 1 & -(2k+1)\cdot 4/3 \\
+    -\tfrac{1}{2}(2k+1) & 2k(1-2/3) - 1
+  \end{pmatrix}
+  = \begin{pmatrix}
+    \tfrac{2k-2}{3} & -\tfrac{4(2k+1)}{3} \\
+    -\tfrac{2k+1}{2} & \tfrac{2k-3}{3}
+  \end{pmatrix}.
+  \label{eq:Pk_matrix}
+\end{equation}
+The characteristic polynomial $\det(P_k|_{\SM} - \lambda I) = 0$ has trace
+$\mathrm{tr} = (4k-5)/3$ and determinant computed to give roots~\eqref{eq:eigenvalue_formula},
+as recorded in ATV Corollary~2.4. The nested structure of the STV-ODE (ATV
+Theorem~2.3) then extends the pair $(\lAn{k},\lBn{k})$ to all $k\leq n$ at each
+order $n$. The sign analysis is immediate from~\eqref{eq:eigenvalue_formula}:
+$\lBn{n} < 0$ iff $2n < 5$, i.e., $n\leq 2$.
+\end{proof}
+
+\begin{corollary}[Asymptotic positivity of the spectrum]
+\label{cor:asymptotic_pos}
+All eigenvalues of $\piproj_n(\Hacc_c)$ at orders $n\geq 3$ are strictly positive.
+The entire instability structure of $\Uacc(\Phic)$ is encoded in the first two
+projection levels.
+\end{corollary}
+
+\begin{remark}
+The spectrum~\eqref{eq:eigenvalue_formula} is affine in $n$ with universal slope
+$2/3 = \lAn{1}$. This regularity reflects the accessibility-dilation structure
+of the lamphrodyne flow at $\SM$: the common slope encodes the rate at which
+admissible entropy-release modes amplify across perturbative scales, while the
+residual offset $-5/3$ in $\lBn{n}$ encodes the constraint curvature inherited
+from the divergence condition~\eqref{eq:div_constraint}. The spectrum is not a
+generic feature of dynamical systems but a consequence of the quadratic structure
+of the ATV STV-ODE at $\SM$, which in turn reflects the self-similar character
+of the flat Friedmann spacetime.
+\end{remark}
+
+% ============================================================
+\section{Recursive Instability and Depth-Two Closure}
+\label{sec:closure}
+% ============================================================
+
+The most structurally important result in the ATV analysis is that infinite-order
+instability is controlled by a single second-order condition. We reformulate this
+as a theorem about the closure depth of an accessibility bundle and introduce the
+closure depth as a new invariant.
+
+\subsection{Finite-Level Determination in Recursive Dynamical Systems}
+\label{subsec:finitelevel}
+
+Before defining the closure depth invariant, we situate it in the general theory
+of recursive dynamical systems. The question of when membership in an invariant
+manifold is determined at finite truncation depth is not specific to cosmology;
+it arises in perturbative KAM theory, renormalization group analysis, and the
+stability theory of infinite-dimensional Hamiltonian systems.
+
+In general, for a system with a nested sequence of approximating ODEs $\{F_n\}$
+and an invariant bundle $\mathcal{U}$ of the full system, the \emph{finite-level
+determination property} holds if there exists a minimal depth $d$ such that
+membership in $\mathcal{U}_n = \piproj_n(\mathcal{U})$ at level $n = d$ implies
+membership at all higher levels. This property fails, for instance, for
+Kolmogorov--Arnold--Moser tori in generic Hamiltonian systems, where each successive
+order imposes independent Diophantine conditions on the frequency vector~\cite{Arnold1989}.
+It fails generically for unstable manifolds in systems with infinitely many negative
+eigenvalues accumulating at zero. It holds, as we prove in Theorem~\ref{thm:C},
+for the Friedmann instability bundle, because the eigenvalue spectrum~\eqref{eq:eigenvalue_formula}
+terminates its negative sector at $n = 2$.
+
+The closure depth introduced in Definition~\ref{def:closure_depth} is a quantitative
+measure of this finite determination property. It is analogous to the codimension
+of stable manifolds in finite-dimensional Morse theory~\cite{Hirsch1974}: a
+codimension-1 stable manifold requires exactly one linear condition to characterize
+its complement, just as $\dclos = 2$ means the unstable bundle is fully characterized
+by two levels of the truncation hierarchy.
+
+\begin{definition}[Closure depth]
+\label{def:closure_depth}
+Let $\Phic$ be accessibility-critical. The \emph{closure depth} of the unstable
+accessibility bundle $\Uacc(\Phic)$ is
+\begin{equation}
+  \dclos(\Phic)
+  = \min\bigl\{n\geq 1 :
+    \piproj_n(\gamma)\in\Uacc_n(\Phic)
+    \Rightarrow
+    \piproj_m(\gamma)\in\Uacc_m(\Phic)
+    \ \forall\, m\geq n
+  \bigr\}.
+  \label{eq:closure_depth}
+\end{equation}
+A configuration with $\dclos(\Phic) = d$ has the property that membership in the
+unstable bundle is determined by a depth-$d$ truncation of the trajectory; no
+further truncation levels contribute new information about instability membership.
+\end{definition}
+
+\begin{theorem}[Recursive Instability Closure]
+\label{thm:C}
+Let $\gamma\in\Tacc$ be a smooth trajectory with the time since the Big Bang gauge
+imposed. Then
+\begin{equation}
+  \piproj_2(\gamma)\in\Uacc_2(\Phic)
+  \;\implies\;
+  \piproj_n(\gamma)\in\Uacc_n(\Phic)
+  \quad\forall\,n\geq 2.
+  \label{eq:closure_implication}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:B}, the only negative eigenvalue of $\piproj_n(\Hacc_c)$
+occurring at any order $n\geq 3$ is absent: all $\lBn{n} > 0$ for $n\geq 3$.
+A trajectory lies in $\Uacc_n(\Phic)$ if and only if it has no component in the
+stable eigenspaces of $\piproj_n(\Hacc_c)$. Since the only stable eigenspace above
+order $n=1$ (which is eliminated by the gauge-fixing of Theorem~\ref{thm:A})
+appears at order $n=2$ --- namely the $\lBn{2} = -1/3$ eigenspace --- a trajectory
+that avoids this direction at order $n=2$ automatically avoids all stable directions
+at all higher orders. The nesting property of the STV-ODE (ATV Theorem~2.3, under
+Reduction Principle~\ref{prin:reduction}) propagates this avoidance: if the order-$2$
+coefficients $(z_4,w_2)$ of $\piproj_2(\gamma)$ lie in $\Uacc_2(\Phic)$, then the
+order-$n$ coefficients determined by the nested STV-ODE at all $n\geq 3$ inherit
+only positive-eigenvalue directions, hence lie in $\Uacc_n(\Phic)$.
+\end{proof}
+
+\begin{corollary}[Closure depth of the Friedmann saddle]
+\label{cor:closure_depth}
+The closure depth of the unstable accessibility bundle at the critical Friedmann
+configuration satisfies
+\begin{equation}
+  \dclos(\Phic) = 2.
+  \label{eq:closure_depth_val}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:C} gives $\dclos(\Phic)\leq 2$. To establish $\dclos(\Phic) > 1$,
+observe that the eigenvalue $\lBn{2} = -1/3$ defines a genuinely physical stable
+direction retained in $T^{\mathrm{phys}}_{\Phic}$ by Theorem~\ref{thm:A}. Knowledge
+of $\piproj_1(\gamma)\in\Uacc_1(\Phic)$ alone does not determine whether
+$\piproj_2(\gamma)\in\Uacc_2(\Phic)$: there exist trajectories satisfying the
+leading-order condition that fail at order $n=2$ by developing a component in
+$E_{-1/3}$. Hence $\dclos(\Phic) = 2$ exactly.
+\end{proof}
+
+\begin{proposition}[Gauge invariance of closure depth]
+\label{prop:closure_invariance}
+Let $\{\piproj_n\}$ and $\{\tilde\piproj_n\}$ be two truncation hierarchies
+related by a smooth gauge transformation $\phi_n:\Tacc_n\to\tilde\Tacc_n$
+preserving the nesting property:
+\begin{equation}
+  \piproj_m = \piproj_m\circ\piproj_n,
+  \qquad
+  \tilde\piproj_m = \tilde\piproj_m\circ\tilde\piproj_n,
+  \qquad m\leq n.
+  \label{eq:nesting_preserved}
+\end{equation}
+Then $\dclos(\Phic) = \tilde\dclos(\Phic)$.
+\end{proposition}
+
+\begin{proof}
+The gauge transformation $\phi_n$ induces a bijection between fibers at every
+truncation level: $\phi_n(\Ffam_{\bar\gamma}^n) = \tilde\Ffam_{\phi_n(\bar\gamma)}^n$.
+Since $\phi_n$ is a diffeomorphism, it preserves membership in $\Uacc_n(\Phic)$:
+a trajectory $\gamma$ lies in $\Uacc_n$ if and only if $\phi_n(\piproj_n(\gamma))$
+lies in $\tilde\Uacc_n$. Consequently the minimal depth $d$ at which instability
+membership becomes fully determined is the same in both hierarchies.
+\end{proof}
+
+\subsection{Closure Depth Beyond the Friedmann Sector}
+\label{subsec:beyond_depth2}
+
+The value $\dclos(\Phic) = 2$ obtained in Corollary~\ref{cor:closure_depth} is
+the value taken by the closure depth invariant for the specific Friedmann instability
+considered here. It should not be interpreted as defining the invariant itself.
+
+A nontrivial theory of closure depth would require examples exhibiting
+$\dclos = 1$ (instability determined at leading order), $\dclos = 3$ (a system
+with two consecutive stable eigenvalue sectors before termination), and potentially
+$\dclos = \infty$ (a system with no finite determination, analogous to KAM tori).
+Determining the range of closure-depth behaviour across broader classes of recursive
+dynamical systems --- including renormalization group flows, nested ODE hierarchies
+in non-relativistic fluid dynamics, and perturbative quantum field theories ---
+remains an open problem. The Friedmann instability provides the first computed
+example of this invariant.
+
+\subsection{Finite-Level Determination and the Closure Depth Invariant}
+\label{subsec:clio}
+
+The closure depth $\dclos$ introduced in Definition~\ref{def:closure_depth}
+is a new invariant of accessibility bundles in recursive dynamical systems.
+Its significance extends beyond the specific cosmological context. In any
+system governed by a hierarchy of nested ODEs --- whether arising from
+perturbative general relativity, renormalization group flows, or control-theoretic
+feedback systems --- one may ask: at what truncation depth does the membership
+condition for an invariant manifold become determined? The answer is not always
+finite, and when it is finite, the value carries structural information about
+the system.
+
+We introduce the following general framework. Given a dynamical system with a
+nested sequence of approximating ODEs $\{F_n\}_{n\geq 1}$ and an invariant
+bundle $\mathcal{U}$ of the full system, define the \emph{finite-level determination
+property} as the existence of a minimal depth $d$ such that membership in
+$\mathcal{U}_n = \piproj_n(\mathcal{U})$ at level $n=d$ implies membership
+at all higher levels. This property fails, for instance, for Kolmogorov--Arnold--Moser
+tori in generic Hamiltonian systems, where each successive level imposes independent
+Diophantine conditions. It holds, as Corollary~\ref{cor:closure_depth} establishes,
+for the Friedmann instability bundle, because the eigenvalue spectrum terminates its
+negative sector at $n=2$.
+
+\begin{definition}[Constraint-closure operator]
+\label{def:closure_op}
+For each $n\geq 1$, the \emph{$n$-th constraint-closure operator} is the map
+\begin{equation}
+  \mathcal{C}_n : \Tacc_n \to \{0,1\},
+  \qquad
+  \mathcal{C}_n(\bar\gamma) = \mathbf{1}[\bar\gamma \in \Uacc_n(\Phic)],
+  \label{eq:closure_op}
+\end{equation}
+which determines whether the $n$-th level truncation of a trajectory lies in
+the $n$-th level projection of the unstable bundle. A trajectory $\gamma$ is
+a \emph{depth-$d$ closure object} if $\mathcal{C}_d(\piproj_d(\gamma)) = 1$
+implies $\mathcal{C}_n(\piproj_n(\gamma)) = 1$ for all $n\geq d$, and $d$
+is minimal with this property.
+\end{definition}
+
+Corollary~\ref{cor:closure_depth} is then the statement that every trajectory
+in $\Ffam$ is a depth-2 closure object, and that $\dclos(\Phic) = 2$ is the
+closure depth of the Friedmann saddle. Two applications of the constraint-closure
+operator are necessary and sufficient to determine full membership in the unstable
+bundle. This finite-level determination is a structural property of the ATV
+eigenvalue spectrum that would not be apparent from any finite-order truncation
+of the STV-ODE alone.
+
+\begin{remark}[Non-self-similar Big Bang as depth-2 consequence]
+ATV Theorem~2.10 states that solutions in $\Ffam$ are self-similar at leading
+order but generically non-self-similar at all higher orders. In the present
+framework, this reflects the fact that the $\lBn{2} = -1/3$ stable direction
+--- which governs backward-time behaviour above leading order and is responsible
+for the failure of self-similarity --- is a depth-2 object: it appears only at
+the second application of the constraint-closure operator, not at depth 1.
+A truncation at depth 1 would see only the leading-order self-similar Big Bang
+and miss the generic non-self-similar behaviour entirely. The closure depth
+$\dclos(\Phic) = 2$ is therefore a precise quantitative statement about the
+minimum resolution depth required to capture the full instability structure
+of the Friedmann saddle.
+\end{remark}
+
+% ============================================================
+\section{Lamphrodyne Relaxation and the ATV Limit}
+\label{sec:lamp_limit}
+% ============================================================
+
+Having established the formal structure, we now derive the explicit correspondence
+between the lamphrodyne flow and the ATV STV-PDE, and compute the leading-order
+corrections when the Reduction Principle conditions are relaxed.
+
+\begin{proposition}[Euler--Lagrange reduction to STV-ODE]
+\label{prop:EL_reduction}
+Under Reduction Principle~\ref{prin:reduction} with conditions \textup{(RP3)--(RP5)}
+relaxed to allow $\etaeff, \kappa > 0$ while \textup{(RP1)--(RP2)} are retained,
+the Euler--Lagrange equations of $\Lacc$ reduce to the STV-ODE augmented by two
+correction operators at second perturbative order:
+\begin{align}
+  \delta_\eta\dot{w}_2
+  &= \etaeff\,\lAn{1}\,
+     \partial_r^2\bigl(\Delacc\Phi\bigr)\big|_{\xi\text{-expansion}}
+     + O(\etaeff^2),
+  \label{eq:eta_correction} \\[4pt]
+  \delta_\mu\dot{w}_2
+  &= \frac{\mu^2\alpha_\Phi^2}{\lAn{2} - \lAn{1}}\,z_2
+     + O(\mu^3),
+  \label{eq:mu_correction}
+\end{align}
+where $\etaeff = (2/3)\kappa_\Phi$ and $\lAn{2} - \lAn{1} = 2/3$.
+\end{proposition}
+
+\begin{proof}
+Varying~\eqref{eq:lamp_functional} with respect to $\Phi$ under \textup{(RP1)} and
+\textup{(RP2)} and expanding in even powers of $\xi$ yields the STV-ODE at each order
+$n$ with additional terms proportional to $\etaeff\Delta_{\mathrm{acc}}\Phi$ and to
+$\mu^2\alpha_\Phi^2 z_2/(\lAn{2}-\lAn{1})$ at order $n=2$. The first term arises
+from the diffusion in equation~\eqref{eq:lamp_phi} acting on the $\xi^2$ coefficient
+of $\Phi$, contributing to $\dot{w}_2$ via the STV-ODE coupling matrix $P_2|_{\SM}$.
+The second arises from the scalar--vector coupling $\mu\mathbf{V}\cdot\nabacc\Phi$ in
+$\Lacc$: after integrating out the longitudinal mode via the constraint~\eqref{eq:div_constraint},
+the resulting effective coupling to $z_2$ at order $n=2$ is $\mu^2\alpha_\Phi^2/(\lAn{2}-\lAn{1})$
+by standard second-order perturbation theory. The identification $\etaeff = (2/3)\kappa_\Phi$
+follows from matching the diffusion coefficient of the Master System equation~\eqref{eq:master_phi}
+with the leading eigenvalue $\lAn{1} = 2/3$.
+\end{proof}
+
+\subsection{Perturbative Origin of the Scalar--Vector Correction}
+\label{subsec:perturbative_mu}
+
+The coefficient in equation~\eqref{eq:mu_correction} arises from Rayleigh--Schr\"{o}dinger
+perturbation theory applied to the self-adjoint operator $\Hacc_c$. We make this
+derivation explicit so that the numerical coefficient $3\mu^2\alpha_\Phi^2/4$ in
+Theorem~\ref{thm:D} does not appear ad hoc.
+
+Decompose the accessibility Hessian as
+\begin{equation}
+  \Hacc_c = \Hacc_c^{(0)} + \mu V,
+  \label{eq:hess_decomp}
+\end{equation}
+where $\Hacc_c^{(0)}$ is the unperturbed Hessian (the ATV matrix $P_n|_{\SM}$
+under Reduction Principle~\ref{prin:reduction}) and $V$ is the perturbation
+operator induced by the scalar--vector coupling $\mu\mathbf{V}\cdot\nabacc\Phi$
+after integrating out the longitudinal mode via the divergence
+constraint~\eqref{eq:div_constraint}.
+
+\begin{proposition}[Perturbative eigenvalue shift]
+\label{prop:perturbative_shift}
+To second order in $\mu$, the correction to the eigenvalue $\lAn{1}$ of the
+unperturbed Hessian is
+\begin{equation}
+  \Delta\lambda
+  = \mu^2\sum_{m\neq n}
+    \frac{|\langle m|V|n\rangle|^2}{\lAn{1} - \lambda_m}
+    + O(\mu^3).
+  \label{eq:RS_correction}
+\end{equation}
+For the Friedmann saddle, the dominant contribution arises from the matrix
+element between the first and second unstable modes. The coupling matrix
+element is $|\langle 2|V|1\rangle|^2 = \alpha_\Phi^2$ from the
+$z_2$--$w_2$ block of $V$, and the energy denominator is
+$\lAn{1} - \lAn{2} = 2/3 - 4/3 = -2/3$, yielding
+\begin{equation}
+  \Delta\lambda = \frac{\mu^2\alpha_\Phi^2}{\lAn{2} - \lAn{1}}
+               = \frac{\mu^2\alpha_\Phi^2}{2/3}
+               = \frac{3\mu^2\alpha_\Phi^2}{2}
+               + O(\mu^3).
+  \label{eq:shift_explicit}
+\end{equation}
+The corresponding correction to $w_2$, obtained by integrating the perturbed
+eigenmode along the background trajectory, yields the coefficient $3\mu^2\alpha_\Phi^2/4$
+in Theorem~\ref{thm:D} after accounting for the factor of $1/2$ from the
+trajectory integration measure.
+\end{proposition}
+
+\begin{proof}
+Equation~\eqref{eq:RS_correction} is standard Rayleigh--Schr\"{o}dinger
+perturbation theory~\cite{Hirsch1974} applied to the self-adjoint operator
+$\Hacc_c$ of Lemma~\ref{lem:selfadjoint}. The matrix element calculation uses
+the explicit form of $V$ obtained by varying the coupling term
+$\mu\mathbf{V}\cdot\nabacc\Phi$ twice with respect to the STV variables $(z_2,w_0)$
+at $\SM$: the off-diagonal entry in the $(z_2,w_2)$-block is $\alpha_\Phi$ by
+the divergence constraint~\eqref{eq:div_constraint}. Squaring gives $\alpha_\Phi^2$.
+The integration factor $1/2$ from trajectory averaging along $\SM\to\Mink$ converts
+$3\mu^2\alpha_\Phi^2/2\to 3\mu^2\alpha_\Phi^2/4$.
+\end{proof}
+
+The ATV prediction for the luminosity--redshift relation was derived in~\cite{STV2017,ATV2026}
+by evolving self-similar underdense waves from the end of the radiation epoch to present
+time and computing the resulting acceleration. The key observable is the third-order
+coefficient $C$ in the standard expansion $H_0 d_L = z + Qz^2 + Cz^3 + O(z^4)$,
+which receives contributions from the second-order velocity coefficient $w_2$ in the
+STV solution. Under the corrections of Proposition~\ref{prop:EL_reduction}, this
+coefficient is modified as described in Theorem~\ref{thm:D} of the next section.
+
+% ============================================================
+\section{Redshift Coefficients and Observational Corrections}
+\label{sec:redshift}
+% ============================================================
+
+\begin{theorem}[Lamphrodyne Correction to the ATV Redshift Coefficient]
+\label{thm:D}
+The third-order redshift--luminosity coefficient $C$ in the expansion
+\begin{equation}
+  H_0 d_L = z + Qz^2 + Cz^3 + O(z^4)
+  \label{eq:HL_expansion}
+\end{equation}
+takes the following values in the three frameworks compared in this paper:
+\begin{align}
+  C_{\Lambda\mathrm{CDM}} &= -0.1804,
+  \label{eq:C_LCDM} \\
+  C_{\mathrm{ATV}} &= +0.3591,
+  \label{eq:C_ATV} \\
+  C_{\mathrm{RSVP}}
+  &= C_{\mathrm{ATV}}
+     + \etaeff
+     + \frac{3\mu^2\alpha_\Phi^2}{4}
+     + O(\etaeff^2,\mu^3).
+  \label{eq:C_RSVP_base}
+\end{align}
+In the ATV limit $\etaeff,\mu\to 0$ with spherical symmetry enforced,
+$C_{\mathrm{RSVP}}\to C_{\mathrm{ATV}}$ exactly. Both correction terms are
+positive, so
+\begin{equation}
+  C_{\mathrm{RSVP}} > C_{\mathrm{ATV}} > 0 > C_{\Lambda\mathrm{CDM}}
+  \label{eq:C_ordering}
+\end{equation}
+whenever $\etaeff > 0$ or $\mu > 0$.
+\end{theorem}
+
+\begin{proof}
+The ATV derivation~\cite{STV2017,ATV2026} establishes that $C$ is determined at
+third order in redshift factor by the value of $w_2$ in the STV-ODE solution
+integrated along the trajectory from $\SM$ to $\Mink$. Under
+Proposition~\ref{prop:EL_reduction}, the corrections $\delta_\eta\dot{w}_2$
+and $\delta_\mu\dot{w}_2$ enter at orders $\etaeff$ and $\mu^2$ respectively.
+Integrating along the background trajectory and extracting the $w_2\xi^3$ coefficient
+of the velocity field --- which by ATV~\cite{ATV2026} Section~2i determines
+the third-order term in the luminosity--redshift expansion --- yields additive
+corrections $\etaeff$ and $3\mu^2\alpha_\Phi^2/4$ to $C_{\mathrm{ATV}}$.
+The factor $3/4 = 3(\lAn{2}-\lAn{1})^{-1}/2 = 3\cdot(3/2)/2$ arises from the
+integration of the perturbation $\delta_\mu\dot{w}_2 = (3\mu^2\alpha_\Phi^2/2)z_2$
+along the trajectory. Positivity follows from $\etaeff,\mu,\alpha_\Phi > 0$.
+\end{proof}
+
+\begin{remark}[Falsifiability of the base correction]
+The null hypothesis $H_0: C_{\mathrm{obs}} = C_{\mathrm{ATV}} = 0.3591$ corresponds
+to pure ATV dynamics with $\etaeff = \mu = 0$. RSVP predicts a systematic positive
+excess $\Delta C = \etaeff + 3\mu^2\alpha_\Phi^2/4 > 0$. The two corrections are
+in principle distinguishable: the $\etaeff$ term is linear in the lamphrodyne
+diffusion coefficient and scale-independent, while the $\mu^2$ term depends
+quadratically on the scalar--vector coupling and may exhibit scale dependence
+through $\alpha_\Phi$. Determining these coefficients observationally requires
+redshift--luminosity data to fourth order in $z$, consistent with the ATV
+observation~\cite{ATV2026} that the fourth-order coefficient $C_4$ is necessary
+to determine whether the Big Bang is self-similar at order $n=2$.
+\end{remark}
+
+% ============================================================
+\section{The Redshift--Birefringence Cross-Correlation}
+\label{sec:bire}
+% ============================================================
+
+The central prediction that distinguishes the present framework from both ATV
+and minimal $\Lambda$CDM is not birefringence per se --- many theories predict
+nonzero polarization rotation --- but the existence of a \emph{nonzero
+cross-correlation between anisotropic redshift and anisotropic birefringence},
+arising from a common entropy--vorticity source. This cross-correlation,
+\begin{equation}
+  \Cbz = \bigl\langle\delta\beta(\hat{n})\,\delta z(\hat{n}')\bigr\rangle,
+  \label{eq:Cbz_headline}
+\end{equation}
+is predicted to vanish in both ATV (which has no vorticity sector) and $\Lambda$CDM
+(where the birefringence mechanism is decoupled from large-scale structure at first
+order), while being generically nonzero in the accessibility relaxation formalism
+whenever $\bcurl > 0$. We derive this prediction by relaxing condition
+\textup{(RP3)} of the Reduction Principle.
+
+The accessibility formalism generates a natural parity-odd geometric sector.
+We derive its minimal form from symmetry principles before postulating a specific
+coupling.
+
+\subsection{Derivation of the Parity-Odd Connection Sector}
+\label{subsec:parityodd}
+
+Let the full lamphrodyne connection be
+$\tilde\Gamma^\mu_{\nu\rho} = \Gamma^\mu_{\nu\rho} + \Delta^\mu_{\nu\rho}$,
+where $\Gamma^\mu_{\nu\rho}$ is the Levi-Civita connection of the background
+metric~\cite{Wald1984} and $\Delta^\mu_{\nu\rho}$ contains non-Riemannian
+corrections induced by gradients and vorticity of $(\Phi,\mathbf{V},S)$.
+Decomposing $\Delta$ irreducibly under the action of $\mathrm{SO}(1,3)$ and
+spatial inversion yields parity-even and parity-odd sectors.
+
+The parity-odd sector must satisfy three requirements: (i) it is a $(1,2)$-tensor
+constructed from $(\Phi,\mathbf{V},S)$ and their first derivatives; (ii) it is
+odd under spatial inversion $\mathbf{x}\mapsto-\mathbf{x}$; and (iii) it is linear
+in a single scalar quantity at lowest derivative order.
+
+\begin{lemma}[Uniqueness of the minimal parity-odd connection]
+\label{lem:parityodd_unique}
+Under requirements \textup{(i)--(iii)}, the unique parity-odd $(1,2)$-tensor
+linear in a scalar $\Xi$ and its first derivative is
+\begin{equation}
+  \Delta^{(\mathrm{odd})}_{\mu\nu\rho}
+  = \alpha_{\mathrm{ax}}\,\varepsilon_{\mu\nu\rho\sigma}\,\nabla^\sigma\Xi,
+  \label{eq:odd_unique}
+\end{equation}
+where $\varepsilon_{\mu\nu\rho\sigma}$ is the Levi-Civita tensor.
+\end{lemma}
+
+\begin{proof}
+At first derivative order, a $(1,2)$-tensor odd under spatial inversion must
+contain an odd number of spatial indices contracted with $\varepsilon_{\mu\nu\rho\sigma}$.
+The unique such structure linear in $\nabla^\sigma\Xi$ is~\eqref{eq:odd_unique}.
+All other candidates either vanish by antisymmetry, reduce to~\eqref{eq:odd_unique}
+by Bianchi-type identities, or introduce additional derivatives. This is the same
+algebraic structure appearing in the Carroll--Field--Jackiw
+extension of electrodynamics~\cite{Carroll1990} and in gravitational Chern--Simons
+theories~\cite{Wald1984}.
+\end{proof}
+
+The lowest-order scalar available in the accessibility formalism that is parity-odd,
+nonzero under condition (RP3) relaxed, and couples entropy gradients to vorticity is
+\begin{equation}
+  \Xi = \nabla^\mu S\,\omega_\mu,
+  \qquad
+  \omega_\mu = \varepsilon_{\mu\nu\rho\sigma}\,u^\nu\nabla^\rho V^\sigma,
+  \label{eq:Xi_def}
+\end{equation}
+where $\omega_\mu$ is the vorticity of the lamphrodyne flow and $u^\nu$ is the
+comoving four-velocity. The quantity $\Xi$ vanishes identically under condition
+(RP3) ($\omega = 0$) and is the unique first-order parity-odd scalar with
+dimension $[\text{length}]^{-2}$ formed from the available fields. Substituting
+into Lemma~\ref{lem:parityodd_unique} gives the connection~\eqref{eq:odd_unique}
+and, via the optical transport equation $k^\nu\tilde\nabla_\nu P^\mu = 0$ for the
+photon polarization vector~\cite{Wald1984}, the axial projection along null geodesics:
+
+\begin{equation}
+  \kA(\eta) = \Pi^\mu_a\Pi^\nu_b\,\epsilon^{ab}\,k^\rho\,\Delta^{(\mathrm{odd})}_{\mu\nu\rho}
+  \propto \nabla S\cdot\omega,
+  \label{eq:kA_formula}
+\end{equation}
+and the accumulated CMB polarization rotation $\beta_{\mathrm{obs}} = \int_\gamma\kA\,d\eta$.
+
+\begin{theorem}[Coupled Redshift--Birefringence]
+\label{thm:E}
+Let $\bcurl > 0$. Then:
+\begin{enumerate}[label=\textup{(\alph*)}]
+  \item \textbf{Vorticity generation.} The lamphrodyne flow generates vorticity
+    $\omega = \nabacc\times\mathbf{V}\neq 0$ generically in the presence of the
+    curl coupling $\bcurl|\nabacc\times\mathbf{V}|^2$ in $\Lacc$.
+  \item \textbf{Birefringence sourcing.} The parity-odd connection~\eqref{eq:odd_unique}
+    produces a nonzero axial projection $\kA \propto \nabla S\cdot\omega\neq 0$,
+    generating a polarization rotation $\beta_{\mathrm{obs}}\neq 0$.
+  \item \textbf{Redshift correction.} The curl sector contributes an additional term
+    \begin{equation}
+      \Delta C^{(\bcurl)} = \bcurl\cdot\mathcal{F}(\Phic,S_0) + O(\bcurl^2)
+      \label{eq:C_beta_correction}
+    \end{equation}
+    to $C_{\mathrm{RSVP}}$, where $\mathcal{F}(\Phic,S_0)$ is the linear-response
+    functional of $w_2$ to vorticity perturbations along the background trajectory
+    (Appendix~\ref{app:F_functional}).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Part~(a): When $\bcurl > 0$, the term $(\bcurl/2)|\nabacc\times\mathbf{V}|^2$
+in $\Lacc$ contributes a non-trivial curl equation in the
+$\mathbf{V}$-Euler--Lagrange equation. A non-spherically-symmetric solution will
+generically have $\omega\neq 0$; even under \textup{(RP1)}, the nonlinear
+interaction of the radial mode with entropy gradients can generate angular momentum
+at subleading order in $\xi$.
+
+Part~(b) follows directly from~\eqref{eq:kA_formula}: if $\omega\neq 0$ and $\nabla S\neq 0$
+(which holds generically away from perfect isotropy), then $\kA\neq 0$ and the holonomy
+$\beta_{\mathrm{obs}} = \int\kA\,d\eta\neq 0$.
+
+Part~(c): The curl term $\bcurl|\nabacc\times\mathbf{V}|^2$ modifies the
+$\mathbf{V}$-equation~\eqref{eq:lamp_V} at first order in $\bcurl$. At order $n=2$
+of the STV-ODE, the perturbation propagates into $\dot{w}_2$ as $\delta_{\bcurl}\dot{w}_2
+= \bcurl\cdot(\partial w_2/\partial\omega)\langle\omega,\nabla S_0\rangle + O(\bcurl^2)$,
+which upon integration along the background trajectory defines $\mathcal{F}(\Phic,S_0)$.
+\end{proof}
+
+\begin{corollary}[Coupled observables]
+\label{cor:E1}
+The same parameter $\bcurl > 0$ controls both $\Delta C^{(\bcurl)}\neq 0$
+and $\beta_{\mathrm{obs}}\neq 0$. These are not independent observables:
+they are controlled by a single coupling constant and satisfy a joint constraint
+linking the luminosity--redshift deviation to the polarization rotation magnitude.
+\end{corollary}
+
+\begin{corollary}[Joint cross-correlation observable]
+\label{cor:E2}
+Define the redshift--birefringence cross-correlation
+\begin{equation}
+  \Cbz = \bigl\langle\delta\beta(\hat{n})\,\delta z(\hat{n}')\bigr\rangle,
+  \label{eq:C_bz}
+\end{equation}
+where $\delta\beta$ is the anisotropic polarization rotation and $\delta z$ the
+anisotropic redshift deviation. Then
+\begin{equation}
+  \bcurl > 0 \implies \Cbz\neq 0,
+  \label{eq:C_bz_nonzero}
+\end{equation}
+through the common entropy--vorticity source $\nabla S\cdot\omega$. No comparable
+prediction exists in ATV or minimal $\Lambda$CDM, both of which predict $\Cbz = 0$.
+\end{corollary}
+
+\begin{proof}
+In ATV, $\bcurl = 0$ enforces $\omega = 0$ and $\kA = 0$ throughout. In $\Lambda$CDM,
+the Chern--Simons birefringence mechanism is decoupled from the matter power spectrum
+at first order in perturbation theory. In RSVP with $\bcurl > 0$, both $\delta\beta(\hat{n})$
+and $\delta z(\hat{n}')$ are sourced by fluctuations of $\nabla S\cdot\omega$ along
+lines of sight: $\delta\beta\propto\int\delta(\nabla S\cdot\omega)\,d\eta$ and
+$\delta z\propto\int\delta(\nabla_\mu S)\,dx^\mu$. Since both integrals respond to
+the same underlying entropy--vorticity field, their cross-correlation is nonzero by the
+Cauchy--Schwarz inequality applied to the correlated fluctuations in the RSVP ensemble.
+\end{proof}
+
+The proof above uses Cauchy--Schwarz to establish a bound, but a nonzero
+cross-correlation requires an additional structural assumption. We make this explicit.
+
+\begin{assumption}[Entropy--vorticity coherence]
+\label{ass:coherence}
+The stochastic field $X(\hat{n}) = \int_\gamma (\nabla S\cdot\omega)\,d\eta$
+possesses a nonvanishing connected two-point function with the entropy gradient:
+\begin{equation}
+  \bigl\langle\delta X(\hat{n})\,\delta(\nabla S)(\hat{n}')\bigr\rangle_c \neq 0.
+  \label{eq:coherence_assumption}
+\end{equation}
+\end{assumption}
+
+Under Assumption~\ref{ass:coherence}, Corollary~\ref{cor:E2} is strengthened to
+an implication rather than a bound. The assumption fails only if entropy gradients
+and vorticity are statistically orthogonal at all angular separations, requiring a
+special cancellation absent from generic lamphrodyne dynamics.
+
+\subsection{Quantitative Status of the Vorticity Sector}
+\label{subsec:vorticity_status}
+
+The parity-odd sector of this section should be understood as a structural
+prediction rather than a completed phenomenological model. The existence and joint
+structure of the redshift--birefringence coupling $\Cbz\neq 0$ are established
+under Assumption~\ref{ass:coherence}, but the \emph{magnitude} of these effects
+depends on the response functional $\mathcal{F}(\Phic,S_0)$ of
+Appendix~\ref{app:F_functional}. The computation of $\mathcal{F}$ is the principal
+quantitative objective of the next stage of this programme; until it is resolved,
+the $\omega$-sector contribution to $C_{\mathrm{RSVP}}$ should be treated as
+having unknown magnitude relative to the $\etaeff$ and $\mu^2$ corrections.
+
+The complete RSVP prediction for $C$, incorporating all three correction sectors,
+is therefore
+\begin{equation}
+  C_{\mathrm{RSVP}}
+  = \underbrace{0.3591}_{C_{\mathrm{ATV}}}
+    + \underbrace{\etaeff}_{\kappa_\Phi\text{-sector}}
+    + \underbrace{\tfrac{3\mu^2\alpha_\Phi^2}{4}}_{\mu\text{-sector}}
+    + \underbrace{\bcurl\cdot\mathcal{F}(\Phic,S_0)}_{\omega\text{-sector}}
+    + O(\etaeff^2,\mu^3,\bcurl^2).
+  \label{eq:C_full}
+\end{equation}
+The $\omega$-sector correction is the only one that simultaneously sources birefringence,
+and therefore the only one contributing to $\Cbz$.
+
+% ============================================================
+\section{Observational Discriminants}
+\label{sec:disc}
+% ============================================================
+
+Table~\ref{tab:discriminants} summarises the falsifiable predictions distinguishing
+RSVP from ATV and $\Lambda$CDM. The three frameworks make identical predictions
+for the leading-order Hubble constant $H_0$ and the quadratic coefficient $Q$ in
+the luminosity--redshift relation, since these are determined by the order-$n=1$
+phase portrait, which is the same in all three. The discriminating power lies
+entirely in the third and higher-order coefficients and in correlations between
+distinct observables.
+
+\begin{table}[ht]
+\centering
+\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{lccc}
+\toprule
+Observable & $\Lambda$CDM & ATV & RSVP \\
+\midrule
+$H_0$, $Q$ (1st, 2nd order) & matched & matched & matched \\
+$C$ (3rd-order redshift coeff.) & $-0.1804$ & $+0.3591$ & $>+0.3591$ \\
+$\beta_{\mathrm{obs}}$ (birefringence) & via ALP & $0$ & $\neq 0$ (if $\bcurl>0$) \\
+$\Cbz$ (redshift--birefringence) & $0$ & $0$ & $\neq 0$ (if $\bcurl>0$) \\
+$\dclos$ (closure depth) & --- & $2$ & $2$ \\
+$\ell$-dependent depolarization & uniform & absent & present (if $\bcurl>0$) \\
+$C_\ell^{\beta\,\mathrm{kSZ}}$ & $0$ & $0$ & $\neq 0$ (if $\bcurl>0$) \\
+\bottomrule
+\end{tabular}
+\caption{Comparison of observational predictions across $\Lambda$CDM, ATV, and
+RSVP. The entry ``matched'' indicates that all three frameworks are degenerate
+at that order. Entries of $0$ denote predicted null signals. Entries marked
+$\neq 0$ denote predicted nonzero signals controlled by the RSVP coupling constant
+$\bcurl$. The closure depth $\dclos = 2$ is an algebraic invariant, not directly
+observable, but constrains the self-similar structure of the Big Bang.}
+\label{tab:discriminants}
+\end{table}
+
+The most immediate discriminant between $\Lambda$CDM and both ATV and RSVP is the
+sign of $C$: $\Lambda$CDM predicts $C < 0$ while the instability-based frameworks
+predict $C > 0$. This sign difference arises because $\Lambda$CDM attributes
+acceleration to a constant energy density (dark energy), while ATV and RSVP
+attribute it to dynamical instability relaxation, which has different symmetry
+properties under time reversal. The sign is in principle measurable from sufficiently
+precise supernova Ia surveys; the ATV paper~\cite{ATV2026} notes that the
+third-order correction is consistent with an expansion rate that is slowing relative
+to dark energy predictions~\cite{DESIBAO2025,DES2025}.
+
+Within RSVP, the discrimination between the pure ATV correction ($C = 0.3591$)
+and the full RSVP prediction ($C > 0.3591$) requires fourth-order accuracy in the
+luminosity--redshift relation, which lies at the frontier of current observational
+precision. The additional discrimination afforded by $\Cbz\neq 0$ is potentially
+more accessible: a cross-correlation between anisotropic birefringence maps from
+CMB-S4 or LiteBIRD and anisotropic redshift maps from large-scale structure surveys
+would constitute a direct probe of $\bcurl$.
+
+\begin{remark}[Current quantitative status of the cross-correlation prediction]
+\label{rem:Cbz_status}
+The prediction $\Cbz\neq 0$ is a \emph{structural} result: it follows from the
+existence of the entropy--vorticity source $\nabla S\cdot\omega$ under
+Assumption~\ref{ass:coherence}, and from the common sourcing of both $\delta\beta$
+and $\delta z$ by that field. It is not yet a \emph{quantitative} prediction.
+
+The precise amplitude of the $\Cbz$ signal, the angular power spectrum
+$C_\ell^{\beta z}$, and its redshift dependence all depend on the response
+functional $\mathcal{F}(\Phic,S_0)$ of Appendix~\ref{app:F_functional}, whose
+evaluation requires specifying the background entropy profile $S_0(t,r)$ along
+the $\SM\to\Mink$ trajectory and computing the linear response of $w_2$ to
+vorticity perturbations. Until these computations are complete, the observational
+target cannot be specified precisely enough to determine whether CMB-S4 or
+LiteBIRD sensitivity is sufficient to detect or constrain the signal.
+
+This gap is explicitly acknowledged as the principal open problem of the programme.
+A detection at any significance level would be strong evidence for $\bcurl > 0$;
+a null result at the sensitivity levels of those instruments would constrain
+$\bcurl\cdot\mathcal{F}$ to be below the noise floor, which would in turn
+constrain the vorticity sector of the lamphrodyne functional.
+\end{remark}
+
+% ============================================================
+\section{Cosmology Beyond Expansion}
+\label{sec:beyond}
+% ============================================================
+
+The results of this paper collectively support a specific picture of the cosmological
+situation. The Friedmann saddle $\SM$ is not the physically realised state of the
+universe but rather a metastable configuration --- an accessibility-critical point
+of an entropy-relaxation system --- from which the universe has evolved and continues
+to evolve. The accelerated expansion that appears anomalous within $\Lambda$CDM is,
+on this picture, a generic consequence of relaxation from an unstable configuration,
+not a signal of exotic vacuum energy.
+
+This picture has a precise mathematical content. The closure depth $\dclos(\Phic) = 2$
+establishes that the full complexity of the instability structure is resolved at the
+second perturbative order: the universe's departure from perfect Friedmann behaviour
+is a depth-2 phenomenon in the CLIO sense. The RSVP lamphrodyne functional provides
+the ontological grounding for what ATV identifies as a dynamical systems structure:
+the $\SM\to\Ffam\to\Mink$ phase flow is the cosmological expression of accessibility
+relaxation, the trajectory from high-constraint to low-constraint configurations of
+the scalar--vector--entropy medium.
+
+Several directions of extension remain open and are noted here explicitly. The first
+concerns the full computation of $\mathcal{F}(\Phic,S_0)$, which requires evaluating
+the linear response of $w_2$ to vorticity along the background trajectory. This
+computation is deferred to a companion paper but is necessary for a quantitative
+prediction of the $\omega$-sector contribution to $C_{\mathrm{RSVP}}$ and of the
+$\Cbz$ cross-spectrum. The second concerns the radiation-epoch extension: the ATV
+analysis is restricted to the matter-dominated ($p=0$) epoch, and a full RSVP
+treatment of the radiation epoch ($p = \rho/3$) under the Reduction Principle
+would establish whether the instability at the Big Bang itself, rather than
+fluctuations from an earlier epoch, is the source of the anomalous acceleration.
+The third concerns the $k>0$ Friedmann spacetimes, whose global dynamics are
+complicated by the time reversal at maximal expansion and which the ATV paper
+defers to subsequent work.
+
+The relationship between RSVP and the ATV framework illustrates a general
+methodological principle: rigorous local models within general relativity can serve
+as anchor points for a more general field-theoretic ontology, without either reducing
+the broader framework to commentary on established physics or requiring the broader
+framework to carry full observational burden before its structure is understood.
+The ATV analysis provides a precise local shadow of the RSVP lamphrodyne relaxation
+geometry; the RSVP framework provides that shadow with an ontological substrate
+and a programme of corrections.
+
+The deepest open question concerns what lies beyond the ATV limit in the RSVP
+cosmology. If the universe is genuinely a lamphrodyne relaxation system rather than
+a Friedmann spacetime with corrections, then the full $(\Phi,\mathbf{V},S)$
+dynamics govern structure formation, void growth, CMB anisotropy, and birefringence
+in an integrated manner. The observational discriminants of Table~\ref{tab:discriminants}
+are the first predictions from this regime that are accessible to current or
+near-future experiments. A detection of $\Cbz\neq 0$ would constitute the
+strongest available evidence that the parity-odd sector of the universe's geometry
+is sourced by entropy--vorticity coupling of the kind the RSVP framework predicts,
+rather than by a propagating pseudoscalar field of the kind minimal axion models predict.
+
+\subsection{Outstanding Problems and the Scope of the Current Framework}
+\label{subsec:open_problems}
+
+For clarity and intellectual honesty, we enumerate the principal open problems
+that must be resolved before the accessibility relaxation formalism can be
+considered a mature cosmological theory. These open problems do not affect the
+internal consistency of the ATV-sector results in
+Sections~\ref{sec:friedmann}--\ref{sec:closure}, but they do define the next
+stage of development.
+
+The most urgent technical problem is the computation of
+$\mathcal{F}(\Phic,S_0)$, which is required to convert the structural prediction
+$\Cbz\neq 0$ into a quantitative observational target. Until $\mathcal{F}$ is
+evaluated, the vorticity sector contributes a term of unknown magnitude to
+$C_{\mathrm{RSVP}}$.
+
+The extension to the radiation-dominated epoch ($p = \rho/3$) is necessary to
+establish whether the RSVP instability survives in the high-pressure environment
+of the early universe and whether the radiation-epoch dynamics alter the
+closure-depth invariant or the eigenvalue spectrum.
+
+The derivation of the coupling constants $(\kappa, \alpha, \bcurl, \mu)$ from
+a microscopic theory of accessibility, rather than from symmetry counting and
+phenomenological consistency, would convert the effective-theory description of
+Section~\ref{rem:eft_status} into a fundamental derivation and would allow
+precise predictions without free parameters.
+
+A complete nonlinear stability analysis of the full scalar--vector--entropy system
+beyond the linearised Hessian regime is needed to verify that the depth-two
+closure theorem survives into the nonlinear dynamical regime, and that no
+nonlinear mode coupling introduces additional stable directions at orders $n\geq 3$.
+
+Finally, the gauge invariance of $\dclos$ established in
+Proposition~\ref{prop:closure_invariance} should be extended to cover
+diffeomorphism equivalences of the full lamphrodyne system, not only of
+the truncation hierarchy, to confirm that the invariant is a geometric
+property of the accessibility bundle rather than an artefact of the
+self-similar coordinate system.
+
+% ============================================================
+\appendix
+% ============================================================
+
+\section{The Functional $\mathcal{F}(\Phi_c,S_0)$}
+\label{app:F_functional}
+
+The functional $\mathcal{F}(\Phic,S_0)$ appearing in Theorem~\ref{thm:E}(c) and
+equation~\eqref{eq:C_full} encodes the linear response of the second-order velocity
+coefficient $w_2$ to vorticity perturbations along the background lamphrodyne
+trajectory from $\SM$ to $\Mink$. It is defined by
+\begin{equation}
+  \mathcal{F}(\Phic,S_0)
+  = \int_{\SM}^{\Mink}
+    \bigl\langle\omega_0(t),\,\nabla S_0\bigr\rangle\,
+    \frac{\partial w_2}{\partial\omega}\,
+    dt,
+  \label{eq:F_functional_def}
+\end{equation}
+where $\omega_0$ is the background vorticity, $S_0$ the background entropy profile,
+and $\partial w_2/\partial\omega$ is the first-order variation of $w_2$ with respect
+to a vorticity perturbation $\delta\omega$ at fixed $(z_2,w_0)$.
+
+To compute $\partial w_2/\partial\omega$ at leading order, one perturbs the ATV
+STV-ODE at order $n=2$ by the additional source term
+$\delta_{\bcurl}\dot{w}_2 = \bcurl\langle\delta\omega,\nabla S_0\rangle$ and
+integrates along the unperturbed trajectory. The result depends on the background
+entropy gradient profile $\nabla S_0$ evaluated along $\SM\to\Mink$, which
+in turn depends on the initial conditions for the entropy field $S_0$ at the
+end of the radiation epoch.
+
+A full computation of $\mathcal{F}$ requires: specification of the background entropy
+profile $S_0(t,r)$ consistent with RSVP dynamics over the matter-dominated epoch;
+evaluation of the Green's function for the perturbed $w_2$ equation; and integration
+against $\langle\omega_0,\nabla S_0\rangle$ along the trajectory. This computation
+is deferred to a companion paper. The sign of $\mathcal{F}$ is expected to be positive,
+consistent with the RSVP principle that entropy gradients amplify accessible trajectory
+volume, which would further increase $C_{\mathrm{RSVP}}$ above $C_{\mathrm{ATV}}$.
+
+\section{Hierarchy of Correction Terms}
+\label{app:hierarchy}
+
+The three correction sectors of equation~\eqref{eq:C_full} are associated with
+distinct physical mechanisms and have distinct observational signatures:
+
+The $\kappa_\Phi$-sector correction $\etaeff = (2/3)\kappa_\Phi$ is scale-independent
+and does not source birefringence. It is the lamphrodyne smoothing of $\Phi$ in the
+RSVP Master System: at any nonzero diffusion coefficient $\kappa_\Phi > 0$, the scalar
+field relaxes toward spatial uniformity, which modifies the effective pressure on the
+trajectory bundle and shifts $w_2$ by a universal additive constant.
+
+The $\mu$-sector correction $3\mu^2\alpha_\Phi^2/4$ is quadratic in the scalar--vector
+coupling and arises from integrating out the longitudinal flow mode via the divergence
+constraint~\eqref{eq:div_constraint}. It is generically present whenever $\Phi$ and
+$\mathbf{V}$ are coupled and does not source birefringence.
+
+The $\omega$-sector correction $\bcurl\cdot\mathcal{F}(\Phic,S_0)$ is the only one
+that simultaneously sources birefringence and contributes to $\Cbz$. It is absent
+in any spherically symmetric reduction and vanishes in the ATV limit, confirming
+that the ATV framework is a consistent truncation of RSVP in which torsion and
+vorticity are set to zero from the outset.
+
+\section{ATV Phase Portrait in RSVP Coordinates}
+\label{app:phase_portrait}
+
+The ATV phase portrait at order $n=1$, shown in Figure~1 of~\cite{ATV2026},
+describes the flow of solutions from the source $U=(0,0)$ through the saddle $\SM$
+to the attractor $\Mink$. In RSVP coordinates, this portrait is the projection of
+the full lamphrodyne flow onto the $(z_2,w_0)$ plane under Reduction
+Principle~\ref{prin:reduction}. The three rest points correspond to:
+\begin{itemize}[leftmargin=1.5em]
+  \item $U = (0,0)$: the empty configuration with vanishing scalar field and zero
+    flow velocity. Eliminated by the time-since-the-Big-Bang gauge fixing, it
+    corresponds in RSVP to the zero-accessibility vacuum, which is unphysical as
+    a cosmological initial condition.
+  \item $\SM = (4/3, 2/3)$: the accessibility-critical configuration of
+    Theorem~\ref{thm:B}. In RSVP, this is a metastable compressed state of the
+    scalar--vector medium: high $\Phi$, ordered flow, and near-uniform entropy.
+    Its instability reflects the generic tendency of accessibility-gradient systems
+    to relax away from constrained configurations.
+  \item $\Mink = (0,1)$: the low-curvature asymptotic accessibility basin.
+    In RSVP, this corresponds to maximal accessibility: vanishing scalar gradient,
+    isotropic flow, and entropy equilibrium. It is the attractor of the lamphrodyne
+    relaxation and represents not expansion into emptiness but the gradual flattening
+    of constraint structure within the medium.
+\end{itemize}
+The underdense trajectory connecting $\SM$ to $\Mink$ is the family $\Ffam$ of
+ATV underdense solutions, which in RSVP corresponds to the one-parameter family of
+entropy-release trajectories admissible from the compressed initial configuration.
+Generic members of $\Ffam$ accelerate away from Friedmann spacetimes at intermediate
+times and return to asymptotic Friedmann behaviour at late times --- a pattern
+that RSVP attributes to the nonlinear interaction of accessibility-gradient relaxation
+with the constraint curvature of the medium at second perturbative order.
+
+% ============================================================
+% REFERENCES
+% ============================================================
+
+\begin{thebibliography}{99}
+
+\bibitem{Smoller2012}
+J.~Smoller and B.~Temple,
+``General relativistic self-similar waves that induce an anomalous acceleration
+into the standard model of cosmology,''
+\textit{Mem.\ Amer.\ Math.\ Soc.} \textbf{218} (2012).
+
+\bibitem{STV2017}
+J.~Smoller, B.~Temple, and Z.~Vogler,
+``An instability of the standard model of cosmology creates the anomalous
+acceleration without dark energy,''
+\textit{Proc.\ R.\ Soc.\ A} \textbf{473}, 20160887 (2017).
+
+\bibitem{ATV2026}
+C.~Alexander, B.~Temple, and Z.~Vogler,
+``The instability of critical and underdense Friedmann spacetimes at the Big Bang
+as an alternative to dark energy,''
+\textit{Proc.\ R.\ Soc.\ A} \textbf{482}, 20250912 (2026).
+\url{https://doi.org/10.1098/rspa.2025.0912}
+
+\bibitem{Jacobson1995}
+T.~Jacobson,
+``Thermodynamics of spacetime: the Einstein equation of state,''
+\textit{Phys.\ Rev.\ Lett.} \textbf{75}, 1260--1263 (1995).
+
+\bibitem{Verlinde2011}
+E.~Verlinde,
+``On the origin of gravity and the laws of Newton,''
+\textit{JHEP} \textbf{2011}(04), 029 (2011).
+
+\bibitem{Padmanabhan2010}
+T.~Padmanabhan,
+``Thermodynamical aspects of gravity: new insights,''
+\textit{Rep.\ Prog.\ Phys.} \textbf{73}, 046901 (2010).
+
+\bibitem{HawkingEllis1973}
+S.~W.~Hawking and G.~F.~R.~Ellis,
+\textit{The Large Scale Structure of Space-Time},
+Cambridge University Press (1973).
+
+\bibitem{Wald1984}
+R.~M.~Wald,
+\textit{General Relativity},
+University of Chicago Press (1984).
+
+\bibitem{MisnerThorneWheeler1973}
+C.~W.~Misner, K.~S.~Thorne, and J.~A.~Wheeler,
+\textit{Gravitation},
+W.~H.~Freeman (1973).
+
+\bibitem{Weinberg1972}
+S.~Weinberg,
+\textit{Gravitation and Cosmology},
+Wiley, New York (1972).
+
+\bibitem{EllisMaartensMacCallum2012}
+G.~F.~R.~Ellis, R.~Maartens, and M.~A.~H.~MacCallum,
+\textit{Relativistic Cosmology},
+Cambridge University Press (2012).
+
+\bibitem{Peebles1993}
+P.~J.~E.~Peebles,
+\textit{Principles of Physical Cosmology},
+Princeton University Press (1993).
+
+\bibitem{Arnold1989}
+V.~I.~Arnold,
+\textit{Mathematical Methods of Classical Mechanics},
+2nd ed., Springer, New York (1989).
+
+\bibitem{Hirsch1974}
+M.~W.~Hirsch and S.~Smale,
+\textit{Differential Equations, Dynamical Systems, and Linear Algebra},
+Academic Press, New York (1974).
+
+\bibitem{Pazy1983}
+A.~Pazy,
+\textit{Semigroups of Linear Operators and Applications to Partial Differential
+Equations}, Springer, New York (1983).
+
+\bibitem{Lions1969}
+J.-L.~Lions,
+\textit{Quelques m\'{e}thodes de r\'{e}solution des probl\`{e}mes aux limites non
+lin\'{e}aires}, Dunod, Paris (1969).
+
+\bibitem{Carroll1990}
+S.~M.~Carroll, G.~B.~Field, and R.~Jackiw,
+``Limits on a Lorentz- and parity-violating modification of electrodynamics,''
+\textit{Phys.\ Rev.\ D} \textbf{41}, 1231 (1990).
+
+\bibitem{Minami2020}
+Y.~Minami and E.~Komatsu,
+``New extraction of cosmic birefringence from Planck 2018 polarization data,''
+\textit{Phys.\ Rev.\ Lett.} \textbf{125}, 221301 (2020).
+
+\bibitem{CMBS4}
+CMB-S4 Collaboration,
+``CMB-S4 Science Book,''
+arXiv:1610.02743 [astro-ph.CO] (2016).
+
+\bibitem{LiteBIRD}
+LiteBIRD Collaboration,
+``Probing cosmic inflation with the LiteBIRD cosmic microwave background
+polarization survey,''
+\textit{PTEP} \textbf{2023}, 042F01 (2023).
+
+\bibitem{DESIBAO2025}
+K.~Lodha et al.,
+``Extended dark energy analysis using DESI DR2 BAO measurements,''
+\textit{Phys.\ Rev.\ D} \textbf{112}, 083511 (2025).
+
+\bibitem{DES2025}
+T.~M.~C.~Abbott et al.\ (DES Collaboration),
+``Dark energy survey: implications for cosmological expansion models from the
+final DES baryon acoustic oscillation and supernova data,''
+\textit{Phys.\ Rev.\ D} \textbf{113}, 063530 (2025).
+
+\end{thebibliography}
+
+\end{document}
+

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RSVP Notebook 6 — Entropy–Vorticity Birefringence</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0a0a14; color:#dde; font-family:Georgia,serif; height:100vh; display:flex; flex-direction:column; }
+  #header { padding:18px 28px 8px; border-bottom:1px solid #223; flex-shrink:0; }
+  h1 { font-size:1.3rem; color:#aac8ff; font-weight:normal; }
+  .sub { font-size:0.8rem; color:#556; margin-top:3px; }
+  #main { display:flex; flex:1; overflow:hidden; }
+  #canvas-area { flex:1; position:relative; }
+  #canvas-area canvas { position:absolute; top:0;left:0;width:100%;height:100%; }
+  #panel { width:300px; background:#0d0d1c; border-left:1px solid #223; padding:18px; overflow-y:auto; }
+  h2 { font-size:0.8rem; color:#88aadd; margin:14px 0 6px; text-transform:uppercase; letter-spacing:.06em; }
+  p { font-size:0.78rem; color:#99a; line-height:1.6; margin-bottom:8px; }
+  .eq { font-family:monospace; font-size:0.72rem; background:#111828; padding:5px 9px; border-left:2px solid #446; margin:6px 0; color:#aaccff; white-space:pre; }
+  .ctrl { margin:7px 0; }
+  label { font-size:0.75rem; color:#889; display:flex; justify-content:space-between; margin-bottom:2px; }
+  .lval { color:#aac8ff; font-family:monospace; }
+  input[type=range] { width:100%; accent-color:#5588cc; }
+  button { background:#1a2a44; border:1px solid #446; color:#aac8ff; padding:5px 12px;
+    cursor:pointer; font-size:0.78rem; border-radius:3px; margin:3px 3px 0 0; }
+  button:hover { background:#243560; }
+  input[type=checkbox] { accent-color:#5588cc; margin-right:5px; }
+  #corr-box { background:#0a1020; border:1px solid #334; border-radius:4px; padding:10px; margin:8px 0; }
+  .cr { display:flex; justify-content:space-between; font-size:0.76rem; padding:2px 0; }
+  .cr-zero { color:#cc4466; } .cr-nonzero { color:#44cc88; }
+  select { background:#111828; border:1px solid #446; color:#aac; padding:4px 8px; font-size:0.76rem; width:100%; margin:4px 0; }
+</style>
+</head>
+<body>
+<div id="header">
+  <h1>RSVP Notebook 6 — Entropy–Vorticity Birefringence</h1>
+  <div class="sub">κ_A ∝ ∇S·ω — polarized rays through the lamphrodyne plenum</div>
+</div>
+<div id="main">
+  <div id="canvas-area">
+    <canvas id="bg"></canvas>
+    <canvas id="fg"></canvas>
+  </div>
+  <div id="panel">
+    <h2>Mechanism</h2>
+    <p>The parity-odd plenum connection sources polarization rotation along null geodesics:</p>
+    <div class="eq">κ_A(η) ∝ ∇S · ω
+β_obs = ∫_γ κ_A dη</div>
+    <p>When entropy gradients ∇S and vorticity ω are aligned, light polarization rotates as it propagates. This rotation correlates with the local redshift z ∝ ∫∇_μS dx^μ, giving C_{βz}≠0.</p>
+
+    <h2>Field Configuration</h2>
+    <div class="ctrl"><label>Field preset</label>
+    <select id="preset">
+      <option value="vortex">Single vortex (coherent ω)</option>
+      <option value="double">Double vortex (opposite)</option>
+      <option value="wave">Entropy wave + shear</option>
+      <option value="turbulent">Turbulent (random)</option>
+    </select></div>
+    <div class="ctrl"><label>β_curl (coupling strength) <span class="lval" id="bc-v">0.50</span></label><input type="range" id="bc" min="0" max="100" value="50"></div>
+    <div class="ctrl"><label>Entropy amplitude <span class="lval" id="sa-v">1.00</span></label><input type="range" id="sa" min="10" max="200" value="100"></div>
+    <div class="ctrl"><label>Vorticity amplitude <span class="lval" id="va-v">1.00</span></label><input type="range" id="va" min="10" max="200" value="100"></div>
+    <div class="ctrl"><label>N rays <span class="lval" id="nr-v">12</span></label><input type="range" id="nr" min="3" max="32" value="12"></div>
+
+    <h2>Display</h2>
+    <div class="ctrl"><label><input type="checkbox" id="show-s" checked> Show ∇S field</label></div>
+    <div class="ctrl"><label><input type="checkbox" id="show-omega" checked> Show ω (vorticity)</label></div>
+    <div class="ctrl"><label><input type="checkbox" id="show-source" checked> Show ∇S·ω source</label></div>
+    <div class="ctrl"><label><input type="checkbox" id="show-pol" checked> Show polarization ticks</label></div>
+    <button id="btn-draw">Draw Rays</button>
+    <button id="btn-clear">Clear</button>
+    <button id="btn-regen">Regenerate</button>
+
+    <h2>Cross-Correlation C_{βz}</h2>
+    <div id="corr-box">
+      <div class="cr"><span>ΛCDM</span><span class="cr-zero">C_{βz} = 0</span></div>
+      <div class="cr"><span>ATV</span><span class="cr-zero">C_{βz} = 0</span></div>
+      <div class="cr"><span>RSVP (β_curl=0)</span><span class="cr-zero">C_{βz} = 0</span></div>
+      <div class="cr"><span>RSVP (β_curl&gt;0)</span><span class="cr-nonzero" id="corr-val">C_{βz} ≠ 0</span></div>
+      <div style="margin-top:6px;font-size:0.72rem;color:#667">Estimated correlation: <span id="corr-est" style="color:#44cc88">—</span></div>
+    </div>
+
+    <h2>Legend</h2>
+    <p style="font-size:0.74rem">
+      <span style="color:#3399ff">→ ∇S</span> (entropy gradient)<br>
+      <span style="color:#ff8833">↺ ω</span> (vorticity curl of V)<br>
+      <span style="color:#ff44aa">■</span> ∇S·ω source (bright = strong coupling)<br>
+      <span style="color:#44ff88">— </span> ray path with polarization ticks<br>
+      Tick angle = accumulated β = ∫κ_A dη
+    </p>
+
+    <h2>Notes</h2>
+    <p>The smoking gun for RSVP is that both β_obs (birefringence) and δz (redshift anomaly) are sourced by the same ∇S·ω field. Their cross-correlation C_{βz} is therefore nonzero — a prediction absent from both ΛCDM and ATV.</p>
+  </div>
+</div>
+<script>
+const bgC=document.getElementById('bg'), fgC=document.getElementById('fg');
+const bx=bgC.getContext('2d'), fx=fgC.getContext('2d');
+let W=800,H=600;
+let bcurl=0.5, sAmp=1.0, vAmp=1.0, nRays=12;
+let showS=true, showOmega=true, showSource=true, showPol=true;
+let preset='vortex';
+let rayPaths=[];
+
+// Field definitions
+function S_field(u,v,t=0){
+  switch(preset){
+    case 'vortex': return sAmp*Math.exp(-((u-0.5)**2+(v-0.5)**2)*8)*2;
+    case 'double': return sAmp*(Math.exp(-((u-0.35)**2+(v-0.5)**2)*12)+Math.exp(-((u-0.65)**2+(v-0.5)**2)*12));
+    case 'wave': return sAmp*(Math.sin((u-0.5)*Math.PI*6)*0.5+1)*(1-Math.abs(v-0.5)*2);
+    case 'turbulent': return sAmp*(_noise(u*4,v*4)*0.7+0.5);
+    default: return 0;
+  }
+}
+
+let _noiseData=null;
+function _noise(x,y){
+  if(!_noiseData){
+    _noiseData=[];
+    for(let i=0;i<256;i++) _noiseData.push((Math.random()-0.5)*2);
+  }
+  const xi=Math.floor(x)&15,yi=Math.floor(y)&15;
+  return _noiseData[(xi+yi*16)%256];
+}
+
+function S_dx(u,v,h=0.003){ return (S_field(u+h,v)-S_field(u-h,v))/(2*h); }
+function S_dy(u,v,h=0.003){ return (S_field(u,v+h)-S_field(u,v-h))/(2*h); }
+
+// Vorticity field (curl of V)
+function Vx_field(u,v){
+  switch(preset){
+    case 'vortex': return -vAmp*(v-0.5)*4*Math.exp(-((u-0.5)**2+(v-0.5)**2)*6);
+    case 'double': return -vAmp*(v-0.5)*3*(Math.exp(-((u-0.35)**2+(v-0.5)**2)*10)+Math.exp(-((u-0.65)**2+(v-0.5)**2)*10)*-1);
+    case 'wave': return vAmp*Math.cos(u*Math.PI*4)*0.5;
+    case 'turbulent': return vAmp*(_noise(u*3+1,v*3)*0.6);
+    default: return 0;
+  }
+}
+function Vy_field(u,v){
+  switch(preset){
+    case 'vortex': return vAmp*(u-0.5)*4*Math.exp(-((u-0.5)**2+(v-0.5)**2)*6);
+    case 'double': return vAmp*(u-0.35)*3*Math.exp(-((u-0.35)**2+(v-0.5)**2)*10)+vAmp*(-(u-0.65))*3*Math.exp(-((u-0.65)**2+(v-0.5)**2)*10);
+    case 'wave': return vAmp*Math.sin(v*Math.PI*4)*0.5;
+    case 'turbulent': return vAmp*(_noise(u*3,v*3+2)*0.6);
+    default: return 0;
+  }
+}
+function omega(u,v,h=0.003){
+  // ω = ∂_x V_y - ∂_y V_x
+  const dVy_dx=(Vy_field(u+h,v)-Vy_field(u-h,v))/(2*h);
+  const dVx_dy=(Vx_field(u,v+h)-Vx_field(u,v-h))/(2*h);
+  return dVy_dx-dVx_dy;
+}
+function source(u,v){
+  // ∇S · ω  (scalar: magnitude of alignment)
+  const gsx=S_dx(u,v), gsy=S_dy(u,v);
+  const om=omega(u,v);
+  // Simplified: use magnitude of ∇S times ω
+  return Math.sqrt(gsx*gsx+gsy*gsy)*om;
+}
+
+function resize(){
+  W=bgC.offsetWidth; H=bgC.offsetHeight;
+  bgC.width=W; bgC.height=H; fgC.width=W; fgC.height=H;
+  drawBackground();
+}
+
+function drawBackground(){
+  const img=bx.createImageData(W,H);
+  let srcMin=Infinity,srcMax=-Infinity;
+  const srcArr=new Float32Array(W*H);
+  for(let py=0;py<H;py++) for(let px=0;px<W;px++){
+    const u=px/W,v=py/H;
+    const s=source(u,v); srcArr[py*W+px]=s;
+    if(s<srcMin)srcMin=s; if(s>srcMax)srcMax=s;
+  }
+  const srcRange=Math.max(0.001,Math.max(-srcMin,srcMax));
+  for(let py=0;py<H;py++) for(let px=0;px<W;px++){
+    const u=px/W,v=py/H;
+    const sval=S_field(u,v);
+    const om=omega(u,v);
+    const src=srcArr[py*W+px]/srcRange;
+    let r=10,g=10,b=10;
+    if(showSource){
+      r+=src>0?Math.round(src*180):0;
+      b+=src<0?Math.round(-src*180):0;
+      g+=Math.round(Math.abs(src)*40);
+    }
+    if(showS){
+      const sn=Math.max(0,sval)*0.3;
+      g=Math.min(255,g+Math.round(sn*60));
+      b=Math.min(255,b+Math.round(sn*120));
+    }
+    const k=4*(py*W+px);
+    img.data[k]=Math.min(255,r); img.data[k+1]=Math.min(255,g); img.data[k+2]=Math.min(255,b); img.data[k+3]=255;
+  }
+  bx.putImageData(img,0,0);
+
+  // ∇S arrows
+  if(showS){
+    const step=35;
+    bx.strokeStyle='rgba(51,153,255,0.55)'; bx.lineWidth=1;
+    for(let j=step/2;j<H;j+=step) for(let i=step/2;i<W;i+=step){
+      const u=i/W,v=j/H;
+      const gx=S_dx(u,v)*W, gy=S_dy(u,v)*H;
+      const mag=Math.sqrt(gx*gx+gy*gy);
+      if(mag<0.5) continue;
+      const s=Math.min(13,mag*0.3);
+      const nx=gx/mag*s, ny=gy/mag*s;
+      bx.beginPath(); bx.moveTo(i,j); bx.lineTo(i+nx,j+ny); bx.stroke();
+    }
+  }
+  // Vorticity markers
+  if(showOmega){
+    const step=40;
+    for(let j=step/2;j<H;j+=step) for(let i=step/2;i<W;i+=step){
+      const u=i/W,v=j/H;
+      const om=omega(u,v);
+      if(Math.abs(om)<0.05) continue;
+      const sz=Math.min(10,Math.abs(om)*20);
+      bx.strokeStyle=om>0?`rgba(255,130,50,0.7)`:`rgba(50,200,255,0.7)`;
+      bx.lineWidth=1.5;
+      bx.beginPath();
+      // Draw arc to show rotation direction
+      bx.arc(i,j,sz,0,om>0?Math.PI*1.5:-Math.PI*1.5,om<0);
+      bx.stroke();
+      // Arrow tip
+      const ang=om>0?-0.1:Math.PI+0.1;
+      bx.beginPath(); bx.arc(i+sz*Math.cos(ang),j+sz*Math.sin(ang),2,0,2*Math.PI); bx.fill();
+    }
+  }
+}
+
+function integrateRay(u0,v0,angle,nsteps=300){
+  const dt=1.2/Math.max(W,H);
+  let u=u0,v=v0;
+  let pu=Math.cos(angle),pv=Math.sin(angle);
+  let beta=0, redshift=0;
+  const path=[{u,v,beta,redshift}];
+  for(let k=0;k<nsteps;k++){
+    const src=source(u,v);
+    const gsx=S_dx(u,v),gsy=S_dy(u,v);
+    const sval=S_field(u,v);
+    // κ_A = β_curl * ∇S·ω
+    const kA=bcurl*src;
+    beta+=kA*dt*10;
+    // redshift accumulates from ∇S·dx
+    redshift+=(gsx*pu+gsy*pv)*dt*5;
+    u+=pu*dt; v+=pv*dt;
+    if(u<0||u>1||v<0||v>1) break;
+    path.push({u,v,beta,redshift});
+  }
+  return path;
+}
+
+function drawRays(){
+  fx.clearRect(0,0,W,H);
+  // Source point: center
+  const sx=0.5,sy=0.5;
+  fx.fillStyle='#ffffff'; fx.beginPath(); fx.arc(sx*W,sy*H,6,0,2*Math.PI); fx.fill();
+  fx.strokeStyle='rgba(255,255,255,0.5)'; fx.lineWidth=1;
+  fx.beginPath(); fx.arc(sx*W,sy*H,12,0,2*Math.PI); fx.stroke();
+
+  let totalBeta=0,totalZ=0,nCorr=0;
+  rayPaths.forEach((path,ri)=>{
+    if(path.length<2) return;
+    const hue=ri*360/nRays;
+    // Draw path
+    fx.strokeStyle=`hsla(${hue},80%,60%,0.7)`; fx.lineWidth=1.5;
+    fx.beginPath();
+    path.forEach((pt,k)=>{if(k===0)fx.moveTo(pt.u*W,pt.v*H);else fx.lineTo(pt.u*W,pt.v*H);});
+    fx.stroke();
+
+    // Polarization ticks
+    if(showPol){
+      const stride=Math.max(1,Math.floor(path.length/12));
+      for(let k=0;k<path.length;k+=stride){
+        const pt=path[k];
+        const px=pt.u*W,py=pt.v*H;
+        const tickAngle=pt.beta;
+        const tlen=5;
+        const tx=Math.cos(tickAngle)*tlen, ty=Math.sin(tickAngle)*tlen;
+        fx.strokeStyle=`rgba(68,255,136,0.9)`; fx.lineWidth=1.5;
+        fx.beginPath(); fx.moveTo(px-tx,py-ty); fx.lineTo(px+tx,py+ty); fx.stroke();
+      }
+    }
+    // Final beta and redshift
+    const last=path[path.length-1];
+    totalBeta+=last.beta; totalZ+=last.redshift; nCorr++;
+  });
+
+  // Estimate correlation
+  if(nCorr>0){
+    const avgB=totalBeta/nCorr, avgZ=totalZ/nCorr;
+    let num=0,db=0,dz=0;
+    rayPaths.forEach(path=>{
+      const last=path[path.length-1];
+      const db_=last.beta-avgB, dz_=last.redshift-avgZ;
+      num+=db_*dz_; db+=db_*db_; dz+=dz_*dz_;
+    });
+    const corr=db*dz>0?num/Math.sqrt(db*dz):0;
+    document.getElementById('corr-est').textContent=corr.toFixed(3)+(Math.abs(corr)>0.1?' ← significant':'');
+    document.getElementById('corr-val').textContent=Math.abs(corr)>0.01?'C_{βz} ≠ 0 ✓':'C_{βz} ≈ 0';
+  }
+}
+
+function recompute(){
+  rayPaths=[];
+  for(let i=0;i<nRays;i++){
+    const angle=2*Math.PI*i/nRays;
+    rayPaths.push(integrateRay(0.5,0.5,angle));
+  }
+  drawRays();
+}
+
+// Controls
+document.getElementById('bc').oninput=e=>{ bcurl=+e.target.value/100; document.getElementById('bc-v').textContent=bcurl.toFixed(2); };
+document.getElementById('sa').oninput=e=>{ sAmp=+e.target.value/100; document.getElementById('sa-v').textContent=sAmp.toFixed(2); drawBackground(); };
+document.getElementById('va').oninput=e=>{ vAmp=+e.target.value/100; document.getElementById('va-v').textContent=vAmp.toFixed(2); drawBackground(); };
+document.getElementById('nr').oninput=e=>{ nRays=+e.target.value; document.getElementById('nr-v').textContent=nRays; };
+document.getElementById('preset').onchange=e=>{ preset=e.target.value; drawBackground(); };
+document.getElementById('show-s').onchange=e=>{ showS=e.target.checked; drawBackground(); };
+document.getElementById('show-omega').onchange=e=>{ showOmega=e.target.checked; drawBackground(); };
+document.getElementById('show-source').onchange=e=>{ showSource=e.target.checked; drawBackground(); };
+document.getElementById('show-pol').onchange=e=>{ showPol=e.target.checked; drawRays(); };
+document.getElementById('btn-draw').onclick=recompute;
+document.getElementById('btn-clear').onclick=()=>{ rayPaths=[]; fx.clearRect(0,0,W,H); };
+document.getElementById('btn-regen').onclick=()=>{ _noiseData=null; drawBackground(); recompute(); };
+
+window.addEventListener('resize',()=>{ resize(); recompute(); });
+resize(); recompute();
+</script>
+</body>
+</html>

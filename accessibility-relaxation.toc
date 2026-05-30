@@ -1,0 +1,26 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}RSVP Accessibility Geometry}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Effective-Theory Status of the Accessibility Metric}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Mode Stability and Derivative Order}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Existence and Energy Dissipation for the Master System}{8}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Projection, Gauge, and Fiber Equivalence}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Variational Structure and Self-Adjointness of the Hessian}{10}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Critical Friedmann Configurations}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Interpretation of the Reduction Principle}{13}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Operator Equivalence Under the Reduction Principle}{14}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Recursive Instability and Depth-Two Closure}{15}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Finite-Level Determination in Recursive Dynamical Systems}{16}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Closure Depth Beyond the Friedmann Sector}{18}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Finite-Level Determination and the Closure Depth Invariant}{18}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Lamphrodyne Relaxation and the ATV Limit}{19}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Perturbative Origin of the Scalar--Vector Correction}{20}{subsection.6.1}%
+\contentsline {section}{\numberline {7}Redshift Coefficients and Observational Corrections}{21}{section.7}%
+\contentsline {section}{\numberline {8}The Redshift--Birefringence Cross-Correlation}{22}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Derivation of the Parity-Odd Connection Sector}{23}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Quantitative Status of the Vorticity Sector}{25}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Observational Discriminants}{26}{section.9}%
+\contentsline {section}{\numberline {10}Cosmology Beyond Expansion}{27}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Outstanding Problems and the Scope of the Current Framework}{28}{subsection.10.1}%
+\contentsline {section}{\numberline {A}The Functional $\mathcal {F}(\Phi _c,S_0)$}{29}{appendix.A}%
+\contentsline {section}{\numberline {B}Hierarchy of Correction Terms}{30}{appendix.B}%
+\contentsline {section}{\numberline {C}ATV Phase Portrait in RSVP Coordinates}{30}{appendix.C}%

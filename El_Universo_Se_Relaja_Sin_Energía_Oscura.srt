@@ -1,0 +1,1320 @@
+1
+00:00:00,000 --> 00:00:03,120
+El universo no está explotando violentamente hacia la nada.
+
+2
+00:00:03,700 --> 00:00:11,320
+O sea, tampoco está siendo empujado por esa misteriosa fuerza invisible que todos los libros de texto llaman energía oscura.
+
+3
+00:00:11,800 --> 00:00:14,920
+Así es. Y es un cambio de paradigma enorme.
+
+4
+00:00:15,160 --> 00:00:22,760
+Totalmente. Porque la realidad de la física cosmológica, según los documentos que estamos analizando a fondo en nuestra inversión de hoy,
+
+5
+00:00:23,360 --> 00:00:29,340
+es mucho más elegante. Es más natural y francamente sorprendente.
+
+6
+00:00:30,000 --> 00:00:33,760
+El universo, simple y llanamente, se está relajando.
+
+7
+00:00:34,180 --> 00:00:43,760
+Se relaja, sí. Y bueno, para entender cómo llegamos a una conclusión que básicamente descarta casi un siglo de cosmología estándar,
+
+8
+00:00:43,760 --> 00:00:47,760
+tenemos que sumergirnos en unas fuentes que son sumamente reveladoras.
+
+9
+00:00:48,000 --> 00:00:49,660
+Fuentes que están bastante densas, la verdad.
+
+10
+00:00:50,060 --> 00:00:57,860
+Bastante. Por un lado, tenemos la pieza central teórica, que es una monografía muy rigurosa del año 2026.
+
+11
+00:00:57,860 --> 00:01:05,900
+Fue escrita por el investigador Flaccion y se titula, a ver, Relajación de accesibilidad e inestabilidad de Friedman.
+
+12
+00:01:06,300 --> 00:01:07,960
+Un título ligero para empezar, ¿no?
+
+13
+00:01:08,240 --> 00:01:16,620
+Claro, súper ligero. Y bueno, viene respaldada por un mapa conceptual hipercomplejo que se conoce como el universo RSVP.
+
+14
+00:01:16,620 --> 00:01:20,960
+Pero, y aquí es donde la cosa se pone fascinante para quienes nos escuchan.
+
+15
+00:01:21,440 --> 00:01:27,660
+Junto a todas estas densas páginas llenas de geometría diferencial, este, y tensores y demás,
+
+16
+00:01:28,100 --> 00:01:30,620
+la investigación incluye una fuente completamente inesperada.
+
+17
+00:01:31,560 --> 00:01:35,020
+Ah, sí, la página del cómic. Es increíble.
+
+18
+00:01:35,420 --> 00:01:38,500
+Exacto. Alguien adjuntó una página de un cómic clásico.
+
+19
+00:01:39,080 --> 00:01:45,220
+Está bastante desgastada por el tiempo, pero en las viñetas se puede ver claramente a la figura mitológica de Lord Heracles.
+
+20
+00:01:45,220 --> 00:01:52,420
+Sí, y está ahí como lidiando con la inminencia del colapso de una inmensa caverna subterránea.
+
+21
+00:01:52,900 --> 00:01:58,300
+Y se ve un ejército preparándose estoicamente para ir a la guerra contra los dioses.
+
+22
+00:01:59,100 --> 00:02:04,740
+Pero, quizá lo más importante para nuestra exploración de hoy es lo que le pasa a Caronte.
+
+23
+00:02:05,320 --> 00:02:07,100
+Que ya no están navegando el río.
+
+24
+00:02:07,100 --> 00:02:15,080
+Exacto. Caronte ya no navega el oscuro río Estigia, sino que físicamente se está fusionando con la corriente misma.
+
+25
+00:02:15,440 --> 00:02:16,920
+Se vuelve uno con el río.
+
+26
+00:02:17,160 --> 00:02:21,840
+Y aunque pueda parecer, digamos, una juxtaposición súper extraña,
+
+27
+00:02:22,060 --> 00:02:26,300
+esto de mezclar física teórica de vanguardia con mitología de un cómic antiguo,
+
+28
+00:02:26,300 --> 00:02:31,260
+pues resulta que tiene un rigor explicativo excepcional.
+
+29
+00:02:31,600 --> 00:02:33,900
+Ayuda muchísimo a visualizar las cosas.
+
+30
+00:02:34,400 --> 00:02:40,760
+Muchísimo. Ayuda a entender los mecanismos físicos de esta nueva teoría de una forma muy tangible.
+
+31
+00:02:41,160 --> 00:02:43,120
+Bueno, pues vamos a desempacar todo esto.
+
+32
+00:02:43,600 --> 00:02:48,440
+Porque para entender por qué esta idea de la relajación descarta todo un siglo de física,
+
+33
+00:02:48,440 --> 00:02:51,620
+hay que mirar el error fundacional, ¿no?
+
+34
+00:02:51,920 --> 00:02:55,960
+Ese error que obligó a la ciencia a inventar la energía oscura en primer lugar.
+
+35
+00:02:56,400 --> 00:03:00,100
+Claro. Tenemos que remontarnos a finales de la década de los 90.
+
+36
+00:03:00,660 --> 00:03:05,400
+En esa época, el modelo reinante, y que, bueno, sigue siendo el estándar hoy en día,
+
+37
+00:03:05,580 --> 00:03:07,660
+era el modelo Lambda CDM.
+
+38
+00:03:08,180 --> 00:03:08,840
+El clásico.
+
+39
+00:03:09,220 --> 00:03:09,740
+Así es.
+
+40
+00:03:10,180 --> 00:03:15,800
+Los astrónomos apuntaron sus telescopios hacia supernovas, que estaban muy, muy distantes.
+
+41
+00:03:15,800 --> 00:03:18,460
+Todo esto para medir la expansión del universo.
+
+42
+00:03:19,080 --> 00:03:23,480
+Y la expectativa, basándose en la gravedad clásica, era súper clara.
+
+43
+00:03:23,880 --> 00:03:26,200
+Que la expansión debía estar frenándose, ¿verdad?
+
+44
+00:03:26,360 --> 00:03:29,040
+Por la atracción mutua de toda la materia en el cosmos.
+
+45
+00:03:29,600 --> 00:03:32,500
+Exactamente. La gravedad debería estar frenando todo.
+
+46
+00:03:33,020 --> 00:03:35,860
+Pero los datos mostraron exactamente lo contrario.
+
+47
+00:03:36,340 --> 00:03:40,940
+Las galaxias estaban alejando unas de otras a una velocidad cada vez mayor.
+
+48
+00:03:41,160 --> 00:03:43,800
+O sea, la expansión se estaba acelerando.
+
+49
+00:03:43,800 --> 00:03:53,700
+Sí. Y para lograr que las matemáticas de la relatividad general de Einstein cuadraran con esta aceleración que no tenía sentido,
+
+50
+00:03:54,400 --> 00:03:57,540
+los teóricos resucitaron un viejo concepto.
+
+51
+00:03:57,960 --> 00:04:01,180
+Lo bautizaron como energía oscura.
+
+52
+00:04:01,500 --> 00:04:03,380
+Que es como un fantasma matemático.
+
+53
+00:04:03,380 --> 00:04:14,400
+Básicamente. Postularon que este remanente, una especie de constante cosmológica, conforma aproximadamente el 68% del universo.
+
+54
+00:04:14,780 --> 00:04:18,620
+¡Guau! El 68% es la mayoría del universo inventada de la nada.
+
+55
+00:04:18,860 --> 00:04:26,000
+Sí. Y actuaría como una presión negativa persistente que está activamente empujando el espacio hacia afuera.
+
+56
+00:04:26,000 --> 00:04:35,160
+Es una locura. A ver, para visualizar la diferencia fundamental entre esa idea de la energía oscura y, digamos, lo que propone esta nueva investigación,
+
+57
+00:04:35,860 --> 00:04:37,980
+imaginemos una banda elástica de caucho.
+
+58
+00:04:38,220 --> 00:04:39,600
+Ok. Una banda de caucho.
+
+59
+00:04:39,720 --> 00:04:42,940
+Sí. De esas gruesas y muy resistentes.
+
+60
+00:04:42,940 --> 00:04:49,200
+Si alguien la sujeta con ambas manos y la estira hasta el límite absoluto de su capacidad física,
+
+61
+00:04:49,920 --> 00:04:54,300
+toda esa tensión queda acumulada ahí, vibrando en la estructura de la banda.
+
+62
+00:04:54,620 --> 00:04:56,320
+Claro. Está a punto de reventar.
+
+63
+00:04:56,880 --> 00:05:02,140
+Exacto. Y si de pronto esa persona la suelta, la banda se relaja de forma violenta.
+
+64
+00:05:02,640 --> 00:05:04,640
+Regresa a su estado natural de reposo.
+
+65
+00:05:05,400 --> 00:05:10,720
+Desde una perspectiva exterior, pues es evidente que se trata de un sistema que simplemente está volviendo a su equilibrio.
+
+66
+00:05:10,720 --> 00:05:18,400
+Pero, y este es el punto clave. Si un insecto microscópico viviera atrapado dentro del material mismo de esa banda.
+
+67
+00:05:18,800 --> 00:05:26,740
+Exacto. Ese pasajero, ese insecto, no percibiría una relajación. Sentiría que su pequeño universo se está dilatando.
+
+68
+00:05:27,160 --> 00:05:30,920
+Pensaría que está explotando y acelerando mágicamente en todas direcciones.
+
+69
+00:05:30,920 --> 00:05:37,240
+Totalmente. Como el insecto no tiene la perspectiva exterior de que el sistema estaba en tensión,
+
+70
+00:05:37,640 --> 00:05:43,220
+se vería en la necesidad de, eh, de inventar su propia energía oscura matemática.
+
+71
+00:05:43,800 --> 00:05:47,360
+Inventaría una fuerza para explicar por qué su entorno se expande.
+
+72
+00:05:47,360 --> 00:05:56,980
+Así es. Asumiría que hay una fuerza empujando desde adentro, ignorando por completo que es simplemente la geometría de su universo que está regresando a su forma base.
+
+73
+00:05:57,560 --> 00:06:02,900
+Y esto, eh, enlaza directamente con el trabajo previo que fundamenta nuestra monografía de hoy.
+
+74
+00:06:03,360 --> 00:06:08,480
+El trabajo de los investigadores Alexander Templi y Bogler, ¿no? El Marco ATV.
+
+75
+00:06:08,480 --> 00:06:16,920
+Ese mismo. A lo largo de varias publicaciones entre 2012 y 2026, ellos lograron probar matemáticamente algo incluible.
+
+76
+00:06:17,440 --> 00:06:19,040
+Probaron que la métrica de Friedman.
+
+77
+00:06:19,480 --> 00:06:23,140
+Que es como el lienzo geométrico sobre el cual siempre pintamos el Big Bang.
+
+78
+00:06:23,560 --> 00:06:27,840
+Exacto. Probaron que ese lienzo nunca fue un estado base estable.
+
+79
+00:06:28,480 --> 00:06:32,940
+Fue de hecho un punto de encilladura matemático y perturbativo.
+
+80
+00:06:32,940 --> 00:06:38,880
+Y está anclado en unas coordenadas muy específicas. En cuatro tercios y dos tercios.
+
+81
+00:06:39,140 --> 00:06:52,340
+¿Un punto de encilladura? A ver, cuando la intuición nos hace pensar en inestabilidad geométrica, uno se imagina algo como intentar balancear un lápiz perfectamente afilado sobre su punta de grafito en una mesa de cristal.
+
+82
+00:06:52,480 --> 00:06:55,020
+Donde al menor soplido todo se cae.
+
+83
+00:06:55,420 --> 00:06:59,180
+Sí, donde la menor brisa colapsa todo el sistema. Es así.
+
+84
+00:06:59,180 --> 00:07:04,920
+Pues no exactamente. Lo del lápiz es una inestabilidad absoluta en todas direcciones.
+
+85
+00:07:05,540 --> 00:07:08,600
+Pero un punto de encilladura es mucho más específico.
+
+86
+00:07:09,080 --> 00:07:15,240
+Y como su nombre lo indica, se visualiza mejor pensando literalmente en la silla de montar de un caballo.
+
+87
+00:07:15,440 --> 00:07:17,520
+Ah, ok. Como una silla de cuero de cabalgar.
+
+88
+00:07:17,600 --> 00:07:21,620
+Sí, un paraboloide hiperbólico, geométricamente hablando.
+
+89
+00:07:21,620 --> 00:07:31,820
+Si uno coloca una canica exactamente en el centro geométrico de esa silla, ahí donde se sienta el jinete, el sistema tiene una dirección que es estable.
+
+90
+00:07:32,080 --> 00:07:36,200
+O sea, si empujas la canica hacia la cabeza o hacia la cola del caballo.
+
+91
+00:07:36,520 --> 00:07:41,620
+La curvatura misma de la silla la devuelve al centro. Es estable en ese eje.
+
+92
+00:07:42,000 --> 00:07:49,440
+Pero, y aquí está la gran clave geométrica del universo primitivo, los lados de la silla caen hacia abajo.
+
+93
+00:07:49,440 --> 00:07:51,680
+Claro, por donde caen las piernas del jinete.
+
+94
+00:07:52,120 --> 00:08:03,500
+Exacto. Se ocurre la más microscópica perturbación lateral, la canica pierde ese equilibrio tan frágil y comienza a rodar por la pendiente hacia los lados, ganando velocidad.
+
+95
+00:08:03,920 --> 00:08:04,200
+Wow.
+
+96
+00:08:04,460 --> 00:08:17,040
+Las matemáticas del marco Atobe demuestran que las fluctuaciones cuánticas iniciales, que en física llaman perturbaciones subdensas genéricas, actuaron como ese empujón inevitable.
+
+97
+00:08:17,040 --> 00:08:22,020
+La canica cósmica simplemente cayó por el lado de la silla de montar.
+
+98
+00:08:22,260 --> 00:08:32,580
+Entonces el paradigma cambia por completo. O sea, esa caída matemática incesante por la ladera del espacio es lo que nuestros telescopios captan como aceleración cósmica.
+
+99
+00:08:32,960 --> 00:08:37,400
+Así de simple. Toda la energía oscura no sería más que un espejismo.
+
+100
+00:08:37,400 --> 00:08:51,700
+Es increíble. La expansión no requiere de una fuerza misteriosa empujando galaxias, como si tuviera un motor invisible. Es simple y sencillamente la termodinámica reaccionando a una caída en cámara lenta. El universo se resbaló.
+
+101
+00:08:51,900 --> 00:09:06,400
+Y sigue resbalando. El marco ATV logra derivar toda esta aceleración como una consecuencia puramente geométrica de esta inestabilidad. Se elimina por completo la necesidad de inyectar constantes fantasmas en las ecuaciones.
+
+102
+00:09:06,400 --> 00:09:19,100
+Ahora, darme cuenta de que el universo simplemente cae es un gran paso analítico. Pero inmediatamente me plantea una interrogante, digamos, fundamental sobre qué es la realidad.
+
+103
+00:09:19,600 --> 00:09:20,380
+¿En qué sentido?
+
+104
+00:09:20,380 --> 00:09:38,280
+Bueno, si algo está cayendo y relajándose, ¿qué es físicamente ese algo? Porque el universo no está hecho de canicas rodando sobre una silla de cuero imaginaria. Si vamos a descartar el espacio vacío impulsado por energía oscura, necesitamos saber de qué está compuesto el espacio en sí.
+
+105
+00:09:38,280 --> 00:09:44,320
+Y aquí es exactamente donde la monografía de Fleishon introduce el marco RSV.
+
+106
+00:09:44,480 --> 00:09:47,600
+Que significa plenum vectorial escalar relativista.
+
+107
+00:09:48,060 --> 00:10:01,760
+Exactamente. Y hay que detenernos en el término plenum, porque es la antítesis filosófica y física de un vacío. Durante décadas, pues, la cosmología ha tratado el espacio como un contenedor pasivo.
+
+108
+00:10:01,760 --> 00:10:04,420
+Como una caja vacía donde pasan cosas.
+
+109
+00:10:04,820 --> 00:10:19,260
+Sí, una cuadrícula inerte donde interactúan las partículas y la luz. Pero el marco RSV destruye esta noción. Propone que el espacio es un medio continuo, es termodinámicamente vivo y estructurado.
+
+110
+00:10:19,440 --> 00:10:19,660
+Ok.
+
+111
+00:10:19,920 --> 00:10:30,460
+Es un tejido dinámico que está compuesto por tres campos fundamentales entrelazados. Y estos campos dictan absolutamente cada evento físico.
+
+112
+00:10:30,460 --> 00:10:40,500
+Bueno, detallar esos tres campos me parece vital para visualizar la mecánica de todo esto. Este, a ver, primero está el campo fino, el potencial de accesibilidad escalar.
+
+113
+00:10:40,960 --> 00:10:50,560
+Así es. Ese campo es el que define el terreno. Marca cuánta resistencia ofrece una región del espacio al movimiento de energía o de información.
+
+114
+00:10:50,560 --> 00:11:04,560
+Es como el relieve del terreno. Luego tenemos el campo V, que es la velocidad de flujo lanfrodoin. El documento describe este campo como la corriente masiva y organizada del espacio mismo. Y dice que es un flujo negentrópico.
+
+115
+00:11:05,560 --> 00:11:15,180
+Lo cual es clave. Negentrópico significa que activamente transporta orden y estructura. Está luchando constantemente contra la disgregación total.
+
+116
+00:11:15,180 --> 00:11:18,720
+Y el tercer pilar de este plenum es la letra S.
+
+117
+00:11:18,980 --> 00:11:30,520
+El campo, sí, sí. La densidad de entropía configuracional. Este campo mide el desorden, pero lo más importante es que proporciona el motor termodinámico de la realidad.
+
+118
+00:11:30,720 --> 00:11:32,660
+¿El motor? ¿Cómo funciona eso?
+
+119
+00:11:32,660 --> 00:11:49,480
+Pues los gradientes de esta entropía, es decir, las diferencias súper drásticas de tensión entre una zona y otra, generan un imperativo físico que es irresistible. El sistema entero está forzado, por puras leyes de la termodinámica, a fluir para igualar esos gradientes.
+
+120
+00:11:49,580 --> 00:11:54,220
+¡Ah! Empuja al plenum hacia un estado general de menor restricción.
+
+121
+00:11:54,220 --> 00:11:55,160
+Exactamente.
+
+122
+00:11:55,160 --> 00:12:03,720
+Es súper curioso cómo la página de cómics que incluyeron en las fuentes ilustra esto de una manera brillante y, no sé, muy física.
+
+123
+00:12:03,940 --> 00:12:05,980
+Sí, la metáfora encaja perfecto.
+
+124
+00:12:06,080 --> 00:12:19,320
+Porque en la mitología tradicional, Carón te rema en una balsa sobre el agua, como un pasajero. Pero en esta ilustración específica, sus brazos, su túnica, todo se disuelve y se vuelve uno con las aguas turbulentas del río Estigia.
+
+125
+00:12:19,620 --> 00:12:20,960
+Se integra al medio.
+
+126
+00:12:20,960 --> 00:12:37,180
+Sí. Y al mismo tiempo, ves al Lord Heracles y a sus guerreros, dándose cuenta de que la caverna de piedra maciza donde están peleando se está desplomando ineludiblemente bajo su propio peso. Y todo esto mientras la diosa Sir se distorsiona el ambiente con magia.
+
+127
+00:12:37,280 --> 00:12:38,880
+Es un caos estructurado.
+
+128
+00:12:39,280 --> 00:12:50,220
+Totalmente. Y el universo plenum opera bajo esa misma lógica. O sea, no somos pasajeros flotando plácidamente en un escenario vacío. Las estrellas, las galaxias.
+
+129
+00:12:50,220 --> 00:12:54,020
+Nosotros mismos somos como ese Carón te transformado.
+
+130
+00:12:54,100 --> 00:12:58,320
+Somos perturbaciones integradas dentro del medio fluido del plenum.
+
+131
+00:12:58,520 --> 00:13:08,220
+Así es. Y así como la caverna colapsa de forma inevitable dictada por, pues, las fallas en su estructura de piedra, nuestro universo se precipita desde ese estado inicial tan tenso.
+
+132
+00:13:08,220 --> 00:13:18,020
+Impulsado por su propia entropía. Esa metáfora visual del cómic captura a la perfección la esencia de esta interdependencia del sistema.
+
+133
+00:13:18,020 --> 00:13:25,260
+Y bueno, para garantizar que este vasto río cósmico no sea solo una idea filosófica bonita.
+
+134
+00:13:25,620 --> 00:13:28,080
+Claro, tiene que haber matemáticas sólidas detrás.
+
+135
+00:13:28,280 --> 00:13:28,760
+Las hay.
+
+136
+00:13:29,320 --> 00:13:35,660
+Flykeon demuestra que la interacción de estos tres campos obedece a una sola ecuación maestra.
+
+137
+00:13:36,100 --> 00:13:38,020
+La llaman el funcional Lamphrodine.
+
+138
+00:13:38,020 --> 00:13:45,020
+Y lo que consagra este funcional en el terreno de la física de verdad es su estructura matemática.
+
+139
+00:13:45,440 --> 00:13:48,400
+Esquiva un peligro que es letal en cosmología.
+
+140
+00:13:48,860 --> 00:13:51,540
+Los famosos fantasmas de Ostrogratsky.
+
+141
+00:13:51,820 --> 00:13:59,120
+A ver, el término fantasmas en física teórica siempre me sugiere que las ecuaciones ya colapsaron y están rompiendo las reglas de la realidad.
+
+142
+00:13:59,760 --> 00:14:03,220
+¿Por qué es tan crítico que este modelo evite esos fantasmas?
+
+143
+00:14:03,220 --> 00:14:09,680
+Es crítico porque un fantasma de Ostrogratsky destruye cualquier modelo del universo en un segundo.
+
+144
+00:14:10,420 --> 00:14:17,720
+Ocurren típicamente cuando los físicos intentan modificar la gravedad y meten derivadas de tiempo de orden superior.
+
+145
+00:14:17,940 --> 00:14:21,020
+O sea, ¿tratar de calcular la aceleración de la aceleración?
+
+146
+00:14:21,260 --> 00:14:27,340
+Exacto. Y cuando estructuras las matemáticas así, el sistema pierde su límite inferior de energía.
+
+147
+00:14:28,140 --> 00:14:32,660
+Surgen estos estados o fantasmas que poseen energía cinética negativa.
+
+148
+00:14:32,660 --> 00:14:36,500
+¿Energía negativa? Eso suena a que todo se vaya al diablo.
+
+149
+00:14:37,000 --> 00:14:43,260
+Literalmente. Piensa que en la vida real, si le aplicas fuerza a un objeto, gana energía y acelera.
+
+150
+00:14:43,800 --> 00:14:47,840
+Pero un fantasma con energía negativa aceleraría perdiendo energía.
+
+151
+00:14:48,220 --> 00:14:56,460
+¡Guau! O sea que el vacío del espacio podría generar cantidades infinitas de radiación y energía positiva de la mismísima nada.
+
+152
+00:14:56,460 --> 00:15:02,160
+Sí. Solo para balancear la ecuación, creando infinitas cantidades de energía negativa.
+
+153
+00:15:02,680 --> 00:15:08,780
+El universo herviría y explotaría espontáneamente en microsegundos. No existiríamos.
+
+154
+00:15:09,280 --> 00:15:12,740
+¡Qué locura! ¿Y cómo lo previene el modelo de Flaccion?
+
+155
+00:15:12,740 --> 00:15:20,040
+Flaccion estructura el funcional Lamphrodine exclusivamente con derivadas de primer orden.
+
+156
+00:15:20,680 --> 00:15:31,040
+Entonces, el plenum es rico, es fluido, complejo, pero matemáticamente está blindado. Su energía está acotada.
+
+157
+00:15:31,040 --> 00:15:51,340
+Pero a ver, esto abre una brecha histórica que me vuela la cabeza. Si el universo siempre ha sido este plenum rebosante, este medio lleno de gradientes de accesibilidad y corrientes ordenadas, ¿por qué las mentes más brillantes de la física y la astronomía del último siglo concluyeron que todo ocurría en un contenedor geométrico vacío y estéril?
+
+158
+00:15:51,340 --> 00:16:06,080
+Esa es la gran pregunta. Y es la que resuelve la sección del principio de reducción en la monografía. Mira, el trabajo de Flaccion no dice que las matemáticas del modelo estándar o del Big Bang clásico estén mal hechas.
+
+159
+00:16:06,240 --> 00:16:07,240
+Ah, no las invalida.
+
+160
+00:16:07,480 --> 00:16:19,320
+No, para nada. Lo que hace es demostrar que las inmensas ecuaciones termodinámicas del sistema RSVP colapsan, se simplifican y encajan exacto en el modelo estándar.
+
+161
+00:16:19,320 --> 00:16:26,260
+Pero únicamente si el analista decide, de forma artificial, imponer cinco vendas matemáticas al sistema.
+
+162
+00:16:26,460 --> 00:16:28,760
+¿Cinco vendas que borran la realidad del plenum?
+
+163
+00:16:29,520 --> 00:16:32,440
+Exactamente. Cinco restricciones arbitrarias.
+
+164
+00:16:32,700 --> 00:16:43,480
+El documento enumera esos cinco filtros o suposiciones. A ver, se asume simetría esférica perfecta, lo que dicta que el universo se estira igualito en todos lados.
+
+165
+00:16:44,000 --> 00:16:45,080
+Primera venda, sí.
+
+166
+00:16:45,080 --> 00:16:56,040
+Luego, se asume un flujo sin presión, ignorando todo el momento térmico. Se asume torsión cero, que prohíbe por decreto que el fluido cósmico forme rotaciones o remolinos.
+
+167
+00:16:56,200 --> 00:16:59,780
+Y sabemos que los fluidos reales siempre tienen remolinos.
+
+168
+00:17:00,160 --> 00:17:11,980
+Claro. Después, se asume una métrica plana, negando que el campo escalar deforme las distancias. Y finalmente, se asume difusión cero, ignorando cómo la entropía se dispersa en el espacio.
+
+169
+00:17:11,980 --> 00:17:25,120
+Así es. Al aplicar esas cinco reglas matemáticas, que son draconianas, digamos, toda la riqueza termodinámica desaparece del papel. Te queda únicamente un andamiaje geométrico esquelético.
+
+170
+00:17:25,440 --> 00:17:37,680
+Para comprender el peso de quitar al menos una de esas vendas, pensemos en el filtro de la métrica plana. La física clásica asume que en un vacío, la distancia más corta entre dos puntos es siempre una línea recta, ¿no?
+
+171
+00:17:37,680 --> 00:17:39,720
+Una línea recta invariable.
+
+172
+00:17:39,900 --> 00:17:45,560
+Pero la teoría RSP expone que el universo es un paisaje de accesibilidad.
+
+173
+00:17:46,320 --> 00:17:53,520
+Se puede imaginar esto como un salón de baile que está monumentalmente abarrotado, lleno de asistentes, mesas, instrumentos.
+
+174
+00:17:53,860 --> 00:17:54,920
+Me gusta esa imagen.
+
+175
+00:17:54,920 --> 00:18:05,440
+Si el salón estuviera vacío, claro, lo cruzas en línea recta. Pero como está repleto, intentar trazar una línea recta estricta te requeriría una inmensa cantidad de energía.
+
+176
+00:18:05,840 --> 00:18:08,320
+Tendrías que empujar gente, chocar contra multitudes.
+
+177
+00:18:08,740 --> 00:18:10,880
+Sería agotar tus reservas de energía.
+
+178
+00:18:10,880 --> 00:18:23,880
+Exacto. Entonces la ruta natural, dictada por la termodinámica, va a serpentear. Vas a buscar los corredores libres adaptándote a la topografía de la resistencia de la gente. El espacio funciona igual.
+
+179
+00:18:24,440 --> 00:18:32,840
+Los gradientes del campo escalar phi actúan como esas multitudes. Ellos son los que dictan los valles de accesibilidad y los muros de resistencia.
+
+180
+00:18:33,080 --> 00:18:39,300
+Entonces las galaxias, la luz, la gravedad, no operan con fuerzas invisibles tirando de ellas a través de la nada.
+
+181
+00:18:39,300 --> 00:18:47,260
+Para nada. Simplemente están fluyendo por los senderos de menor resistencia dentro de este inmenso salón abarrotado.
+
+182
+00:18:47,820 --> 00:18:55,540
+Y la expansión que vemos es solo el comportamiento macroscópico de toda esta estructura que está disipando su opresiva tensión original.
+
+183
+00:18:56,020 --> 00:19:00,480
+Se relaja hacia una configuración de mínima restricción. Pero bueno.
+
+184
+00:19:00,480 --> 00:19:11,360
+Ahora bien, si aceptemos que el cosmos es este paisaje súper complejo y fluido, donde la accesibilidad dicta cómo se mueve todo, emerge un problema enorme.
+
+185
+00:19:11,580 --> 00:19:13,380
+Un problema de sistemas dinámicos.
+
+186
+00:19:13,660 --> 00:19:22,800
+Exacto. Los sistemas fluidos que son altamente complejos, no sé, como la atmósfera de la Tierra, pues tienden a ser caóticos e impredecibles a largo plazo.
+
+187
+00:19:22,800 --> 00:19:24,500
+Sí, el efecto mariposa.
+
+188
+00:19:24,720 --> 00:19:33,520
+Entonces, ¿cómo evita el universo que esta caída perpetua desemboque en un caos termodinámico infinito? ¿Cómo no pierde toda estructura predecible?
+
+189
+00:19:33,780 --> 00:19:39,940
+Esa es una preocupación súper válida cuando visualizamos un río turbulento a escala cósmica.
+
+190
+00:19:40,180 --> 00:19:48,560
+Y la investigación responde a esta amenaza del caos con un concepto espectacular que se llama el secreto de la profundidad 2.
+
+191
+00:19:48,560 --> 00:19:53,100
+Formalizado en la constante matemática donde la profundidad de cierre es igual a 2.
+
+192
+00:19:53,360 --> 00:19:58,840
+Exacto. Este concepto aborda, digamos, el destino algorítmico del cosmos.
+
+193
+00:19:59,600 --> 00:20:10,460
+Para predecir cómo va a evolucionar esta inestabilidad desde el Big Bang hasta su final, pues se despliega una torre vertical teóricamente infinita de ecuaciones matemáticas.
+
+194
+00:20:10,840 --> 00:20:17,220
+Espera, espera un momento. Detengámonos ahí. Porque la implicación de esta teoría como que desafía el sentido común analítico.
+
+195
+00:20:17,220 --> 00:20:18,140
+¿Por qué lo dices?
+
+196
+00:20:18,560 --> 00:20:26,140
+Porque, ¿cómo es posible que frente a una torre vertical de infinitas ecuaciones que describen miles de millones de años de caos cósmico,
+
+197
+00:20:26,740 --> 00:20:30,820
+la monografía afirme que sólo se necesitan evaluar los primeros dos niveles?
+
+198
+00:20:31,060 --> 00:20:32,600
+Suena audaz, lo sé.
+
+199
+00:20:33,100 --> 00:20:42,680
+Suena contraintuitivo. Afirman que al revisar únicamente las dos primeras ecuaciones, ya puedes garantizar con certeza cómo colapsará el resto del infinito.
+
+200
+00:20:42,680 --> 00:20:56,040
+El escepticismo es súper natural ahí. Pero el mecanismo algebraico que lo sustenta es de una solidez indiscutible. Está basado en el análisis espectral de los valores propios, o eigenvalues.
+
+201
+00:20:56,680 --> 00:20:59,540
+Valores propios. Ok. A ver, explícanos eso.
+
+202
+00:20:59,780 --> 00:21:10,980
+En sistemas dinámicos, un valor propio negativo significa que las perturbaciones en esa dirección matemática se atemaen, mueren con el tiempo. O sea, representan estabilidad.
+
+203
+00:21:10,980 --> 00:21:12,700
+Ok. Negativo es estable.
+
+204
+00:21:12,940 --> 00:21:20,420
+Y un valor propio positivo significa que cualquier mínima desviación va a crecer exponencialmente. Es inestabilidad absoluta.
+
+205
+00:21:21,160 --> 00:21:29,920
+Bueno, al analizar la inestabilidad del universo, el cálculo del nivel 1, la primera ecuación, arroja un valor propio negativo de menos 1.
+
+206
+00:21:30,080 --> 00:21:32,940
+Menos 1. O sea, una dirección estable.
+
+207
+00:21:33,220 --> 00:21:39,800
+Sí. Es un ancla matemática que está relacionada con la simetría de traslación temporal del propio sistema.
+
+208
+00:21:39,800 --> 00:21:47,040
+Vale. El reloj fundamental del universo sigue siendo estable. ¿Y qué arroja el segundo nivel de toda esta cascada?
+
+209
+00:21:47,340 --> 00:21:56,540
+Al descender al nivel 2, los cálculos revelan el último remanente de geometría estable. Arroja un valor propio negativo de menos 1 tercio.
+
+210
+00:21:56,820 --> 00:21:57,660
+Menos 1 tercio.
+
+211
+00:21:57,920 --> 00:22:00,120
+Esto es un bloqueo topológico fundamental.
+
+212
+00:22:00,120 --> 00:22:08,740
+Pero, y aquí viene lo fuerte, el punto de inflexión ocurre justo al observar la estructura de transición hacia el tercer nivel.
+
+213
+00:22:08,980 --> 00:22:20,080
+A partir del nivel 3 en adelante, hasta el infinito analítico, la fórmula dicta inexorablemente que todos y cada uno de los valores propios se vuelven estrictamente positivos.
+
+214
+00:22:20,080 --> 00:22:21,740
+O sea, no hay retorno.
+
+215
+00:22:22,000 --> 00:22:27,420
+Cero retorno. La positividad, la inestabilidad, inunda por completo el sistema.
+
+216
+00:22:27,720 --> 00:22:30,660
+La inestabilidad se vuelve absoluta a partir de ese tercer nivel.
+
+217
+00:22:31,340 --> 00:22:38,520
+Entonces, no hay ninguna simetría escondida en las ecuaciones allá arriba que vaya a frenar la expansión del universo mágicamente en el futuro.
+
+218
+00:22:38,520 --> 00:22:42,300
+Ese es exactamente el núcleo del secreto de la profundidad 2.
+
+219
+00:22:42,900 --> 00:22:52,760
+El destino algorítmico y estructural del cosmos, el hecho de que se va a relajar expandiéndose indefinidamente, quedó sellado en el instante mismo del Big Bang.
+
+220
+00:22:53,200 --> 00:22:56,580
+Quedó codificado en sus primeros dos niveles de complejidad matemática.
+
+221
+00:22:57,220 --> 00:23:05,280
+Así es. No requiere de análisis infinitos porque su comportamiento termodinámico quedó matemáticamente bloqueado desde el inicio.
+
+222
+00:23:05,280 --> 00:23:13,760
+Toda esta narrativa teórica, o sea, la silla de montar, el plenum, la profundidad 2, forman un marco analítico extraordinariamente bello.
+
+223
+00:23:14,340 --> 00:23:21,420
+Pero bueno, en la ciencia, la belleza de una pizarra llena de ecuaciones, pues no sirve de nada si no sobrevive a la mirada implacable de los telescopios.
+
+224
+00:23:21,840 --> 00:23:24,280
+Tienen que haber pruebas observables, definitivamente.
+
+225
+00:23:25,320 --> 00:23:31,280
+Exacto. Necesitamos saber si este universo que fluye es medible allá afuera en el cielo nocturno.
+
+226
+00:23:31,280 --> 00:23:35,980
+¿Cómo se falsifica esta teoría frente a la energía oscura tradicional?
+
+227
+00:23:36,400 --> 00:23:39,340
+El documento se somete directamente a este juicio.
+
+228
+00:23:39,800 --> 00:23:45,240
+La frontera de la comprobación está en una métrica específica que llaman el coeficiente C.
+
+229
+00:23:45,560 --> 00:23:50,320
+El coeficiente de la relación corrimiento al rojo, luminosidad de tercer orden.
+
+230
+00:23:50,320 --> 00:24:03,380
+Exactamente. En esencia, cuando los observatorios captan la luz de supernovas lejanas, pueden medir qué tan rápido se están alejando esas galaxias analizando cómo la luz se estira o se corre al rojo.
+
+231
+00:24:03,880 --> 00:24:07,520
+El coeficiente C condensa esa variación en la aceleración.
+
+232
+00:24:08,380 --> 00:24:16,320
+Y los números que predicen los distintos bandos son radicalmente opuestos. Revelan el mecanismo físico que cada uno defiende, ¿no?
+
+233
+00:24:16,320 --> 00:24:29,440
+Así es. Porque el modelo estándar, al depender de la energía oscura, exige que este coeficiente C arroje un valor negativo, cercano a este menos 0.1804.
+
+234
+00:24:29,640 --> 00:24:40,440
+Y ese signo negativo en la ecuación es crucial. Matemáticamente representa ese empuje activo y forzado contra la gravedad. Es el motor invisible que intenta alejar la materia.
+
+235
+00:24:40,440 --> 00:24:55,440
+Claro. Por el contrario, la geometría inestable del marco analítico ATGB no tiene ningún motor invisible. Como se trata de un deslizamiento natural cayendo por el punto de encilladura, pues su marco predice un número decididamente positivo.
+
+236
+00:24:56,140 --> 00:25:08,400
+Un coeficiente C de más 0.3591. El signo positivo es, digamos, la huella digital matemática de una caída relajante frente a un empuje forzado.
+
+237
+00:25:08,400 --> 00:25:28,740
+Y el universo RSPD da un paso todavía más audaz. Asegura que, al reincorporar toda la complejidad termodinámica del plenum, o sea, considerando la viscosidad de los campos interactuando, la medición final va a superar ese más 0.3591.
+
+238
+00:25:28,740 --> 00:25:37,820
+Sí, va a ser aún mayor. Y si los datos de los próximos observatorios arrojan un coeficiente C consistentemente positivo,
+
+239
+00:25:38,140 --> 00:25:42,360
+toda la hipótesis de la energía oscura quedaría desmantelada a nivel fundamental.
+
+240
+00:25:42,360 --> 00:25:48,820
+Totalmente destruida. Y sin embargo, todavía hay una prueba más definitiva en el documento.
+
+241
+00:25:48,860 --> 00:25:49,140
+¿Ah, sí?
+
+242
+00:25:49,320 --> 00:25:53,740
+Una predicción que actúa como el verdadero punto de no retorno observacional.
+
+243
+00:25:54,260 --> 00:26:01,380
+Y emerge, fíjate, precisamente al retirar la tercera venda del principio de reducción, la regla de torsión 0.
+
+244
+00:26:01,640 --> 00:26:04,460
+La suposición 8.5 de la investigación.
+
+245
+00:26:04,900 --> 00:26:05,540
+Esa misma.
+
+246
+00:26:05,540 --> 00:26:16,900
+Esta es la pieza que conecta todo. O sea, si permitimos que el fluido gigantesco que compone el espacio, el plenum, se mueva, rote e interactúe sin restricciones artificiales,
+
+247
+00:26:17,380 --> 00:26:19,540
+esa inmensa fricción tiene que generar vorticidad.
+
+248
+00:26:20,520 --> 00:26:20,540
+Remolinos.
+
+249
+00:26:21,440 --> 00:26:24,540
+En universo, al relajarse, producen inmensos remolinos termodinámicos.
+
+250
+00:26:25,600 --> 00:26:31,540
+Y la genialidad causal de Flaxon radica en postular que estos remolinos alteran simultáneamente dos fenómenos observables.
+
+251
+00:26:31,540 --> 00:26:36,540
+Fenómenos que, bajo la óptica tradicional, pues parecían completamente independientes.
+
+252
+00:26:37,300 --> 00:26:37,600
+A ver.
+
+253
+00:26:37,780 --> 00:26:42,380
+Por un lado, la turbulencia masiva de estos remolinos arrastra localmente las estructuras.
+
+254
+00:26:42,960 --> 00:26:47,960
+Eso crea variaciones anómalas en la velocidad aparente a la que las galaxias se distancian de nosotros.
+
+255
+00:26:48,180 --> 00:26:52,100
+O sea, perturban el mapa del desplazamiento al rojo de las galaxias.
+
+256
+00:26:52,400 --> 00:26:52,880
+Exacto.
+
+257
+00:26:52,880 --> 00:27:06,220
+Pero para entender el mecanismo físico aquí, uno tiene que preguntarse, ¿cómo es que un remolino termodinámico logra impactar simultáneamente en algo tan antiguo como la luz primigenia del universo?
+
+258
+00:27:06,220 --> 00:27:23,100
+Bueno, porque al mismo tiempo que el remolino arrastra la materia local, el fondo cósmico de microondas, que es ese primer destello de luz fósil tras el Big Bang, viaja durante miles de millones de años, atravesando este espacio repleto de remolinos.
+
+259
+00:27:23,260 --> 00:27:23,560
+Wow.
+
+260
+00:27:23,560 --> 00:27:33,180
+Y a medida que esa luz antigua cruza zonas con intensos gradientes de rotación, su ángulo de polarización es físicamente retorcido.
+
+261
+00:27:33,680 --> 00:27:37,580
+Se dispersa por la interacción asimétrica del medio continuo.
+
+262
+00:27:37,960 --> 00:27:42,060
+A este efecto se le conoce como birfringencia de paridad impar.
+
+263
+00:27:42,200 --> 00:27:49,760
+Es la manifestación física literal de la magia distorsionadora de la diosa Circe del cómic, doblando la percepción de la realidad.
+
+264
+00:27:49,920 --> 00:27:51,380
+Es una analogía perfecta.
+
+265
+00:27:51,380 --> 00:27:56,380
+El espacio retuerce la luz en su camino hacia nuestros lentes astronómicos.
+
+266
+00:27:56,940 --> 00:28:03,140
+Y esta doble consecuencia permite formular la predicción observacional más contundente de todo el estudio, ¿no?
+
+267
+00:28:03,540 --> 00:28:05,280
+La correlación cruzada.
+
+268
+00:28:05,620 --> 00:28:07,200
+La correlación cruzada, sí.
+
+269
+00:28:07,820 --> 00:28:13,980
+Si tú mapeas con detalle milimétrico cómo y dónde se está retorciendo esa luz antigua en el cielo,
+
+270
+00:28:14,360 --> 00:28:18,560
+y lo superpones sobre un mapa de las anomalías en la velocidad de las galaxias,
+
+271
+00:28:19,060 --> 00:28:20,940
+la teoría predice algo extraordinario.
+
+272
+00:28:20,940 --> 00:28:23,060
+Que ambos mapas van a coincidir.
+
+273
+00:28:23,920 --> 00:28:28,000
+Estadísticamente van a exhibir una correlación cruzada directa e innegable.
+
+274
+00:28:29,140 --> 00:28:33,900
+Las áreas donde la luz sufre mayor torsión van a coincidir con las anomalías en la expansión,
+
+275
+00:28:34,600 --> 00:28:39,220
+simplemente porque la misma corriente del plenum está generando ambos efectos a la vez.
+
+276
+00:28:39,220 --> 00:28:44,220
+Y el modelo estándar, que es ciego a este plenum y sigue creyendo en un espacio vacío,
+
+277
+00:28:44,700 --> 00:28:50,380
+pronostica que cualquier coincidencia estadística entre ambos mapas sería de cero, absolutamente cero.
+
+278
+00:28:50,600 --> 00:28:51,100
+Cero.
+
+279
+00:28:51,100 --> 00:28:56,660
+Y misiones que ya están en desarrollo, como el Observatorio Simons, y proyectos futuros,
+
+280
+00:28:56,800 --> 00:28:59,160
+pues van a rastrear activamente esta correlación.
+
+281
+00:28:59,160 --> 00:29:03,420
+Destilar la inmensidad de este marco analítico, la verdad,
+
+282
+00:29:03,820 --> 00:29:07,460
+transforma radicalmente nuestra comprensión de la realidad que nos rodea.
+
+283
+00:29:08,120 --> 00:29:12,860
+Sugiere que es hora de abandonar esa noción de vivir en un abismo liso, muerto y pasivo,
+
+284
+00:29:13,360 --> 00:29:16,740
+empujado por un fantasma llamado energía oscura.
+
+285
+00:29:16,740 --> 00:29:18,680
+Es hora de dejarlo atrás.
+
+286
+00:29:19,180 --> 00:29:24,980
+En su lugar, el universo emerge como un plenum vivo, un tapiz majestuoso termodinámico
+
+287
+00:29:24,980 --> 00:29:29,400
+que comenzó en un estado de extrema restricción y ahora fluye pacíficamente
+
+288
+00:29:29,400 --> 00:29:35,820
+buscando la disipación absoluta de sus tensiones, guiado únicamente por el camino de menor resistencia.
+
+289
+00:29:36,180 --> 00:29:38,860
+Es una transición hermosa, la verdad.
+
+290
+00:29:39,440 --> 00:29:44,860
+Pasamos de un paradigma de, no sé, misterio oscuro y fuerzas inexplicables,
+
+291
+00:29:44,860 --> 00:29:47,940
+a un universo totalmente cohesionado,
+
+292
+00:29:48,520 --> 00:29:52,860
+donde las leyes termodinámicas que gobiernan el viento o los ríos aquí en la Tierra
+
+293
+00:29:52,860 --> 00:29:56,540
+son las mismas leyes que dictan la expansión del cosmos.
+
+294
+00:29:57,000 --> 00:29:59,340
+Es un rediseño conceptual brutal.
+
+295
+00:29:59,960 --> 00:30:03,660
+Y nos deja, además, con una reflexión profundamente provocadora
+
+296
+00:30:03,660 --> 00:30:06,080
+sobre nuestra propia naturaleza en el universo.
+
+297
+00:30:06,740 --> 00:30:07,520
+¿En qué sentido?
+
+298
+00:30:07,920 --> 00:30:11,840
+Si adoptamos la perspectiva de que la inmensidad del espacio es un plenum
+
+299
+00:30:11,840 --> 00:30:15,340
+impulsado por una corriente negentrópica inherente,
+
+300
+00:30:15,920 --> 00:30:20,540
+un flujo masivo que activamente organiza estructuras y lucha contra el caos,
+
+301
+00:30:21,040 --> 00:30:23,200
+surge una interrogante sobre la mente misma.
+
+302
+00:30:23,560 --> 00:30:23,860
+¿Ok?
+
+303
+00:30:24,380 --> 00:30:29,380
+Podría ser que el fenómeno de la conciencia biológica no sea una anomalía aislada,
+
+304
+00:30:29,720 --> 00:30:32,260
+sino un efecto secundario directo de esto,
+
+305
+00:30:32,260 --> 00:30:37,120
+la máxima concentración localizada de ese mismo flujo de orden termodinámico.
+
+306
+00:30:37,120 --> 00:30:41,260
+¡Guau! Eso plantea la posibilidad de que la cognición,
+
+307
+00:30:41,640 --> 00:30:43,860
+el simple hecho de procesar información,
+
+308
+00:30:44,460 --> 00:30:49,500
+sea en su núcleo un imperativo físico del sistema buscando eficiencia estructural.
+
+309
+00:30:49,840 --> 00:30:50,440
+Totalmente.
+
+310
+00:30:50,760 --> 00:30:52,660
+Tal vez el impulso visceral de aprender,
+
+311
+00:30:53,260 --> 00:30:56,320
+el anhelo humano de categorizar información dispersa
+
+312
+00:30:56,320 --> 00:30:58,820
+y desentrañar las mecánicas del cosmos,
+
+313
+00:30:59,400 --> 00:31:03,140
+no representa una especie diminuta analizando el universo desde afuera.
+
+314
+00:31:03,660 --> 00:31:05,240
+Sino que somos parte de él.
+
+315
+00:31:05,240 --> 00:31:09,960
+Es posible que la mente que analiza esta física sea simplemente el universo mismo,
+
+316
+00:31:10,360 --> 00:31:11,120
+el gran plenum,
+
+317
+00:31:11,400 --> 00:31:13,600
+experimentando y catalizando en tiempo real
+
+318
+00:31:13,600 --> 00:31:16,480
+su propia y monumental relajación hacia el orden,
+
+319
+00:31:17,000 --> 00:31:19,140
+la materia observándose a sí misma fluir.
+
+320
+00:31:19,600 --> 00:31:21,420
+La materia observándose fluir.
+
+321
+00:31:22,020 --> 00:31:25,960
+Es una chispa conceptual inmensa para ponderar la próxima vez
+
+322
+00:31:25,960 --> 00:31:28,240
+que quienes nos escuchan contemplen el cielo nocturno.
+
+323
+00:31:29,120 --> 00:31:29,640
+Sin duda.
+
+324
+00:31:30,280 --> 00:31:31,680
+Mantengan esa curiosidad,
+
+325
+00:31:32,120 --> 00:31:34,600
+cuestionen los límites de los modelos establecidos
+
+326
+00:31:34,600 --> 00:31:37,960
+y continuaremos explorando las fronteras del conocimiento
+
+327
+00:31:37,960 --> 00:31:39,640
+en nuestra próxima inmersión.
+
+328
+00:31:39,640 --> 00:31:43,000
+No,
+
+329
+00:31:43,000 --> 00:31:44,760
+no,
+
+330
+00:31:44,760 --> 00:31:53,620
+no
+

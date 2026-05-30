@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RSVP Notebook 4 — Redshift Without Dark Energy</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0a0a14; color:#dde; font-family:Georgia,serif; height:100vh; display:flex; flex-direction:column; }
+  #header { padding:18px 28px 8px; border-bottom:1px solid #223; flex-shrink:0; }
+  h1 { font-size:1.3rem; color:#aac8ff; font-weight:normal; }
+  .sub { font-size:0.8rem; color:#556; margin-top:3px; }
+  #main { display:flex; flex:1; overflow:hidden; }
+  #canvas-area { flex:1; }
+  canvas { width:100%; height:100%; display:block; }
+  #panel { width:320px; background:#0d0d1c; border-left:1px solid #223; padding:18px; overflow-y:auto; }
+  h2 { font-size:0.8rem; color:#88aadd; margin:14px 0 6px; text-transform:uppercase; letter-spacing:.06em; }
+  p { font-size:0.79rem; color:#99a; line-height:1.6; margin-bottom:8px; }
+  .eq { font-family:monospace; font-size:0.73rem; background:#111828; padding:5px 9px; border-left:2px solid #446; margin:6px 0; color:#aaccff; white-space:pre; }
+  .ctrl { margin:8px 0; }
+  label { font-size:0.75rem; color:#889; display:flex; justify-content:space-between; margin-bottom:2px; }
+  .lval { color:#aac8ff; font-family:monospace; }
+  input[type=range] { width:100%; accent-color:#5588cc; }
+  .legend-item { display:flex; align-items:center; gap:8px; margin:4px 0; font-size:0.78rem; color:#99a; }
+  .stripe { width:24px; height:3px; flex-shrink:0; }
+  #c-table { background:#0a1020; border:1px solid #334; border-radius:4px; padding:10px; margin:8px 0; }
+  .ct-row { display:flex; justify-content:space-between; padding:3px 0; font-size:0.78rem; border-bottom:1px solid #1a2030; }
+  .ct-row:last-child { border-bottom:none; }
+  .lcdm { color:#cc4466; } .atv { color:#44aacc; } .rsvp { color:#44dd88; }
+  button { background:#1a2a44; border:1px solid #446; color:#aac8ff; padding:5px 12px;
+    cursor:pointer; font-size:0.78rem; border-radius:3px; margin:3px 3px 0 0; }
+  button:hover { background:#243560; }
+  input[type=checkbox] { accent-color:#5588cc; }
+</style>
+</head>
+<body>
+<div id="header">
+  <h1>RSVP Notebook 4 — Redshift Without Dark Energy</h1>
+  <div class="sub">Luminosity distance d_L(z): comparing ΛCDM, ATV, and RSVP through the third-order coefficient C</div>
+</div>
+<div id="main">
+  <div id="canvas-area"><canvas id="cv"></canvas></div>
+  <div id="panel">
+    <h2>The Observable</h2>
+    <p>The expansion history is encoded in the luminosity–redshift relation:</p>
+    <div class="eq">H₀d_L = z + Qz² + Cz³ + O(z⁴)</div>
+    <p>The coefficient C discriminates between theories. ΛCDM predicts C&lt;0; ATV and RSVP predict C&gt;0.</p>
+
+    <h2>RSVP Parameters</h2>
+    <div class="ctrl"><label>η_eff (lamphrodyne diffusion) <span class="lval" id="eta-v">0.00</span></label><input type="range" id="eta" min="0" max="100" value="0"></div>
+    <div class="ctrl"><label>μ²α²_Φ/4 (scalar-vector coupling) <span class="lval" id="mu-v">0.00</span></label><input type="range" id="mu" min="0" max="100" value="0"></div>
+    <div class="ctrl"><label>β_curl·F (vorticity sector) <span class="lval" id="bc-v">0.00</span></label><input type="range" id="bc" min="-50" max="100" value="0"></div>
+    <div class="ctrl"><label>Q (quadratic, shared) <span class="lval" id="q-v">0.42</span></label><input type="range" id="qslide" min="10" max="60" value="42"></div>
+
+    <h2>Current C Values</h2>
+    <div id="c-table">
+      <div class="ct-row"><span>Theory</span><span>C value</span><span>Sign</span></div>
+      <div class="ct-row"><span class="lcdm">ΛCDM</span><span class="lcdm" id="c-lcdm">−0.1804</span><span class="lcdm">↓</span></div>
+      <div class="ct-row"><span class="atv">ATV</span><span class="atv" id="c-atv">+0.3591</span><span class="atv">↑</span></div>
+      <div class="ct-row"><span class="rsvp">RSVP</span><span class="rsvp" id="c-rsvp">+0.3591</span><span class="rsvp" id="c-rsvp-sign">↑</span></div>
+    </div>
+
+    <h2>Display</h2>
+    <div class="ctrl"><label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="show-res" checked> Show residuals (Δd_L)</label></div>
+    <div class="ctrl"><label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="show-lcdm" checked> Show ΛCDM</label></div>
+    <div class="ctrl"><label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="show-atv" checked> Show ATV</label></div>
+    <button id="btn-reset">Reset sliders</button>
+
+    <h2>Legend</h2>
+    <div class="legend-item"><div class="stripe" style="background:#cc4466"></div> ΛCDM (C=−0.1804)</div>
+    <div class="legend-item"><div class="stripe" style="background:#44aacc"></div> ATV (C=+0.3591)</div>
+    <div class="legend-item"><div class="stripe" style="background:#44dd88"></div> RSVP (C=0.3591+Δ)</div>
+    <div class="legend-item"><div class="stripe" style="background:#ffffff;opacity:0.3"></div> Standard candle scatter (±0.1 mag)</div>
+
+    <h2>Notes</h2>
+    <p>The three theories are degenerate at first order (H₀) and nearly degenerate at second order (Q ≈ 0.42–0.5 for all). The discriminating signal is entirely at third order in z.</p>
+    <p>Detecting RSVP corrections over ATV requires fourth-order supernova data, at the frontier of current precision. Drag sliders to see how each correction shifts the curves.</p>
+  </div>
+</div>
+<script>
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+
+let eta=0, mu=0, bc=0, Q=0.42;
+let showRes=true, showLCDM=true, showATV=true;
+
+const C_LCDM=-0.1804, C_ATV=+0.3591;
+function C_RSVP(){ return C_ATV + eta + mu + bc; }
+
+// H₀ d_L(z) = z + Q z² + C z³
+function dL(z, Q, C){ return z + Q*z*z + C*z*z*z; }
+
+function resize(){
+  cv.width = cv.offsetWidth; cv.height = cv.offsetHeight;
+  draw();
+}
+
+function draw(){
+  const W=cv.width, H=cv.height;
+  ctx.fillStyle='#0a0a14'; ctx.fillRect(0,0,W,H);
+
+  const nCanvas = showRes ? 2 : 1;
+  const mainH = showRes ? Math.floor(H*0.62) : H;
+  const resH = H - mainH;
+  const pad = {l:70,r:30,t:40,b:showRes?10:40};
+  const plotW = W-pad.l-pad.r;
+
+  const zmax = 1.5;
+  const dmax = dL(zmax, Q, Math.max(C_RSVP(), C_ATV, C_LCDM));
+  const dmin = 0;
+
+  // Draw background bands for supernova scatter
+  const zpts = 18;
+  ctx.fillStyle='rgba(255,255,255,0.03)';
+  for(let i=0;i<zpts;i++){
+    const z=0.1+i*(zmax-0.1)/zpts;
+    const d=dL(z,Q,C_ATV);
+    const px=pad.l+z/zmax*plotW;
+    const py=mainH-pad.t-(d-dmin)/(dmax-dmin)*(mainH-pad.t-pad.b);
+    ctx.beginPath(); ctx.arc(px,py,3+Math.random()*4,0,2*Math.PI); ctx.fill();
+  }
+
+  // Grid
+  ctx.strokeStyle='#1a1a28'; ctx.lineWidth=0.5;
+  for(let v=0;v<=1.5;v+=0.5){
+    const px=pad.l+v/zmax*plotW;
+    ctx.beginPath(); ctx.moveTo(px,pad.t); ctx.lineTo(px,mainH-pad.b); ctx.stroke();
+    ctx.fillStyle='#445'; ctx.font='10px monospace'; ctx.textAlign='center';
+    ctx.fillText('z='+v.toFixed(1),px,mainH-pad.b+15);
+  }
+  for(let d=0;d<=dmax;d+=0.5){
+    const py=mainH-pad.t-(d-dmin)/(dmax-dmin)*(mainH-pad.t-pad.b);
+    if(py<pad.t||py>mainH-pad.b) continue;
+    ctx.beginPath(); ctx.moveTo(pad.l,py); ctx.lineTo(W-pad.r,py); ctx.stroke();
+    ctx.fillStyle='#445'; ctx.font='10px monospace'; ctx.textAlign='right';
+    ctx.fillText(d.toFixed(1),pad.l-6,py+4);
+  }
+
+  // Axes
+  ctx.strokeStyle='#334'; ctx.lineWidth=1;
+  ctx.beginPath(); ctx.moveTo(pad.l,pad.t); ctx.lineTo(pad.l,mainH-pad.b); ctx.lineTo(W-pad.r,mainH-pad.b); ctx.stroke();
+
+  // Axis labels
+  ctx.fillStyle='#667'; ctx.font='12px Georgia'; ctx.textAlign='center';
+  ctx.fillText('Redshift z', pad.l+plotW/2, mainH-3);
+  ctx.save(); ctx.translate(18,mainH/2); ctx.rotate(-Math.PI/2);
+  ctx.fillText('H₀ d_L', 0, 0); ctx.restore();
+
+  // Theory curves
+  const Ncurve = 300;
+  function drawCurve(C, color, dash=[]) {
+    ctx.strokeStyle=color; ctx.lineWidth=2; ctx.setLineDash(dash);
+    ctx.beginPath();
+    for(let i=0;i<=Ncurve;i++){
+      const z=i*zmax/Ncurve;
+      const d=dL(z,Q,C);
+      const px=pad.l+z/zmax*plotW;
+      const py=mainH-pad.t-(d-dmin)/(dmax-dmin)*(mainH-pad.t-pad.b);
+      if(i===0) ctx.moveTo(px,py); else ctx.lineTo(px,py);
+    }
+    ctx.stroke(); ctx.setLineDash([]);
+  }
+
+  if(showLCDM) drawCurve(C_LCDM,'#cc4466',[6,4]);
+  if(showATV)  drawCurve(C_ATV, '#44aacc',[]);
+  drawCurve(C_RSVP(),'#44dd88',[]);
+
+  // Residual panel
+  if(showRes){
+    const ry0 = mainH+4;
+    const rpad = {l:pad.l,r:pad.r,t:10,b:30};
+    const rplotH = resH-rpad.t-rpad.b;
+    const dzmax = 0.3;
+
+    ctx.fillStyle='#0d0d1c'; ctx.fillRect(0,ry0,W,resH);
+    ctx.strokeStyle='#334'; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(pad.l,ry0+rpad.t); ctx.lineTo(W-pad.r,ry0+rpad.t+rplotH/2); ctx.stroke();
+    // Zero line
+    ctx.strokeStyle='#334'; ctx.lineWidth=0.7;
+    const ryZero = ry0+rpad.t+rplotH/2;
+    ctx.beginPath(); ctx.moveTo(pad.l,ryZero); ctx.lineTo(W-pad.r,ryZero); ctx.stroke();
+    ctx.fillStyle='#445'; ctx.font='10px monospace'; ctx.textAlign='right';
+    ctx.fillText('Δ0',pad.l-5,ryZero+4);
+    ctx.fillText('+'+dzmax.toFixed(1),pad.l-5,ry0+rpad.t+5);
+    ctx.fillText('-'+dzmax.toFixed(1),pad.l-5,ry0+rpad.t+rplotH+5);
+    ctx.fillStyle='#667'; ctx.font='10px Georgia'; ctx.textAlign='left';
+    ctx.fillText('Residuals vs ATV', pad.l+5, ry0+8);
+
+    function drawResidual(C, color) {
+      ctx.strokeStyle=color; ctx.lineWidth=1.5;
+      ctx.beginPath();
+      for(let i=0;i<=Ncurve;i++){
+        const z=i*zmax/Ncurve;
+        const delta=dL(z,Q,C)-dL(z,Q,C_ATV);
+        const px=pad.l+z/zmax*plotW;
+        const py=ryZero-delta/dzmax*(rplotH/2);
+        if(i===0) ctx.moveTo(px,py); else ctx.lineTo(px,py);
+      }
+      ctx.stroke();
+    }
+    if(showLCDM) drawResidual(C_LCDM,'#cc4466');
+    drawResidual(C_RSVP(),'#44dd88');
+  }
+
+  // Labels
+  ctx.fillStyle='#aac8ff'; ctx.font='12px Georgia'; ctx.textAlign='left';
+  ctx.fillText(`C_RSVP = ${C_RSVP().toFixed(4)}`, pad.l+plotW-180, pad.t+20);
+  ctx.fillStyle='#cc4466';
+  if(showLCDM) ctx.fillText('ΛCDM', pad.l+10, pad.t+14);
+  ctx.fillStyle='#44aacc';
+  if(showATV) ctx.fillText('ATV', pad.l+60, pad.t+14);
+  ctx.fillStyle='#44dd88';
+  ctx.fillText('RSVP', pad.l+100, pad.t+14);
+
+  // Update table
+  document.getElementById('c-rsvp').textContent = (C_RSVP()>=0?'+':'')+C_RSVP().toFixed(4);
+  document.getElementById('c-rsvp-sign').textContent = C_RSVP()>=0?'↑':'↓';
+}
+
+['eta','mu','bc','qslide'].forEach(id=>{
+  document.getElementById(id).oninput=e=>{
+    const v=+e.target.value;
+    if(id==='eta') { eta=v/100; document.getElementById('eta-v').textContent=eta.toFixed(2); }
+    else if(id==='mu') { mu=v/100*0.358; document.getElementById('mu-v').textContent=(v/100*0.358).toFixed(3); }
+    else if(id==='bc') { bc=v/100*0.4; document.getElementById('bc-v').textContent=(v/100*0.4>=0?'+':'')+(v/100*0.4).toFixed(3); }
+    else if(id==='qslide') { Q=v/100; document.getElementById('q-v').textContent=Q.toFixed(2); }
+    draw();
+  };
+});
+document.getElementById('show-res').onchange=e=>{ showRes=e.target.checked; draw(); };
+document.getElementById('show-lcdm').onchange=e=>{ showLCDM=e.target.checked; draw(); };
+document.getElementById('show-atv').onchange=e=>{ showATV=e.target.checked; draw(); };
+document.getElementById('btn-reset').onclick=()=>{
+  ['eta','mu','bc'].forEach(id=>{ document.getElementById(id).value=0; });
+  document.getElementById('qslide').value=42;
+  eta=mu=bc=0; Q=0.42;
+  ['eta-v','mu-v','bc-v'].forEach(id=>document.getElementById(id).textContent='0.00');
+  document.getElementById('q-v').textContent='0.42';
+  draw();
+};
+
+window.addEventListener('resize',resize);
+setTimeout(resize,50);
+</script>
+</body>
+</html>

@@ -1,0 +1,4132 @@
+1
+00:00:00,000 --> 00:00:01,920
+I want you to try and visualize something right now.
+
+2
+00:00:02,440 --> 00:00:07,440
+Imagine holding a really thick, heavy rubber band between your hands.
+
+3
+00:00:07,520 --> 00:00:08,680
+Okay, I'm picturing it.
+
+4
+00:00:08,820 --> 00:00:12,940
+Right, so you pull your hands apart and you stretch it as far as you possibly can.
+
+5
+00:00:13,000 --> 00:00:15,880
+You could feel that intense physical tension in your fingers.
+
+6
+00:00:16,020 --> 00:00:18,200
+Yeah, they might even be turning white from the strain.
+
+7
+00:00:18,420 --> 00:00:18,860
+Exactly.
+
+8
+00:00:19,420 --> 00:00:23,280
+You've essentially taken this object that was completely at rest,
+
+9
+00:00:23,680 --> 00:00:25,820
+you know, perfectly content in its equilibrium,
+
+10
+00:00:25,820 --> 00:00:30,600
+and you forcefully dragged it into this highly compressed, high-energy state.
+
+11
+00:00:30,720 --> 00:00:33,080
+Which is an incredibly unstable state to be in.
+
+12
+00:00:33,140 --> 00:00:33,780
+It is, yeah.
+
+13
+00:00:33,980 --> 00:00:36,940
+So now you let it go, and it violently snaps back.
+
+14
+00:00:37,060 --> 00:00:40,940
+It recoils, releasing all of that stored energy in just a split second.
+
+15
+00:00:41,060 --> 00:00:44,880
+It's a violent physical reaction, but I mean, it's a completely natural one, right?
+
+16
+00:00:45,060 --> 00:00:47,820
+It's simply an object returning to its baseline.
+
+17
+00:00:48,120 --> 00:00:48,560
+Exactly.
+
+18
+00:00:48,920 --> 00:00:53,540
+And to you and me holding that rubber band, that violent snap is just a system relaxing.
+
+19
+00:00:53,540 --> 00:00:56,340
+But I want you to change your perspective for a second.
+
+20
+00:00:56,580 --> 00:00:57,080
+Okay, how so?
+
+21
+00:00:57,400 --> 00:00:59,360
+Imagine you are a microscopic bug,
+
+22
+00:00:59,580 --> 00:01:02,500
+and you live your entire life on the surface of that rubber band.
+
+23
+00:01:03,180 --> 00:01:06,500
+When that snap happens, you wouldn't perceive it as relaxation.
+
+24
+00:01:07,040 --> 00:01:08,520
+Oh, right, because you're inside of it.
+
+25
+00:01:08,580 --> 00:01:12,160
+Yeah, you wouldn't know you were part of a larger object returning to equilibrium.
+
+26
+00:01:12,660 --> 00:01:16,000
+You would just look around and see the very fabric of the space you live in,
+
+27
+00:01:16,400 --> 00:01:18,200
+violently stretching and tearing.
+
+28
+00:01:18,640 --> 00:01:21,560
+Accelerating away from you in every conceivable direction.
+
+29
+00:01:21,560 --> 00:01:23,980
+You'd think your whole universe was exploding.
+
+30
+00:01:24,320 --> 00:01:24,760
+Exactly.
+
+31
+00:01:25,260 --> 00:01:29,980
+You would be absolutely convinced that some massive, invisible, external force
+
+32
+00:01:29,980 --> 00:01:32,200
+was pulling your universe apart.
+
+33
+00:01:32,280 --> 00:01:36,580
+Yes, I mean, how else could you explain that terrifying level of acceleration, right?
+
+34
+00:01:36,720 --> 00:01:37,020
+Right.
+
+35
+00:01:37,340 --> 00:01:42,780
+And that perspective shift, you know, that fundamental reframing of what an explosion actually is,
+
+36
+00:01:42,900 --> 00:01:45,440
+that's exactly what we are tackling today.
+
+37
+00:01:45,900 --> 00:01:47,040
+Welcome to the deep dive.
+
+38
+00:01:47,140 --> 00:01:48,280
+It's going to be a fascinating one.
+
+39
+00:01:48,280 --> 00:01:53,880
+Our mission today is to explore a truly mind-bending 2026 monograph.
+
+40
+00:01:54,380 --> 00:01:56,760
+It's by an independent researcher named Flitschen.
+
+41
+00:01:57,320 --> 00:02:01,120
+The paper is titled Accessibility, Relaxation, and Friedman Instability,
+
+42
+00:02:01,700 --> 00:02:05,540
+an RSVP Reinterpretation of Cosmological Saddle Geometry.
+
+43
+00:02:05,700 --> 00:02:08,120
+I know, I know it's an incredibly dense, intimidating title.
+
+44
+00:02:08,240 --> 00:02:08,840
+It's a mouthful.
+
+45
+00:02:09,040 --> 00:02:09,700
+It really is.
+
+46
+00:02:09,780 --> 00:02:09,980
+Yeah.
+
+47
+00:02:09,980 --> 00:02:16,820
+But underneath all that heavy academic jargon, it packs a massive philosophical and mathematical punch.
+
+48
+00:02:17,900 --> 00:02:22,880
+It's literally attempting to dismantle the way we viewed the cosmos for nearly a century.
+
+49
+00:02:23,400 --> 00:02:24,480
+Okay, so let's untack this.
+
+50
+00:02:24,740 --> 00:02:30,040
+We are looking at a revolutionary framework that tries to explain one of the biggest mysteries in modern physics,
+
+51
+00:02:30,040 --> 00:02:33,020
+which is the accelerated expansion of the universe.
+
+52
+00:02:33,020 --> 00:02:33,440
+Right.
+
+53
+00:02:33,740 --> 00:02:36,680
+But it attempts to do this entirely without Dirk energy.
+
+54
+00:02:36,920 --> 00:02:40,760
+It essentially rewrites our understanding of the Big Bang from the ground up.
+
+55
+00:02:40,900 --> 00:02:43,900
+Framing it not as a spontaneous explosion into emptiness,
+
+56
+00:02:44,280 --> 00:02:47,200
+but actually as a thermodynamic relaxation process.
+
+57
+00:02:47,420 --> 00:02:53,800
+Using these deep concepts like microscopic entropy fluid dynamics and something called accessibility geometry.
+
+58
+00:02:53,800 --> 00:02:57,260
+So the central mystery we are exploring today is this.
+
+59
+00:02:57,780 --> 00:03:03,540
+What if the universe isn't expanding because it's being pushed by some mysterious, invisible dark energy?
+
+60
+00:03:03,740 --> 00:03:04,880
+What if it's just relaxing?
+
+61
+00:03:05,220 --> 00:03:05,500
+Yes.
+
+62
+00:03:05,880 --> 00:03:10,940
+What if the universe is actually just relaxing from a highly constrained, incredibly unstable state,
+
+63
+00:03:11,100 --> 00:03:12,660
+just like that rubber band uncoiling?
+
+64
+00:03:13,060 --> 00:03:17,200
+What's really fascinating here is the historical context we have to place this in,
+
+65
+00:03:17,740 --> 00:03:19,660
+you know, to really grasp its magnitude.
+
+66
+00:03:19,660 --> 00:03:25,820
+Because you can't really appreciate a revolution unless you understand the regime it's trying to overthrow.
+
+67
+00:03:26,340 --> 00:03:26,360
+Right.
+
+68
+00:03:26,520 --> 00:03:28,280
+We need to talk about the standard model first.
+
+69
+00:03:28,360 --> 00:03:28,840
+Exactly.
+
+70
+00:03:29,380 --> 00:03:34,320
+For decades, this standard cosmological model, which physicists call the Lambda-CDM model,
+
+71
+00:03:34,540 --> 00:03:37,280
+has completely ruled our understanding of the universe.
+
+72
+00:03:37,560 --> 00:03:40,760
+And just for clarity, the Lambda stands for the cosmological constant.
+
+73
+00:03:40,880 --> 00:03:44,040
+Yes, which is basically the mathematical placeholder for dark energy.
+
+74
+00:03:44,520 --> 00:03:47,000
+And the CDM stands for cold, dark matter.
+
+75
+00:03:47,200 --> 00:03:47,600
+Got it.
+
+76
+00:03:47,600 --> 00:03:54,600
+But recently, this highly complex mathematical program known as the ATV system challenged this standard model.
+
+77
+00:03:55,180 --> 00:03:59,240
+And now this new paper by Flixion takes that mathematical ATV system
+
+78
+00:03:59,240 --> 00:04:04,500
+and places it into an even grander unified ontological framework called RSVP.
+
+79
+00:04:04,920 --> 00:04:05,520
+RSVP.
+
+80
+00:04:05,740 --> 00:04:09,840
+Yeah, it takes pure abstract mathematics and gives it a physical thermodynamic reality.
+
+81
+00:04:09,840 --> 00:04:13,260
+Okay, let's slow down and really look at that regime we are overthrowing.
+
+82
+00:04:13,380 --> 00:04:17,140
+Because to understand why this RSVP framework is so groundbreaking,
+
+83
+00:04:17,720 --> 00:04:21,020
+we first have to understand the giant it's standing on the shoulders of.
+
+84
+00:04:21,340 --> 00:04:22,720
+Which is the ATV alternative.
+
+85
+00:04:22,860 --> 00:04:23,040
+Right.
+
+86
+00:04:23,200 --> 00:04:26,020
+So let's talk about the core problem with the standard model.
+
+87
+00:04:26,700 --> 00:04:31,840
+If you go back to the late 1990s, astronomers were looking out at distant supernovae.
+
+88
+00:04:31,840 --> 00:04:36,160
+And they were expecting to see the expansion of the universe slowing down over time.
+
+89
+00:04:36,680 --> 00:04:37,160
+Exactly.
+
+90
+00:04:37,320 --> 00:04:39,360
+Because of the inward pull of gravity, right?
+
+91
+00:04:39,700 --> 00:04:42,720
+Gravity pulls things together so the explosion should be slowing.
+
+92
+00:04:43,180 --> 00:04:44,440
+But they didn't see that.
+
+93
+00:04:44,520 --> 00:04:45,760
+They saw the exact opposite.
+
+94
+00:04:45,820 --> 00:04:46,380
+They looked out.
+
+95
+00:04:46,780 --> 00:04:48,680
+And they didn't just see the universe expanding.
+
+96
+00:04:49,080 --> 00:04:51,080
+They saw that expansion speeding up.
+
+97
+00:04:51,180 --> 00:04:52,760
+An anomalous acceleration.
+
+98
+00:04:52,760 --> 00:04:56,800
+Yeah, and that discovery shocked the physics community to its core.
+
+99
+00:04:56,980 --> 00:04:59,440
+I mean, it defied everything we thought we knew about gravity.
+
+100
+00:04:59,780 --> 00:05:03,700
+So in the Lambda CDM framework, the standard model to make the math work
+
+101
+00:05:03,700 --> 00:05:05,980
+and explain why the expansion is speeding up,
+
+102
+00:05:06,140 --> 00:05:11,400
+you have to inject this massive, completely hypothetical new substance into the universe.
+
+103
+00:05:11,820 --> 00:05:14,460
+You basically have to say, well, since gravity pulls things together,
+
+104
+00:05:14,460 --> 00:05:19,780
+there must be some anti-gravity vacuum energy, some dark energy pushing everything apart.
+
+105
+00:05:19,780 --> 00:05:24,500
+It treats acceleration as a physical thing that just exists out there in the void.
+
+106
+00:05:25,180 --> 00:05:25,200
+Right.
+
+107
+00:05:25,400 --> 00:05:31,320
+In fact, Lambda CDM claims that this dark energy makes up roughly 68% of everything in the universe.
+
+108
+00:05:31,740 --> 00:05:32,220
+68%.
+
+109
+00:05:32,220 --> 00:05:37,360
+So we essentially invented a ghost to balance the mathematical books.
+
+110
+00:05:37,780 --> 00:05:39,180
+We couldn't explain the acceleration,
+
+111
+00:05:39,400 --> 00:05:42,700
+so we just assumed the universe was filled with an invisible pushing force.
+
+112
+00:05:42,900 --> 00:05:47,680
+And for almost 30 years, that duct tape solution has been the reigning champion of physics.
+
+113
+00:05:47,680 --> 00:05:49,580
+But then enter the ATV program.
+
+114
+00:05:50,160 --> 00:05:57,540
+This is a series of dense, rigorous papers published between 2012 and 2026 by researchers Alexander Temple and Vogler.
+
+115
+00:05:58,000 --> 00:06:00,200
+And they basically raised their hands and said, wait a minute,
+
+116
+00:06:00,580 --> 00:06:03,160
+what if we don't need to invent a new invisible energy?
+
+117
+00:06:03,540 --> 00:06:08,380
+What if the standard math of classical general relativity already explains this acceleration,
+
+118
+00:06:09,060 --> 00:06:10,720
+and we just didn't do the math correctly?
+
+119
+00:06:10,860 --> 00:06:12,200
+That's a great way to frame it.
+
+120
+00:06:12,200 --> 00:06:17,040
+The ATV framework looked intensely at the foundational model of the Big Bang,
+
+121
+00:06:17,420 --> 00:06:21,280
+which is described mathematically by what's called a critical Friedman spacetime.
+
+122
+00:06:21,780 --> 00:06:21,920
+Right.
+
+123
+00:06:22,040 --> 00:06:25,960
+And for a long time, physicists treated this Friedman spacetime as a stable,
+
+124
+00:06:26,200 --> 00:06:28,520
+reliable foundation to build the universe on.
+
+125
+00:06:28,520 --> 00:06:34,600
+But what Alexander Temple and Vogler proved, using these exhausting, rigorous mathematical proofs,
+
+126
+00:06:34,600 --> 00:06:39,300
+is that this Friedman spacetime isn't a stable foundation at all.
+
+127
+00:06:39,400 --> 00:06:39,620
+No.
+
+128
+00:06:39,820 --> 00:06:41,540
+It is actually an unstable saddle point.
+
+129
+00:06:41,600 --> 00:06:42,100
+A saddle point.
+
+130
+00:06:42,100 --> 00:06:47,480
+In their papers, they denote this highly specific mathematical state as S-M, right?
+
+131
+00:06:47,540 --> 00:06:48,060
+S-S-M.
+
+132
+00:06:48,420 --> 00:06:48,660
+Okay.
+
+133
+00:06:48,860 --> 00:06:53,360
+I want to make sure we, and the listener, visualize this saddle point correctly,
+
+134
+00:06:53,480 --> 00:06:56,360
+because this is really the crux of the entire ATV argument.
+
+135
+00:06:56,760 --> 00:07:02,120
+Is it like balancing a heavy pencil perfectly on its freshly sharpened lead tip?
+
+136
+00:07:02,220 --> 00:07:02,920
+Oh, that's a good feeling.
+
+137
+00:07:02,920 --> 00:07:07,400
+Like if you could get it perfectly aligned in a vacuum, it looks absolutely mathematically flawless.
+
+138
+00:07:07,580 --> 00:07:08,240
+It's balanced.
+
+139
+00:07:08,440 --> 00:07:13,480
+But in reality, the absolute slightest breeze or even a microscopic vibration in the table
+
+140
+00:07:13,480 --> 00:07:15,060
+makes it fall over.
+
+141
+00:07:15,300 --> 00:07:15,360
+Right.
+
+142
+00:07:15,860 --> 00:07:21,680
+And in this cosmological case, that falling over is what we are perceiving as accelerated cosmic expansion.
+
+143
+00:07:21,880 --> 00:07:23,360
+That is a brilliant analogy.
+
+144
+00:07:23,620 --> 00:07:23,860
+Yes.
+
+145
+00:07:23,860 --> 00:07:28,980
+In the mathematics of dynamical systems, a saddle point is a state that is completely stable
+
+146
+00:07:28,980 --> 00:07:32,640
+in some very specific directions, but highly unstable in others.
+
+147
+00:07:32,640 --> 00:07:32,940
+Right.
+
+148
+00:07:33,300 --> 00:07:37,720
+If you want a more literal visual, think of the actual shape of a horse's leather saddle.
+
+149
+00:07:37,920 --> 00:07:38,060
+Okay.
+
+150
+00:07:38,140 --> 00:07:38,820
+Physical saddle.
+
+151
+00:07:39,060 --> 00:07:39,280
+Yeah.
+
+152
+00:07:39,460 --> 00:07:43,380
+If you place a marble exactly in the center of the saddle in the lowest part of the curve
+
+153
+00:07:43,380 --> 00:07:47,820
+between the front and back, it might stay perfectly still if it's entirely undisturbed.
+
+154
+00:07:47,920 --> 00:07:49,380
+Because it's balanced front to back.
+
+155
+00:07:49,500 --> 00:07:49,860
+Exactly.
+
+156
+00:07:50,300 --> 00:07:54,320
+But if that marble rolls even a fraction of a millimeter to the left or right down the sides
+
+157
+00:07:54,320 --> 00:07:57,180
+of the horse, it accelerates rapidly down the curve.
+
+158
+00:07:57,280 --> 00:07:57,500
+Wow.
+
+159
+00:07:57,640 --> 00:07:57,880
+Okay.
+
+160
+00:07:57,880 --> 00:08:04,440
+And what the ATV paper from 2026 mathematically proved is that every single Friedman space
+
+161
+00:08:04,440 --> 00:08:10,140
+time, the model we use for the Big Bang is unstable to what they call radial perturbations
+
+162
+00:08:10,140 --> 00:08:12,320
+in every single perturbative order.
+
+163
+00:08:12,320 --> 00:08:12,720
+Okay.
+
+164
+00:08:12,880 --> 00:08:18,080
+So if the universe starts in this perfectly balanced, incredibly tight, Friedman state,
+
+165
+00:08:18,240 --> 00:08:24,080
+generic, underdense perturbations, which are basically just the tiny natural imperfections,
+
+166
+00:08:24,160 --> 00:08:24,380
+right?
+
+167
+00:08:24,600 --> 00:08:24,800
+Yeah.
+
+168
+00:08:24,900 --> 00:08:27,920
+The quantum jitters, the slight empty spots in the early universe.
+
+169
+00:08:28,040 --> 00:08:31,080
+Those tiny jitters act like the breeze knocking the pencil over.
+
+170
+00:08:31,740 --> 00:08:34,860
+Or they act like the vibration that nudges the marble off the center of the saddle.
+
+171
+00:08:34,980 --> 00:08:38,580
+Not only that, but the math proves it is universally unavoidable.
+
+172
+00:08:38,580 --> 00:08:43,280
+You cannot construct a realistic universe on a saddle point without it eventually falling
+
+173
+00:08:43,280 --> 00:08:43,660
+off.
+
+174
+00:08:43,920 --> 00:08:44,940
+That makes total sense.
+
+175
+00:08:45,140 --> 00:08:49,120
+And here is the crucial revolutionary difference between this and our standard model.
+
+176
+00:08:49,840 --> 00:08:54,740
+In lambda CDM, the acceleration of the universe requires a physical cause.
+
+177
+00:08:54,860 --> 00:08:56,240
+Dark energy pushing it.
+
+178
+00:08:56,320 --> 00:08:56,540
+Right.
+
+179
+00:08:56,900 --> 00:09:01,040
+In the ATV framework, acceleration is simply a consequence of geometry.
+
+180
+00:09:01,040 --> 00:09:07,760
+It is the natural, completely unavoidable mathematical result of the universe falling away from an
+
+181
+00:09:07,760 --> 00:09:08,880
+unstable saddle point.
+
+182
+00:09:09,480 --> 00:09:11,300
+So no dark energy is needed.
+
+183
+00:09:11,560 --> 00:09:12,440
+No dark energy.
+
+184
+00:09:12,900 --> 00:09:15,060
+No cosmological constant is required.
+
+185
+00:09:15,760 --> 00:09:20,700
+The universe accelerates purely because it is geometrically falling out of balance, working
+
+186
+00:09:20,700 --> 00:09:25,280
+entirely within the strict classical bounds of Albert Einstein's general relativity.
+
+187
+00:09:25,480 --> 00:09:27,360
+I mean, that is a massive paradigm shift.
+
+188
+00:09:27,360 --> 00:09:32,220
+You're telling me that 68% of the universe, this dark energy we've spent billions of dollars
+
+189
+00:09:32,220 --> 00:09:36,900
+trying to detect, might just be a misunderstanding of how the universe falls off a geometric curve.
+
+190
+00:09:36,980 --> 00:09:37,980
+It's very possible, yes.
+
+191
+00:09:38,240 --> 00:09:38,760
+That's incredible.
+
+192
+00:09:38,940 --> 00:09:41,520
+But it leads directly into the heart affliction's paper.
+
+193
+00:09:41,820 --> 00:09:47,240
+Because while ATV proved the mathematical instability, they were still just playing with pure math and
+
+194
+00:09:47,240 --> 00:09:47,680
+geometry.
+
+195
+00:09:47,780 --> 00:09:47,900
+Right.
+
+196
+00:09:47,920 --> 00:09:48,640
+It was all theoretical.
+
+197
+00:09:49,100 --> 00:09:49,320
+Yeah.
+
+198
+00:09:49,480 --> 00:09:53,600
+So Friction looked at this and asked a much deeper, much more physical question.
+
+199
+00:09:54,120 --> 00:09:56,740
+What exactly is this saddle point in reality?
+
+200
+00:09:56,740 --> 00:10:00,240
+What is the physical stuff that makes up the marble falling off the saddle?
+
+201
+00:10:00,340 --> 00:10:00,840
+Exactly.
+
+202
+00:10:01,240 --> 00:10:05,700
+Math is great, but what is the actual physical medium of the universe doing?
+
+203
+00:10:06,440 --> 00:10:10,020
+And that question naturally leads us to the RSVP framework.
+
+204
+00:10:10,360 --> 00:10:11,620
+So let's get into the acronym.
+
+205
+00:10:12,640 --> 00:10:15,240
+Relativistic Scalar Vector Plenum.
+
+206
+00:10:15,680 --> 00:10:20,920
+This is where we shift gears from pure empty space-time geometry to the messy physical reality
+
+207
+00:10:20,920 --> 00:10:21,860
+of thermodynamics.
+
+208
+00:10:22,200 --> 00:10:22,480
+Okay.
+
+209
+00:10:22,480 --> 00:10:27,400
+Instead of just treating cosmology as an empty grid of space-time that magically bends and
+
+210
+00:10:27,400 --> 00:10:32,180
+stretches the RSVP framework, treats the universe as a continuous macroscopic physical
+
+211
+00:10:32,180 --> 00:10:32,600
+medium.
+
+212
+00:10:33,300 --> 00:10:35,400
+It says space is not empty, it is a plenum.
+
+213
+00:10:35,600 --> 00:10:36,060
+A plenum.
+
+214
+00:10:36,260 --> 00:10:39,780
+For anyone who hasn't encountered that word, a plenum is basically the exact opposite of a
+
+215
+00:10:39,780 --> 00:10:40,320
+vacuum, right?
+
+216
+00:10:40,440 --> 00:10:40,800
+Precisely.
+
+217
+00:10:40,800 --> 00:10:42,080
+A vacuum is empty space.
+
+218
+00:10:42,280 --> 00:10:45,180
+A plenum is a space that is completely fundamentally full.
+
+219
+00:10:45,360 --> 00:10:46,100
+The universe is full.
+
+220
+00:10:46,440 --> 00:10:50,740
+And this RSVP plenum is specifically made up of three coupled fields that interact with
+
+221
+00:10:50,740 --> 00:10:52,860
+each other to create everything we experience.
+
+222
+00:10:53,220 --> 00:10:53,420
+Okay.
+
+223
+00:10:53,480 --> 00:10:56,680
+We really need to break down these three fields because they're the main characters of
+
+224
+00:10:56,680 --> 00:10:58,320
+the entire RSVP story.
+
+225
+00:10:59,140 --> 00:11:02,580
+Field number one is called a scalar accessibility potential.
+
+226
+00:11:02,800 --> 00:11:03,060
+Right.
+
+227
+00:11:03,060 --> 00:11:06,220
+The math symbol for this is the Greek letter phi.
+
+228
+00:11:06,900 --> 00:11:10,560
+But if space isn't empty, what is accessibility?
+
+229
+00:11:11,040 --> 00:11:16,600
+You can think of the scalar accessibility potential phi as a kind of vacuum capacity or a spatial
+
+230
+00:11:16,600 --> 00:11:17,160
+resistance.
+
+231
+00:11:18,020 --> 00:11:24,920
+It dictates how accessible a specific region of space is for a trajectory or a piece of
+
+232
+00:11:24,920 --> 00:11:25,840
+matter to move through.
+
+233
+00:11:25,980 --> 00:11:27,120
+So like a friction map.
+
+234
+00:11:27,440 --> 00:11:28,020
+Kind of, yeah.
+
+235
+00:11:28,080 --> 00:11:32,080
+It's a field that measures how constrained the local environment is.
+
+236
+00:11:32,080 --> 00:11:35,540
+I'm going to hold on to that idea of constraint because I think it plays heavily into the
+
+237
+00:11:35,540 --> 00:11:36,180
+second field.
+
+238
+00:11:36,680 --> 00:11:39,660
+Field number two is a Lamferdine flow velocity.
+
+239
+00:11:39,900 --> 00:11:41,040
+Represented by the letter V.
+
+240
+00:11:41,320 --> 00:11:41,560
+Right.
+
+241
+00:11:41,740 --> 00:11:45,520
+Now, Lamferdine is such a highly specific, strange term.
+
+242
+00:11:46,260 --> 00:11:47,520
+How should you visualize this?
+
+243
+00:11:47,620 --> 00:11:51,500
+Is it like a literal fluid flowing through space carrying order and structure with it?
+
+244
+00:11:51,620 --> 00:11:53,600
+That's absolutely the right way to visualize it.
+
+245
+00:11:53,660 --> 00:11:58,460
+It encodes the bulk flow of the medium, but specifically it is a negentropic flow.
+
+246
+00:11:58,460 --> 00:12:05,160
+Negentropic, meaning negative entropy, meaning it carries order or a resistance to disorder.
+
+247
+00:12:05,380 --> 00:12:06,020
+Yes, exactly.
+
+248
+00:12:06,740 --> 00:12:09,800
+Entropy is the measure of disorder or randomness in a system.
+
+249
+00:12:10,380 --> 00:12:11,560
+Negentropy is the opposite.
+
+250
+00:12:12,100 --> 00:12:14,440
+It is the measure of order structure and available energy.
+
+251
+00:12:14,660 --> 00:12:14,840
+Okay.
+
+252
+00:12:15,240 --> 00:12:21,240
+So this Lamferdine flow, this velocity V is the kinematic heart of the universe moving and
+
+253
+00:12:21,240 --> 00:12:21,760
+interacting.
+
+254
+00:12:21,760 --> 00:12:26,660
+It is the organized flow of the medium itself fighting against chaos.
+
+255
+00:12:27,200 --> 00:12:32,340
+And that brings us seamlessly to the third and final field, a configurational entropy density
+
+256
+00:12:32,340 --> 00:12:33,900
+represented by the letter S.
+
+257
+00:12:34,180 --> 00:12:34,300
+Yes.
+
+258
+00:12:34,480 --> 00:12:38,620
+Entropy, as you just mentioned, being the measure of disorder or more accurately in this context,
+
+259
+00:12:38,740 --> 00:12:40,340
+the measure of constraint relaxation.
+
+260
+00:12:41,060 --> 00:12:45,480
+If we connect this to the bigger picture, Vetchum is not just making these three fields up out
+
+261
+00:12:45,480 --> 00:12:46,020
+of thin air.
+
+262
+00:12:46,180 --> 00:12:46,420
+Mm-hmm.
+
+263
+00:12:46,640 --> 00:12:51,320
+You know, the author is standing on a very robust decades-old theoretical foundation here.
+
+264
+00:12:51,320 --> 00:12:51,640
+Right.
+
+265
+00:12:51,760 --> 00:12:54,500
+Physics doesn't happen in a vacuum or a plenum, I guess.
+
+266
+00:12:54,720 --> 00:12:55,160
+Good one.
+
+267
+00:12:55,360 --> 00:12:55,660
+Yeah.
+
+268
+00:12:55,800 --> 00:13:01,500
+Back in 1995, a brilliant physicist named Ted Jacobson published a famous paper where
+
+269
+00:13:01,500 --> 00:13:05,680
+he managed to derive Einstein's equations of gravity entirely from thermodynamics.
+
+270
+00:13:05,980 --> 00:13:06,240
+Really?
+
+271
+00:13:06,460 --> 00:13:07,180
+Just from thermodynamics?
+
+272
+00:13:07,620 --> 00:13:07,800
+Yeah.
+
+273
+00:13:07,880 --> 00:13:11,960
+He basically proved that gravity might not be a fundamental force at all, but a thermodynamic
+
+274
+00:13:11,960 --> 00:13:12,580
+byproduct.
+
+275
+00:13:13,140 --> 00:13:18,200
+Then in 2011, Eric Verlinde expanded on this with his theory of entropic gravity.
+
+276
+00:13:18,300 --> 00:13:20,880
+Suggesting that gravity is an emergent entropic force.
+
+277
+00:13:20,880 --> 00:13:21,120
+Right.
+
+278
+00:13:21,240 --> 00:13:25,400
+Much like how the elasticity of a polymer molecule is an emergent entropic force.
+
+279
+00:13:25,980 --> 00:13:31,120
+And Phytopad Monophan in 2010 developed an entire field called thermodynamic cosmology.
+
+280
+00:13:31,380 --> 00:13:31,680
+Wow.
+
+281
+00:13:31,800 --> 00:13:33,760
+So there's a lot of precedent for this.
+
+282
+00:13:33,900 --> 00:13:34,380
+A ton.
+
+283
+00:13:34,780 --> 00:13:34,940
+Yeah.
+
+284
+00:13:35,000 --> 00:13:40,780
+The RSVP framework takes all of these brilliant disjointed ideas and weaves them together to
+
+285
+00:13:40,780 --> 00:13:44,000
+build a dynamical, non-equilibrium fluid medium.
+
+286
+00:13:44,360 --> 00:13:44,600
+Okay.
+
+287
+00:13:44,680 --> 00:13:47,220
+Let me make sure I'm wrapping my head around this paradigm shift.
+
+288
+00:13:47,220 --> 00:13:52,760
+In this RSVP medium, things like the gravitational binding of planets, the cosmic redshift of
+
+289
+00:13:52,760 --> 00:13:55,640
+ancient light, the massive formation of galaxy clusters.
+
+290
+00:13:55,780 --> 00:13:57,020
+Well, actually, I mean, all of it.
+
+291
+00:13:57,080 --> 00:13:57,440
+All of it.
+
+292
+00:13:57,480 --> 00:13:57,620
+Yeah.
+
+293
+00:13:57,780 --> 00:14:00,360
+None of these are happening in an empty geometric vacuum.
+
+294
+00:14:00,680 --> 00:14:04,560
+They're all being generated by the physical macroscopic interactions of 5VNS.
+
+295
+00:14:04,860 --> 00:14:05,060
+Yes.
+
+296
+00:14:05,060 --> 00:14:09,500
+The entropy gradients, the difference between highly ordered space and highly disordered space.
+
+297
+00:14:09,740 --> 00:14:13,180
+Those gradients actually create effective forces that move matter.
+
+298
+00:14:13,620 --> 00:14:14,520
+That is the core of it.
+
+299
+00:14:14,700 --> 00:14:14,780
+Yeah.
+
+300
+00:14:14,780 --> 00:14:16,600
+It's a profound philosophical shift.
+
+301
+00:14:17,200 --> 00:14:17,900
+Space is full.
+
+302
+00:14:18,140 --> 00:14:18,900
+Space is full.
+
+303
+00:14:19,060 --> 00:14:21,980
+So the universe isn't just a balloon stretching.
+
+304
+00:14:22,480 --> 00:14:28,160
+It is a giant thermodynamic fluid trying to iron out its own thermodynamic wrinkles.
+
+305
+00:14:28,160 --> 00:14:29,480
+Beautifully put.
+
+306
+00:14:29,800 --> 00:14:34,700
+And because it is full, the things moving through it have to follow the highly specific
+
+307
+00:14:34,700 --> 00:14:37,640
+rules of the road created by that fullness.
+
+308
+00:14:37,980 --> 00:14:43,380
+Which brings us directly to how Fliction and mathematically defines those rules, the accessibility
+
+309
+00:14:43,380 --> 00:14:43,940
+metric.
+
+310
+00:14:44,100 --> 00:14:44,300
+Right.
+
+311
+00:14:44,480 --> 00:14:48,760
+Let's talk about this accessibility metric because the formula for it in the paper is wild.
+
+312
+00:14:49,400 --> 00:14:53,540
+Normally, in general relativity, a metric is just a mathematical tool that dictates the
+
+313
+00:14:53,540 --> 00:14:56,740
+physical distance between two points in space and time.
+
+314
+00:14:56,740 --> 00:14:57,020
+Right.
+
+315
+00:14:57,100 --> 00:14:58,740
+The standard background geometry.
+
+316
+00:14:59,080 --> 00:15:02,120
+But the accessibility metric isn't just the standard background geometry.
+
+317
+00:15:02,340 --> 00:15:06,160
+It's modified by a new term, kappa times the gradient of psi squared.
+
+318
+00:15:06,440 --> 00:15:06,740
+Yes.
+
+319
+00:15:07,080 --> 00:15:11,840
+Now, for the listener, you don't need to memorize the math, but here is what that formula physically
+
+320
+00:15:11,840 --> 00:15:12,280
+means.
+
+321
+00:15:12,960 --> 00:15:18,620
+This new metric heavily penalizes motion in directions where that scalar field phi changes
+
+322
+00:15:18,620 --> 00:15:19,100
+rapidly.
+
+323
+00:15:19,460 --> 00:15:24,740
+So if a region of space has high scalar variation, meaning the accessibility is changing quickly,
+
+324
+00:15:24,740 --> 00:15:28,600
+RSVP says that region is metrically distant.
+
+325
+00:15:29,320 --> 00:15:33,960
+I know that sounds incredibly abstract, a metric that changes based on how much the environment
+
+326
+00:15:33,960 --> 00:15:34,900
+is varying.
+
+327
+00:15:35,140 --> 00:15:40,600
+But essentially, it means the structure of the space itself actively resists rapid changes
+
+328
+00:15:40,600 --> 00:15:41,840
+in the accessibility field.
+
+329
+00:15:42,080 --> 00:15:45,340
+So the more chaotic the field, the harder it is to move through.
+
+330
+00:15:45,580 --> 00:15:45,860
+Right.
+
+331
+00:15:45,860 --> 00:15:49,440
+I think I can translate this into a real world scenario that makes it click.
+
+332
+00:15:50,440 --> 00:15:56,120
+Imagine you are trying to walk across a large ballroom where a massive chaotic party is
+
+333
+00:15:56,120 --> 00:15:56,460
+happening.
+
+334
+00:15:57,020 --> 00:15:58,180
+A crowded room.
+
+335
+00:15:58,280 --> 00:15:58,440
+Yeah.
+
+336
+00:15:59,020 --> 00:16:03,060
+The physical distance from the front door to the back door might only be, say, 50 feet.
+
+337
+00:16:03,700 --> 00:16:06,500
+If the room were totally empty, you'd walk it in 10 seconds.
+
+338
+00:16:06,820 --> 00:16:07,880
+But the room isn't empty.
+
+339
+00:16:07,980 --> 00:16:08,620
+It's a plenum.
+
+340
+00:16:08,800 --> 00:16:09,560
+It's full of people.
+
+341
+00:16:09,720 --> 00:16:09,920
+Right.
+
+342
+00:16:09,920 --> 00:16:14,140
+So the accessibility distance is much, much longer because you have to weave around dense
+
+343
+00:16:14,140 --> 00:16:15,060
+clusters of people.
+
+344
+00:16:15,640 --> 00:16:17,120
+You have to dodge the buffet table.
+
+345
+00:16:17,280 --> 00:16:19,900
+You have to navigate through tightly packed crowds.
+
+346
+00:16:20,360 --> 00:16:21,620
+That's a perfect way to visualize it.
+
+347
+00:16:21,880 --> 00:16:26,360
+The high scalar gradients in the math are the dense clusters of people in the room.
+
+348
+00:16:27,220 --> 00:16:32,180
+The room itself isn't physically larger, but the accessible trajectory through it makes
+
+349
+00:16:32,180 --> 00:16:34,560
+it functionally much farther away.
+
+350
+00:16:35,000 --> 00:16:37,220
+You expend more energy and take more time to cross it.
+
+351
+00:16:37,320 --> 00:16:38,300
+That is exactly right.
+
+352
+00:16:38,300 --> 00:16:42,720
+And it's crucial to understand that this effective metric isn't completely throwing
+
+353
+00:16:42,720 --> 00:16:45,820
+away the fundamental space-time geometry of Einstein.
+
+354
+00:16:46,160 --> 00:16:48,120
+It's not overriding general relativity.
+
+355
+00:16:48,420 --> 00:16:48,580
+No.
+
+356
+00:16:48,940 --> 00:16:51,460
+It is an effective theory layered on top of it.
+
+357
+00:16:51,740 --> 00:16:54,140
+We see this in standard fluid dynamics all the time.
+
+358
+00:16:54,240 --> 00:16:55,360
+Like with acoustics, right?
+
+359
+00:16:55,580 --> 00:16:55,940
+Exactly.
+
+360
+00:16:56,600 --> 00:17:01,720
+For example, if sound waves are traveling through a rapidly moving fluid like water rushing down
+
+361
+00:17:01,720 --> 00:17:05,000
+a pipe, those sound waves experience an acoustic metric.
+
+362
+00:17:05,220 --> 00:17:07,120
+Meaning the water changes how they travel.
+
+363
+00:17:07,120 --> 00:17:07,640
+Right.
+
+364
+00:17:07,640 --> 00:17:12,380
+The path they take and the speed they travel are dictated by the flow of the water, which
+
+365
+00:17:12,380 --> 00:17:15,460
+differs from the physical rigid container of the pipe they're in.
+
+366
+00:17:15,460 --> 00:17:16,720
+Okay, that makes total sense.
+
+367
+00:17:16,720 --> 00:17:22,100
+The RSVP framework is doing the exact same thing, but for the fundamental trajectory space
+
+368
+00:17:22,100 --> 00:17:23,200
+of the entire universe.
+
+369
+00:17:23,200 --> 00:17:26,360
+So we have this incredibly complex crowded room.
+
+370
+00:17:26,940 --> 00:17:29,980
+How do these three fields actually interact within it?
+
+371
+00:17:30,320 --> 00:17:31,740
+How do they balance each other out?
+
+372
+00:17:32,740 --> 00:17:36,280
+Fliction introduces a master equation called the Lamferdine functional.
+
+373
+00:17:36,560 --> 00:17:36,720
+Yes.
+
+374
+00:17:36,940 --> 00:17:40,520
+This is the equation that governs the total energy of the whole system.
+
+375
+00:17:40,840 --> 00:17:43,460
+And it is broken down into four distinct parts.
+
+376
+00:17:43,620 --> 00:17:43,820
+Right.
+
+377
+00:17:43,900 --> 00:17:47,280
+The Lamferdine functional is what physicists call a variational principle.
+
+378
+00:17:47,280 --> 00:17:51,440
+It's a way of calculating the path of least resistance for the universe.
+
+379
+00:17:51,940 --> 00:17:54,440
+And it accounts for four major forces.
+
+380
+00:17:54,440 --> 00:17:57,460
+First, the accessibility gradient energy.
+
+381
+00:17:57,660 --> 00:17:58,820
+Which is what we just talked about.
+
+382
+00:17:59,100 --> 00:17:59,500
+Exactly.
+
+383
+00:17:59,740 --> 00:18:03,940
+It's the thermodynamic cost or penalty of trying to move through those rapid changes in the
+
+384
+00:18:03,940 --> 00:18:04,360
+phi field.
+
+385
+00:18:04,700 --> 00:18:06,920
+It's the energy it takes to push through the crowd.
+
+386
+00:18:06,980 --> 00:18:07,200
+Okay.
+
+387
+00:18:07,260 --> 00:18:08,000
+What's the second part?
+
+388
+00:18:08,080 --> 00:18:09,580
+Second is compression resistance.
+
+389
+00:18:10,180 --> 00:18:14,680
+When the Lamferdine flow, the longitudinal flow of order is squeezed by the environment,
+
+390
+00:18:14,680 --> 00:18:15,480
+it fights back.
+
+391
+00:18:15,860 --> 00:18:18,380
+It resists being compressed into a smaller volume.
+
+392
+00:18:18,500 --> 00:18:19,660
+Like trying to squeeze water.
+
+393
+00:18:19,840 --> 00:18:20,200
+Exactly.
+
+394
+00:18:20,640 --> 00:18:22,040
+Third is curl energy.
+
+395
+00:18:22,560 --> 00:18:25,540
+This represents the rotational energy of the transverse flow.
+
+396
+00:18:26,340 --> 00:18:29,980
+Think of it like the whirlpools or eddies that form in a fast-moving river.
+
+397
+00:18:30,180 --> 00:18:30,380
+Okay.
+
+398
+00:18:30,500 --> 00:18:31,900
+Whirlpools and the four.
+
+399
+00:18:32,040 --> 00:18:35,500
+And fourth, a very specific scalar vector coupling term.
+
+400
+00:18:35,820 --> 00:18:41,140
+This is a mathematical bridge where the velocity of the fluid V interacts directly and intimately
+
+401
+00:18:41,140 --> 00:18:43,500
+with the gradient of the scalar field phi.
+
+402
+00:18:44,100 --> 00:18:48,080
+And there is a massive mathematical achievement here that Fliction highlights in the text and
+
+403
+00:18:48,080 --> 00:18:49,300
+we cannot skip over it.
+
+404
+00:18:49,300 --> 00:18:54,440
+The paper states that this entire RSVP system successfully avoids something called the
+
+405
+00:18:54,440 --> 00:18:55,700
+Ostrogradsky instability.
+
+406
+00:18:56,140 --> 00:18:56,480
+Yes.
+
+407
+00:18:56,720 --> 00:19:00,020
+Now, the author treats this as a huge victory.
+
+408
+00:19:00,560 --> 00:19:05,180
+Can you explain to us what the Ostrogradsky instability is and why avoiding it is such a
+
+409
+00:19:05,180 --> 00:19:06,940
+big deal for theoretical physicists?
+
+410
+00:19:07,280 --> 00:19:10,540
+It is a massive deal and it's the graveyard of many beautiful theories.
+
+411
+00:19:10,680 --> 00:19:11,080
+The graveyard.
+
+412
+00:19:11,280 --> 00:19:11,580
+Wow.
+
+413
+00:19:11,580 --> 00:19:16,620
+In theoretical physics, when you build a Lagrangian, a master equation like the Lamferdine
+
+414
+00:19:16,620 --> 00:19:22,120
+functionality, you are dealing with derivatives which measure how things change over time.
+
+415
+00:19:22,300 --> 00:19:22,420
+Right.
+
+416
+00:19:22,500 --> 00:19:24,900
+Like velocity is a derivative of position.
+
+417
+00:19:25,320 --> 00:19:25,860
+Exactly.
+
+418
+00:19:26,240 --> 00:19:30,440
+Now, if your master equation relies on time derivatives that are higher than the first
+
+419
+00:19:30,440 --> 00:19:35,000
+order, meaning you aren't just measuring speed, but acceleration or the rate of change of
+
+420
+00:19:35,000 --> 00:19:39,040
+acceleration, you almost always trigger an Ostrogradsky instability.
+
+421
+00:19:39,540 --> 00:19:40,060
+Okay.
+
+422
+00:19:40,160 --> 00:19:44,300
+And what does that instability actually do to the universe you're trying to build?
+
+423
+00:19:44,620 --> 00:19:47,120
+It introduces ghosts into the mathematics.
+
+424
+00:19:47,500 --> 00:19:48,020
+Ghosts?
+
+425
+00:19:48,080 --> 00:19:50,280
+Like literal mathematical phantoms?
+
+426
+00:19:50,540 --> 00:19:51,400
+Essentially, yes.
+
+427
+00:19:52,120 --> 00:19:55,620
+In physics, a ghost is a state that possesses negative kinetic energy.
+
+428
+00:19:55,860 --> 00:19:57,780
+Negative kinetic energy.
+
+429
+00:19:57,980 --> 00:19:58,160
+Wait.
+
+430
+00:19:58,180 --> 00:19:58,380
+Right.
+
+431
+00:19:59,060 --> 00:20:00,020
+Think about that for a second.
+
+432
+00:20:00,480 --> 00:20:03,340
+Normally, to make something move faster, you have to add energy to it.
+
+433
+00:20:03,640 --> 00:20:06,560
+But with a ghost state, to make it move faster, it loses energy.
+
+434
+00:20:06,680 --> 00:20:07,860
+That breaks my brain a little.
+
+435
+00:20:07,920 --> 00:20:08,780
+It breaks the universe.
+
+436
+00:20:09,260 --> 00:20:14,140
+This means the system can generate infinite amounts of regular positive energy by simultaneously
+
+437
+00:20:14,140 --> 00:20:16,280
+generating infinite amounts of negative energy.
+
+438
+00:20:16,280 --> 00:20:18,060
+So the books balance on paper.
+
+439
+00:20:18,320 --> 00:20:21,000
+They balance, but the physical reality is catastrophic.
+
+440
+00:20:21,000 --> 00:20:26,560
+If your theory has an Ostrogradsky instability, your universe would instantly self-destruct.
+
+441
+00:20:26,960 --> 00:20:31,860
+It would spontaneously decay into an infinite explosive cascade of radiation in a fraction
+
+442
+00:20:31,860 --> 00:20:32,740
+of a microsecond.
+
+443
+00:20:33,000 --> 00:20:37,680
+So if your math allows for ghosts, your universe explodes before it even begins.
+
+444
+00:20:37,880 --> 00:20:38,220
+Exactly.
+
+445
+00:20:38,520 --> 00:20:44,000
+And what Fliction has done is carefully construct the RSVP equations so they only rely on first
+
+446
+00:20:44,000 --> 00:20:45,060
+order time derivatives.
+
+447
+00:20:45,260 --> 00:20:45,560
+Yes.
+
+448
+00:20:45,560 --> 00:20:50,960
+By keeping all kinetic terms strictly to the first order, RSVP rigorously proves it
+
+449
+00:20:50,960 --> 00:20:55,260
+as a mathematically sane, ghost-free, effective field theory.
+
+450
+00:20:55,480 --> 00:20:57,440
+It won't spontaneously explode.
+
+451
+00:20:57,580 --> 00:20:57,740
+Right.
+
+452
+00:20:57,840 --> 00:20:58,940
+It's mathematically stable.
+
+453
+00:20:59,080 --> 00:20:59,220
+Yeah.
+
+454
+00:20:59,700 --> 00:21:04,460
+And furthermore, the fields in this universe are permanently locked together by a divergence
+
+455
+00:21:04,460 --> 00:21:05,240
+constraint.
+
+456
+00:21:05,460 --> 00:21:08,060
+Meaning they can't act completely independently.
+
+457
+00:21:08,320 --> 00:21:08,700
+Exactly.
+
+458
+00:21:08,700 --> 00:21:14,500
+The longitudinal flow of the Lamphrodine velocity is directly, inextricably coupled to the scalar
+
+459
+00:21:14,500 --> 00:21:15,520
+and entropy fields.
+
+460
+00:21:15,520 --> 00:21:17,640
+They cannot move independently of one another.
+
+461
+00:21:18,080 --> 00:21:21,000
+The entropy dictates the flow, and the flow dictates the accessibility.
+
+462
+00:21:21,560 --> 00:21:21,760
+Okay.
+
+463
+00:21:21,900 --> 00:21:28,620
+So we have built this incredibly complex, ghost-free, swirling, thermodynamic fluid made of three
+
+464
+00:21:28,620 --> 00:21:30,040
+deeply entangled fields.
+
+465
+00:21:30,260 --> 00:21:33,080
+It is beautiful, but it brings up a massive problem.
+
+466
+00:21:33,260 --> 00:21:33,600
+What's that?
+
+467
+00:21:33,600 --> 00:21:41,680
+If the universe is actually this massively complex, messy, swirling RSVP fluid, how on earth did
+
+468
+00:21:41,680 --> 00:21:47,160
+previous physicists look at the sky and come up with the perfectly smooth, empty, standard
+
+469
+00:21:47,160 --> 00:21:48,300
+Big Bang model?
+
+470
+00:21:48,380 --> 00:21:48,520
+Right.
+
+471
+00:21:48,580 --> 00:21:49,620
+How did they miss the mess?
+
+472
+00:21:49,800 --> 00:21:49,940
+Yeah.
+
+473
+00:21:50,000 --> 00:21:55,300
+How do we get from this chaotic fluid back to the standard mathematics that the ATV papers
+
+474
+00:21:55,300 --> 00:21:55,660
+described?
+
+475
+00:21:55,840 --> 00:21:58,560
+We have to somehow simplify this fluid, right?
+
+476
+00:21:58,560 --> 00:22:03,880
+We do, and that is exactly the mathematical bridge Flickshahn builds in Section 4 of the
+
+477
+00:22:03,880 --> 00:22:06,120
+paper with something called the Reduction Principle.
+
+478
+00:22:06,220 --> 00:22:07,160
+The Reduction Principle.
+
+479
+00:22:07,180 --> 00:22:13,000
+The paper rigorously proves that the incredibly complex RSVP fluid system perfectly mirrors
+
+480
+00:22:13,000 --> 00:22:19,520
+the standard mathematical ATV system, but only if you force five very strict, highly specific
+
+481
+00:22:19,520 --> 00:22:20,500
+assumptions onto it.
+
+482
+00:22:20,720 --> 00:22:25,560
+You essentially have to put massive mathematical blinders on to see the standard Big Bang.
+
+483
+00:22:25,560 --> 00:22:29,300
+I want to walk through these five blinders, these five rules of the Reduction Principle,
+
+484
+00:22:29,380 --> 00:22:32,380
+because they essentially show us exactly what the standard model is ignoring.
+
+485
+00:22:32,540 --> 00:22:33,000
+Let's do it.
+
+486
+00:22:33,120 --> 00:22:34,520
+Rule one, spherical symmetry.
+
+487
+00:22:35,160 --> 00:22:39,520
+You have to assume the Lamford dying flow can only move radially straight out from the
+
+488
+00:22:39,520 --> 00:22:42,000
+center with absolutely no sideways movement.
+
+489
+00:22:42,240 --> 00:22:42,500
+Right.
+
+490
+00:22:42,900 --> 00:22:44,360
+Rule two, pressureless flow.
+
+491
+00:22:45,080 --> 00:22:50,500
+You have to assume a matter-dominated epoch where thermodynamic pressure is exactly zero.
+
+492
+00:22:50,820 --> 00:22:52,520
+Rule three, vanishing torsion.
+
+493
+00:22:52,520 --> 00:22:58,160
+This means you must force the math to say the fluid has absolutely no curl, no vorticity,
+
+494
+00:22:58,400 --> 00:22:59,860
+and no rotation whatsoever.
+
+495
+00:23:00,280 --> 00:23:03,040
+Rule four, a flat accessibility metric.
+
+496
+00:23:03,220 --> 00:23:03,380
+Yeah.
+
+497
+00:23:03,560 --> 00:23:07,980
+You essentially have to pretend that the scalar field doesn't distort the distance at all.
+
+498
+00:23:08,400 --> 00:23:10,400
+You ignore the crowded ballroom effect completely.
+
+499
+00:23:10,760 --> 00:23:12,400
+And rule five, vanishing diffusion.
+
+500
+00:23:12,760 --> 00:23:17,820
+You assume there is absolutely no thermodynamic smoothing or entropy distribution over time.
+
+501
+00:23:17,820 --> 00:23:23,040
+So if you take the universe and you completely strip away the rotation, the pressure, the
+
+502
+00:23:23,040 --> 00:23:25,960
+thermodynamic diffusion, and the accessibility distortions.
+
+503
+00:23:26,160 --> 00:23:27,480
+What are you actually left with?
+
+504
+00:23:27,600 --> 00:23:33,000
+Fliction proves that under these five strict, almost draconian rules, the fluid collapses
+
+505
+00:23:33,000 --> 00:23:33,400
+down.
+
+506
+00:23:33,680 --> 00:23:37,880
+And it matches exactly with the Friedman configuration, the ATV's original saddle point, SM.
+
+507
+00:23:38,080 --> 00:23:41,800
+Which has the specific mathematical coordinates, four-thirds, two-thirds.
+
+508
+00:23:41,900 --> 00:23:42,160
+Yes.
+
+509
+00:23:42,560 --> 00:23:45,060
+Fliction proves it is an accessibility critical rest point.
+
+510
+00:23:45,340 --> 00:23:46,580
+The map aligns flawlessly.
+
+511
+00:23:46,580 --> 00:23:48,780
+It's a breathtaking synthesis, really.
+
+512
+00:23:49,340 --> 00:23:53,080
+Fliction isn't throwing the ATV mathematical program in the trash.
+
+513
+00:23:53,400 --> 00:23:58,560
+Fliction is saying ATV is entirely correct, but only under highly restricted conditions.
+
+514
+00:23:58,700 --> 00:23:59,160
+Exactly.
+
+515
+00:23:59,720 --> 00:24:07,400
+ATV is what happens when you look at the incredibly complex RSVP universe through a very specific,
+
+516
+00:24:07,820 --> 00:24:12,460
+perfectly symmetric, perfectly frictionless, completely unrealistic lens.
+
+517
+00:24:12,500 --> 00:24:12,680
+Right.
+
+518
+00:24:12,760 --> 00:24:13,600
+That's a simplification.
+
+519
+00:24:13,800 --> 00:24:15,200
+But the paper doesn't stop there.
+
+520
+00:24:15,200 --> 00:24:20,680
+It dives even deeper into the topology of how these mathematical solutions are structured
+
+521
+00:24:20,680 --> 00:24:24,400
+using a concept called the gauge decomposition theorem.
+
+522
+00:24:24,780 --> 00:24:27,500
+Okay, let's unpack this gauge concept because the math gets deep here.
+
+523
+00:24:27,620 --> 00:24:32,280
+In the original ATV papers, to make their math function properly, they used a very specific
+
+524
+00:24:32,280 --> 00:24:32,960
+gauge fixing.
+
+525
+00:24:33,200 --> 00:24:35,640
+They called it the time since the Big Bang gauge.
+
+526
+00:24:35,860 --> 00:24:36,080
+Right.
+
+527
+00:24:36,080 --> 00:24:40,820
+Now, usually when I read about physicists picking a gauge, it feels a bit like an arbitrary mathematical
+
+528
+00:24:40,820 --> 00:24:41,320
+trick.
+
+529
+00:24:41,560 --> 00:24:45,980
+You're just choosing a coordinate system that makes your specific equations look prettier
+
+530
+00:24:45,980 --> 00:24:46,840
+and easier to solve.
+
+531
+00:24:46,860 --> 00:24:47,840
+That's a very common view, yeah.
+
+532
+00:24:47,920 --> 00:24:51,140
+But Fliction comes in and says, no, this gauge isn't arbitrary at all.
+
+533
+00:24:51,220 --> 00:24:53,440
+It represents a fundamental physical reality.
+
+534
+00:24:53,880 --> 00:24:54,240
+That's right.
+
+535
+00:24:54,440 --> 00:24:56,300
+It's a common misconception about gauges.
+
+536
+00:24:56,300 --> 00:25:02,380
+In advanced mathematics and physics, a gauge transformation deals with redundancies in how we
+
+537
+00:25:02,380 --> 00:25:03,860
+parameterize trajectories.
+
+538
+00:25:04,120 --> 00:25:05,340
+Let me give you an analogy.
+
+539
+00:25:05,500 --> 00:25:05,680
+Okay.
+
+540
+00:25:06,000 --> 00:25:07,020
+Think of a map of a city.
+
+541
+00:25:07,560 --> 00:25:11,640
+You can measure the distance between two buildings in miles, or you can measure it in kilometers.
+
+542
+00:25:12,280 --> 00:25:17,780
+The underlying physical reality of the actual city doesn't change at all, but your mathematical
+
+543
+00:25:17,780 --> 00:25:19,240
+representation of it does.
+
+544
+00:25:19,240 --> 00:25:21,620
+So that redundancy is a gauge freedom.
+
+545
+00:25:22,200 --> 00:25:22,640
+Exactly.
+
+546
+00:25:23,180 --> 00:25:28,220
+Fliction proves that the specific time since the Big Bang gauge corresponds exactly to
+
+547
+00:25:28,220 --> 00:25:31,800
+a section of a fiber bundle in the RSVP trajectory space.
+
+548
+00:25:31,880 --> 00:25:32,580
+A fiber bundle.
+
+549
+00:25:32,700 --> 00:25:32,860
+Okay.
+
+550
+00:25:32,960 --> 00:25:33,920
+We need to ELI 5.
+
+551
+00:25:34,100 --> 00:25:35,320
+Let's explain it like I'm 5.
+
+552
+00:25:35,660 --> 00:25:37,380
+What is a fiber bundle in this context?
+
+553
+00:25:37,500 --> 00:25:38,780
+Imagine a simple hairbrush.
+
+554
+00:25:39,820 --> 00:25:44,360
+The curved plastic base of the brush is what mathematicians call the base space.
+
+555
+00:25:44,960 --> 00:25:47,460
+Think of that base as the physical space of our universe.
+
+556
+00:25:47,580 --> 00:25:47,740
+Okay.
+
+557
+00:25:47,840 --> 00:25:48,660
+The base is space.
+
+558
+00:25:48,660 --> 00:25:52,780
+Now, from every single point on that plastic base, a bristle sticks straight out.
+
+559
+00:25:53,400 --> 00:25:58,000
+That bristle represents all the possible states or mathematical values that can exist
+
+560
+00:25:58,000 --> 00:25:59,580
+at that exact point in space.
+
+561
+00:25:59,840 --> 00:26:03,740
+The entire object, the base, plus all the bristles, is the fiber bundle.
+
+562
+00:26:04,360 --> 00:26:09,360
+A gauge choice is essentially taking a pair of scissors and cutting a smooth, specific curve
+
+563
+00:26:09,360 --> 00:26:10,800
+across the tops of the bristles.
+
+564
+00:26:11,000 --> 00:26:11,560
+Oh, I see.
+
+565
+00:26:11,880 --> 00:26:16,260
+You are selecting one specific state at every point to make the math workable.
+
+566
+00:26:16,260 --> 00:26:22,200
+Fliction proves that the ATV's time since the Big Bang gauge isn't just a random cut.
+
+567
+00:26:22,600 --> 00:26:28,760
+It is a highly specific cut that mathematically isolates a unique negative eigenvalue of the
+
+568
+00:26:28,760 --> 00:26:29,980
+system's Hessian matrix.
+
+569
+00:26:30,220 --> 00:26:34,800
+I'm going to need you to unpack Hessian matrix and eigenvalue before my brain explodes.
+
+570
+00:26:34,800 --> 00:26:35,420
+Fair enough.
+
+571
+00:26:36,020 --> 00:26:41,460
+A Hessian matrix, in simple terms, is a mathematical tool that describes the local curvature of
+
+572
+00:26:41,460 --> 00:26:43,100
+a space with many dimensions.
+
+573
+00:26:43,360 --> 00:26:43,600
+Okay.
+
+574
+00:26:43,820 --> 00:26:48,260
+Imagine you are blindfolded on a vast, uneven, mountainous landscape, and you want to know
+
+575
+00:26:48,260 --> 00:26:51,860
+if you are standing at the top of a peak at the bottom of a valley or on a mountain
+
+576
+00:26:51,860 --> 00:26:53,340
+pass, which is shaped like a saddle.
+
+577
+00:26:53,400 --> 00:26:53,520
+Right.
+
+578
+00:26:53,520 --> 00:26:56,060
+You can't see, so you just feel the ground around your feet.
+
+579
+00:26:56,200 --> 00:26:56,320
+Wow.
+
+580
+00:26:56,600 --> 00:27:01,460
+The Hessian matrix is the mathematical scan that tells you exactly how the ground curves
+
+581
+00:27:01,460 --> 00:27:03,440
+away from your feet in every possible direction.
+
+582
+00:27:03,540 --> 00:27:03,700
+Okay.
+
+583
+00:27:03,780 --> 00:27:04,260
+I'm with you.
+
+584
+00:27:04,720 --> 00:27:07,280
+The Hessian tells me the shape of the ground I'm standing on.
+
+585
+00:27:07,480 --> 00:27:08,640
+So what is an eigenvalue?
+
+586
+00:27:09,220 --> 00:27:13,100
+Eigenvalues are the specific numbers that pop out of that Hessian matrix.
+
+587
+00:27:13,580 --> 00:27:17,760
+They tell you how steep the curve is and, more importantly, in what direction it's going.
+
+588
+00:27:17,900 --> 00:27:19,020
+Like a directional slew.
+
+589
+00:27:19,020 --> 00:27:19,420
+Yes.
+
+590
+00:27:20,120 --> 00:27:23,880
+Positive eigenvalues mean the ground is slipping down and away from you.
+
+591
+00:27:23,980 --> 00:27:25,200
+That's an unstable direction.
+
+592
+00:27:25,460 --> 00:27:27,160
+If you put a ball there, it rolls away.
+
+593
+00:27:27,620 --> 00:27:31,120
+Negative eigenvalues mean the ground is curving up around you like a bowl.
+
+594
+00:27:31,340 --> 00:27:32,520
+That's a stable direction.
+
+595
+00:27:32,840 --> 00:27:33,980
+The system wants to settle there.
+
+596
+00:27:34,140 --> 00:27:34,360
+Okay.
+
+597
+00:27:34,460 --> 00:27:39,300
+So a positive eigenvalue means the universe is unstable and wants to accelerate away.
+
+598
+00:27:39,680 --> 00:27:43,600
+A negative eigenvalue means the universe is stable and wants to pull back together.
+
+599
+00:27:43,720 --> 00:27:44,060
+Got it.
+
+600
+00:27:44,060 --> 00:27:50,680
+So Ficksection does a spectral decomposition of this accessibility Hessian, basically a deep
+
+601
+00:27:50,680 --> 00:27:55,120
+multi-dimensional scan of the math, and finds a highly structured pattern of eigenvalues
+
+602
+00:27:55,120 --> 00:27:57,380
+at every order of perturbation.
+
+603
+00:27:57,580 --> 00:28:01,740
+Basically at every level of quantum jitters denoted by the letter N.
+
+604
+00:28:02,160 --> 00:28:06,580
+And the paper actually gives us the exact algebraic formulas for these eigenvalues at any
+
+605
+00:28:06,580 --> 00:28:07,340
+order N.
+
+606
+00:28:07,680 --> 00:28:08,000
+Yes.
+
+607
+00:28:08,000 --> 00:28:12,360
+And this is where the sheer mathematical beauty of the theory reveals itself.
+
+608
+00:28:12,960 --> 00:28:16,020
+Let me look at my notes here because I want to try and work through this math live.
+
+609
+00:28:16,500 --> 00:28:18,720
+The paper gives us two sets of eigenvalues.
+
+610
+00:28:19,300 --> 00:28:24,680
+The first set is called lambda A to the power of N, and the formula is simply 2N divided by 3.
+
+611
+00:28:24,980 --> 00:28:25,220
+Okay.
+
+612
+00:28:25,360 --> 00:28:31,080
+The second set is called lambda B to the power of N, and its formula is 2N minus 5 all divided
+
+613
+00:28:31,080 --> 00:28:31,540
+by 3.
+
+614
+00:28:31,800 --> 00:28:32,800
+Let's run the numbers.
+
+615
+00:28:33,120 --> 00:28:34,300
+What happens with lambda A?
+
+616
+00:28:34,640 --> 00:28:34,940
+Okay.
+
+617
+00:28:35,180 --> 00:28:38,320
+If I'm doing the math right for lambda A, the formula is 2N over 3.
+
+618
+00:28:38,760 --> 00:28:42,940
+So if we look at the first order of perturbation where N equals 1, the answer is 2 thirds.
+
+619
+00:28:43,280 --> 00:28:43,520
+Right.
+
+620
+00:28:43,640 --> 00:28:45,600
+If N equals 2, it's 4 thirds.
+
+621
+00:28:46,080 --> 00:28:48,440
+If N equals 100, it's 200 thirds.
+
+622
+00:28:48,700 --> 00:28:50,320
+It is always strictly positive.
+
+623
+00:28:50,580 --> 00:28:51,020
+Exactly.
+
+624
+00:28:51,560 --> 00:28:57,020
+And because a positive eigenvalue means instability, that tells us that the lambda A directions
+
+625
+00:28:57,020 --> 00:29:01,040
+of the universe are always unstable no matter how deep or how microscopic you look.
+
+626
+00:29:01,320 --> 00:29:03,380
+It always wants to fall apart in those directions.
+
+627
+00:29:03,580 --> 00:29:03,800
+Okay.
+
+628
+00:29:03,800 --> 00:29:07,500
+But look at the formula for lambda A. 2N minus 5 divided by 3.
+
+629
+00:29:07,660 --> 00:29:08,760
+Wait, let me plug the numbers in.
+
+630
+00:29:08,800 --> 00:29:15,100
+If N is 1, 2 times 1 is 2. 2 minus 5 is negative 3. Negative 3 divided by 3 is negative 1.
+
+631
+00:29:15,320 --> 00:29:15,720
+There you go.
+
+632
+00:29:15,860 --> 00:29:16,080
+Okay.
+
+633
+00:29:16,220 --> 00:29:20,040
+So at the very first order, we have a negative eigenvalue, negative 1.
+
+634
+00:29:20,300 --> 00:29:21,580
+We have a stable direction.
+
+635
+00:29:21,860 --> 00:29:22,140
+Right.
+
+636
+00:29:22,140 --> 00:29:27,060
+And as Flicksham proved in that gauge decomposition theorem we just talked about with the hairbrush,
+
+637
+00:29:27,680 --> 00:29:33,300
+that exact negative 1 eigenvalue is perfectly absorbed by the time since the Big Bang gauge
+
+638
+00:29:33,300 --> 00:29:33,660
+fixing.
+
+639
+00:29:33,660 --> 00:29:35,280
+So it's handled by the timeline.
+
+640
+00:29:35,280 --> 00:29:36,020
+Exactly.
+
+641
+00:29:36,020 --> 00:29:38,700
+It represents the mathematical redundancy of time translation.
+
+642
+00:29:38,860 --> 00:29:40,620
+It's an artifact of how we measure time.
+
+643
+00:29:40,940 --> 00:29:41,640
+But keep going.
+
+644
+00:29:42,180 --> 00:29:44,800
+What happens at the second order when N equals 2?
+
+645
+00:29:44,980 --> 00:29:45,300
+Let's see.
+
+646
+00:29:45,380 --> 00:29:47,660
+If N is 2, 2 times 2 is 4.
+
+647
+00:29:48,200 --> 00:29:49,980
+4 minus 5 is negative 1.
+
+648
+00:29:50,340 --> 00:29:51,680
+So we get negative 1 third.
+
+649
+00:29:51,980 --> 00:29:52,260
+Okay.
+
+650
+00:29:52,380 --> 00:29:54,380
+So at the second order, we still have a negative eigenvalue.
+
+651
+00:29:54,500 --> 00:29:55,320
+We still have stability.
+
+652
+00:29:55,780 --> 00:29:56,880
+But what about the third order?
+
+653
+00:29:57,320 --> 00:30:00,160
+When N equals 3, 2 times 3 is 6.
+
+654
+00:30:00,680 --> 00:30:02,820
+6 minus 5 is positive 1.
+
+655
+00:30:02,880 --> 00:30:03,940
+So it's positive 1 third.
+
+656
+00:30:04,160 --> 00:30:04,380
+Right.
+
+657
+00:30:04,380 --> 00:30:06,900
+If N is 4, 2 times 4 is 8.
+
+658
+00:30:06,980 --> 00:30:08,160
+Minus 5 is 3.
+
+659
+00:30:08,360 --> 00:30:10,740
+So it's positive 3 over 3 or 1.
+
+660
+00:30:11,200 --> 00:30:11,700
+Wait a minute.
+
+661
+00:30:12,100 --> 00:30:13,360
+The negative numbers just stop.
+
+662
+00:30:13,700 --> 00:30:16,560
+You just found the ultimate aha moment of the entire monograph.
+
+663
+00:30:17,300 --> 00:30:21,700
+The lambda B eigenvalue is only negative when 2 times N is less than 5.
+
+664
+00:30:21,780 --> 00:30:21,980
+Right.
+
+665
+00:30:22,280 --> 00:30:26,660
+Mathematically, because N has to be a whole number, that means it only ever happens at
+
+666
+00:30:26,660 --> 00:30:28,220
+N equals 1 and N equals 2.
+
+667
+00:30:28,620 --> 00:30:33,960
+After the second perturbative order, every single stable direction of the entire
+
+668
+00:30:33,960 --> 00:30:37,600
+mathematical phase space of the universe completely abruptly vanishes.
+
+669
+00:30:38,020 --> 00:30:38,180
+Wow.
+
+670
+00:30:38,780 --> 00:30:41,140
+Everything after order 2 is positive.
+
+671
+00:30:41,780 --> 00:30:43,760
+Everything after order 2 is unstable.
+
+672
+00:30:43,760 --> 00:30:48,020
+So the stability of the universe literally hits a brick wall at the second order.
+
+673
+00:30:48,600 --> 00:30:53,840
+And the fact that these stable negative eigenvalues just abruptly stop at a specific mathematically
+
+674
+00:30:53,840 --> 00:30:58,780
+hard-coded point leads directly to Fliction's most groundbreaking new concept.
+
+675
+00:30:59,040 --> 00:30:59,820
+The closure depth.
+
+676
+00:31:00,000 --> 00:31:00,260
+Yes.
+
+677
+00:31:00,400 --> 00:31:03,480
+The closure depth, which is denoted mathematically as declosure.
+
+678
+00:31:04,100 --> 00:31:07,800
+Fliction formally introduces this as a brand new mathematical invariant.
+
+679
+00:31:08,120 --> 00:31:08,340
+Right.
+
+680
+00:31:08,340 --> 00:31:13,040
+In the older ATV framework, those researchers knew that the infinite order instability of
+
+681
+00:31:13,040 --> 00:31:16,780
+the universe was somehow controlled by a single second order condition, but they couldn't
+
+682
+00:31:16,780 --> 00:31:17,680
+pin it down perfectly.
+
+683
+00:31:17,800 --> 00:31:19,000
+They just saw the shadow of it.
+
+684
+00:31:19,140 --> 00:31:19,680
+Yeah, exactly.
+
+685
+00:31:20,120 --> 00:31:23,100
+Fliction gives us a rigorous, undeniable geometric definition.
+
+686
+00:31:23,760 --> 00:31:27,140
+The closure depth of the Friedman's saddle, the Big Bang, is exactly 2.
+
+687
+00:31:27,140 --> 00:31:32,140
+I want to make sure I'm translating this recursive mathematical logic correctly because it feels
+
+688
+00:31:32,140 --> 00:31:33,100
+incredibly profound.
+
+689
+00:31:33,880 --> 00:31:40,640
+Imagine you are a security guard and you are inspecting a hallway of thick steel safety
+
+690
+00:31:40,640 --> 00:31:41,020
+doors.
+
+691
+00:31:41,700 --> 00:31:44,060
+But this hallway goes on for infinity.
+
+692
+00:31:44,940 --> 00:31:46,160
+There are infinite doors.
+
+693
+00:31:46,760 --> 00:31:52,100
+Under normal classical circumstances, to know if the entire hallway is secure, you would have
+
+694
+00:31:52,100 --> 00:31:54,620
+to walk down it and check every single door forever.
+
+695
+00:31:54,700 --> 00:31:56,340
+Which is mathematically impossible.
+
+696
+00:31:56,340 --> 00:31:56,820
+Right.
+
+697
+00:31:57,340 --> 00:32:00,900
+But the math of closure depth says you don't have to check infinite doors.
+
+698
+00:32:01,020 --> 00:32:04,840
+It says that if you check door one and it's breached and you check door two and it's breached,
+
+699
+00:32:05,040 --> 00:32:10,420
+the fundamental underlying architectural structure of the building guarantees that every single
+
+700
+00:32:10,420 --> 00:32:12,920
+door after them is definitively breached as well.
+
+701
+00:32:13,080 --> 00:32:14,360
+Door three door four door billion.
+
+702
+00:32:14,520 --> 00:32:14,800
+Yes.
+
+703
+00:32:15,220 --> 00:32:19,980
+You only need to check to a depth of two to know the absolute fate of the entire infinite
+
+704
+00:32:19,980 --> 00:32:20,500
+system.
+
+705
+00:32:20,640 --> 00:32:25,240
+That is a phenomenal analogy and it perfectly captures the recursive guarantee of the math.
+
+706
+00:32:25,240 --> 00:32:30,280
+And I need to stress how incredibly rare and special this is in theoretical physics.
+
+707
+00:32:30,520 --> 00:32:31,620
+Is it usually much messier?
+
+708
+00:32:31,860 --> 00:32:32,160
+Oh yeah.
+
+709
+00:32:32,560 --> 00:32:37,860
+If we compare this to other highly complex dynamical systems like the Kolmogorov, Arnold Moser
+
+710
+00:32:37,860 --> 00:32:46,140
+or Camtori, in generic Hamiltonian systems, those systems are a nightmare to prove stability
+
+711
+00:32:46,140 --> 00:32:46,440
+for.
+
+712
+00:32:46,580 --> 00:32:46,880
+Right.
+
+713
+00:32:46,940 --> 00:32:48,500
+They usually require infinite checks.
+
+714
+00:32:48,560 --> 00:32:49,780
+They have no finite determination.
+
+715
+00:32:50,420 --> 00:32:55,080
+You can never stop checking doors because door 1000 might suddenly be locked even if the
+
+716
+00:32:55,080 --> 00:32:56,960
+previous 999 were open.
+
+717
+00:32:57,080 --> 00:32:57,520
+Oh wow.
+
+718
+00:32:57,520 --> 00:33:03,840
+But the Friedman instability in the RSVP framework has a strict mathematically ironclad finite
+
+719
+00:33:03,840 --> 00:33:05,860
+closure depth of exactly two.
+
+720
+00:33:06,220 --> 00:33:11,100
+It acts exactly like the co-dimension of stable manifolds in finite dimensional Morse theory.
+
+721
+00:33:11,220 --> 00:33:11,420
+Okay.
+
+722
+00:33:11,620 --> 00:33:15,100
+Finite dimensional Morse theory is a bit over my head, but I get the concept of the absolute
+
+723
+00:33:15,100 --> 00:33:15,900
+finite check.
+
+724
+00:33:15,980 --> 00:33:18,220
+But here's the question I know the listener is asking right now.
+
+725
+00:33:18,280 --> 00:33:20,560
+What is the profound physical meaning here?
+
+726
+00:33:20,680 --> 00:33:21,300
+Why does it matter?
+
+727
+00:33:21,660 --> 00:33:21,860
+Right.
+
+728
+00:33:21,940 --> 00:33:26,020
+It's a cool math trick, but why does it matter to the actual universe that the closure depth
+
+729
+00:33:26,020 --> 00:33:27,000
+is exactly two?
+
+730
+00:33:27,220 --> 00:33:31,200
+It matters deeply because of what happens when we try to run the clock of the universe
+
+731
+00:33:31,200 --> 00:33:31,640
+backwards.
+
+732
+00:33:31,960 --> 00:33:32,140
+Yeah.
+
+733
+00:33:32,520 --> 00:33:37,560
+If you look at the universe moving backward in time, rewinding all the way toward the
+
+734
+00:33:37,560 --> 00:33:44,440
+Big Bang, that one surviving stable eigenvalue at the second order, that negative one third
+
+735
+00:33:44,440 --> 00:33:48,140
+we calculated, completely dictates the true behavior of the universe.
+
+736
+00:33:48,240 --> 00:33:48,420
+Okay.
+
+737
+00:33:48,820 --> 00:33:53,280
+If your mathematical model only looked at the first order, if your depth of analysis was
+
+738
+00:33:53,280 --> 00:33:57,380
+only once for woo, you would think the Big Bang was perfectly self-similar.
+
+739
+00:33:57,920 --> 00:34:01,080
+You'd think the math was clean uniform and beautifully symmetrical.
+
+740
+00:34:01,480 --> 00:34:02,120
+But it's not.
+
+741
+00:34:02,240 --> 00:34:04,640
+No, because the true closure depth is two to two.
+
+742
+00:34:05,000 --> 00:34:10,560
+That second order stable direction proves that the generic behavior of the Big Bang is fundamentally
+
+743
+00:34:10,560 --> 00:34:12,340
+inherently non-self-similar.
+
+744
+00:34:12,340 --> 00:34:16,060
+So you're saying that if you don't look deep enough, if you only look to a depth of one,
+
+745
+00:34:16,440 --> 00:34:19,060
+you miss the physical reality of the Big Bang entirely.
+
+746
+00:34:19,380 --> 00:34:23,140
+You miss the generic instability that drives the entire evolution of the cosmos.
+
+747
+00:34:23,680 --> 00:34:24,200
+Precisely.
+
+748
+00:34:24,740 --> 00:34:29,880
+It is a precise quantitative statement about the absolute minimum resolution depth required
+
+749
+00:34:29,880 --> 00:34:32,800
+to capture the true instability of our origins.
+
+750
+00:34:33,240 --> 00:34:35,560
+The standard models just didn't look deep enough.
+
+751
+00:34:35,880 --> 00:34:36,000
+Right.
+
+752
+00:34:36,080 --> 00:34:40,960
+So standard models looked at depth one, saw a smooth beginning, and assumed it stayed smooth.
+
+753
+00:34:40,960 --> 00:34:46,720
+RSVP proves you have to look at depth two, where you immediately see the chaos that eventually
+
+754
+00:34:46,720 --> 00:34:50,260
+causes the universe to tear itself apart in accelerated expansion.
+
+755
+00:34:50,420 --> 00:34:50,600
+Okay.
+
+756
+00:34:50,800 --> 00:34:52,520
+I have to step in here and play devil's advocate.
+
+757
+00:34:52,640 --> 00:34:52,960
+So you do?
+
+758
+00:34:53,220 --> 00:34:58,280
+This is beautiful, elegant, poetic mathematical theory.
+
+759
+00:34:58,660 --> 00:35:01,480
+It's breathtaking on paper, but physics is not just math.
+
+760
+00:35:02,140 --> 00:35:04,920
+Physics requires hard, observable evidence.
+
+761
+00:35:05,540 --> 00:35:08,300
+I can hear you screaming at your device right now.
+
+762
+00:35:08,300 --> 00:35:11,740
+So how do we actually prove any of this?
+
+763
+00:35:11,840 --> 00:35:13,180
+It's the most important question.
+
+764
+00:35:13,440 --> 00:35:18,780
+Math is great, but how do we point a massive telescope at the night sky and prove that Fliction's
+
+765
+00:35:18,780 --> 00:35:24,440
+RSVP fluid is real and the beloved billions of dollars funded lambda CDM model is wrong?
+
+766
+00:35:24,760 --> 00:35:26,100
+That is the ultimate question.
+
+767
+00:35:26,240 --> 00:35:26,360
+Yeah.
+
+768
+00:35:26,500 --> 00:35:31,240
+And Fliction dedicates the back half of the paper to exactly this falsifiable observable predictions.
+
+769
+00:35:31,360 --> 00:35:31,500
+Okay.
+
+770
+00:35:31,580 --> 00:35:31,900
+Let's hear.
+
+771
+00:35:32,300 --> 00:35:34,840
+To prove it, we have to look at the luminosity redshift relation.
+
+772
+00:35:34,840 --> 00:35:39,620
+This is the classic time-tested way astronomers measure the expansion of the universe.
+
+773
+00:35:40,100 --> 00:35:41,040
+Looking at supernovae, right?
+
+774
+00:35:41,420 --> 00:35:41,680
+Yes.
+
+775
+00:35:42,420 --> 00:35:48,320
+They look at the redshift of distant supernovae, specifically type Aya supernovae, which act
+
+776
+00:35:48,320 --> 00:35:52,560
+as standard candles because they always explode with the exact same brightness.
+
+777
+00:35:52,800 --> 00:35:53,020
+Right.
+
+778
+00:35:53,140 --> 00:35:57,660
+So if you know how bright it should be, you can tell how far away it is based on how dim it
+
+779
+00:35:57,660 --> 00:35:57,880
+looks.
+
+780
+00:35:57,980 --> 00:35:58,360
+Exactly.
+
+781
+00:35:58,360 --> 00:36:03,500
+By comparing how bright they look to how much their light has stretched or redshifted, we
+
+782
+00:36:03,500 --> 00:36:05,420
+can track the expansion history of space.
+
+783
+00:36:05,640 --> 00:36:05,960
+Right.
+
+784
+00:36:06,140 --> 00:36:07,920
+Measuring the standard cosmic expansion.
+
+785
+00:36:08,100 --> 00:36:10,700
+Now, according to the paper, this is where it gets incredibly tricky.
+
+786
+00:36:11,060 --> 00:36:11,500
+It does.
+
+787
+00:36:11,740 --> 00:36:16,900
+If you look at the first two mathematical orders of this luminosity redshift relation, which
+
+788
+00:36:16,900 --> 00:36:23,860
+give us the Hubble constant A zero and the quadratic coefficient Q, all three major models
+
+789
+00:36:23,860 --> 00:36:24,540
+completely agree.
+
+790
+00:36:24,680 --> 00:36:25,120
+Yes, they do.
+
+791
+00:36:25,120 --> 00:36:31,220
+Lambda CDM, the ATV system, and the new RSVP framework all predict the exact same numbers
+
+792
+00:36:31,220 --> 00:36:36,140
+for A zero and Q. They are completely identical at that resolution. You literally cannot use
+
+793
+00:36:36,140 --> 00:36:39,380
+standard low-level supernova data to tell who is right.
+
+794
+00:36:39,720 --> 00:36:43,740
+Exactly. The first and second order phase torturates are mathematically degenerate across
+
+795
+00:36:43,740 --> 00:36:46,440
+all three frameworks. They mimic each other perfectly.
+
+796
+00:36:46,480 --> 00:36:47,200
+So where do they split?
+
+797
+00:36:47,440 --> 00:36:52,300
+The crucial difference, the true undeniable observational test, lies hidden in the third
+
+798
+00:36:52,300 --> 00:36:57,480
+order redshift luminosity coefficient, which the paper denotes simply as the letter C.
+
+799
+00:36:58,020 --> 00:37:02,340
+Let's look at the specific predictions for C because this is the battleground. According
+
+800
+00:37:02,340 --> 00:37:08,600
+to the paper, the standard model, lambda CDM predicts that C equals negative 0.1804.
+
+801
+00:37:08,680 --> 00:37:08,820
+Right.
+
+802
+00:37:09,100 --> 00:37:15,920
+The ATV system predicts C equals positive 0.3591. And the new RSVP framework predicts C equals
+
+803
+00:37:15,920 --> 00:37:20,780
+that positive 0.3591 plus a few highly specific RSVP corrections.
+
+804
+00:37:21,020 --> 00:37:23,940
+Specifically a term called ATEF and a term called MU.
+
+805
+00:37:24,220 --> 00:37:28,740
+Right. So this is where we get a massive, undeniable, falsifiable divergence. Notice the
+
+806
+00:37:28,740 --> 00:37:30,940
+most important part of those numbers, the sign change.
+
+807
+00:37:31,060 --> 00:37:31,320
+Yes.
+
+808
+00:37:31,320 --> 00:37:37,740
+Lambda CDM strictly predicts a negative C. ATV and RSVP strictly predict a positive C. Why is
+
+809
+00:37:37,740 --> 00:37:39,520
+there a fundamental disagreement on the sign?
+
+810
+00:37:39,520 --> 00:37:44,460
+Because lambda CDM relies on a constant vacuum energy, dark energy, to push the universe apart.
+
+811
+00:37:44,680 --> 00:37:50,100
+A constant force has a specific mathematical signature. ATD and RSVP, however, rely on dynamical
+
+812
+00:37:50,100 --> 00:37:51,140
+instability relaxation.
+
+813
+00:37:51,420 --> 00:37:54,520
+This goes right back to the rubber band on coiling. The tension releasing.
+
+814
+00:37:54,920 --> 00:38:01,380
+Yes. And that thermodynamic relaxation process has a completely different time reversal symmetry
+
+815
+00:38:01,380 --> 00:38:03,120
+than a constant vacuum energy.
+
+816
+00:38:03,180 --> 00:38:03,840
+Oh, I see.
+
+817
+00:38:03,840 --> 00:38:09,280
+That fundamental physical difference in the Y of the expansion shows up unavoidably as
+
+818
+00:38:09,280 --> 00:38:15,660
+a flipped sign in the third order redshift coefficient. If C is negative, dark energy is real. If
+
+819
+00:38:15,660 --> 00:38:19,700
+C is positive, dark energy is a myth and the universe is just relaxing.
+
+820
+00:38:20,020 --> 00:38:25,980
+And RSVP goes even further than the older ATV model by adding those specific fluid corrections.
+
+821
+00:38:26,760 --> 00:38:31,260
+The paper states the E to F term comes directly from the thermodynamic diffusion in the scalar
+
+822
+00:38:31,260 --> 00:38:35,660
+field. And the mu term is quadratic in the scalar vector coupling we talked about earlier.
+
+823
+00:38:35,900 --> 00:38:36,000
+Right.
+
+824
+00:38:36,640 --> 00:38:41,100
+Both of these corrections are strictly mathematically positive. So if we look at the pure math,
+
+825
+00:38:41,600 --> 00:38:47,340
+CRSVP must be greater than CATV, which is greater than zero, which is drastically greater than lambda
+
+826
+00:38:47,340 --> 00:38:48,700
+CDM's negative prediction.
+
+827
+00:38:48,700 --> 00:38:53,620
+It creates a clear hierarchical ladder of predictions. They aren't just slightly different.
+
+828
+00:38:54,040 --> 00:38:55,320
+They're fundamentally opposed.
+
+829
+00:38:55,540 --> 00:39:01,000
+Here's where it gets really interesting. To completely prove lambda CDM wrong and to prove
+
+830
+00:39:01,000 --> 00:39:08,060
+RSVP right, we don't need a magical new particle accelerator. We just need to measure the luminosity
+
+831
+00:39:08,060 --> 00:39:10,640
+redshift of supernovae to fourth order accuracy.
+
+832
+00:39:10,840 --> 00:39:11,360
+Exactly.
+
+833
+00:39:11,660 --> 00:39:16,380
+We just need to definitively know the sign and the exact magnitude of that one coefficient C.
+
+834
+00:39:17,040 --> 00:39:20,800
+How close are we to actually getting that high resolution data from our telescopes?
+
+835
+00:39:20,800 --> 00:39:27,100
+We are getting agonizingly close. The paper notes, the current and upcoming massive supernova
+
+836
+00:39:27,100 --> 00:39:32,980
+IAEA surveys, like the Extended Dark Energy Survey or the DSI project, are pushing the absolute
+
+837
+00:39:32,980 --> 00:39:34,600
+boundaries of optical precision.
+
+838
+00:39:35,000 --> 00:39:35,280
+Wow.
+
+839
+00:39:35,440 --> 00:39:39,820
+The fourth order coefficient is exactly what we need to determine if the Big Bang was self-similar
+
+840
+00:39:39,820 --> 00:39:44,460
+at order too. It is sitting right at the bleeding edge frontier of our current observation limits.
+
+841
+00:39:44,800 --> 00:39:48,160
+Within the next decade, we might actually have the data to confirm the sign of C.
+
+842
+00:39:48,160 --> 00:39:52,660
+But wait. Fliction's paper doesn't just rest its entire weight on the redshift coefficient.
+
+843
+00:39:53,240 --> 00:39:57,900
+It offers an even more distinct undeniable smoking gun that RSVP predicts.
+
+844
+00:39:58,260 --> 00:40:03,620
+A massive cosmic signature that neither lambda CDM nor the ATV system even account for.
+
+845
+00:40:03,840 --> 00:40:04,580
+Yeah, this is the big one.
+
+846
+00:40:04,800 --> 00:40:09,780
+And to find it, we have to go all the way back to those five strict mathematical blinders,
+
+847
+00:40:10,200 --> 00:40:12,920
+the reduction rules, and we have to deliberately break one of them.
+
+848
+00:40:13,380 --> 00:40:15,540
+We have to break the zero torsion rule.
+
+849
+00:40:15,540 --> 00:40:21,660
+Yes. Remember rule three. It stated that the fluid has no torsion, no curl. The vector flow
+
+850
+00:40:21,660 --> 00:40:23,800
+just pushes straight out. It doesn't rotate.
+
+851
+00:40:23,960 --> 00:40:24,160
+Right.
+
+852
+00:40:24,600 --> 00:40:29,800
+But if we relax that artificial mathematical condition, if we let beta curl be greater than
+
+853
+00:40:29,800 --> 00:40:36,740
+zero, the RSVP-Lamfordine flow suddenly generates vorticity. The macroscopic fluid of the universe
+
+854
+00:40:36,740 --> 00:40:37,560
+starts to swirl.
+
+855
+00:40:37,660 --> 00:40:40,260
+It creates microscopic cosmic whirlpools.
+
+856
+00:40:40,260 --> 00:40:45,840
+And this vorticity, interacting deeply with the macroscopic entropy gradients, generates what
+
+857
+00:40:45,840 --> 00:40:50,840
+mathematicians call a parity-odd connection in the fundamental geometry of the universe.
+
+858
+00:40:51,040 --> 00:40:52,500
+A parity-odd connection.
+
+859
+00:40:52,820 --> 00:40:56,880
+Okay, we need to explain parity in a way that actually makes sense because it's a tricky concept.
+
+860
+00:40:57,300 --> 00:41:01,940
+Parity is usually explained as left-handedness versus right-handedness in physics, like looking
+
+861
+00:41:01,940 --> 00:41:04,880
+at the universe in a mirror. But how does that actually affect the fluid?
+
+862
+00:41:04,880 --> 00:41:09,980
+Think of it this way. Imagine you have a perfectly flat, pristine ribbon, and you shoot it through
+
+863
+00:41:09,980 --> 00:41:14,460
+a tank of perfectly still water. The ribbon stays flat. That's a parity, even symmetric
+
+864
+00:41:14,460 --> 00:41:20,720
+environment. But now imagine the water in the tank is draining, swirling rapidly in a specific
+
+865
+00:41:20,720 --> 00:41:23,460
+left-handed spiral, like water down a drain.
+
+866
+00:41:23,500 --> 00:41:24,400
+Right. It's spinning.
+
+867
+00:41:24,800 --> 00:41:29,540
+When you shoot the flat ribbon through that swirling water, the forces of the fluid will
+
+868
+00:41:29,540 --> 00:41:34,860
+physically catch the edges of the ribbon and twist it. The environment itself has a handedness,
+
+869
+00:41:34,860 --> 00:41:37,880
+that forces objects moving through it to rotate.
+
+870
+00:41:38,160 --> 00:41:44,160
+I love that analogy. So in the early universe, as the incredibly ancient light from the cosmic
+
+871
+00:41:44,160 --> 00:41:49,900
+microwave background, the literal afterglow of the Big Bang travels for billions of years
+
+872
+00:41:49,900 --> 00:41:56,860
+through this twisting, swirling, parity-odd RSVP fluid. The polarization of that light, the ribbon
+
+873
+00:41:56,860 --> 00:42:01,520
+physically rotates. The angle of the light gets twisted by the space it's flying through.
+
+874
+00:42:01,520 --> 00:42:06,300
+Exactly. And that physical twisting of light over cosmic distances is called birefringence.
+
+875
+00:42:06,860 --> 00:42:10,100
+The paper predicts a massive observable cosmic birefringence.
+
+876
+00:42:10,220 --> 00:42:15,280
+This raises a really important skeptical question, though. Because if you read up on theoretical
+
+877
+00:42:15,280 --> 00:42:20,580
+physics, many different models, like minimal axion models or crazy string theory variants,
+
+878
+00:42:21,040 --> 00:42:24,200
+also predict that the polarization of the CMB should rotate.
+
+879
+00:42:24,780 --> 00:42:25,320
+That's true.
+
+880
+00:42:25,320 --> 00:42:31,460
+They all predict some form of birefringence, usually caused by microscopic dark matter particles.
+
+881
+00:42:32,120 --> 00:42:37,960
+So if we point a telescope at the sky, and we do observe this rotation of light, how do
+
+882
+00:42:37,960 --> 00:42:43,400
+we know it's Flixian's macroscopic RSVP fluid causing it, and not just some undiscovered axion
+
+883
+00:42:43,400 --> 00:42:47,700
+particle? What makes the RSVP prediction definitively special?
+
+884
+00:42:47,700 --> 00:42:52,480
+The cross-correlation. This is without a doubt the absolute genius of Flixian's paper.
+
+885
+00:42:53,160 --> 00:42:57,360
+It introduces something called Assumption 8.5, the entropy-vorticity coherence.
+
+886
+00:42:57,440 --> 00:42:58,220
+Okay, what does that mean?
+
+887
+00:42:58,400 --> 00:43:02,900
+In the RSVP framework, the swirling vorticity and the thermodynamic entropy gradients don't
+
+888
+00:43:02,900 --> 00:43:07,640
+just twist the polarization of ancient light. They are the exact same physical macroscopic
+
+889
+00:43:07,640 --> 00:43:10,080
+source that perturbs the redshift of matter.
+
+890
+00:43:10,220 --> 00:43:12,160
+Wait, so it's the same fluid causing both?
+
+891
+00:43:12,260 --> 00:43:15,060
+Yes, they are the exact same fluid causing both phenomena.
+
+892
+00:43:15,060 --> 00:43:20,140
+Not only that, but because they share the exact same physical parent, their spatial fluctuations
+
+893
+00:43:20,140 --> 00:43:24,960
+across the night sky must be mathematically correlated. If the fluid swirls heavily in
+
+894
+00:43:24,960 --> 00:43:29,920
+one specific sector of the sky, it must twist the light and alter the galaxy redshift in that
+
+895
+00:43:29,920 --> 00:43:30,920
+exact same sector.
+
+896
+00:43:31,040 --> 00:43:31,540
+Exactly.
+
+897
+00:43:31,960 --> 00:43:38,440
+RSVP predicts a definitive non-zero joint cross-correlation between them denoted mathematically as
+
+898
+00:43:38,440 --> 00:43:39,160
+kvitas.
+
+899
+00:43:39,360 --> 00:43:45,040
+Yes. Both the anisotropic redshift, which are the slight localized variations in
+
+900
+00:43:45,040 --> 00:43:49,520
+how fast galaxies seem to be moving away from us, and the biofringence, the twisting of
+
+901
+00:43:49,520 --> 00:43:55,820
+the CMB light, are entirely sourced by the underlying entropy-vorticity field of the plenum.
+
+902
+00:43:56,020 --> 00:43:59,500
+Let me make sure I'm visualizing this final smoking gun correctly.
+
+903
+00:43:59,940 --> 00:44:00,080
+Yeah.
+
+904
+00:44:00,280 --> 00:44:05,580
+We have massive, highly sensitive telescopes right now, like CMB-S4 and Lightbird, that
+
+905
+00:44:05,580 --> 00:44:09,440
+are designed to map the microscopic twisting of light across the entire night sky.
+
+906
+00:44:09,520 --> 00:44:09,700
+Right.
+
+907
+00:44:09,700 --> 00:44:14,720
+We take that map of cosmic twists, then we take a completely different map from giant
+
+908
+00:44:14,720 --> 00:44:18,720
+optical galaxy surveys showing the slight redshift variations of physical matter across
+
+909
+00:44:18,720 --> 00:44:23,780
+the sky. RSVP says that if you lay those two completely different maps over each other,
+
+910
+00:44:24,440 --> 00:44:28,060
+the patterns of the twisting light and the patterns of the galaxy redshifts will match
+
+911
+00:44:28,060 --> 00:44:30,300
+up perfectly, like a cosmic puzzle piece.
+
+912
+00:44:30,420 --> 00:44:36,560
+Yes. They will be inextricably statistically linked. And this is the ultimate, undeniable,
+
+913
+00:44:36,560 --> 00:44:38,660
+falsifiable prediction of the monograph.
+
+914
+00:44:38,980 --> 00:44:39,340
+Wow.
+
+915
+00:44:39,860 --> 00:44:45,580
+In the standard lambda-CDM model, the theoretical mechanism that might cause biofringence, like
+
+916
+00:44:45,580 --> 00:44:49,920
+axiom particles, is completely physically decoupled from the matter-power spectrum that
+
+917
+00:44:49,920 --> 00:44:51,960
+dictates galaxy redshifts at the first order.
+
+918
+00:44:52,080 --> 00:44:56,520
+So in the standard model, their cross-correlation must be zero. The maps won't match.
+
+919
+00:44:56,520 --> 00:45:02,060
+Right. In the older ATV system, there is mathematically no vorticity at all, so the cross-correlation must
+
+920
+00:45:02,060 --> 00:45:07,220
+be zero. Only the RSVP framework predicts that these two distinct observable maps will
+
+921
+00:45:07,220 --> 00:45:07,540
+align.
+
+922
+00:45:07,820 --> 00:45:12,440
+So finding this highly specific cross-correlation in the observational data would completely
+
+923
+00:45:12,440 --> 00:45:17,420
+prove that the parity-odd geometry of our universe is being driven by macroscopic thermodynamics,
+
+924
+00:45:17,900 --> 00:45:23,740
+massive entropy, and fluid vorticity, and not by some exotic, undiscovered microscopic
+
+925
+00:45:23,740 --> 00:45:25,800
+quantum particle like an axion.
+
+926
+00:45:25,980 --> 00:45:26,060
+Yeah.
+
+927
+00:45:26,060 --> 00:45:31,640
+It proves that the universe is governed by macroscopic fluid dynamics, not quantum ghosts.
+
+928
+00:45:32,000 --> 00:45:37,340
+Precisely. It strips away the magical invisible particles and grounds the most mysterious grand
+
+929
+00:45:37,340 --> 00:45:43,560
+scale observations of our universe in a tangible thermodynamic reality. It replaces dark energy
+
+930
+00:45:43,560 --> 00:45:44,960
+with fluid mechanics.
+
+931
+00:45:45,180 --> 00:45:50,060
+As we finally wrap our heads around these incredibly complex observable tests, we have
+
+932
+00:45:50,060 --> 00:45:54,540
+to take a step back. We need to look at the ultimate philosophical conclusion of Fliction's
+
+933
+00:45:54,540 --> 00:45:59,160
+paper. We need to zoom all the way out and look at what Fliction calls the grand phase
+
+934
+00:45:59,160 --> 00:45:59,600
+portrait.
+
+935
+00:46:00,000 --> 00:46:01,640
+Yes. This is where it all comes together.
+
+936
+00:46:01,820 --> 00:46:07,000
+If this theory is true, what is the universe actually doing from its very beginning to its
+
+937
+00:46:07,000 --> 00:46:07,820
+absolute end?
+
+938
+00:46:07,820 --> 00:46:13,040
+The paper concludes by describing the ultimate RSVP phase portrait on a theoretical plane,
+
+939
+00:46:13,540 --> 00:46:19,820
+defined by the redshift and velocity coefficients, the z-squared v-zero plane. It identifies three
+
+940
+00:46:19,820 --> 00:46:22,400
+major defining points in the life cycle of the cosmos.
+
+941
+00:46:22,620 --> 00:46:23,520
+Okay, what's the first one?
+
+942
+00:46:23,520 --> 00:46:29,680
+First is the source labeled U-zero-zero. This is the zero accessibility vacuum. It's a state
+
+943
+00:46:29,680 --> 00:46:35,080
+of complete mathematical emptiness, zero flow, zero entropy. And mathematically, Fliction
+
+944
+00:46:35,080 --> 00:46:40,960
+states, it is unphysical as a true starting point. It's an asymptote that can never be truly
+
+945
+00:46:40,960 --> 00:46:41,380
+reached.
+
+946
+00:46:41,460 --> 00:46:45,780
+Right, because the universe is a plenum. It isn't nothing. It is full. So we have to move
+
+947
+00:46:45,780 --> 00:46:50,400
+to the second major point. The saddle point labeled SM four-thirds two-thirds.
+
+948
+00:46:50,580 --> 00:46:51,260
+The big bang.
+
+949
+00:46:51,260 --> 00:46:57,220
+Exactly. This is the big bang. But in the RSVP framework, the big bang is not a terrifying
+
+950
+00:46:57,220 --> 00:47:02,620
+singularity of infinite density and infinite temperature where all math breaks down. It
+
+951
+00:47:02,620 --> 00:47:05,660
+is instead a highly compressed metastable state.
+
+952
+00:47:05,900 --> 00:47:11,300
+It has a massive scalar accessibility field, highly ordered rigid flow, and near uniform
+
+953
+00:47:11,300 --> 00:47:11,700
+entropy.
+
+954
+00:47:11,700 --> 00:47:16,800
+It is the stretched rubber band fully loaded with potential energy desperately waiting to
+
+955
+00:47:16,800 --> 00:47:17,040
+snap.
+
+956
+00:47:17,260 --> 00:47:22,160
+Yes. And from that highly constrained saddle point, the universe begins to physically fall.
+
+957
+00:47:22,600 --> 00:47:26,760
+It flows along what the math calls an under-dense trajectory. It's falling toward the third
+
+958
+00:47:26,760 --> 00:47:29,800
+and final point. The attractor labeled M01.
+
+959
+00:47:29,800 --> 00:47:36,840
+This is the low-curvature maximal accessibility basin. It is the ultimate state of relaxation where
+
+960
+00:47:36,840 --> 00:47:41,320
+the scalar gradient completely vanishes. The fluid flow becomes perfectly isotropic,
+
+961
+00:47:41,320 --> 00:47:44,760
+and the entropy reaches its final maximum equilibrium.
+
+962
+00:47:44,760 --> 00:47:52,000
+The thick rubber band has finally completely uncoiled. The tension is gone. The system is at rest.
+
+963
+00:47:52,000 --> 00:47:58,400
+If we synthesize this grand view, it completely radically changes our foundational cosmological
+
+964
+00:47:58,400 --> 00:47:58,860
+narrative.
+
+965
+00:47:59,040 --> 00:47:59,220
+Yeah.
+
+966
+00:47:59,460 --> 00:48:03,520
+The universe is not expanding into emptiness. It isn't a balloon being blown up.
+
+967
+00:48:03,560 --> 00:48:03,780
+Right.
+
+968
+00:48:03,960 --> 00:48:09,780
+It is undergoing a multi-billion-year process of accessibility relaxation. The rigid, incredibly
+
+969
+00:48:09,780 --> 00:48:14,740
+tight constraints of the early thermodynamic medium are gradually violently flattening out,
+
+970
+00:48:14,820 --> 00:48:16,360
+releasing massive amounts of entropy.
+
+971
+00:48:16,360 --> 00:48:21,360
+And that under-dense trajectory, the literal physical path connecting the highly constrained
+
+972
+00:48:21,360 --> 00:48:26,180
+Big Bang to the relaxed equilibrium of the future, is exactly what generates the visual
+
+973
+00:48:26,180 --> 00:48:27,960
+illusion of anomalous acceleration.
+
+974
+00:48:28,180 --> 00:48:28,560
+You got it.
+
+975
+00:48:28,860 --> 00:48:35,580
+So the universe is literally just a tightly wound thermodynamic spring that is slowly geometrically
+
+976
+00:48:35,580 --> 00:48:42,200
+uncoiling toward equilibrium. And dark energy, this massive mysterious force that we thought
+
+977
+00:48:42,200 --> 00:48:45,280
+made up most of reality, is just a mathematical ghost.
+
+978
+00:48:45,280 --> 00:48:49,000
+It is a fundamental misunderstanding of the geometry of the spring itself.
+
+979
+00:48:49,400 --> 00:48:55,020
+We invented a magical invisible pushing force because we didn't realize the space itself was
+
+980
+00:48:55,020 --> 00:48:55,760
+just relaxing.
+
+981
+00:48:55,880 --> 00:49:01,300
+That is the beautiful, devastating core thesis of the paper. If you try to model a messy
+
+982
+00:49:01,300 --> 00:49:07,200
+thermodynamic relaxation process using a perfectly rigid, frictionless, purely geometric grid,
+
+983
+00:49:07,460 --> 00:49:12,080
+which is exactly what the Lambda CDM model does, you will inevitably find that your math is missing
+
+984
+00:49:12,080 --> 00:49:12,440
+energy.
+
+985
+00:49:12,620 --> 00:49:13,540
+Numbers won't add up.
+
+986
+00:49:13,540 --> 00:49:16,760
+And to fix the math, you will have to invent dark energy to balance the books.
+
+987
+00:49:17,560 --> 00:49:22,040
+RSVP shows that if you actually model the universe accurately as a plenum, a full, messy
+
+988
+00:49:22,040 --> 00:49:26,080
+medium governed by entropy and accessibility, the mathematical books balance perfectly on
+
+989
+00:49:26,080 --> 00:49:28,140
+their own. No dark energy required.
+
+990
+00:49:28,140 --> 00:49:32,880
+Okay. Let's take a deep breath and recap this massive intellectual journey we've just been
+
+991
+00:49:32,880 --> 00:49:38,380
+on. We started with the bizarre, terrifying anomaly of the accelerated expansion of the
+
+992
+00:49:38,380 --> 00:49:45,480
+universe. He did. We looked at how Fliction's massive RSVP framework takes the brilliant mathematical
+
+993
+00:49:45,480 --> 00:49:51,980
+foundation of the unstable Friedman saddle from the ATV system and aggressively places it into a real
+
+994
+00:49:51,980 --> 00:49:58,060
+physical thermodynamic medium made of scalar vector and entropy fields. We explored the dense
+
+995
+00:49:58,060 --> 00:50:03,660
+mathematics of this medium, specifically avoiding the explosive Ostrogratsky instability.
+
+996
+00:50:03,660 --> 00:50:04,780
+No ghosts allowed.
+
+997
+00:50:04,780 --> 00:50:11,080
+Right. And proving the closure depth of exactly two, which rigorously proves that the fundamentally non-self-similar
+
+998
+00:50:11,080 --> 00:50:16,120
+chaotic nature of the Big Bang can be completely determined by a finite second order check.
+
+999
+00:50:16,120 --> 00:50:21,320
+We looked at how the reduction principle uses five strict mathematical blinders to show how the
+
+1000
+00:50:21,320 --> 00:50:26,440
+standard model missed this reality. And then we looked at the falsifiable predictions, the positive
+
+1001
+00:50:26,440 --> 00:50:31,880
+redshift coefficient that directly mathematically challenges Lambda CDM's negative prediction.
+
+1002
+00:50:31,880 --> 00:50:36,920
+And finally, the ultimate smoking gun, the redshift birefringent's cross-correlation.
+
+1003
+00:50:36,920 --> 00:50:42,200
+The mind-bending prediction that the physical twisting of ancient cosmic light and the acceleration of
+
+1004
+00:50:42,200 --> 00:50:48,120
+physical galaxies are just two puzzle pieces sourced by the exact same thermodynamic vorticity.
+
+1005
+00:50:48,120 --> 00:50:55,720
+It is a truly remarkable, staggering synthesis of complex topology, classical general relativity,
+
+1006
+00:50:55,720 --> 00:51:01,400
+and non-equilibrium thermodynamics. It is a masterpiece of theoretical physics.
+
+1007
+00:51:01,400 --> 00:51:07,800
+So why should you, the listener, care about all of this incredibly complex mathematical cosmology?
+
+1008
+00:51:07,800 --> 00:51:11,880
+Why does a dense 2026 monograph matter to your daily life?
+
+1009
+00:51:11,880 --> 00:51:16,760
+You should care, because the fundamental narrative of where you live, the actual physical story of
+
+1010
+00:51:16,760 --> 00:51:20,840
+the universe around you, is actively, aggressively being rewritten right now.
+
+1011
+00:51:20,840 --> 00:51:21,720
+It really is.
+
+1012
+00:51:21,720 --> 00:51:27,400
+We might be witnessing the final days of a universe dominated by an invisible, inexplicable dark energy.
+
+1013
+00:51:27,400 --> 00:51:32,120
+We are shifting from a universe of magical forces to a universe governed by the profound,
+
+1014
+00:51:32,120 --> 00:51:35,800
+beautiful thermodynamic laws of accessibility and relaxation.
+
+1015
+00:51:35,800 --> 00:51:39,720
+The universe isn't a terrifying explosion being ripped apart by dark energy.
+
+1016
+00:51:39,720 --> 00:51:44,920
+It is simply a highly constrained, beautifully complex system, naturally inevitably seeking
+
+1017
+00:51:44,920 --> 00:51:49,400
+its own peace, its own equilibrium. It is finding its rest.
+
+1018
+00:51:49,400 --> 00:51:52,680
+I want to leave you with a final provocative thought to mull over tonight.
+
+1019
+00:51:52,680 --> 00:51:59,080
+If Flixion's mathematics are right, and the macroscopic expansion of the entire cosmos is just an
+
+1020
+00:51:59,080 --> 00:52:06,440
+emergent thermodynamic illusion, a property of accessibility relaxation, what else in our daily
+
+1021
+00:52:06,440 --> 00:52:08,520
+physical reality might be an illusion?
+
+1022
+00:52:08,520 --> 00:52:09,560
+Oh, that's a big question.
+
+1023
+00:52:09,560 --> 00:52:16,200
+If the expansion of space isn't a fundamental force, could gravity itself just be a thermodynamic
+
+1024
+00:52:16,200 --> 00:52:22,680
+byproduct? Could the forward, relentless flow of time just be a mirage created by the universe,
+
+1025
+00:52:22,680 --> 00:52:25,480
+trying to iron out its own entropy gradients?
+
+1026
+00:52:25,480 --> 00:52:29,640
+Are we all really just microscopic bugs living on a cosmic rubber band,
+
+1027
+00:52:29,640 --> 00:52:35,480
+fundamentally mistaking the snap of thermodynamic relaxation for the immutable laws of physics?
+
+1028
+00:52:35,480 --> 00:52:38,840
+That is a deeply unsettling, yet incredibly beautiful question.
+
+1029
+00:52:38,840 --> 00:52:40,760
+It completely changes how you look up at the night sky.
+
+1030
+00:52:40,760 --> 00:52:41,880
+It absolutely does.
+
+1031
+00:52:41,880 --> 00:52:44,280
+Thank you so much for joining us on this deep dive.
+
+1032
+00:52:44,280 --> 00:52:47,640
+Until next time, keep looking up, keep questioning the models you are handed,
+
+1033
+00:52:47,640 --> 00:52:58,760
+and keep exploring the nature of the plenum around you.
+

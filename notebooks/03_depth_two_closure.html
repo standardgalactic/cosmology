@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RSVP Notebook 3 — Depth-Two Closure</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0a0a14; color:#dde; font-family:Georgia,serif; height:100vh; display:flex; flex-direction:column; }
+  #header { padding:20px 28px 10px; border-bottom:1px solid #223; flex-shrink:0; }
+  h1 { font-size:1.3rem; color:#aac8ff; font-weight:normal; }
+  .sub { font-size:0.82rem; color:#556; margin-top:3px; }
+  #main { display:flex; flex:1; overflow:hidden; }
+  #canvas-area { flex:1; display:flex; flex-direction:column; overflow:hidden; }
+  canvas { display:block; }
+  #panel { width:300px; background:#0d0d1c; border-left:1px solid #223; padding:18px; overflow-y:auto; }
+  h2 { font-size:0.82rem; color:#88aadd; margin:14px 0 6px; text-transform:uppercase; letter-spacing:.06em; }
+  p { font-size:0.8rem; color:#99a; line-height:1.6; margin-bottom:8px; }
+  .eq { font-family:monospace; font-size:0.73rem; background:#111828; padding:5px 9px; border-left:2px solid #446; margin:6px 0; color:#aaccff; }
+  .ctrl { margin:7px 0; }
+  label { font-size:0.76rem; color:#889; display:block; margin-bottom:2px; }
+  input[type=range] { width:100%; accent-color:#5588cc; }
+  .val { float:right; color:#aac8ff; font-family:monospace; font-size:0.76rem; }
+  button { background:#1a2a44; border:1px solid #446; color:#aac8ff; padding:5px 12px;
+    cursor:pointer; font-size:0.78rem; border-radius:3px; margin:3px 3px 0 0; }
+  button:hover { background:#243560; }
+  #info-box { background:#0a1020; border:1px solid #334; border-radius:4px; padding:12px; margin-top:10px; }
+  .info-row { display:flex; justify-content:space-between; padding:3px 0; font-size:0.78rem; border-bottom:1px solid #1a2030; }
+  .info-row:last-child { border-bottom:none; }
+  .pos { color:#44cc88; } .neg { color:#ff6677; } .gauge { color:#ff8833; }
+  #depth-indicator { text-align:center; padding:10px; margin:8px 0; border-radius:4px; font-size:0.9rem; }
+  .depth-ok { background:#0a2015; border:1px solid #2a6040; color:#44cc88; }
+  .depth-incomplete { background:#20100a; border:1px solid #60402a; color:#cc6644; }
+</style>
+</head>
+<body>
+<div id="header">
+  <h1>RSVP Notebook 3 — Depth-Two Closure</h1>
+  <div class="sub">Why d<sub>closure</sub>(Φ<sub>c</sub>) = 2: eigenvalue spectrum of the projected accessibility Hessian</div>
+</div>
+<div id="main">
+  <div id="canvas-area">
+    <canvas id="cv"></canvas>
+  </div>
+  <div id="panel">
+    <h2>The Core Result</h2>
+    <p>The ATV spectrum of eigenvalues of the projected Hessian at SM is:</p>
+    <div class="eq">λ_A^n = 2n/3 &gt; 0  ∀n≥1<br>λ_B^1 = −1 (gauge)<br>λ_B^2 = −1/3 (physical)<br>λ_B^n = (2n−5)/3 &gt; 0  ∀n≥3</div>
+    <p>Only two negative eigenvalues exist. After gauge-fixing removes λ_B^1, a single stable direction remains at depth 2. All deeper levels are positive.</p>
+    <p>This means: knowing a trajectory is in U₂(Φ_c) guarantees it is in Uₙ(Φ_c) for all n≥2.</p>
+
+    <h2>Interactive Depth</h2>
+    <div class="ctrl"><label>Truncation depth n <span class="val" id="depth-v">1</span></label><input type="range" id="depth" min="1" max="12" value="1"></div>
+    <button id="btn-animate">Animate levels</button>
+    <button id="btn-stop">Stop</button>
+
+    <div id="depth-indicator" class="depth-incomplete" id="depth-disp">
+      Depth 1: Self-similar only — instability incomplete
+    </div>
+
+    <h2>Eigenvalue Table</h2>
+    <div id="info-box">
+      <div class="info-row"><span>n</span><span>λ_A^n</span><span>λ_B^n</span><span>Status</span></div>
+    </div>
+
+    <h2>Information Flow</h2>
+    <p>At each depth level, two new degrees of freedom (z_{2n}, w_{2n-2}) enter the hierarchy. The stability of each level is determined by the sign of λ_B^n.</p>
+    <p>Depth 1: one positive + one negative (gauge) — indeterminate</p>
+    <p>Depth 2: adds λ_B^2 = −1/3 — physical stable direction identified</p>
+    <p>Depth 3+: both eigenvalues positive — no new stable directions</p>
+    <p>Conclusion: closure is achieved exactly at depth 2.</p>
+
+    <h2>Comparison</h2>
+    <p>If the spectrum had negative λ_B^n at every order (like KAM tori in Hamiltonian systems), closure depth would be ∞. The Friedmann instability is exceptional: it closes at depth 2.</p>
+  </div>
+</div>
+<script>
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+let animating = false;
+let animFrame = null;
+let currentDepth = 1;
+
+function resize() {
+  cv.width = cv.offsetWidth || 800;
+  cv.height = cv.offsetHeight || 600;
+  draw();
+}
+
+function lambdaA(n) { return 2*n/3; }
+function lambdaB(n) { return (2*n-5)/3; }
+
+function draw() {
+  const W = cv.width, H = cv.height;
+  ctx.fillStyle = '#0a0a14';
+  ctx.fillRect(0,0,W,H);
+
+  const maxN = 12;
+  const padL = 80, padR = 40, padT = 60, padB = 80;
+  const plotW = W - padL - padR;
+  const plotH = H - padT - padB;
+  const nw = plotW / maxN;
+
+  // Axes
+  const yZero = padT + plotH * 0.6; // zero line not at center
+  ctx.strokeStyle = '#334'; ctx.lineWidth = 1;
+  // Horizontal grid
+  for(let v=-2; v<=2; v+=0.5) {
+    const y = yZero - v*(plotH*0.18);
+    ctx.strokeStyle = v===0 ? '#446' : '#222';
+    ctx.lineWidth = v===0 ? 1.5 : 0.5;
+    ctx.beginPath(); ctx.moveTo(padL,y); ctx.lineTo(W-padR,y); ctx.stroke();
+    ctx.fillStyle='#445'; ctx.font='10px monospace';
+    ctx.fillText(v.toFixed(1),padL-35,y+4);
+  }
+  // Vertical: one line per n
+  ctx.strokeStyle='#222'; ctx.lineWidth=0.5;
+  for(let n=1;n<=maxN;n++) {
+    const x = padL + (n-0.5)*nw;
+    ctx.beginPath(); ctx.moveTo(x,padT); ctx.lineTo(x,padT+plotH); ctx.stroke();
+    ctx.fillStyle='#556'; ctx.font='11px monospace';
+    ctx.fillText('n='+n, x-8, padT+plotH+18);
+  }
+
+  // Y axis label
+  ctx.save(); ctx.translate(20, padT+plotH/2); ctx.rotate(-Math.PI/2);
+  ctx.fillStyle='#667'; ctx.font='12px Georgia'; ctx.textAlign='center';
+  ctx.fillText('Eigenvalue λ', 0, 0); ctx.restore();
+
+  // Title
+  ctx.fillStyle='#88aadd'; ctx.font='13px Georgia'; ctx.textAlign='left';
+  ctx.fillText('Projected Hessian eigenvalue spectrum at Φ_c (Friedmann saddle)', padL, padT-20);
+
+  // Zero axis label
+  ctx.fillStyle='#556'; ctx.font='10px monospace'; ctx.textAlign='right';
+  ctx.fillText('λ=0', padL-5, yZero+4);
+
+  // Plot eigenvalues up to currentDepth
+  for(let n=1;n<=maxN;n++) {
+    const x = padL + (n-0.5)*nw;
+    const la = lambdaA(n);
+    const lb = lambdaB(n);
+    const active = n <= currentDepth;
+    const alpha = active ? 1.0 : 0.2;
+
+    // λ_A^n (always positive)
+    const ya = yZero - la*(plotH*0.18);
+    ctx.fillStyle = `rgba(68,204,136,${alpha})`;
+    ctx.beginPath(); ctx.arc(x-8, ya, 7, 0, 2*Math.PI); ctx.fill();
+    if(active) {
+      ctx.fillStyle='#44cc88'; ctx.font='bold 10px monospace'; ctx.textAlign='center';
+      ctx.fillText(la.toFixed(2), x-8, ya-12);
+    }
+
+    // λ_B^n
+    const yb = yZero - lb*(plotH*0.18);
+    let bColor, bLabel;
+    if(n===1) { bColor=`rgba(255,136,51,${alpha})`; bLabel='gauge'; }
+    else if(n===2) { bColor=`rgba(255,80,100,${alpha})`; bLabel='phys'; }
+    else { bColor=`rgba(68,204,136,${alpha})`; bLabel=''; }
+    ctx.fillStyle=bColor;
+    ctx.beginPath(); ctx.arc(x+8, yb, 7, 0, 2*Math.PI); ctx.fill();
+    if(active) {
+      ctx.fillStyle = n<=2?'#ff6677':'#44cc88'; ctx.font='bold 10px monospace'; ctx.textAlign='center';
+      ctx.fillText(lb.toFixed(2), x+8, yb+(lb<0?-12:14));
+      if(bLabel) { ctx.fillStyle='#889'; ctx.font='9px monospace'; ctx.fillText(bLabel,x+8,yb+(lb<0?-22:24)); }
+    }
+  }
+
+  // Depth boundary line
+  if(currentDepth < maxN) {
+    const xBound = padL + currentDepth*nw;
+    ctx.strokeStyle = '#5588cc'; ctx.lineWidth=2; ctx.setLineDash([5,4]);
+    ctx.beginPath(); ctx.moveTo(xBound,padT); ctx.lineTo(xBound,padT+plotH); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle='#5588cc'; ctx.font='11px Georgia'; ctx.textAlign='left';
+    ctx.fillText('← truncated at depth '+currentDepth, xBound+5, padT+14);
+  }
+
+  // Closure band — shade depths ≥3 green
+  if(currentDepth >= 3) {
+    const x3 = padL + 2*nw;
+    ctx.fillStyle='rgba(68,204,136,0.05)';
+    ctx.fillRect(x3, padT, W-padR-x3, plotH);
+    ctx.fillStyle='rgba(68,204,136,0.4)'; ctx.font='11px Georgia'; ctx.textAlign='left';
+    ctx.fillText('All positive — closure achieved', x3+8, padT+30);
+  }
+
+  // Depth 2 highlight
+  if(currentDepth >= 2) {
+    const x2 = padL + nw, x3 = padL + 2*nw;
+    ctx.fillStyle='rgba(255,80,100,0.08)';
+    ctx.fillRect(x2, padT, x3-x2, plotH);
+    ctx.fillStyle='rgba(255,80,100,0.6)'; ctx.font='11px Georgia'; ctx.textAlign='center';
+    ctx.fillText('λ_B²=−1/3\ncritical depth', (x2+x3)/2, padT+plotH-30);
+  }
+
+  // Legend
+  ctx.fillStyle='#44cc88'; ctx.font='11px monospace'; ctx.textAlign='left';
+  ctx.fillText('● λ_A^n (unstable modes)', W-220, padT+20);
+  ctx.fillStyle='#ff8833'; ctx.fillText('● λ_B^1 (gauge, removed)', W-220, padT+36);
+  ctx.fillStyle='#ff6677'; ctx.fillText('● λ_B^2 (physical stable)', W-220, padT+52);
+  ctx.fillStyle='rgba(68,204,136,0.5)'; ctx.fillText('● λ_B^n n≥3 (positive)', W-220, padT+68);
+
+  // Status text below
+  ctx.textAlign='left'; ctx.font='12px Georgia';
+  if(currentDepth===1) {
+    ctx.fillStyle='#cc6644';
+    ctx.fillText('Depth 1: Leading-order only. Self-similar Big Bang. Gauge mode present. Instability structure INCOMPLETE.', padL, padT+plotH+45);
+  } else if(currentDepth===2) {
+    ctx.fillStyle='#ccaa44';
+    ctx.fillText('Depth 2: Physical stable direction λ_B^2=−1/3 identified. Non-self-similar Big Bang revealed. CLOSURE ACHIEVED.', padL, padT+plotH+45);
+  } else {
+    ctx.fillStyle='#44cc88';
+    ctx.fillText(`Depth ${currentDepth}: All new eigenvalues positive. No new stable directions. Full instability structure confirmed. d_closure = 2.`, padL, padT+plotH+45);
+  }
+
+  // Update indicator
+  const ind = document.getElementById('depth-indicator');
+  const dv = document.getElementById('depth-v');
+  dv.textContent = currentDepth;
+  if(currentDepth===1) {
+    ind.className='depth-incomplete'; ind.textContent='Depth 1: incomplete — self-similar only';
+  } else if(currentDepth>=2) {
+    ind.className='depth-ok'; ind.textContent=`Depth ${currentDepth}: d_closure = 2 ✓ — closure achieved`;
+  }
+
+  // Eigenvalue table
+  const box = document.getElementById('info-box');
+  let html='<div class="info-row"><span style="color:#667">n</span><span style="color:#667">λ_A^n</span><span style="color:#667">λ_B^n</span><span style="color:#667">Stable?</span></div>';
+  for(let n=1;n<=Math.min(currentDepth,8);n++){
+    const la=lambdaA(n), lb=lambdaB(n);
+    const lbClass = lb<0?(n===1?'gauge':'neg'):'pos';
+    const stable = lb<0?'YES':'no';
+    const stableClass = lb<0?'neg':'pos';
+    html+=`<div class="info-row"><span>${n}</span><span class="pos">+${la.toFixed(3)}</span><span class="${lbClass}">${lb>=0?'+':''}${lb.toFixed(3)}${n===1?' (g)':''}</span><span class="${stableClass}">${stable}</span></div>`;
+  }
+  box.innerHTML=html;
+}
+
+document.getElementById('depth').oninput=e=>{ currentDepth=+e.target.value; draw(); };
+
+let animN=1;
+document.getElementById('btn-animate').onclick=()=>{
+  animating=true; animN=1;
+  function step(){
+    currentDepth=animN;
+    document.getElementById('depth').value=animN;
+    draw();
+    animN++;
+    if(animN<=12 && animating) animFrame=setTimeout(step,500);
+  }
+  step();
+};
+document.getElementById('btn-stop').onclick=()=>{ animating=false; clearTimeout(animFrame); };
+
+window.addEventListener('resize',()=>{ cv.width=cv.offsetWidth; cv.height=cv.offsetHeight; draw(); });
+setTimeout(()=>{ cv.width=cv.offsetWidth; cv.height=cv.offsetHeight; draw(); },50);
+</script>
+</body>
+</html>

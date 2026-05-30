@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RSVP Notebook 5 — Lamphrodyne Relaxation</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0a0a14; color:#dde; font-family:Georgia,serif; height:100vh; display:flex; flex-direction:column; }
+  #header { padding:18px 28px 8px; border-bottom:1px solid #223; flex-shrink:0; }
+  h1 { font-size:1.3rem; color:#aac8ff; font-weight:normal; }
+  .sub { font-size:0.8rem; color:#556; margin-top:3px; }
+  #main { display:flex; flex:1; overflow:hidden; }
+  #canvas-area { flex:1; position:relative; }
+  #canvas-area canvas { position:absolute; top:0;left:0;width:100%;height:100%; }
+  #panel { width:290px; background:#0d0d1c; border-left:1px solid #223; padding:18px; overflow-y:auto; }
+  h2 { font-size:0.8rem; color:#88aadd; margin:14px 0 6px; text-transform:uppercase; letter-spacing:.06em; }
+  p { font-size:0.78rem; color:#99a; line-height:1.6; margin-bottom:8px; }
+  .eq { font-family:monospace; font-size:0.72rem; background:#111828; padding:5px 9px; border-left:2px solid #446; margin:6px 0; color:#aaccff; white-space:pre; }
+  .ctrl { margin:7px 0; }
+  label { font-size:0.75rem; color:#889; display:flex; justify-content:space-between; margin-bottom:2px; }
+  .lval { color:#aac8ff; font-family:monospace; }
+  input[type=range] { width:100%; accent-color:#5588cc; }
+  button { background:#1a2a44; border:1px solid #446; color:#aac8ff; padding:5px 12px;
+    cursor:pointer; font-size:0.78rem; border-radius:3px; margin:3px 3px 0 0; }
+  button:hover { background:#243560; }
+  input[type=checkbox] { accent-color:#5588cc; margin-right:5px; }
+  #metrics { background:#0a1020; border:1px solid #334; border-radius:4px; padding:8px; margin:8px 0; }
+  .met { display:flex; justify-content:space-between; font-size:0.74rem; padding:2px 0; }
+  .met-val { color:#aac8ff; font-family:monospace; }
+  select { background:#111828; border:1px solid #446; color:#aac; padding:4px 8px; font-size:0.76rem; width:100%; margin:4px 0; }
+</style>
+</head>
+<body>
+<div id="header">
+  <h1>RSVP Notebook 5 — Lamphrodyne Relaxation</h1>
+  <div class="sub">Real-time simulation of (Φ, V, S) master system on a 2D lattice</div>
+</div>
+<div id="main">
+  <div id="canvas-area">
+    <canvas id="cv"></canvas>
+  </div>
+  <div id="panel">
+    <h2>Master System</h2>
+    <div class="eq">∂_t Φ = −∇·(ΦV) + κ_Φ ΔΦ + σS − U'(Φ)
+∂_t V = −(V·∇)V − λ∇Φ − νV + κ_v(∇×V)
+∂_t S = D_S ΔS − μΦ + χ|V|²</div>
+    <p>Watch entropy gradients appear, flows emerge, and structures smooth out — a "living" RSVP universe in miniature.</p>
+
+    <h2>Field Display</h2>
+    <div class="ctrl"><label>Display field</label>
+    <select id="display">
+      <option value="phi">Φ (scalar potential) — height map</option>
+      <option value="s">S (entropy density) — heat map</option>
+      <option value="both">Φ + |V| overlay</option>
+    </select></div>
+    <div class="ctrl"><label><input type="checkbox" id="show-v" checked> Show V (flow arrows)</label></div>
+    <div class="ctrl"><label><input type="checkbox" id="show-contour"> Show Φ contours</label></div>
+
+    <h2>Parameters</h2>
+    <div class="ctrl"><label>κ_Φ (scalar diffusion) <span class="lval" id="kphi-v">0.20</span></label><input type="range" id="kphi" min="0" max="80" value="20"></div>
+    <div class="ctrl"><label>λ (gradient coupling) <span class="lval" id="lam-v">0.30</span></label><input type="range" id="lam" min="0" max="80" value="30"></div>
+    <div class="ctrl"><label>D_S (entropy diffusion) <span class="lval" id="ds-v">0.15</span></label><input type="range" id="ds" min="0" max="60" value="15"></div>
+    <div class="ctrl"><label>χ (entropy source) <span class="lval" id="chi-v">0.10</span></label><input type="range" id="chi" min="0" max="50" value="10"></div>
+    <div class="ctrl"><label>ν (damping) <span class="lval" id="nu-v">0.05</span></label><input type="range" id="nu" min="1" max="40" value="5"></div>
+    <div class="ctrl"><label>Speed <span class="lval" id="speed-v">1×</span></label><input type="range" id="speed" min="1" max="8" value="3"></div>
+
+    <h2>Initial Condition</h2>
+    <div class="ctrl"><label>Preset</label>
+    <select id="ic">
+      <option value="gauss">Gaussian bump (single collapse)</option>
+      <option value="double">Double well (two attractors)</option>
+      <option value="noise">Random noise (structure formation)</option>
+      <option value="saddle">Saddle (Friedmann analogue)</option>
+    </select></div>
+    <button id="btn-reset">Reset</button>
+    <button id="btn-pause">Pause</button>
+    <button id="btn-nudge">Nudge</button>
+
+    <h2>Live Metrics</h2>
+    <div id="metrics">
+      <div class="met"><span>⟨Φ⟩</span><span class="met-val" id="m-phi">—</span></div>
+      <div class="met"><span>⟨S⟩</span><span class="met-val" id="m-s">—</span></div>
+      <div class="met"><span>⟨|V|⟩</span><span class="met-val" id="m-v">—</span></div>
+      <div class="met"><span>∫S dx</span><span class="met-val" id="m-sint">—</span></div>
+      <div class="met"><span>Step</span><span class="met-val" id="m-step">0</span></div>
+    </div>
+
+    <h2>Notes</h2>
+    <p>Φ drives V through gradient coupling. V moves Φ through advection. S sources from |V|² and diffuses, feeding back into Φ via σS term. The system relaxes toward accessibility equilibrium.</p>
+  </div>
+</div>
+<script>
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+
+const N = 96; // grid size
+let Phi = new Float32Array(N*N);
+let Vx  = new Float32Array(N*N);
+let Vy  = new Float32Array(N*N);
+let S   = new Float32Array(N*N);
+let dPhi, dVx, dVy, dS;
+
+let kphi=0.2, lam=0.3, ds_=0.15, chi=0.1, nu=0.05;
+let displayMode='phi', showV=true, showContour=false;
+let paused=false, step=0, stepsPerFrame=3;
+let ic='gauss';
+
+function idx(i,j){ return ((j+N)%N)*N+((i+N)%N); }
+
+function initIC(type){
+  Phi.fill(0); Vx.fill(0); Vy.fill(0); S.fill(0.1); step=0;
+  const cx=N/2, cy=N/2;
+  for(let j=0;j<N;j++) for(let i=0;i<N;i++){
+    const k=j*N+i;
+    const dx=(i-cx)/N, dy=(j-cy)/N;
+    const r2=dx*dx+dy*dy;
+    switch(type){
+      case 'gauss':
+        Phi[k]=Math.exp(-r2*20)*2; S[k]=0.05+Math.exp(-r2*15)*0.5; break;
+      case 'double':
+        Phi[k]=Math.exp(-((dx-0.2)**2+dy**2)*30)+Math.exp(-((dx+0.2)**2+dy**2)*30);
+        S[k]=0.05+0.1*Math.random(); break;
+      case 'noise':
+        Phi[k]=(Math.random()-0.5)*1.5; S[k]=Math.random()*0.3; break;
+      case 'saddle':
+        Phi[k]=(dx*dx-dy*dy)*4; S[k]=0.05+r2*0.5; break;
+    }
+  }
+}
+
+function laplacian(f, i, j){
+  return f[idx(i+1,j)]+f[idx(i-1,j)]+f[idx(i,j+1)]+f[idx(i,j-1)]-4*f[idx(i,j)];
+}
+function gradX(f,i,j){ return (f[idx(i+1,j)]-f[idx(i-1,j)])*0.5; }
+function gradY(f,i,j){ return (f[idx(i,j+1)]-f[idx(i,j-1)])*0.5; }
+function divV(i,j){ return (Vx[idx(i+1,j)]-Vx[idx(i-1,j)]+Vy[idx(i,j+1)]-Vy[idx(i,j-1)])*0.5; }
+
+function integrate(){
+  const dt=0.008;
+  dPhi=new Float32Array(N*N);
+  dVx=new Float32Array(N*N);
+  dVy=new Float32Array(N*N);
+  dS=new Float32Array(N*N);
+
+  for(let j=0;j<N;j++) for(let i=0;i<N;i++){
+    const k=j*N+i;
+    const phi=Phi[k], vx=Vx[k], vy=Vy[k], s=S[k];
+    const gPx=gradX(Phi,i,j), gPy=gradY(Phi,i,j);
+    const lapPhi=laplacian(Phi,i,j);
+    const lapS=laplacian(S,i,j);
+    const Vmag2=vx*vx+vy*vy;
+    const div=divV(i,j);
+    // ∂_t Φ = −div(Φ V) + κ_Φ ΔΦ + σS − UΦ'
+    const advPhi=phi*div+vx*gPx+vy*gPy;
+    dPhi[k]=(-advPhi+kphi*lapPhi+0.1*s-0.5*phi)*dt;
+    // ∂_t V = −(V·∇)V − λ∇Φ − νV
+    const vdvx=vx*gradX(Vx,i,j)+vy*gradY(Vx,i,j);
+    const vdvy=vx*gradX(Vy,i,j)+vy*gradY(Vy,i,j);
+    dVx[k]=(-vdvx-lam*gPx-nu*vx)*dt;
+    dVy[k]=(-vdvy-lam*gPy-nu*vy)*dt;
+    // ∂_t S = D_S ΔS − μΦ + χ|V|²
+    dS[k]=(ds_*lapS-0.05*phi+chi*Vmag2)*dt;
+  }
+  for(let k=0;k<N*N;k++){
+    Phi[k]=Math.max(-3,Math.min(3,Phi[k]+dPhi[k]));
+    Vx[k]=Math.max(-2,Math.min(2,Vx[k]+dVx[k]));
+    Vy[k]=Math.max(-2,Math.min(2,Vy[k]+dVy[k]));
+    S[k]=Math.max(0,Math.min(3,S[k]+dS[k]));
+  }
+}
+
+function computeRange(arr){ let mn=Infinity,mx=-Infinity; arr.forEach(v=>{if(v<mn)mn=v;if(v>mx)mx=v;}); return [mn,mx]; }
+
+function render(){
+  const W=cv.width,H=cv.height;
+  const cw=W,ch=H;
+  const [pmin,pmax]=computeRange(Phi);
+  const [smin,smax]=computeRange(S);
+  const prange=pmax-pmin||1, srange=smax-smin||1;
+
+  const img=ctx.createImageData(W,H);
+  for(let py=0;py<H;py++) for(let px=0;px<W;px++){
+    const fi=Math.floor(px*N/W), fj=Math.floor(py*N/H);
+    const k=idx(fi,fj);
+    let r=0,g=0,b=0;
+    if(displayMode==='phi'||displayMode==='both'){
+      const t=(Phi[k]-pmin)/prange;
+      r=Math.round(t*60+20); g=Math.round(t*100+30); b=Math.round(t*200+40);
+    }
+    if(displayMode==='s'){
+      const t=(S[k]-smin)/srange;
+      r=Math.round(t*200+10); g=Math.round(t*80+20); b=Math.round(50+t*30);
+    }
+    if(displayMode==='both'){
+      const vm=Math.sqrt(Vx[k]*Vx[k]+Vy[k]*Vy[k]);
+      r=Math.min(255,r+Math.round(vm*80));
+    }
+    const idx4=4*(py*W+px);
+    img.data[idx4]=r; img.data[idx4+1]=g; img.data[idx4+2]=b; img.data[idx4+3]=255;
+  }
+  ctx.putImageData(img,0,0);
+
+  // Flow arrows
+  if(showV){
+    const step2=Math.max(4,Math.floor(N/20));
+    ctx.strokeStyle='rgba(180,220,255,0.6)'; ctx.lineWidth=1;
+    for(let j=step2/2;j<N;j+=step2) for(let i=step2/2;i<N;i+=step2){
+      const k=idx(i,j);
+      const vx=Vx[k], vy=Vy[k];
+      const mag=Math.sqrt(vx*vx+vy*vy);
+      if(mag<0.01) continue;
+      const px=i*W/N, py=j*H/N;
+      const scale=Math.min(12,mag*15);
+      const nx=vx/mag*scale, ny=vy/mag*scale;
+      ctx.beginPath(); ctx.moveTo(px,py); ctx.lineTo(px+nx,py+ny); ctx.stroke();
+      ctx.fillStyle='rgba(180,220,255,0.8)';
+      ctx.beginPath(); ctx.arc(px+nx,py+ny,1.5,0,2*Math.PI); ctx.fill();
+    }
+  }
+
+  // Contours
+  if(showContour){
+    const nC=8;
+    for(let c=0;c<nC;c++){
+      const level=pmin+(pmax-pmin)*(c+0.5)/nC;
+      ctx.strokeStyle='rgba(200,220,255,0.3)'; ctx.lineWidth=0.5;
+      for(let j=0;j<N-1;j++) for(let i=0;i<N-1;i++){
+        const p00=Phi[idx(i,j)],p10=Phi[idx(i+1,j)];
+        if((p00<level)!==(p10<level)){
+          const f=(level-p00)/(p10-p00);
+          const px=(i+f)*W/N;
+          ctx.beginPath(); ctx.moveTo(px,j*H/N); ctx.lineTo(px,(j+1)*H/N); ctx.stroke();
+        }
+      }
+    }
+  }
+
+  // Metrics
+  let sumPhi=0,sumS=0,sumV=0;
+  for(let k=0;k<N*N;k++){ sumPhi+=Phi[k]; sumS+=S[k]; sumV+=Math.sqrt(Vx[k]*Vx[k]+Vy[k]*Vy[k]); }
+  const nn=N*N;
+  document.getElementById('m-phi').textContent=(sumPhi/nn).toFixed(3);
+  document.getElementById('m-s').textContent=(sumS/nn).toFixed(3);
+  document.getElementById('m-v').textContent=(sumV/nn).toFixed(3);
+  document.getElementById('m-sint').textContent=sumS.toFixed(1);
+  document.getElementById('m-step').textContent=step;
+}
+
+function loop(){
+  if(!paused){
+    for(let s=0;s<stepsPerFrame;s++){ integrate(); step++; }
+  }
+  cv.width=cv.offsetWidth; cv.height=cv.offsetHeight;
+  render();
+  requestAnimationFrame(loop);
+}
+
+// Controls
+const paramMap={kphi:'kphi-v',lam:'lam-v',ds:'ds-v',chi:'chi-v',nu:'nu-v'};
+Object.entries(paramMap).forEach(([id,vid])=>{
+  document.getElementById(id).oninput=e=>{
+    const v=+e.target.value/100;
+    document.getElementById(vid).textContent=v.toFixed(2);
+    if(id==='kphi') kphi=v;
+    else if(id==='lam') lam=v;
+    else if(id==='ds') ds_=v;
+    else if(id==='chi') chi=v;
+    else if(id==='nu') nu=v;
+  };
+});
+document.getElementById('speed').oninput=e=>{
+  stepsPerFrame=+e.target.value;
+  document.getElementById('speed-v').textContent=stepsPerFrame+'×';
+};
+document.getElementById('display').onchange=e=>{ displayMode=e.target.value; };
+document.getElementById('show-v').onchange=e=>{ showV=e.target.checked; };
+document.getElementById('show-contour').onchange=e=>{ showContour=e.target.checked; };
+document.getElementById('ic').onchange=e=>{ ic=e.target.value; };
+document.getElementById('btn-reset').onclick=()=>{ initIC(document.getElementById('ic').value); };
+document.getElementById('btn-pause').onclick=()=>{ paused=!paused; document.getElementById('btn-pause').textContent=paused?'Resume':'Pause'; };
+document.getElementById('btn-nudge').onclick=()=>{
+  const cx=N/2+Math.round((Math.random()-0.5)*N/3);
+  const cy=N/2+Math.round((Math.random()-0.5)*N/3);
+  for(let j=-4;j<=4;j++) for(let i=-4;i<=4;i++){
+    const k=idx(cx+i,cy+j);
+    Phi[k]+=(Math.random()-0.5)*1.5;
+    S[k]+=Math.random()*0.3;
+  }
+};
+
+initIC('gauss');
+loop();
+</script>
+</body>
+</html>

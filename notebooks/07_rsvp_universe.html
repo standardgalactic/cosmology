@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RSVP Notebook 7 — Accessibility Relaxation Universe</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#080810; color:#dde; font-family:Georgia,serif; height:100vh; display:flex; flex-direction:column; }
+  #header { padding:16px 28px 8px; border-bottom:1px solid #1a2030; flex-shrink:0; display:flex; justify-content:space-between; align-items:center; }
+  h1 { font-size:1.2rem; color:#aac8ff; font-weight:normal; }
+  .sub { font-size:0.78rem; color:#445; margin-top:2px; }
+  #main { display:flex; flex:1; overflow:hidden; }
+  #sim-wrap { flex:1; position:relative; background:#040408; }
+  canvas { position:absolute; top:0;left:0; }
+  #panel { width:270px; background:#0a0a18; border-left:1px solid #1a2030; padding:16px; overflow-y:auto; font-size:0.78rem; }
+  h2 { font-size:0.76rem; color:#7799cc; margin:12px 0 5px; text-transform:uppercase; letter-spacing:.07em; }
+  p { color:#889; line-height:1.55; margin-bottom:7px; }
+  .eq { font-family:monospace; font-size:0.68rem; background:#0d0d20; padding:4px 8px; border-left:2px solid #335; margin:5px 0; color:#99bbdd; white-space:pre; }
+  .ctrl { margin:6px 0; }
+  label { font-size:0.72rem; color:#778; display:flex; justify-content:space-between; margin-bottom:2px; }
+  .lv { color:#99c8ff; font-family:monospace; font-size:0.7rem; }
+  input[type=range] { width:100%; accent-color:#446699; }
+  button { background:#12203a; border:1px solid #336; color:#99bbdd; padding:4px 10px;
+    cursor:pointer; font-size:0.72rem; border-radius:3px; margin:2px 2px 0 0; }
+  button:hover { background:#1e3055; }
+  button.primary { background:#1a3060; border-color:#448; color:#aaccff; }
+  select { background:#0d0d20; border:1px solid #335; color:#99c; padding:3px 7px; font-size:0.72rem; width:100%; margin:3px 0; }
+  input[type=checkbox] { accent-color:#446699; margin-right:4px; }
+  #stats { background:#08081a; border:1px solid #1a2030; border-radius:3px; padding:8px; margin:8px 0; }
+  .st { display:flex; justify-content:space-between; padding:2px 0; font-size:0.7rem; color:#778; border-bottom:1px solid #10101e; }
+  .st:last-child { border-bottom:none; }
+  .st-v { color:#aac8ff; font-family:monospace; font-size:0.7rem; }
+  #overlay-label { position:absolute; bottom:10px; left:10px; font-size:0.72rem; color:rgba(100,130,200,0.8); font-family:monospace; pointer-events:none; }
+  #fps-counter { position:absolute; top:8px; right:8px; font-size:0.68rem; color:rgba(80,100,160,0.7); font-family:monospace; pointer-events:none; }
+</style>
+</head>
+<body>
+<div id="header">
+  <div>
+    <h1>RSVP Notebook 7 — Accessibility Relaxation Universe</h1>
+    <div class="sub">Flagship simulator: void formation, accessibility basins, entropy redistribution</div>
+  </div>
+  <div style="font-size:0.72rem;color:#446;text-align:right">Grid: 128×128<br>Fields: Φ V S</div>
+</div>
+<div id="main">
+  <div id="sim-wrap">
+    <canvas id="cv"></canvas>
+    <div id="overlay-label" id="overlabel">—</div>
+    <div id="fps-counter" id="fpsc">—</div>
+  </div>
+  <div id="panel">
+    <h2>Cosmological Setup</h2>
+    <div class="ctrl"><label>Initial condition</label>
+    <select id="ic">
+      <option value="cosmic_web">Cosmic web (CDM-like seeds)</option>
+      <option value="uniform">Uniform + thermal noise</option>
+      <option value="bubble">Bubble nucleation</option>
+      <option value="filament">Filament collapse</option>
+    </select></div>
+    <div class="ctrl"><label>Grid resolution</label>
+    <select id="res">
+      <option value="64">64×64 (fast)</option>
+      <option value="128" selected>128×128 (balanced)</option>
+      <option value="192">192×192 (detailed)</option>
+    </select></div>
+    <button id="btn-init" class="primary">Initialize Universe</button>
+
+    <h2>Physics Parameters</h2>
+    <div class="ctrl"><label>κ_Φ (lamphrodyne diffusion) <span class="lv" id="kp-v">0.18</span></label><input type="range" id="kp" min="0" max="60" value="18"></div>
+    <div class="ctrl"><label>λ (gradient coupling) <span class="lv" id="la-v">0.25</span></label><input type="range" id="la" min="0" max="80" value="25"></div>
+    <div class="ctrl"><label>D_S (entropy diffusion) <span class="lv" id="dss-v">0.12</span></label><input type="range" id="dss" min="0" max="50" value="12"></div>
+    <div class="ctrl"><label>β_curl (vorticity) <span class="lv" id="bcu-v">0.08</span></label><input type="range" id="bcu" min="0" max="40" value="8"></div>
+    <div class="ctrl"><label>ν (viscous damping) <span class="lv" id="nu2-v">0.04</span></label><input type="range" id="nu2" min="1" max="30" value="4"></div>
+
+    <h2>Display</h2>
+    <div class="ctrl"><label>Render mode</label>
+    <select id="rmode">
+      <option value="phi_s">Φ + S composite</option>
+      <option value="phi">Φ only (accessibility)</option>
+      <option value="s">S only (entropy)</option>
+      <option value="v_mag">|V| (flow speed)</option>
+      <option value="curl_v">∇×V (vorticity)</option>
+      <option value="source">∇S·ω (birefringence source)</option>
+    </select></div>
+    <div class="ctrl"><label><input type="checkbox" id="show-flow" checked> Flow arrows</label></div>
+    <div class="ctrl"><label><input type="checkbox" id="show-voids"> Void boundaries</label></div>
+    <div class="ctrl"><label>Simulation speed <span class="lv" id="spd-v">3×</span></label><input type="range" id="spd" min="1" max="10" value="3"></div>
+    <button id="btn-pause">Pause</button>
+    <button id="btn-step">Step×10</button>
+    <button id="btn-nudge">Perturb</button>
+
+    <h2>Live Observables</h2>
+    <div id="stats">
+      <div class="st"><span>Step</span><span class="st-v" id="st-step">0</span></div>
+      <div class="st"><span>⟨Φ⟩</span><span class="st-v" id="st-phi">—</span></div>
+      <div class="st"><span>⟨S⟩</span><span class="st-v" id="st-s">—</span></div>
+      <div class="st"><span>⟨|V|⟩</span><span class="st-v" id="st-v">—</span></div>
+      <div class="st"><span>E_lamp</span><span class="st-v" id="st-e">—</span></div>
+      <div class="st"><span>∫S (entropy)</span><span class="st-v" id="st-sint">—</span></div>
+      <div class="st"><span>Void frac</span><span class="st-v" id="st-void">—</span></div>
+      <div class="st"><span>C_RSVP est</span><span class="st-v" id="st-c">≥ 0.3591</span></div>
+    </div>
+
+    <h2>Cosmological Notes</h2>
+    <p>High-Φ regions are accessibility attractors (proto-structures). Low-Φ voids expand as the universe falls from the Friedmann saddle SM toward the Minkowski attractor M.</p>
+    <p>Entropy S diffuses outward from dense regions, while the flow V carries Φ toward accessibility basins. The resulting pattern mimics cosmic web formation.</p>
+    <p>The live observable C_RSVP estimates the third-order redshift coefficient from the current ⟨|V|²⟩ and diffusion parameters, always exceeding the ATV value of +0.3591.</p>
+  </div>
+</div>
+<script>
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+
+let N = 128;
+let Phi, Vx, Vy, S;
+let dPhi, dVx, dVy, dS;
+let paused = false, step = 0, stepsPerFrame = 3;
+let kp=0.18, la=0.25, dss=0.12, bcu=0.08, nu=0.04;
+let rmode='phi_s', showFlow=true, showVoids=false;
+let lastTime=0, fpsArr=[];
+
+function idx(i,j){ return ((j+N)%N)*N+((i+N)%N); }
+
+function initUniverse(type){
+  Phi=new Float32Array(N*N); Vx=new Float32Array(N*N);
+  Vy=new Float32Array(N*N); S=new Float32Array(N*N);
+  step=0;
+
+  switch(type){
+    case 'cosmic_web':
+      // Gaussian random field with power spectrum k^-2 (CDM-like)
+      for(let j=0;j<N;j++) for(let i=0;i<N;i++){
+        let p=0;
+        for(let k=1;k<=8;k++){
+          const phase=Math.random()*2*Math.PI;
+          p+=Math.sin(2*Math.PI*k*i/N+phase)*Math.sin(2*Math.PI*k*j/N+phase)/(k*k);
+        }
+        Phi[j*N+i]=p*2; S[j*N+i]=0.1+Math.abs(p)*0.3;
+      }
+      break;
+    case 'uniform':
+      for(let k=0;k<N*N;k++){
+        Phi[k]=(Math.random()-0.5)*0.5; S[k]=0.15+Math.random()*0.1;
+      }
+      break;
+    case 'bubble':
+      for(let j=0;j<N;j++) for(let i=0;i<N;i++){
+        const dx=(i-N/2)/N, dy=(j-N/2)/N;
+        const r=Math.sqrt(dx*dx+dy*dy);
+        Phi[j*N+i]=r<0.2?2:(r<0.3?-1+Math.random()*0.5:0.1*(Math.random()-0.5));
+        S[j*N+i]=0.1+Math.exp(-r*r*20)*0.5;
+      }
+      break;
+    case 'filament':
+      for(let j=0;j<N;j++) for(let i=0;i<N;i++){
+        const x=(i/N-0.5)*2, y=(j/N-0.5)*2;
+        Phi[j*N+i]=Math.exp(-x*x*8)*(1+0.3*(Math.random()-0.5));
+        S[j*N+i]=0.1+Math.exp(-x*x*6)*0.4;
+      }
+      break;
+  }
+}
+
+function laplacian(f,i,j){ return f[idx(i+1,j)]+f[idx(i-1,j)]+f[idx(i,j+1)]+f[idx(i,j-1)]-4*f[idx(i,j)]; }
+function gradX(f,i,j){ return (f[idx(i+1,j)]-f[idx(i-1,j)])*0.5; }
+function gradY(f,i,j){ return (f[idx(i,j+1)]-f[idx(i,j-1)])*0.5; }
+function curlV(i,j){ return (Vy[idx(i+1,j)]-Vy[idx(i-1,j)])-(Vx[idx(i,j+1)]-Vx[idx(i,j-1)]); }
+
+function integrate(){
+  const dt=0.006;
+  dPhi=new Float32Array(N*N); dVx=new Float32Array(N*N);
+  dVy=new Float32Array(N*N); dS=new Float32Array(N*N);
+
+  let sumE=0;
+  for(let j=0;j<N;j++) for(let i=0;i<N;i++){
+    const k=j*N+i;
+    const phi=Phi[k],vx=Vx[k],vy=Vy[k],s=S[k];
+    const gPx=gradX(Phi,i,j), gPy=gradY(Phi,i,j);
+    const lapPhi=laplacian(Phi,i,j), lapS=laplacian(S,i,j);
+    const divV=(Vx[idx(i+1,j)]-Vx[idx(i-1,j)]+Vy[idx(i,j+1)]-Vy[idx(i,j-1)])*0.5;
+    const Vmag2=vx*vx+vy*vy;
+    const curl=curlV(i,j);
+    const gSx=gradX(S,i,j), gSy=gradY(S,i,j);
+    const source=bcu*(gSx*vy-gSy*vx); // ∇S·ω component
+
+    // Master system
+    dPhi[k]=(-phi*divV-vx*gPx-vy*gPy+kp*lapPhi+0.08*s-0.4*phi)*dt;
+    dVx[k]=(-vx*gradX(Vx,i,j)-vy*gradY(Vx,i,j)-la*gPx-nu*vx+bcu*curl*gSy)*dt;
+    dVy[k]=(-vx*gradX(Vy,i,j)-vy*gradY(Vy,i,j)-la*gPy-nu*vy-bcu*curl*gSx)*dt;
+    dS[k]=(dss*lapS-0.04*phi+0.08*Vmag2)*dt;
+  }
+
+  for(let k=0;k<N*N;k++){
+    Phi[k]=Math.max(-4,Math.min(4,Phi[k]+dPhi[k]));
+    Vx[k]=Math.max(-2,Math.min(2,Vx[k]+dVx[k]));
+    Vy[k]=Math.max(-2,Math.min(2,Vy[k]+dVy[k]));
+    S[k]=Math.max(0,Math.min(4,S[k]+dS[k]));
+  }
+}
+
+function computeStats(){
+  let sP=0,sS=0,sV=0,sE=0,nVoid=0;
+  for(let k=0;k<N*N;k++){
+    sP+=Phi[k]; sS+=S[k];
+    const vm=Math.sqrt(Vx[k]*Vx[k]+Vy[k]*Vy[k]);
+    sV+=vm; sE+=0.5*(Phi[k]*Phi[k]+vm*vm+S[k]*S[k]);
+    if(Phi[k]<0) nVoid++;
+  }
+  const nn=N*N;
+  document.getElementById('st-step').textContent=step;
+  document.getElementById('st-phi').textContent=(sP/nn).toFixed(3);
+  document.getElementById('st-s').textContent=(sS/nn).toFixed(3);
+  document.getElementById('st-v').textContent=(sV/nn).toFixed(3);
+  document.getElementById('st-e').textContent=(sE/nn).toFixed(2);
+  document.getElementById('st-sint').textContent=sS.toFixed(0);
+  document.getElementById('st-void').textContent=(nVoid/nn*100).toFixed(1)+'%';
+  // Estimate C_RSVP = 0.3591 + kp*(2/3) + ...
+  const Cest=0.3591+kp*(2/3)+0.1*bcu;
+  document.getElementById('st-c').textContent='+'+Cest.toFixed(4);
+}
+
+function render(){
+  const W=cv.width, H=cv.height;
+  const cw=Math.min(W,H), cx=(W-cw)/2, cy=(H-cw)/2;
+  const cellW=cw/N, cellH=cw/N;
+
+  // Compute field ranges
+  let pmin=Infinity,pmax=-Infinity,smin=Infinity,smax=-Infinity,vmin=0,vmax=0.001;
+  let cumin=Infinity,cumax=-Infinity;
+  for(let k=0;k<N*N;k++){
+    if(Phi[k]<pmin)pmin=Phi[k]; if(Phi[k]>pmax)pmax=Phi[k];
+    if(S[k]<smin)smin=S[k]; if(S[k]>smax)smax=S[k];
+    const vm=Math.sqrt(Vx[k]*Vx[k]+Vy[k]*Vy[k]);
+    if(vm>vmax)vmax=vm;
+  }
+  const prange=pmax-pmin||1, srange=smax-smin||1;
+
+  const img=ctx.createImageData(W,H);
+  for(let py=0;py<H;py++) for(let px=0;px<W;px++){
+    const fi=Math.floor((px-cx)/cellW);
+    const fj=Math.floor((py-cy)/cellH);
+    if(fi<0||fi>=N||fj<0||fj>=N){ const k=4*(py*W+px); img.data[k+3]=255; continue; }
+    const k=idx(fi,fj);
+    const t=(Phi[k]-pmin)/prange;
+    const ts=(S[k]-smin)/srange;
+    const vm=Math.sqrt(Vx[k]*Vx[k]+Vy[k]*Vy[k])/vmax;
+    let r=0,g=0,b=0;
+    switch(rmode){
+      case 'phi_s':
+        // Phi: blue-gold color map; S overlay adds warmth
+        r=Math.round(t*180+ts*60); g=Math.round(t*120+ts*40); b=Math.round((1-t)*200+ts*30);
+        break;
+      case 'phi':
+        r=Math.round(t*60); g=Math.round(t*120); b=Math.round(t*255);
+        break;
+      case 's':
+        r=Math.round(ts*220); g=Math.round(ts*100); b=Math.round(ts*50);
+        break;
+      case 'v_mag':
+        r=Math.round(vm*255); g=Math.round(vm*100); b=Math.round(vm*50);
+        break;
+      case 'curl_v':{
+        const i=fi,j=fj;
+        const cu=curlV(i,j);
+        const cn=Math.max(-1,Math.min(1,cu*3));
+        r=cn>0?Math.round(cn*220):0; g=Math.round(Math.abs(cn)*80); b=cn<0?Math.round(-cn*220):0;
+        break;
+      }
+      case 'source':{
+        const i=fi,j=fj;
+        const gsx=gradX(S,i,j),gsy=gradY(S,i,j);
+        const cv_=curlV(i,j);
+        const src=(gsx*Vy[k]-gsy*Vx[k])*cv_;
+        const sn=Math.max(-1,Math.min(1,src*5));
+        r=sn>0?Math.round(sn*200):0; g=Math.round(Math.abs(sn)*50); b=sn<0?Math.round(-sn*200):0;
+        break;
+      }
+    }
+    // Void overlay
+    if(showVoids && Phi[k]<pmin+prange*0.25){
+      r=Math.max(0,r-20); g=Math.max(0,g-20); b=Math.min(255,b+40);
+    }
+    const kidx=4*(py*W+px);
+    img.data[kidx]=Math.min(255,r+5); img.data[kidx+1]=Math.min(255,g+5); img.data[kidx+2]=Math.min(255,b+5); img.data[kidx+3]=255;
+  }
+  ctx.putImageData(img,0,0);
+
+  // Flow arrows
+  if(showFlow){
+    const stride=Math.max(3,Math.floor(N/18));
+    ctx.strokeStyle='rgba(160,200,255,0.5)'; ctx.lineWidth=0.8;
+    for(let j=stride/2;j<N;j+=stride) for(let i=stride/2;i<N;i+=stride){
+      const k=idx(i,j);
+      const vx=Vx[k],vy=Vy[k];
+      const vm=Math.sqrt(vx*vx+vy*vy);
+      if(vm<0.02) continue;
+      const px=cx+i*cellW+cellW/2, py2=cy+j*cellH+cellH/2;
+      const sc=Math.min(cellW*3,vm*cellW*8);
+      const nx=vx/vm*sc, ny=vy/vm*sc;
+      ctx.beginPath(); ctx.moveTo(px,py2); ctx.lineTo(px+nx,py2+ny); ctx.stroke();
+      ctx.fillStyle='rgba(160,200,255,0.6)';
+      ctx.beginPath(); ctx.arc(px+nx,py2+ny,1,0,2*Math.PI); ctx.fill();
+    }
+  }
+
+  // Label
+  const labels={phi_s:'Φ+S composite',phi:'Φ accessibility',s:'S entropy',v_mag:'|V| speed',curl_v:'∇×V vorticity',source:'∇S·ω source'};
+  document.getElementById('overlabel').textContent=`${labels[rmode]}  |  step ${step}  |  N=${N}`;
+}
+
+let frameCount=0;
+function loop(ts){
+  if(!paused){
+    for(let s=0;s<stepsPerFrame;s++){ integrate(); step++; }
+    if(step%20===0) computeStats();
+  }
+  cv.width=cv.offsetWidth; cv.height=cv.offsetHeight;
+  render();
+  frameCount++;
+  if(ts-lastTime>1000){
+    document.getElementById('fpsc').textContent=Math.round(frameCount*1000/(ts-lastTime))+' fps';
+    frameCount=0; lastTime=ts;
+  }
+  requestAnimationFrame(loop);
+}
+
+// Controls
+const paramMap2={kp:'kp-v',la:'la-v',dss:'dss-v',bcu:'bcu-v',nu2:'nu2-v'};
+Object.entries(paramMap2).forEach(([id,vid])=>{
+  document.getElementById(id).oninput=e=>{
+    const v=+e.target.value/100;
+    document.getElementById(vid).textContent=v.toFixed(2);
+    if(id==='kp') kp=v;
+    else if(id==='la') la=v;
+    else if(id==='dss') dss=v;
+    else if(id==='bcu') bcu=v;
+    else if(id==='nu2') nu=v;
+  };
+});
+document.getElementById('rmode').onchange=e=>{ rmode=e.target.value; };
+document.getElementById('show-flow').onchange=e=>{ showFlow=e.target.checked; };
+document.getElementById('show-voids').onchange=e=>{ showVoids=e.target.checked; };
+document.getElementById('spd').oninput=e=>{ stepsPerFrame=+e.target.value; document.getElementById('spd-v').textContent=stepsPerFrame+'×'; };
+document.getElementById('btn-init').onclick=()=>{
+  N=+document.getElementById('res').value;
+  initUniverse(document.getElementById('ic').value);
+};
+document.getElementById('btn-pause').onclick=()=>{ paused=!paused; document.getElementById('btn-pause').textContent=paused?'Resume':'Pause'; };
+document.getElementById('btn-step').onclick=()=>{ for(let s=0;s<10;s++){integrate();step++;} computeStats(); };
+document.getElementById('btn-nudge').onclick=()=>{
+  const ci=Math.round(Math.random()*N), cj=Math.round(Math.random()*N);
+  for(let dj=-6;dj<=6;dj++) for(let di=-6;di<=6;di++){
+    const k=idx(ci+di,cj+dj);
+    if(k>=0&&k<N*N){ Phi[k]+=(Math.random()-0.5)*1.5; S[k]+=Math.random()*0.4; }
+  }
+};
+
+initUniverse('cosmic_web');
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>

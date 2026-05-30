@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RSVP Notebook 2 — Accessibility Landscape</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0a0a14; color:#dde; font-family:Georgia,serif; display:flex; flex-direction:column; height:100vh; }
+  #header { padding:20px 28px 10px; border-bottom:1px solid #223; flex-shrink:0; }
+  h1 { font-size:1.3rem; color:#aac8ff; font-weight:normal; }
+  .sub { font-size:0.82rem; color:#556; margin-top:3px; }
+  #main { display:flex; flex:1; overflow:hidden; }
+  #left { flex:1; position:relative; }
+  canvas { position:absolute; top:0;left:0;width:100%;height:100%; }
+  #panel { width:290px; background:#0d0d1c; border-left:1px solid #223; padding:18px; overflow-y:auto; font-size:0.82rem; }
+  h2 { font-size:0.82rem; color:#88aadd; margin:14px 0 6px; text-transform:uppercase; letter-spacing:.06em; }
+  p { color:#99a; line-height:1.6; margin-bottom:8px; }
+  .eq { font-family:monospace; font-size:0.75rem; background:#111828; padding:5px 9px; border-left:2px solid #446; margin:6px 0; color:#aaccff; }
+  .ctrl { margin:7px 0; }
+  label { font-size:0.76rem; color:#889; display:block; margin-bottom:2px; }
+  input[type=range] { width:100%; accent-color:#5588cc; }
+  .val { float:right; color:#aac8ff; font-family:monospace; font-size:0.76rem; }
+  button { background:#1a2a44; border:1px solid #446; color:#aac8ff; padding:5px 12px;
+    cursor:pointer; font-size:0.78rem; border-radius:3px; margin:3px 3px 0 0; }
+  button:hover { background:#243560; }
+  select { background:#111828; border:1px solid #446; color:#aac; padding:4px 8px; font-size:0.78rem; width:100%; margin:4px 0; }
+  .legend { display:flex; align-items:center; gap:7px; margin:3px 0; }
+  .swatch { width:12px; height:12px; border-radius:2px; flex-shrink:0; }
+</style>
+</head>
+<body>
+<div id="header">
+  <h1>RSVP Notebook 2 — Accessibility Landscape</h1>
+  <div class="sub">Geodesics under the accessibility metric  g<sup>acc</sup><sub>ij</sub> = g<sub>ij</sub> + κ ∂<sub>i</sub>Φ ∂<sub>j</sub>Φ</div>
+</div>
+<div id="main">
+  <div id="left">
+    <canvas id="bg"></canvas>
+    <canvas id="fg"></canvas>
+  </div>
+  <div id="panel">
+    <h2>Physics</h2>
+    <p>The accessibility metric deforms geodesics by penalising motion through regions of high |∇Φ|. Particles seek paths of least accessibility cost.</p>
+    <div class="eq">ds²<sub>acc</sub> = g<sub>ij</sub>dx<sup>i</sup>dx<sup>j</sup> + κ(∂<sub>k</sub>Φ dx<sup>k</sup>)²</div>
+    <p>When κ=0, geodesics are straight lines (Euclidean). As κ increases, paths bend to avoid high-gradient ridges.</p>
+
+    <h2>Scalar Field Φ</h2>
+    <div class="ctrl"><label>Field preset</label>
+    <select id="preset">
+      <option value="gauss">Gaussian well (single attractor)</option>
+      <option value="saddle">Saddle (Friedmann analogue)</option>
+      <option value="double">Double well (two basins)</option>
+      <option value="ridge">Ridge barrier</option>
+      <option value="cosine">Cosine lattice</option>
+    </select></div>
+    <div class="ctrl"><label>Accessibility coupling κ <span class="val" id="kappa-v">0.50</span></label><input type="range" id="kappa" min="0" max="100" value="50"></div>
+    <div class="ctrl"><label>Perturbation amplitude <span class="val" id="amp-v">0.50</span></label><input type="range" id="amp" min="0" max="100" value="50"></div>
+
+    <h2>Geodesics</h2>
+    <div class="ctrl"><label>N geodesics <span class="val" id="ng-v">8</span></label><input type="range" id="ng" min="1" max="24" value="8"></div>
+    <div class="ctrl"><label>Integration steps <span class="val" id="nstep-v">400</span></label><input type="range" id="nstep" min="50" max="800" value="400"></div>
+    <button id="btn-draw">Draw Geodesics</button>
+    <button id="btn-straight">Show Euclidean</button>
+    <button id="btn-clear">Clear</button>
+
+    <h2>Display</h2>
+    <div class="ctrl"><label>Show gradient arrows</label>
+      <input type="checkbox" id="show-grad" checked></div>
+    <div class="ctrl"><label>Show Φ contours</label>
+      <input type="checkbox" id="show-cont" checked></div>
+
+    <h2>Legend</h2>
+    <div class="legend"><div class="swatch" style="background:linear-gradient(90deg,#001,#339,#7af)"></div> Φ value (dark=low, bright=high)</div>
+    <div class="legend"><div class="swatch" style="background:#ff8833;border-radius:50%"></div> |∇Φ| magnitude (accessibility barrier)</div>
+    <div class="legend"><div class="swatch" style="background:#44cc88"></div> Accessibility geodesics</div>
+    <div class="legend"><div class="swatch" style="background:#cc4466"></div> Euclidean straight paths</div>
+
+    <h2>Notes</h2>
+    <p>Click canvas to set a source point. Geodesics emanate radially and curve in the accessibility metric. Compare with κ=0 to see the bending.</p>
+    <p>In RSVP cosmology, the Friedmann saddle sits at a ridge: trajectories roll away along the unstable manifold, bending toward the Minkowski attractor M.</p>
+  </div>
+</div>
+<script>
+const bgC = document.getElementById('bg');
+const fgC = document.getElementById('fg');
+const bx = bgC.getContext('2d');
+const fx = fgC.getContext('2d');
+
+let W=800, H=600;
+let kappa=0.5, amp=0.5, ng=8, nstep=400;
+let preset='gauss';
+let sourceX=0.5, sourceY=0.5;
+let geodesics=[], euclideans=[];
+let showGrad=true, showCont=true;
+
+function resize(){
+  W=bgC.offsetWidth; H=bgC.offsetHeight;
+  bgC.width=W; bgC.height=H; fgC.width=W; fgC.height=H;
+  drawBackground();
+}
+
+// Φ field functions (normalized coords 0..1)
+function phi(u,v){
+  const a=amp;
+  switch(preset){
+    case 'gauss': return -a*Math.exp(-((u-0.5)**2+(v-0.5)**2)*8);
+    case 'saddle': return a*((u-0.5)**2-(v-0.5)**2)*4;
+    case 'double': return a*(((u-0.5)**2-0.09)**2*6 + (v-0.5)**2*2);
+    case 'ridge': return a*Math.exp(-(u-0.5)**2*50)*(1-(v-0.3)**2*4);
+    case 'cosine': return a*(Math.cos(u*Math.PI*4)*Math.cos(v*Math.PI*4))*0.5;
+    default: return 0;
+  }
+}
+function phiDx(u,v,h=0.002){ return (phi(u+h,v)-phi(u-h,v))/(2*h); }
+function phiDy(u,v,h=0.002){ return (phi(u,v+h)-phi(u,v-h))/(2*h); }
+function phiLaplacian(u,v,h=0.002){ return (phi(u+h,v)+phi(u-h,v)+phi(u,v+h)+phi(u,v-h)-4*phi(u,v))/(h*h); }
+
+function drawBackground(){
+  const N=200;
+  const img=bx.createImageData(W,H);
+  let phiMin=Infinity, phiMax=-Infinity;
+  const vals=new Float32Array(N*N);
+  for(let i=0;i<N;i++) for(let j=0;j<N;j++){
+    const v=phi(i/N,j/N); vals[j*N+i]=v;
+    if(v<phiMin) phiMin=v; if(v>phiMax) phiMax=v;
+  }
+  const range=phiMax-phiMin||1;
+  for(let py=0;py<H;py++) for(let px=0;px<W;px++){
+    const u=px/W, v=py/H;
+    const t=(phi(u,v)-phiMin)/range;
+    const gx=phiDx(u,v), gy=phiDy(u,v);
+    const grad=Math.sqrt(gx*gx+gy*gy);
+    const gn=Math.min(1,grad*3);
+    const r=Math.round(t*40+gn*180);
+    const g=Math.round(t*80+gn*100);
+    const b=Math.round(t*180+gn*40);
+    const idx=4*(py*W+px);
+    img.data[idx]=r; img.data[idx+1]=g; img.data[idx+2]=b; img.data[idx+3]=255;
+  }
+  bx.putImageData(img,0,0);
+
+  // Contours
+  if(showCont){
+    const nC=12;
+    for(let k=0;k<nC;k++){
+      const level=phiMin+(phiMax-phiMin)*(k+0.5)/nC;
+      bx.strokeStyle=`rgba(180,200,255,0.25)`; bx.lineWidth=0.5;
+      // Marching squares lite: just sample and connect
+      const step=4;
+      for(let j=0;j<H-step;j+=step) for(let i=0;i<W-step;i+=step){
+        const p00=phi(i/W,j/H), p10=phi((i+step)/W,j/H);
+        const p01=phi(i/W,(j+step)/H), p11=phi((i+step)/W,(j+step)/H);
+        if((p00<level)!=(p10<level)){
+          const f=(level-p00)/(p10-p00);
+          bx.beginPath(); bx.moveTo(i+f*step,j); bx.lineTo(i+f*step,j); bx.stroke();
+        }
+        if((p00<level)!=(p01<level)){
+          const f=(level-p00)/(p01-p00);
+          bx.beginPath(); bx.moveTo(i,j+f*step); bx.lineTo(i+1,j+f*step); bx.stroke();
+        }
+      }
+    }
+  }
+
+  // Gradient arrows
+  if(showGrad){
+    const step=40;
+    for(let j=step/2;j<H;j+=step) for(let i=step/2;i<W;i+=step){
+      const gx=phiDx(i/W,j/H)*W, gy=phiDy(i/W,j/H)*H;
+      const mag=Math.sqrt(gx*gx+gy*gy);
+      if(mag<0.1) continue;
+      const scale=Math.min(15,mag*0.5);
+      const nx=gx/mag*scale, ny=gy/mag*scale;
+      const alpha=Math.min(0.7,mag*0.04);
+      bx.strokeStyle=`rgba(255,150,50,${alpha})`; bx.lineWidth=1;
+      bx.beginPath(); bx.moveTo(i,j); bx.lineTo(i+nx,j+ny); bx.stroke();
+      bx.fillStyle=`rgba(255,150,50,${alpha})`;
+      bx.beginPath(); bx.arc(i+nx,j+ny,1.5,0,2*Math.PI); bx.fill();
+    }
+  }
+}
+
+// Geodesic integration using gradient of accessibility metric
+function integrateGeodesic(u0,v0,angle,steps){
+  const dt=1.5/W;
+  let u=u0,v=v0;
+  let pu=Math.cos(angle),pv=Math.sin(angle);
+  const path=[{u,v}];
+  for(let k=0;k<steps;k++){
+    // Christoffel correction from accessibility metric
+    const gx=phiDx(u,v),gy=phiDy(u,v);
+    const phipu=gx*pu+gy*pv; // directional derivative along momentum
+    // Correction to momentum: dp/dt = -Γ p p
+    // For g_acc = g + κ (dΦ)², the correction is:
+    // Γ^i_{jk} correction ≈ κ ∂_j∂_k Φ · ∂^i Φ + κ ∂_j Φ · ∂_k∂^i Φ (schematic)
+    // Simpler: force = -κ * phipu * grad(Φ)  (gradient force)
+    const force = kappa * phipu;
+    const dpu = -force * phiDx(u,v);
+    const dpv = -force * phiDy(u,v);
+    pu += dpu*dt*10; pv += dpv*dt*10;
+    const mag=Math.sqrt(pu*pu+pv*pv)||1;
+    pu/=mag; pv/=mag;
+    u+=pu*dt; v+=pv*dt;
+    if(u<0||u>1||v<0||v>1) break;
+    path.push({u,v});
+  }
+  return path;
+}
+
+function drawGeodesics(){
+  fx.clearRect(0,0,W,H);
+  // Draw source
+  fx.fillStyle='#ffffff'; fx.beginPath(); fx.arc(sourceX*W,sourceY*H,6,0,2*Math.PI); fx.fill();
+  fx.strokeStyle='#aac8ff'; fx.lineWidth=1; fx.beginPath(); fx.arc(sourceX*W,sourceY*H,10,0,2*Math.PI); fx.stroke();
+
+  geodesics.forEach((path,i)=>{
+    if(path.length<2) return;
+    const hue=120+i*20;
+    fx.strokeStyle=`hsla(${hue},70%,55%,0.85)`; fx.lineWidth=1.5;
+    fx.beginPath();
+    path.forEach((pt,k)=>{ if(k===0) fx.moveTo(pt.u*W,pt.v*H); else fx.lineTo(pt.u*W,pt.v*H); });
+    fx.stroke();
+  });
+  euclideans.forEach((path,i)=>{
+    if(path.length<2) return;
+    fx.strokeStyle=`rgba(200,60,100,0.5)`; fx.lineWidth=1; fx.setLineDash([4,4]);
+    fx.beginPath();
+    path.forEach((pt,k)=>{ if(k===0) fx.moveTo(pt.u*W,pt.v*H); else fx.lineTo(pt.u*W,pt.v*H); });
+    fx.stroke(); fx.setLineDash([]);
+  });
+}
+
+function recompute(){
+  geodesics=[];
+  for(let i=0;i<ng;i++){
+    const angle=2*Math.PI*i/ng;
+    geodesics.push(integrateGeodesic(sourceX,sourceY,angle,nstep));
+  }
+  drawGeodesics();
+}
+
+function recomputeEuclidean(){
+  euclideans=[];
+  for(let i=0;i<ng;i++){
+    const angle=2*Math.PI*i/ng;
+    const path=[{u:sourceX,v:sourceY}];
+    for(let k=0;k<nstep;k++){
+      const last=path[path.length-1];
+      const u=last.u+Math.cos(angle)*(1.5/W);
+      const v=last.v+Math.sin(angle)*(1.5/W);
+      if(u<0||u>1||v<0||v>1) break;
+      path.push({u,v});
+    }
+    euclideans.push(path);
+  }
+  drawGeodesics();
+}
+
+// Controls
+['kappa','amp','ng','nstep'].forEach(id=>{
+  document.getElementById(id).oninput=e=>{
+    const v=+e.target.value;
+    if(id==='kappa') { kappa=v/100; document.getElementById('kappa-v').textContent=kappa.toFixed(2); }
+    else if(id==='amp') { amp=v/100; document.getElementById('amp-v').textContent=amp.toFixed(2); drawBackground(); }
+    else if(id==='ng') { ng=v; document.getElementById('ng-v').textContent=v; }
+    else if(id==='nstep') { nstep=v; document.getElementById('nstep-v').textContent=v; }
+  };
+});
+document.getElementById('preset').onchange=e=>{ preset=e.target.value; drawBackground(); };
+document.getElementById('show-grad').onchange=e=>{ showGrad=e.target.checked; drawBackground(); };
+document.getElementById('show-cont').onchange=e=>{ showCont=e.target.checked; drawBackground(); };
+document.getElementById('btn-draw').onclick=recompute;
+document.getElementById('btn-straight').onclick=recomputeEuclidean;
+document.getElementById('btn-clear').onclick=()=>{ geodesics=[]; euclideans=[]; fx.clearRect(0,0,W,H); };
+fgC.onclick=e=>{
+  const r=fgC.getBoundingClientRect();
+  sourceX=(e.clientX-r.left)/W; sourceY=(e.clientY-r.top)/H;
+  recompute();
+};
+
+window.addEventListener('resize',()=>{ resize(); recompute(); });
+resize();
+</script>
+</body>
+</html>
