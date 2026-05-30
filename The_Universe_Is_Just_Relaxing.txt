@@ -37,7 +37,7 @@ that's exactly what we are tackling today.
 Welcome to the deep dive.
 It's going to be a fascinating one.
 Our mission today is to explore a truly mind-bending 2026 monograph.
-It's by an independent researcher named Flitschen.
+It's by an independent researcher named Flyxion.
 The paper is titled Accessibility, Relaxation, and Friedman Instability,
 an RSVP Reinterpretation of Cosmological Saddle Geometry.
 I know, I know it's an incredibly dense, intimidating title.
@@ -74,7 +74,7 @@ Yes, which is basically the mathematical placeholder for dark energy.
 And the CDM stands for cold, dark matter.
 Got it.
 But recently, this highly complex mathematical program known as the ATV system challenged this standard model.
-And now this new paper by Flixion takes that mathematical ATV system
+And now this new paper by Flyxion takes that mathematical ATV system
 and places it into an even grander unified ontological framework called RSVP.
 RSVP.
 Yeah, it takes pure abstract mathematics and gives it a physical thermodynamic reality.
@@ -189,7 +189,7 @@ You're telling me that 68% of the universe, this dark energy we've spent billion
 trying to detect, might just be a misunderstanding of how the universe falls off a geometric curve.
 It's very possible, yes.
 That's incredible.
-But it leads directly into the heart affliction's paper.
+But it leads directly into the heart Flyxion's paper.
 Because while ATV proved the mathematical instability, they were still just playing with pure math and
 geometry.
 Right.
@@ -305,7 +305,7 @@ It is a giant thermodynamic fluid trying to iron out its own thermodynamic wrink
 Beautifully put.
 And because it is full, the things moving through it have to follow the highly specific
 rules of the road created by that fullness.
-Which brings us directly to how Fliction and mathematically defines those rules, the accessibility
+Which brings us directly to how Flyxion and mathematically defines those rules, the accessibility
 metric.
 Right.
 Let's talk about this accessibility metric because the formula for it in the paper is wild.
@@ -369,7 +369,7 @@ of the entire universe.
 So we have this incredibly complex crowded room.
 How do these three fields actually interact within it?
 How do they balance each other out?
-Fliction introduces a master equation called the Lamferdine functional.
+Flyxion introduces a master equation called the Lamferdine functional.
 Yes.
 This is the equation that governs the total energy of the whole system.
 And it is broken down into four distinct parts.
@@ -399,7 +399,7 @@ Whirlpools and the four.
 And fourth, a very specific scalar vector coupling term.
 This is a mathematical bridge where the velocity of the fluid V interacts directly and intimately
 with the gradient of the scalar field phi.
-And there is a massive mathematical achievement here that Fliction highlights in the text and
+And there is a massive mathematical achievement here that Flyxion highlights in the text and
 we cannot skip over it.
 The paper states that this entire RSVP system successfully avoids something called the
 Ostrogradsky instability.
@@ -442,7 +442,7 @@ It would spontaneously decay into an infinite explosive cascade of radiation in 
 of a microsecond.
 So if your math allows for ghosts, your universe explodes before it even begins.
 Exactly.
-And what Fliction has done is carefully construct the RSVP equations so they only rely on first
+And what Flyxion has done is carefully construct the RSVP equations so they only rely on first
 order time derivatives.
 Yes.
 By keeping all kinetic terms strictly to the first order, RSVP rigorously proves it
@@ -473,7 +473,7 @@ Yeah.
 How do we get from this chaotic fluid back to the standard mathematics that the ATV papers
 described?
 We have to somehow simplify this fluid, right?
-We do, and that is exactly the mathematical bridge Flickshahn builds in Section 4 of the
+We do, and that is exactly the mathematical bridge Flyxion builds in Section 4 of the
 paper with something called the Reduction Principle.
 The Reduction Principle.
 The paper rigorously proves that the incredibly complex RSVP fluid system perfectly mirrors
@@ -501,16 +501,16 @@ You assume there is absolutely no thermodynamic smoothing or entropy distributio
 So if you take the universe and you completely strip away the rotation, the pressure, the
 thermodynamic diffusion, and the accessibility distortions.
 What are you actually left with?
-Fliction proves that under these five strict, almost draconian rules, the fluid collapses
+Flyxion proves that under these five strict, almost draconian rules, the fluid collapses
 down.
 And it matches exactly with the Friedman configuration, the ATV's original saddle point, SM.
 Which has the specific mathematical coordinates, four-thirds, two-thirds.
 Yes.
-Fliction proves it is an accessibility critical rest point.
+Flyxion proves it is an accessibility critical rest point.
 The map aligns flawlessly.
 It's a breathtaking synthesis, really.
-Fliction isn't throwing the ATV mathematical program in the trash.
-Fliction is saying ATV is entirely correct, but only under highly restricted conditions.
+Flyxion isn't throwing the ATV mathematical program in the trash.
+Flyxion is saying ATV is entirely correct, but only under highly restricted conditions.
 Exactly.
 ATV is what happens when you look at the incredibly complex RSVP universe through a very specific,
 perfectly symmetric, perfectly frictionless, completely unrealistic lens.
@@ -529,7 +529,7 @@ trick.
 You're just choosing a coordinate system that makes your specific equations look prettier
 and easier to solve.
 That's a very common view, yeah.
-But Fliction comes in and says, no, this gauge isn't arbitrary at all.
+But Flyxion comes in and says, no, this gauge isn't arbitrary at all.
 It represents a fundamental physical reality.
 That's right.
 It's a common misconception about gauges.
@@ -543,7 +543,7 @@ The underlying physical reality of the actual city doesn't change at all, but yo
 representation of it does.
 So that redundancy is a gauge freedom.
 Exactly.
-Fliction proves that the specific time since the Big Bang gauge corresponds exactly to
+Flyxion proves that the specific time since the Big Bang gauge corresponds exactly to
 a section of a fiber bundle in the RSVP trajectory space.
 A fiber bundle.
 Okay.
@@ -563,7 +563,7 @@ A gauge choice is essentially taking a pair of scissors and cutting a smooth, sp
 across the tops of the bristles.
 Oh, I see.
 You are selecting one specific state at every point to make the math workable.
-Fliction proves that the ATV's time since the Big Bang gauge isn't just a random cut.
+Flyxion proves that the ATV's time since the Big Bang gauge isn't just a random cut.
 It is a highly specific cut that mathematically isolates a unique negative eigenvalue of the
 system's Hessian matrix.
 I'm going to need you to unpack Hessian matrix and eigenvalue before my brain explodes.
@@ -633,7 +633,7 @@ Okay.
 So at the very first order, we have a negative eigenvalue, negative 1.
 We have a stable direction.
 Right.
-And as Flicksham proved in that gauge decomposition theorem we just talked about with the hairbrush,
+And as Flyxion proved in that gauge decomposition theorem we just talked about with the hairbrush,
 that exact negative 1 eigenvalue is perfectly absorbed by the time since the Big Bang gauge
 fixing.
 So it's handled by the timeline.
@@ -671,18 +671,18 @@ Everything after order 2 is positive.
 Everything after order 2 is unstable.
 So the stability of the universe literally hits a brick wall at the second order.
 And the fact that these stable negative eigenvalues just abruptly stop at a specific mathematically
-hard-coded point leads directly to Fliction's most groundbreaking new concept.
+hard-coded point leads directly to Flyxion's most groundbreaking new concept.
 The closure depth.
 Yes.
 The closure depth, which is denoted mathematically as declosure.
-Fliction formally introduces this as a brand new mathematical invariant.
+Flyxion formally introduces this as a brand new mathematical invariant.
 Right.
 In the older ATV framework, those researchers knew that the infinite order instability of
 the universe was somehow controlled by a single second order condition, but they couldn't
 pin it down perfectly.
 They just saw the shadow of it.
 Yeah, exactly.
-Fliction gives us a rigorous, undeniable geometric definition.
+Flyxion gives us a rigorous, undeniable geometric definition.
 The closure depth of the Friedman's saddle, the Big Bang, is exactly 2.
 I want to make sure I'm translating this recursive mathematical logic correctly because it feels
 incredibly profound.
@@ -761,11 +761,11 @@ Physics requires hard, observable evidence.
 I can hear you screaming at your device right now.
 So how do we actually prove any of this?
 It's the most important question.
-Math is great, but how do we point a massive telescope at the night sky and prove that Fliction's
+Math is great, but how do we point a massive telescope at the night sky and prove that Flyxion's
 RSVP fluid is real and the beloved billions of dollars funded lambda CDM model is wrong?
 That is the ultimate question.
 Yeah.
-And Fliction dedicates the back half of the paper to exactly this falsifiable observable predictions.
+And Flyxion dedicates the back half of the paper to exactly this falsifiable observable predictions.
 Okay.
 Let's hear.
 To prove it, we have to look at the luminosity redshift relation.
@@ -839,7 +839,7 @@ Wow.
 The fourth order coefficient is exactly what we need to determine if the Big Bang was self-similar
 at order too. It is sitting right at the bleeding edge frontier of our current observation limits.
 Within the next decade, we might actually have the data to confirm the sign of C.
-But wait. Fliction's paper doesn't just rest its entire weight on the redshift coefficient.
+But wait. Flyxion's paper doesn't just rest its entire weight on the redshift coefficient.
 It offers an even more distinct undeniable smoking gun that RSVP predicts.
 A massive cosmic signature that neither lambda CDM nor the ATV system even account for.
 Yeah, this is the big one.
@@ -870,7 +870,7 @@ that forces objects moving through it to rotate.
 I love that analogy. So in the early universe, as the incredibly ancient light from the cosmic
 microwave background, the literal afterglow of the Big Bang travels for billions of years
 through this twisting, swirling, parity-odd RSVP fluid. The polarization of that light, the ribbon
-physically rotates. The angle of the light gets twisted by the space it's flying through.
+physically rotates. The angle of the light gets twisted by the space it's Flyxion through.
 Exactly. And that physical twisting of light over cosmic distances is called birefringence.
 The paper predicts a massive observable cosmic birefringence.
 This raises a really important skeptical question, though. Because if you read up on theoretical
@@ -879,9 +879,9 @@ also predict that the polarization of the CMB should rotate.
 That's true.
 They all predict some form of birefringence, usually caused by microscopic dark matter particles.
 So if we point a telescope at the sky, and we do observe this rotation of light, how do
-we know it's Flixian's macroscopic RSVP fluid causing it, and not just some undiscovered axion
+we know it's Flyxion's macroscopic RSVP fluid causing it, and not just some undiscovered axion
 particle? What makes the RSVP prediction definitively special?
-The cross-correlation. This is without a doubt the absolute genius of Flixian's paper.
+The cross-correlation. This is without a doubt the absolute genius of Flyxion's paper.
 It introduces something called Assumption 8.5, the entropy-vorticity coherence.
 Okay, what does that mean?
 In the RSVP framework, the swirling vorticity and the thermodynamic entropy gradients don't
@@ -929,8 +929,8 @@ Precisely. It strips away the magical invisible particles and grounds the most m
 scale observations of our universe in a tangible thermodynamic reality. It replaces dark energy
 with fluid mechanics.
 As we finally wrap our heads around these incredibly complex observable tests, we have
-to take a step back. We need to look at the ultimate philosophical conclusion of Fliction's
-paper. We need to zoom all the way out and look at what Fliction calls the grand phase
+to take a step back. We need to look at the ultimate philosophical conclusion of Flyxion's
+paper. We need to zoom all the way out and look at what Flyxion calls the grand phase
 portrait.
 Yes. This is where it all comes together.
 If this theory is true, what is the universe actually doing from its very beginning to its
@@ -940,7 +940,7 @@ defined by the redshift and velocity coefficients, the z-squared v-zero plane. I
 major defining points in the life cycle of the cosmos.
 Okay, what's the first one?
 First is the source labeled U-zero-zero. This is the zero accessibility vacuum. It's a state
-of complete mathematical emptiness, zero flow, zero entropy. And mathematically, Fliction
+of complete mathematical emptiness, zero flow, zero entropy. And mathematically, Flyxion
 states, it is unphysical as a true starting point. It's an asymptote that can never be truly
 reached.
 Right, because the universe is a plenum. It isn't nothing. It is full. So we have to move
@@ -989,7 +989,7 @@ medium governed by entropy and accessibility, the mathematical books balance per
 their own. No dark energy required.
 Okay. Let's take a deep breath and recap this massive intellectual journey we've just been
 on. We started with the bizarre, terrifying anomaly of the accelerated expansion of the
-universe. He did. We looked at how Fliction's massive RSVP framework takes the brilliant mathematical
+universe. He did. We looked at how Flyxion's massive RSVP framework takes the brilliant mathematical
 foundation of the unstable Friedman saddle from the ATV system and aggressively places it into a real
 physical thermodynamic medium made of scalar vector and entropy fields. We explored the dense
 mathematics of this medium, specifically avoiding the explosive Ostrogratsky instability.
@@ -1016,7 +1016,7 @@ The universe isn't a terrifying explosion being ripped apart by dark energy.
 It is simply a highly constrained, beautifully complex system, naturally inevitably seeking
 its own peace, its own equilibrium. It is finding its rest.
 I want to leave you with a final provocative thought to mull over tonight.
-If Flixion's mathematics are right, and the macroscopic expansion of the entire cosmos is just an
+If Flyxion's mathematics are right, and the macroscopic expansion of the entire cosmos is just an
 emergent thermodynamic illusion, a property of accessibility relaxation, what else in our daily
 physical reality might be an illusion?
 Oh, that's a big question.

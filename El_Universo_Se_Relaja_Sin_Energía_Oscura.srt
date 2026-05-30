@@ -40,7 +40,7 @@ Bastante. Por un lado, tenemos la pieza central teórica, que es una monografía
 
 11
 00:00:57,860 --> 00:01:05,900
-Fue escrita por el investigador Flaccion y se titula, a ver, Relajación de accesibilidad e inestabilidad de Friedman.
+Fue escrita por el investigador Flyxion y se titula, a ver, Relajación de accesibilidad e inestabilidad de Friedman.
 
 12
 00:01:06,300 --> 00:01:07,960
@@ -416,7 +416,7 @@ Bueno, si algo está cayendo y relajándose, ¿qué es físicamente ese algo? Po
 
 105
 00:09:38,280 --> 00:09:44,320
-Y aquí es exactamente donde la monografía de Fleishon introduce el marco RSV.
+Y aquí es exactamente donde la monografía de Flyxion introduce el marco RSV.
 
 106
 00:09:44,480 --> 00:09:47,600
@@ -612,11 +612,11 @@ El universo herviría y explotaría espontáneamente en microsegundos. No existi
 
 154
 00:15:09,280 --> 00:15:12,740
-¡Qué locura! ¿Y cómo lo previene el modelo de Flaccion?
+¡Qué locura! ¿Y cómo lo previene el modelo de Flyxion?
 
 155
 00:15:12,740 --> 00:15:20,040
-Flaccion estructura el funcional Lamphrodine exclusivamente con derivadas de primer orden.
+Flyxion estructura el funcional Lamphrodine exclusivamente con derivadas de primer orden.
 
 156
 00:15:20,680 --> 00:15:31,040
@@ -628,7 +628,7 @@ Pero a ver, esto abre una brecha histórica que me vuela la cabeza. Si el univer
 
 158
 00:15:51,340 --> 00:16:06,080
-Esa es la gran pregunta. Y es la que resuelve la sección del principio de reducción en la monografía. Mira, el trabajo de Flaccion no dice que las matemáticas del modelo estándar o del Big Bang clásico estén mal hechas.
+Esa es la gran pregunta. Y es la que resuelve la sección del principio de reducción en la monografía. Mira, el trabajo de Flyxion no dice que las matemáticas del modelo estándar o del Big Bang clásico estén mal hechas.
 
 159
 00:16:06,240 --> 00:16:07,240
@@ -996,7 +996,7 @@ En universo, al relajarse, producen inmensos remolinos termodinámicos.
 
 250
 00:26:25,600 --> 00:26:31,540
-Y la genialidad causal de Flaxon radica en postular que estos remolinos alteran simultáneamente dos fenómenos observables.
+Y la genialidad causal de Flyxion radica en postular que estos remolinos alteran simultáneamente dos fenómenos observables.
 
 251
 00:26:31,540 --> 00:26:36,540
