@@ -12,11 +12,19 @@
 
 * [Audio Overviews](https://standardgalactic.github.io/cosmology/)
 
+
 ![](01 - Great Mistake.png)
+
 ![](02 - Saddle.png)
+
 ![](03 - Plenum.png)
+
 ![](04 - Accessibility Landscape.png)
+
 ![](05 - Fall of Space.png)
+
 ![](06 - Depth-Two Secret.png)
+
 ![](07 - Smoking Gun.png)
+
 ![](08 - RSVP Universe.png)
