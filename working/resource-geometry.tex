@@ -1,0 +1,1400 @@
+\documentclass[12pt,a4paper]{article}
+
+%=========================================================
+% Fonts and Typography
+%=========================================================
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+
+\usepackage{microtype}
+\usepackage{setspace}
+\onehalfspacing
+
+%=========================================================
+% Mathematics
+%=========================================================
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{amscd}
+\usepackage{bm}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\newtheorem*{principle}{Principle}
+\newtheorem*{hypothesis}{Hypothesis}
+\newtheorem*{interpretation}{Interpretation}
+
+%=========================================================
+% Layout
+%=========================================================
+
+\usepackage[a4paper,margin=1.25in]{geometry}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{14pt}
+\addtolength{\topmargin}{-2pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\small Computation, Constraint, and Resource Geometry in the Flash--Reluctance Engine}
+\fancyfoot[C]{\thepage}
+
+%=========================================================
+% Tables, Graphics, Hyperlinks
+%=========================================================
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{hyperref}
+
+%=========================================================
+% Commands
+%=========================================================
+
+\newcommand{\Tc}{T_{\mathrm{c}}}
+\newcommand{\Ti}{T_i}
+\newcommand{\Tmin}{T_{\min}}
+
+\newcommand{\tauEM}{\tau_{\mathrm{EM}}}
+\newcommand{\tauth}{\tau_{\mathrm{th}}}
+\newcommand{\tauload}{\tau_{\mathrm{load}}}
+\newcommand{\taufr}{\tau_{\mathrm{fr}}}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\T}{\mathcal{T}}
+
+\title{Computation, Constraint, and Resource Geometry \\
+in the Flash--Reluctance Engine}
+
+\author{Flyxion \\
+Independent Researcher}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The Flash--Reluctance Engine is typically described as a hybrid thermodynamic and electromagnetic rotational machine in which flash-steam expansion and switched-reluctance actuation cooperate to produce regulated shaft power. Such a description, while operationally correct, obscures a deeper mathematical structure. The present work develops a geometric formulation of the engine in which thermal reservoirs, chamber temperatures, electromagnetic allocations, and rotor momentum are treated as coordinates on a coupled state manifold subject to admissibility constraints.
+
+Within this framework the thermal subsystem appears as a distributed resource field, the electromagnetic subsystem as a predictive allocation mechanism, and the flywheel as an integrative memory structure that accumulates the history of torque production. The resulting system is shown to possess a rich mathematical architecture involving constrained flows, resource competition networks, admissible continuation regions, control-induced curvature, and bifurcations associated with thermal collapse and actuator saturation.
+
+Several new results are derived. We establish conditions for the existence and uniqueness of equilibrium operating states, characterize the geometry of thermal admissibility boundaries, derive optimal electromagnetic allocation rules from a variational principle, and formulate a continuation volume that quantifies the remaining operational freedom of the machine. The resulting perspective reveals the Flash--Reluctance Engine as an instance of a broader class of constrained continuation systems whose primary function is the maintenance of admissible trajectories under resource limitations.
+
+The analysis provides a bridge between thermodynamics, control theory, nonlinear dynamics, optimization, and resource geometry, while simultaneously serving as a concrete laboratory realization of concepts that appear more generally in adaptive physical, biological, and institutional systems.
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+%=========================================================
+\section*{Notation}
+\addcontentsline{toc}{section}{Notation}
+%=========================================================
+
+Throughout this monograph we employ the following notation.
+
+\bigskip
+\begin{longtable}{@{}lp{10cm}@{}}
+$\theta$ & Rotor angle \\[0.4em]
+$\omega$ & Angular velocity \\[0.4em]
+$I$ & Moment of inertia \\[0.4em]
+$\tau_{\mathrm{th}}$ & Thermal torque \\[0.4em]
+$\tau_{\mathrm{EM}}$ & Electromagnetic torque \\[0.4em]
+$\tau_{\mathrm{fr}}$ & Friction torque \\[0.4em]
+$\tau_{\mathrm{load}}$ & External load torque \\[0.4em]
+$T_i$ & Temperature of chamber $i$ \\[0.4em]
+$T_c$ & Core temperature \\[0.4em]
+$N$ & Number of chambers \\[0.4em]
+$\mathcal{M}$ & State manifold \\[0.4em]
+$\mathcal{A}$ & Admissible region \\[0.4em]
+$\Phi_t$ & Flow generated by the dynamics \\[0.4em]
+$R_T$ & Total thermal resource \\[0.4em]
+$V_R$ & Continuation volume \\[0.4em]
+$\mathbf{x}$ & System state vector \\
+\end{longtable}
+
+\newpage
+
+%=========================================================
+\section{The State Manifold}
+%=========================================================
+
+The Flash--Reluctance Engine is conventionally described in terms of interacting thermal, electromagnetic, and mechanical subsystems. We begin instead from a geometric viewpoint. The primary object of study is not a machine but a trajectory on a state manifold.
+
+The purpose of this section is to reformulate the Flash--Reluctance Engine as a geometric dynamical system. Rather than beginning with individual differential equations for temperature, torque, and velocity, we seek a unified representation in which all physical variables appear as coordinates on a common state manifold.
+
+This reformulation is valuable for two reasons. First, it exposes structural properties that are otherwise obscured by subsystem-specific notation. Questions concerning stability, controllability, collapse, and resource allocation become questions about the geometry of trajectories. Second, it permits the importation of mathematical machinery from differential geometry, dynamical systems theory, control theory, and constrained optimization.
+
+\subsection{Configuration Variables}
+
+The engine consists of three coupled physical domains:
+\begin{enumerate}
+\item Mechanical variables associated with rotor motion.
+\item Thermal variables associated with chamber and core temperatures.
+\item Electromagnetic variables associated with coil activation and control allocation.
+\end{enumerate}
+
+The minimal mechanical state is
+\[
+q_m = (\theta,\, \omega)
+\]
+where $\theta \in S^1$ denotes rotor angle and $\omega \in \mathbb{R}_{\ge 0}$ denotes angular velocity.
+
+The thermal state is
+\[
+q_t = (T_1, \ldots, T_N, T_c)
+\]
+where $T_i$ represents the wall temperature of chamber $i$ and $T_c$ represents the temperature of the shared thermal core.
+
+The electromagnetic state is
+\[
+q_e = (u_1, \ldots, u_N)
+\]
+where $u_i \in [0,1]$ represents normalized activation of coil $i$.
+
+Combining these coordinates yields the complete state vector
+\[
+x = (\theta,\, \omega,\, T_1, \ldots, T_N,\, T_c,\, u_1, \ldots, u_N).
+\]
+
+\subsection{Definition of the State Manifold}
+
+The natural state manifold is
+\[
+\M = S^1 \times \mathbb{R}_{\ge 0} \times \mathbb{R}_{\ge 0}^{N+1} \times [0,1]^N.
+\]
+
+The dimension of the manifold is $\dim(\M) = 2N + 3$. For a six-chamber engine, $\dim(\M) = 15$.
+
+Every physically realizable configuration of the engine corresponds to a point $x \in \M$. The evolution of the machine corresponds to a curve $\gamma : [0,\infty) \to \M$. The machine therefore exists not as a state but as a trajectory.
+
+\subsection{The Dynamical Flow}
+
+The governing equations define a vector field $F : \M \to T\M$ which assigns a tangent vector to every admissible state. The dynamics may be written compactly as $\dot{x} = F(x)$.
+
+Explicitly,
+\[
+F = \bigl(\dot\theta,\, \dot\omega,\, \dot T_1, \ldots, \dot T_N,\, \dot T_c,\, \dot u_1, \ldots, \dot u_N\bigr).
+\]
+
+The resulting flow map $\Phi_t : \M \to \M$ is defined by $\Phi_t(x_0) = x(t)$. The flow advances every coordinate simultaneously. Mechanical motion, thermal depletion, and electromagnetic allocation therefore become aspects of a single geometric object.
+
+\subsection{Existence of Trajectories}
+
+\begin{theorem}[Existence of Engine Trajectories]
+Assume: (1) finite thermal capacities; (2) bounded heat-transfer coefficients; (3) bounded electromagnetic torque; (4) continuous controller outputs. Then for every initial state $x_0 \in \M$ there exists a local solution $x(t)$ to $\dot x = F(x)$.
+\end{theorem}
+
+\begin{proof}
+The thermal subsystem consists of ordinary differential equations with piecewise-smooth forcing terms. The mechanical subsystem consists of polynomial functions of angular velocity. The controller is assumed continuous. Consequently the vector field $F$ is locally Lipschitz almost everywhere on $\M$. The Picard--Lindel\"{o}f theorem therefore guarantees existence and uniqueness of local solutions.
+\end{proof}
+
+\subsection{The Tangent Space}
+
+At every state $x \in \M$ there exists an associated tangent space $T_x\M$. Elements of this space represent possible instantaneous motions. A generic tangent vector may be written
+\[
+v = (\delta\theta,\, \delta\omega,\, \delta T_1, \ldots, \delta T_N,\, \delta T_c,\, \delta u_1, \ldots, \delta u_N).
+\]
+
+The vector field $F(x)$ is one particular tangent vector selected by the physical laws. The tangent space contains many possible directions; physics selects only one.
+
+\subsection{Decomposition of the Vector Field}
+
+The engine possesses a natural decomposition $F = F_m + F_t + F_e$. The mechanical component is
+\[
+F_m = \left(\omega,\; \frac{\tau_{\mathrm{th}} + \tau_{\mathrm{EM}} - \tau_{\mathrm{fr}} - \tau_{\mathrm{load}}}{I}\right).
+\]
+
+The thermal component is $F_t = (\dot T_1, \ldots, \dot T_N, \dot T_c)$ and the electromagnetic component is $F_e = (\dot u_1, \ldots, \dot u_N)$. These are not independent: thermal depletion changes torque; torque changes velocity; velocity changes chamber timing; timing changes thermal extraction. The engine forms a closed dynamical loop.
+
+\subsection{Fiber Structure}
+
+Define $B = S^1 \times \mathbb{R}_{\ge 0}$ as the mechanical base space. Above every point $(\theta, \omega)$ lies a thermal-electromagnetic fiber $\mathcal{F}_{(\theta,\omega)}$. The total manifold becomes $\M = B \times \mathcal{F}$. This decomposition separates fast and slow dynamics.
+
+\subsection{State Accessibility}
+
+Define the reachable set
+\[
+\mathcal{R}(x_0) = \bigl\{ x \in \M : \exists\, t > 0 \text{ such that } \Phi_t(x_0) = x \bigr\}.
+\]
+
+Many phenomena later described as collapse or stall arise because $\mathcal{R}(x_0)$ shrinks over time.
+
+\subsection{The Engine as a Continuation System}
+
+The engine is a system whose purpose is to continue generating admissible trajectories despite thermal depletion, frictional losses, external loading, and actuator limitations. Energy enters the system; resources are allocated; constraints are negotiated; trajectories persist. The engine survives precisely to the extent that it remains capable of generating future admissible states.
+
+%=========================================================
+\section{Resource Geometry and Thermal Conservation}
+%=========================================================
+
+The thermal subsystem is a distributed resource that flows through the state manifold, accumulates in storage structures, competes among subsystems, and determines the future reachability of admissible states.
+
+\subsection{Resource Coordinates}
+
+Let $T_c$ denote the temperature of the shared thermal core and $T_i$ the temperature of chamber wall $i$. The total thermal energy stored in the engine is
+\[
+R_T = C_c T_c + \sum_{i=1}^{N} C_w T_i
+\]
+where $C_c$ is the heat capacity of the core and $C_w$ is the heat capacity of each chamber wall.
+
+\begin{definition}[Thermal Resource]
+The scalar quantity $R_T = C_c T_c + \sum_i C_w T_i$ is called the \emph{thermal resource} of the engine.
+\end{definition}
+
+A machine with identical angular velocity but lower $R_T$ possesses less future reachability.
+
+\subsection{Global Conservation Law}
+
+Differentiating,
+\[
+\frac{dR_T}{dt} = C_c \dot T_c + \sum_i C_w \dot T_i.
+\]
+
+Substituting the governing thermal equations yields
+\[
+\frac{dR_T}{dt} = Q_{\mathrm{input}} - Q_{\mathrm{cool}} - Q_{\mathrm{inj}}.
+\]
+
+Here $Q_{\mathrm{input}}$ represents thermal energy supplied by the burner, $Q_{\mathrm{cool}}$ represents environmental losses, and $Q_{\mathrm{inj}}$ represents energy extracted through flash evaporation. Internal transfer terms cancel identically.
+
+\begin{theorem}[Thermal Conservation]
+Internal thermal exchange does not alter the total thermal resource. Only external sources and sinks modify $R_T$.
+\end{theorem}
+
+\begin{proof}
+Summing all thermal equations causes every core-to-wall transfer term to appear once positively and once negatively. Therefore all internal transfers cancel; only external fluxes remain.
+\end{proof}
+
+\subsection{Resource Density}
+
+Define $\rho_i = C_w T_i$ and $\rho_c = C_c T_c$. The complete thermal state becomes $\rho = (\rho_c, \rho_1, \ldots, \rho_N)$. The state of the engine is determined not merely by how much resource exists, but by where it is located.
+
+\subsection{Thermal Flux Network}
+
+Define vertices $V = \{c, 1, 2, \ldots, N\}$ where $c$ denotes the core. The flux from the core into chamber $i$ is $J_{c \to i} = k_{cw}(T_c - T_i)$. Every chamber connects directly to the core; no chamber connects directly to another. However, because chambers influence one another through the shared core, the induced interaction graph is complete.
+
+\subsection{Effective Competition}
+
+Consider two chambers $i$ and $j$. Increasing extraction from chamber $i$ lowers $T_c$; lowering $T_c$ reduces heating available to chamber $j$. Hence $\partial \dot T_j / \partial T_i \neq 0$.
+
+\begin{theorem}[Complete Competition Network]
+Every chamber indirectly influences every other chamber through depletion of the shared thermal core. The induced interaction graph is complete.
+\end{theorem}
+
+\begin{proof}
+For any pair $i, j$: the path $T_i \to T_c \to T_j$ is always present through the shared core.
+\end{proof}
+
+\subsection{The Resource Metric}
+
+The thermal state space possesses a natural metric:
+\[
+g_T = \alpha\, dT_c^2 + \beta \sum_{i=1}^{N} dT_i^2.
+\]
+
+\subsection{Thermal Entropy and Resource Potential}
+
+Define normalized resource fractions $p_i = \rho_i / (\rho_c + \sum_j \rho_j)$. The thermal entropy is $S_T = -\sum_i p_i \log p_i$, measuring organizational structure of the thermal resource field.
+
+The resource potential
+\[
+\Phi_R = \sum_i (T_i - T_{\min})_+ + (T_c - T_{\min})_+, \quad (x)_+ = \max(x, 0)
+\]
+measures usable thermal surplus. Two systems may possess identical $R_T$ while possessing very different $\Phi_R$; only the latter predicts operational capability.
+
+%=========================================================
+\section{Admissibility Boundaries and Operational Regions}
+%=========================================================
+
+Not every thermodynamic state of the engine corresponds to a functioning machine. Certain regions of the state manifold support torque generation, feedback regulation, and sustained operation. The boundary between these regions defines the operational geometry of the engine.
+
+\subsection{Definition of Thermal Admissibility}
+
+\begin{definition}[Thermally Admissible State]
+A state $x \in \M$ is \emph{thermally admissible} if every chamber satisfies $T_i \ge T_{\min}$. The admissible set is
+\[
+\A_T = \bigl\{ x \in \M : T_i \ge T_{\min} \text{ for all } i \bigr\}.
+\]
+\end{definition}
+
+\subsection{Boundary Surfaces}
+
+The boundary $\partial \A_T$ consists of the union of hypersurfaces $\Sigma_i = \{ x : T_i = T_{\min} \}$. For a six-chamber engine there exist six primary extinction surfaces $\Sigma_1, \ldots, \Sigma_6$. Each surface has codimension one; crossing it changes the qualitative dynamics of the machine.
+
+\begin{definition}[Extinction Event]
+A \emph{chamber extinction event} occurs whenever a trajectory intersects $\Sigma_i$.
+\end{definition}
+
+\subsection{Nested Operational Regions and Stratification}
+
+Define $\A^{(k)}$ as the region in which exactly $k$ chambers remain operational, producing a nested hierarchy
+\[
+\A^{(N)} \subset \A^{(N-1)} \subset \cdots \subset \A^{(1)}.
+\]
+
+Define $D(x) = \sum_{i=1}^{N} \mathbf{1}_{[T_i > T_{\min}]}$ as the operational dimension. The state manifold decomposes into operational strata $S_k = \{ x : D(x) = k \}$:
+\[
+\M = \bigcup_{k=0}^{N} S_k.
+\]
+
+\subsection{Admissibility Potential}
+
+\begin{definition}[Admissibility Potential]
+The \emph{admissibility potential} is $\Phi_A = \sum_{i=1}^{N} (T_i - T_{\min})_+$.
+\end{definition}
+
+When $\Phi_A = 0$ all chambers lie exactly at extinction. The quantity $d_A(x) = \min_i (T_i - T_{\min})$ acts as a geometric early-warning signal.
+
+\subsection{A Collapse Theorem}
+
+\begin{theorem}[Collapse Criterion]
+Suppose $Q_{\mathrm{input}} < Q_{\mathrm{loss}} + Q_{\mathrm{inj}}$ for a sufficiently long interval. Then $\Phi_A \to 0$ and the trajectory approaches the complete collapse boundary $\Sigma_C = \{ x : D(x) = 0 \}$.
+\end{theorem}
+
+\begin{proof}
+Under the stated condition $dR_T/dt < 0$, so total thermal resource decreases monotonically. Because chamber temperatures are bounded below by ambient temperature, continued depletion necessarily reduces all admissibility surpluses. Hence $\Phi_A$ must decrease, and in the limit $\Phi_A \to 0$.
+\end{proof}
+
+\subsection{Topological Interpretation of Collapse}
+
+As thermal resource decreases, the admissible set shrinks. Reachable trajectories disappear. Operational strata vanish. Future possibilities contract. Collapse therefore corresponds to a loss of accessible state-space volume: the event is topological before it is mechanical.
+
+%=========================================================
+\section{Electromagnetic Control Geometry}
+%=========================================================
+
+The electromagnetic subsystem continuously modifies the vector field of the system in order to redirect trajectories away from undesirable regions of state space. It acts as a real-time curvature correction mechanism whose objective is the preservation of admissible evolution.
+
+\subsection{Control as Vector Field Modification}
+
+Let $F_0(x)$ denote the uncontrolled vector field. The introduction of electromagnetic actuation produces
+\[
+F(x) = F_0(x) + F_{\mathrm{EM}}(x).
+\]
+
+\subsection{Control Coordinates and the Control Potential}
+
+The electromagnetic state $u = (u_1, \ldots, u_N)$ with each $u_i \in [0,1]$ generates total torque $\tau_{\mathrm{EM}} = \sum_{i=1}^{N} u_i \tau_i^{\max}$, so the admissible control set is $\mathcal{U} = [0,1]^N$.
+
+\begin{definition}[Control Potential]
+The scalar field $V_c = \tfrac{1}{2}(\Delta\tau)^2$, where $\Delta\tau = \tau_{\mathrm{target}} - \tau_{\mathrm{actual}}$, is called the \emph{control potential}.
+\end{definition}
+
+The controller seeks to minimize $V_c$: control becomes gradient descent on a potential landscape.
+
+\subsection{The PD Control Law}
+
+Let $e = \omega_{\mathrm{target}} - \omega$. The proportional-derivative controller takes the form
+\[
+\tau_{\mathrm{EM}} = K_p\bigl(\omega_{\mathrm{target}} - \omega\bigr) - K_d \dot\omega.
+\]
+
+\subsection{Control Saturation}
+
+Physical actuators satisfy $\tau_{\mathrm{EM}} \le \tau_{\max}$, defining a saturation surface $\Sigma_{\mathrm{sat}} = \{ x : \tau_{\mathrm{EM}} = \tau_{\max} \}$.
+
+\begin{theorem}
+Suppose $\tau_{\mathrm{required}} > \tau_{\max}$. Then the target manifold $\{\Delta\tau = 0\}$ becomes unreachable.
+\end{theorem}
+
+\begin{proof}
+The controller cannot generate torque exceeding $\tau_{\max}$. Any deficit larger than this quantity cannot be eliminated, so $\Delta\tau = 0$ cannot be attained.
+\end{proof}
+
+The remaining control reserve is $C_u = \tau_{\max} - \tau_{\mathrm{EM}}$.
+
+%=========================================================
+\section{Variational Control and Spatial Torque Allocation}
+%=========================================================
+
+\subsection{Torque Roughness and Variational Formulation}
+
+\begin{definition}[Torque Roughness]
+The functional $\mathcal{R} = \int_0^{2\pi} (d\tau/d\theta)^2\, d\theta$ is called the \emph{torque roughness}.
+\end{definition}
+
+Suppose total available electromagnetic torque is fixed: $\sum_i \tau_i^{\mathrm{EM}} = \tau_{\mathrm{EM}}$. Introduce a Lagrange multiplier $\lambda$. The objective is to minimize
+\[
+\mathcal{L} = \mathcal{R} + \lambda\Bigl(\sum_i \tau_i^{\mathrm{EM}} - \tau_{\mathrm{EM}}\Bigr).
+\]
+
+\subsection{Predictive Allocation}
+
+Define $s_i = -d\tau_i^{\mathrm{th}}/d\theta$ as the rate at which chamber $i$ is losing torque. The predictive allocation rule is
+\[
+\tau_i^{\mathrm{EM}} = \tau_{\mathrm{EM}} \cdot \frac{s_i}{\sum_j s_j}.
+\]
+
+\begin{theorem}[Slope Allocation Optimality]
+Suppose $s_i > 0$ for all active chambers. The proportional allocation above minimizes first-order torque roughness among all allocations satisfying $\sum_i \tau_i^{\mathrm{EM}} = \tau_{\mathrm{EM}}$.
+\end{theorem}
+
+\begin{proof}
+To first order, $d\tau/d\theta = -\sum_i s_i + \sum_i d\tau_i^{\mathrm{EM}}/d\theta$. Minimization of $\mathcal{R}$ requires electromagnetic corrections to cancel thermal decline. The proportional solution aligns correction magnitude with decline magnitude, leaving a smaller residual derivative than any alternative.
+\end{proof}
+
+\subsection{The Allocation Manifold}
+
+The admissible control configurations form a simplex
+\[
+\mathcal{S} = \Bigl\{ p_i \ge 0,\quad \sum_i p_i = 1 \Bigr\}.
+\]
+
+A natural metric on the simplex is the Fisher information metric $g_{ij} = \delta_{ij}/p_i$. Optimization becomes motion on a curved statistical manifold.
+
+%=========================================================
+\section{Flywheel Memory and Historical Integration}
+%=========================================================
+
+The flywheel accumulates the consequences of past events and functions as a physical memory structure.
+
+\subsection{Angular Momentum as a Historical State Variable}
+
+Define $L = I\omega$. The equation of motion is
+\[
+\frac{dL}{dt} = \tau_{\mathrm{net}}, \quad \tau_{\mathrm{net}} = \tau_{\mathrm{th}} + \tau_{\mathrm{EM}} - \tau_{\mathrm{fr}} - \tau_{\mathrm{load}}.
+\]
+
+Integrating: $L(t) = L(0) + \int_0^t \tau_{\mathrm{net}}(s)\, ds$. The present value of angular momentum depends upon the entire previous torque history.
+
+\begin{definition}[Historical State Variable]
+A state variable is \emph{historical} if its present value depends upon an integral over past system evolution.
+\end{definition}
+
+\begin{definition}[Memory Depth]
+The characteristic timescale $\tau_M = I / (k_{\mathrm{bearing}} + k_{\mathrm{load}})$ is called the \emph{memory depth} of the engine.
+\end{definition}
+
+\subsection{The Smoothing Theorem}
+
+\begin{theorem}[Flywheel Smoothing]
+Let $\tau(t) = \bar\tau + \delta\tau(t)$ where $\int_0^T \delta\tau(t)\, dt = 0$. Then $\mathrm{Var}(\omega) \propto I^{-2}$.
+\end{theorem}
+
+\begin{proof}
+Since $\dot\omega = \tau/I$, the fluctuating component contributes $\delta\omega = I^{-1}\int \delta\tau\, dt$. Variance therefore scales inversely with $I^2$.
+\end{proof}
+
+The flywheel converts transient resource surpluses into persistent continuation capability.
+
+%=========================================================
+\section{Reachability Geometry and Continuation Volume}
+%=========================================================
+
+\subsection{Reachable Sets and Continuation Volume}
+
+The admissible reachable set is $\mathcal{R}_A(x_0) = \mathcal{R}(x_0) \cap \A$.
+
+\begin{definition}[Continuation Volume]
+The \emph{continuation volume} is $V_R(x) = \mathrm{Vol}\bigl(\mathcal{R}_A(x)\bigr)$.
+\end{definition}
+
+Future reachability depends jointly upon resource $R_T$, control reserve $C_u$, and momentum $L$:
+$V_R = V_R(R_T, C_u, L)$.
+
+\subsection{The Reachability Collapse Theorem}
+
+\begin{theorem}
+Suppose $R_T \to R_{\min}$ and $C_u \to 0$. Then $V_R \to 0$.
+\end{theorem}
+
+\begin{proof}
+As $R_T$ approaches the minimum resource level, thermal admissibility surfaces approach the current trajectory. Simultaneously $C_u \to 0$ eliminates corrective flexibility. The admissible reachable set therefore contracts; in the limit all admissible continuation paths vanish.
+\end{proof}
+
+\subsection{The Principle of Continuation Maximization}
+
+\begin{principle}
+Among all admissible control actions, the preferred action is the one that maximizes future continuation volume.
+\end{principle}
+
+\subsection{Reachability Gradients}
+
+Define the continuation potential $\Psi(x) = \log V_R(x)$. The gradient $\nabla\Psi$ points toward directions of maximal future expansion. An ideal controller follows reachability gradients: $U \propto \nabla\Psi$.
+
+%=========================================================
+\section{Bifurcation Geometry and the Topology of Failure}
+%=========================================================
+
+\subsection{Equilibria and Saddle-Node Collapse}
+
+An equilibrium satisfies $\tau_{\mathrm{th}} + \tau_{\mathrm{EM}} = \tau_{\mathrm{fr}} + \tau_{\mathrm{load}}$. The simplest normal form for thermal collapse is $\dot z = \mu - z^2$.
+
+\begin{theorem}[Thermal Saddle-Node Collapse]
+Suppose thermal input decreases continuously while load remains fixed. Then there exists a critical parameter $Q_{\mathrm{critical}}$ at which the stable operating equilibrium disappears through a saddle-node bifurcation.
+\end{theorem}
+
+\begin{proof}
+The operating equilibrium satisfies $\tau_{\mathrm{production}} = \tau_{\mathrm{consumption}}$. Decreasing thermal input lowers production. At a critical value the equilibrium condition loses its solution. The Jacobian simultaneously develops a zero eigenvalue, which is precisely the condition for a saddle-node bifurcation.
+\end{proof}
+
+\subsection{Hopf Oscillation Theorem}
+
+\begin{theorem}
+Suppose $K_p > K_p^{\mathrm{crit}}$. Then a stable equilibrium may lose stability through a Hopf bifurcation and a periodic operating cycle emerges.
+\end{theorem}
+
+\begin{proof}
+Increasing proportional gain shifts Jacobian eigenvalues. At a critical value a complex conjugate pair crosses the imaginary axis. The Hopf theorem guarantees emergence of a limit cycle.
+\end{proof}
+
+\subsection{Reachability Phase Transitions}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Regime & Geometric description \\
+\midrule
+Stable Operation & Large continuation volume \\
+Oscillation & Closed trajectory bifurcation \\
+Saturation & Reachability contraction \\
+Thermal Collapse & Equilibrium annihilation \\
+Stall & Dimensional reduction \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Near bifurcation points the characteristic recovery time $\tau_{\mathrm{rec}} = 1/|\lambda_{\min}| \to \infty$, providing an observable early-warning signal.
+
+%=========================================================
+\section{Information Geometry, Entropy, and State Distinguishability}
+%=========================================================
+
+\subsection{Observational Equivalence and Representational Entropy}
+
+Let $\pi : \M \to \mathcal{O}$ be the observation map.
+
+\begin{definition}[Observational Equivalence]
+Two states $x, y \in \M$ are \emph{observationally equivalent} if $\pi(x) = \pi(y)$.
+\end{definition}
+
+\begin{definition}[Representational Entropy]
+The \emph{representational entropy} of state $x$ is $S_R(x) = \log |[x]|$.
+\end{definition}
+
+\subsection{State Distinguishability}
+
+The Jensen--Shannon divergence
+\[
+D_{JS}(p,q) = \tfrac{1}{2} D_{KL}(p \| m) + \tfrac{1}{2} D_{KL}(q \| m), \quad m = \tfrac{1}{2}(p+q)
+\]
+is symmetric. Define $d_{JS}(p,q) = \sqrt{D_{JS}(p,q)}$.
+
+\subsection{The Information Collapse Theorem}
+
+\begin{theorem}[Information Collapse]
+As $V_R \to 0$, the entropy of admissible operating states satisfies $H(\A) \to 0$.
+\end{theorem}
+
+\begin{proof}
+The admissible set contracts toward a lower-dimensional subset. The number of admissible configurations decreases, so since entropy scales logarithmically with admissible volume, $H(\A) \to 0$.
+\end{proof}
+
+Collapse is simultaneously a resource collapse, a reachability collapse, and an information collapse: different descriptions of the same geometric event.
+
+%=========================================================
+\section{Resource Curvature and Thermodynamic Field Structure}
+%=========================================================
+
+\subsection{Resource and Reachability Fields}
+
+Define the scalar resource field $\Phi(x) = R_T(x)$ and the continuation potential $\Psi(x) = \log V_R(x)$. Resource transport satisfies
+\[
+\frac{\partial \Phi}{\partial t} = D\nabla^2\Phi + S_R.
+\]
+
+\subsection{Field Energy Functional}
+
+\[
+E[\mathfrak{F}] = \int_{\M} \Bigl( \alpha|\nabla\Phi|^2 + \beta|U|^2 + \gamma|\nabla\Psi|^2 + \delta|\nabla H|^2 \Bigr) dV.
+\]
+
+All failure modes are manifestations of field degeneration: thermal collapse depletes $\Phi$; controller saturation concentrates $U$; reachability collapse vanishes $\Psi$; memory loss degrades $H$.
+
+%=========================================================
+\section{A Unified Action Principle for the Flash--Reluctance Engine}
+%=========================================================
+
+\begin{principle}[Extremal Continuation]
+Among all admissible trajectories, the realized trajectory extremizes a continuation functional subject to thermal, mechanical, and control constraints.
+\end{principle}
+
+\subsection{The Full Lagrangian and Action}
+
+Combining resource, control, reachability, and memory contributions yields
+\[
+L = a\Phi + c\Psi + dH - b|U|^2.
+\]
+
+The corresponding action is
+\[
+S = \int_{t_0}^{t_1} \Bigl( a\Phi + c\Psi + dH - b|U|^2 \Bigr) dt.
+\]
+
+\subsection{The Emergence of Control and Conservation Laws}
+
+Optimal control emerges from $\partial L/\partial U = 0$, yielding $U \propto \nabla\Psi$: the controller arises as motion up the continuation gradient.
+
+By Noether's theorem, every continuous symmetry of the continuation action generates a conserved continuation current. In particular, invariance under resource translation $\Phi \to \Phi + \epsilon$ produces a conserved resource current $J_\Phi$.
+
+\subsection{The Continuation Field Equation}
+
+Collecting terms yields a field equation of schematic form
+\[
+\Box\Psi = \alpha\Phi - \beta|U|^2 + \gamma H.
+\]
+
+Future possibility is generated by resource, reduced by control expenditure, and supported by memory.
+
+%=========================================================
+\section{Operational Curvature, Stability Geometry, and the Riemannian Structure of Continuation}
+%=========================================================
+
+\subsection{The Continuation Metric and Geodesics}
+
+Define
+\[
+g_{ij} = \frac{\partial^2 \Psi}{\partial x^i \partial x^j}.
+\]
+
+Geodesic deviation is governed by
+\[
+\frac{D^2\xi^i}{dt^2} = -R^i{}_{jkl}\, u^j \xi^k u^l.
+\]
+
+Strong curvature produces rapid separation of nearby trajectories, making the future highly unpredictable.
+
+\subsection{The Collapse Curvature Theorem}
+
+\begin{theorem}
+Suppose $V_R \to 0$. Then under mild regularity assumptions, $|\mathcal{R}| \to \infty$.
+\end{theorem}
+
+\begin{proof}
+Since $\Psi = \log V_R$, the derivatives of $\Psi$ contain inverse powers of $V_R$. As continuation volume vanishes, metric coefficients become unbounded and associated curvature invariants diverge.
+\end{proof}
+
+\begin{principle}
+Operational stability is inversely related to continuation curvature.
+\end{principle}
+
+Collapse appears as a curvature singularity; operational horizons $\mathcal{H} = \{ x : V_R = \epsilon \}$ delineate regions of extreme fragility.
+
+%=========================================================
+\section{Fiber Bundles, Gauge Structure, and Hidden Operational Degrees of Freedom}
+%=========================================================
+
+\subsection{The Bundle Structure and Gauge Transformations}
+
+The state manifold decomposes as $\pi : \M \to \mathcal{O}$:
+\[
+F \hookrightarrow \M \overset{\pi}{\longrightarrow} \mathcal{O}.
+\]
+
+\begin{definition}[Operational Gauge Transformation]
+A \emph{gauge transformation} is a map $g : \M \to \M$ such that $\pi(g(x)) = \pi(x)$.
+\end{definition}
+
+Gauge transformations alter hidden variables while leaving observable behavior unchanged. The collection of all such transformations forms a group $G$ acting along fibers.
+
+\subsection{The Fiber Collapse Hypothesis}
+
+\begin{hypothesis}
+Many operational failures begin as collapse of hidden fiber volume before becoming visible in observable state space.
+\end{hypothesis}
+
+\subsection{Operational Curvature and Holonomy}
+
+The curvature associated with the connection $A_\mu$ is $F_{\mu\nu} = [D_\mu, D_\nu]$. This measures failure of parallel transport to return hidden variables unchanged after a closed operational cycle. The accumulated effect of a closed cycle is described by holonomy, capturing irreducible path dependence in resource cycling.
+
+%=========================================================
+\section{Operational Phase Transitions, Symmetry Breaking, and Emergent Regimes}
+%=========================================================
+
+\begin{definition}[Operational Phase]
+An \emph{operational phase} is a connected region $P \subset \A$ within which the qualitative structure of trajectories remains invariant.
+\end{definition}
+
+\subsection{Thermal Order Parameter and Symmetry Breaking}
+
+At high thermal resource levels the chambers are nearly equivalent: the system possesses approximate symmetry under permutations $T_i \leftrightarrow T_j$. As depletion progresses this symmetry breaks, measured by the thermal order parameter $\Delta_T = \max_i T_i - \min_i T_i$.
+
+\subsection{A Landau Functional}
+
+Let $m$ denote an order parameter and define $F(m) = a(T)m^2 + bm^4$. For $a < 0$, new minima appear at $m = \pm\sqrt{-a/(2b)}$ and a phase transition occurs.
+
+\begin{theorem}
+Suppose a control parameter crosses a critical value $\lambda_c$. If the operational potential changes topology then new stable operating regimes emerge.
+\end{theorem}
+
+\begin{proof}
+The minima of $F$ determine stable states. A topological change in the potential changes the number or location of minima, so new attractors appear.
+\end{proof}
+
+Near critical points $\chi = \partial m/\partial\lambda \to \infty$: small parameter changes produce large responses, and the system becomes fragile.
+
+%=========================================================
+\section{Operational Statistical Mechanics and Continuation Thermodynamics}
+%=========================================================
+
+\begin{definition}[Operational Entropy]
+The \emph{operational entropy} is $S_O = k\log|\Omega|$, where $\Omega$ is the set of compatible internal configurations.
+\end{definition}
+
+Using the continuation volume: $S_C = k\log V_R = k\Psi$. Continuation entropy is directly proportional to the continuation potential.
+
+The operational partition function is $Z = \sum_\gamma e^{-\beta C(\gamma)}$ where $C(\gamma)$ is the continuation cost of trajectory $\gamma$ and $\beta = 1/\Theta$ defines the continuation temperature.
+
+\subsection{First Law of Continuation}
+
+\[
+dF_O = \mu_R\, dR_T + \mu_U\, dC_u + \mu_H\, dH - S_C\, d\Theta.
+\]
+
+\begin{principle}[Continuation Second Law]
+Absent sufficient resource injection, continuation entropy tends to decrease as admissible futures are progressively consumed.
+\end{principle}
+
+%=========================================================
+\section{Renormalization, Coarse-Graining, and Multi-Scale Continuation Dynamics}
+%=========================================================
+
+\subsection{The Renormalization Map and Hierarchies}
+
+A coarse-graining transformation $R : \M_n \to \M_{n+1}$ produces the hierarchy
+\[
+\M_0 \to \M_1 \to \M_2 \to \cdots
+\]
+
+\begin{definition}[Relevant Variable]
+A variable is \emph{relevant} if its influence grows under repeated coarse-graining; \emph{irrelevant} if its influence decreases.
+\end{definition}
+
+\begin{theorem}
+Suppose a continuation system admits a finite hierarchy of coarse-grainings. Then there exists a corresponding hierarchy of effective continuation descriptions, each characterized by its own continuation volume, entropy, and operational geometry.
+\end{theorem}
+
+\begin{proof}
+Each coarse-graining induces a projection $\M_n \to \M_{n+1}$. The projected manifold inherits an effective reachability structure. Continuation volume may therefore be defined at every level.
+\end{proof}
+
+\subsection{The Continuation Beta Function}
+
+Define $\beta(V_R) = dV_R/d\ln\ell$ where $\ell$ is observational scale. Zeros correspond to fixed points; universality classes are determined by identical beta functions across distinct architectures.
+
+%=========================================================
+\section{A Category-Theoretic Formulation of Continuation Architectures}
+%=========================================================
+
+\subsection{The Composition Chain}
+
+The major engine subsystems form a compositional sequence:
+\[
+\mathcal{T} \overset{C}{\longrightarrow} \mathcal{U} \overset{M}{\longrightarrow} \mathcal{H} \overset{R}{\longrightarrow} \Gamma.
+\]
+
+Control is a functor $F_C : \mathbf{T} \to \mathbf{D}$ preserving composition: $F_C(g \circ f) = F_C(g) \circ F_C(f)$. Memory is an endofunctor $M : \mathbf{D} \to \mathbf{D}$.
+
+\subsection{Commutative Diagrams}
+
+Operational consistency requires:
+\[
+\begin{CD}
+\mathcal{T} @>C>> \mathcal{U} \\
+@V{T}V{}V       @V{}V{U}V \\
+\mathcal{T} @>>C> \mathcal{U}
+\end{CD}
+\]
+
+\subsection{The Universal Property of Repair}
+
+Suppose $f : X \to Y$ fails to preserve admissibility. A repair morphism $r : Y \to Y'$ restores continuation:
+$X \overset{f}{\to} Y \overset{r}{\to} Y'$. Repair is a universal factorization construction.
+
+Reachability behaves as a presheaf $\Gamma : \mathbf{C}^{\mathrm{op}} \to \mathbf{Set}$; continuation volume is a measure functor $V_R : \Gamma(X) \to \mathbb{R}_+$. Admissibility arises through pullbacks; subsystem integration arises through pushouts.
+
+%=========================================================
+\section{Sheaf Theory, Distributed Knowledge, and Global Operational Coherence}
+%=========================================================
+
+No component of the engine possesses complete knowledge of the system. The mathematical problem is reconstruction: how can locally available information be assembled into a globally coherent operational state?
+
+\subsection{The Sheaf Condition and Repair as Cohomology Cancellation}
+
+If local sections $s_i \in \mathcal{F}(U_i)$ agree on overlaps $U_i \cap U_j$, there exists a unique global section $s$ with $s|_{U_i} = s_i$. Suppose $\alpha \in H^1(\M, \mathcal{F})$ represents an inconsistency. Repair acts by introducing a correction that removes the obstruction, so $[\alpha] = 0$ and a global section becomes possible.
+
+\subsection{A Sheaf-Theoretic Collapse Criterion}
+
+\begin{theorem}
+Operational collapse occurs whenever the sheaf of admissible continuations possesses no nontrivial global section.
+\end{theorem}
+
+\begin{proof}
+If no global section exists, local continuation structures cannot be assembled into a coherent future trajectory. The admissible reachable set becomes empty, hence $V_R = 0$.
+\end{proof}
+
+%=========================================================
+\section{Distinction Geometry as the Primitive Operational Substrate}
+%=========================================================
+
+The fundamental quantity is not energy, temperature, information, or reachability. The primitive object is distinction. Everything else emerges from the maintenance, transport, collapse, preservation, and repair of distinctions.
+
+\subsection{Distinction Spaces and the Distinction Field}
+
+Let $(X, \sim)$ be a distinction space with $x \sim y$ whenever the operational architecture cannot distinguish them. Define scalar field $\Delta(x)$ measuring local distinction density:
+\[
+\frac{\partial \Delta}{\partial t} = \mathcal{C} - \mathcal{L} + \mathcal{R}
+\]
+where $\mathcal{C}$ is creation, $\mathcal{L}$ is loss, and $\mathcal{R}$ is repair.
+
+The master dependency chain is:
+\[
+\text{Distinction} \to \text{Information} \to \text{Entropy} \to \text{Memory} \to \text{Reachability} \to \text{Continuation}.
+\]
+
+\begin{principle}[Distinction Principle]
+A continuation system persists to the extent that it maintains, transports, repairs, and reproduces the distinctions upon which its future operation depends.
+\end{principle}
+
+%=========================================================
+\section{Toward a General Theory of Continuation Systems}
+%=========================================================
+
+\begin{definition}[Continuation System]
+A \emph{continuation system} is a dynamical structure $\mathfrak{C} = (X, \Delta, \A, R, M, U)$ consisting of a distinction space $X$, a distinction field $\Delta$, an admissibility structure $\A$, a resource system $R$, a memory system $M$, and a repair system $U$.
+\end{definition}
+
+The continuation equation satisfies $d\mathcal{C}/dt = G - L + P$, where $G$ is generation, $L$ is loss, and $P$ is repair. The Universal Continuation Action is
+\[
+S_C = \int \Bigl( aR + bM + cV_R - dU \Bigr) dt.
+\]
+
+\begin{theorem}[Universal Continuation Theorem]
+Every persistent adaptive system may be represented as a continuation system whose dynamics are governed by the creation, preservation, repair, transport, and loss of distinctions subject to admissibility constraints.
+\end{theorem}
+
+\begin{proof}[Sketch]
+Persistence requires distinguishable states; distinguishable states require maintained distinctions; maintained distinctions require resources; resource limitations necessitate repair; repair requires memory; memory and repair jointly determine future reachability; future reachability determines admissibility.
+\end{proof}
+
+%=========================================================
+\section{Continuation Field Theory and the Dynamics of Distinction Density}
+%=========================================================
+
+\subsection{The Field Action and Wave Equation}
+
+Define continuation density $\rho_C(x,t)$ with field action
+\[
+S[\rho_C] = \int \mathcal{L}\, dV\, dt, \qquad \mathcal{L} = \tfrac{1}{2}(\partial_t\rho_C)^2 - \tfrac{1}{2}c^2|\nabla\rho_C|^2 - U(\rho_C).
+\]
+
+Extremization gives
+\[
+\frac{\partial^2\rho_C}{\partial t^2} - c^2\nabla^2\rho_C + \frac{dU}{d\rho_C} = 0.
+\]
+
+Continuation disturbances propagate as waves through operational space. Small perturbations satisfy $\omega^2 = c^2k^2 + m_C^2$ where $m_C^2 = U''(\rho_C)$ acts as an effective continuation mass.
+
+\subsection{Spontaneous Continuation Condensation}
+
+Suppose $U(\rho_C) = -\alpha\rho_C^2 + \beta\rho_C^4$ with $\alpha > 0$. The minimum occurs at $\rho_C = \sqrt{\alpha/(2\beta)}$, and the system spontaneously develops nonzero continuation density. Organized structure emerges through spontaneous symmetry breaking.
+
+%=========================================================
+\section{Continuation Cosmology and the Large-Scale Geometry of Persistence}
+%=========================================================
+
+The continuation field equations make sense wherever distinctions are created, preserved, transported, and lost. We now consider the universe itself as a continuation system.
+
+\subsection{Structure as Continuation Concentration}
+
+Galaxies, stars, planets, organisms, and civilizations maintain distinctions: they are localized concentrations of continuation density. The cosmological arrow of time arises because distinction loss is generally easier than reconstruction, so $L_C \gg R_C$ and $d\rho_C/dt < 0$ for unconstrained systems.
+
+\subsection{The Cosmological Continuation Equation}
+
+\[
+\Box\rho_C + m_C^2\rho_C + \lambda\rho_C^3 = G_C - L_C + R_C.
+\]
+
+\begin{theorem}
+Any persistent cosmological structure corresponds to a region of spacetime in which continuation density remains locally self-sustaining.
+\end{theorem}
+
+\begin{proof}
+Persistence requires maintenance of distinguishable structure, hence positive continuation density. If continuation density cannot be sustained, distinctions collapse and persistence fails.
+\end{proof}
+
+%=========================================================
+\section{The Master Continuation Equation and the Unification of Resource, Memory, Repair, and Distinction}
+%=========================================================
+
+All previously introduced quantities are derived fields: $\rho_C = f(\Psi)$, $V_R = \int\Psi\, dV$, $\Delta = g(\Psi)$, $R = h(\Psi)$. The master equation is:
+
+\[
+\boxed{
+\frac{\partial\Psi}{\partial t} = -\nabla\cdot(J_\Psi + U) + \beta R + \alpha M\Psi + \mathcal{R}(\Psi) - \lambda\Psi
+}
+\]
+
+Resource generates; memory stabilizes; repair reconstructs; control redirects; loss degrades; continuation emerges.
+
+\begin{theorem}[Master Continuation Theorem]
+Resource theory, repair theory, admissibility theory, reachability theory, memory theory, information geometry, distinction geometry, and continuation cosmology arise as projections or reductions of the Master Continuation Equation.
+\end{theorem}
+
+\begin{proof}[Sketch]
+Each framework corresponds to a derived variable that is a functional of $\Psi$. The dynamics of these quantities follow from the dynamics of $\Psi$ by projection.
+\end{proof}
+
+%=========================================================
+\section{The Continuation Dictionary: Unifying RSVP, CLIO, MEM|8, Spherepop, Admissibility, Repair, and Distinction Geometry}
+%=========================================================
+
+Every major framework in the Flyxion research program describes a different aspect of the continuation field $\Psi$:
+
+\medskip
+\begin{center}
+\begin{tabular}{lcl}
+\toprule
+Framework & & Role \\
+\midrule
+RSVP & $\longrightarrow$ & Transport dynamics of $\Psi$ \\
+CLIO & $\longrightarrow$ & Projection structure of $\Psi$ \\
+MEM|8 & $\longrightarrow$ & Historical persistence of $\Psi$ \\
+Spherepop & $\longrightarrow$ & Algebra of transformations on $\Psi$ \\
+Admissibility & $\longrightarrow$ & Constraint geometry of $\Psi$ \\
+Repair Theory & $\longrightarrow$ & Reconstruction of $\Psi$ \\
+Distinction Geometry & $\longrightarrow$ & Metric structure induced by $\Psi$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip
+\noindent The RSVP variables $(\Phi, \vec v, S)$ correspond to resource density $R$, continuation current $J_\Psi$, and loss coefficient $\lambda$. The Spherepop primitives acquire geometric meaning: \texttt{pop} creates distinctions; \texttt{refuse} prevents destruction; \texttt{collapse} reduces distinction volume; \texttt{bind} creates higher-order continuation structures.
+
+\begin{theorem}[Rosetta Stone Theorem]
+Every major framework in the Flyxion research program may be represented as a projection, restriction, coordinate system, or effective theory of the continuation field $\Psi$.
+\end{theorem}
+
+\begin{proof}[Sketch]
+Each framework introduces variables expressible as functionals of $\Psi$. The dynamics of those variables are obtained by projection of the Master Continuation Equation. Therefore the frameworks are mathematically equivalent descriptions of a common underlying continuation structure.
+\end{proof}
+
+%=========================================================
+\section{Against State Fundamentalism: Continuation as the Primitive Object}
+%=========================================================
+
+States are derived objects; continuation is primary. The familiar state-based descriptions of science emerge only after a series of projections, collapses, and coarse-grainings.
+
+\subsection{The Projection Origin of States}
+
+Begin with the continuation field $\Psi$. Define $x \sim y$ whenever $\Gamma(x) = \Gamma(y)$. States emerge as equivalence classes $[x] = \{ y : \Gamma(y) = \Gamma(x) \}$, and $X = \Psi/{\sim}$. States are quotient objects, not fundamental.
+
+\begin{theorem}
+Every finite-dimensional state representation induces loss of continuation information.
+\end{theorem}
+
+\begin{proof}
+Let $\pi : \Psi \to X$ be the state projection. Unless $\pi$ is bijective, distinct continuation structures map to the same state and information is lost.
+\end{proof}
+
+\begin{principle}[Continuation Primacy]
+States are compressed representations of continuation structures. Continuation structures are not compressed representations of states.
+\end{principle}
+
+The hierarchy runs: $\text{Continuation} \to \text{Distinction} \to \text{Information} \to \text{State} \to \text{Theory}$.
+
+The state approximation fails near admissibility boundaries, where $\Gamma(x)$ changes rapidly, producing small state differences with enormous continuation differences. This explains collapse, criticality, phase transitions, and paradigm shifts.
+
+%=========================================================
+\section{The Geometry of Theories: Projection, Compression, and the Landscape of Explanation}
+%=========================================================
+
+A theory is a projection of distinguishability structure. Different theories preserve different distinctions and compress different aspects of continuation.
+
+\subsection{Theory Space Geometry}
+
+Two theories are close when they preserve similar distinctions: $d(T_1, T_2) = \sqrt{D_{JS}(P_{T_1}, P_{T_2})}$. Scientific revolutions appear as curvature singularities ($K_T \to \infty$) in this geometry. Anomalies are regions where $\Gamma_{\mathrm{world}}$ and $\Gamma_T$ diverge; accumulated anomalies increase curvature until reorganization occurs.
+
+The theory sheaf gives a local-to-global structure: physics, biology, and economics provide local explanatory sections; interdisciplinary synthesis corresponds to successful gluing.
+
+\begin{theorem}[Meta-Theorem of Projection]
+Every scientific theory is a projection of a richer continuation structure. Differences between theories arise from differences in preserved distinctions rather than differences in reality itself.
+\end{theorem}
+
+\subsection{The Continuation Criterion for Theories}
+
+Define $V_R(T)$ as the volume of future investigations enabled by theory $T$. Theories with large continuation volume generate research programs. Scientific fertility is thereby measurable.
+
+The deepest scientific question emerging from the framework is no longer \emph{What state is the world in?} but rather \emph{What distinctions must be preserved for future understanding to remain possible?}
+
+%=========================================================
+\section{Future Directions}
+%=========================================================
+
+The present manuscript has developed a continuation-theoretic framework beginning from a concrete engineering architecture and progressively generalizing toward a unified theory of distinctions, admissibility, repair, persistence, and future possibility. Many important developments remain open.
+
+\medskip\noindent\textbf{Mathematical consolidation.} Relationships used throughout---such as $\Psi > 0 \Rightarrow V_R > 0$ or the coupling between repair and memory---should be derived from explicit axioms. Existence, uniqueness, stability, invariance under coarse-graining, and fixed-point theorems are all needed.
+
+\medskip\noindent\textbf{Measurement theory.} Practical procedures for estimating $\Psi$, $V_R$, $\Delta$, $\A$, and $R_C$ remain incomplete. Potential tools include Jensen--Shannon divergence, Fisher information metrics, causal intervention geometry, control-theoretic reachability, and predictive uncertainty estimation.
+
+\medskip\noindent\textbf{Derivations of existing theories.} Potential targets include thermodynamics as coarse-grained continuation geometry; information theory as projection of distinction geometry; control theory as finite-horizon continuation optimization; statistical mechanics as continuation ensemble theory; active inference as continuation estimation under uncertainty; and learning theory as distinction-repair dynamics.
+
+\medskip\noindent\textbf{Observer theory.} A continuation-theoretic observer should be defined as a continuation-maintaining distinction-repair system, unifying perception, memory, prediction, agency, intervention, and intelligence.
+
+\medskip\noindent\textbf{Toward an axiomatization.} One possible starting point: (1) distinctions may exist; (2) distinctions may be preserved or lost; (3) future distinguishability defines continuation; (4) continuation defines admissibility; (5) repair reconstructs lost distinctions; (6) memory preserves distinctions through time; (7) projection collapses distinctions; (8) observation is projection; (9) theories are distinction-preserving compressions; (10) persistent systems maximize continuation subject to constraints.
+
+\newpage
+
+%=========================================================
+\appendix
+%=========================================================
+
+\section{Existence and Uniqueness of Continuation Flows}
+
+\begin{theorem}[Local Existence]
+Let $\Omega \subset \mathbb{R}^n$ be compact. Assume: (1) $R(x,t)$ is continuous; (2) $M(x,t)$ is bounded; (3) $\mathcal{R}(\Psi)$ is locally Lipschitz. Then for every initial condition $\Psi_0(x) \in C^2(\Omega)$ there exists $T > 0$ such that a unique solution $\Psi(x,t)$ exists on $[0,T]$.
+\end{theorem}
+
+\begin{proof}
+Apply standard semilinear parabolic PDE existence theory. The diffusion operator generates a strongly continuous semigroup and the nonlinear repair term satisfies local Lipschitz conditions; Picard iteration therefore converges.
+\end{proof}
+
+\begin{corollary}
+Continuation dynamics are locally well-defined whenever repair remains bounded.
+\end{corollary}
+
+%=========================================================
+\section{Continuation Lyapunov Functions}
+%=========================================================
+
+\begin{theorem}
+Suppose $\mathcal{R}(\Psi) \le \lambda\Psi$. Then $\mathcal{V}[\Psi] = \int_\Omega \Psi^2\, dV$ is nonincreasing.
+\end{theorem}
+
+\begin{proof}
+Differentiate $\mathcal{V}$ and substitute the continuation equation. Integration by parts of the diffusion term yields a negative semidefinite expression.
+\end{proof}
+
+%=========================================================
+\section{Continuation Curvature and Collapse}
+%=========================================================
+
+\begin{theorem}[Collapse Curvature Theorem]
+If $V_R \to 0$ then $|\mathcal{R}| \to \infty$ for generic continuation manifolds.
+\end{theorem}
+
+\begin{proof}
+Since $\Psi = \log V_R$, higher derivatives of $\Psi$ contain inverse powers of $V_R$. As continuation volume vanishes, metric coefficients become unbounded and curvature invariants diverge.
+\end{proof}
+
+%=========================================================
+\section{A Continuation Noether Theorem}
+%=========================================================
+
+\begin{theorem}
+Every continuous symmetry of the continuation action induces a conserved continuation current.
+\end{theorem}
+
+\begin{proof}
+Identical to the classical Noether construction. Under infinitesimal symmetry transformations $\delta S = 0$; the resulting Euler--Lagrange identities produce a conserved current $\partial_\mu J^\mu = 0$.
+\end{proof}
+
+%=========================================================
+\section{Projection-Induced Information Geometry}
+%=========================================================
+
+\begin{theorem}
+The Jensen--Shannon distinction metric $d_D(x,y) = \sqrt{D_{JS}(p_x, p_y)}$ is a true metric on observable continuation space.
+\end{theorem}
+
+\begin{proof}
+Non-negativity and symmetry follow immediately. The square root of Jensen--Shannon divergence satisfies the triangle inequality.
+\end{proof}
+
+%=========================================================
+\section{Fixed Points of Repair Dynamics}
+%=========================================================
+
+For the equation $d\Psi/dt = \beta R + \alpha M\Psi - \lambda\Psi$, fixed points satisfy $\Psi^* = \beta R / (\lambda - \alpha M)$.
+
+\begin{theorem}
+A nontrivial continuation equilibrium exists if and only if $\lambda > \alpha M$.
+\end{theorem}
+
+The equilibrium diverges as $\lambda \to \alpha M$, indicating a continuation critical point.
+
+%=========================================================
+\section{A Renormalization Theorem for Continuation}
+%=========================================================
+
+\begin{theorem}
+For every admissible continuation field there exists a hierarchy $\Psi \to \Psi_1 \to \Psi_2 \to \cdots$ of effective continuation fields.
+\end{theorem}
+
+\begin{proof}
+Each coarse-graining induces a projection of the continuation manifold. The projected field inherits induced continuation volume and admissibility structure; iterating yields the hierarchy.
+\end{proof}
+
+%=========================================================
+\section{The Universal Continuation Inequality}
+%=========================================================
+
+\begin{theorem}
+A necessary condition for indefinite persistence is $\langle G + P \rangle \ge \langle L \rangle$.
+\end{theorem}
+
+\begin{proof}
+Integrating the continuation equation over sufficiently long times: if $\langle G + P \rangle < \langle L \rangle$ then $\Psi \to 0$ and continuation vanishes.
+\end{proof}
+
+This inequality is the most fundamental persistence criterion derived by the theory.
+
+%=========================================================
+\section{Continuation Homology and Topological Persistence}
+%=========================================================
+
+Construct a simplicial complex $K(\Gamma)$ from admissible futures. The continuation homology groups $H_k(\Gamma)$ measure: $H_0$ connected continuation components; $H_1$ continuation loops; $H_2$ continuation voids; and so forth.
+
+\begin{theorem}
+If $H_0(\Gamma) = 0$ then continuation is impossible.
+\end{theorem}
+
+\begin{proof}
+No connected admissible future exists, therefore $V_R = 0$.
+\end{proof}
+
+A filtration $\Gamma_\epsilon \subseteq \Gamma_{\epsilon'}$ for $\epsilon < \epsilon'$ yields a persistence diagram. Long-lived features correspond to robust future possibilities; short-lived features correspond to fragile continuations.
+
+%=========================================================
+\section{Continuation Fiber Bundles and Gauge Theory}
+%=========================================================
+
+\begin{theorem}
+Observable equivalence does not imply continuation equivalence.
+\end{theorem}
+
+\begin{proof}
+Distinct continuation fields may project to identical observables; therefore fibers generally contain multiple elements.
+\end{proof}
+
+Let $G$ be a group acting on continuation fibers with gauge transformations $\Psi \to g\Psi$ preserving observables. Introducing a connection form $A_\mu$, parallel transport is governed by $D_\mu = \partial_\mu + A_\mu$ with curvature $F_{\mu\nu} = [D_\mu, D_\nu]$.
+
+\begin{interpretation}
+Curvature measures hidden continuation obstruction. Nonzero curvature indicates irreducible internal structure invisible to observation.
+\end{interpretation}
+
+%=========================================================
+\section{A Sheaf Cohomology of Repair}
+%=========================================================
+
+Let $\mathcal{R}$ denote the sheaf of admissible local repairs.
+
+\begin{theorem}
+Repair succeeds globally if and only if $H^1(X, \mathcal{R}) = 0$.
+\end{theorem}
+
+\begin{proof}
+Vanishing first cohomology implies compatible local repairs glue to a global repair.
+\end{proof}
+
+%=========================================================
+\section{Spectral Continuation Theory}
+%=========================================================
+
+Define the continuation Laplacian $\Delta_C = -\nabla^2 + \lambda$ with eigenfunctions $\Delta_C\phi_n = \mu_n\phi_n$.
+
+\begin{definition}
+The \emph{continuation gap} is $\mu_2 - \mu_1$. Large gaps indicate robust continuation; small gaps indicate proximity to fragmentation.
+\end{definition}
+
+Spectral decomposition of repair: $\mathcal{R} = \sum_n a_n\phi_n$. The intelligence spectrum $I_n = |a_n|^2$ characterizes repair strength across scales. Low modes correspond to local correction; high modes correspond to large-scale conceptual repair.
+
+%=========================================================
+\section{Reduction Theorems and Derived Formalisms}
+%=========================================================
+
+\subsection{Shannon Information}
+
+Suppose $\Psi(x)$ induces $p(x) = \Psi(x)/\int\Psi(y)\, dy$. Then $H(X) = -\sum_i p_i\log p_i$ is the unique additive measure of continuation uncertainty. Information theory emerges as the probability geometry of continuation fields.
+
+\subsection{Free Energy Minimization as Continuation Repair}
+
+\begin{theorem}
+Variational free energy $F[q] = D_{KL}(q \| p) - \log Z$ is a continuation reconstruction functional. Minimizing $F$ reduces discrepancy between estimated and actual continuation structure.
+\end{theorem}
+
+Let $q_t$ represent an internal continuation model and $p_t$ environmental continuation structure. Minimization of $F_t = D_{KL}(q_t \| p_t)$ is equivalent to repair of predictive distinctions: the Free Energy Principle is a special case of repair dynamics.
+
+\subsection{Control Theory as Reachability Geometry}
+
+\begin{theorem}
+Finite-horizon optimal control corresponds to maximization of local continuation volume under control constraints.
+\end{theorem}
+
+The Bellman value function $V(x) = \max_u [r(x,u) + \gamma V(x')]$ is revealed as logarithmic continuation volume. Dynamic programming becomes continuation accounting.
+
+\subsection{The Grand Reduction Theorem}
+
+\begin{theorem}[Grand Reduction Theorem]
+Information Theory, Statistical Mechanics, Control Theory, Dynamic Programming, Active Inference, the Free Energy Principle, Repair Theory, Admissibility Geometry, RSVP Dynamics, and Distinction Geometry all arise as projections, approximations, or specializations of continuation dynamics.
+\end{theorem}
+
+\begin{proof}[Sketch]
+Each theory is obtained by selecting a subset of continuation variables and projecting the Master Continuation Equation into the corresponding coordinate system.
+\end{proof}
+
+%=========================================================
+\section{The Final Mathematical Conjecture}
+%=========================================================
+
+\begin{conjecture}[Continuation Universality Conjecture]
+Every persistent adaptive structure may be represented as a continuation field whose observable behavior is generated by projection, whose stability is determined by admissibility, whose memory preserves distinctions, whose intelligence performs repair, and whose dynamics are governed by the Master Continuation Equation.
+\end{conjecture}
+
+\newpage
+
+\begin{thebibliography}{99}
+
+\bibitem{shannon1948}
+C.~E. Shannon, ``A Mathematical Theory of Communication,'' \textit{Bell System Technical Journal}, 27(3):379--423, 1948.
+
+\bibitem{cover2006}
+T.~M. Cover and J.~A. Thomas, \textit{Elements of Information Theory}, 2nd ed., Wiley, 2006.
+
+\bibitem{kullback1951}
+S.~Kullback and R.~A. Leibler, ``On Information and Sufficiency,'' \textit{Annals of Mathematical Statistics}, 22(1):79--86, 1951.
+
+\bibitem{lin1991}
+J.~Lin, ``Divergence Measures Based on the Shannon Entropy,'' \textit{IEEE Transactions on Information Theory}, 37(1):145--151, 1991.
+
+\bibitem{amari2016}
+S.~Amari, \textit{Information Geometry and Its Applications}, Springer, 2016.
+
+\bibitem{fisher1925}
+R.~A. Fisher, ``Theory of Statistical Estimation,'' \textit{Proceedings of the Cambridge Philosophical Society}, 22:700--725, 1925.
+
+\bibitem{bellman1957}
+R.~Bellman, \textit{Dynamic Programming}, Princeton University Press, 1957.
+
+\bibitem{kalman1960}
+R.~E. Kalman, ``A New Approach to Linear Filtering and Prediction Problems,'' \textit{Transactions of the ASME}, 82:35--45, 1960.
+
+\bibitem{zhou1996}
+K.~Zhou, J.~Doyle, and K.~Glover, \textit{Robust and Optimal Control}, Prentice Hall, 1996.
+
+\bibitem{wiener1948}
+N.~Wiener, \textit{Cybernetics}, MIT Press, 1948.
+
+\bibitem{ashby1956}
+W.~R. Ashby, \textit{An Introduction to Cybernetics}, Chapman \& Hall, 1956.
+
+\bibitem{bertalanffy1968}
+L.~von Bertalanffy, \textit{General System Theory}, George Braziller, 1968.
+
+\bibitem{holland1992}
+J.~H. Holland, \textit{Adaptation in Natural and Artificial Systems}, MIT Press, 1992.
+
+\bibitem{friston2010}
+K.~Friston, ``The Free-Energy Principle: A Unified Brain Theory?'' \textit{Nature Reviews Neuroscience}, 11(2):127--138, 2010.
+
+\bibitem{friston2023}
+K.~Friston, T.~Parr, and G.~Pezzulo, \textit{Active Inference}, MIT Press, 2023.
+
+\bibitem{pearl2009}
+J.~Pearl, \textit{Causality}, 2nd ed., Cambridge University Press, 2009.
+
+\bibitem{spirtes2000}
+P.~Spirtes, C.~Glymour, and R.~Scheines, \textit{Causation, Prediction, and Search}, MIT Press, 2000.
+
+\bibitem{levin2019}
+M.~Levin, ``The Computational Boundary of a Self,'' \textit{BioEssays}, 41(10), 2019.
+
+\bibitem{levin2022}
+M.~Levin, ``Technological Approach to Mind Everywhere,'' \textit{Frontiers in Systems Neuroscience}, 16, 2022.
+
+\bibitem{anderson1972}
+P.~W. Anderson, ``More Is Different,'' \textit{Science}, 177(4047):393--396, 1972.
+
+\bibitem{haken1983}
+H.~Haken, \textit{Synergetics}, Springer, 1983.
+
+\bibitem{barabasi2016}
+A.-L. Barab\'{a}si, \textit{Network Science}, Cambridge University Press, 2016.
+
+\bibitem{newman2010}
+M.~E.~J. Newman, \textit{Networks}, Oxford University Press, 2010.
+
+\bibitem{gromov1999}
+M.~Gromov, \textit{Metric Structures for Riemannian and Non-Riemannian Spaces}, Birkh\"{a}user, 1999.
+
+\bibitem{lee2018}
+J.~M. Lee, \textit{Introduction to Riemannian Manifolds}, Springer, 2018.
+
+\bibitem{nakahara2003}
+M.~Nakahara, \textit{Geometry, Topology and Physics}, 2nd ed., Taylor \& Francis, 2003.
+
+\bibitem{maclane1998}
+S.~Mac Lane, \textit{Categories for the Working Mathematician}, 2nd ed., Springer, 1998.
+
+\bibitem{riehl2016}
+E.~Riehl, \textit{Category Theory in Context}, Dover, 2016.
+
+\bibitem{bredon1997}
+G.~E. Bredon, \textit{Sheaf Theory}, 2nd ed., Springer, 1997.
+
+\bibitem{ghrist2014}
+R.~Ghrist, \textit{Elementary Applied Topology}, Createspace, 2014.
+
+\bibitem{edelsbrunner2010}
+H.~Edelsbrunner and J.~Harer, \textit{Computational Topology}, American Mathematical Society, 2010.
+
+\bibitem{wilson1975}
+K.~G. Wilson, ``The Renormalization Group: Critical Phenomena and the Kondo Problem,'' \textit{Reviews of Modern Physics}, 47(4):773--840, 1975.
+
+\bibitem{goldenfeld1992}
+N.~Goldenfeld, \textit{Lectures on Phase Transitions and the Renormalization Group}, Perseus Books, 1992.
+
+\bibitem{landau1980}
+L.~D. Landau and E.~M. Lifshitz, \textit{Statistical Physics}, Pergamon Press, 1980.
+
+\bibitem{jaynes1957}
+E.~T. Jaynes, ``Information Theory and Statistical Mechanics,'' \textit{Physical Review}, 106(4):620--630, 1957.
+
+\bibitem{kuhn1962}
+T.~S. Kuhn, \textit{The Structure of Scientific Revolutions}, University of Chicago Press, 1962.
+
+\bibitem{lakatos1978}
+I.~Lakatos, \textit{The Methodology of Scientific Research Programmes}, Cambridge University Press, 1978.
+
+\bibitem{alexander1964}
+C.~Alexander, \textit{Notes on the Synthesis of Form}, Harvard University Press, 1964.
+
+\bibitem{simon1962}
+H.~A. Simon, ``The Architecture of Complexity,'' \textit{Proceedings of the American Philosophical Society}, 106(6):467--482, 1962.
+
+\end{thebibliography}
+
+\end{document}

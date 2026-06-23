@@ -1,0 +1,1490 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsthm,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+
+\geometry{a4paper,top=2.8cm,bottom=2.8cm,left=3.2cm,right=3.2cm}
+\onehalfspacing
+
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black}
+
+% Theorem environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[section]
+\theoremstyle{definition}
+\newtheorem{principle}{Principle}[section]
+
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{0.5em}{}
+
+\title{\textbf{Distinction Geometry:\\
+Projection, Reconstruction Defect,\\
+and the Interface-Native Metric}\\[0.5em]
+\large Mathematical Core}
+
+\author{Flyxion\\[0.4em]
+\small Independent Researcher}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We develop the mathematical core of a framework in which the primitive
+object of inquiry is not a hidden state space but the geometry of
+distinguishability between observable projections. Three interlocking
+structures are established. First, the \emph{reconstruction defect}
+$\Delta_R(h) = d(h, R(\Pi(h)))$ is introduced as a unified measure of
+irreversibility: the persistent failure of any map from observations back
+to the generating history. We prove that irreversibility, in this sense,
+is equivalent to the non-injectivity of the projection $\Pi$, and that
+the minimum achievable reconstruction defect is controlled by the
+information lost under projection. Second, the \emph{distinction
+functional} $\mathcal{D}(P,Q) = \operatorname{JSD}(P \| Q)$ is developed
+as the canonical measure of the information destroyed when two observable
+interfaces are merged. Its key properties are established: interface
+nativity, the entropy decomposition, the gauge-orbit characterisation,
+and the operationally precise meaning of the two entropy terms. Third,
+the \emph{space of observable interfaces} $(\mathcal{M}, d_{\mathrm{int}})$
+is shown to be a metric space that is locally Riemannian with Fisher
+information metric. Its curvature is interpreted: positive curvature
+corresponds to regions where many internal models produce nearly identical
+observations (overfitting, paradigm stability, institutional opacity);
+negative curvature to regions of rapid observational divergence (high
+falsifiability). These three structures --- reconstruction defect,
+distinction functional, and interface geometry --- form a mathematical
+core from which physical, cognitive, and institutional applications
+follow as corollaries.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------
+\section*{Orientation}
+\addcontentsline{toc}{section}{Orientation}
+%----------------------------------------------------------------------
+
+Every observation is a projection. Whatever generates an observation ---
+a physical system, a cognitive process, a social institution, a measuring
+device --- projects its internal configuration onto a reduced description
+that can be received, recorded, and compared. The projection is in general
+many-to-one. Many internal configurations produce the same observation.
+What does not vary across a fiber is, by definition, invisible.
+
+This paper takes that structure seriously as a mathematical object. It
+does not ask what the hidden internal space is, or how it might be
+reconstructed. It asks what geometry is imposed on the space of
+observations by the existence of fibers, and what the non-invertibility
+of projection implies for irreversibility, memory, and the comparison of
+theories.
+
+The answer, developed in three sections, is that the geometry of
+observation is an information geometry: the natural metric on observable
+interfaces is the Jensen--Shannon distance, the curvature of the resulting
+space measures falsifiability and opacity, and the minimum information
+destroyed by any observation is the reconstruction defect of the generating
+projection. These are not analogies between different domains. They are
+the same mathematical structure appearing in different applications.
+
+The present document is the mathematical core of a larger monograph,
+\emph{Distinction Geometry}. It is intended to be read first: the
+applications --- to quantum gravity, thermodynamics, cognition, and
+institutional theory --- are corollaries of what is proved here.
+
+
+%======================================================================
+\section{The Projection Setting}
+%======================================================================
+
+\subsection{Histories, Projections, and Fibers}
+
+Throughout this paper, $M$ denotes a \emph{space of histories}: a set
+whose elements are complete trajectories of a system over a time interval,
+not instantaneous configurations. This choice is deliberate. The phenomena
+we wish to unify --- irreversibility, memory, learning, paradigm change ---
+are inherently historical. They concern how the past constrains the future
+and what of the past survives into observation. A state-based formalism
+would need to carry additional temporal structure explicitly; the history
+formalism carries it automatically.
+
+\begin{definition}[Projection Setting]
+A \emph{projection setting} is a triple $(M, O, \Pi)$ where $M$ is a
+measurable space of histories, $O$ is a measurable space of observable
+outcomes, and $\Pi : M \to O$ is a surjective measurable map called the
+\emph{projection}. The \emph{fiber} over $o \in O$ is
+\begin{equation}
+  F_o = \Pi^{-1}(o) = \{h \in M : \Pi(h) = o\}.
+\end{equation}
+Two histories $h, h' \in M$ are \emph{observationally equivalent},
+written $h \sim h'$, if $\Pi(h) = \Pi(h')$.
+\end{definition}
+
+\begin{remark}[On the category of $M$]
+The appropriate category for $M$ varies by application. For quantum field
+theory, $M$ is a space of distributional field configurations with the
+weak-* topology. For the Krein-space formulation of higher-derivative
+gravity, $M$ is a Krein space (an indefinite inner-product space with
+a $\mathcal{K}_+ \oplus \mathcal{K}_-$ decomposition). For classical
+mechanics, $M$ is a cotangent bundle. For cognitive models, $M$ is a
+space of neural activation histories. For institutional models, $M$ is
+a space of decision trajectories. The framework requires only that $M$
+be measurable and that $\Pi$ be surjective and measurable. Additional
+structure --- topology, metric, linear structure --- may be present and
+will be used when available, but is not presupposed.
+\end{remark}
+
+\subsection{Admissibility and the Projection Sufficiency Principle}
+
+In applications, not every history in $M$ is physically, cognitively, or
+institutionally realizable. An admissibility predicate selects the
+realizable ones.
+
+\begin{definition}[Admissibility]
+Given a projection setting $(M, O, \Pi)$, an \emph{admissibility predicate}
+is a measurable function $A_O : O \to \{0,1\}$. The induced predicate
+on $M$ is $A_M(h) = A_O(\Pi(h))$. A history $h$ is \emph{admissible} if
+$A_M(h) = 1$.
+\end{definition}
+
+The definition places admissibility on $O$, not on $M$. This is the
+central methodological commitment of the framework.
+
+\begin{theorem}[Projection Sufficiency]
+\label{thm:proj_suff}
+If physical, cognitive, or institutional predictions depend only on
+$A_O(\Pi(h))$, then no condition on $h \in M$ is necessary unless it
+changes $\Pi(h)$.
+\end{theorem}
+
+\begin{proof}
+Let $h, h' \in M$ with $\Pi(h) = \Pi(h')$. Then
+\[A_M(h) = A_O(\Pi(h)) = A_O(\Pi(h')) = A_M(h').\] Any property that distinguishes $h$ from $h'$
+while leaving $\Pi(h)$ unchanged has no effect on admissibility. Since
+all predictions are functions of admissibility and observations, and since
+both are determined by $\Pi(h)$, no condition on fiber structure can affect
+any prediction.
+\end{proof}
+
+\begin{corollary}[The Injectivity Special Case]
+\label{cor:injective}
+When $\Pi$ is injective, $\Pi(h) = \Pi(h')$ implies $h = h'$, so every
+fiber is a singleton. There are no hidden directions in the fiber, and
+every internal property of $h$ is directly observable. This is the
+condition corresponding to the Hilbert Assumption in quantum mechanics
+(the identification of the state space with the observable space),
+naïve realism in epistemology (the identification of mental content with
+external reality), and the legibility assumption in institutional theory
+(the identification of an organization's behavior with its internal
+dynamics).
+\end{corollary}
+
+\begin{remark}[Pathologies in $M$ versus pathologies in $O$]
+\label{rem:pathologies}
+A \emph{coordinate pathology} is a property of some $h \in M$ that has
+no bearing on $\Pi(h)$. An \emph{observable pathology} is a violation of
+admissibility in $O$: $A_O(\Pi(h)) = 0$. By Theorem~\ref{thm:proj_suff},
+coordinate pathologies have no observable consequences. Whether a
+specific pathology in $M$ induces an observable pathology depends on
+the structure of $\Pi$, not on the pathology alone. This elementary
+observation underlies the resolution of the ghost problem in higher-derivative
+quantum gravity, the resolution of the Ostrogradsky instability in
+gravitational cosmology, and the analysis of institutional dysfunction
+in large organizations that continue to function despite severe internal
+contradictions.
+\end{remark}
+
+
+%======================================================================
+\section{Reconstruction Defect and Irreversibility}
+%======================================================================
+
+\subsection{The Reconstruction Problem}
+
+Given an observation $o = \Pi(h)$, can the generating history $h$ be
+recovered? This is the reconstruction problem. When $\Pi$ is injective,
+the answer is yes: the unique preimage $\Pi^{-1}(o)$ recovers $h$
+exactly. When $\Pi$ is many-to-one, the fiber $F_o$ contains multiple
+histories, and reconstruction must choose among them.
+
+\begin{definition}[Reconstruction Map and Defect]
+\label{def:reconstruction}
+A \emph{reconstruction map} is a measurable function
+$R : O \to M$ such that $\Pi(R(o)) = o$ for all $o \in O$ (that is,
+$R$ is a section of $\Pi$). Given a metric $d$ on $M$, the
+\emph{reconstruction defect} of $R$ at $h$ is
+\begin{equation}
+  \Delta_R(h) = d\bigl(h,\, R(\Pi(h))\bigr).
+\end{equation}
+The \emph{worst-case reconstruction defect} of $R$ is
+$\|\Delta_R\|_\infty = \sup_{h \in M} \Delta_R(h)$.
+The \emph{minimum reconstruction defect} of the projection is
+\begin{equation}
+  \delta(\Pi) = \inf_R \|\Delta_R\|_\infty,
+\end{equation}
+where the infimum is taken over all reconstruction maps.
+\end{definition}
+
+\begin{theorem}[Irreversibility from Non-Injectivity]
+\label{thm:irreversibility}
+Let $\Pi : M \to O$ and let $d$ be a metric on $M$. Then
+\begin{equation}
+  \delta(\Pi)
+  \;\geq\;
+  \frac{1}{2}\sup_{o \in O}\operatorname{diam}(F_o),
+  \label{eq:defect_diam}
+\end{equation}
+where $\operatorname{diam}(F_o) = \sup_{h,h' \in F_o} d(h,h')$. In
+particular, if some fiber $F_o$ has positive diameter then every
+reconstruction map $R$ has positive worst-case defect on that fiber:
+$\sup_{h \in F_o} \Delta_R(h) \geq \frac{1}{2}\operatorname{diam}(F_o) > 0$.
+\end{theorem}
+
+\begin{proof}
+Fix any $o \in O$ and any two points $h, h' \in F_o$. For any reconstruction
+map $R$, the triangle inequality gives
+\begin{equation*}
+  d(h,h') \leq d(h, R(o)) + d(R(o), h')
+  = \Delta_R(h) + \Delta_R(h').
+\end{equation*}
+Therefore $\max(\Delta_R(h), \Delta_R(h')) \geq \frac{1}{2}d(h,h')$.
+Taking the supremum over $h, h' \in F_o$ and then over all $o$ and all
+reconstruction maps $R$:
+\begin{equation*}
+  \delta(\Pi) = \inf_R \sup_{h \in M} \Delta_R(h)
+  \geq \frac{1}{2}\sup_{o \in O}\sup_{h,h' \in F_o} d(h,h')
+  = \frac{1}{2}\sup_{o \in O}\operatorname{diam}(F_o).
+\end{equation*}
+When $d$ separates points, any non-singleton fiber has positive diameter,
+so $\delta(\Pi) > 0$ whenever $\Pi$ is non-injective.
+\end{proof}
+
+\begin{remark}
+Theorem~\ref{thm:irreversibility} is the precise mathematical content of
+the claim that information is lost under projection. The reconstruction
+defect $\delta(\Pi)$ is a measure of how much is lost: it is the minimum
+error that any reconstruction must make, regardless of how cleverly it
+tries to infer the generating history from the observation. Irreversibility
+is not a property of the dynamics of the system but of the projection by
+which the system is observed. A dynamical system whose intrinsic evolution
+is time-reversible appears irreversible to any observer whose projection
+$\Pi$ is non-injective.
+\end{remark}
+
+\subsection{The Defect Spectrum}
+
+The minimum worst-case defect $\delta(\Pi)$ is a single number. It is
+useful to have a finer characterisation of how reconstruction defect is
+distributed across $M$.
+
+\begin{definition}[Defect Spectrum]
+Given $(M, O, \Pi, d)$, the \emph{defect spectrum} is the function
+$\delta_* : [0,\infty) \to [0,1]$ defined by
+\begin{equation}
+  \delta_*(t) = \sup_R\, \mu\!\bigl(\{h \in M : \Delta_R(h) \leq t\}\bigr),
+\end{equation}
+where $\mu$ is a reference probability measure on $M$ and the supremum
+is over all reconstruction maps $R : O \to M$. Thus $\delta_*(t)$ is
+the largest fraction of histories that the best reconstruction map can
+recover to within distance $t$.
+\end{definition}
+
+The defect spectrum interpolates between $\delta_*(0) = 0$ (when $\Pi$
+is non-injective, no reconstruction map achieves zero defect everywhere)
+and $\delta_*(\infty) = 1$ (the entire history space is recovered to
+within infinite tolerance). Its shape characterises the nature of the
+information loss:
+
+\begin{proposition}[Defect Spectrum at Zero]
+$\delta_*(0) = 1$ if and only if $\Pi$ is injective. When $\Pi$ is
+non-injective, $\delta_*(0) < 1$: even the best reconstruction map fails
+on a positive-measure set of histories.
+\end{proposition}
+
+\begin{proof}
+If $\Pi$ is injective, $R = \Pi^{-1}$ satisfies $\Delta_R(h) = 0$ for all
+$h$, so $\delta_*(0) = \mu(M) = 1$. If $\Pi$ is non-injective, some fiber
+$F_o$ is non-singleton; by Theorem~\ref{thm:irreversibility}, any $R$
+incurs positive defect on at least one element of $F_o$, so
+$\mu(\{h : \Delta_R(h) = 0\}) < \mu(M) = 1$ for every $R$, giving
+$\delta_*(0) < 1$.
+\end{proof}
+
+\subsection{Residual Uncertainty and Reconstruction Defect}
+
+The information lost under projection is quantified by the
+\emph{conditional entropy of $h$ given $\Pi(h)$}:
+\begin{equation}
+  H(h \mid \Pi(h)) = \sum_{o \in O} \nu(o)\, H(\mu_{F_o}),
+  \label{eq:cond_entropy}
+\end{equation}
+where $\mu_{F_o}$ is the conditional distribution of $h$ on the fiber
+$F_o$ and $\nu = \Pi_*\mu$. This is the residual uncertainty about
+the generating history that survives after observing $\Pi(h) = o$:
+the average entropy within fibers, not the entropy of the projected
+distribution.
+
+\begin{remark}[Why $H(\Pi_*\mu)$ is the wrong bound]
+The Shannon entropy $H(\nu) = H(\Pi_*\mu)$ measures uncertainty about
+which fiber an observation falls in; it does not measure uncertainty about
+the history \emph{within} a fiber. A projection that collapses everything
+into a single fiber has $H(\nu) = 0$ but $H(h \mid \Pi(h))$ arbitrarily
+large. The operative quantity for reconstruction error is the conditional
+entropy $H(h \mid \Pi(h))$, not the marginal $H(\Pi_*\mu)$.
+\end{remark}
+
+\begin{theorem}[Fano-Type Bound on Reconstruction]
+\label{thm:entropy_bound}
+Let $(M, \mathcal{F}, \mu)$ be a probability space with $M$ finite, and
+let $R : O \to M$ be any reconstruction map. Then
+\begin{equation}
+  P_e(R) \;\geq\; \frac{H(h \mid \Pi(h)) - \log 2}{\log|M|},
+  \label{eq:fano}
+\end{equation}
+where $P_e(R) = \mu(\{h : R(\Pi(h)) \neq h\})$ is the error probability.
+Consequently, whenever $H(h \mid \Pi(h)) > \log 2$, no reconstruction map
+achieves zero error probability.
+\end{theorem}
+
+\begin{proof}
+Apply Fano's inequality \cite{cover2006} to the channel $h \to \Pi(h)
+\to R(\Pi(h))$. With input $h$, output $R(\Pi(h))$, and error event
+$\{R(\Pi(h)) \neq h\}$, Fano's inequality gives
+$H(h \mid \Pi(h)) \leq H(P_e) + P_e\log(|M|-1) \leq \log 2 + P_e\log|M|$,
+which rearranges to~(\ref{eq:fano}).
+\end{proof}
+
+\begin{remark}[Metric Defect via Rate-Distortion]
+For a metric lower bound on $\mathbb{E}[\Delta_R]$ rather than on error
+probability, rate-distortion theory gives
+$\mathbb{E}_\mu[\Delta_R] \geq D^*(H(h \mid \Pi(h)))$,
+where $D^*(I)$ is the rate-distortion function of the fiber-conditional
+distribution at information constraint $I$ \cite{cover2006}. In both
+cases the operative quantity is $H(h \mid \Pi(h))$~(\ref{eq:cond_entropy}).
+\end{remark}
+
+\begin{corollary}[Thermodynamic Interpretation]
+\label{cor:thermo}
+When $M$ is the microstate space of a thermodynamic system, $O$ is the
+macrostate space, and $\Pi$ is the standard coarse-graining map, the
+Boltzmann entropy $S = k_B \log |F_o|$ (for uniform measure on $M$) is
+a measure of reconstruction defect: the logarithm of the number of
+microstates compatible with the macrostate is the log-volume of the fiber.
+The second law of thermodynamics, under this reading, is the statement
+that a system initialized in a small fiber and evolving under a
+measure-preserving dynamics will, under coarse-graining, appear to move
+toward states with larger fibers, increasing the reconstruction defect.
+\end{corollary}
+
+\subsection{Irreversibility as Accumulated Defect}
+
+For systems with a dynamical evolution, irreversibility is not merely the
+existence of reconstruction defect but its persistence and growth under
+the dynamics.
+
+\begin{definition}[Dynamical Irreversibility]
+Let $\phi_t : M \to M$ be a flow on $M$ (the dynamics), and let $\Pi$
+be the observation projection. The \emph{accumulated reconstruction
+defect} at time $T$ starting from $h$ is
+\begin{equation}
+  \mathcal{I}(h, T) = \inf_R \int_0^T \Delta_R(\phi_t(h))\, dt.
+\end{equation}
+A system is \emph{dynamically irreversible at $h$} if $\mathcal{I}(h,T) > 0$
+for all $T > 0$ and all reconstruction maps $R$.
+\end{definition}
+
+\begin{proposition}[Conditions for Dynamical Irreversibility]
+If $\Pi \circ \phi_t$ is non-injective for $\mu$-almost every $t > 0$,
+then the system is dynamically irreversible at $\mu$-almost every $h \in M$.
+\end{proposition}
+
+\begin{proof}
+Non-injectivity of $\Pi \circ \phi_t$ means there exist $h \neq h'$ with
+$\Pi(\phi_t(h)) = \Pi(\phi_t(h'))$. By Theorem~\ref{thm:irreversibility},
+any reconstruction map incurs positive defect at either $\phi_t(h)$ or
+$\phi_t(h')$ for each such $t$. Integrating over $t$ gives positive
+accumulated defect.
+\end{proof}
+
+\begin{remark}[The Arrow of Time]
+The arrow of time, in the framework of reconstruction defect, is the
+direction in which $\mathcal{I}(h,T)$ grows. It is not a property of
+the fundamental dynamics $\phi_t$ --- which may be time-reversible at
+the level of $M$ --- but of the projection $\Pi$ under which the system
+is observed. A perfectly reversible dynamics observed through a
+non-injective projection appears irreversible because the accumulated
+defect grows with $T$: the observer loses the ability to determine which
+of the histories compatible with the current observation was the actual
+generating history. This is the precise sense in which the arrow of time
+is a projection artifact.
+\end{remark}
+
+
+%======================================================================
+\section{The Distinction Functional}
+%======================================================================
+
+\subsection{The Problem of Comparing Interfaces}
+
+Two observers equipped with different projections $\Pi_1$ and $\Pi_2$
+will assign different probability distributions to the same underlying
+space of histories. How should the difference between these distributions
+be measured?
+
+The answer must satisfy several constraints. First, it must be
+\emph{interface-native}: the comparison should require no reference to
+the underlying space $M$ or the projections $\Pi_1, \Pi_2$. Once the
+distributions $P = \Pi_{1*}\mu_1$ and $Q = \Pi_{2*}\mu_2$ on $O$ are
+given, the comparison should proceed entirely within $O$.
+
+Second, the measure should be \emph{symmetric}: the distance from $P$
+to $Q$ should equal the distance from $Q$ to $P$. There is no
+privileged interface.
+
+Third, the measure should be \emph{operationally meaningful}: it should
+have an interpretation in terms of distinguishability, information, or
+some quantity that can in principle be estimated from observations.
+
+Fourth, it should be \emph{a metric}: zero if and only if $P = Q$,
+satisfying the triangle inequality.
+
+The Jensen--Shannon divergence satisfies all four constraints. We develop
+its properties systematically in this section.
+
+\subsection{Definition and Basic Properties}
+
+\begin{definition}[Jensen--Shannon Divergence and Distance]
+\label{def:jsd}
+Let $P$ and $Q$ be probability distributions on a measurable space $O$.
+Let $M_{PQ} = \frac{1}{2}(P + Q)$ be their equal-weight mixture. The
+\emph{Jensen--Shannon divergence} is
+\begin{equation}
+  \operatorname{JSD}(P \| Q)
+  = \frac{1}{2} D_{\mathrm{KL}}(P \| M_{PQ})
+    + \frac{1}{2} D_{\mathrm{KL}}(Q \| M_{PQ}),
+\end{equation}
+where $D_{\mathrm{KL}}(P \| Q) = \sum_x P(x) \log(P(x)/Q(x))$ is the
+Kullback--Leibler divergence. Equivalently,
+\begin{equation}
+  \operatorname{JSD}(P \| Q)
+  = H(M_{PQ}) - \frac{1}{2}\bigl(H(P) + H(Q)\bigr),
+  \label{eq:jsd_entropy}
+\end{equation}
+where $H(\cdot)$ is the Shannon entropy. The \emph{Jensen--Shannon
+distance} is $d_{\mathrm{int}}(P,Q) = \operatorname{JSD}^{1/2}(P \| Q)$.
+\end{definition}
+
+\begin{proposition}[Metric Properties]
+\label{prop:metric}
+The Jensen--Shannon distance $d_{\mathrm{int}}$ is a metric on the space
+of probability distributions on $O$. Specifically:
+\begin{enumerate}[label=(\roman*)]
+  \item $d_{\mathrm{int}}(P,Q) \geq 0$, with equality if and only if $P = Q$;
+  \item $d_{\mathrm{int}}(P,Q) = d_{\mathrm{int}}(Q,P)$;
+  \item $d_{\mathrm{int}}(P,R) \leq d_{\mathrm{int}}(P,Q) + d_{\mathrm{int}}(Q,R)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Properties (i) and (ii) follow immediately from the definition.
+$\operatorname{JSD}(P\|Q) = 0$ iff both KL terms vanish, iff $P = M_{PQ} = Q$.
+Symmetry is manifest from the equal-weight mixture. The triangle
+inequality for $d_{\mathrm{int}} = \operatorname{JSD}^{1/2}$ was established
+by Endres and Schindelin \cite{endres2003} using the concavity of
+$\sqrt{\cdot}$ and the properties of KL divergence. The key step is that
+$\operatorname{JSD}^{1/2}$ satisfies the triangle inequality while
+$\operatorname{JSD}$ alone does not.
+\end{proof}
+
+\begin{remark}
+The need to take the square root --- that $\operatorname{JSD}^{1/2}$ is
+a metric while $\operatorname{JSD}$ is not --- is the information-geometric
+signature of the curvature we will compute in Section~\ref{sec:geometry}.
+In a flat information geometry, the square root would be unnecessary; the
+need for it indicates that the space of probability distributions is
+positively curved in the Fisher--Rao metric.
+\end{remark}
+
+\subsection{The Distinction Functional}
+
+\begin{definition}[Distinction Functional]
+\label{def:distinction}
+The \emph{distinction functional} between observable interfaces $P$ and
+$Q$ is
+\begin{equation}
+  \mathcal{D}(P,Q)
+  = H(M_{PQ}) - \frac{1}{2}\bigl(H(P) + H(Q)\bigr)
+  = \operatorname{JSD}(P \| Q).
+\end{equation}
+\end{definition}
+
+The entropy decomposition~(\ref{eq:jsd_entropy}) gives each term a
+precise operational meaning, and their combination characterises the
+information carried by the distinction between $P$ and $Q$.
+
+\begin{theorem}[Operational Meaning of the Distinction Functional]
+\label{thm:distinction_meaning}
+The distinction functional $\mathcal{D}(P,Q)$ measures the expected
+reduction in uncertainty about which interface generated an observation,
+given that the observation has been made. Equivalently, it is the
+information that is destroyed when the distinction between $P$ and $Q$
+is forgotten by replacing both with their mixture $M_{PQ}$.
+\end{theorem}
+
+\begin{proof}
+Consider an observer who knows an observation $x \in O$ was generated by
+one of two sources, each equally likely: source 1 using distribution $P$,
+source 2 using distribution $Q$. The prior uncertainty about the source is
+$H(\text{source}) = \log 2$. The observation $x$ is drawn from the mixture
+$M_{PQ}$. After seeing $x$, the posterior uncertainty about the source is
+$H(\text{source} \mid x) = -\sum_{s \in \{1,2\}} P(s \mid x) \log P(s\mid x)$.
+The expected posterior uncertainty over observations is
+$\sum_x M_{PQ}(x) H(\text{source} \mid x)$.
+
+By the chain rule of entropy applied to the joint $(x, \text{source})$:
+\begin{align*}
+  H(x, \text{source})
+  &= H(\text{source}) + H(x \mid \text{source})
+   = \log 2 + \frac{1}{2}(H(P) + H(Q)), \\
+  H(x, \text{source})
+  &= H(x) + H(\text{source} \mid x)
+   = H(M_{PQ}) + H(\text{source} \mid x).
+\end{align*}
+Therefore $H(\text{source} \mid x) = \log 2 + \frac{1}{2}(H(P)+H(Q)) - H(M_{PQ})
+= \log 2 - \mathcal{D}(P,Q)$. The information gain from observing $x$ is
+$\log 2 - H(\text{source}\mid x) = \mathcal{D}(P,Q)$. When the distinction
+is forgotten ($P$ and $Q$ are merged into $M_{PQ}$), this information
+gain vanishes: the expected uncertainty about the source becomes $\log 2$
+(no information about the source), and the distinction functional equals
+exactly the information that was lost.
+\end{proof}
+
+\begin{corollary}[Monotonicity and Data Processing]
+\label{cor:data_proc}
+The distinction functional satisfies the data processing inequality: for
+any measurable map $f : O \to O'$,
+\begin{equation}
+  \mathcal{D}(f_*P,\, f_*Q) \leq \mathcal{D}(P,Q).
+\end{equation}
+Any further processing of observations can only reduce the distinction
+between the interfaces.
+\end{corollary}
+
+\begin{proof}
+This follows from the data processing inequality for KL divergence:
+\[D_{\mathrm{KL}}(f_*P \| f_*M_{PQ}) \leq D_{\mathrm{KL}}(P \| M_{PQ}),\]
+and similarly for $Q$.
+\end{proof}
+
+\subsection{Interface-Nativity}
+
+\begin{proposition}[Interface-Nativity]
+\label{prop:interface_native}
+The distinction functional $\mathcal{D}(P,Q)$ is interface-native: its
+definition and computation require no reference to any underlying space
+$M$ or projection $\Pi$.
+\end{proposition}
+
+\begin{proof}
+Definition~\ref{def:distinction} uses only the distributions $P$ and $Q$
+on the observable space $O$, their mixture $M_{PQ}$, and the Shannon
+entropy $H$. No element of $M$ appears, no projection $\Pi$ is referenced,
+and no admissibility manifold is invoked. The computation can be performed
+by any agent who has access to $O$ and can sample from $P$ and $Q$,
+without knowledge of how those distributions were generated.
+\end{proof}
+
+\begin{remark}[Contrast with the Inf-Sup Formulation]
+An alternative distance between theories with underlying spaces
+$M^{(1)}$ and $M^{(2)}$ would be
+\begin{equation}
+  d_{\mathrm{ext}}(M^{(1)}, M^{(2)})
+  = \inf_\phi \sup_{h} \bigl\|\Pi_1(h) - \Pi_2(\phi(h))\bigr\|_O,
+\end{equation}
+where the infimum runs over admissibility-preserving maps $\phi$.
+This formulation is not interface-native: the infimum over $\phi$
+requires access to $M^{(1)}$ and $M^{(2)}$. It frames the question as
+``how similar can the internal structures be made to look?'' rather than
+``how similar are the observable outputs?'' The distinction functional
+answers the second question without invoking the first, and is therefore
+the appropriate primitive for an interface-native theory.
+\end{remark}
+
+\subsection{Gauge Orbits and Hidden Directions}
+
+\begin{theorem}[Gauge Orbits as Zero-Distinction Fibers]
+\label{thm:gauge}
+Let $(M, O, \Pi)$ be a projection setting. The observational equivalence
+relation $h \sim h'$ (Definition~1.1) is the zero-level set of the
+induced distinction functional between the Dirac measures at the projected
+points:
+\begin{equation}
+  h \sim h' \quad\iff\quad
+  \mathcal{D}(\delta_{\Pi(h)},\, \delta_{\Pi(h')}) = 0,
+\end{equation}
+where $\delta_o$ denotes the Dirac measure concentrated at $o \in O$.
+\end{theorem}
+
+\begin{proof}
+The distinction functional compares probability distributions on $O$. For
+point masses, $\mathcal{D}(\delta_o, \delta_{o'}) = \operatorname{JSD}(\delta_o
+\| \delta_{o'})$. Since $H(\delta_o) = 0$ for any point mass and
+$H(\frac{1}{2}(\delta_o + \delta_{o'})) = \log 2$ when $o \neq o'$ and $0$
+when $o = o'$, we get $\mathcal{D}(\delta_o, \delta_{o'}) = \log 2$ when
+$o \neq o'$ and $0$ when $o = o'$. Therefore
+\[\mathcal{D}(\delta_{\Pi(h)},\, \delta_{\Pi(h')}) = 0
+  \;\iff\; \Pi(h) = \Pi(h'),\]
+which is the definition of $h \sim h'$. Gauge orbits are the fibers
+$F_o = \Pi^{-1}(o)$: the zero-distinction equivalence classes.
+\end{proof}
+
+\begin{definition}[Hidden Admissibility Direction]
+\label{def:hidden}
+Let $h_\epsilon$ be a smooth curve in $M$ with $h_0 = h$. The
+\emph{first-order observable variation} is
+\begin{equation}
+  \delta_{\mathrm{obs}}(h, \dot h)
+  = \left.\frac{d}{d\epsilon}
+    d_{\mathrm{int}}\!\bigl(\Pi(h),\, \Pi(h_\epsilon)\bigr)
+    \right|_{\epsilon=0}.
+\end{equation}
+The direction $\dot h = \frac{dh_\epsilon}{d\epsilon}|_{\epsilon=0}$
+is \emph{hidden to first order} if $\delta_{\mathrm{obs}}(h, \dot h) = 0$.
+It is \emph{fully hidden} if $\mathcal{D}(\delta_{\Pi(h)}, \delta_{\Pi(h_\epsilon)}) = 0$
+for all sufficiently small $\epsilon > 0$.
+\end{definition}
+
+\begin{example}[Ghost States as Hidden Directions]
+\label{ex:ghosts}
+In the Krein-space formulation of higher-derivative quantum gravity,
+$M = \mathcal{K} = \mathcal{K}_+ \oplus \mathcal{K}_-$ and $\Pi$ maps
+each state to its observable transition probabilities via
+$P(F \mid I) = \mathrm{tr}_+((\Pi_F S \Pi_I)^\dagger(\Pi_F S \Pi_I))$.
+A ghost state $g \in \mathcal{K}_-$ generates a deformation $h_\epsilon = h
++ \epsilon g$ in $M$. If ghost-parity symmetry holds ($[G, S] = 0$), then
+the contribution of $g$ to any observable transition probability cancels
+in the trace over $\mathcal{K}$, so $\Pi(h + \epsilon g) = \Pi(h)$ for
+all $\epsilon$. The deformation in the $g$-direction is fully hidden: the
+ghost is a hidden admissibility direction with $\mathcal{D}(\Pi(h),
+\Pi(h + \epsilon g)) = 0$ for all $\epsilon$. Whether ghost-parity symmetry
+holds in the full spin-2 sector of quadratic gravity remains open; the
+present framework identifies this as precisely the question of whether the
+ghost direction is fully hidden.
+\end{example}
+
+\begin{example}[Gauge Transformations as Hidden Directions]
+In Yang--Mills theory, $M$ is the space of gauge field configurations
+$A_\mu$ and $\Pi$ is the map to gauge-invariant observables (Wilson loops,
+field strength curvature, etc.). A gauge transformation $A_\mu \mapsto
+A_\mu + D_\mu\lambda$ is a deformation along a hidden direction: by gauge
+invariance, $\Pi(A_\mu + D_\mu\lambda) = \Pi(A_\mu)$, so the deformation
+is fully hidden. The gauge orbit through $A_\mu$ is the fiber $F_{\Pi(A_\mu)}$.
+\end{example}
+
+\begin{example}[Cognitive Hidden Directions]
+\label{ex:cognitive}
+For a cognitive agent with internal representation space $M$ and
+perceptual projection $\Pi$ to sensory observations, a hidden direction
+is an internal change that leaves all perceptual outputs unchanged. This
+includes: changes in sub-threshold neural activity, shifts in attentional
+allocation that do not affect behavioral output, alterations in implicit
+beliefs that have not yet influenced action, and unconscious emotional
+states that are not expressed in observable behavior. The distinction
+functional $\mathcal{D}(\delta_{\Pi(h)}, \delta_{\Pi(h+\epsilon\delta h)})$ measures
+whether the internal change $\delta h$ is cognitively legible to an
+external observer.
+\end{example}
+
+
+%======================================================================
+\section{The Geometry of Interface Space}
+\label{sec:geometry}
+%======================================================================
+
+\subsection{The Space of Theories as a Metric Space}
+
+Let $\mathcal{M}$ denote the space of all observable interfaces: all
+probability distributions that can be generated by some admissible
+projection setting $(M, O, \Pi, \mu)$. Two interfaces $P, Q \in \mathcal{M}$
+are compared by the distinction functional $\mathcal{D}(P,Q) =
+\operatorname{JSD}(P\|Q)$, and the interface distance $d_{\mathrm{int}} =
+\mathcal{D}^{1/2}$ makes $\mathcal{M}$ a metric space by
+Proposition~\ref{prop:metric}.
+
+\begin{definition}[Theory Space]
+\label{def:theory_space}
+The \emph{theory space} of a given observable domain $O$ is the metric
+space $(\mathcal{M}, d_{\mathrm{int}})$ of probability distributions on
+$O$, equipped with the Jensen--Shannon distance.
+\end{definition}
+
+\begin{remark}
+The elements of $\mathcal{M}$ are observable distributions, not internal
+models. Two theories with very different internal structures --- different
+$M$'s, different $\Pi$'s, different dynamics on $M$ --- may occupy the
+same point in $(\mathcal{M}, d_{\mathrm{int}})$ if their projected
+distributions agree. The theory space is not a space of theories in the
+traditional sense (axiomatic systems, Lagrangians, Hamiltonians) but a
+space of what theories produce: observable distributions over outcomes.
+It is the appropriate space for empirical comparison.
+\end{remark}
+
+\subsection{Local Riemannian Structure: The Fisher Metric}
+
+For a parametric family of distributions $\{P_\lambda\}_{\lambda \in \Lambda}$,
+the distinction functional induces a Riemannian metric on $\Lambda$.
+
+\begin{theorem}[Fisher Metric from JSD]
+\label{thm:fisher}
+Let $\lambda \mapsto P_\lambda$ be a smooth map from an open subset
+$\Lambda \subseteq \mathbb{R}^n$ to probability distributions on $O$.
+Then the Jensen--Shannon divergence satisfies
+\begin{equation}
+  \operatorname{JSD}(P_\lambda,\, P_{\lambda+\epsilon})
+  = \frac{1}{8}\, g^F_{ij}(\lambda)\,\epsilon^i\epsilon^j
+    + O(|\epsilon|^3),
+  \label{eq:jsd_fisher}
+\end{equation}
+so that $d_{\mathrm{int}}^2 = \operatorname{JSD} = \frac{1}{8}g^F_{ij}\epsilon^i\epsilon^j + O(|\epsilon|^3)$,
+where
+\begin{equation}
+  g^F_{ij}(\lambda)
+  = \sum_{x \in O} P_\lambda(x)\,
+    \frac{\partial \log P_\lambda(x)}{\partial \lambda^i}\,
+    \frac{\partial \log P_\lambda(x)}{\partial \lambda^j}
+\end{equation}
+is the Fisher information metric on $\Lambda$.
+\end{theorem}
+
+\begin{proof}
+Let $\delta P(x) = P_{\lambda+\epsilon}(x) - P_\lambda(x) =
+\partial_i P_\lambda(x)\,\epsilon^i + O(|\epsilon|^2)$ and
+$M(x) = P_\lambda(x) + \frac{1}{2}\delta P(x)$. Expanding
+$D_{\mathrm{KL}}(P_\lambda \| M)$:
+\begin{equation*}
+  D_{\mathrm{KL}}(P_\lambda \| M)
+  = \sum_x P_\lambda(x)\log\frac{P_\lambda(x)}{M(x)}
+  = \sum_x P_\lambda(x)\log\!\left(1 - \frac{\delta P(x)}{2M(x)}\right).
+\end{equation*}
+Since $M(x) = P_\lambda(x)(1 + O(|\epsilon|))$, we have
+$\frac{\delta P(x)}{2M(x)} = \frac{\delta P(x)}{2P_\lambda(x)} + O(|\epsilon|^2)$.
+Using $\log(1-u) = -u - u^2/2 + O(u^3)$:
+\begin{equation*}
+  D_{\mathrm{KL}}(P_\lambda \| M)
+  = \frac{1}{8}\sum_x \frac{(\delta P(x))^2}{P_\lambda(x)} + O(|\epsilon|^3).
+\end{equation*}
+By symmetry $D_{\mathrm{KL}}(P_{\lambda+\epsilon}\|M)$ contributes the
+same leading term. Combining both KL terms
+($\operatorname{JSD} = \frac{1}{2}D_{\mathrm{KL}}(P_\lambda\|M) +
+\frac{1}{2}D_{\mathrm{KL}}(P_{\lambda+\epsilon}\|M)$), each contributing
+$\frac{1}{8}\sum_x (\delta P)^2/P_\lambda$ at leading order:
+\begin{equation*}
+  \operatorname{JSD}(P_\lambda,\, P_{\lambda+\epsilon})
+  = \frac{1}{8}\sum_x \frac{(\delta P(x))^2}{P_\lambda(x)} + O(|\epsilon|^3)
+  = \frac{1}{8}\, g^F_{ij}(\lambda)\,\epsilon^i\epsilon^j + O(|\epsilon|^3),
+\end{equation*}
+where $g^F_{ij} = \sum_x P_\lambda(x)(\partial_i\log P_\lambda)
+(\partial_j\log P_\lambda)$ is the Fisher information matrix. Since
+$d_{\mathrm{int}} = \operatorname{JSD}^{1/2}$, we have
+$d_{\mathrm{int}}^2 = \operatorname{JSD} = \frac{1}{8}g^F_{ij}\epsilon^i
+\epsilon^j + O(|\epsilon|^3)$, confirming~(\ref{eq:jsd_fisher}).
+\end{proof}
+
+\begin{remark}[Relationship to Information Geometry]
+Theorem~\ref{thm:fisher} establishes that $(\mathcal{M}, d_{\mathrm{int}})$
+is locally a statistical manifold \cite{amari2000} with the Fisher--Rao
+metric. The factor $\frac{1}{8}$ is a convention-dependent rescaling
+(it becomes $\frac{1}{2}$ in the natural units of information geometry
+where logarithms are taken base $e$). The key point is that the
+information geometry of the space of theories is determined entirely by
+the Fisher information of the observable distributions, without reference
+to the internal models that generate them.
+\end{remark}
+
+\subsection{Curvature and Its Interpretation}
+
+The Riemannian curvature of $(\mathcal{M}, g^F)$ is the standard
+Riemannian curvature of the statistical manifold with Fisher metric. It
+has been computed explicitly for many exponential families \cite{amari2000}.
+Here we give its operational interpretation in the theory-comparison setting.
+
+\begin{definition}[Sectional Curvature of Theory Space]
+The \emph{sectional curvature} $\kappa(\sigma)$ of $(\mathcal{M}, g^F)$
+at a point $P_\lambda$ in a 2-plane $\sigma \subset T_{P_\lambda}\mathcal{M}$
+is the Gaussian curvature of the 2-dimensional surface swept out by
+geodesics from $P_\lambda$ in directions $\sigma$.
+\end{definition}
+
+\begin{theorem}[Operational Interpretation of Curvature]
+\label{thm:curvature}
+At a theory $P_\lambda \in \mathcal{M}$:
+\begin{enumerate}[label=(\roman*)]
+  \item Positive sectional curvature in direction $\sigma$ means that
+        theories near $P_\lambda$ in the $\sigma$-direction are more
+        similar in their observable predictions than their parameter-space
+        distance suggests. Geodesic spheres of radius $r$ in theory space
+        have \emph{smaller} volume than Euclidean spheres of radius $r$
+        (the Jacobi fields converge), so more parameter-space directions
+        map into the same observable neighbourhood. This is the geometry
+        of \emph{overfitting}: many internal models produce
+        observationally indistinguishable predictions.
+  \item Negative sectional curvature in direction $\sigma$ means that
+        theories near $P_\lambda$ in the $\sigma$-direction diverge in
+        their observable predictions faster than their parameter-space
+        distance suggests. Geodesic spheres of radius $r$ have \emph{larger}
+        volume than Euclidean spheres of radius $r$ (the Jacobi fields
+        diverge), so small parameter changes produce large observable
+        changes. This is the geometry of \emph{high falsifiability}:
+        small changes in the theory produce large changes in predictions.
+  \item Zero sectional curvature is the Euclidean regime:
+        parameter-space distance and observable-prediction distance
+        scale proportionally, and the theory is locally well-identified.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}[Proof of (i) and (ii)]
+The Jacobi equation governs the evolution of nearby geodesics: if
+$J(t)$ is a Jacobi field along a unit-speed geodesic $\gamma(t)$, then
+$\|J(t)\| \approx t - \frac{\kappa}{6}t^3 + O(t^5)$ for small $t$, where
+$\kappa$ is the sectional curvature in the plane $\{\dot\gamma, J(0)\}$.
+When $\kappa > 0$, $\|J(t)\| < t$: nearby geodesics are closer than
+linearly predicted, meaning theories at parameter distance $t$ are
+$d_{\mathrm{int}}$-closer than expected, i.e., more observationally
+similar. When $\kappa < 0$, $\|J(t)\| > t$: theories at parameter
+distance $t$ are more observationally different than the Euclidean
+approximation predicts, i.e., more falsifiable.
+\end{proof}
+
+\begin{example}[Curvature in Specific Families]
+For exponential family distributions $P_\lambda(x) = \exp(\lambda \cdot
+T(x) - A(\lambda))$ with sufficient statistic $T$, the Fisher metric is
+$g^F_{ij} = \partial_i\partial_j A(\lambda)$ (the Hessian of the
+log-partition function). The curvature is determined by third-order
+cumulants of $T$ under $P_\lambda$. In the Gaussian family
+$\mathcal{N}(\mu, \sigma^2)$, the sectional curvature in the
+$(\mu, \log\sigma)$ plane is $-\frac{1}{2}$: the space of Gaussian
+distributions is a hyperbolic space. This means distinguishing Gaussian
+theories by their observable predictions is easier than parameter-space
+distance would suggest --- small changes in $(\mu, \sigma)$ produce large
+changes in $d_{\mathrm{int}}$.
+\end{example}
+
+\subsection{Geodesics as Paths of Minimal Accumulated Distinction}
+
+\begin{definition}[Geodesic in Theory Space]
+A \emph{geodesic} in $(\mathcal{M}, g^F)$ is a smooth curve
+$\lambda(t)$ in the theory parameter space that satisfies the
+geodesic equation $\nabla_{\dot\lambda}\dot\lambda = 0$ with respect to
+the Levi-Civita connection of the Fisher metric. Its interpretation:
+the geodesic between theories $P$ and $Q$ is the path through theory
+space that minimises the total accumulated distinction between successive
+theories along the path,
+\begin{equation}
+  \int_0^1 d_{\mathrm{int}}\!\bigl(P_{\lambda(t)},
+  P_{\lambda(t+dt)}\bigr) = \int_0^1 \!\sqrt{g^F_{ij}\dot\lambda^i
+  \dot\lambda^j}\, dt.
+\end{equation}
+\end{definition}
+
+\begin{remark}[Scientific and Cognitive Interpretation]
+The geodesic distance $d_{\mathrm{int}}(P,Q)$ between two theories is
+the minimum total accumulated distinction along any path connecting them.
+In the context of scientific theory change, a paradigm shift from theory
+$P$ to theory $Q$ that follows the geodesic is the shift that introduces
+the minimum total observational difference at each step. A shift that
+follows a longer path introduces unnecessary intermediate distinctions ---
+it makes claims that cannot be verified by any available observations.
+The geodesic is the \emph{most parsimonious} path between two empirical
+positions. Occam's razor, in this framework, is the injunction to travel
+geodesically.
+\end{remark}
+
+\subsection{The Derived Interface Conjecture in Metric Terms}
+
+The physical application of theory space geometry provides a precise
+formulation of what it means for two theories of gravity to make the
+same observable predictions below the Planck scale.
+
+\begin{definition}[Sub-Planckian Interface Equivalence]
+Two quantum gravity theories $T_1$ and $T_2$ are \emph{sub-Planckian
+interface equivalent} if $d_{\mathrm{int}}(P_1^{(E)}, P_2^{(E)}) = 0$
+for all observable energies $E \ll M_{\mathrm{Pl}}$, where $P_i^{(E)}$
+is the distribution of scattering outcomes at energy $E$ predicted by
+$T_i$.
+\end{definition}
+
+\begin{principle}[Derived Interface Conjecture, metric form]
+Hilbert-space quantum gravity and Krein-space quadratic gravity are
+sub-Planckian interface equivalent: they satisfy $d_{\mathrm{int}} = 0$
+at all energies accessible to current and foreseeable experiment. Above
+the Planck scale, they diverge: $d_{\mathrm{int}} > 0$, with the distance
+controlled by the mass of the spin-2 ghost $m_2 = M_{\mathrm{Pl}}/\sqrt{2\beta}$.
+\end{principle}
+
+The conjecture is falsifiable in the precise sense of Theorem~\ref{thm:curvature}:
+it predicts that the theory space curvature in the direction separating
+the two theories is controlled by the energy scale at which they diverge,
+and that no sub-Planckian measurement can distinguish them.
+
+
+%======================================================================
+\section{Synthesis: The Three-Level Chain}
+%======================================================================
+
+The three structures developed in Sections~2--4 form a coherent chain:
+
+\begin{equation}
+  M
+  \;\xrightarrow{\;\Pi\;}
+  O
+  \;\xrightarrow{\;\mathcal{D}\;}
+  (\mathcal{M},\, d_{\mathrm{int}}).
+  \label{eq:chain}
+\end{equation}
+
+The first arrow discards internal structure: what survives is the observable
+interface $P = \Pi_*\mu \in \mathcal{M}$. The information lost in this step
+is measured by the reconstruction defect $\delta(\Pi)$ of Section~2. The
+second arrow measures distinguishability between interfaces: what survives
+is a geometry on the space of theories. The information destroyed when the
+distinction between two interfaces is forgotten is measured by the
+distinction functional $\mathcal{D}$ of Section~3.
+
+The central question shifts accordingly at each level:
+\begin{align*}
+  \text{Level 1 (internal):}\quad
+  &\text{What structures exist in } M? \\
+  \text{Level 2 (interface):}\quad
+  &\text{What can be inferred about } M \text{ from } O? \\
+  \text{Level 3 (geometric):}\quad
+  &\text{What geometry do the limitations of inference} \\
+  &\quad\text{impose on }\mathcal{M}?
+\end{align*}
+
+This paper concerns primarily Levels~2 and~3. Level~1 is the domain of
+specific physical, cognitive, or institutional theories; the present
+framework takes whatever is at Level~1 and asks what it produces and what
+structure that production imposes on the space of theories.
+
+\begin{theorem}[Unified Translation]
+\label{thm:translation}
+Under the chain~(\ref{eq:chain}), the following translations hold:
+\begin{enumerate}[label=(\roman*)]
+  \item A gauge orbit is a zero-$\mathcal{D}$ fiber of $\Pi$
+        (Theorem~\ref{thm:gauge}).
+  \item A hidden admissibility direction is a tangent direction to $M$
+        along which $d_{\mathrm{int}}(\Pi(h), \Pi(h_\epsilon)) = 0$
+        to first order (Definition~\ref{def:hidden}).
+  \item Irreversibility is persistent positive reconstruction defect
+        $\Delta_R > 0$ under any reconstruction map
+        (Theorem~\ref{thm:irreversibility}).
+  \item The Born rule is the projection $re^{i\theta} \mapsto r^2$:
+        the map from complex amplitude space to observable intensity
+        space that discards the phase (a hidden direction in the fiber
+        of the squaring map).
+  \item Theory comparison is distance in $(\mathcal{M}, d_{\mathrm{int}})$
+        (Definition~\ref{def:theory_space}).
+  \item The curvature of theory space is the curvature of
+        distinguishability (Theorem~\ref{thm:curvature}).
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}[On the Ontological Question]
+The chain~(\ref{eq:chain}) does not answer the question ``what exists?''
+It dissolves it. The question ``what exists in $M$?'' is replaced by
+``what survives projection?'' (Level~2) and ``what structure does the
+pattern of survival impose on $\mathcal{M}$?'' (Level~3). Whatever exists
+in $M$ --- fields, states, decision trajectories, neural activations,
+institutional dynamics --- is relevant to inquiry only to the degree that
+it produces distinguishable differences in $O$. The geometry of
+$(\mathcal{M}, d_{\mathrm{int}})$ is the geometry of what matters
+empirically, which may be a strict subset of what exists internally.
+
+This is not instrumentalism. It is not the claim that internal structure
+is unreal. It is the claim that the epistemologically primary object ---
+the object about which rational inquiry can make progress --- is the
+geometry of distinguishability, not the geometry of $M$. Internal
+structure is a tool for generating and explaining observable distinctions,
+not an object of inquiry in its own right.
+\end{remark}
+
+%----------------------------------------------------------------------
+
+%======================================================================
+\section{Projection Chains and Composed Loss}
+%======================================================================
+
+\subsection{Composing Projections}
+
+Many systems involve not a single projection but a chain of projections:
+an internal space is projected onto an intermediate space, which is then
+projected again onto the final observable space. Brains project sensory
+signals onto perceptual representations, which are then projected onto
+behavioral outputs. Scientific instruments project physical quantities
+onto measurement readings, which are then projected onto reported values.
+Institutions project individual decisions onto collective actions, which
+are then projected onto public outcomes.
+
+\begin{definition}[Projection Chain]
+A \emph{projection chain} of length $n$ is a sequence of projection
+settings
+\begin{equation}
+  M_0 \xrightarrow{\;\Pi_1\;} M_1 \xrightarrow{\;\Pi_2\;} M_2
+  \;\cdots\; \xrightarrow{\;\Pi_n\;} M_n = O,
+\end{equation}
+with composite projection $\Pi = \Pi_n \circ \cdots \circ \Pi_1 :
+M_0 \to O$. The \emph{intermediate observable spaces} are
+$M_1, \ldots, M_{n-1}$.
+\end{definition}
+
+\begin{theorem}[Defect Accumulates Along Chains]
+\label{thm:chain_defect}
+Let $\Pi = \Pi_2 \circ \Pi_1$ be a composed projection. Then for any
+metrics $d_0$ on $M_0$ and $d_1$ on $M_1$:
+\begin{equation}
+  \delta(\Pi) \geq \delta(\Pi_1).
+\end{equation}
+Composing with a further projection $\Pi_2$ cannot decrease the minimum
+reconstruction defect.
+\end{theorem}
+
+\begin{proof}
+Let $R : O \to M_0$ be any reconstruction map for $\Pi$. Consider
+the reconstruction map $R_1 = \Pi_1 \circ R$ for $\Pi_2$: it maps
+$o \in O$ to $\Pi_1(R(o)) \in M_1$. For any $h \in M_0$,
+\begin{equation*}
+  \Delta_{R_1}(\Pi_1(h))
+  = d_1(\Pi_1(h),\, R_1(\Pi_2(\Pi_1(h))))
+  = d_1(\Pi_1(h),\, \Pi_1(R(\Pi(h)))).
+\end{equation*}
+If $d_1$ satisfies $d_1(\Pi_1(h), \Pi_1(h')) \leq d_0(h, h')$
+(i.e., $\Pi_1$ is 1-Lipschitz), then
+\begin{equation*}
+  \Delta_{R_1}(\Pi_1(h)) \leq d_0(h,\, R(\Pi(h))) = \Delta_R(h).
+\end{equation*}
+Taking inf over $R$ and sup over $h$:
+\begin{equation*}
+  \delta(\Pi_2) \leq \delta(\Pi),
+\end{equation*}
+meaning the defect of the intermediate space $M_1$ is no greater than
+that of the full chain. Equivalently, $\delta(\Pi) \geq \delta(\Pi_1)$.
+\end{proof}
+
+\begin{corollary}[Monotonicity of Defect]
+In a projection chain $M_0 \to M_1 \to \cdots \to O$, the minimum
+reconstruction defect is non-decreasing: each further projection can
+only increase or maintain the defect. Information is monotonically
+lost along any chain.
+\end{corollary}
+
+This is the reconstruction-defect version of the data processing
+inequality. It establishes irreversibility as monotone along projection
+chains: no intermediate step can recover information lost at an earlier
+step.
+
+\subsection{The Distinction Functional Along a Chain}
+
+\begin{proposition}[Distinction Decreases Along Chains]
+For a projection chain $\Pi = \Pi_2 \circ \Pi_1$, the distinction
+between any two histories can only decrease:
+\begin{equation}
+  \mathcal{D}(\delta_{\Pi(h)}, \delta_{\Pi(h')})
+  \leq \mathcal{D}(\delta_{\Pi_1(h)}, \delta_{\Pi_1(h')})
+  \leq \mathcal{D}(\delta_h, \delta_{h'}),
+\end{equation}
+where point masses $\delta_h, \delta_{h'}$ are the degenerate distributions
+on $M_0$.
+\end{proposition}
+
+\begin{proof}
+This follows from the data processing inequality for JSD
+(Corollary~\ref{cor:data_proc}): each further projection $\Pi_i$
+is a measurable map applied to the distributions, and data processing
+ensures $\mathcal{D}(f_*P, f_*Q) \leq \mathcal{D}(P,Q)$.
+\end{proof}
+
+The proposition formalises the intuition that passing information through
+more processing steps can only blur the distinction between its sources.
+A signal that is clearly distinguishable at the physical level may become
+indistinguishable after enough stages of perceptual, cognitive, or
+institutional processing.
+
+\subsection{When Intermediate Projections Help}
+
+Theorem~\ref{thm:chain_defect} establishes that intermediate projections
+cannot decrease defect. But they can \emph{re-structure} it: an
+intermediate projection $\Pi_1$ may create a representation $M_1$ from
+which subsequent reconstruction $R_1 : O \to M_1$ is more efficient
+than direct reconstruction $R : O \to M_0$, even though the total
+defect cannot decrease.
+
+This is the formal account of \emph{representation learning}: the task
+of finding an intermediate projection $\Pi_1$ such that the downstream
+tasks (encoded in $\Pi_2$) can be performed with lower defect from
+$M_1$ than from $M_0$ directly. Good representations are intermediate
+projections that preserve the distinctions needed for downstream tasks
+while collapsing distinctions that are irrelevant to them.
+
+\begin{definition}[Task-Relevant Distinction Preservation]
+Given a downstream projection $\Pi_2 : M_1 \to O$, an intermediate
+projection $\Pi_1 : M_0 \to M_1$ is \emph{task-relevant} if
+$\delta(\Pi_2 \circ \Pi_1) = \delta(\Pi_2)$: the composition has the
+same defect as the downstream projection alone. In other words,
+$\Pi_1$ preserves all distinctions that matter for $\Pi_2$.
+\end{definition}
+
+Task-relevant projections are the ideal representations: they discard
+exactly the information that is irrelevant to the downstream task and
+preserve exactly the information that is relevant. The theory of
+task-relevant projections is the foundation of the theory of abstraction,
+compression, and feature learning.
+
+
+%======================================================================
+\section{Conditional Distinctions and Contextual Comparison}
+%======================================================================
+
+\subsection{Comparing Interfaces in Context}
+
+The distinction functional $\mathcal{D}(P,Q)$ compares two interfaces
+globally: it asks how different the full distributions $P$ and $Q$ are.
+But in many applications, what matters is not the global difference
+between two interfaces but their difference \emph{in a particular
+context}: given that an observation falls in category $C$, how different
+are the two interfaces?
+
+\begin{definition}[Conditional Interface]
+Given observable distributions $P$ and $Q$ on $O$ and a measurable
+subset $C \subseteq O$ with $P(C) > 0$ and $Q(C) > 0$, the
+\emph{conditional interfaces} are
+\begin{equation}
+  P|_C(x) = \frac{P(x)\,\mathbf{1}_{x \in C}}{P(C)},
+  \qquad
+  Q|_C(x) = \frac{Q(x)\,\mathbf{1}_{x \in C}}{Q(C)}.
+\end{equation}
+The \emph{conditional distinction functional} is
+\begin{equation}
+  \mathcal{D}_C(P,Q) = \mathcal{D}(P|_C,\, Q|_C)
+  = \operatorname{JSD}(P|_C \| Q|_C).
+\end{equation}
+\end{definition}
+
+\begin{proposition}[Properties of Conditional Distinction]
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=*]
+  \item $\mathcal{D}_C(P,Q) = 0$ iff $P|_C = Q|_C$:
+        the interfaces coincide within $C$.
+  \item $\mathcal{D}_C(P,Q) \leq \log 2$, with equality iff
+        $P|_C$ and $Q|_C$ have disjoint support.
+  \item $\mathcal{D}_C(P,Q)$ may exceed or fall below $\mathcal{D}(P,Q)$;
+        conditioning can reveal or suppress distinctions.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Parts (i) and (ii) follow immediately from the corresponding properties
+of JSD: $\operatorname{JSD}(P\|Q) = 0 \iff P = Q$, and
+$\operatorname{JSD}(P\|Q) \leq \log 2$ with equality iff $P$ and $Q$
+have disjoint support. Part (iii) follows by example: if $P$ and $Q$
+agree on $C$ but differ outside $C$, then $\mathcal{D}_C(P,Q) = 0 <
+\mathcal{D}(P,Q)$; if $P$ and $Q$ agree outside $C$ but differ maximally
+within $C$, then $\mathcal{D}_C(P,Q) > \mathcal{D}(P,Q)$.
+\end{proof}
+
+\subsection{The Distinction Profile}
+
+Rather than a single global comparison, the \emph{distinction profile}
+of two interfaces records how their distinction varies across contexts.
+
+\begin{definition}[Distinction Profile]
+Given a partition $\{C_1, \ldots, C_k\}$ of $O$ and distributions $P, Q$
+on $O$, the \emph{distinction profile} is the vector
+\begin{equation}
+  \mathcal{D}_{[C]}(P,Q)
+  = \bigl(\mathcal{D}_{C_1}(P,Q),\, \mathcal{D}_{C_2}(P,Q),\,
+    \ldots,\, \mathcal{D}_{C_k}(P,Q)\bigr) \in [0, \log 2]^k.
+\end{equation}
+\end{definition}
+
+The distinction profile records where two theories agree and where they
+disagree, at the resolution of the partition $\{C_i\}$. Two theories
+with the same global distinction $\mathcal{D}(P,Q)$ may have very
+different distinction profiles: one pair may disagree uniformly across
+all contexts, while another may agree in most contexts but disagree
+sharply in a few.
+
+The distinction profile is the basis for a more refined theory of
+falsifiability: rather than asking ``is this theory falsifiable?'' (a
+global question), one asks ``in which contexts does this prediction
+differ from its alternatives?'' (a context-specific question). Strong
+falsifiability is a sharply peaked distinction profile: the two theories
+differ significantly in a specific, experimentally accessible context.
+
+\subsection{Mutual Distinction and Shared Information}
+
+\begin{definition}[Mutual Distinction]
+Given three distributions $P$, $Q$, and $R$ on $O$, the
+\emph{mutual distinction} between $P$ and $Q$ given $R$ is
+\begin{equation}
+  \mathcal{D}(P, Q \mid R)
+  = \mathbb{E}_{x \sim R}\!\left[
+      \mathcal{D}(\delta_{P(x)},\, \delta_{Q(x)})
+    \right],
+\end{equation}
+where $\delta_{p}$ is the Bernoulli distribution with parameter $p$.
+This measures how much the distinction between $P$ and $Q$ is visible
+to a reference observer using distribution $R$.
+\end{definition}
+
+When $R = M_{PQ} = \frac{1}{2}(P+Q)$, the mutual distinction reduces
+to the distinction functional $\mathcal{D}(P,Q)$. When $R$ is the
+distribution of an external observer with different priors or different
+resolution, the mutual distinction measures the distinction between $P$
+and $Q$ as seen by that observer. This formulation is useful for modeling
+partial observability and for the theory of coordinated inquiry: two
+agents with different reference distributions $R_1$ and $R_2$ may
+perceive the distinction between two theories very differently, even
+when observing the same outcomes.
+
+
+%======================================================================
+\section{Application Corollaries}
+%======================================================================
+
+The three sections above (§2 on reconstruction defect, §3 on the
+distinction functional, and §4 on interface geometry) are the mathematical
+core. The following corollaries summarise their application to the
+three main domains of the monograph: physics, cognition, and institutions.
+Detailed treatments appear in the corresponding parts of \emph{Foundations
+of Distinction Geometry}.
+
+\subsection{Physics}
+
+\begin{corollary}[Ghost States]
+In a Krein-space quantum field theory, a ghost state $g \in \mathcal{K}_-$
+is a hidden admissibility direction (Definition~\ref{def:hidden}) if and
+only if $\mathcal{D}(\delta_{\Pi(h)}, \delta_{\Pi(h + \epsilon g)}) = 0$ for all
+sufficiently small $\epsilon$. Whether this condition holds in the spin-2
+sector of quadratic gravity is the central open problem of the programme.
+\end{corollary}
+
+\begin{corollary}[Thermodynamic Arrow]
+The thermodynamic arrow of time is the direction in which the minimum
+reconstruction defect $\delta(\Pi \circ \phi_t)$ grows under the
+coarse-graining projection $\Pi$ from microstates to macrostates, where
+$\phi_t$ is the microstate dynamics. The second law is the statement that
+this growth is non-negative for measure-preserving $\phi_t$.
+\end{corollary}
+
+\begin{corollary}[Equivalent Theories]
+Two physical theories are empirically indistinguishable at energy scale
+$E$ if and only if $d_{\mathrm{int}}(P^{(E)}_1, P^{(E)}_2) = 0$, where
+$P^{(E)}_i$ is the distribution of scattering outcomes at energy $E$
+predicted by theory $i$. The Derived Interface Conjecture asserts that
+Hilbert-space quantum gravity and Krein-space quadratic gravity satisfy
+this condition for all $E \ll M_{\mathrm{Pl}}$.
+\end{corollary}
+
+\subsection{Cognition}
+
+\begin{corollary}[Memory Loss]
+Cognitive memory loss is the growth of reconstruction defect
+$\Delta_R(h_{\mathrm{past}})$ over time, where $h_{\mathrm{past}}$ is
+the generating history and $R$ is the reconstruction map from current
+memory states to past states. Perfect recall requires injective memory
+encoding; all real memory systems have positive reconstruction defect.
+\end{corollary}
+
+\begin{corollary}[Learning as Defect Reduction]
+Learning is the reduction of task-relevant reconstruction defect: the
+update of the projection $\Pi$ such that $\delta(\Pi_{\mathrm{new}}) <
+\delta(\Pi_{\mathrm{old}})$ for the task-relevant component of the
+defect. A learning event that reduces defect for one task while
+increasing it for another is a specialisation; one that reduces defect
+across all tasks is a genuine improvement.
+\end{corollary}
+
+\begin{corollary}[Paradigm Shift as Projection Change]
+A scientific or cognitive paradigm shift is a change of projection
+$\Pi \to \Pi'$ that is a distinction reorganisation: $\Pi'$ is neither
+a refinement nor a coarsening of $\Pi$. The incommensurability of two
+paradigms is measured by $\mathcal{D}(\Pi_*\mu, \Pi'_*\mu)$: how
+different the observable interfaces they produce from the same underlying
+reality are.
+\end{corollary}
+
+\subsection{Institutions}
+
+\begin{corollary}[Goodhart's Law]
+Goodhart's Law --- when a measure becomes a target it ceases to be a
+good measure --- is the theorem that optimising a proxy $M$ for a true
+objective $T$ navigates the fiber $\Pi^{-1}(\text{high } M)$ in
+directions that may decrease $T$. The fiber is non-trivial whenever
+$\Pi$ is non-injective, which it always is for any realistic measurement
+system. The severity of the Goodhart effect is measured by the
+distinction $\mathcal{D}(P_M, P_T)$ between the interface of the measure
+and the interface of the true objective.
+\end{corollary}
+
+\begin{corollary}[Institutional Opacity]
+An institution is opaque to degree $\kappa > 0$ at a given parameter if
+the sectional curvature of theory space in the direction of the
+institution's internal structure is $+\kappa$: many distinct internal
+configurations produce nearly identical observable behaviour. High
+positive curvature is high institutional opacity.
+\end{corollary}
+
+\begin{corollary}[Legibility as Injectivity]
+A policy or governance intervention is fully legible if the projection
+from the target community's internal dynamics to the policy's observable
+outcomes is injective. Scott's catastrophes arise when this projection
+is treated as injective (the community is treated as fully legible)
+when it is in fact highly non-injective (the community's internal
+dynamics are largely invisible to the policy measure).
+\end{corollary}
+
+
+%======================================================================
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
+%======================================================================
+
+This paper has developed three interlocking mathematical structures and
+shown that they form a coherent account of what any observation does and
+what any comparison of observations reveals.
+
+The reconstruction defect $\Delta_R(h) = d(h, R(\Pi(h)))$ measures the
+irreducible cost of non-injective projection: the minimum error any
+reconstruction must make, regardless of how cleverly it proceeds. The
+Irreversibility from Non-Injectivity theorem establishes that this cost
+is always positive when the projection is many-to-one, and the Entropy
+Bound connects the minimum defect to the Shannon entropy of the projected
+distribution. Irreversibility, memory loss, thermodynamic entropy, and
+the arrow of time are all instances of this same structure.
+
+The distinction functional $\mathcal{D}(P,Q) = \operatorname{JSD}(P\|Q)$
+measures the information destroyed when the distinction between two
+observable interfaces is forgotten. It is interface-native --- defined
+without reference to any internal space --- symmetric, and locally
+equivalent to the Fisher information metric. Gauge orbits are its
+zero-level sets. Hidden admissibility directions are deformations along
+which it remains zero. The Born rule of quantum mechanics is the
+simplest possible distinction functional: the map that forgets the phase
+of a complex amplitude.
+
+The theory space $(\mathcal{M}, d_{\mathrm{int}})$ is the metric space
+of observable interfaces, equipped with the Jensen--Shannon distance.
+It is locally Riemannian with Fisher metric. Its curvature is the
+curvature of distinguishability: positive curvature means overfitting
+and opacity; negative curvature means high falsifiability. Geodesics
+are paths of minimal accumulated distinction. Theories at distance zero
+are empirically indistinguishable.
+
+The unified translation of Theorem~\ref{thm:translation} collects all
+the major concepts of physical, cognitive, and institutional theory into
+a single framework: gauge orbits, ghost states, thermodynamic
+irreversibility, the Born rule, memory loss, Goodhart effects, and
+institutional opacity are all instances of the same three-level chain,
+\begin{equation*}
+  M
+  \;\xrightarrow{\;\Pi\;}
+  O
+  \;\xrightarrow{\;\mathcal{D}\;}
+  (\mathcal{M},\, d_{\mathrm{int}}),
+\end{equation*}
+differing only in what $M$, $O$, and $\Pi$ are in each application.
+
+The paper's argument can be compressed to a single substitution. The
+question
+\begin{equation*}
+  \text{``What exists?''}
+\end{equation*}
+is replaced by
+\begin{equation*}
+  \text{``What distinctions survive projection, and with what geometry?''}
+\end{equation*}
+The distinction functional and the theory space metric are the tools for
+answering the second question. They are the tools for doing science,
+epistemology, and institutional analysis without presupposing access to
+the internal space from which observations are generated.
+
+What remains is the investigation of specific instances. The monograph
+\emph{Foundations of Distinction Geometry} develops the physics,
+cognitive, and institutional applications in detail. The present paper
+has established the mathematical core that those applications draw on.
+
+
+\begin{thebibliography}{99}
+
+\bibitem{endres2003}
+D.~M. Endres and J.~E. Schindelin,
+``A new metric for probability distributions,''
+\textit{IEEE Transactions on Information Theory} \textbf{49}(7),
+1858--1860 (2003).
+
+\bibitem{amari2000}
+S.-I. Amari and H.~Nagaoka,
+\textit{Methods of Information Geometry},
+American Mathematical Society, Providence, 2000.
+
+\bibitem{cover2006}
+T.~M. Cover and J.~A. Thomas,
+\textit{Elements of Information Theory}, 2nd ed.,
+Wiley-Interscience, Hoboken, 2006.
+
+\bibitem{ay2017}
+N.~Ay, J.~Jost, H.~V\^an L\^e, and L.~Schwachh\"{o}fer,
+\textit{Information Geometry},
+Springer, Cham, 2017.
+
+\bibitem{csiszar2004}
+I.~Csisz\'{a}r and P.~Shields,
+``Information theory and statistics: a tutorial,''
+\textit{Foundations and Trends in Communications and Information Theory}
+\textbf{1}(4), 417--528 (2004).
+
+\bibitem{nielsen2019}
+F.~Nielsen,
+``On the Jensen--Shannon symmetrization of distances relying on abstract
+means,''
+\textit{Entropy} \textbf{21}(5), 485 (2019).
+
+\bibitem{lin1991}
+J.~Lin,
+``Divergence measures based on the Shannon entropy,''
+\textit{IEEE Transactions on Information Theory} \textbf{37}(1),
+145--151 (1991).
+
+\bibitem{friedan1980}
+D.~Friedan,
+``Nonlinear models in $2+\epsilon$ dimensions,''
+\textit{Physical Review Letters} \textbf{45}, 1057--1060 (1980).
+
+\bibitem{jaynes2003}
+E.~T. Jaynes,
+\textit{Probability Theory: The Logic of Science},
+Cambridge University Press, Cambridge, 2003.
+
+\bibitem{chentsov1982}
+N.~N. Chentsov,
+\textit{Statistical Decision Rules and Optimal Inference},
+American Mathematical Society, Providence, 1982.
+
+\end{thebibliography}
+
+\end{document}
+

@@ -1,0 +1,44 @@
+\contentsline {section}{Prefatory Note}{4}{Doc-Start}%
+\contentsline {section}{\numberline {1}The Hilbert Assumption and Its Hidden Content}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}The Orthodox Framework}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}The Hidden Assumption Identified}{6}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Historical Precedents for a Larger State Space}{6}{subsection.1.3}%
+\contentsline {section}{\numberline {2}The Framework of Admissibility Manifolds}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The Three-Level Hierarchy}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}The Coordinate--Observable Distinction}{8}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Ghosts as Hidden Admissibility Directions}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The Origin of Ghosts in Higher-Derivative Theories}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}The Krein Space and Ghost Parity}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}The Modified Born Rule and its Derivation from Projection}{11}{subsection.3.3}%
+\contentsline {section}{\numberline {4}The Ostrogradsky Theorem Revisited}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The Classical Statement}{12}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Gravity's Native Negative Energy and the Trajectory Shift}{13}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}From State Properties to History Properties}{14}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Asymptotic Freedom, the Hierarchy Problem, and UV Completeness}{14}{section.5}%
+\contentsline {subsection}{\numberline {5.1}The Renormalizability and Asymptotic Freedom of Quadratic Gravity}{14}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}The Spectrum of Excitations}{15}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}The Hierarchy Problem and Dimensional Transmutation}{15}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Quantum Probability as Projection}{16}{section.6}%
+\contentsline {subsection}{\numberline {6.1}The Unistochastic Structure}{16}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}The Born Rule as Derived Quantity}{16}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Unsquared Numbers and Unistochastic Coarse-Graining}{17}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Strings and the Assumption of Hilbert-Space Quantum Mechanics}{21}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Quadratic Gravity as Effective Admissibility-Flow Geometry}{21}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Geometry as the Shadow of Obstruction}{21}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Quadratic Gravity as the Second-Order Term}{22}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}The Effective Interface Hierarchy}{22}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Gauge Symmetry as Fiber Structure}{23}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Observational--Interventional Separation and Latent Fundamentalism}{23}{section.8}%
+\contentsline {subsection}{\numberline {8.1}The Underdetermination Theorem}{23}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Against Latent Fundamentalism}{24}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}A Systematic Table of Coordinate and Observable Pathologies}{25}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}The Philosophical Position of Quadratic Gravity}{25}{subsection.8.4}%
+\contentsline {section}{\numberline {9}The Derived Interface Conjecture}{26}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Statement}{26}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Falsifiability and Empirical Content}{27}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}On the Necessity of Positive Norm}{27}{subsection.9.3}%
+\contentsline {section}{\numberline {10}Conclusion}{28}{section.10}%
+\contentsline {section}{Appendix A: The Dimension-Zero Scalar Programme}{29}{section.10}%
+\contentsline {section}{Appendix B: The CPT-Symmetric Universe and Gravitational Entropy}{31}{equation.10.36}%
+\contentsline {section}{Appendix C: The Criticism and the Admissibility Response}{33}{equation.10.40}%
+\contentsline {section}{Appendix D: Scale-Invariant Primordial Perturbations Without Inflation}{35}{equation.10.42}%

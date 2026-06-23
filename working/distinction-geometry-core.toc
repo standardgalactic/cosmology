@@ -1,0 +1,35 @@
+\contentsline {section}{Orientation}{4}{Doc-Start}%
+\contentsline {section}{\numberline {1}The Projection Setting}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Histories, Projections, and Fibers}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Admissibility and the Projection Sufficiency Principle}{5}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Reconstruction Defect and Irreversibility}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The Reconstruction Problem}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}The Defect Spectrum}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Residual Uncertainty and Reconstruction Defect}{8}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Irreversibility as Accumulated Defect}{9}{subsection.2.4}%
+\contentsline {section}{\numberline {3}The Distinction Functional}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The Problem of Comparing Interfaces}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Definition and Basic Properties}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}The Distinction Functional}{11}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Interface-Nativity}{12}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Gauge Orbits and Hidden Directions}{13}{subsection.3.5}%
+\contentsline {section}{\numberline {4}The Geometry of Interface Space}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The Space of Theories as a Metric Space}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Local Riemannian Structure: The Fisher Metric}{15}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Curvature and Its Interpretation}{16}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Geodesics as Paths of Minimal Accumulated Distinction}{17}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}The Derived Interface Conjecture in Metric Terms}{18}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Synthesis: The Three-Level Chain}{18}{section.5}%
+\contentsline {section}{\numberline {6}Projection Chains and Composed Loss}{20}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Composing Projections}{20}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}The Distinction Functional Along a Chain}{21}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}When Intermediate Projections Help}{21}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Conditional Distinctions and Contextual Comparison}{22}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Comparing Interfaces in Context}{22}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}The Distinction Profile}{23}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Mutual Distinction and Shared Information}{23}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Application Corollaries}{24}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Physics}{24}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Cognition}{24}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Institutions}{25}{subsection.8.3}%
+\contentsline {section}{Conclusion}{25}{theorem.8.9}%

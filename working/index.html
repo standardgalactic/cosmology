@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audioscope</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{
+  width:100%;height:100%;overflow:hidden;
+  background:#000;font-family:monospace;
+  touch-action:manipulation;
+  color:#00ff41;text-shadow:0 0 5px #00ff41;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:900;
+  background:radial-gradient(ellipse at center,transparent 58%,rgba(0,0,0,.65) 100%);
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:901;
+  background:repeating-linear-gradient(
+    to bottom,rgba(0,0,0,.20) 0px,rgba(0,0,0,.20) 1px,
+    transparent 1px,transparent 3px);
+}
+#screen{
+  position:fixed;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;will-change:transform;
+}
+#title{
+  position:fixed;top:18px;left:0;right:0;text-align:center;
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  opacity:.72;z-index:100;
+}
+#tracks{
+  position:fixed;top:44px;left:0;right:0;
+  display:flex;justify-content:center;gap:14px;z-index:100;
+}
+#tracks button{
+  background:none;border:none;
+  border-bottom:1px solid rgba(0,255,65,.22);
+  color:rgba(0,255,65,.42);font-family:monospace;
+  font-size:8px;letter-spacing:.14em;padding:3px 6px;
+  cursor:pointer;transition:all .2s;
+}
+#tracks button.active{
+  color:#00ff41;border-bottom-color:#00ff41;
+  text-shadow:0 0 8px #00ff41;
+}
+#clock{
+  position:fixed;top:18px;right:14px;
+  font-size:8px;letter-spacing:.1em;opacity:.30;z-index:100;
+}
+canvas{
+  display:block;
+  width:min(380px,82vw);height:min(380px,82vw);
+  image-rendering:pixelated;
+}
+#status{
+  position:fixed;bottom:48px;left:0;right:0;
+  text-align:center;font-size:7px;letter-spacing:.18em;
+  opacity:.20;z-index:100;
+}
+#subs{
+  position:fixed;bottom:14px;left:50%;transform:translateX(-50%);
+  width:min(560px,86vw);min-height:2em;text-align:center;
+  font-size:11px;line-height:1.5;letter-spacing:.03em;
+  opacity:.68;z-index:100;font-style:italic;
+}
+#glitch-band{
+  position:fixed;left:0;right:0;height:2px;
+  background:rgba(0,255,65,.55);
+  pointer-events:none;z-index:902;display:none;
+  box-shadow:0 0 6px #00ff41;
+}
+#debug{
+  position:fixed;bottom:4px;left:8px;
+  font-size:6px;opacity:.09;z-index:100;letter-spacing:.05em;
+}
+</style>
+</head>
+<body>
+<div id="screen">
+  <div id="title">—</div>
+  <div id="tracks"></div>
+  <span id="clock">00:00</span>
+  <canvas id="viz"></canvas>
+  <div id="status">[ click or touch · play / pause ]</div>
+  <div id="subs"></div>
+</div>
+<div id="glitch-band"></div>
+<div id="debug"></div>
+<audio id="audio" preload="auto"></audio>
+
+<script>
+const tracks = [
+  {
+    file:"One_equation_for_galaxies_and_bureaucracies.mp3",
+    vtt:"One_equation_for_galaxies_and_bureaucracies.vtt",
+    label:"GALAXIES",
+    title:"ONE EQUATION FOR GALAXIES AND BUREAUCRACIES",
+    mode:"galaxies"
+  },
+  {
+    file:"The_accounting_error_behind_string_theory.mp3",
+    vtt:"The_accounting_error_behind_string_theory.vtt",
+    label:"STRINGS",
+    title:"THE ACCOUNTING ERROR BEHIND STRING THEORY",
+    mode:"strings"
+  },
+  {
+    file:"The_RSVP_physics_of_fluid_reality.mp3",
+    vtt:"The_RSVP_physics_of_fluid_reality.vtt",
+    label:"RSVP",
+    title:"THE RSVP PHYSICS OF FLUID REALITY",
+    mode:"rsvp"
+  }
+];
+
+let trackIndex=0, mode=tracks[0].mode;
+
+const audio     = document.getElementById("audio");
+const subsEl    = document.getElementById("subs");
+const titleEl   = document.getElementById("title");
+const trackBtns = document.getElementById("tracks");
+const clockEl   = document.getElementById("clock");
+const screen    = document.getElementById("screen");
+const glitchBand= document.getElementById("glitch-band");
+const debugEl   = document.getElementById("debug");
+
+let audioCtx, analyser, freqData, timeData;
+
+function initAudio(){
+  if(audioCtx) return;
+  audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+  analyser = audioCtx.createAnalyser();
+  analyser.fftSize = 2048;
+  analyser.smoothingTimeConstant = .86;
+  freqData = new Uint8Array(analyser.frequencyBinCount);
+  timeData = new Uint8Array(analyser.fftSize);
+  const src = audioCtx.createMediaElementSource(audio);
+  src.connect(analyser); analyser.connect(audioCtx.destination);
+}
+
+function buildButtons(){
+  tracks.forEach((t,i)=>{
+    const btn=document.createElement("button");
+    btn.textContent=t.label;
+    btn.onclick=async e=>{
+      e.stopPropagation(); initAudio();
+      if(audioCtx.state==="suspended") await audioCtx.resume();
+      await loadTrack(i,true);
+    };
+    trackBtns.appendChild(btn);
+  });
+}
+
+function updateButtons(){
+  [...trackBtns.querySelectorAll("button")]
+    .forEach((b,i)=>b.classList.toggle("active",i===trackIndex));
+}
+
+async function loadTrack(i,autoplay=true){
+  trackIndex=((i%tracks.length)+tracks.length)%tracks.length;
+  const t=tracks[trackIndex];
+  mode=t.mode; titleEl.textContent=t.title;
+  audio.src=t.file; audio.load();
+  updateButtons();
+  await loadVTT(t.vtt);
+  if(autoplay){try{await audio.play();}catch(e){}}
+}
+
+audio.addEventListener("ended",()=>loadTrack(trackIndex+1,true));
+document.body.addEventListener("click",async ()=>{
+  initAudio();
+  if(audioCtx.state==="suspended") await audioCtx.resume();
+  if(audio.paused) await audio.play(); else audio.pause();
+});
+
+audio.ontimeupdate=()=>{
+  const t=audio.currentTime|0;
+  clockEl.textContent=`${String(t/60|0).padStart(2,"0")}:${String(t%60).padStart(2,"0")}`;
+  const c=cues.find(c=>audio.currentTime>=c.start&&audio.currentTime<c.end+.2);
+  subsEl.textContent=c?c.text:"";
+};
+
+let cues=[];
+async function loadVTT(url){
+  cues=[];subsEl.textContent="";
+  try{const r=await fetch(url);if(!r.ok)return;cues=parseVTT(await r.text());}catch(e){}
+}
+function parseVTT(text){
+  const out=[];
+  for(const block of text.replace(/\r/g,"").split(/\n{2,}/)){
+    const lines=block.trim().split("\n");
+    const ts=lines.find(l=>l.includes("-->"));if(!ts)continue;
+    const ti=lines.indexOf(ts);
+    const[s,e]=ts.split("-->").map(x=>x.trim());
+    out.push({start:parseTime(s),end:parseTime(e),text:lines.slice(ti+1).join(" ")});
+  }
+  return out;
+}
+function parseTime(t){
+  t=t.split(" ")[0].replace(",",".");const p=t.split(":");
+  if(p.length===3)return +p[0]*3600+ +p[1]*60+parseFloat(p[2]);
+  return +p[0]*60+parseFloat(p[1]);
+}
+
+/* canvas */
+const canvas=document.getElementById("viz");
+const ctx=canvas.getContext("2d");
+const W=512,H=512,cx=W/2,cy=H/2;
+canvas.width=W;canvas.height=H;
+
+let frame=0,bass=0,mid=0,high=0,vol=0,entropy=0;
+
+function updateEnergy(){
+  if(!analyser)return;
+  analyser.getByteFrequencyData(freqData);
+  analyser.getByteTimeDomainData(timeData);
+  let b=0,m=0,h=0,v=0;
+  for(let i=0;i<40;i++)b+=freqData[i];
+  for(let i=40;i<180;i++)m+=freqData[i];
+  for(let i=180;i<freqData.length;i++)h+=freqData[i];
+  for(let i=0;i<freqData.length;i++)v+=freqData[i];
+  bass+=(b/(40*255)-bass)*.08;
+  mid +=(m/(140*255)-mid)*.06;
+  high+=(h/((freqData.length-180)*255)-high)*.05;
+  vol +=(v/(freqData.length*255)-vol)*.07;
+  let sum=0,ent=0;
+  for(let i=0;i<freqData.length;i++)sum+=freqData[i];
+  if(sum>0){
+    for(let i=0;i<freqData.length;i++){
+      const p=freqData[i]/sum;if(p>0)ent-=p*Math.log2(p);
+    }
+    ent/=Math.log2(freqData.length);
+  }
+  entropy+=(ent-entropy)*.04;
+}
+
+/* glitch */
+let glitchActive=false,glitchTimer=0,glitchType=0,lastGlitch=0;
+function maybeGlitch(){
+  if(glitchActive)return;
+  if(entropy<.70&&vol<.50)return;
+  if(frame-lastGlitch<100)return;
+  if(Math.random()>.015)return;
+  glitchActive=true;glitchTimer=0;
+  glitchType=Math.random()<.55?0:1;lastGlitch=frame;
+}
+function applyGlitch(){
+  if(!glitchActive){screen.style.transform="";glitchBand.style.display="none";return;}
+  glitchTimer++;
+  const dur=glitchType===0?20:9;
+  if(glitchType===0){
+    const d=1-glitchTimer/dur;
+    screen.style.transform=`translate(${(Math.random()-.5)*7*d}px,${(Math.random()-.5)*2*d}px)`;
+    glitchBand.style.display="none";
+  }else{
+    const pct=(glitchTimer/dur)*110-5;
+    glitchBand.style.display="block";
+    glitchBand.style.top=`${pct}%`;
+    glitchBand.style.opacity=`${1-glitchTimer/dur}`;
+    screen.style.transform="";
+  }
+  if(glitchTimer>=dur){glitchActive=false;screen.style.transform="";glitchBand.style.display="none";}
+}
+
+function clearScreen(){
+  ctx.fillStyle="rgba(0,0,0,.14)";
+  ctx.fillRect(0,0,W,H);
+}
+
+/* shared: lissajous */
+function lis(ox,oy,rx,ry,lagFrac,alpha,lw){
+  if(!analyser)return;
+  const N=timeData.length,lag=Math.floor(N*lagFrac)&~1;
+  ctx.beginPath();
+  for(let i=0;i<N;i+=2){
+    const a=(timeData[i]-128)/128,b=(timeData[(i+lag)%N]-128)/128;
+    if(i===0)ctx.moveTo(ox+a*rx,oy+b*ry);
+    else ctx.lineTo(ox+a*rx,oy+b*ry);
+  }
+  ctx.strokeStyle=`rgba(0,255,65,${alpha})`;
+  ctx.lineWidth=lw||1;ctx.lineCap="round";
+  ctx.shadowBlur=alpha>.35?8:2;ctx.shadowColor="#00ff41";
+  ctx.stroke();ctx.shadowBlur=0;
+}
+
+/* shared: field contour at radius r, warped by waveform */
+function fieldContour(r,warpAmp,lagFrac,alpha,lw){
+  if(!analyser)return;
+  const N=timeData.length,lag=Math.floor(N*lagFrac)&~1;
+  ctx.beginPath();
+  const steps=128;
+  for(let i=0;i<=steps;i++){
+    const a=i/steps*Math.PI*2;
+    const idx=Math.floor(i/steps*N)&~1;
+    const s=(timeData[idx]-128)/128;
+    const s2=(timeData[(idx+lag)%N]-128)/128;
+    const rr=r+s*warpAmp+s2*warpAmp*.4;
+    const x=cx+Math.cos(a)*rr;
+    const y=cy+Math.sin(a)*rr;
+    if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+  }
+  ctx.closePath();
+  ctx.strokeStyle=`rgba(0,255,65,${alpha})`;
+  ctx.lineWidth=lw||1;
+  ctx.shadowBlur=alpha>.3?6:0;ctx.shadowColor="#00ff41";
+  ctx.stroke();ctx.shadowBlur=0;
+}
+
+/* shared: vector field arrows */
+function vectorField(rows,cols,scaleR,alpha){
+  if(!analyser)return;
+  const N=timeData.length;
+  for(let r=0;r<rows;r++){
+    for(let c=0;c<cols;c++){
+      const x=cx+(c-(cols-1)/2)*scaleR;
+      const y=cy+(r-(rows-1)/2)*scaleR;
+      const dx=x-cx,dy=y-cy;
+      const dist=Math.hypot(dx,dy);
+      if(dist>W*.40)continue;
+      // sample waveform at position-derived index
+      const idx=Math.floor(((r*cols+c)/rows/cols)*N)&~1;
+      const s=(timeData[idx]-128)/128;
+      const s2=(timeData[(idx+64)%N]-128)/128;
+      // vector direction: tangential + waveform perturbation
+      const angle=Math.atan2(dy,dx)+Math.PI*.5+s*.8;
+      const mag=8+s2*6+bass*10;
+      const tx=Math.cos(angle)*mag,ty=Math.sin(angle)*mag;
+      ctx.beginPath();
+      ctx.moveTo(x,y);
+      ctx.lineTo(x+tx,y+ty);
+      ctx.strokeStyle=`rgba(0,255,65,${alpha})`;
+      ctx.lineWidth=.8;
+      ctx.stroke();
+      // arrowhead
+      const ha=angle+Math.PI*.82;
+      ctx.beginPath();
+      ctx.moveTo(x+tx,y+ty);
+      ctx.lineTo(x+tx+Math.cos(ha)*3,y+ty+Math.sin(ha)*3);
+      ctx.stroke();
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   MODE 1 — ONE EQUATION FOR GALAXIES AND BUREAUCRACIES
+   ───────────────────────────────────────────────────
+   Two identical field structures at vastly different
+   scales, overlaid. The inner one is "bureaucracy"
+   scale — tight, local, dense. The outer one is
+   "galaxy" scale — sparse, vast, slow.
+   Same equation. Same shape. Different parameters.
+   The self-similarity is the argument.
+═══════════════════════════════════════════════════ */
+
+function drawGalaxies(){
+  // galaxy scale — vast, slow-rotating field
+  // outer contour rings, sparse vector field
+  const galaxyScale = 1 + Math.sin(frame*.0006)*bass*.06;
+
+  // galaxy potential contours — large, slow
+  for(let k=0;k<5;k++){
+    const r=W*(.28+k*.07)*galaxyScale;
+    fieldContour(r, 18+high*14, .22+k*.04,
+      .04+k*.012+mid*.04, .8);
+  }
+
+  // galaxy lissajous — slow, vast
+  lis(cx,cy, W*.32*galaxyScale, W*.28*galaxyScale,
+    .22, .12+mid*.06, .9);
+
+  // bureaucracy scale — inner, tight, fast
+  // same equation, smaller r, faster oscillation
+  const bureauScale = 1 + Math.sin(frame*.004)*bass*.10;
+
+  for(let k=0;k<5;k++){
+    const r=W*(.07+k*.028)*bureauScale;
+    fieldContour(r, 5+high*4, .22+k*.04,
+      .08+k*.022+mid*.06, 1.0);
+  }
+
+  // bureaucracy lissajous — tight, faster
+  lis(cx,cy, W*.10*bureauScale, W*.09*bureauScale,
+    .22, .45+mid*.18, 1.4);
+
+  // self-similarity connector — faint radial lines showing
+  // the same angular structure at both scales
+  if(analyser){
+    for(let i=0;i<8;i++){
+      const a=i/8*Math.PI*2+frame*.0008;
+      ctx.beginPath();
+      ctx.moveTo(cx+Math.cos(a)*W*.10,cy+Math.sin(a)*W*.10);
+      ctx.lineTo(cx+Math.cos(a)*W*.38,cy+Math.sin(a)*W*.38);
+      ctx.strokeStyle=`rgba(0,255,65,${.02+high*.02})`;
+      ctx.lineWidth=.7;
+      ctx.setLineDash([2,12]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   MODE 2 — THE ACCOUNTING ERROR BEHIND STRING THEORY
+   ───────────────────────────────────────────────────
+   A clean base equation — one tight lissajous, stable.
+   An accounting error term grows slowly alongside it:
+   starts as a tiny perturbation, eventually dominates
+   the visual field while the "correct" term stays the
+   same size. The error is structural — it compounds.
+   A running tally shows error magnitude accumulating.
+═══════════════════════════════════════════════════ */
+
+let errorMag   = 0;   // accumulated error term
+let errorPhase = 0;
+
+function drawStrings(){
+  if(!analyser)return;
+
+  // error grows slowly — compounding, not linear
+  errorMag  += (.0008 + mid*.0006 + bass*.002);
+  errorMag   = Math.min(errorMag, 3.8);  // cap for visibility
+  errorPhase += .006 + high*.004;
+
+  // base equation — fixed size, unchanging, correct
+  lis(cx,cy, W*.16, W*.16, .25, .55+mid*.1, 1.6);
+
+  // error term — same structure, growing magnitude
+  // sits alongside the correct term, then overwhelms
+  const errScale = errorMag*.12;
+  const errOffset= Math.min(errorMag*18, W*.22);
+
+  // error lissajous — offset and scaled by accumulated error
+  const ex=cx+Math.cos(errorPhase)*errOffset;
+  const ey=cy+Math.sin(errorPhase)*errOffset;
+  lis(ex,ey, W*errScale, W*errScale,
+    .31+errorMag*.02,
+    Math.min(.70, .08+errorMag*.16),
+    .6+errorMag*.4);
+
+  // error harmonics — higher-order terms that appear as error grows
+  if(errorMag>1.2){
+    const h2=errorMag-1.2;
+    for(let i=0;i<3;i++){
+      const ha=errorPhase+i/3*Math.PI*2;
+      const hr=Math.min(errOffset*.7,W*.18);
+      const hx=cx+Math.cos(ha)*hr;
+      const hy=cy+Math.sin(ha)*hr;
+      lis(hx,hy, W*errScale*.6, W*errScale*.6,
+        .19+i*.06, Math.min(.35,h2*.08+i*.02), .6);
+    }
+  }
+
+  // error magnitude bar — running tally at bottom of canvas
+  const barW=W*.55,barH=3;
+  const barX=cx-barW/2,barY=cy+W*.36;
+  ctx.fillStyle="rgba(0,255,65,.08)";
+  ctx.fillRect(barX,barY,barW,barH);
+  ctx.fillStyle=`rgba(0,255,65,${.25+errorMag*.08})`;
+  ctx.fillRect(barX,barY,(errorMag/3.8)*barW,barH);
+
+  // error label
+  ctx.fillStyle=`rgba(0,255,65,${.18+errorMag*.04})`;
+  ctx.font="7px monospace";
+  ctx.fillText(`ERR: ${errorMag.toFixed(3)}`,barX,barY-4);
+
+  // slow reset — occasionally the error "corrects" (rare)
+  if(errorMag>=3.79&&Math.random()<.003){
+    errorMag=0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   MODE 3 — THE RSVP PHYSICS OF FLUID REALITY
+   ───────────────────────────────────────────────────
+   Three coupled fields: Φ (scalar potential), v (vector
+   flow), S (entropy gradient). Each rendered as a
+   distinct visual layer. They interact — the scalar
+   field shapes the vector flow, the vector flow
+   advects the entropy, the entropy feeds back into Φ.
+   Shown as: contour rings (Φ), arrow field (v),
+   and a lissajous trace riding the entropy surface (S).
+═══════════════════════════════════════════════════ */
+
+// RSVP field state — slow-evolving coupled dynamics
+let phiPhase   = 0;   // scalar field phase
+let vPhase     = 0;   // vector field rotation
+let sEntropy   = 0;   // entropy field accumulator
+
+function drawRSVP(){
+  if(!analyser)return;
+
+  // evolve coupled fields
+  phiPhase += .0022 + bass*.003;
+  vPhase   += .0015 + mid*.002;
+  sEntropy += (entropy - sEntropy)*.03;
+
+  // ── Φ: scalar potential — contour rings ──
+  // warped concentric rings; depth of warp = potential gradient
+  const phiLayers=7;
+  for(let k=0;k<phiLayers;k++){
+    const r=W*(.06+k*.055);
+    const warp=8+k*3+bass*12+sEntropy*20;
+    // lag varies per ring — field has internal structure
+    const lag=.18+k*.03+Math.sin(phiPhase+k)*.04;
+    fieldContour(r,warp,lag,
+      (.03+k*.018)*(1+sEntropy*.4), 1.0+k*.08);
+  }
+
+  // ── v: vector flow field ──
+  // arrows rotate with vPhase, perturbed by waveform
+  // only drawn in the mid-field region
+  ctx.save();
+  ctx.translate(cx,cy);
+  ctx.rotate(vPhase);
+  const gridN=7;
+  const gStep=W*.10;
+  for(let r=-3;r<=3;r++){
+    for(let c=-3;c<=3;c++){
+      const x=c*gStep,y=r*gStep;
+      const dist=Math.hypot(x,y);
+      if(dist<W*.06||dist>W*.36)continue;
+      const idx=Math.floor(((r+3)*7+(c+3))/49*timeData.length)&~1;
+      if(!timeData[idx])continue;
+      const s=(timeData[idx]-128)/128;
+      const s2=(timeData[(idx+80)%timeData.length]-128)/128;
+      // tangential + radial components — RSVP curl structure
+      const angle=Math.atan2(y,x)+Math.PI*.5+s*.6;
+      const radial=s2*.3;  // small radial component from entropy coupling
+      const mag=7+bass*9+Math.abs(s)*4;
+      const vx=Math.cos(angle)*mag+Math.cos(Math.atan2(y,x))*radial*mag;
+      const vy=Math.sin(angle)*mag+Math.sin(Math.atan2(y,x))*radial*mag;
+      ctx.beginPath();
+      ctx.moveTo(x,y);ctx.lineTo(x+vx,y+vy);
+      ctx.strokeStyle=`rgba(0,255,65,${.07+sEntropy*.06+mid*.04})`;
+      ctx.lineWidth=.8;ctx.stroke();
+      // arrowhead
+      const ha=Math.atan2(vy,vx)+Math.PI*.8;
+      ctx.beginPath();
+      ctx.moveTo(x+vx,y+vy);
+      ctx.lineTo(x+vx+Math.cos(ha)*3,y+vy+Math.sin(ha)*3);
+      ctx.stroke();
+    }
+  }
+  ctx.restore();
+
+  // ── S: entropy surface — lissajous riding the gradient ──
+  // lag is entropy-modulated — high entropy = more phase shift
+  const sLag=.25+sEntropy*.22;
+  lis(cx,cy, W*.22, W*.22, sLag,
+    .50+sEntropy*.25+mid*.12, 1.8);
+
+  // entropy coupling indicator — faint trace showing S→Φ feedback
+  if(sEntropy>.15){
+    lis(cx,cy, W*.28+sEntropy*20, W*.24+sEntropy*16,
+      sLag+.08, sEntropy*.22, .7);
+  }
+}
+
+/* ── main loop ── */
+function draw(){
+  frame++;updateEnergy();maybeGlitch();applyGlitch();clearScreen();
+  ctx.save();
+  if(mode==="galaxies") drawGalaxies();
+  if(mode==="strings")  drawStrings();
+  if(mode==="rsvp")     drawRSVP();
+  ctx.restore();
+  debugEl.textContent=`F:${frame} E:${entropy.toFixed(2)} V:${vol.toFixed(2)} B:${bass.toFixed(2)}`;
+  requestAnimationFrame(draw);
+}
+
+buildButtons();loadTrack(0,false);draw();
+</script>
+</body>
+</html>

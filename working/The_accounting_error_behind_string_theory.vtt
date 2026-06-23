@@ -1,0 +1,5087 @@
+WEBVTT
+
+00:00.000 --> 00:11.600
+So what if the entire reason we spent 50 years inventing string theory and extra dimensions and, you know, parallel universes was just because of an accounting error?
+
+00:12.100 --> 00:13.200
+I mean, it's a huge question.
+
+00:13.200 --> 00:29.520
+Right. What if the greatest minds in theoretical physics essentially looked at a perfectly functioning ledger of the universe, saw a single negative number, completely panicked, and decided they needed to invent an 11-dimensional multiverse just to, well, just to balance the books?
+
+00:29.520 --> 00:34.640
+Yeah. It is a profound, almost uncomfortable question to ask.
+
+00:34.800 --> 00:34.900
+Yeah.
+
+00:34.960 --> 00:43.860
+We're talking about questioning the absolute bedrock of the theoretical architecture that, you know, tens of thousands of physicists have spent their entire careers building.
+
+00:44.100 --> 00:46.240
+But that is exactly what we are questioning today.
+
+00:46.480 --> 00:51.960
+We are looking at a new theoretical framework that suggests the universe isn't fundamentally broken.
+
+00:52.480 --> 00:57.500
+It suggests we just refused to let our mathematical ledgers dip into the negative.
+
+00:57.500 --> 01:06.360
+So we're unpacking an incredibly dense, genuinely revolutionary theoretical physics paper published today, June 23, 2026.
+
+01:06.600 --> 01:13.660
+It's by an independent researcher named Flyxion, and it's titled Quadratic Gravity as a Derived Interface Theory.
+
+01:13.660 --> 01:26.860
+And our mission for this deep dive is to explore whether a single, unchecked, largely unspoken mathematical assumption has been holding back the unification of quantum mechanics and gravity for half a century.
+
+01:26.860 --> 01:35.460
+And for you, listening to this right now, I just want to acknowledge up front, we're going to be diving deep into the actual machinery of quantum gravity today.
+
+01:35.540 --> 01:38.480
+We aren't just going to give you the, you know, the surface level metaphors.
+
+01:38.640 --> 01:40.400
+We are really going to look under the hood.
+
+01:40.520 --> 01:41.800
+Yeah, we're getting into the math.
+
+01:41.960 --> 01:42.200
+Right.
+
+01:42.200 --> 01:47.540
+But the ultimate takeaway here is a profound lesson on how we interpret reality itself.
+
+01:48.000 --> 01:52.420
+It's about recognizing the difference between the map we draw and the actual territory we live in.
+
+01:52.500 --> 01:55.620
+You know, it reminds me of like a medical diagnosis.
+
+01:55.880 --> 01:59.580
+Usually when we talk about a diagnosis, there's this expectation of pure precision.
+
+02:00.000 --> 02:01.560
+It feels like engineering, right?
+
+02:01.660 --> 02:02.700
+You break your arm.
+
+02:02.780 --> 02:05.000
+The x-ray shows that jagged white line.
+
+02:05.100 --> 02:07.180
+And the doctor just points and says, there it is.
+
+02:07.220 --> 02:07.820
+It's binary.
+
+02:08.060 --> 02:08.720
+It's clean.
+
+02:09.100 --> 02:09.920
+Broken or not broken.
+
+02:09.920 --> 02:10.700
+Right, right.
+
+02:10.820 --> 02:13.520
+And as humans, we are deeply comforted by that.
+
+02:14.100 --> 02:23.620
+We like things to be visible, to be strictly categorized, and to have a one-to-one relationship with the physical world we can actually touch.
+
+02:23.820 --> 02:32.360
+But then you step into the world of complex systems like neurodevelopment or autoimmune diseases, and suddenly that x-ray machine is totally useless.
+
+02:33.060 --> 02:36.440
+We're looking at a diagnostic landscape that is incredibly murky.
+
+02:36.440 --> 02:44.100
+You get test results that show antibodies or elevated proteins, but those numbers don't necessarily equate to a specific disease.
+
+02:44.220 --> 02:44.680
+Exactly.
+
+02:44.920 --> 02:45.580
+They are markers.
+
+02:45.780 --> 02:46.300
+They are hints.
+
+02:46.480 --> 02:46.640
+Right.
+
+02:46.880 --> 02:52.160
+They're shadows of a deeper underlying process that we just can't capture in a single clean snapshot.
+
+02:52.160 --> 03:02.760
+And that unsettling realization that our diagnostic tools might be showing us shadows instead of the actual bone is the precise paradigm shift this paper is applying to the very fabric of the universe.
+
+03:03.180 --> 03:09.700
+For the last century, physicists have demanded that their mathematical blueprints look exactly like the observable universe.
+
+03:10.300 --> 03:20.180
+If the math spits out something weird, something we can't touch or see, the immediate instinct has been to just, well, to throw the entire theory in the trash.
+
+03:20.180 --> 03:27.780
+And the foundational rule of standard quantum mechanics, the very first thing this paper targets, is something called the Hilbert Assumption.
+
+03:28.580 --> 03:34.800
+Before we even talk about gravity, we need to establish the ground rules of how quantum physicists do their daily accounting.
+
+03:35.060 --> 03:35.160
+Right.
+
+03:35.400 --> 03:42.480
+The paper states that standard physics demands the state space of any physical system must be a complex Hilbert space.
+
+03:42.480 --> 03:44.380
+So let's define the terms here.
+
+03:44.920 --> 03:47.680
+What exactly makes a mathematical space a Hilbert space?
+
+03:47.780 --> 03:50.600
+And why is standard physics so fiercely protective of it?
+
+03:50.700 --> 03:50.940
+Okay.
+
+03:51.060 --> 03:55.880
+To really grasp this, we need to go back to the 1920s to a mathematician named David Hilbert.
+
+03:56.260 --> 04:00.980
+When quantum mechanics was first being formalized by people like Heisenberg and Schrödinger,
+
+04:00.980 --> 04:08.240
+they realized that classical math, just tracking a particle's position and momentum with regular numbers, wasn't enough.
+
+04:08.320 --> 04:10.040
+Because things are super weird down there.
+
+04:10.340 --> 04:10.720
+Exactly.
+
+04:11.160 --> 04:14.140
+Quantum particles don't exist in single definite states.
+
+04:14.440 --> 04:14.680
+No.
+
+04:14.780 --> 04:16.300
+They exist in superpositions.
+
+04:16.420 --> 04:19.420
+They have a probability of being in many different states all at once.
+
+04:19.700 --> 04:21.020
+Right, like Schrödinger's cat.
+
+04:21.120 --> 04:23.340
+It's not alive or dead until you look.
+
+04:23.440 --> 04:24.920
+It's a weird combination of both.
+
+04:25.060 --> 04:25.540
+Precisely.
+
+04:25.540 --> 04:31.920
+So to describe a system that is a combination of many possible states, mathematicians realized
+
+04:31.920 --> 04:35.680
+they needed an infinite dimensional linear vector space.
+
+04:36.300 --> 04:37.780
+Okay, that sounds intense.
+
+04:37.920 --> 04:39.840
+Think of it like a three-dimensional grid, right?
+
+04:39.880 --> 04:41.380
+The x, y, and z axes.
+
+04:41.920 --> 04:44.680
+But extend it out to an infinite number of axes.
+
+04:45.120 --> 04:50.360
+Every possible state a quantum system could be in gets its own axis, its own coordinate direction
+
+04:50.360 --> 04:51.800
+in this massive space.
+
+04:51.920 --> 04:52.100
+Yeah.
+
+04:52.280 --> 04:54.220
+This mathematical arena is the Hilbert space.
+
+04:54.300 --> 04:54.560
+Okay.
+
+04:54.560 --> 04:56.500
+But it's not just a blank grid.
+
+04:56.900 --> 05:01.820
+It comes equipped with a very specific, highly rigid rule about how you measure things inside
+
+05:01.820 --> 05:01.960
+it.
+
+05:02.040 --> 05:04.560
+It has what's called a positive definite inner product.
+
+05:04.780 --> 05:05.760
+Okay, an inner product.
+
+05:05.860 --> 05:07.260
+Let me make sure I'm mapping this correctly.
+
+05:07.420 --> 05:13.820
+In standard geometry, if I have two vectors, like two arrows pointing in space, an inner product
+
+05:13.820 --> 05:17.660
+or a dot product is a way of multiplying them together to see how much they overlap.
+
+05:18.280 --> 05:23.660
+If it's a vector times itself, the inner product gives you the length of that arrow squared.
+
+05:23.660 --> 05:25.140
+That is exactly right.
+
+05:25.380 --> 05:29.260
+Now, in quantum mechanics, the vectors aren't pointing in physical space.
+
+05:29.380 --> 05:30.980
+They represent the state of the system.
+
+05:31.340 --> 05:35.520
+And the length squared of that state vector represents probability.
+
+05:35.760 --> 05:36.260
+Got it.
+
+05:36.260 --> 05:42.360
+The inner product is the mathematical engine that takes the abstract quantum state and spits
+
+05:42.360 --> 05:45.980
+out the probability that you will actually observe that state in a laboratory.
+
+05:46.360 --> 05:48.600
+And because it's a positive definite inner product?
+
+05:48.600 --> 05:52.600
+Because it is positive definite, it guarantees that no matter what vector you choose, no matter
+
+05:52.600 --> 05:58.420
+what crazy quantum state you calculate, the inner product, the probability, will always
+
+05:58.420 --> 06:00.600
+be a positive number or zero.
+
+06:01.100 --> 06:03.080
+But it can never, ever be negative.
+
+06:03.360 --> 06:05.740
+Which intuitively makes total sense.
+
+06:05.880 --> 06:11.260
+I mean, if I flip a coin, I can have a 50% chance of getting heads or a 0% chance if the
+
+06:11.260 --> 06:12.400
+coin is totally rigged.
+
+06:12.500 --> 06:16.760
+But I cannot possibly have a negative 50% chance of getting heads.
+
+06:16.760 --> 06:20.220
+A negative probability is a physical absurdity.
+
+06:20.360 --> 06:21.980
+It is a complete physical absurdity.
+
+06:22.360 --> 06:26.660
+And because it's absurd, the founders of quantum mechanics made a philosophical commitment.
+
+06:27.360 --> 06:29.000
+It wasn't just a mathematical choice.
+
+06:29.200 --> 06:32.400
+It was a deeply ingrained ontological belief.
+
+06:33.020 --> 06:35.440
+This is what Flyxion calls the Hilbert Assumption.
+
+06:35.500 --> 06:36.620
+The Hilbert Assumption.
+
+06:36.660 --> 06:36.840
+Right.
+
+06:36.840 --> 06:42.700
+It is the unspoken foundational dogma that the entire internal mathematical state space,
+
+06:43.180 --> 06:48.980
+every single gear, pulley, and vector inside the equations, must perfectly equal the observable
+
+06:48.980 --> 06:49.880
+physical reality.
+
+06:50.060 --> 06:54.660
+So the rule is, if I can't hold it in my hand, or at least measure it on a Geiger counter
+
+06:54.660 --> 06:59.340
+as a positive probability, it is absolutely not allowed to exist anywhere in the mathematics.
+
+06:59.760 --> 07:00.080
+Yes.
+
+07:00.760 --> 07:03.560
+The Hilbert Assumption declares a strict one-to-one mapping.
+
+07:04.220 --> 07:06.960
+Observable physics equals the entire state space.
+
+07:07.400 --> 07:11.120
+Every element of the math must be a candidate physical state.
+
+07:11.460 --> 07:13.620
+And this brings us to Flyxion's core premise.
+
+07:14.720 --> 07:16.220
+What if we break that mapping?
+
+07:16.320 --> 07:18.340
+What if we don't force them to be identical?
+
+07:18.760 --> 07:19.140
+Exactly.
+
+07:19.320 --> 07:22.500
+What if we separate the internal map from the external territory?
+
+07:23.080 --> 07:28.420
+Flyxion proposes that the internal mathematical representation, which the paper calls the admissibility
+
+07:28.420 --> 07:36.560
+manifold, or MM, can be vastly larger, wilder, and mathematically weirder than what we actually
+
+07:36.560 --> 07:39.540
+observe, which is the observable manifold, or MOBs.
+
+07:39.540 --> 07:44.200
+The paper introduces a really great piece of terminology for this specific error in physics.
+
+07:44.200 --> 07:46.560
+It calls it latent fundamentalism.
+
+07:46.640 --> 07:49.340
+And I want to linger on this because it's not just a physics problem.
+
+07:49.460 --> 07:51.640
+It's a profound philosophical trap.
+
+07:51.760 --> 07:52.320
+It really is.
+
+07:52.320 --> 07:57.420
+Latent fundamentalism is the error of granting ontological status, meaning believing something
+
+07:57.420 --> 08:02.080
+is physically, tangibly real to an internal coordinate just because it happens to appear
+
+08:02.080 --> 08:03.840
+in a successful mathematical model.
+
+08:04.100 --> 08:05.120
+It's a brilliant term.
+
+08:05.440 --> 08:10.800
+It perfectly diagnoses a cognitive bias that has plagued theoretical physics for a century.
+
+08:11.440 --> 08:13.000
+Think about how science usually works.
+
+08:13.640 --> 08:18.240
+You build a mathematical machine that successfully predicts the outcome of a complex experiment.
+
+08:18.240 --> 08:18.800
+Right.
+
+08:19.160 --> 08:22.760
+You run the numbers, and the machine tells you the electron will hit the screen exactly
+
+08:22.760 --> 08:23.340
+right there.
+
+08:23.480 --> 08:25.780
+You run the experiment, and it hits exactly there.
+
+08:26.420 --> 08:31.600
+The natural human instinct is to look inside your mathematical machine, point to a specific
+
+08:31.600 --> 08:38.200
+variable or a specific term in the equation, and say, because my machine correctly predicted
+
+08:38.200 --> 08:44.300
+reality, this specific gear inside the machine must literally exist in the physical universe.
+
+08:44.460 --> 08:47.220
+But Flyxion argues that is a massive logical leap.
+
+08:47.220 --> 08:52.040
+The internal machinery, the admissibility manifold, is just a space of histories, coordinates,
+
+08:52.240 --> 08:52.780
+and constraints.
+
+08:53.280 --> 08:56.380
+It doesn't have to map one-to-one with the observable outcomes.
+
+08:57.320 --> 09:01.820
+Let me ground this with a financial analogy, because I think this maps perfectly to how human
+
+09:01.820 --> 09:03.760
+beings actually run complex systems.
+
+09:03.820 --> 09:04.420
+I like this.
+
+09:04.520 --> 09:04.740
+Go ahead.
+
+09:05.020 --> 09:06.720
+Think of an accountant's corporate ledger.
+
+09:07.140 --> 09:12.560
+The internal ledger of a massive multinational corporation uses negative numbers all the time.
+
+09:12.560 --> 09:17.300
+It uses debts, liabilities, phantom placeholder accounts, depreciation curves.
+
+09:18.120 --> 09:21.400
+That internal ledger is the admissibility manifold.
+
+09:22.160 --> 09:26.120
+An accountant has to use negative numbers to balance the books and make the financial
+
+09:26.120 --> 09:27.640
+reality function over time.
+
+09:27.880 --> 09:27.960
+Right.
+
+09:27.960 --> 09:33.920
+But the actual money a customer can withdraw from the ATM, the observable manifold, must
+
+09:33.920 --> 09:35.500
+always be a positive number.
+
+09:35.780 --> 09:38.780
+You can't physically hold a negative $20 bill in your hand.
+
+09:38.880 --> 09:41.120
+That is an exceptionally precise analogy.
+
+09:41.680 --> 09:46.080
+The internal accounting absolutely requires negative numbers to function efficiently and
+
+09:46.080 --> 09:49.120
+to capture the full dynamical picture of the corporation's finances.
+
+09:49.600 --> 09:51.760
+The negative numbers are mathematically indispensable.
+
+09:51.980 --> 09:52.200
+Yeah.
+
+09:52.200 --> 09:57.160
+But the observable output, the cash that interacts with the physical world, is strictly positive.
+
+09:57.780 --> 10:01.920
+The accountant doesn't panic when they write a negative number in column B, because they
+
+10:01.920 --> 10:03.940
+understand the difference between the ledger and the ATM.
+
+10:04.360 --> 10:08.160
+So if accountants understand this, why don't physicists?
+
+10:08.780 --> 10:13.360
+Why do the physics community suddenly demand that their internal ledger only have positive
+
+10:13.360 --> 10:13.760
+numbers?
+
+10:14.080 --> 10:17.680
+Well, here is the incredible irony that Flickshina highlights in the paper.
+
+10:17.680 --> 10:23.060
+However, physicists actually do understand this, and they already use larger state spaces with
+
+10:23.060 --> 10:25.060
+negative numbers in other areas of physics.
+
+10:25.580 --> 10:30.800
+They just developed a bizarre, highly specific amnesia when it came to gravity.
+
+10:31.020 --> 10:31.400
+Wait, really?
+
+10:31.540 --> 10:32.120
+Give me an example.
+
+10:32.380 --> 10:35.620
+Where is the negative money in the standard physics ledger right now?
+
+10:35.760 --> 10:40.220
+Take quantum electrodynamics, QED, which is the quantum theory of light and electrons.
+
+10:40.740 --> 10:44.640
+It is arguably the most precisely tested theory in the history of science.
+
+10:44.640 --> 10:50.340
+When physicists formulate QED using what is called the Lorentz gauge, which is a mathematical
+
+10:50.340 --> 10:54.940
+framework that ensures the equations respects Einstein's speed of light, the math actually
+
+10:54.940 --> 10:58.040
+forces them to use an indefinite metric state space.
+
+10:58.560 --> 10:59.600
+What does that mean, practically?
+
+11:00.000 --> 11:03.420
+This space literally contains negative norm photon states.
+
+11:03.840 --> 11:06.040
+They're called longitudinal and scalar photons.
+
+11:06.440 --> 11:10.980
+If you try to calculate the probability of one of these photons existing, the math spits out
+
+11:10.980 --> 11:11.920
+a negative probability.
+
+11:11.920 --> 11:17.100
+Wait, wait, so we literally have negative probability photons hiding in the standard
+
+11:17.100 --> 11:18.040
+equations of light?
+
+11:18.200 --> 11:19.060
+We absolutely do.
+
+11:19.400 --> 11:24.100
+They exist in the math to ensure the equations remain symmetric and respect the laws of relativity.
+
+11:25.240 --> 11:31.300
+But, especially before we get to the observable physical predictions, before we go to the ATM,
+
+11:31.680 --> 11:37.060
+as you said, a subsidiary condition known as the Gupta-Bluler condition is applied.
+
+11:37.140 --> 11:37.860
+Okay, what does that do?
+
+11:37.860 --> 11:41.200
+This mathematical operation effectively projects them out.
+
+11:42.140 --> 11:46.240
+The negative norm photons perfectly cancel each other out in the physical sector.
+
+11:46.760 --> 11:49.600
+The weird stuff never actually reaches the observable world.
+
+11:49.760 --> 11:52.300
+Okay, so QED uses the negative ledger.
+
+11:52.740 --> 11:53.820
+Are there any other examples?
+
+11:53.980 --> 11:54.400
+Oh, definitely.
+
+11:54.820 --> 11:56.260
+The strong nuclear force.
+
+11:56.640 --> 11:59.860
+The force that holds the quarks together inside protons and neutrons.
+
+11:59.860 --> 12:03.580
+The math underlying this is called a Yang-Mills gauge theory.
+
+12:04.080 --> 12:08.740
+To make the quantum calculations work, to cancel out mathematical redundancies in the path integral,
+
+12:09.300 --> 12:11.780
+physicists introduce something called Fadiv Popov ghosts.
+
+12:12.000 --> 12:12.480
+Ghosts.
+
+12:12.540 --> 12:13.940
+Literally calling them ghosts.
+
+12:14.180 --> 12:14.420
+Yes.
+
+12:14.720 --> 12:15.480
+Literally ghosts.
+
+12:16.140 --> 12:21.660
+They're entirely fictitious, unphysical fields that obey the wrong quantum statistics.
+
+12:21.660 --> 12:30.360
+In particle physics, particles are either bosons, which like to clump together, or fermions, which violently refuse to occupy the same state.
+
+12:30.440 --> 12:30.560
+Right.
+
+12:31.100 --> 12:37.280
+A Fadiv Popov ghost is mathematically treated as a fermion, but it has integer spin like a boson.
+
+12:37.280 --> 12:45.260
+It is a complete fundamental mathematical contradiction, but it exists in the admissibility manifold to balance the books.
+
+12:45.660 --> 12:52.660
+And again, through something called BRST symmetry, these ghosts are completely restricted from ever appearing in the observable manifold.
+
+12:53.160 --> 12:53.820
+Let me get this straight.
+
+12:54.160 --> 12:56.780
+The theory of light uses negative probabilities.
+
+12:57.420 --> 13:03.120
+The theory of the strong nuclear force uses literal mathematical ghosts that violate the laws of quantum statistics.
+
+13:03.540 --> 13:05.600
+And the physics community is perfectly fine with this.
+
+13:05.600 --> 13:07.860
+They accept it. They give out Nobel Prizes for it.
+
+13:07.880 --> 13:08.900
+They teach it in grad school.
+
+13:09.140 --> 13:09.240
+Yep.
+
+13:09.420 --> 13:14.720
+So why, when it came to gravity, did everyone suddenly decide that the ledger had to be entirely positive?
+
+13:15.220 --> 13:19.660
+Because the ghosts in QED and the strong force are essentially bookkeeping tricks.
+
+13:20.120 --> 13:22.700
+They are artifacts of how we choose to write the equations.
+
+13:22.700 --> 13:27.600
+You can actually rewrite those theories in ways that don't use ghosts.
+
+13:27.720 --> 13:30.200
+It just makes the math agonizingly difficult.
+
+13:30.820 --> 13:34.060
+But with gravity, the ghost wasn't just a bookkeeping trick.
+
+13:34.060 --> 13:38.220
+The ghost was fundamentally baked into the dynamics of the theory itself.
+
+13:38.740 --> 13:39.780
+And that terrified them.
+
+13:40.020 --> 13:42.560
+This brings us to the Great Crisis of 1977.
+
+13:43.280 --> 13:47.620
+Let's talk about the discovery that should have changed physics, but instead got thrown in the trash.
+
+13:48.060 --> 13:50.200
+Who is K.S. Stel and what did he find?
+
+13:50.320 --> 13:56.620
+K.S. Stel was a theoretical physicist who was tackling the biggest problem in modern science, quantum gravity.
+
+13:56.620 --> 14:04.620
+The problem with standard Einstein gravity general relativity is that when you try to apply the rules of quantum mechanics to it, the math simply explodes.
+
+14:05.420 --> 14:06.040
+It breaks down.
+
+14:06.180 --> 14:06.520
+Completely.
+
+14:07.060 --> 14:12.660
+When you try to calculate the interaction of gravitons at incredibly small distances, the equations spit out infinities.
+
+14:13.100 --> 14:15.300
+Infinite energy, infinite probability.
+
+14:15.840 --> 14:17.840
+The theory is what we call non-renormalizable.
+
+14:18.260 --> 14:19.000
+It just breaks.
+
+14:19.000 --> 14:21.680
+It's like trying to divide by zero on a calculator.
+
+14:22.060 --> 14:23.620
+You just get a big error message.
+
+14:24.100 --> 14:24.380
+Exactly.
+
+14:24.780 --> 14:27.260
+And for decades, physicists tried to fix this and failed.
+
+14:27.840 --> 14:32.300
+But in 1977, Stel made a monumental mathematical discovery.
+
+14:33.160 --> 14:39.660
+He found that if you modify Einstein's equations, specifically if you add quadratic curvature terms to the action.
+
+14:39.860 --> 14:40.160
+Hang on.
+
+14:40.220 --> 14:40.920
+Let's define that.
+
+14:41.040 --> 14:42.940
+What is a quadratic curvature term?
+
+14:42.940 --> 14:43.300
+Sure.
+
+14:43.640 --> 14:49.400
+General relativity is based on space-time curvature, represented by the Ricci scalar, which is a linear term.
+
+14:49.840 --> 14:52.020
+It's essentially the first derivative of the metric.
+
+14:52.860 --> 14:58.360
+Stel decided to add terms that are squared, the square of the Ricci scalar and the square of something called the whale tensor.
+
+14:58.800 --> 15:02.540
+He introduced higher order derivatives into the fundamental equations of gravity.
+
+15:02.740 --> 15:04.140
+Okay, so he squared some stuff.
+
+15:04.260 --> 15:04.460
+Right.
+
+15:04.600 --> 15:09.220
+And when he ran the calculations for this new quadratic gravity, a miracle happened.
+
+15:09.420 --> 15:11.340
+The equation stopped spinning out infinities.
+
+15:11.340 --> 15:13.860
+The theory became perfectly renormalizable.
+
+15:14.100 --> 15:15.700
+The infinities were entirely cured.
+
+15:15.900 --> 15:24.280
+Okay, so a guy in 1977 completely solved the infinity problem of quantum gravity by just squaring some of the curvature terms.
+
+15:24.440 --> 15:26.140
+That sounds like the Holy Grail.
+
+15:26.520 --> 15:28.320
+That should be Einstein-level famous.
+
+15:28.700 --> 15:32.200
+Why aren't we all taught Stel's quadratic gravity in high school?
+
+15:32.520 --> 15:33.820
+Because of the fatal flaw.
+
+15:34.580 --> 15:40.100
+When you add those higher derivative terms, you fundamentally change the particle spectrum of the theory.
+
+15:40.100 --> 15:47.140
+In standard Einstein gravity, you have the graviton, a massless spin-to particle that carries the gravitational force.
+
+15:47.660 --> 15:53.040
+When Stel added the quadratic terms, the math still produced the massless graviton, which was great.
+
+15:53.120 --> 15:53.340
+What?
+
+15:53.840 --> 15:55.260
+But it also birthed a monster.
+
+15:55.840 --> 15:59.320
+It created a massive spin-to propagating degree of freedom.
+
+16:00.020 --> 16:07.300
+And when you look at the kinetic energy term for this new massive particle in the equations, it has a massive negative sign in front of it.
+
+16:07.300 --> 16:09.920
+The negative kinetic energy, meaning what physically?
+
+16:10.160 --> 16:11.660
+Think about a ball rolling down a hill.
+
+16:12.380 --> 16:16.800
+Positive kinetic energy means if you push the ball, it speeds up in the direction you pushed it.
+
+16:17.400 --> 16:21.320
+A particle with a negative kinetic term, a ghost, behaves inversely.
+
+16:21.420 --> 16:23.620
+If you push it forward, it accelerates backward.
+
+16:23.780 --> 16:24.500
+It's bizarre.
+
+16:24.500 --> 16:25.040
+It is.
+
+16:25.380 --> 16:30.160
+If it emits radiation, instead of losing energy and slowing down, it gains energy and speeds up.
+
+16:31.000 --> 16:41.000
+Furthermore, when you translate this into quantum mechanics via canonical quantization, this negative kinetic term forces the particle's quantum states to have a negative inner product.
+
+16:41.320 --> 16:43.860
+It creates a state with a negative probability.
+
+16:43.860 --> 16:44.360
+Yes.
+
+16:45.020 --> 16:48.540
+The ghost states represent a negative probability of existence.
+
+16:49.360 --> 17:03.420
+So standard physics looked at Stel's brilliant cure for quantum gravity, saw the massive spin-to ghost with its negative probability, invoked the Hilbert assumption, and said negative probability is an observable pathology.
+
+17:03.840 --> 17:07.660
+It is unphysical, therefore the entire theory is dead on arrival.
+
+17:07.780 --> 17:08.160
+Wow.
+
+17:08.480 --> 17:12.660
+And they threw quadratic gravity straight in the theoretical trash can.
+
+17:12.660 --> 17:17.800
+They discarded the literal cure for quantum gravity because they couldn't handle the ghost in the ledger.
+
+17:18.100 --> 17:21.880
+They just assumed the negative math would inevitably leak into the physical world.
+
+17:22.440 --> 17:31.940
+But Flyxion's paper highlights a massive, decades-long rescue operation, right, a way to save stealth theory, spearheaded recently by physicists Neil Turok and Sam Bateman.
+
+17:32.100 --> 17:32.500
+That's right.
+
+17:32.760 --> 17:37.880
+And their solution involves abandoning the Hilbert space entirely and moving into something called a crane space.
+
+17:38.480 --> 17:41.780
+So what is a crane space mathematically, and how does it save the ghost?
+
+17:41.780 --> 17:46.540
+A crane space is a mathematical arena that explicitly rejects the Hilbert assumption.
+
+17:47.280 --> 17:49.440
+It is an indefinite inner product space.
+
+17:50.100 --> 17:58.900
+Unlike a Hilbert space, which violently demands that every single vector have a positive length and a positive probability, a crane space is completely relaxed.
+
+17:59.440 --> 18:05.160
+It is perfectly happy to contain a positive norm sector and a negative norm sector simultaneously.
+
+18:05.160 --> 18:07.280
+Okay, but how does that actually help?
+
+18:07.340 --> 18:13.400
+If you just mathematically allow the negative probability to exist, you haven't solved the physical absurdity.
+
+18:13.480 --> 18:14.860
+You still have a negative probability.
+
+18:15.260 --> 18:19.340
+To see the mechanics of that, we have to look at Neil Turok's brilliant analogy.
+
+18:20.200 --> 18:24.800
+Think of Winkowski spacetime, the geometric foundation of Einstein's special relativity.
+
+18:24.800 --> 18:29.740
+In four-dimensional spacetime, we have three dimensions of space and one dimension of time.
+
+18:30.300 --> 18:32.580
+And crucially, they are mathematically distinct.
+
+18:33.300 --> 18:35.640
+Spacelike vectors have a positive length squared.
+
+18:36.360 --> 18:38.540
+Timelike vectors have a negative length squared.
+
+18:38.760 --> 18:39.340
+Oh, interesting.
+
+18:39.540 --> 18:43.540
+So the geometry of the universe actually already uses indefinite metrics.
+
+18:43.540 --> 18:44.380
+Exactly.
+
+18:45.100 --> 18:47.860
+Spacetime itself is an indefinite metric space.
+
+18:48.460 --> 18:52.600
+Spacetime isn't broken just because the time direction has a negative sign in the metric.
+
+18:53.140 --> 18:55.560
+It just means time behaves differently than space.
+
+18:56.360 --> 19:01.000
+Turok and Bateman apply that exact same logic to the quantum state space.
+
+19:01.160 --> 19:02.240
+So they treat it like geometry.
+
+19:02.700 --> 19:02.940
+Yes.
+
+19:03.460 --> 19:08.360
+A crane space is just a quantum algebra that acknowledges time-like and space-like quantum states.
+
+19:08.780 --> 19:11.060
+The positive norm states are standard particles.
+
+19:11.180 --> 19:13.440
+The negative norm states are the ghosts.
+
+19:14.300 --> 19:19.160
+And they are both perfectly valid, well-behaved coordinates internally in the mathematical space.
+
+19:19.280 --> 19:21.080
+But I'm still stuck on the ATM analogy.
+
+19:21.520 --> 19:24.780
+The accountant can use the negative numbers in the Crean space ledger.
+
+19:25.300 --> 19:30.920
+But eventually, the physicist has to calculate an observable physical event like two particles colliding in a collider.
+
+19:31.340 --> 19:32.320
+They have to go to the ATM.
+
+19:33.440 --> 19:38.860
+If your equation spits out a negative probability state, a ghost, how does the universe just ignore it?
+
+19:38.860 --> 19:42.640
+How do you get a positive, sensible physical probability out of a Crean space?
+
+19:42.640 --> 19:45.900
+This is the crux of the entire rescue operation.
+
+19:46.880 --> 19:51.660
+This is what Flyxion formalizes as the observable admissibility theorem.
+
+19:53.180 --> 20:00.440
+Turok and Bateman realized that the physicists in the 1970s were calculating probabilities entirely wrong.
+
+20:00.580 --> 20:01.260
+Oh, so.
+
+20:01.260 --> 20:04.300
+In standard quantum mechanics, you use the Born rule.
+
+20:04.720 --> 20:10.300
+You take the amplitude of a state and you square it, and you basically ignore anything that doesn't physically exist.
+
+20:10.920 --> 20:15.580
+The 70s physicists tried to just delete the ghost states from the math before doing the calculation,
+
+20:16.120 --> 20:19.600
+trying to artificially force the Crean space back into a Hilbert space.
+
+20:19.600 --> 20:24.120
+But when you just arbitrarily delete a mathematically necessary part of the equation,
+
+20:24.380 --> 20:28.820
+you break the theory's internal symmetries, and the probabilities stop adding up to 100%.
+
+20:28.820 --> 20:30.760
+It ruins the unitarity of the theory.
+
+20:30.880 --> 20:34.060
+So you can't just cross the negative numbers out of the ledger with a Sharpie.
+
+20:34.140 --> 20:35.680
+The books literally won't balance.
+
+20:35.780 --> 20:36.000
+Right.
+
+20:36.360 --> 20:38.360
+So Turok and Bateman modified the approach.
+
+20:38.520 --> 20:39.660
+They said, leave the ghosts in.
+
+20:40.040 --> 20:41.360
+Trace over the entire space.
+
+20:41.360 --> 20:43.540
+But, and this is the genius part,
+
+20:43.940 --> 20:48.840
+they identified a hidden mathematical symmetry in quadratic gravity called ghost parity symmetry.
+
+20:49.200 --> 20:50.440
+Ghost parity symmetry.
+
+20:51.340 --> 20:53.180
+Okay, let's break down the mechanics of that.
+
+20:53.260 --> 20:53.960
+How does it work?
+
+20:54.240 --> 20:56.420
+Imagine a perfectly balanced equation,
+
+20:56.820 --> 21:02.340
+where every time a regular positive energy particle interacts and moves forward in time,
+
+21:02.340 --> 21:08.100
+its negative ghost counterpart mirrors that mathematical action perfectly in the background.
+
+21:08.100 --> 21:12.680
+Because they are locked in this perfectly symmetrical dance under the rules of the theory,
+
+21:13.240 --> 21:17.020
+a positive state can never spontaneously mix with a negative state.
+
+21:17.820 --> 21:23.660
+The symmetry acts as an impenetrable firewall between the positive norm sector and the negative norm sector.
+
+21:24.060 --> 21:26.600
+So they exist in the exact same mathematical universe,
+
+21:26.740 --> 21:30.180
+but they can never physically touch or convert into one another.
+
+21:30.320 --> 21:30.700
+Exactly.
+
+21:31.260 --> 21:34.640
+The time evolution of the system strictly commutes with this parity operator.
+
+21:34.640 --> 21:41.100
+And because of this firewall, the observable admissibility theorem proves a stunning mathematical fact.
+
+21:42.200 --> 21:45.340
+If you calculate the transition probability of a physical event,
+
+21:45.660 --> 21:47.900
+and you leave the ghosts fully engaged in the math,
+
+21:48.160 --> 21:52.940
+the negative contributions of the ghosts will always perfectly cancel out any mathematical anomalies,
+
+21:53.240 --> 21:56.240
+and the final observable probability will always be positive.
+
+21:56.780 --> 21:57.700
+Wait, really?
+
+21:57.920 --> 22:01.640
+And it will always sum up perfectly to unity 100%.
+
+22:01.640 --> 22:02.700
+That is beautiful.
+
+22:02.700 --> 22:04.980
+The math processes the negative ghost,
+
+22:05.420 --> 22:09.200
+uses it to carry the necessary information to cancel out the infinities of gravity,
+
+22:09.560 --> 22:11.660
+but because of the ghost parity firewall,
+
+22:12.280 --> 22:15.200
+by the time the calculation reaches the observable output,
+
+22:15.600 --> 22:18.020
+the negativity has perfectly washed itself out.
+
+22:18.240 --> 22:18.540
+Yes.
+
+22:18.900 --> 22:22.720
+And this requires us to deeply internalize the difference between
+
+22:22.720 --> 22:27.540
+what Flyxion calls a coordinate pathology and an observable pathology.
+
+22:27.540 --> 22:30.800
+A coordinate pathology is a glitch, a weird feature,
+
+22:31.020 --> 22:33.780
+or a negative sign in the internal mathematical map.
+
+22:33.940 --> 22:34.680
+Like the ledger.
+
+22:34.820 --> 22:35.460
+Like the ledger.
+
+22:35.780 --> 22:38.780
+An observable pathology is when the physical universe actually breaks
+
+22:38.780 --> 22:41.240
+like a negative probability of an event happening in a lab.
+
+22:41.880 --> 22:46.560
+Flyxion argues, conclusively, that a ghost is merely a coordinate pathology.
+
+22:46.960 --> 22:50.200
+It is a hidden mathematical direction in the admissibility manifold.
+
+22:50.780 --> 22:52.240
+It does the heavy lifting in the background,
+
+22:52.560 --> 22:54.680
+but it never bleeds into physical reality.
+
+22:54.680 --> 22:59.560
+So the physicists in the 1970s threw away the literal cure for quantum gravity
+
+22:59.560 --> 23:03.460
+because they confused a coordinate glitch for an observable catastrophe.
+
+23:03.860 --> 23:06.340
+They looked at a negative number in the internal ledger
+
+23:06.340 --> 23:09.080
+and assumed the ATM was going to start spitting out antimatter.
+
+23:09.580 --> 23:11.860
+They mistook the map for the territory.
+
+23:12.180 --> 23:14.500
+That is the exact argument this paper is making.
+
+23:15.040 --> 23:17.280
+The ghost was never a threat to reality.
+
+23:17.700 --> 23:19.840
+It was just a feature of the internal math.
+
+23:19.920 --> 23:21.560
+Okay, the math checks out for probabilities.
+
+23:21.760 --> 23:22.560
+We solved the ghost.
+
+23:22.560 --> 23:25.880
+But if I'm tracking the history of physics correctly,
+
+23:26.480 --> 23:29.420
+negative probabilities aren't the only mathematical monster
+
+23:29.420 --> 23:31.280
+hiding in these higher derivative theories.
+
+23:31.840 --> 23:33.880
+Probabilities are just one part of the equation.
+
+23:34.380 --> 23:35.260
+What about energy?
+
+23:35.880 --> 23:39.160
+Because there is an older, much scarier mathematical theorem
+
+23:39.160 --> 23:41.240
+from way back in the 19th century that says
+
+23:41.240 --> 23:44.820
+adding these squared derivatives won't just mess up your probabilities.
+
+23:44.820 --> 23:48.440
+It will literally rip the universe apart with infinite energy.
+
+23:48.440 --> 23:51.560
+Ah, yes, the Ostrogradsky instability.
+
+23:51.880 --> 23:54.440
+It is the great phantom menace of theoretical physics.
+
+23:55.340 --> 24:00.160
+It has been used as a club to beat down higher derivative theories for almost 200 years.
+
+24:00.560 --> 24:01.600
+Let's set the stage here.
+
+24:02.260 --> 24:07.380
+Who was Ostrogradsky and what mathematical curse did he unleash in 1850?
+
+24:07.860 --> 24:10.860
+Mikhail Ostrogradsky was a brilliant Russian mathematician.
+
+24:10.860 --> 24:17.260
+In 1850, he proved a highly robust, mathematically unassailable theorem in classical mechanics.
+
+24:17.720 --> 24:22.880
+He showed that any physical system whose equations rely on irreducible higher-order derivatives,
+
+24:23.120 --> 24:28.260
+meaning derivatives higher than the first order, like acceleration or the quadratic terms
+
+24:28.260 --> 24:33.260
+in Stel's gravity, will inherently possess a Hamiltonian that is unbounded below.
+
+24:33.260 --> 24:34.280
+Okay, let's unpack that.
+
+24:34.380 --> 24:34.960
+The Hamiltonian.
+
+24:35.060 --> 24:40.700
+In physics, the Hamiltonian is essentially the master equation for the total energy of a system, correct?
+
+24:40.980 --> 24:41.380
+Exactly.
+
+24:41.640 --> 24:42.920
+It represents the total energy.
+
+24:43.260 --> 24:48.060
+In a normal, healthy, physical system, the Hamiltonian has a floor, a ground state.
+
+24:48.140 --> 24:51.660
+The energy can't go to low zero or at least below some minimum value.
+
+24:52.060 --> 24:54.780
+But Ostrogradsky proved that if your equations have higher derivatives,
+
+24:55.100 --> 24:58.740
+the momentum of the system becomes linearly dependent on those higher derivatives.
+
+24:58.740 --> 25:03.220
+And because it's a linear dependence, you can push the energy arbitrarily far into the negative.
+
+25:03.360 --> 25:04.380
+There is no bottom floor.
+
+25:04.580 --> 25:06.320
+The Hamiltonian is unbounded below.
+
+25:06.880 --> 25:09.600
+It can plunge infinitely toward negative infinity.
+
+25:09.820 --> 25:14.480
+And what is the actual physical consequence of an energy state with no bottom floor?
+
+25:14.680 --> 25:15.940
+Well, in isolation, nothing.
+
+25:16.500 --> 25:17.960
+But the universe isn't isolated.
+
+25:18.440 --> 25:19.220
+Things interact.
+
+25:19.760 --> 25:22.100
+The standard physics interpretation is catastrophic.
+
+25:22.800 --> 25:27.280
+If you take a normal system, say, standard electromagnetic fields with positive energy,
+
+25:27.280 --> 25:31.420
+and you couple it to an Ostrogradsky system like higher derivative gravity,
+
+25:32.060 --> 25:34.500
+you get a runaway infinite energy exchange.
+
+25:34.700 --> 25:35.320
+Like a cascade.
+
+25:35.500 --> 25:36.760
+A catastrophic cascade.
+
+25:37.020 --> 25:37.200
+Yeah.
+
+25:37.280 --> 25:39.860
+Because the Ostrogradsky system has no bottom floor,
+
+25:40.080 --> 25:42.540
+it can drop infinitely downward into negative energy.
+
+25:42.780 --> 25:47.140
+And because of the strict conservation of total energy for every unit of negative energy it drops,
+
+25:47.500 --> 25:51.060
+it pumps a unit of positive infinite energy into the normal system.
+
+25:51.420 --> 25:54.340
+The higher derivative system plunges to negative infinity,
+
+25:54.340 --> 25:56.640
+the normal system shoots up to positive infinity,
+
+25:56.920 --> 26:02.000
+and the universe instantly vaporizes in a runaway explosion of infinite heat and radiation.
+
+26:02.380 --> 26:03.760
+Well, I mean, I don't know about you,
+
+26:03.800 --> 26:08.800
+but I feel like I would have noticed if the universe had vaporized in a cascade of infinite energy.
+
+26:09.240 --> 26:11.580
+That definitely sounds like an observable pathology.
+
+26:11.940 --> 26:16.360
+You can't just sweep infinite explosive energy under the rug with a clever probability trick.
+
+26:16.360 --> 26:22.600
+So how on earth does Flyxion's framework survive 170-year-old mathematical proof
+
+26:22.600 --> 26:25.040
+that their theory should instantly destroy the universe?
+
+26:25.560 --> 26:32.400
+You survive it by applying the exact same coordinate versus observable lens that we just used for the ghosts.
+
+26:32.680 --> 26:39.120
+You have to look at what Ostrogradsky actually proved versus what physicists merely assumed he proved.
+
+26:39.760 --> 26:43.100
+Flyxion explains this through a concept he calls the trajectory shift.
+
+26:43.280 --> 26:44.780
+What's the trajectory shift?
+
+26:44.780 --> 26:48.900
+You see, Ostrogradsky made a mathematical claim about the phase space of the system.
+
+26:49.580 --> 26:52.980
+Phase space is the vast, multidimensional mathematical arena
+
+26:52.980 --> 26:56.200
+of all potentially possible states a system could occupy,
+
+26:56.580 --> 26:58.340
+regardless of the actual laws of motion.
+
+26:58.880 --> 27:02.100
+But observable physics isn't about the whole phase space.
+
+27:02.460 --> 27:06.260
+It is about the actual histories or trajectories that the dynamics generate over time,
+
+27:06.580 --> 27:08.220
+based on actual initial conditions.
+
+27:08.380 --> 27:10.800
+I'm going to need a strong analogy to visualize this.
+
+27:10.800 --> 27:14.080
+I'm thinking about a roller coaster.
+
+27:14.280 --> 27:18.940
+Let's say Ostrogradsky is a hyper-pedantic safety inspector
+
+27:18.940 --> 27:23.880
+looking at a mathematical blueprint of a completely wild new roller coaster.
+
+27:24.000 --> 27:24.680
+Okay, I'm waiting.
+
+27:24.740 --> 27:27.120
+And he points the equations of the blueprint and says,
+
+27:27.600 --> 27:29.320
+look, according to this math,
+
+27:29.400 --> 27:33.200
+the track technically extends infinitely down into the bedrock of the earth.
+
+27:33.200 --> 27:35.320
+It's an unbounded phase space.
+
+27:35.840 --> 27:39.420
+The cart has the mathematical potential to plunge to the center of the planet.
+
+27:39.640 --> 27:44.060
+But as the person actually strapped into the cart riding the roller coaster,
+
+27:44.200 --> 27:47.320
+I'm sitting there saying it doesn't matter where the theoretical blueprint could go.
+
+27:47.660 --> 27:51.040
+The actual physical cart is locked onto a specific dynamic loop.
+
+27:51.420 --> 27:55.500
+The laws of momentum and the track design strictly dictate its trajectory.
+
+27:55.500 --> 27:58.560
+It never actually accesses those downward infinite tracks.
+
+27:58.720 --> 27:59.960
+Is that the trajectory shift?
+
+27:59.960 --> 28:02.680
+That is a phenomenal, perfect analogy.
+
+28:03.460 --> 28:07.260
+The person riding the coaster represents the physical observable trajectory.
+
+28:07.900 --> 28:11.680
+Ostrogradsky is panicking about the empty mathematically possible space
+
+28:11.680 --> 28:14.140
+beneath the tracks that the cart never actually reaches.
+
+28:15.040 --> 28:18.080
+The phase space has a runaway direction mathematically,
+
+28:18.560 --> 28:21.720
+but the actual dynamic trajectory is completely stable.
+
+28:21.900 --> 28:22.960
+An analogy is great,
+
+28:23.100 --> 28:27.020
+but do we have proof that physical systems actually behave this way?
+
+28:27.020 --> 28:31.300
+That they can have an unbounded phase space, but a perfectly stable trajectory.
+
+28:31.580 --> 28:32.300
+You absolutely do.
+
+28:32.560 --> 28:36.940
+The paper highlights a classic physics model called the Pius-Ullenbeck oscillator.
+
+28:37.660 --> 28:41.700
+It was formulated in 1950 specifically to study this exact problem.
+
+28:42.420 --> 28:46.360
+It's a theoretical model of a particle governed by a fourth-order differential equation.
+
+28:46.960 --> 28:48.120
+Because it has higher derivatives,
+
+28:48.560 --> 28:51.660
+its Hamiltonian is strictly mathematically unbounded below,
+
+28:52.060 --> 28:53.600
+exactly as Ostrogradsky warned.
+
+28:54.040 --> 28:55.500
+According to the naive interpretation,
+
+28:55.500 --> 28:56.880
+it should just explode.
+
+28:57.000 --> 28:57.520
+But it doesn't.
+
+28:57.660 --> 28:58.460
+It doesn't.
+
+28:58.560 --> 29:02.620
+When you actually sit down and calculate the physical motion of the Pius-Ullenbeck oscillator,
+
+29:03.160 --> 29:04.600
+when you map the trajectory,
+
+29:05.520 --> 29:08.640
+the fourth-order equation beautifully decomposes
+
+29:08.640 --> 29:13.420
+into two coupled, standard, second-order harmonic oscillators.
+
+29:13.560 --> 29:14.160
+Meaning what?
+
+29:14.420 --> 29:17.540
+It literally just becomes two pendulums swinging back and forth.
+
+29:17.540 --> 29:23.000
+Its actual physical motion is perfectly bounded, periodic, and eternally stable.
+
+29:23.600 --> 29:24.740
+It never explodes.
+
+29:24.740 --> 29:30.160
+The runaway infinite energy directions undeniably exist in the mathematical phase space,
+
+29:30.280 --> 29:30.680
+the blueprint.
+
+29:31.320 --> 29:33.740
+But the physical trajectory never, ever goes there.
+
+29:33.980 --> 29:39.120
+So you're saying a 19th century mathematician proved a theorem that terrified physicists for a
+
+29:39.120 --> 29:42.140
+century and a half, and it turns out it's mathematically true,
+
+29:42.260 --> 29:45.040
+but totally physically irrelevant to the actual outcome.
+
+29:45.280 --> 29:48.460
+It is a property of the state space, not a property of the history.
+
+29:48.460 --> 29:53.920
+And Neil Turok, when applying this to quadratic gravity, made an even more brilliant observation.
+
+29:54.700 --> 29:57.920
+Physicists have been terrified of gravity having a negative energy instability.
+
+29:58.640 --> 30:01.000
+But gravity already has negative energy.
+
+30:01.140 --> 30:02.900
+It's a fundamental feature of general relativity.
+
+30:03.100 --> 30:04.740
+Wait, gravity has negative energy?
+
+30:04.740 --> 30:10.080
+Yes, the gravitational potential energy of any bound system, like the Earth orbiting the
+
+30:10.080 --> 30:11.680
+Sun, is negative.
+
+30:12.460 --> 30:17.220
+You have to add positive energy to the Earth like a massive rocket booster to break it out
+
+30:17.220 --> 30:18.400
+of the negative gravity well.
+
+30:18.520 --> 30:21.700
+Okay, so negative energy isn't new, but what about the runaway cascade?
+
+30:21.900 --> 30:22.820
+That's the scary part.
+
+30:22.820 --> 30:25.060
+Look at the observable universe right now.
+
+30:25.420 --> 30:30.640
+Observations confirmed in the late 1990s that our universe is undergoing exponential accelerating
+
+30:30.640 --> 30:31.220
+expansion.
+
+30:32.060 --> 30:32.760
+Dark energy.
+
+30:33.540 --> 30:38.420
+Out of context, if you just handed a mathematician the equations for exponential expansion, it
+
+30:38.420 --> 30:40.820
+looks exactly like an Ostrogrodsky runaway instability.
+
+30:41.140 --> 30:42.200
+Wait, hang on a second.
+
+30:42.360 --> 30:46.420
+The expansion of our universe looks mathematically identical to an Ostrogrodsky instability.
+
+30:46.820 --> 30:47.180
+Yes.
+
+30:47.720 --> 30:52.800
+If you look at the scale factor of the universe growing exponentially, the coordinate spaces
+
+30:52.800 --> 30:53.940
+is racing toward infinity.
+
+30:54.860 --> 30:59.340
+Turok points out that it sounds awfully like a catastrophic instability, but look out the
+
+30:59.340 --> 30:59.580
+window.
+
+31:00.180 --> 31:03.840
+It is demonstrably a perfectly stable cosmological solution.
+
+31:04.620 --> 31:07.960
+The universe isn't exploding in a cascade of localized infinite heat.
+
+31:08.240 --> 31:09.740
+It is just expanding smoothly.
+
+31:10.500 --> 31:16.160
+When Turok and Bateman analyzed their four-derivative quadratic gravity theory, they found that the Ostrogrodsky
+
+31:16.160 --> 31:21.880
+runaway direction in the extended phase space corresponds precisely to normal, perfectly stable
+
+31:21.880 --> 31:23.820
+exponential cosmological expansion.
+
+31:23.820 --> 31:24.940
+That is incredible.
+
+31:25.200 --> 31:29.480
+So the terrifying mathematical instability that has been the boogeyman of quantum gravity
+
+31:29.480 --> 31:32.640
+since the 1850s is just, well, it's just the universe expanding.
+
+31:32.760 --> 31:33.180
+Exactly.
+
+31:33.700 --> 31:36.140
+The instability is not an observable pathology.
+
+31:36.640 --> 31:41.560
+It is simply a coordinate description of ordinary cosmological behavior in the admissibility
+
+31:41.560 --> 31:42.000
+manifold.
+
+31:42.580 --> 31:45.700
+The blueprint looks scary, but the rollercoaster ride is perfectly smooth.
+
+31:45.700 --> 31:49.940
+Okay, if this is true, it forces a massive philosophical pivot.
+
+31:50.940 --> 31:55.560
+If negative probabilities, ghosts, and infinite runaway energies can all be safely hidden away
+
+31:55.560 --> 32:00.980
+as mathematical shadows in the internal ledger, it forces us to rethink the very mechanism
+
+32:00.980 --> 32:02.860
+that casts those shadows in the first place.
+
+32:03.280 --> 32:08.680
+If we are only seeing the positive, bounded, stable output, what is the filter?
+
+32:09.060 --> 32:13.000
+What is the ATM machine actually doing to the math before we observe it?
+
+32:13.000 --> 32:17.100
+Which brings us to arguably the most paradigm-shifting section of Flyxion's paper.
+
+32:17.600 --> 32:20.920
+We have to talk about how quantum probability itself is generated.
+
+32:21.320 --> 32:24.820
+We have to talk about the squaring trick and the true nature of the Bourne rule.
+
+32:24.980 --> 32:26.360
+Yes, section four of the outline.
+
+32:26.620 --> 32:30.160
+This is the part of the paper that really blew my mind because it attacks a concept I thought
+
+32:30.160 --> 32:32.260
+was a completely foundational axiom of nature.
+
+32:32.800 --> 32:34.060
+Let's talk about the Bourne rule.
+
+32:34.320 --> 32:36.960
+What is it and how have physicists traditionally viewed it?
+
+32:36.960 --> 32:42.520
+The Bourne rule is the fundamental bridge between the bizarre abstract math of quantum mechanics
+
+32:42.520 --> 32:44.240
+and the tangible real world.
+
+32:44.880 --> 32:50.340
+In quantum math, a system is described by a wave function which assigns a probability amplitude
+
+32:50.340 --> 32:52.160
+to every possible outcome.
+
+32:52.520 --> 32:54.400
+But these amplitudes are not normal numbers.
+
+32:54.540 --> 32:55.600
+They are complex numbers.
+
+32:56.020 --> 33:00.220
+They have a real part and an imaginary part involving e, the square root of negative one.
+
+33:00.300 --> 33:01.640
+You can't observe an imaginary number.
+
+33:02.160 --> 33:04.560
+So in 1926, Max Bourne proposed a rule.
+
+33:04.940 --> 33:08.880
+To find the actual observable probability of an event happening in the physical world,
+
+33:08.880 --> 33:13.320
+you take that complex quantum amplitude and you square its absolute value.
+
+33:13.480 --> 33:13.960
+It's modulus.
+
+33:14.320 --> 33:18.180
+The result is a normal positive real number between zero and one, a probability.
+
+33:18.640 --> 33:23.880
+And for a century, physicists have treated that rule squaring the amplitude as an irreducible
+
+33:23.880 --> 33:25.960
+fundamental law of nature.
+
+33:26.260 --> 33:28.040
+It's just what the universe does.
+
+33:28.700 --> 33:31.300
+But Flyxion's paper argues it is not fundamental.
+
+33:31.580 --> 33:36.280
+It argues the Bourne rule is a derived quantity, a coarse graining theorem.
+
+33:36.280 --> 33:37.200
+It's a filter.
+
+33:38.000 --> 33:38.960
+Okay, let's break this down.
+
+33:39.280 --> 33:43.100
+The paper introduces Tristan Needham's geometric view of complex numbers.
+
+33:43.600 --> 33:48.420
+Now, I always learned in high school math that an imaginary number, it was just a mathematical
+
+33:48.420 --> 33:52.420
+trick, a placeholder, because you can't actually take the square root of a negative number.
+
+33:52.800 --> 33:55.380
+But Needham says it's not just a quantity, it's an action.
+
+33:55.800 --> 33:56.360
+What does that mean?
+
+33:56.900 --> 34:00.920
+Tristan Needham wrote a seminal, beautiful book called Visual Complex Analysis.
+
+34:01.240 --> 34:03.920
+His core argument is that we teach complex numbers terribly.
+
+34:03.920 --> 34:07.540
+A complex number is not just a point on a two-dimensional graph.
+
+34:07.660 --> 34:08.580
+It is an operation.
+
+34:09.000 --> 34:10.640
+It's an active geometric command.
+
+34:10.860 --> 34:14.860
+When you multiply something by a complex number, you are doing two things simultaneously.
+
+34:15.380 --> 34:20.000
+You are scaling its magnitude stretching or shrinking it, and you are rotating it by
+
+34:20.000 --> 34:21.580
+a specific angle of phase.
+
+34:21.740 --> 34:23.900
+So the imaginary unit isn't just a fake number.
+
+34:24.300 --> 34:24.540
+No.
+
+34:24.980 --> 34:30.900
+The imaginary unit I is literally a geometric command to execute a quarter turn, a 90-degree
+
+34:30.900 --> 34:32.640
+rotation in the mathematical space.
+
+34:33.280 --> 34:35.760
+A complex number is a packet of instructions.
+
+34:36.480 --> 34:39.720
+Stretch the vector by this much, and rotate it by this angle.
+
+34:39.720 --> 34:45.600
+Okay, so the quantum state inside the admissibility manifold is full of these complex numbers, meaning
+
+34:45.600 --> 34:49.520
+it's full of dynamic geometric constructions, phases, rotations, twistings.
+
+34:50.240 --> 34:53.900
+What happens when you apply the Born rule to that geometry?
+
+34:53.900 --> 34:57.540
+What actually happens when you mathematically take the modulus squared?
+
+34:58.120 --> 35:01.760
+Mathematically, when you take the modulus squared of a complex number, you are extracting
+
+35:01.760 --> 35:06.380
+the length of the vector, squaring it, and crucially, you are entirely discarding the
+
+35:06.380 --> 35:06.660
+angle.
+
+35:06.820 --> 35:09.280
+You are completely throwing away the rotation, the phase.
+
+35:09.380 --> 35:12.020
+You are literally deleting geometric data from the unit.
+
+35:12.040 --> 35:13.220
+You are deleting the geometry.
+
+35:13.920 --> 35:16.140
+The Born rule is not a fundamental act of creation.
+
+35:16.560 --> 35:19.020
+It is an operation of discarding geometric information.
+
+35:19.020 --> 35:24.200
+This connects to a deeply rigorous framework developed by Harvard physicist Jacob Brandes
+
+35:24.200 --> 35:28.880
+called the RSVP framework and the mathematics of in the stochastic matrices.
+
+35:29.400 --> 35:31.120
+Let's dig into the RSVP framework.
+
+35:31.440 --> 35:32.440
+What is coarse graining?
+
+35:32.680 --> 35:37.940
+Without getting bogged down in the impenetrable equations, coarse graining is a concept from statistical
+
+35:37.940 --> 35:38.480
+mechanics.
+
+35:39.260 --> 35:40.660
+Think about a box of gas.
+
+35:41.100 --> 35:46.860
+You could mathematically track the exact position and velocity of all 10 trillion individual gas
+
+35:46.860 --> 35:47.880
+molecules inside.
+
+35:47.880 --> 35:49.460
+That's the fine-grained view.
+
+35:50.040 --> 35:53.560
+Or you could just measure the average temperature and pressure of the box.
+
+35:53.920 --> 35:55.520
+That is the coarse-grained view.
+
+35:56.080 --> 36:01.620
+You throw away the specific data of every single molecule and you integrate over them
+
+36:01.620 --> 36:03.980
+to get a simplified observable macro state.
+
+36:04.140 --> 36:05.060
+You just blur your eyes.
+
+36:05.120 --> 36:05.720
+You blur your eyes.
+
+36:05.800 --> 36:05.960
+Yeah.
+
+36:06.320 --> 36:11.160
+Brandes proved mathematically that quantum probability operates the exact same way.
+
+36:11.800 --> 36:14.520
+Probability isn't a fundamental building block of reality.
+
+36:15.200 --> 36:16.780
+Probability is an emergent property.
+
+36:16.780 --> 36:22.000
+It is what is left over after you integrate out or coarse-grained, the unobserved internal
+
+36:22.000 --> 36:23.440
+degrees of freedom of the universe.
+
+36:23.880 --> 36:27.620
+The Born rule is just the mathematical equivalent of blurring your eyes.
+
+36:27.820 --> 36:28.260
+Wow.
+
+36:28.260 --> 36:34.280
+So the universe has all this incredibly complex internal geometric data, the phases, rotations,
+
+36:34.280 --> 36:36.520
+and twistings in the admissibility manifold.
+
+36:36.520 --> 36:41.860
+And the Born rule, the act of squaring, is just the projection operator denoted by the Greek
+
+36:41.860 --> 36:46.900
+letter pi in the paper mapping that massive internal manifold down to our limited observable
+
+36:46.900 --> 36:47.340
+manifold.
+
+36:47.820 --> 36:52.940
+The Born rule is literally just the universe throwing away the internal geometric data so
+
+36:52.940 --> 36:55.300
+that we can comprehend it as a simple probability.
+
+36:55.300 --> 36:58.140
+That is exactly what the math implies.
+
+36:58.640 --> 37:03.140
+And when you apply this to our Crean space from earlier, the space with the ghosts, it solves
+
+37:03.140 --> 37:04.080
+the puzzle perfectly.
+
+37:04.740 --> 37:08.800
+The ghosts in the Crean space are associated with hyperbolic rotations in the geometry.
+
+37:09.520 --> 37:13.920
+When you apply the projection operator pi, the squaring operation of the Born rule structurally
+
+37:13.920 --> 37:16.200
+throws away those specific hyperbolic rotations.
+
+37:16.200 --> 37:20.300
+The ghosts are literally just geometric rotations that get discarded in the projection.
+
+37:20.840 --> 37:21.620
+They are squared away.
+
+37:21.840 --> 37:26.380
+I have a deep philosophical question about this then, because this is honestly unsettling.
+
+37:27.100 --> 37:32.040
+If the Born rule isn't fundamental, if it's just a coarse graining, a throwing away of
+
+37:32.040 --> 37:36.160
+data, does that mean quantum mechanics as we experience it is an illusion?
+
+37:36.800 --> 37:41.980
+Is the randomness of quantum mechanics just an artifact of our inability to see the full
+
+37:41.980 --> 37:43.120
+geometry of the universe?
+
+37:43.120 --> 37:47.780
+This raises a profoundly important question, and Flyxion leans heavily into it.
+
+37:48.440 --> 37:51.940
+It suggests that quantum probabilities are, essentially, shadows.
+
+37:52.560 --> 37:53.900
+Let's go back to Plato's cave.
+
+37:54.580 --> 38:00.140
+In the larger internal space, the admissibility manifold, the universe might be entirely deterministic,
+
+38:00.300 --> 38:04.460
+entirely governed by smooth, complex geometric flows without any randomness at all.
+
+38:04.500 --> 38:05.540
+But we can't see it.
+
+38:05.680 --> 38:05.900
+Right.
+
+38:06.220 --> 38:10.800
+Because we humans and our physical measuring instruments only exist in the observable manifold.
+
+38:10.800 --> 38:12.240
+You're fundamentally restricted.
+
+38:12.240 --> 38:16.580
+We only perceive the flattened, squared, un-shorcastic probabilities.
+
+38:17.380 --> 38:19.120
+We see the blurry shadow on the cave wall.
+
+38:19.500 --> 38:23.740
+And because we can't predict exactly where the shadow will move next, we invent quantum
+
+38:23.740 --> 38:24.180
+uncertainty.
+
+38:24.520 --> 38:30.360
+But the object casting the shadow is a perfectly definite, highly complex geometric structure.
+
+38:30.360 --> 38:34.180
+We are literally living in the shadow of the admissibility manifold.
+
+38:34.820 --> 38:39.860
+We are mistaking the blurry limitation of our vision for a fundamental law of physics.
+
+38:40.320 --> 38:45.540
+And if we are fundamentally misunderstanding how quantum probability works, if we've mistaken
+
+38:45.540 --> 38:49.880
+the shadow for the object, then we might be completely wrong about our ultimate theories
+
+38:49.880 --> 38:50.500
+of everything.
+
+38:50.500 --> 38:54.920
+Which brings us directly to the implications for the biggest theoretical game in town for
+
+38:54.920 --> 38:55.860
+the last 50 years.
+
+38:55.860 --> 38:58.840
+Yes, the consequences for string theory.
+
+38:58.840 --> 39:02.220
+Let's explore Flyxion's derived interface conjecture.
+
+39:02.740 --> 39:07.640
+If quantum mechanics and general relativity are just shadows, what are they shadows of?
+
+39:07.720 --> 39:08.960
+What is an interface theory?
+
+39:09.380 --> 39:14.240
+The conjecture states that observable space-time theories are not fundamental descriptions of
+
+39:14.240 --> 39:14.680
+reality.
+
+39:14.680 --> 39:17.980
+They are effective interfaces generated by projection.
+
+39:18.580 --> 39:19.820
+Think of a computer interface.
+
+39:20.260 --> 39:23.340
+When you use your laptop, you click on a folder icon on your desktop.
+
+39:23.840 --> 39:25.380
+That folder icon isn't real.
+
+39:25.740 --> 39:32.600
+The actual reality of the computer is billions of microscopic silicon transistors firing electrical
+
+39:32.600 --> 39:34.540
+voltages on and off inside the CPU.
+
+39:35.440 --> 39:39.380
+But you couldn't possibly comprehend or interact with a billion voltages a second.
+
+39:39.380 --> 39:45.360
+So the operating system projects a simplified, coarse-grained interface, a desktop, that allows
+
+39:45.360 --> 39:47.780
+you to interact with the underlying system efficiently.
+
+39:48.380 --> 39:52.820
+So you're saying Einstein's general relativity, the crowning achievement of 20th century physics,
+
+39:53.100 --> 39:54.960
+is just the desktop icon?
+
+39:55.520 --> 39:56.760
+In this framework, yes.
+
+39:57.440 --> 39:59.320
+General relativity is the first-order interface.
+
+39:59.700 --> 40:02.460
+It's the simplest, lowest-resolution description of the projection.
+
+40:03.200 --> 40:07.340
+Quadratic gravity-stellars theory with the extra-squared terms is the second-order interface.
+
+40:07.340 --> 40:10.500
+It's a slightly higher-resolution look at the underlying code.
+
+40:10.920 --> 40:15.200
+And spacetime curvature itself, the bending of space that we feel is gravity, is not a
+
+40:15.200 --> 40:15.940
+fundamental field.
+
+40:16.360 --> 40:20.040
+It is just the shadow of the projection pi feeling to be perfectly flat.
+
+40:20.780 --> 40:25.240
+Curvature is the physical manifestation of the geometric obstruction between the complex
+
+40:25.240 --> 40:28.560
+internal manifold and our limited observable reality.
+
+40:28.840 --> 40:33.460
+Okay, if this interface theory is true, what does this mean for string theory?
+
+40:33.460 --> 40:39.160
+Because physicists have spent half a century telling the public that to unite quantum mechanics
+
+40:39.160 --> 40:45.780
+and gravity, we must abandon point particles, embrace tiny vibrating strings, and accept that
+
+40:45.780 --> 40:52.420
+the universe secretly has 10, or maybe 26, spatial dimensions that are curled up so small
+
+40:52.420 --> 40:53.260
+we can't see them.
+
+40:53.260 --> 40:57.720
+This is where Turok's critique becomes utterly devastating to the orthodoxy.
+
+40:58.440 --> 41:01.860
+Why did string theory need 10 or 26 dimensions in the first place?
+
+41:02.180 --> 41:04.600
+Have you ever wondered why they picked those specific numbers?
+
+41:04.840 --> 41:09.040
+I mean, I always assumed it was just where the math naturally led them to solve gravity.
+
+41:09.220 --> 41:11.720
+It was where the math led them, because of the Hilbert assumption.
+
+41:12.260 --> 41:16.240
+When string theorists in the 70s and 80s tried to quantize the relativistic string,
+
+41:16.620 --> 41:20.140
+they found that mathematical anomalies, specifically the conformal anomaly,
+
+41:20.140 --> 41:23.440
+kept generating negative norm states, ghosts.
+
+41:24.160 --> 41:28.060
+The internal mathematical space was naturally trying to be a Kreen space.
+
+41:28.200 --> 41:28.820
+Oh, wow.
+
+41:28.920 --> 41:29.180
+Right.
+
+41:29.480 --> 41:34.080
+But because the physicists were philosophically terrified of negative probabilities,
+
+41:34.600 --> 41:37.680
+they demanded a mathematical trick to kill the ghosts.
+
+41:38.180 --> 41:43.060
+They discovered that if you artificially force the universe to have exactly 26 dimensions
+
+41:43.060 --> 41:47.180
+for bosonic strings, or exactly 10 dimensions if you add supersymmetry,
+
+41:47.180 --> 41:53.180
+the math perfectly cancels the conformal anomaly and completely deletes the negative norm states.
+
+41:53.320 --> 41:53.840
+Wait, wait, wait.
+
+41:54.140 --> 41:55.560
+Let me get this absolutely straight.
+
+41:55.800 --> 41:59.940
+Are you telling me we spent 50 years looking for 11 dimensions because we simply refused
+
+41:59.940 --> 42:02.140
+to let our math have negative numbers in the internal ledger?
+
+42:02.280 --> 42:08.280
+We built a massive, untestable theoretical multiverse just to satisfy a philosophical accounting preference.
+
+42:08.700 --> 42:10.720
+That is exactly what this paper is alleging.
+
+42:10.720 --> 42:15.840
+The entire foundational necessity of string theory was built on the absolute demand
+
+42:15.840 --> 42:18.560
+to maintain a stripped Hilbert space internally.
+
+42:19.260 --> 42:23.680
+If you drop the Hilbert assumption, if you allow the internal ledger to be a Kreen space
+
+42:23.680 --> 42:26.840
+and trust the projection operator to balance the books at the ATM,
+
+42:27.280 --> 42:29.740
+the necessity for extra dimensions simply vanishes.
+
+42:30.580 --> 42:34.200
+You no longer need 10 dimensions to make quantum gravity mathematically consistent.
+
+42:34.640 --> 42:37.220
+Quadratic gravity, acting as an interface theory,
+
+42:37.220 --> 42:40.340
+can do it in our standard observable four dimensions.
+
+42:40.960 --> 42:41.440
+But how?
+
+42:41.720 --> 42:45.560
+The whole point of string theory was to smear out the point-like nature of particles
+
+42:45.560 --> 42:49.860
+to stop the high-energy interactions from becoming infinitely strong at the Planck scale.
+
+42:50.260 --> 42:55.080
+How does quadratic gravity actually work in four dimensions without breaking down when you zoom in?
+
+42:55.380 --> 42:57.760
+Because of a property called asymptotic freedom.
+
+42:58.420 --> 43:00.540
+This is a well-understood phenomenon in physics.
+
+43:01.200 --> 43:03.480
+It behaves very much like the strong nuclear force,
+
+43:03.660 --> 43:05.400
+quantum chromodynamics, or QCD.
+
+43:05.400 --> 43:10.840
+In QCD, quarks are bound tightly together at low energies inside protons.
+
+43:11.260 --> 43:13.540
+If you try to pull them apart, the force gets stronger.
+
+43:14.160 --> 43:16.600
+But if you smash them together at ultra-high energies,
+
+43:16.880 --> 43:18.420
+the interaction actually gets weaker.
+
+43:18.860 --> 43:19.760
+The force shuts down.
+
+43:20.220 --> 43:21.740
+The particles act as if they are free.
+
+43:22.240 --> 43:25.240
+This is asymptotic freedom, and it won a Nobel Prize.
+
+43:25.400 --> 43:26.900
+Okay, and gravity does this.
+
+43:27.200 --> 43:30.300
+A mathematician named Avramidi proved in the 1980s
+
+43:30.300 --> 43:33.020
+that quadratic gravity has this exact same property.
+
+43:33.020 --> 43:35.740
+At everyday energies, gravity is attractive.
+
+43:36.340 --> 43:39.240
+But at ultra-high energies, as you approach the Planck scale,
+
+43:39.660 --> 43:42.120
+the realm of the Big Bang or the center of a black hole,
+
+43:42.600 --> 43:44.440
+the gravitational interactions fade away.
+
+43:45.000 --> 43:47.220
+The theory becomes arbitrarily weakly coupled.
+
+43:47.760 --> 43:51.740
+It becomes UV-complete, meaning mathematically safe at the highest possible energies,
+
+43:52.120 --> 43:53.180
+in just four dimensions.
+
+43:53.720 --> 43:56.120
+It doesn't need strings to smear out the infinities,
+
+43:56.120 --> 43:58.480
+because the force itself dynamically shuts down.
+
+43:58.900 --> 43:59.640
+That is staggering.
+
+44:00.080 --> 44:04.300
+It solves gravity using math we already know works for the strong nuclear force.
+
+44:04.940 --> 44:08.180
+And does this framework solve any other big problems in the standard model?
+
+44:08.480 --> 44:10.360
+What about the mass of the Higgs boson?
+
+44:10.580 --> 44:13.860
+One of the biggest mysteries right now is the hierarchy problem.
+
+44:14.240 --> 44:18.420
+The fact that the Higgs is billions of times lighter than the math suggests it should be.
+
+44:18.420 --> 44:24.160
+Yes. The hierarchy problem is why physicists invented the idea of a multiverse,
+
+44:24.640 --> 44:27.440
+suggesting our universe is just a random, fine-tuned bubble.
+
+44:27.580 --> 44:27.800
+Yeah.
+
+44:28.120 --> 44:31.600
+But quadratic gravity addresses the Higgs mass naturally
+
+44:31.600 --> 44:34.420
+through a mechanism called dimensional transmutation.
+
+44:34.740 --> 44:36.600
+Okay, explain dimensional transmutation.
+
+44:36.800 --> 44:38.740
+How do you just generate mass out of thin air?
+
+44:38.960 --> 44:40.800
+In an asymptotically free theory,
+
+44:41.200 --> 44:43.860
+you start with a force that has no inherent mass scale.
+
+44:44.460 --> 44:47.320
+The coupling constant is dimensionless at the Planck energy.
+
+44:47.320 --> 44:50.320
+But as the universe cools and energy drops,
+
+44:50.760 --> 44:54.440
+the quantum interactions cause that coupling strength to change to run.
+
+44:55.060 --> 44:56.640
+Eventually, at a much lower energy,
+
+44:56.920 --> 44:58.680
+the interaction becomes strongly coupled
+
+44:58.680 --> 45:02.320
+and essentially freezes out, generating a physical mass scale.
+
+45:02.440 --> 45:05.980
+This is exactly how the mass of the proton is generated in QCD.
+
+45:06.440 --> 45:08.180
+The mass comes from the binding energy.
+
+45:08.920 --> 45:11.380
+Quadratic gravity does the exact same thing.
+
+45:11.920 --> 45:15.220
+A weakly coupled interaction at the incredibly high Planck scale
+
+45:15.220 --> 45:18.680
+will dynamically generate a strongly coupled mass scale
+
+45:18.680 --> 45:20.160
+exponentially lower down.
+
+45:20.640 --> 45:24.080
+If the Higgs boson is a composite particle in this framework,
+
+45:24.480 --> 45:27.800
+its mass is naturally set by this dynamically generated scale,
+
+45:28.300 --> 45:29.720
+entirely without fine-tuning.
+
+45:30.100 --> 45:32.660
+It elegantly explains why the weak nuclear force
+
+45:32.660 --> 45:34.280
+is so much weaker than gravity.
+
+45:34.280 --> 45:36.760
+Okay, I have to step in here and play the heavy skeptic
+
+45:36.760 --> 45:38.940
+because this sounds way too good to be true.
+
+45:39.340 --> 45:41.420
+You're telling me we drop one single assumption
+
+45:41.420 --> 45:42.740
+about positive inner products
+
+45:42.740 --> 45:44.460
+and suddenly we don't need 11 dimensions,
+
+45:44.760 --> 45:46.780
+we solve quantum gravity in four dimensions,
+
+45:47.240 --> 45:48.660
+we explain asymptotic freedom,
+
+45:48.880 --> 45:50.660
+and we solve the Higgs hierarchy problem.
+
+45:51.320 --> 45:52.060
+As a journalist,
+
+45:52.260 --> 45:54.340
+whenever a theorist presents a perfect solution
+
+45:54.340 --> 45:55.960
+that overturns 50 years of work,
+
+45:56.300 --> 45:58.360
+my immediate instinct is to look for the catch.
+
+45:58.540 --> 45:59.060
+As you should.
+
+45:59.060 --> 46:02.000
+How do we know this new ghost parody firewall idea
+
+46:02.000 --> 46:03.940
+isn't just another mathematical fiction?
+
+46:04.640 --> 46:06.500
+How do we know Flyxion and Turok
+
+46:06.500 --> 46:08.760
+aren't just inventing a new math trick
+
+46:08.760 --> 46:10.840
+that is equally disconnected from reality
+
+46:10.840 --> 46:12.460
+as a 10-dimensional string?
+
+46:12.640 --> 46:14.940
+That is the critical essential question.
+
+46:15.560 --> 46:16.640
+And to Flyxion's credit,
+
+46:17.140 --> 46:19.780
+the paper is very upfront about falsifiability.
+
+46:20.500 --> 46:23.500
+The derived interface conjecture must be testable.
+
+46:23.780 --> 46:25.600
+It cannot be a just-so story.
+
+46:26.120 --> 46:27.680
+Right now, Turok and Bateman
+
+46:27.680 --> 46:28.880
+have rigorously proven
+
+46:28.880 --> 46:30.680
+that this ghost parody symmetry
+
+46:30.680 --> 46:32.740
+perfectly cancels the ghosts
+
+46:32.740 --> 46:35.680
+in what is called the scalar conformal sector.
+
+46:36.000 --> 46:36.620
+Let me guess.
+
+46:36.740 --> 46:38.060
+The scalar conformal sector
+
+46:38.060 --> 46:40.440
+is a highly simplified mathematical sandbox
+
+46:40.440 --> 46:42.280
+that doesn't fully represent
+
+46:42.280 --> 46:43.900
+the messy reality of the universe.
+
+46:44.060 --> 46:44.540
+You note it.
+
+46:45.060 --> 46:46.900
+It is essentially a simplified toy model.
+
+46:47.500 --> 46:48.820
+It represents the part of gravity
+
+46:48.820 --> 46:50.340
+that deals with conformal stretching,
+
+46:50.340 --> 46:52.080
+but it entirely ignores
+
+46:52.080 --> 46:54.400
+the complex tensor twistings of space-time.
+
+46:55.140 --> 46:55.880
+In the toy model,
+
+46:56.120 --> 46:57.420
+the firewall holds perfectly.
+
+46:57.680 --> 46:58.980
+The ghost never escapes.
+
+46:59.100 --> 47:00.980
+But the real universe isn't a toy model.
+
+47:01.200 --> 47:02.400
+What happens when you apply it
+
+47:02.400 --> 47:03.940
+to the full complexity of gravity?
+
+47:04.300 --> 47:07.180
+That is the multi-million dollar open question
+
+47:07.180 --> 47:08.760
+in theoretical physics right now.
+
+47:09.180 --> 47:10.560
+The unproven frontier
+
+47:10.560 --> 47:12.880
+is whether this exact ghost parody symmetry
+
+47:12.880 --> 47:16.020
+holds true for the full spin-two tensor theory
+
+47:16.020 --> 47:17.080
+of quadratic gravity.
+
+47:17.640 --> 47:20.460
+The math for that is excruciatingly complex,
+
+47:20.460 --> 47:22.480
+and no one has completely solved it yet.
+
+47:23.060 --> 47:25.800
+If physicists run the math on the full spin-two tensor
+
+47:25.800 --> 47:27.300
+and they find that the positive
+
+47:27.300 --> 47:28.600
+and negative sectors mix,
+
+47:29.040 --> 47:30.940
+if the firewall fails under the pressure
+
+47:30.940 --> 47:32.240
+of full space-time curvature,
+
+47:32.680 --> 47:34.660
+then the ghost bleeds through the interface
+
+47:34.660 --> 47:36.180
+into the observable universe.
+
+47:37.040 --> 47:39.420
+Negative probabilities appear in real calculations,
+
+47:39.860 --> 47:40.860
+the universe explodes,
+
+47:40.980 --> 47:42.940
+and this entire theory dies instantly.
+
+47:42.940 --> 47:44.100
+Oh, I love that.
+
+47:44.220 --> 47:45.580
+I actually deeply respect that.
+
+47:45.660 --> 47:46.700
+It is highly testable.
+
+47:47.020 --> 47:48.600
+It's not hiding in another dimension
+
+47:48.600 --> 47:49.840
+where we can never build a collider
+
+47:49.840 --> 47:50.780
+big enough to see it.
+
+47:50.860 --> 47:52.100
+It's right there in the math
+
+47:52.100 --> 47:53.180
+waiting to be solved.
+
+47:53.400 --> 47:54.580
+If the symmetry breaks,
+
+47:54.860 --> 47:55.820
+the theory is dead.
+
+47:56.080 --> 47:56.520
+Exactly.
+
+47:56.920 --> 47:58.820
+It makes a definitive mathematical prediction
+
+47:58.820 --> 48:00.460
+that can be unequivocally proven
+
+48:00.460 --> 48:02.040
+or disproven by calculation
+
+48:02.040 --> 48:03.040
+in the coming years.
+
+48:03.420 --> 48:04.900
+But assuming the math holds up,
+
+48:05.100 --> 48:06.040
+and given the pedigree
+
+48:06.040 --> 48:07.580
+of the physicists working on this,
+
+48:07.680 --> 48:09.100
+there is a strong chance it does,
+
+48:09.100 --> 48:12.460
+the payoff for exploring this route is immense.
+
+48:12.840 --> 48:14.540
+Because if we look at the appendices
+
+48:14.540 --> 48:15.560
+of Flyxion's paper,
+
+48:16.100 --> 48:17.240
+they detail what happens
+
+48:17.240 --> 48:19.260
+when you apply these ideas backward in time
+
+48:19.260 --> 48:21.080
+to the origin of the universe itself.
+
+48:21.400 --> 48:22.680
+And it seems to solve
+
+48:22.680 --> 48:24.060
+almost every major mystery
+
+48:24.060 --> 48:26.360
+in modern cosmology in one fell swoop.
+
+48:26.480 --> 48:26.700
+Yes.
+
+48:27.180 --> 48:28.840
+The appendices outline the current state
+
+48:28.840 --> 48:30.740
+of the Boyle and Turok research program,
+
+48:31.200 --> 48:32.540
+and the cosmological payoff
+
+48:32.540 --> 48:34.120
+is truly elegant.
+
+48:34.520 --> 48:35.480
+It is a masterpiece
+
+48:35.480 --> 48:36.660
+of theoretical deduction.
+
+48:36.800 --> 48:37.680
+Let's dive into that.
+
+48:37.680 --> 48:40.280
+Let's unpack the Boyle and Turok program for us.
+
+48:40.500 --> 48:41.960
+The paper talks about something called
+
+48:41.960 --> 48:43.900
+a dimension zero scalar field.
+
+48:44.040 --> 48:44.600
+What is that?
+
+48:44.880 --> 48:45.960
+In quantum field theory,
+
+48:46.240 --> 48:47.980
+fields usually have a mass dimension,
+
+48:48.520 --> 48:50.180
+which dictates how they scale
+
+48:50.180 --> 48:51.600
+when you stretch or shrink
+
+48:51.600 --> 48:52.960
+the geometry of space-time.
+
+48:53.600 --> 48:55.080
+An ordinary scalar field,
+
+48:55.220 --> 48:56.340
+like the Higgs-Boson field,
+
+48:56.560 --> 48:58.040
+has a mass dimension of one.
+
+48:58.600 --> 49:00.500
+It transforms in a specific way
+
+49:00.500 --> 49:01.800
+under Weill rescalings,
+
+49:02.140 --> 49:03.780
+which is mathematical jargon
+
+49:03.780 --> 49:05.520
+for changing the local scale of distance.
+
+49:06.420 --> 49:07.300
+Boyle and Turok
+
+49:07.300 --> 49:09.320
+introduced a new mathematical object.
+
+49:10.060 --> 49:11.980
+Dimension zero scalar fields.
+
+49:12.420 --> 49:14.220
+These are fields whose mathematical action
+
+49:14.220 --> 49:16.100
+is based on a fourth-order operator.
+
+49:16.540 --> 49:18.540
+This means they are higher derivative theories,
+
+49:18.760 --> 49:20.040
+just like quadratic gravity,
+
+49:20.420 --> 49:22.160
+but because of their unique structure,
+
+49:22.520 --> 49:23.980
+their mass dimension is zero.
+
+49:24.380 --> 49:24.620
+Meaning?
+
+49:25.020 --> 49:26.680
+The crucial physical feature of this
+
+49:26.680 --> 49:28.100
+is that they do not transform
+
+49:28.100 --> 49:29.260
+under Weill rescalings.
+
+49:29.580 --> 49:30.680
+They are perfectly immune
+
+49:30.680 --> 49:32.440
+to the stretching of space-time geometry.
+
+49:32.440 --> 49:33.960
+And because they are higher derivative,
+
+49:34.180 --> 49:35.780
+I assume they also come with a ledger
+
+49:35.780 --> 49:37.440
+full of negative norm ghosts.
+
+49:37.440 --> 49:38.680
+They absolutely do.
+
+49:38.780 --> 49:40.480
+They are plagued by coordinate ghosts.
+
+49:41.040 --> 49:42.080
+But they also possess
+
+49:42.080 --> 49:44.860
+a massive, infinite-dimensional gauge symmetry
+
+49:44.860 --> 49:47.580
+that allows you to mathematically shift the field
+
+49:47.580 --> 49:49.280
+by any harmonic function.
+
+49:49.900 --> 49:52.120
+When you rigorously account for this symmetry,
+
+49:52.540 --> 49:53.500
+you find that the theory
+
+49:53.500 --> 49:55.720
+has no local degrees of freedom at all.
+
+49:56.460 --> 49:58.040
+The projection operator pi
+
+49:58.040 --> 50:00.760
+maps the entire complex admissibility manifold
+
+50:00.760 --> 50:03.640
+down to a single, unique physical state
+
+50:03.640 --> 50:05.140
+in the observable manifold,
+
+50:05.140 --> 50:06.260
+the vacuum.
+
+50:06.780 --> 50:08.980
+So the entire chaotic internal field of ghosts
+
+50:08.980 --> 50:10.600
+perfectly cancels itself out
+
+50:10.600 --> 50:12.360
+to leave behind absolute nothingness,
+
+50:12.480 --> 50:13.720
+a perfectly stable vacuum.
+
+50:14.360 --> 50:15.660
+Why introduce them at all
+
+50:15.660 --> 50:16.420
+if they just vanish?
+
+50:16.520 --> 50:17.900
+What problem do they actually solve
+
+50:17.900 --> 50:18.420
+in the background?
+
+50:18.640 --> 50:20.020
+They solve the Weill anomaly.
+
+50:20.660 --> 50:21.960
+When you take the standard model
+
+50:21.960 --> 50:22.980
+of particle physics,
+
+50:23.220 --> 50:24.680
+quarks, electrons, photons,
+
+50:24.940 --> 50:26.060
+and you put them in a
+
+50:26.060 --> 50:27.500
+curved space-time background,
+
+50:27.780 --> 50:29.560
+like a galaxy or the expanding universe,
+
+50:29.960 --> 50:31.820
+the quantum fluctuations of those particles
+
+50:31.820 --> 50:32.640
+produce an anomaly.
+
+50:33.280 --> 50:34.920
+Specifically, the trace of the stress
+
+50:34.920 --> 50:36.680
+energy tensor no longer equals zero.
+
+50:37.200 --> 50:38.500
+This breaks conformal symmetry,
+
+50:38.720 --> 50:40.000
+which is a mathematical disaster
+
+50:40.000 --> 50:41.620
+for theories that rely on scale
+
+50:41.620 --> 50:42.920
+and variance at the Big Bang.
+
+50:43.340 --> 50:44.540
+And how did physicists try
+
+50:44.540 --> 50:45.840
+to fix this anomaly before?
+
+50:46.380 --> 50:47.920
+Historically, physicists thought
+
+50:47.920 --> 50:49.460
+the only way to cancel this anomaly
+
+50:49.460 --> 50:51.320
+was to invent supersymmetry.
+
+50:52.000 --> 50:53.940
+They theorized a whole suite
+
+50:53.940 --> 50:55.900
+of undiscovered mirror particles,
+
+50:56.600 --> 50:58.680
+selectrons, squarks, neutrolinos,
+
+50:59.080 --> 51:00.260
+whose quantum fluctuations
+
+51:00.260 --> 51:01.720
+would perfectly cancel out
+
+51:01.720 --> 51:03.380
+the standard model fluctuations.
+
+51:03.380 --> 51:05.040
+Which is very convenient,
+
+51:05.200 --> 51:06.720
+since the Large Hadron Collider
+
+51:06.720 --> 51:07.980
+has spent over a decade
+
+51:07.980 --> 51:09.220
+and billions of dollars
+
+51:09.220 --> 51:10.700
+smashing protons together
+
+51:10.700 --> 51:12.040
+looking for supersymmetry
+
+51:12.040 --> 51:14.100
+and hasn't found a single shred
+
+51:14.100 --> 51:15.320
+of evidence that it actually
+
+51:15.320 --> 51:16.160
+exists in nature.
+
+51:16.580 --> 51:17.140
+Precisely.
+
+51:17.740 --> 51:19.060
+Supersymmetry is a ghost town
+
+51:19.060 --> 51:19.560
+of colliders.
+
+51:20.220 --> 51:21.440
+But Boyle and Turok
+
+51:21.440 --> 51:22.340
+showed mathematically
+
+51:22.340 --> 51:23.880
+that you don't need millions
+
+51:23.880 --> 51:24.940
+of undiscovered
+
+51:24.940 --> 51:25.980
+supersymmetric particles.
+
+51:26.620 --> 51:28.220
+These strange, invisible
+
+51:28.220 --> 51:29.680
+dimension zero scalars
+
+51:29.680 --> 51:30.640
+contribute negatively
+
+51:30.640 --> 51:31.800
+to the anomaly coefficients.
+
+51:32.600 --> 51:33.540
+They act as the perfect
+
+51:33.540 --> 51:34.600
+mathematical counterweight.
+
+51:35.000 --> 51:35.940
+They perfectly cancel
+
+51:35.940 --> 51:36.740
+the Boyle anomaly
+
+51:36.740 --> 51:37.640
+without needing
+
+51:37.640 --> 51:39.160
+a single new physical particle.
+
+51:39.400 --> 51:40.700
+Okay, that is clever math.
+
+51:40.780 --> 51:41.760
+But here's where
+
+51:41.760 --> 51:42.660
+I'm going to push back again
+
+51:42.660 --> 51:43.460
+because the paper makes
+
+51:43.460 --> 51:44.560
+a jaw-dropping claim
+
+51:44.560 --> 51:46.360
+about predicting the exact number
+
+51:46.360 --> 51:47.560
+of particles in the universe.
+
+51:48.060 --> 51:49.400
+It says the math demands
+
+51:49.400 --> 51:50.900
+exactly three generations
+
+51:50.900 --> 51:52.600
+of standard model fermions.
+
+51:52.740 --> 51:53.280
+So an electron,
+
+51:53.540 --> 51:54.600
+a muon, and a tau.
+
+51:54.880 --> 51:56.220
+That's three generations.
+
+51:56.220 --> 51:58.740
+And we happen to actually have
+
+51:58.740 --> 52:00.040
+exactly three generations
+
+52:00.040 --> 52:01.340
+of matter in reality.
+
+52:02.080 --> 52:03.620
+But whenever a theoretical physicist
+
+52:03.620 --> 52:04.820
+tells me their new model
+
+52:04.820 --> 52:05.820
+perfectly predicts
+
+52:05.820 --> 52:06.960
+a number we already knew,
+
+52:07.140 --> 52:08.360
+I immediately get suspicious.
+
+52:08.840 --> 52:10.060
+That's called post-addiction.
+
+52:10.940 --> 52:11.960
+Did Boyle and Turok
+
+52:11.960 --> 52:13.460
+just manually tune the dials
+
+52:13.460 --> 52:14.700
+of their dimension zero fields
+
+52:14.700 --> 52:16.260
+until the math magically spit out
+
+52:16.260 --> 52:17.280
+48 fermions
+
+52:17.280 --> 52:18.500
+just to match the textbook?
+
+52:18.760 --> 52:20.060
+That is the standard,
+
+52:20.400 --> 52:21.160
+highly warranted
+
+52:21.160 --> 52:22.160
+skeptical response.
+
+52:22.800 --> 52:23.660
+But here's why
+
+52:23.660 --> 52:24.560
+this is so profound.
+
+52:24.560 --> 52:26.780
+There are no dials to tune.
+
+52:27.420 --> 52:29.140
+In order for the dimension zero scalars
+
+52:29.140 --> 52:29.860
+to leave behind
+
+52:29.860 --> 52:31.160
+a perfectly stable vacuum,
+
+52:31.640 --> 52:32.700
+their gauge symmetries
+
+52:32.700 --> 52:34.300
+must be mathematically exact.
+
+52:34.980 --> 52:35.980
+And for the vacuum energy
+
+52:35.980 --> 52:37.040
+and the whale anomaly
+
+52:37.040 --> 52:38.720
+to perfectly cancel out to zero
+
+52:38.720 --> 52:39.960
+at the origin of the universe,
+
+52:40.440 --> 52:41.700
+the topological requirements
+
+52:41.700 --> 52:42.340
+of the mathematics
+
+52:42.340 --> 52:43.560
+are incredibly rigid.
+
+52:44.000 --> 52:45.260
+The coefficients of the anomaly
+
+52:45.260 --> 52:46.160
+are determined strictly
+
+52:46.160 --> 52:46.820
+by the spin
+
+52:46.820 --> 52:48.320
+and number of the fields involved.
+
+52:48.800 --> 52:50.220
+It is an algebraic lock.
+
+52:50.960 --> 52:52.040
+When you set the equations
+
+52:52.040 --> 52:54.260
+to demand total anomaly cancellation,
+
+52:54.560 --> 52:56.020
+the algebra spits out
+
+52:56.020 --> 52:56.880
+a strict requirement.
+
+52:57.400 --> 52:58.340
+The universe must contain
+
+52:58.340 --> 52:59.660
+exactly three generations
+
+52:59.660 --> 53:01.260
+of standard model fermions.
+
+53:01.540 --> 53:02.340
+Meaning if there were
+
+53:02.340 --> 53:03.320
+four generations
+
+53:03.320 --> 53:04.440
+or two generations,
+
+53:04.760 --> 53:05.960
+the anomaly wouldn't cancel,
+
+53:06.180 --> 53:07.260
+the interface would fail,
+
+53:07.380 --> 53:08.600
+and the universe wouldn't exist.
+
+53:08.860 --> 53:09.360
+It's exactly.
+
+53:09.580 --> 53:10.100
+For decades,
+
+53:10.200 --> 53:10.960
+the standard model
+
+53:10.960 --> 53:12.460
+has had these three generations
+
+53:12.460 --> 53:14.600
+making 48 fermions in total.
+
+53:15.260 --> 53:17.520
+And physicists have agonizingly wondered
+
+53:17.520 --> 53:18.300
+why there are three.
+
+53:18.800 --> 53:20.020
+Who ordered the muon?
+
+53:20.460 --> 53:21.240
+Why does the matter
+
+53:21.240 --> 53:22.400
+repeat itself three times
+
+53:22.400 --> 53:23.320
+and then abruptly stop?
+
+53:23.720 --> 53:24.520
+In the standard model,
+
+53:24.640 --> 53:26.460
+it's just an arbitrary parameter,
+
+53:26.740 --> 53:27.280
+an accident.
+
+53:27.840 --> 53:29.320
+But in the Boyle-Torok model,
+
+53:29.800 --> 53:30.580
+it isn't arbitrary.
+
+53:31.180 --> 53:32.760
+The theory genuinely predicts
+
+53:32.760 --> 53:33.800
+the structure of matter
+
+53:33.800 --> 53:35.020
+because anything else
+
+53:35.020 --> 53:35.940
+would fail to cancel
+
+53:35.940 --> 53:37.340
+the gravitational anomalies
+
+53:37.340 --> 53:38.720
+of the invisibility manifold.
+
+53:39.180 --> 53:39.580
+That is...
+
+53:39.580 --> 53:39.880
+Wow.
+
+53:40.060 --> 53:40.940
+I concede the point.
+
+53:41.140 --> 53:42.080
+That isn't dial tuning.
+
+53:42.240 --> 53:43.080
+That is discovering
+
+53:43.080 --> 53:44.000
+structural architecture.
+
+53:44.440 --> 53:45.060
+It's like finding
+
+53:45.060 --> 53:46.500
+a mysterious gear in a clock
+
+53:46.500 --> 53:47.760
+and then discovering that
+
+53:47.760 --> 53:49.760
+if that gear had one fewer tooth,
+
+53:49.760 --> 53:51.200
+the whole clock would shatter.
+
+53:51.440 --> 53:53.280
+It predicts the exact structure of matter,
+
+53:53.380 --> 53:54.340
+but it goes even further, right?
+
+53:54.700 --> 53:56.340
+Let's talk about the Big Bang itself.
+
+53:56.700 --> 53:57.620
+The paper discusses
+
+53:57.620 --> 53:59.100
+the CPT symmetric universe.
+
+53:59.220 --> 54:00.260
+What does CPT mean?
+
+54:00.580 --> 54:02.000
+CPT is an acronym
+
+54:02.000 --> 54:03.180
+for charge conjugation,
+
+54:03.700 --> 54:04.300
+parity inversion,
+
+54:04.480 --> 54:05.080
+and time reversal.
+
+54:05.500 --> 54:07.140
+It is the most fundamental symmetry
+
+54:07.140 --> 54:08.580
+in all of quantum mechanics.
+
+54:09.380 --> 54:10.560
+Charge conjugation swaps
+
+54:10.560 --> 54:11.760
+matter with antimatter.
+
+54:12.360 --> 54:14.140
+Parity inversion flips left and right
+
+54:14.140 --> 54:14.720
+like a mirror.
+
+54:15.400 --> 54:16.280
+Time reversal runs
+
+54:16.280 --> 54:17.000
+the clock backward.
+
+54:17.620 --> 54:19.040
+The CPT theorem dictates
+
+54:19.040 --> 54:20.540
+that if you take any physical system,
+
+54:21.020 --> 54:21.720
+flip its charge,
+
+54:21.960 --> 54:22.700
+flip it in a mirror,
+
+54:22.800 --> 54:23.860
+or run it backward in time,
+
+54:24.060 --> 54:24.740
+it must obey
+
+54:24.740 --> 54:26.400
+the exact same laws of physics.
+
+54:26.740 --> 54:27.020
+Okay.
+
+54:27.280 --> 54:28.060
+But what does that have to do
+
+54:28.060 --> 54:28.740
+with the Big Bang?
+
+54:29.040 --> 54:30.200
+In standard cosmology,
+
+54:30.560 --> 54:32.280
+the Big Bang is a singularity,
+
+54:32.500 --> 54:33.300
+an edge of time
+
+54:33.300 --> 54:35.020
+where physics completely breaks down.
+
+54:35.600 --> 54:37.160
+And standard cosmology assumes
+
+54:37.160 --> 54:38.340
+that the universe spontaneously
+
+54:38.340 --> 54:39.520
+violated symmetries
+
+54:39.520 --> 54:40.180
+as it expanded.
+
+54:40.880 --> 54:42.360
+But physicists Latham Boyle,
+
+54:42.700 --> 54:43.320
+Karen Finn,
+
+54:43.320 --> 54:44.400
+and Neil Turok
+
+54:44.400 --> 54:46.320
+proposed a radical alternative.
+
+54:47.000 --> 54:47.780
+What if the universe
+
+54:47.780 --> 54:49.360
+does not spontaneously violate
+
+54:49.360 --> 54:50.460
+CPT of the Big Bang?
+
+54:50.840 --> 54:51.520
+What if the universe
+
+54:51.520 --> 54:52.520
+after the Big Bang
+
+54:52.520 --> 54:54.240
+is the exact mathematical
+
+54:54.240 --> 54:55.540
+CPT mirror image
+
+54:55.540 --> 54:56.120
+of a universe
+
+54:56.120 --> 54:57.080
+before the Big Bang?
+
+54:57.200 --> 54:57.600
+So,
+
+54:58.120 --> 54:59.320
+if time is flowing forward
+
+54:59.320 --> 55:00.200
+for us right now,
+
+55:00.680 --> 55:01.640
+expanding out of
+
+55:01.640 --> 55:02.960
+the Big Bang singularity,
+
+55:03.300 --> 55:03.880
+you are saying
+
+55:03.880 --> 55:05.180
+there is a mirror universe
+
+55:05.180 --> 55:06.560
+on the other side
+
+55:06.560 --> 55:07.400
+of the singularity
+
+55:07.400 --> 55:08.940
+where time is flowing backward,
+
+55:09.220 --> 55:09.940
+expanding away
+
+55:09.940 --> 55:12.180
+in the opposite temporal direction,
+
+55:12.180 --> 55:14.160
+like a reflection in a pond.
+
+55:14.160 --> 55:14.660
+Yes,
+
+55:14.860 --> 55:15.820
+an anti-universe
+
+55:15.820 --> 55:17.440
+emerging from the exact
+
+55:17.440 --> 55:18.940
+same conformal singularity.
+
+55:19.320 --> 55:19.880
+It's an elegant,
+
+55:20.220 --> 55:21.440
+perfectly symmetric geometry.
+
+55:22.100 --> 55:23.180
+But this isn't just
+
+55:23.180 --> 55:23.960
+science fiction
+
+55:23.960 --> 55:25.040
+or philosophical poetry.
+
+55:25.600 --> 55:26.680
+Demanding this perfect
+
+55:26.680 --> 55:27.840
+CPT symmetry
+
+55:27.840 --> 55:28.880
+across the Big Bang
+
+55:28.880 --> 55:30.640
+has incredibly rigorous
+
+55:30.640 --> 55:31.780
+mathematical consequences
+
+55:31.780 --> 55:32.880
+for our side of the mirror.
+
+55:33.140 --> 55:34.740
+By enforcing this symmetry,
+
+55:35.080 --> 55:36.360
+you drastically restrict
+
+55:36.360 --> 55:37.760
+the possible boundary conditions
+
+55:37.760 --> 55:38.460
+of the universe.
+
+55:38.840 --> 55:39.940
+It naturally selects
+
+55:39.940 --> 55:40.400
+a unique,
+
+55:40.580 --> 55:41.880
+preferred vacuum state.
+
+55:41.880 --> 55:43.180
+And when you calculate
+
+55:43.180 --> 55:44.060
+the thermodynamics
+
+55:44.060 --> 55:45.560
+of that specific vacuum state
+
+55:45.560 --> 55:46.340
+expanding outward,
+
+55:46.900 --> 55:48.280
+the math naturally produces
+
+55:48.280 --> 55:50.060
+a stable right-handed neutrino.
+
+55:50.220 --> 55:51.200
+A right-handed neutrino.
+
+55:51.280 --> 55:51.940
+I know neutrinos
+
+55:51.940 --> 55:52.740
+are the ghost particles
+
+55:52.740 --> 55:53.540
+of the standard model.
+
+55:53.640 --> 55:54.400
+They barely interact
+
+55:54.400 --> 55:54.880
+with anything.
+
+55:55.140 --> 55:55.800
+What is special
+
+55:55.800 --> 55:56.760
+about a right-handed one?
+
+55:57.000 --> 55:57.740
+All neutrinos
+
+55:57.740 --> 55:58.560
+we have ever observed
+
+55:58.560 --> 55:59.920
+in nature are left-handed,
+
+56:00.420 --> 56:01.840
+referring to their quantum spin
+
+56:01.840 --> 56:02.980
+relative to their momentum.
+
+56:03.540 --> 56:04.440
+But the math
+
+56:04.440 --> 56:05.360
+of the standard model
+
+56:05.360 --> 56:06.560
+strongly implies
+
+56:06.560 --> 56:08.340
+that right-handed mirror versions
+
+56:08.340 --> 56:09.120
+should exist.
+
+56:09.920 --> 56:11.320
+They just haven't been seen
+
+56:11.320 --> 56:12.600
+because they only interact
+
+56:12.600 --> 56:13.180
+via gravity.
+
+56:13.320 --> 56:13.820
+They don't feel
+
+56:13.820 --> 56:15.140
+the weak nuclear force.
+
+56:16.000 --> 56:17.960
+In this CPT-symmetric model,
+
+56:18.480 --> 56:19.680
+the Big Bang pumps out
+
+56:19.680 --> 56:20.840
+a massive population
+
+56:20.840 --> 56:22.180
+of these right-handed neutrinos.
+
+56:22.340 --> 56:23.160
+And what happens to them?
+
+56:23.360 --> 56:24.100
+They just sit there.
+
+56:24.440 --> 56:25.500
+Because they only interact
+
+56:25.500 --> 56:26.220
+via gravity,
+
+56:26.340 --> 56:27.500
+they're incredibly stable.
+
+56:28.060 --> 56:29.220
+And when Boyle and Turok
+
+56:29.220 --> 56:31.000
+calculated the precise density
+
+56:31.000 --> 56:32.480
+of these right-handed neutrinos
+
+56:32.480 --> 56:33.660
+produced by the Big Bang
+
+56:33.660 --> 56:35.500
+in this CPT-symmetric model,
+
+56:35.980 --> 56:37.040
+they found something astonishing.
+
+56:37.900 --> 56:38.840
+If you assume
+
+56:38.840 --> 56:40.320
+one of these right-handed neutrinos
+
+56:40.320 --> 56:40.860
+is stable,
+
+56:41.320 --> 56:42.220
+the math requires it
+
+56:42.220 --> 56:42.940
+to have a mass
+
+56:42.940 --> 56:46.280
+of approximately 4.8 times 10 to the 8th g.
+
+56:46.980 --> 56:48.200
+And when you plug that mass
+
+56:48.200 --> 56:49.540
+into the density equations
+
+56:49.540 --> 56:50.680
+of the universe...
+
+56:50.680 --> 56:51.260
+Let me guess.
+
+56:51.540 --> 56:52.560
+It perfectly matches
+
+56:52.560 --> 56:53.740
+the observed density
+
+56:53.740 --> 56:54.460
+of dark matter.
+
+56:54.860 --> 56:56.060
+It matches it perfectly.
+
+56:56.860 --> 56:57.620
+Dark matter isn't
+
+56:57.620 --> 56:59.800
+some exotic new fundamental force
+
+56:59.800 --> 57:01.220
+or weakly interacting
+
+57:01.220 --> 57:02.160
+massive particle
+
+57:02.160 --> 57:04.020
+that requires entirely new physics
+
+57:04.020 --> 57:05.320
+or a halo
+
+57:05.320 --> 57:06.840
+of microscopic black holes.
+
+57:06.840 --> 57:08.520
+It is simply a heady
+
+57:08.520 --> 57:09.840
+right-handed neutrino
+
+57:09.840 --> 57:11.260
+that was naturally produced
+
+57:11.260 --> 57:12.680
+by the perfect mirror symmetry
+
+57:12.680 --> 57:13.500
+of the Big Bang.
+
+57:13.500 --> 57:14.900
+You've got to be kidding me.
+
+57:15.060 --> 57:16.220
+We have spent billions
+
+57:16.220 --> 57:17.580
+on underground vats
+
+57:17.580 --> 57:18.520
+of liquid xenon
+
+57:18.520 --> 57:19.500
+trying to detect
+
+57:19.500 --> 57:20.780
+dark matter wimps
+
+57:20.780 --> 57:22.020
+and this theory says
+
+57:22.020 --> 57:23.020
+it's just a neutrino
+
+57:23.020 --> 57:23.880
+falling out of a mirror.
+
+57:24.240 --> 57:25.580
+That is the strict prediction.
+
+57:25.980 --> 57:27.220
+No ad hoc parameters,
+
+57:27.420 --> 57:28.180
+no fine-tuning,
+
+57:28.380 --> 57:29.680
+no invisible dark sectors.
+
+57:29.840 --> 57:31.500
+It just mathematically drops
+
+57:31.500 --> 57:32.720
+out of the thermodynamics
+
+57:32.720 --> 57:34.340
+of a CPT-symmetric universe.
+
+57:35.140 --> 57:35.780
+And furthermore,
+
+57:35.860 --> 57:37.080
+this same exact model
+
+57:37.080 --> 57:38.480
+predicts the precise pattern
+
+57:38.480 --> 57:39.400
+of ripples we see
+
+57:39.400 --> 57:40.240
+in the oldest light
+
+57:40.240 --> 57:40.840
+in the universe,
+
+57:41.260 --> 57:42.560
+the cosmic microwave background.
+
+57:42.560 --> 57:43.180
+How so?
+
+57:43.540 --> 57:44.400
+It predicts what are called
+
+57:44.400 --> 57:45.340
+Harrison-Zeldovich
+
+57:45.340 --> 57:46.200
+scale-invariant
+
+57:46.200 --> 57:47.840
+primordial density perturbations.
+
+57:48.280 --> 57:49.720
+It calculates a specific value
+
+57:49.720 --> 57:50.640
+for the spectral index
+
+57:50.640 --> 57:51.200
+of these ripples
+
+57:51.200 --> 57:53.020
+designated as n-subs.
+
+57:53.440 --> 57:54.080
+The theory predicts
+
+57:54.080 --> 57:54.940
+n-sub-s should be
+
+57:54.940 --> 57:56.320
+roughly 0.958.
+
+57:56.660 --> 57:57.840
+And what does the actual
+
+57:57.840 --> 57:58.660
+observational data
+
+57:58.660 --> 58:00.400
+from our most advanced satellites
+
+58:00.400 --> 58:01.420
+like the Planck satellite
+
+58:01.420 --> 58:03.160
+say the index actually is?
+
+58:03.320 --> 58:04.220
+The Planck data
+
+58:04.220 --> 58:06.240
+measures it at 0.959
+
+58:06.240 --> 58:09.180
+plus or minus 0.006.
+
+58:09.520 --> 58:11.260
+It is a stunningly perfect
+
+58:11.260 --> 58:12.160
+match with the data.
+
+58:12.160 --> 58:14.060
+And here is the coup de grace.
+
+58:14.900 --> 58:16.340
+The CPT-symmetric model
+
+58:16.340 --> 58:17.460
+specifically predicts
+
+58:17.460 --> 58:17.920
+the existence
+
+58:17.920 --> 58:19.260
+of zero primordial
+
+58:19.260 --> 58:20.320
+gravitational waves.
+
+58:20.980 --> 58:22.260
+The tensor-to-scalar ratio
+
+58:22.260 --> 58:22.960
+known as R
+
+58:22.960 --> 58:24.180
+is strictly zero.
+
+58:24.420 --> 58:25.180
+Why does that matter?
+
+58:25.400 --> 58:26.840
+Because it entirely eliminates
+
+58:26.840 --> 58:28.160
+the need for cosmic inflation.
+
+58:28.380 --> 58:29.380
+Cosmic inflation.
+
+58:30.260 --> 58:31.220
+The prevailing theory
+
+58:31.220 --> 58:31.880
+that the universe
+
+58:31.880 --> 58:32.700
+expanded faster
+
+58:32.700 --> 58:33.560
+than the speed of light
+
+58:33.560 --> 58:34.400
+in the first fraction
+
+58:34.400 --> 58:34.900
+of a second
+
+58:34.900 --> 58:36.200
+to smooth everything out
+
+58:36.200 --> 58:37.140
+and seed those ripples.
+
+58:37.600 --> 58:38.520
+This model says
+
+58:38.520 --> 58:39.140
+we don't need
+
+58:39.140 --> 58:40.020
+the most famous
+
+58:40.020 --> 58:41.180
+cosmological theory
+
+58:41.180 --> 58:42.320
+of the last 40 years.
+
+58:42.440 --> 58:43.040
+It says inflation
+
+58:43.040 --> 58:43.780
+is an entirely
+
+58:43.780 --> 58:45.460
+unnecessary ad hoc addition.
+
+58:46.120 --> 58:46.620
+You don't need
+
+58:46.620 --> 58:48.060
+a magical inflightened field
+
+58:48.060 --> 58:49.280
+to smooth out the universe.
+
+58:49.940 --> 58:51.180
+The scale-invariant ripples
+
+58:51.180 --> 58:52.260
+are naturally generated
+
+58:52.260 --> 58:53.540
+by the conformal behavior
+
+58:53.540 --> 58:55.020
+of those dimension zero scalars
+
+58:55.020 --> 58:55.700
+we talked about.
+
+58:56.100 --> 58:57.200
+And the large-scale
+
+58:57.200 --> 58:58.280
+smoothness of the universe
+
+58:58.280 --> 58:59.400
+is just the natural
+
+58:59.400 --> 59:00.740
+thermodynamic outcome
+
+59:00.740 --> 59:02.700
+of the CPT boundary condition
+
+59:02.700 --> 59:03.300
+of the Big Bang.
+
+59:03.600 --> 59:04.300
+Okay, my mind
+
+59:04.300 --> 59:05.160
+is thoroughly blown.
+
+59:05.760 --> 59:06.780
+Let me summarize this.
+
+59:06.780 --> 59:08.940
+By dropping the Hilbert assumption,
+
+59:09.240 --> 59:10.400
+we solve the infinities
+
+59:10.400 --> 59:10.920
+of gravity
+
+59:10.920 --> 59:12.140
+without extra dimensions.
+
+59:12.640 --> 59:14.020
+We explain the exact number
+
+59:14.020 --> 59:15.220
+of particles in my body.
+
+59:15.540 --> 59:16.980
+We explain the nature
+
+59:16.980 --> 59:18.160
+and mass of dark matter.
+
+59:18.660 --> 59:20.360
+And we kill cosmic inflation.
+
+59:20.980 --> 59:21.520
+This seems like
+
+59:21.520 --> 59:22.520
+the most elegant sweep
+
+59:22.520 --> 59:23.580
+of physics in a century.
+
+59:24.220 --> 59:25.380
+But as a journalist,
+
+59:25.600 --> 59:26.960
+I have to step out of the awe
+
+59:26.960 --> 59:28.380
+and ask the critical question.
+
+59:28.800 --> 59:30.060
+Does everyone agree with this?
+
+59:30.420 --> 59:31.480
+Is the physics community
+
+59:31.480 --> 59:32.300
+just packing up
+
+59:32.300 --> 59:33.520
+their string theory bags,
+
+59:33.940 --> 59:34.720
+admitting defeat,
+
+59:34.720 --> 59:35.960
+and crowning this
+
+59:35.960 --> 59:37.340
+the final theory of everything?
+
+59:37.340 --> 59:38.020
+Not at all.
+
+59:38.140 --> 59:38.820
+And it's vital
+
+59:38.820 --> 59:40.640
+we maintain an impartial context here
+
+59:40.640 --> 59:42.260
+because the paper itself
+
+59:42.260 --> 59:43.640
+explicitly includes
+
+59:43.640 --> 59:44.660
+the ongoing debate.
+
+59:45.160 --> 59:46.060
+There is a fierce,
+
+59:46.460 --> 59:47.720
+highly technical pushback
+
+59:47.720 --> 59:48.440
+from the establishment.
+
+59:48.980 --> 59:49.340
+Specifically,
+
+59:49.700 --> 59:50.660
+there's a strong criticism
+
+59:50.660 --> 59:52.060
+from theoretical physicists
+
+59:52.060 --> 59:53.480
+James Klein and Alex Hell,
+
+59:53.920 --> 59:55.200
+published recently in 2025.
+
+59:55.940 --> 59:56.920
+They launched a direct
+
+59:56.920 --> 59:58.000
+mathematical attack
+
+59:58.000 --> 59:58.920
+on the dimension zero
+
+59:58.920 --> 59:59.760
+scalar program.
+
+59:59.960 --> 01:00:01.040
+What is their argument?
+
+01:00:01.240 --> 01:00:02.620
+If the anomaly cancels out,
+
+01:00:02.700 --> 01:00:03.320
+what's the problem?
+
+01:00:03.320 --> 01:00:04.940
+Their argument focuses
+
+01:00:04.940 --> 01:00:06.640
+on the projection operator pi
+
+01:00:06.640 --> 01:00:07.700
+and whether it actually
+
+01:00:07.700 --> 01:00:08.580
+works in reality.
+
+01:00:09.340 --> 01:00:10.360
+They concede that yes,
+
+01:00:10.480 --> 01:00:11.640
+in a perfectly flat
+
+01:00:11.640 --> 01:00:12.960
+mathematical spacetime,
+
+01:00:13.240 --> 01:00:14.140
+a perfect vacuum,
+
+01:00:14.700 --> 01:00:16.640
+the infinite gauge symmetries
+
+01:00:16.640 --> 01:00:18.240
+might successfully project
+
+01:00:18.240 --> 01:00:19.080
+the ghosts away,
+
+01:00:19.500 --> 01:00:21.000
+leaving only the stable state.
+
+01:00:21.720 --> 01:00:23.180
+But Klein and Hell point out
+
+01:00:23.180 --> 01:00:23.840
+that our universe
+
+01:00:23.840 --> 01:00:25.200
+is not a flat vacuum.
+
+01:00:25.740 --> 01:00:27.040
+We live in a curved,
+
+01:00:27.220 --> 01:00:29.060
+expanding spacetime background
+
+01:00:29.060 --> 01:00:30.660
+containing matter and radiation.
+
+01:00:30.660 --> 01:00:32.560
+They ran the complex
+
+01:00:32.560 --> 01:00:33.780
+perturbation calculations
+
+01:00:33.780 --> 01:00:35.500
+for these dimension zero scalars
+
+01:00:35.500 --> 01:00:37.260
+in an actively expanding
+
+01:00:37.260 --> 01:00:38.460
+cosmological background,
+
+01:00:38.820 --> 01:00:40.500
+and they found a massive problem.
+
+01:00:40.580 --> 01:00:41.520
+The ghosts came back.
+
+01:00:41.600 --> 01:00:42.480
+The ghosts came back.
+
+01:00:42.820 --> 01:00:44.280
+They argue that the kinetic term
+
+01:00:44.280 --> 01:00:45.580
+for the scalar perturbations
+
+01:00:45.580 --> 01:00:46.380
+becomes negative
+
+01:00:46.380 --> 01:00:47.440
+at large wave numbers
+
+01:00:47.440 --> 01:00:48.320
+in a curved background.
+
+01:00:49.040 --> 01:00:50.320
+They argue that superluminal
+
+01:00:50.320 --> 01:00:51.780
+faster-than-light ghost modes
+
+01:00:51.780 --> 01:00:53.260
+survive the projection operator.
+
+01:00:53.900 --> 01:00:54.200
+Essentially,
+
+01:00:54.300 --> 01:00:55.140
+they believe that the curvature
+
+01:00:55.140 --> 01:00:56.420
+of spacetime disrupts
+
+01:00:56.420 --> 01:00:56.960
+the firewall.
+
+01:00:56.960 --> 01:00:58.440
+The ghost bleeds
+
+01:00:58.440 --> 01:00:59.640
+through the mathematical interface
+
+01:00:59.640 --> 01:01:00.780
+into physical reality,
+
+01:01:01.180 --> 01:01:01.900
+which they calculate
+
+01:01:01.900 --> 01:01:02.980
+would cause a confining
+
+01:01:02.980 --> 01:01:03.720
+fifth force
+
+01:01:03.720 --> 01:01:04.860
+that wildly contradicts
+
+01:01:04.860 --> 01:01:05.740
+observational data,
+
+01:01:06.220 --> 01:01:07.200
+thereby ruling the theory
+
+01:01:07.200 --> 01:01:07.800
+out completely.
+
+01:01:08.020 --> 01:01:09.180
+So, they are saying
+
+01:01:09.180 --> 01:01:10.200
+the accountant's ledger
+
+01:01:10.200 --> 01:01:11.460
+looks perfectly balanced
+
+01:01:11.460 --> 01:01:12.220
+when the corporation
+
+01:01:12.220 --> 01:01:13.280
+has zero assets
+
+01:01:13.280 --> 01:01:14.200
+and zero sales,
+
+01:01:14.600 --> 01:01:16.020
+but the moment you introduce
+
+01:01:16.020 --> 01:01:17.460
+actual moving money
+
+01:01:17.460 --> 01:01:18.560
+a curved universe,
+
+01:01:19.000 --> 01:01:19.980
+the negative numbers
+
+01:01:19.980 --> 01:01:20.880
+escape the ledger
+
+01:01:20.880 --> 01:01:21.860
+and start printing out
+
+01:01:21.860 --> 01:01:22.340
+of the ATM.
+
+01:01:22.800 --> 01:01:23.360
+Exactly.
+
+01:01:24.100 --> 01:01:25.860
+The debate is fiercely ongoing
+
+01:01:25.860 --> 01:01:26.980
+in the literature right now,
+
+01:01:27.100 --> 01:01:27.760
+and honestly,
+
+01:01:27.940 --> 01:01:29.060
+it perfectly illustrates
+
+01:01:29.060 --> 01:01:30.020
+the central thesis
+
+01:01:30.020 --> 01:01:30.880
+Affliction's paper.
+
+01:01:31.540 --> 01:01:32.980
+The entire fight
+
+01:01:32.980 --> 01:01:34.100
+in theoretical physics
+
+01:01:34.100 --> 01:01:34.620
+right now
+
+01:01:34.620 --> 01:01:35.860
+has been distilled down
+
+01:01:35.860 --> 01:01:37.740
+to a single mathematical battle
+
+01:01:37.740 --> 01:01:39.600
+over the projection operator pi.
+
+01:01:40.080 --> 01:01:40.940
+The fight is over
+
+01:01:40.940 --> 01:01:42.200
+whether pi successfully
+
+01:01:42.200 --> 01:01:42.960
+traps the ghost
+
+01:01:42.960 --> 01:01:44.260
+in the unobservable map
+
+01:01:44.260 --> 01:01:46.000
+or if the spacetime curvature
+
+01:01:46.000 --> 01:01:46.840
+corrupts pi,
+
+01:01:47.380 --> 01:01:48.420
+letting the ghost bleed
+
+01:01:48.420 --> 01:01:49.260
+through the interface
+
+01:01:49.260 --> 01:01:50.360
+into physical reality.
+
+01:01:51.360 --> 01:01:52.160
+Boyle and Turok say
+
+01:01:52.160 --> 01:01:52.980
+the core symmetry
+
+01:01:52.980 --> 01:01:54.360
+is mathematically absolute
+
+01:01:54.360 --> 01:01:55.400
+and traps it permanently.
+
+01:01:55.860 --> 01:01:56.880
+Kline and Hale say
+
+01:01:56.880 --> 01:01:57.720
+the dynamic curvature
+
+01:01:57.720 --> 01:01:58.940
+provides an escape hatch.
+
+01:01:59.400 --> 01:02:00.560
+It is a highly technical,
+
+01:02:00.940 --> 01:02:01.560
+rigorous battle
+
+01:02:01.560 --> 01:02:02.620
+over the exact nature
+
+01:02:02.620 --> 01:02:03.160
+of the boundary
+
+01:02:03.160 --> 01:02:04.460
+between the math and reality.
+
+01:02:04.800 --> 01:02:06.160
+And that brings us back
+
+01:02:06.160 --> 01:02:08.500
+to the ultimate overarching question
+
+01:02:08.500 --> 01:02:09.880
+of why our universe
+
+01:02:09.880 --> 01:02:10.980
+looks the way it does.
+
+01:02:11.660 --> 01:02:12.500
+We are nearing the end
+
+01:02:12.500 --> 01:02:13.040
+of our time,
+
+01:02:13.160 --> 01:02:14.200
+so let's synthesize this
+
+01:02:14.200 --> 01:02:14.720
+for the listener
+
+01:02:14.720 --> 01:02:15.880
+because we've traveled
+
+01:02:15.880 --> 01:02:17.260
+through a staggering amount
+
+01:02:17.260 --> 01:02:18.620
+of conceptual space today.
+
+01:02:18.780 --> 01:02:19.540
+We certainly have.
+
+01:02:19.600 --> 01:02:20.080
+We've gone from
+
+01:02:20.080 --> 01:02:20.900
+accounting ledgers
+
+01:02:20.900 --> 01:02:22.420
+all the way to the Big Bang.
+
+01:02:22.620 --> 01:02:23.720
+Let's retrace the steps.
+
+01:02:23.720 --> 01:02:25.280
+We started by looking
+
+01:02:25.280 --> 01:02:26.100
+at the philosophical
+
+01:02:26.100 --> 01:02:27.240
+ledgers of reality.
+
+01:02:27.940 --> 01:02:29.520
+We explored the Hilbert assumption,
+
+01:02:30.020 --> 01:02:31.040
+the rigid dogma
+
+01:02:31.040 --> 01:02:32.560
+that physicists demanded
+
+01:02:32.560 --> 01:02:34.400
+every internal mathematical state
+
+01:02:34.400 --> 01:02:35.120
+must equate
+
+01:02:35.120 --> 01:02:37.420
+to a positive observable reality.
+
+01:02:37.920 --> 01:02:39.720
+We saw how that single assumption
+
+01:02:39.720 --> 01:02:40.980
+killed K.S. Stel's
+
+01:02:40.980 --> 01:02:41.980
+perfectly good cure
+
+01:02:41.980 --> 01:02:43.380
+for infinite quantum gravity
+
+01:02:43.380 --> 01:02:44.160
+in 1977
+
+01:02:44.160 --> 01:02:46.040
+simply because it contained
+
+01:02:46.040 --> 01:02:47.300
+a coordinate pathology,
+
+01:02:47.500 --> 01:02:47.980
+a ghost.
+
+01:02:47.980 --> 01:02:49.260
+And we traveled
+
+01:02:49.260 --> 01:02:50.100
+through the Creen Space
+
+01:02:50.100 --> 01:02:51.060
+rescue operation,
+
+01:02:51.480 --> 01:02:52.700
+realizing that if you embrace
+
+01:02:52.700 --> 01:02:54.540
+an indefinite inner product space,
+
+01:02:54.680 --> 01:02:55.800
+just like space-time itself,
+
+01:02:56.160 --> 01:02:57.720
+and utilize ghost-parody symmetry,
+
+01:02:58.180 --> 01:02:59.020
+you can trace over
+
+01:02:59.020 --> 01:03:00.720
+both positive and negative states
+
+01:03:00.720 --> 01:03:02.360
+to yield perfectly normal
+
+01:03:02.360 --> 01:03:03.660
+positive probabilities.
+
+01:03:04.000 --> 01:03:04.180
+Yeah.
+
+01:03:04.320 --> 01:03:05.080
+The firewall holds.
+
+01:03:05.480 --> 01:03:06.240
+We then confronted
+
+01:03:06.240 --> 01:03:07.760
+the phantom infinite energies
+
+01:03:07.760 --> 01:03:10.120
+of Ostrogodsky's 1850 theorem.
+
+01:03:10.460 --> 01:03:11.400
+We realized,
+
+01:03:11.560 --> 01:03:12.860
+through the Pess-Ulenbeck oscillator
+
+01:03:12.860 --> 01:03:14.440
+and the trajectory shift,
+
+01:03:14.660 --> 01:03:15.980
+that a runaway direction
+
+01:03:15.980 --> 01:03:17.360
+in a mathematical blueprint,
+
+01:03:17.360 --> 01:03:18.700
+the phase space,
+
+01:03:19.020 --> 01:03:20.040
+doesn't mean the actual
+
+01:03:20.040 --> 01:03:21.240
+physical cart of the universe
+
+01:03:21.240 --> 01:03:21.860
+will explode.
+
+01:03:22.080 --> 01:03:23.020
+The universe's expansion
+
+01:03:23.020 --> 01:03:24.600
+looks like an instability on paper,
+
+01:03:24.820 --> 01:03:26.400
+but it's physically stable.
+
+01:03:26.700 --> 01:03:28.140
+We looked at the profound nature
+
+01:03:28.140 --> 01:03:29.160
+of the Born rule,
+
+01:03:29.540 --> 01:03:30.940
+realizing that quantum probability
+
+01:03:30.940 --> 01:03:31.980
+isn't a fundamental
+
+01:03:31.980 --> 01:03:33.240
+magical law of nature.
+
+01:03:33.620 --> 01:03:34.740
+It's just a coarse graining.
+
+01:03:35.120 --> 01:03:37.240
+It's the RSVP framework in action,
+
+01:03:37.760 --> 01:03:38.640
+a shadow cast
+
+01:03:38.640 --> 01:03:40.140
+when the universe projects downward,
+
+01:03:40.620 --> 01:03:41.500
+discarding internal
+
+01:03:41.500 --> 01:03:43.460
+geometric rotational phase data
+
+01:03:43.460 --> 01:03:44.540
+to leave us with
+
+01:03:44.540 --> 01:03:45.620
+simple probabilities.
+
+01:03:45.620 --> 01:03:46.660
+And finally,
+
+01:03:46.900 --> 01:03:48.080
+we arrived at a beautifully
+
+01:03:48.080 --> 01:03:48.720
+constrained
+
+01:03:48.720 --> 01:03:50.760
+four-dimensional interface theory,
+
+01:03:51.140 --> 01:03:51.960
+a theory that suggests
+
+01:03:51.960 --> 01:03:52.400
+we don't need
+
+01:03:52.400 --> 01:03:53.720
+11-dimensional strings
+
+01:03:53.720 --> 01:03:54.840
+to smear out infinities,
+
+01:03:55.100 --> 01:03:56.160
+but instead relies
+
+01:03:56.160 --> 01:03:57.340
+on asymptotic freedom,
+
+01:03:57.780 --> 01:03:59.000
+a theory that utilizes
+
+01:03:59.000 --> 01:04:00.600
+a perfect mirror-image
+
+01:04:00.600 --> 01:04:02.080
+CPT-symmetric Big Bang
+
+01:04:02.080 --> 01:04:03.060
+to naturally predict
+
+01:04:03.060 --> 01:04:04.600
+the mass of its own dark matter
+
+01:04:04.600 --> 01:04:06.200
+and algebraically dictate
+
+01:04:06.200 --> 01:04:08.320
+the exact 48 matter particles
+
+01:04:08.320 --> 01:04:09.600
+that make up you, me,
+
+01:04:09.720 --> 01:04:10.560
+and everything we see.
+
+01:04:10.840 --> 01:04:12.620
+It is a profound reframing
+
+01:04:12.620 --> 01:04:14.180
+of the entire enterprise of physics.
+
+01:04:14.180 --> 01:04:16.560
+If Flyxion synthesis is correct,
+
+01:04:17.020 --> 01:04:17.920
+physics is no longer
+
+01:04:17.920 --> 01:04:18.960
+the search for the ultimate
+
+01:04:18.960 --> 01:04:19.860
+foundational gear
+
+01:04:19.860 --> 01:04:21.180
+or pulley inside the machine.
+
+01:04:21.740 --> 01:04:22.800
+Physics is the study
+
+01:04:22.800 --> 01:04:23.520
+of the interface.
+
+01:04:23.960 --> 01:04:24.720
+It is the study
+
+01:04:24.720 --> 01:04:25.500
+of the shadows
+
+01:04:25.500 --> 01:04:26.680
+cast by the projection.
+
+01:04:27.060 --> 01:04:28.240
+Which leaves us with
+
+01:04:28.240 --> 01:04:30.000
+a final, incredibly provocative
+
+01:04:30.000 --> 01:04:30.820
+thought from the paper
+
+01:04:30.820 --> 01:04:31.440
+that I want you to
+
+01:04:31.440 --> 01:04:32.520
+really mull over.
+
+01:04:32.960 --> 01:04:33.880
+It's the concept
+
+01:04:33.880 --> 01:04:35.040
+of gravitational entropy.
+
+01:04:35.700 --> 01:04:37.240
+In standard cosmology,
+
+01:04:37.460 --> 01:04:38.620
+we assume our flat,
+
+01:04:38.760 --> 01:04:40.300
+homogenous, isotopic universe
+
+01:04:40.300 --> 01:04:41.960
+is a fine-tuned miracle.
+
+01:04:41.960 --> 01:04:43.880
+It's so perfectly balanced
+
+01:04:43.880 --> 01:04:44.780
+that we had to invent
+
+01:04:44.780 --> 01:04:45.500
+the magical,
+
+01:04:45.740 --> 01:04:46.420
+faster-than-light
+
+01:04:46.420 --> 01:04:47.800
+expanding force of inflation
+
+01:04:47.800 --> 01:04:48.960
+just to explain
+
+01:04:48.960 --> 01:04:49.880
+how it didn't collapse
+
+01:04:49.880 --> 01:04:50.620
+into a black hole
+
+01:04:50.620 --> 01:04:51.740
+or fly apart instantly.
+
+01:04:52.120 --> 01:04:53.320
+We've spent 40 years
+
+01:04:53.320 --> 01:04:54.400
+marveling at how special
+
+01:04:54.400 --> 01:04:55.840
+and unlikely our universe is.
+
+01:04:56.120 --> 01:04:57.140
+But if Flyxion's framework
+
+01:04:57.140 --> 01:04:57.660
+is right,
+
+01:04:57.760 --> 01:04:58.500
+our universe isn't
+
+01:04:58.500 --> 01:04:59.820
+a fine-tuned miracle at all.
+
+01:04:59.960 --> 01:05:00.560
+It isn't.
+
+01:05:00.600 --> 01:05:01.640
+According to the gravitational
+
+01:05:01.640 --> 01:05:02.620
+interim calculations
+
+01:05:02.620 --> 01:05:03.820
+of this interface model,
+
+01:05:04.240 --> 01:05:05.220
+our flat, smooth,
+
+01:05:05.360 --> 01:05:06.100
+expanding universe
+
+01:05:06.100 --> 01:05:07.320
+is simply the most
+
+01:05:07.320 --> 01:05:08.480
+mathematically probable
+
+01:05:08.480 --> 01:05:09.200
+macrostate.
+
+01:05:09.200 --> 01:05:10.460
+When you trace out
+
+01:05:10.460 --> 01:05:11.320
+all the wild,
+
+01:05:11.520 --> 01:05:12.560
+infinite degrees of freedom
+
+01:05:12.560 --> 01:05:13.680
+of the admissibility manifold,
+
+01:05:14.160 --> 01:05:14.820
+the overwhelming
+
+01:05:14.820 --> 01:05:16.180
+thermodynamic likelihood
+
+01:05:16.180 --> 01:05:17.320
+is that the projection
+
+01:05:17.320 --> 01:05:18.260
+will produce exactly
+
+01:05:18.260 --> 01:05:18.820
+the flat,
+
+01:05:19.180 --> 01:05:20.060
+four-dimensional reality
+
+01:05:20.060 --> 01:05:20.620
+we observe.
+
+01:05:21.040 --> 01:05:21.920
+It is the most typical,
+
+01:05:22.200 --> 01:05:23.520
+mathematically boring shadow
+
+01:05:23.520 --> 01:05:25.560
+that the vast internal geometry
+
+01:05:25.560 --> 01:05:26.700
+could possibly cast.
+
+01:05:27.100 --> 01:05:28.180
+So, think back
+
+01:05:28.180 --> 01:05:29.260
+to our x-ray analogy
+
+01:05:29.260 --> 01:05:29.880
+from the beginning
+
+01:05:29.880 --> 01:05:30.400
+of the show.
+
+01:05:30.960 --> 01:05:31.860
+For 100 years,
+
+01:05:32.020 --> 01:05:32.920
+theoretical physicists
+
+01:05:32.920 --> 01:05:34.020
+have been staring
+
+01:05:34.020 --> 01:05:35.220
+at the quantum x-ray.
+
+01:05:35.740 --> 01:05:37.000
+They saw the dark spots,
+
+01:05:37.000 --> 01:05:38.180
+the negative numbers,
+
+01:05:38.340 --> 01:05:39.400
+the massive ghosts,
+
+01:05:39.540 --> 01:05:40.680
+and the runaway energies.
+
+01:05:41.200 --> 01:05:42.440
+And because they demanded
+
+01:05:42.440 --> 01:05:43.360
+that the x-ray look
+
+01:05:43.360 --> 01:05:45.020
+exactly like a normal bone,
+
+01:05:45.400 --> 01:05:46.360
+they assumed the universe
+
+01:05:46.360 --> 01:05:47.620
+was fundamentally shattered,
+
+01:05:47.740 --> 01:05:48.620
+they assumed gravity
+
+01:05:48.620 --> 01:05:49.240
+was broken,
+
+01:05:49.740 --> 01:05:50.580
+so they invented
+
+01:05:50.580 --> 01:05:51.640
+extra dimensions,
+
+01:05:51.920 --> 01:05:52.680
+supersymmetry,
+
+01:05:52.860 --> 01:05:54.240
+and the string theory multiverse
+
+01:05:54.240 --> 01:05:55.600
+just to put a massive,
+
+01:05:55.800 --> 01:05:56.960
+elaborate cast on it.
+
+01:05:57.440 --> 01:05:58.420
+But what if the bone
+
+01:05:58.420 --> 01:05:59.620
+was never broken?
+
+01:06:00.160 --> 01:06:01.500
+What if the x-ray machine
+
+01:06:01.500 --> 01:06:02.980
+itself simply uses
+
+01:06:02.980 --> 01:06:04.080
+a highly complex
+
+01:06:04.080 --> 01:06:05.140
+mathematical film
+
+01:06:05.140 --> 01:06:06.760
+that requires a negative contrast
+
+01:06:06.760 --> 01:06:08.300
+to develop a positive picture?
+
+01:06:08.720 --> 01:06:10.000
+The next time you look up
+
+01:06:10.000 --> 01:06:10.840
+at the night sky,
+
+01:06:11.200 --> 01:06:12.560
+realize you might not be looking
+
+01:06:12.560 --> 01:06:13.720
+at the fundamental machinery
+
+01:06:13.720 --> 01:06:15.000
+of reality at all.
+
+01:06:15.440 --> 01:06:16.220
+You are just looking
+
+01:06:16.220 --> 01:06:17.200
+at the interface.
+
+01:06:17.400 --> 01:06:18.460
+A perfectly projected,
+
+01:06:18.840 --> 01:06:20.580
+mathematically inevitable shadow.
+
+01:06:21.080 --> 01:06:21.680
+Thanks for taking
+
+01:06:21.680 --> 01:06:22.800
+this deep dive with us.
+
+01:06:22.900 --> 01:06:23.840
+Keep questioning the map
+
+01:06:23.840 --> 01:06:24.640
+and we'll see you next time.
+
