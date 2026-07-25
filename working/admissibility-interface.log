@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2026.5.3)  23 JUN 2026 16:00
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2026.7.24)  24 JUL 2026 22:08
  restricted system commands enabled.
 **admissibility-interface.tex
 (./admissibility-interface.tex
@@ -8,8 +8,8 @@ Lua module: luaotfload 2023-08-31 3.26 Lua based OpenType font support
 Lua module: lualibs 2023-07-13 2.76 ConTeXt Lua standard libraries.
 Lua module: lualibs-extended 2023-07-13 2.76 ConTeXt Lua libraries -- extended c
 ollection.
-luaotfload | conf : Root cache directory is "/home/flyxion/.texlive2023/texmf-va
-r/luatex-cache/generic/names".
+luaotfload | conf : Root cache directory is "/home/bonobo/.texlive2023/texmf-var
+/luatex-cache/generic/names".
 luaotfload | init : Loading fontloader "fontloader-2023-08-19.lua" from kpse-res
 olved path "/usr/share/texlive/texmf-dist/tex/luatex/luaotfload/fontloader-2023-
 08-19.lua".
@@ -20,8 +20,8 @@ Inserting `luaotfload.node_processor' in `hpack_filter'.
 Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
 Inserting `luaotfload.define_font' in `define_font'.
 Lua-only attribute luaotfload_color_attribute = 2
-luaotfload | conf : Root cache directory is "/home/flyxion/.texlive2023/texmf-va
-r/luatex-cache/generic/names".
+luaotfload | conf : Root cache directory is "/home/bonobo/.texlive2023/texmf-var
+/luatex-cache/generic/names".
 Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
 Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
 Removing  `luaotfload.glyph_stream' from `glyph_stream_provider'.
@@ -44,8 +44,8 @@ mf-dist/tex/latex/base/article.cls
 Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
-luaotfload | db : Font names database loaded from /home/flyxion/.texlive2023/tex
-mf-var/luatex-cache/generic/names/luaotfload-names.luc.gz)
+luaotfload | db : Font names database loaded from /home/bonobo/.texlive2023/texm
+f-var/luatex-cache/generic/names/luaotfload-names.luc.gz)
 \c@part=\count185
 \c@section=\count186
 \c@subsection=\count187
@@ -446,32 +446,32 @@ Inserting `l3color' in `luaotfload.parse_color'.
 (./admissibility-interface.aux)
 \openout1 = admissibility-interface.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 4
-3.
+4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
@@ -549,19 +549,19 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 43.
-Package microtype Info: Applying patch `item' on input line 43.
-Package microtype Info: Applying patch `toc' on input line 43.
-Package microtype Info: Applying patch `eqnum' on input line 43.
-Package microtype Info: Applying patch `footnote' on input line 43.
-Package microtype Info: Applying patch `verbatim' on input line 43.
+LaTeX Info: Redefining \microtypecontext on input line 44.
+Package microtype Info: Applying patch `item' on input line 44.
+Package microtype Info: Applying patch `toc' on input line 44.
+Package microtype Info: Applying patch `eqnum' on input line 44.
+Package microtype Info: Applying patch `footnote' on input line 44.
+Package microtype Info: Applying patch `verbatim' on input line 44.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 43.
+LaTeX Info: Redefining \showhyphens on input line 44.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
@@ -578,13 +578,13 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: luatex.def on input line 149.
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 43.
+Package hyperref Info: Link coloring ON on input line 44.
 
 (./admissibility-interface.out) (./admissibility-interface.out)
 \@outlinefile=\write3
 
 \openout3 = admissibility-interface.out
-LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 47.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -593,7 +593,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 47.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -609,43 +609,63 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 \openout4 = admissibility-interface.toc
 
-[3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17]
-Overfull \hbox (1.47835pt too wide) in paragraph at lines 861--865
+[3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]
+Overfull \hbox (1.47835pt too wide) in paragraph at lines 898--902
 \T1/lmr/m/n/12 When the coarse-grained tran-si-tion ker-nel $\OML/cmm/m/it/12 T[]$ \T1/lmr/m/n/12 sat-is-fies a \T1/lmr/m/it/12 phase-liftability \T1/lmr/m/n/12 condition---
  []
 
-[18] [19] [20] [21] [22] [23] [24]
-Underfull \hbox (badness 10000) in paragraph at lines 1213--1214
+[19] [20] [21] [22] [23] [24] [25] [26] [27]
+Underfull \hbox (badness 10000) in paragraph at lines 1417--1418
 []\T1/lmr/m/n/10.95 Ab-sent from phys-i-cal
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1215--1215
+Underfull \hbox (badness 10000) in paragraph at lines 1419--1419
 []\T1/lmr/m/n/10.95 Pais--Uhlenbeck
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1216--1216
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1420
 []\T1/lmr/m/n/10.95 Os-tro-grad-sky
  []
 
 
-Underfull \hbox (badness 1348) in paragraph at lines 1218--1219
+Underfull \hbox (badness 1348) in paragraph at lines 1422--1423
 []\T1/lmr/m/n/10.95 Sta-tus un-der in-ves-ti-ga-
  []
 
 
-Underfull \hbox (badness 1173) in paragraph at lines 1219--1219
+Underfull \hbox (badness 1173) in paragraph at lines 1423--1423
 []\T1/lmr/m/n/10.95 Rep-re-sen-ta-tional re-dun-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1220--1220
+Underfull \hbox (badness 10000) in paragraph at lines 1424--1424
 []\T1/lmr/m/n/10.95 Wave func-tion
  []
 
-[25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38]
-(./admissibility-interface.aux)
+[28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41]
+Underfull \hbox (badness 10000) in paragraph at lines 2162--2163
+[]\T1/lmr/m/n/10.95 Zero-JSD fiber of $\OT1/cmr/m/n/10.95 $\T1/lmr/m/n/10.95 :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2163--2163
+[]\T1/lmr/m/n/10.95 Hid-den ad-mis-si-bil-ity
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2172--2173
+[]\T1/lmr/m/n/10.95 Pos-i-tive re-con-struc-tion de-fect
+ []
+
+
+Underfull \hbox (badness 1231) in paragraph at lines 2180--2181
+[]$\OML/cmm/m/it/10.95 d[]\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 ;  []\OT1/c
+mr/m/n/10.95 ) = 0$
+ []
+
+[42] [43] [44] [45] [46] (./admissibility-interface.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -656,20 +676,20 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `admissibility-interface.out' has not changed
 .
-(rerunfilecheck)             Checksum: 8C5EAB413725015DCB4962DEA9987822;11907.
+(rerunfilecheck)             Checksum: C83C9EDC82F640CD76FBA85F0B5B8059;12476.
 )
 
 Here is how much of LuaTeX's memory you used:
- 14479 strings out of 476553
+ 14533 strings out of 476553
  125240,1977958 words of node,token memory allocated
- 1090 words of node memory still in use:
+ 1278 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin_ke
-rn, 3 glyph, 122 attribute, 65 glue_spec, 122 attribute_list, 1 write, 3 pdf_act
+rn, 3 glyph, 169 attribute, 65 glue_spec, 169 attribute_list, 1 write, 3 pdf_act
 ion nodes
-   avail lists: 1:2,2:471,3:262,4:183,5:433,6:73,7:7238,8:65,9:514,10:24,11:732
- 36011 multiletter control sequences out of 65536+600000
+   avail lists: 1:3,2:773,3:260,4:183,5:445,6:72,7:7568,8:69,9:700,10:24,11:732
+ 36027 multiletter control sequences out of 65536+600000
  74 fonts using 4651879 bytes
- 72i,12n,75p,1019b,508s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,12n,75p,1019b,651s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
@@ -690,10 +710,10 @@ xmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr
 /type1/public/lm/lmri12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb>
-Output written on admissibility-interface.pdf (38 pages, 439795 bytes).
+Output written on admissibility-interface.pdf (46 pages, 484243 bytes).
 
-PDF statistics: 604 PDF objects out of 1000 (max. 8388607)
- 536 compressed objects within 6 object streams
- 185 named destinations out of 1000 (max. 131072)
- 353 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 682 PDF objects out of 1000 (max. 8388607)
+ 605 compressed objects within 7 object streams
+ 223 named destinations out of 1000 (max. 131072)
+ 369 words of extra memory for PDF output out of 10000 (max. 100000000)
 
