@@ -1,5 +1,9 @@
 # Numerical Claims Are Conserved Quantities
 
+[The Smoothness Paradox](https://standardgalactic.github.io/cosmology/smoothness-paradox.pdf)
+
+A cosmology in which matter, galaxies, stars, life, and other complex structures arise as localized distinctions within a continuous physical plenum and persist through ongoing processes of repair and reconstruction. Cosmic evolution is understood as a changing balance between differentiation and smoothing, with entropy corresponding to the progressive loss of recoverable distinctions and usable gradients. As structure is exhausted toward heat death, the theory asks whether the disappearance of scale, records, and other physical differences could make cosmological continuation possible without requiring the universe to repeat its previous history.
+
 [Accessibility Relaxation and Friedmann Instability](https://standardgalactic.github.io/cosmology/accessibility-relaxation.pdf)
 
 * [The RSVP Revolution](https://standardgalactic.github.io/cosmology/The_RSVP_Revolution.pdf)
@@ -24,3 +28,5 @@
 ![](07%20-%20Smoking%20Gun.png)
 
 ![](08%20-%20RSVP%20Universe.png)
+
+[Interface Analysis](https://standardgalactic.github.io/cosmology/interface-analysis.pdf)

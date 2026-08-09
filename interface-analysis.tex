@@ -1,0 +1,49 @@
+\documentclass[11pt]{article}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+\geometry{margin=1in}
+\setstretch{1.12}
+
+\title{Interface Analysis: Stars! Planet Screen}
+\author{Flyxion}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+This document analyzes a single \textit{Stars!} interface screenshot showing the Humanoids faction in year 2400, centered on planet Kulu. The goal is to describe how the screen supports turn-based strategic decisions.
+
+\section{Observed Screen Structure}
+\begin{figure}[htbp]
+  \centering
+  \IfFileExists{images/stars-ui-kulu.png}{%
+    \includegraphics[width=\linewidth]{images/stars-ui-kulu.png}%
+  }{%
+    \fbox{\parbox[c][0.35\textheight][c]{0.9\linewidth}{\centering
+    Image file not found at \texttt{images/stars-ui-kulu.png}.\\
+    Add the provided screenshot to render this figure.}}%
+  }
+  \caption{Stars! planet management view for Kulu (Humanoids, year 2400).}
+  \label{fig:stars-kulu}
+\end{figure}
+
+Figure~\ref{fig:stars-kulu} combines three key information areas:
+\begin{itemize}
+  \item \textbf{Economy panel:} minerals, mines, factories, population, and resources.
+  \item \textbf{Operations panel:} fleets in orbit, cargo transfer, and production queue.
+  \item \textbf{Local awareness panel:} map, scanner range, and compact summary indicators.
+\end{itemize}
+
+\section{Analysis}
+The interface emphasizes speed and control density. Economic state and action controls are colocated, so the player can immediately shift from diagnosis (resource position) to command issuance (production and fleet actions). This minimizes navigation overhead during a turn.
+
+The map and scanner block provides nearby spatial context without forcing a screen change. Although visually dense, the layout is efficient for experienced players who need rapid, repeated decisions across multiple colonies.
+
+\section{Conclusion}
+This screenshot illustrates a classic 4X UI pattern: high information density, low interaction friction, and strong support for iterative strategic command. The design remains a useful reference for efficiency-focused strategy interfaces.
+
+\end{document}
