@@ -1,4 +1,4 @@
-\contentsline {chapter}{Preface: Why Expansion May Be the Wrong Picture}{xxiii}{chapter*.2}%
+\contentsline {chapter}{Preface: Why Expansion May Be the Wrong Picture}{xxix}{chapter*.2}%
 \contentsline {part}{I\hspace {1em}The Cosmological Puzzle}{1}{part.1}%
 \contentsline {chapter}{\numberline {1}The Standard Story}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Homogeneity, Isotropy, and the Cosmological Metric}{4}{section.1.1}%
@@ -346,413 +346,661 @@
 \contentsline {section}{\numberline {18.6}Why the Book Proceeds Anyway}{239}{section.18.6}%
 \contentsline {section}{\numberline {18.7}What This Chapter Does Not Do}{239}{section.18.7}%
 \contentsline {part}{IV\hspace {1em}The Age of Maximum Difference}{241}{part.4}%
-\contentsline {chapter}{\numberline {19}Stars as Gradient Engines}{243}{chapter.19}%
-\contentsline {section}{\numberline {19.1}Energy Is Not Available Work}{243}{section.19.1}%
-\contentsline {section}{\numberline {19.2}Gravity Builds the Engine}{244}{section.19.2}%
-\contentsline {section}{\numberline {19.3}From Collapse to Nuclear Burning}{245}{section.19.3}%
-\contentsline {section}{\numberline {19.4}Hydrostatic Balance Does Not Mean Equilibrium}{245}{section.19.4}%
-\contentsline {section}{\numberline {19.5}The Star as a Throughput Structure}{246}{section.19.5}%
-\contentsline {section}{\numberline {19.6}The Hot Source and the Cold Sink}{246}{section.19.6}%
-\contentsline {section}{\numberline {19.7}Radiation Carries Entropy as Well as Energy}{247}{section.19.7}%
-\contentsline {section}{\numberline {19.8}A Planet Between Two Radiation Fields}{247}{section.19.8}%
-\contentsline {section}{\numberline {19.9}The Distinction Between Flux and Stock}{248}{section.19.9}%
-\contentsline {section}{\numberline {19.10}Gradient Engines}{248}{section.19.10}%
-\contentsline {section}{\numberline {19.11}A Hierarchy of Gradient Engines}{249}{section.19.11}%
-\contentsline {section}{\numberline {19.12}Stars Manufacture New Differences}{249}{section.19.12}%
-\contentsline {section}{\numberline {19.13}Differentiation Through Irreversibility}{250}{section.19.13}%
-\contentsline {section}{\numberline {19.14}The Stellar Population as a Distributed Engine}{250}{section.19.14}%
-\contentsline {section}{\numberline {19.15}The Stellar Era Has a Finite Fuel Budget}{250}{section.19.15}%
-\contentsline {section}{\numberline {19.16}Available Work Is Consumed by Use}{251}{section.19.16}%
-\contentsline {section}{\numberline {19.17}No Perpetual Cosmic Engine}{251}{section.19.17}%
-\contentsline {section}{\numberline {19.18}The Exergy View}{252}{section.19.18}%
-\contentsline {section}{\numberline {19.19}Cosmological Exergy Is Scale-Dependent}{252}{section.19.19}%
-\contentsline {section}{\numberline {19.20}Gradient Engines and Distinction}{253}{section.19.20}%
-\contentsline {section}{\numberline {19.21}Reachability Determines Usefulness}{253}{section.19.21}%
-\contentsline {section}{\numberline {19.22}Stars Expand the Reachable Set}{254}{section.19.22}%
-\contentsline {section}{\numberline {19.23}A Connection to Emergent Gravity}{254}{section.19.23}%
-\contentsline {section}{\numberline {19.24}A Connection to Cosmological Simplicity}{255}{section.19.24}%
-\contentsline {section}{\numberline {19.25}The Structured Epoch as a Conversion Network}{255}{section.19.25}%
-\contentsline {section}{\numberline {19.26}The Cosmic Gradient Budget}{255}{section.19.26}%
-\contentsline {section}{\numberline {19.27}The Decline Begins Before the Stars Are Gone}{256}{section.19.27}%
-\contentsline {section}{\numberline {19.28}Gradient Engines and Cosmic Memory}{256}{section.19.28}%
-\contentsline {section}{\numberline {19.29}From Stars to Chemistry}{257}{section.19.29}%
-\contentsline {section}{\numberline {19.30}What This Chapter Does Not Claim}{257}{section.19.30}%
-\contentsline {section}{\numberline {19.31}Summary}{258}{section.19.31}%
-\contentsline {chapter}{\numberline {20}Planets, Chemistry and Life}{259}{chapter.20}%
-\contentsline {section}{\numberline {20.1}From Stellar Products to Planetary Matter}{259}{section.20.1}%
-\contentsline {section}{\numberline {20.2}Condensation Creates Boundaries}{260}{section.20.2}%
-\contentsline {section}{\numberline {20.3}Planetary Differentiation}{261}{section.20.3}%
-\contentsline {section}{\numberline {20.4}Chemical Potential as a Driver}{261}{section.20.4}%
-\contentsline {section}{\numberline {20.5}Equilibrium Is a Restriction of Reachability}{262}{section.20.5}%
-\contentsline {section}{\numberline {20.6}Reaction Networks}{262}{section.20.6}%
-\contentsline {section}{\numberline {20.7}Catalysis Alters Reachability}{262}{section.20.7}%
-\contentsline {section}{\numberline {20.8}Timescale Is Part of Reachability}{263}{section.20.8}%
-\contentsline {section}{\numberline {20.9}Nonequilibrium Steady States}{263}{section.20.9}%
-\contentsline {section}{\numberline {20.10}Dissipative Structures}{264}{section.20.10}%
-\contentsline {section}{\numberline {20.11}Life as Maintained Disequilibrium}{264}{section.20.11}%
-\contentsline {section}{\numberline {20.12}Repair Is Different from Passive Stability}{265}{section.20.12}%
-\contentsline {section}{\numberline {20.13}A Minimal Repair Equation}{265}{section.20.13}%
-\contentsline {section}{\numberline {20.14}Repair Converts Work into Persistence}{266}{section.20.14}%
-\contentsline {section}{\numberline {20.15}Organization as Constraint}{266}{section.20.15}%
-\contentsline {section}{\numberline {20.16}Constraint Can Increase Effective Reachability}{267}{section.20.16}%
-\contentsline {section}{\numberline {20.17}Recursive Repair}{267}{section.20.17}%
-\contentsline {section}{\numberline {20.18}Identity as a Dynamical Attractor}{268}{section.20.18}%
-\contentsline {section}{\numberline {20.19}Life Is Not Required for the Principle}{268}{section.20.19}%
-\contentsline {section}{\numberline {20.20}Information Becomes Operational}{268}{section.20.20}%
-\contentsline {section}{\numberline {20.21}Memory Requires a Persistent Difference}{269}{section.20.21}%
-\contentsline {section}{\numberline {20.22}Biological Memory as Active Persistence}{269}{section.20.22}%
-\contentsline {section}{\numberline {20.23}Replication and Persistence}{270}{section.20.23}%
-\contentsline {section}{\numberline {20.24}Selection as Differential Persistence}{270}{section.20.24}%
-\contentsline {section}{\numberline {20.25}Evolution Changes the Repair Map}{270}{section.20.25}%
-\contentsline {section}{\numberline {20.26}The Structured Epoch Produces New Timescales}{271}{section.20.26}%
-\contentsline {section}{\numberline {20.27}Unistochastic Dynamics and the Quantum Substrate}{271}{section.20.27}%
-\contentsline {section}{\numberline {20.28}Quantum Possibility Is Not Chemical Reachability}{272}{section.20.28}%
-\contentsline {section}{\numberline {20.29}Life as a Cosmological Phenomenon}{272}{section.20.29}%
-\contentsline {section}{\numberline {20.30}No Violation of the Second Law}{273}{section.20.30}%
-\contentsline {section}{\numberline {20.31}The Meaning of ``Temporary''}{273}{section.20.31}%
-\contentsline {section}{\numberline {20.32}From Persistence to Memory}{274}{section.20.32}%
-\contentsline {section}{\numberline {20.33}Repair Beyond Biology}{274}{section.20.33}%
-\contentsline {section}{\numberline {20.34}Repair Has a Cost}{274}{section.20.34}%
-\contentsline {section}{\numberline {20.35}The Repair Horizon}{275}{section.20.35}%
-\contentsline {section}{\numberline {20.36}A Spectrum of Persistence}{275}{section.20.36}%
-\contentsline {section}{\numberline {20.37}The Biological Case and the Cosmological Case}{276}{section.20.37}%
-\contentsline {section}{\numberline {20.38}The Direction of the Argument}{276}{section.20.38}%
-\contentsline {section}{\numberline {20.39}A Preview of the Late Universe}{277}{section.20.39}%
-\contentsline {section}{\numberline {20.40}What This Chapter Has Established}{277}{section.20.40}%
-\contentsline {section}{\numberline {20.41}What This Chapter Has Not Established}{277}{section.20.41}%
-\contentsline {section}{\numberline {20.42}Conclusion}{278}{section.20.42}%
-\contentsline {chapter}{\numberline {21}Repair Preserves Difference}{279}{chapter.21}%
-\contentsline {section}{\numberline {21.1}Persistence Is Not Stasis}{280}{section.21.1}%
-\contentsline {section}{\numberline {21.2}A Distinction Requires a Boundary}{280}{section.21.2}%
-\contentsline {section}{\numberline {21.3}Boundaries Are Dynamical}{281}{section.21.3}%
-\contentsline {section}{\numberline {21.4}Perturbation and Return}{281}{section.21.4}%
-\contentsline {section}{\numberline {21.5}Passive Stability}{282}{section.21.5}%
-\contentsline {section}{\numberline {21.6}Active Restoration}{282}{section.21.6}%
-\contentsline {section}{\numberline {21.7}Repair as a Map}{282}{section.21.7}%
-\contentsline {section}{\numberline {21.8}The Repair Inequality}{283}{section.21.8}%
-\contentsline {section}{\numberline {21.9}Repair Requires Detectable Error}{283}{section.21.9}%
-\contentsline {section}{\numberline {21.10}Repair Requires a Reference}{284}{section.21.10}%
-\contentsline {section}{\numberline {21.11}A Lyapunov Description}{284}{section.21.11}%
-\contentsline {section}{\numberline {21.12}Repair Does Not Reverse Entropy}{285}{section.21.12}%
-\contentsline {section}{\numberline {21.13}Equivalence Under Repair}{285}{section.21.13}%
-\contentsline {section}{\numberline {21.14}The Ship Without the Paradox}{286}{section.21.14}%
-\contentsline {section}{\numberline {21.15}Recursive Repair}{286}{section.21.15}%
-\contentsline {section}{\numberline {21.16}The Repair Graph}{286}{section.21.16}%
-\contentsline {section}{\numberline {21.17}Repair Capacity}{287}{section.21.17}%
-\contentsline {section}{\numberline {21.18}The Basin of Repair}{287}{section.21.18}%
-\contentsline {section}{\numberline {21.19}Repair and Reachability}{288}{section.21.19}%
-\contentsline {section}{\numberline {21.20}Resources Restrict the Repair Basin}{288}{section.21.20}%
-\contentsline {section}{\numberline {21.21}Repair and Information}{289}{section.21.21}%
-\contentsline {section}{\numberline {21.22}Error Correction as Physical Repair}{289}{section.21.22}%
-\contentsline {section}{\numberline {21.23}Memory Is Repaired Difference}{289}{section.21.23}%
-\contentsline {section}{\numberline {21.24}Records Need Not Be Intentional}{290}{section.21.24}%
-\contentsline {section}{\numberline {21.25}Difference Can Survive Transformation}{290}{section.21.25}%
-\contentsline {section}{\numberline {21.26}Repair Is Not Conservation}{290}{section.21.26}%
-\contentsline {section}{\numberline {21.27}Repair Is Not Reversibility}{291}{section.21.27}%
-\contentsline {section}{\numberline {21.28}Repair Is Not Optimization}{291}{section.21.28}%
-\contentsline {section}{\numberline {21.29}Repair and Redundancy}{292}{section.21.29}%
-\contentsline {section}{\numberline {21.30}Repair and Degeneracy}{292}{section.21.30}%
-\contentsline {section}{\numberline {21.31}Hierarchical Repair}{292}{section.21.31}%
-\contentsline {section}{\numberline {21.32}Persistence Through Turnover}{293}{section.21.32}%
-\contentsline {section}{\numberline {21.33}The Persistence Functional}{293}{section.21.33}%
-\contentsline {section}{\numberline {21.34}A Stronger Repair-Sensitive Measure}{294}{section.21.34}%
-\contentsline {section}{\numberline {21.35}Repair Failure}{294}{section.21.35}%
-\contentsline {section}{\numberline {21.36}Repair and the Arrow of Time}{295}{section.21.36}%
-\contentsline {section}{\numberline {21.37}Difference Is Expensive to Maintain}{295}{section.21.37}%
-\contentsline {section}{\numberline {21.38}The Cosmological Significance of Repair}{295}{section.21.38}%
-\contentsline {section}{\numberline {21.39}Smoothing Meets Resistance}{296}{section.21.39}%
-\contentsline {section}{\numberline {21.40}Formation and Smoothing Are Simultaneous}{296}{section.21.40}%
-\contentsline {section}{\numberline {21.41}The Turnover Surface}{296}{section.21.41}%
-\contentsline {section}{\numberline {21.42}Repair Delays Smoothing but Does Not Abolish It}{297}{section.21.42}%
-\contentsline {section}{\numberline {21.43}Repair and Cosmological Memory}{297}{section.21.43}%
-\contentsline {section}{\numberline {21.44}A Hierarchy of Memory}{298}{section.21.44}%
-\contentsline {section}{\numberline {21.45}Persistence Under Transformation}{298}{section.21.45}%
-\contentsline {section}{\numberline {21.46}From Repair to Identity}{298}{section.21.46}%
-\contentsline {section}{\numberline {21.47}Limits of the Principle}{299}{section.21.47}%
-\contentsline {section}{\numberline {21.48}A Predictive Requirement}{299}{section.21.48}%
-\contentsline {section}{\numberline {21.49}The Connection to Reknotting}{299}{section.21.49}%
-\contentsline {section}{\numberline {21.50}Two Failures That Must Not Be Confused}{300}{section.21.50}%
-\contentsline {section}{\numberline {21.51}What This Chapter Has Established}{300}{section.21.51}%
-\contentsline {section}{\numberline {21.52}What Remains Open}{301}{section.21.52}%
-\contentsline {section}{\numberline {21.53}Conclusion}{301}{section.21.53}%
-\contentsline {chapter}{\numberline {22}Cosmological Memory}{303}{chapter.22}%
-\contentsline {section}{\numberline {22.1}Memory as Physical Dependence}{303}{section.22.1}%
-\contentsline {section}{\numberline {22.2}Records Are Distinctions}{304}{section.22.2}%
-\contentsline {section}{\numberline {22.3}Memory Without Reconstruction}{305}{section.22.3}%
-\contentsline {section}{\numberline {22.4}A Memory Kernel}{306}{section.22.4}%
-\contentsline {section}{\numberline {22.5}Primordial Tidal Fields and Galactic Spin}{307}{section.22.5}%
-\contentsline {section}{\numberline {22.6}Nonlinear Evolution Does Not Imply Erasure}{307}{section.22.6}%
-\contentsline {section}{\numberline {22.7}Memory and Coarse-Graining}{308}{section.22.7}%
-\contentsline {section}{\numberline {22.8}Repair as a Memory Mechanism}{309}{section.22.8}%
-\contentsline {section}{\numberline {22.9}Forgetting Is Also Physical}{309}{section.22.9}%
-\contentsline {section}{\numberline {22.10}The Destruction of Cosmic Archives}{310}{section.22.10}%
-\contentsline {section}{\numberline {22.11}Local Memory Does Not Prove Global Persistence}{311}{section.22.11}%
-\contentsline {section}{\numberline {22.12}Memory and the Persistence Postulate}{312}{section.22.12}%
-\contentsline {section}{\numberline {22.13}Memory, Capacity, and Organization}{312}{section.22.13}%
-\contentsline {section}{\numberline {22.14}The Direction of Cosmic Memory}{313}{section.22.14}%
-\contentsline {section}{\numberline {22.15}Toward Runaway Smoothing}{313}{section.22.15}%
-\contentsline {part}{V\hspace {1em}Runaway Smoothing}{315}{part.5}%
-\contentsline {chapter}{\numberline {23}The Exhaustion of Stars}{317}{chapter.23}%
-\contentsline {section}{\numberline {23.1}Stars Exist Because Equilibrium Has Not Been Reached}{317}{section.23.1}%
-\contentsline {section}{\numberline {23.2}Nuclear Burning as Gradient Consumption}{318}{section.23.2}%
-\contentsline {section}{\numberline {23.3}The Finite Fuel Condition}{319}{section.23.3}%
-\contentsline {section}{\numberline {23.4}Iron and the End of Exothermic Fusion}{319}{section.23.4}%
-\contentsline {section}{\numberline {23.5}Stellar Death Does Not Mean Immediate Smoothness}{320}{section.23.5}%
-\contentsline {section}{\numberline {23.6}The Decline of Star Formation}{321}{section.23.6}%
-\contentsline {section}{\numberline {23.7}Reachability of Stellar States}{321}{section.23.7}%
-\contentsline {section}{\numberline {23.8}Available Work and Stellar Activity}{322}{section.23.8}%
-\contentsline {section}{\numberline {23.9}The Exergy View}{323}{section.23.9}%
-\contentsline {section}{\numberline {23.10}Long-Lived Remnants}{323}{section.23.10}%
-\contentsline {section}{\numberline {23.11}Gravitational Relaxation}{324}{section.23.11}%
-\contentsline {section}{\numberline {23.12}Isolation as Exhaustion}{325}{section.23.12}%
-\contentsline {section}{\numberline {23.13}The Stellar Era as a Temporary Network}{325}{section.23.13}%
-\contentsline {section}{\numberline {23.14}Entropy Production During Exhaustion}{326}{section.23.14}%
-\contentsline {section}{\numberline {23.15}No Sudden Beginning of Heat Death}{326}{section.23.15}%
-\contentsline {section}{\numberline {23.16}The Last Stars Are Not the Last Structures}{327}{section.23.16}%
-\contentsline {section}{\numberline {23.17}From Stellar Exhaustion to the Last Knots}{327}{section.23.17}%
-\contentsline {chapter}{\numberline {24}Black Holes as the Last Knots}{329}{chapter.24}%
-\contentsline {section}{\numberline {24.1}Survival by Migration Is Not Indefinite Persistence}{330}{section.24.1}%
-\contentsline {section}{\numberline {24.2}The Deep Future Begins After the Familiar Universe}{331}{section.24.2}%
-\contentsline {section}{\numberline {24.3}Black Holes as Extreme Localization}{331}{section.24.3}%
-\contentsline {section}{\numberline {24.4}Could Organization Retreat into Black Holes?}{332}{section.24.4}%
-\contentsline {section}{\numberline {24.5}The Exterior Eventually Becomes Colder}{332}{section.24.5}%
-\contentsline {section}{\numberline {24.6}Postponement Is Not Escape}{333}{section.24.6}%
-\contentsline {section}{\numberline {24.7}The Boundary Condition for Organized Structure}{334}{section.24.7}%
-\contentsline {section}{\numberline {24.8}The Last Question Is a Physical Question}{334}{section.24.8}%
-\contentsline {section}{\numberline {24.9}No Object Needs to Survive the Boundary}{335}{section.24.9}%
-\contentsline {section}{\numberline {24.10}From Evaporation to Instability}{335}{section.24.10}%
-\contentsline {section}{\numberline {24.11}Lamphrodynamic Redifferentiation}{336}{section.24.11}%
-\contentsline {section}{\numberline {24.12}The Three Gates Remain}{337}{section.24.12}%
-\contentsline {section}{\numberline {24.13}The Last Knots Are Not the Next Beginning}{337}{section.24.13}%
-\contentsline {section}{\numberline {24.14}A Universe Beyond Engineering}{338}{section.24.14}%
-\contentsline {section}{\numberline {24.15}The Reversal of the Question}{339}{section.24.15}%
-\contentsline {chapter}{\numberline {25}Hawking Evaporation}{341}{chapter.25}%
-\contentsline {section}{\numberline {25.1}A Horizon Has a Temperature}{341}{section.25.1}%
-\contentsline {section}{\numberline {25.2}Cooling the Exterior}{342}{section.25.2}%
-\contentsline {section}{\numberline {25.3}Negative Heat Capacity}{343}{section.25.3}%
-\contentsline {section}{\numberline {25.4}The Evaporation Law}{344}{section.25.4}%
-\contentsline {section}{\numberline {25.5}The Universe After Trillions of Years}{345}{section.25.5}%
-\contentsline {section}{\numberline {25.6}Localization Does Not Decrease Monotonically}{345}{section.25.6}%
-\contentsline {section}{\numberline {25.7}The Horizon-Entropy Phase Transition}{346}{section.25.7}%
-\contentsline {section}{\numberline {25.8}Mergers Delay the End}{346}{section.25.8}%
-\contentsline {section}{\numberline {25.9}Merger, Evaporation, and Accessibility}{347}{section.25.9}%
-\contentsline {section}{\numberline {25.10}Evaporation as Delocalization}{348}{section.25.10}%
-\contentsline {section}{\numberline {25.11}Information Is the Harder Problem}{349}{section.25.11}%
-\contentsline {section}{\numberline {25.12}The Persistence Postulate Meets Its Strongest Test}{349}{section.25.12}%
-\contentsline {section}{\numberline {25.13}Why This Does Not Stop the Smoothing Argument}{350}{section.25.13}%
-\contentsline {section}{\numberline {25.14}Radiation Can Remember What Structure Cannot}{351}{section.25.14}%
-\contentsline {section}{\numberline {25.15}The Last Radiation Bath}{351}{section.25.15}%
-\contentsline {section}{\numberline {25.16}Evaporation Does Not Produce Nothing}{352}{section.25.16}%
-\contentsline {section}{\numberline {25.17}No Known Permanent Knot}{353}{section.25.17}%
-\contentsline {section}{\numberline {25.18}From the Last Black Hole to the Last Gradient}{353}{section.25.18}%
-\contentsline {section}{\numberline {25.19}The End of the Black-Hole Era}{354}{section.25.19}%
-\contentsline {chapter}{\numberline {26}The Last Gradient}{355}{chapter.26}%
-\contentsline {section}{\numberline {26.1}Energy Is Not the Resource}{355}{section.26.1}%
-\contentsline {section}{\numberline {26.2}A Generalized Gradient}{356}{section.26.2}%
-\contentsline {section}{\numberline {26.3}Exergy and the Environment}{357}{section.26.3}%
-\contentsline {section}{\numberline {26.4}The Resource Ladder}{358}{section.26.4}%
-\contentsline {section}{\numberline {26.5}Why Moving Does Not Solve Exhaustion}{358}{section.26.5}%
-\contentsline {section}{\numberline {26.6}The Earth as Stored Gravitational History}{359}{section.26.6}%
-\contentsline {section}{\numberline {26.7}Stored Difference Eventually Leaks}{360}{section.26.7}%
-\contentsline {section}{\numberline {26.8}Could Technology Climb the Ladder Forever?}{360}{section.26.8}%
-\contentsline {section}{\numberline {26.9}Even a Black-Hole Substrate Has an Exterior}{361}{section.26.9}%
-\contentsline {section}{\numberline {26.10}The Difference Between Long and Infinite}{362}{section.26.10}%
-\contentsline {section}{\numberline {26.11}Why \emph {The Last Question} Is Still Fiction}{362}{section.26.11}%
-\contentsline {section}{\numberline {26.12}The Last Gradient Is Not Necessarily Local}{363}{section.26.12}%
-\contentsline {section}{\numberline {26.13}A Reachability Definition of Exhaustion}{364}{section.26.13}%
-\contentsline {section}{\numberline {26.14}Distinction Without Exploitability}{364}{section.26.14}%
-\contentsline {section}{\numberline {26.15}The Approach to the Boundary}{365}{section.26.15}%
-\contentsline {section}{\numberline {26.16}The Temptation to Declare the Story Finished}{365}{section.26.16}%
-\contentsline {section}{\numberline {26.17}Local Equilibrium Does Not Guarantee Global Stability}{366}{section.26.17}%
-\contentsline {section}{\numberline {26.18}The Fracture Analogy}{367}{section.26.18}%
-\contentsline {section}{\numberline {26.19}Lamphrodynamic Interpretation}{367}{section.26.19}%
-\contentsline {section}{\numberline {26.20}The Three Gates Appear}{368}{section.26.20}%
-\contentsline {section}{\numberline {26.21}Two Ways the Boundary Can Fail}{369}{section.26.21}%
-\contentsline {section}{\numberline {26.22}Why the Last Gradient Matters to Reknotting}{369}{section.26.22}%
-\contentsline {section}{\numberline {26.23}Not a Vacuum Fluctuation Story}{370}{section.26.23}%
-\contentsline {section}{\numberline {26.24}No Rescue by Metaphor}{370}{section.26.24}%
-\contentsline {section}{\numberline {26.25}The Last Inherited Difference}{371}{section.26.25}%
-\contentsline {section}{\numberline {26.26}A Boundary, Not Yet a Beginning}{372}{section.26.26}%
-\contentsline {chapter}{\numberline {27}Runaway Smoothness}{373}{chapter.27}%
-\contentsline {section}{\numberline {27.1}Smoothing as a Dynamical Regime}{373}{section.27.1}%
-\contentsline {section}{\numberline {27.2}Formation and Destruction Coexist}{374}{section.27.2}%
-\contentsline {section}{\numberline {27.3}The Turnover Surface}{375}{section.27.3}%
-\contentsline {section}{\numberline {27.4}Why There Is No Single Cosmic Turnover}{375}{section.27.4}%
-\contentsline {section}{\numberline {27.5}Runaway Does Not Mean Monotonic}{376}{section.27.5}%
-\contentsline {section}{\numberline {27.6}The Expansion of the Smoothing Domain}{377}{section.27.6}%
-\contentsline {section}{\numberline {27.7}The Shrinking Inventory of Gradient Engines}{377}{section.27.7}%
-\contentsline {section}{\numberline {27.8}The Timescale Ladder}{378}{section.27.8}%
-\contentsline {section}{\numberline {27.9}Survival Through Redistribution}{378}{section.27.9}%
-\contentsline {section}{\numberline {27.10}Persistence Is Not Immortality}{379}{section.27.10}%
-\contentsline {section}{\numberline {27.11}The Cost of Maintaining a Boundary}{380}{section.27.11}%
-\contentsline {section}{\numberline {27.12}Black Holes at the Edge of the Argument}{381}{section.27.12}%
-\contentsline {section}{\numberline {27.13}The Weyl-Curvature Trap}{381}{section.27.13}%
-\contentsline {section}{\numberline {27.14}Black-Hole Formation as a Phase Change in Accessibility}{382}{section.27.14}%
-\contentsline {section}{\numberline {27.15}Three Late-Time Competitors}{382}{section.27.15}%
-\contentsline {section}{\numberline {27.16}The Accessibility Horizon}{383}{section.27.16}%
-\contentsline {section}{\numberline {27.17}A Universe Can Become Simpler Without Becoming Empty}{383}{section.27.17}%
-\contentsline {section}{\numberline {27.18}Runaway Smoothness and Information}{384}{section.27.18}%
-\contentsline {section}{\numberline {27.19}The Persistence Postulate Reappears}{384}{section.27.19}%
-\contentsline {section}{\numberline {27.20}The Terminal State as an Equivalence Class}{385}{section.27.20}%
-\contentsline {section}{\numberline {27.21}Why Maximum Entropy Can Look Simple}{386}{section.27.21}%
-\contentsline {section}{\numberline {27.22}Runaway Smoothness as Loss of Historical Address}{386}{section.27.22}%
-\contentsline {section}{\numberline {27.23}The Smooth Boundary}{387}{section.27.23}%
-\contentsline {section}{\numberline {27.24}Scale-Relative Smoothness}{387}{section.27.24}%
-\contentsline {section}{\numberline {27.25}The TARTAN Preview}{388}{section.27.25}%
-\contentsline {section}{\numberline {27.26}Approaching the Terminal Background}{388}{section.27.26}%
-\contentsline {section}{\numberline {27.27}The Stability Question Cannot Be Avoided}{389}{section.27.27}%
-\contentsline {section}{\numberline {27.28}The Paradox Becomes Sharp}{389}{section.27.28}%
-\contentsline {section}{\numberline {27.29}What Runaway Smoothness Does Not Claim}{390}{section.27.29}%
-\contentsline {section}{\numberline {27.30}From Runaway to Turnover}{390}{section.27.30}%
-\contentsline {chapter}{Interlude: The Turnover of Cosmic Distinction}{393}{chapter*.3}%
-\contentsline {part}{VI\hspace {1em}When Maximum Entropy Resembles Minimum Entropy}{399}{part.6}%
-\contentsline {chapter}{\numberline {28}The Crystal Paradox}{401}{chapter.28}%
-\contentsline {section}{\numberline {28.1}The Four Modes of Simplicity}{401}{section.28.1}%
-\contentsline {section}{\numberline {28.2}The Crystal as a Conceptual Bridge}{403}{section.28.2}%
-\contentsline {section}{\numberline {28.3}The Obsoletion of the Microscopic Label}{403}{section.28.3}%
-\contentsline {section}{\numberline {28.4}Gravitational Entropy and the Fallacy of the Monotonic Scalar}{404}{section.28.4}%
-\contentsline {section}{\numberline {28.5}Algorithmic Compression at the Terminal Boundary}{405}{section.28.5}%
-\contentsline {section}{\numberline {28.6}The Dual-Smoothness Boundary}{405}{section.28.6}%
-\contentsline {chapter}{\numberline {29}Entropy Without Observers, Clocks or Rulers}{407}{chapter.29}%
-\contentsline {section}{\numberline {29.1}The Physical Elimination of the Observer}{407}{section.29.1}%
-\contentsline {section}{\numberline {29.2}Clockless and Rulerless Thermodynamics}{408}{section.29.2}%
-\contentsline {section}{\numberline {29.3}The Operational Equivalence Relation \(\sim _{\mathcal {A}}\)}{409}{section.29.3}%
-\contentsline {section}{\numberline {29.4}The Physical Equivalence Derivation}{409}{section.29.4}%
-\contentsline {section}{\numberline {29.5}Conditional Nature of the Boundary}{410}{section.29.5}%
-\contentsline {chapter}{\numberline {30}The Disappearance of Scale}{413}{chapter.30}%
-\contentsline {section}{\numberline {30.1}The Physical Meaninglessness of Unreferenced Scale}{413}{section.30.1}%
-\contentsline {section}{\numberline {30.2}The Dilational Quotient Space}{414}{section.30.2}%
-\contentsline {section}{\numberline {30.3}Comparison with Barbour's Relational Physics}{414}{section.30.3}%
-\contentsline {section}{\numberline {30.4}Conformal Cyclic Cosmology vs. RSVP Relational Scale}{415}{section.30.4}%
-\contentsline {section}{\numberline {30.5}The Unification of the End and the Beginning}{416}{section.30.5}%
-\contentsline {chapter}{\numberline {31}Heat Death as Boundary Condition}{417}{chapter.31}%
-\contentsline {section}{\numberline {31.1}Reinterpreting Heat Death}{417}{section.31.1}%
-\contentsline {section}{\numberline {31.2}The Three Stability Regimes of the Terminal State}{418}{section.31.2}%
-\contentsline {section}{\numberline {31.3}The Critical Distinction: Assumption vs.\ Derivation}{420}{section.31.3}%
-\contentsline {section}{\numberline {31.4}Synthesis of Part VII}{421}{section.31.4}%
-\contentsline {part}{VII\hspace {1em}Recurrence Without Repetition}{423}{part.7}%
-\contentsline {chapter}{\numberline {32}Poincar\'e Recurrence}{425}{chapter.32}%
-\contentsline {section}{\numberline {32.1}The Theorem}{425}{section.32.1}%
-\contentsline {section}{\numberline {32.2}Almost Every Point Returns Infinitely Often}{426}{section.32.2}%
-\contentsline {section}{\numberline {32.3}Recurrence Times Can Be Astronomically Long}{426}{section.32.3}%
-\contentsline {section}{\numberline {32.4}Why This Does Not Settle Cosmological Recurrence}{427}{section.32.4}%
-\contentsline {section}{\numberline {32.5}What Poincar\'e Recurrence Would Actually Claim}{427}{section.32.5}%
-\contentsline {section}{\numberline {32.6}Ergodicity Would Not Rescue the Argument Either}{428}{section.32.6}%
-\contentsline {section}{\numberline {32.7}The Positive Lesson}{428}{section.32.7}%
-\contentsline {section}{\numberline {32.8}What the Next Chapter Must Do}{429}{section.32.8}%
-\contentsline {chapter}{\numberline {33}Equivalence Recurrence}{431}{chapter.33}%
-\contentsline {section}{\numberline {33.1}Recalling the Target}{431}{section.33.1}%
-\contentsline {section}{\numberline {33.2}Bounded Observers, Fixed Independently}{432}{section.33.2}%
-\contentsline {section}{\numberline {33.3}The Definition}{432}{section.33.3}%
-\contentsline {section}{\numberline {33.4}Equivalence Recurrence Is Weaker Than State Recurrence}{433}{section.33.4}%
-\contentsline {section}{\numberline {33.5}The Vacuous Case}{433}{section.33.5}%
-\contentsline {section}{\numberline {33.6}Equivalence Recurrence Does Not Require the Persistence Postulate}{434}{section.33.6}%
-\contentsline {section}{\numberline {33.7}Comparison with Data-Processing Bounds}{434}{section.33.7}%
-\contentsline {section}{\numberline {33.8}What Equivalence Recurrence Does Not Establish}{435}{section.33.8}%
-\contentsline {section}{\numberline {33.9}Looking Ahead}{435}{section.33.9}%
-\contentsline {chapter}{\numberline {34}The End Becomes a Beginning}{437}{chapter.34}%
-\contentsline {section}{\numberline {34.1}What Convergence of Observables Requires}{437}{section.34.1}%
-\contentsline {section}{\numberline {34.2}The Vacuous-Case Check, Applied}{438}{section.34.2}%
-\contentsline {section}{\numberline {34.3}Equivalence Recurrence Alone Is Not Enough}{438}{section.34.3}%
-\contentsline {section}{\numberline {34.4}Two States That Look Alike for Different Reasons}{439}{section.34.4}%
-\contentsline {section}{\numberline {34.5}What Must Still Be Shown}{439}{section.34.5}%
-\contentsline {section}{\numberline {34.6}Why the Title Is Still Earned as a Question}{439}{section.34.6}%
-\contentsline {section}{\numberline {34.7}From Appearance to Mechanism}{440}{section.34.7}%
-\contentsline {chapter}{\numberline {35}Reknotting}{441}{chapter.35}%
-\contentsline {section}{\numberline {35.1}Two Independent Thresholds}{441}{section.35.1}%
-\contentsline {section}{\numberline {35.2}Four Modal Regimes}{442}{section.35.2}%
-\contentsline {section}{\numberline {35.3}Two Routes into the Active Cell}{442}{section.35.3}%
-\contentsline {section}{\numberline {35.4}Recursive Accessibility and TARTAN}{443}{section.35.4}%
-\contentsline {section}{\numberline {35.5}Gate III: Nonlinear Persistence}{444}{section.35.5}%
-\contentsline {section}{\numberline {35.6}The Full Criterion}{444}{section.35.6}%
-\contentsline {section}{\numberline {35.7}What the Criterion Does Not Establish}{445}{section.35.7}%
-\contentsline {section}{\numberline {35.8}Why the Criterion Is Still Progress}{445}{section.35.8}%
-\contentsline {chapter}{\numberline {36}No First Cycle}{447}{chapter.36}%
-\contentsline {section}{\numberline {36.1}What a Successful Reknotting Would Imply}{447}{section.36.1}%
-\contentsline {section}{\numberline {36.2}Why the Labeled Index Is Misleading}{448}{section.36.2}%
-\contentsline {section}{\numberline {36.3}This Is Not a Claim About Infinite Regress}{448}{section.36.3}%
-\contentsline {section}{\numberline {36.4}The Past Hypothesis, Revisited}{449}{section.36.4}%
-\contentsline {section}{\numberline {36.5}Cosmic Time Loses Its Privileged Origin}{449}{section.36.5}%
-\contentsline {section}{\numberline {36.6}What Survives Across the Sequence}{450}{section.36.6}%
-\contentsline {chapter}{\numberline {37}The Arrow Across Recurrence}{451}{chapter.37}%
-\contentsline {section}{\numberline {37.1}The Arrow Within One Epoch}{451}{section.37.1}%
-\contentsline {section}{\numberline {37.2}Does Reknotting Require Entropy to Decrease?}{451}{section.37.2}%
-\contentsline {section}{\numberline {37.3}The Global Entropy Question Is Not Settled Here}{452}{section.37.3}%
-\contentsline {section}{\numberline {37.4}What Resets Is Accessibility, Not Fundamental Entropy}{452}{section.37.4}%
-\contentsline {section}{\numberline {37.5}Why This Is Not the Boltzmann-Brain Problem}{453}{section.37.5}%
-\contentsline {section}{\numberline {37.6}A Caveat This Book Does Not Suppress}{454}{section.37.6}%
-\contentsline {section}{\numberline {37.7}Summary}{454}{section.37.7}%
-\contentsline {chapter}{\numberline {38}Recurrence Without Repetition}{455}{chapter.38}%
-\contentsline {section}{\numberline {38.1}Three Meanings of Recurrence}{456}{section.38.1}%
-\contentsline {section}{\numberline {38.2}Recurrence of Capacity}{456}{section.38.2}%
-\contentsline {section}{\numberline {38.3}The Reachable Universe Is Not the Possible Universe}{457}{section.38.3}%
-\contentsline {section}{\numberline {38.4}Assembly Depth as a Cosmological Constraint}{458}{section.38.4}%
-\contentsline {section}{\numberline {38.5}Everywhere Has a History}{459}{section.38.5}%
-\contentsline {section}{\numberline {38.6}The Reachability Window}{459}{section.38.6}%
-\contentsline {section}{\numberline {38.7}Why a New Epoch Need Not Resemble This One}{460}{section.38.7}%
-\contentsline {section}{\numberline {38.8}No Cosmic Reset Button}{460}{section.38.8}%
-\contentsline {section}{\numberline {38.9}Entropy Is Not Reset}{461}{section.38.9}%
-\contentsline {section}{\numberline {38.10}The Universe Does Not Need to Remember}{462}{section.38.10}%
-\contentsline {section}{\numberline {38.11}Recurrence Without a Privileged First Epoch}{462}{section.38.11}%
-\contentsline {section}{\numberline {38.12}A Recurrence of Rules Rather Than Events}{463}{section.38.12}%
-\contentsline {section}{\numberline {38.13}The Full Distinction Trajectory}{463}{section.38.13}%
-\contentsline {section}{\numberline {38.14}The Conditional Status of Continuation}{464}{section.38.14}%
-\contentsline {section}{\numberline {38.15}From Recurrence to Distinction}{465}{section.38.15}%
-\contentsline {part}{VIII\hspace {1em}A Cosmology of Distinction}{467}{part.8}%
-\contentsline {chapter}{\numberline {39}Distinction Before Substance}{469}{chapter.39}%
-\contentsline {section}{\numberline {39.1}A Difference Must Be Physical}{470}{section.39.1}%
-\contentsline {section}{\numberline {39.2}Difference Is Relational}{470}{section.39.2}%
-\contentsline {section}{\numberline {39.3}From Gradients to Things}{471}{section.39.3}%
-\contentsline {section}{\numberline {39.4}Boundaries Are Dynamical}{472}{section.39.4}%
-\contentsline {section}{\numberline {39.5}Substance as a Persistence Class}{473}{section.39.5}%
-\contentsline {section}{\numberline {39.6}Matter as Exceptionally Persistent Distinction}{473}{section.39.6}%
-\contentsline {section}{\numberline {39.7}Distinction Is Scale Dependent}{474}{section.39.7}%
-\contentsline {section}{\numberline {39.8}Distinction Is Also Historical}{474}{section.39.8}%
-\contentsline {section}{\numberline {39.9}Assembly Index and Historical Constraint}{475}{section.39.9}%
-\contentsline {section}{\numberline {39.10}Distinction and Information}{476}{section.39.10}%
-\contentsline {section}{\numberline {39.11}Correlation as Distinction Across Separation}{477}{section.39.11}%
-\contentsline {section}{\numberline {39.12}The Carrier of a Distinction}{477}{section.39.12}%
-\contentsline {section}{\numberline {39.13}Distinction Can Be Destroyed}{478}{section.39.13}%
-\contentsline {section}{\numberline {39.14}The Empty State Is Not Nothing}{478}{section.39.14}%
-\contentsline {section}{\numberline {39.15}Distinction Before Geometry}{479}{section.39.15}%
-\contentsline {section}{\numberline {39.16}Distinction Before Substance Is Not Idealism}{480}{section.39.16}%
-\contentsline {section}{\numberline {39.17}Nor Is Distinction a New Substance}{480}{section.39.17}%
-\contentsline {section}{\numberline {39.18}The Distinction Graph}{481}{section.39.18}%
-\contentsline {section}{\numberline {39.19}From Difference to Organization}{481}{section.39.19}%
-\contentsline {section}{\numberline {39.20}The First Appearance of Repair}{482}{section.39.20}%
-\contentsline {section}{\numberline {39.21}Cosmological History as the Accumulation of Distinctions}{483}{section.39.21}%
-\contentsline {section}{\numberline {39.22}The Ontology of the Reachable}{483}{section.39.22}%
-\contentsline {section}{\numberline {39.23}What This Chapter Has and Has Not Claimed}{484}{section.39.23}%
-\contentsline {chapter}{\numberline {40}Repair and Persistence}{487}{chapter.40}%
-\contentsline {section}{\numberline {40.1}Persistence Is Not State Equality}{488}{section.40.1}%
-\contentsline {section}{\numberline {40.2}The Persistence Basin}{489}{section.40.2}%
-\contentsline {section}{\numberline {40.3}Repair as Projection Toward an Admissible Set}{489}{section.40.3}%
-\contentsline {section}{\numberline {40.4}Passive Stability and Active Repair}{490}{section.40.4}%
-\contentsline {section}{\numberline {40.5}Repair Need Not Restore the Past}{491}{section.40.5}%
-\contentsline {section}{\numberline {40.6}Repair Preserves Difference}{492}{section.40.6}%
-\contentsline {section}{\numberline {40.7}Repair Requires Resources}{492}{section.40.7}%
-\contentsline {section}{\numberline {40.8}Persistence and the Second Law}{493}{section.40.8}%
-\contentsline {section}{\numberline {40.9}Repair as a Rate Competition}{494}{section.40.9}%
-\contentsline {section}{\numberline {40.10}Persistence Has a Timescale}{494}{section.40.10}%
-\contentsline {section}{\numberline {40.11}Deep Time Changes the Meaning of Stability}{495}{section.40.11}%
-\contentsline {section}{\numberline {40.12}No Material Is Absolutely Durable}{495}{section.40.12}%
-\contentsline {section}{\numberline {40.13}Hierarchies of Repair}{496}{section.40.13}%
-\contentsline {section}{\numberline {40.14}Recursive Repair}{497}{section.40.14}%
-\contentsline {section}{\numberline {40.15}Recursive Repair and Identity}{497}{section.40.15}%
-\contentsline {section}{\numberline {40.16}Repair and Memory}{498}{section.40.16}%
-\contentsline {section}{\numberline {40.17}Repair and Error Correction}{498}{section.40.17}%
-\contentsline {section}{\numberline {40.18}Repair Warrant}{499}{section.40.18}%
-\contentsline {section}{\numberline {40.19}Repair Preserves Reachability}{499}{section.40.19}%
-\contentsline {section}{\numberline {40.20}Repair and Assembly History}{500}{section.40.20}%
-\contentsline {section}{\numberline {40.21}Irreversibility and the Loss of Repair Paths}{501}{section.40.21}%
-\contentsline {section}{\numberline {40.22}Cosmological Repair}{501}{section.40.22}%
-\contentsline {section}{\numberline {40.23}The Three Gates Revisited}{502}{section.40.23}%
-\contentsline {section}{\numberline {40.24}Repair Does Not Imply Recurrence}{503}{section.40.24}%
-\contentsline {section}{\numberline {40.25}Persistence Without a Permanent Substrate}{503}{section.40.25}%
-\contentsline {section}{\numberline {40.26}The Limits of the Repair Concept}{504}{section.40.26}%
-\contentsline {section}{\numberline {40.27}From Persistence to Identity}{504}{section.40.27}%
-\contentsline {part}{IX\hspace {1em}Mathematical Development}{507}{part.9}%
-\contentsline {part}{X\hspace {1em}Contact with Observational Cosmology}{509}{part.10}%
-\contentsline {part}{XI\hspace {1em}Comparisons and Precedents}{511}{part.11}%
-\contentsline {part}{XII\hspace {1em}Consequences}{513}{part.12}%
-\contentsline {part}{XIII\hspace {1em}Limits, Tests, and Open Problems}{515}{part.13}%
+\contentsline {chapter}{\numberline {19}The Structured Epoch}{243}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Where the Structured Epoch Sits}{243}{section.19.1}%
+\contentsline {section}{\numberline {19.2}Two Competing Rates}{244}{section.19.2}%
+\contentsline {section}{\numberline {19.3}The Turnover, Introduced}{244}{section.19.3}%
+\contentsline {section}{\numberline {19.4}Heat Death, Made Precise Enough to Use}{245}{section.19.4}%
+\contentsline {section}{\numberline {19.5}What the Structured Epoch Is Not}{245}{section.19.5}%
+\contentsline {section}{\numberline {19.6}What Follows}{245}{section.19.6}%
+\contentsline {chapter}{\numberline {20}Stars as Gradient Engines}{247}{chapter.20}%
+\contentsline {section}{\numberline {20.1}Energy Is Not Available Work}{247}{section.20.1}%
+\contentsline {section}{\numberline {20.2}Gravity Builds the Engine}{248}{section.20.2}%
+\contentsline {section}{\numberline {20.3}From Collapse to Nuclear Burning}{249}{section.20.3}%
+\contentsline {section}{\numberline {20.4}Hydrostatic Balance Does Not Mean Equilibrium}{249}{section.20.4}%
+\contentsline {section}{\numberline {20.5}The Star as a Throughput Structure}{250}{section.20.5}%
+\contentsline {section}{\numberline {20.6}The Hot Source and the Cold Sink}{250}{section.20.6}%
+\contentsline {section}{\numberline {20.7}Radiation Carries Entropy as Well as Energy}{251}{section.20.7}%
+\contentsline {section}{\numberline {20.8}A Planet Between Two Radiation Fields}{251}{section.20.8}%
+\contentsline {section}{\numberline {20.9}The Distinction Between Flux and Stock}{252}{section.20.9}%
+\contentsline {section}{\numberline {20.10}Gradient Engines}{252}{section.20.10}%
+\contentsline {section}{\numberline {20.11}A Hierarchy of Gradient Engines}{253}{section.20.11}%
+\contentsline {section}{\numberline {20.12}Stars Manufacture New Differences}{253}{section.20.12}%
+\contentsline {section}{\numberline {20.13}Differentiation Through Irreversibility}{254}{section.20.13}%
+\contentsline {section}{\numberline {20.14}The Stellar Population as a Distributed Engine}{254}{section.20.14}%
+\contentsline {section}{\numberline {20.15}The Stellar Era Has a Finite Fuel Budget}{254}{section.20.15}%
+\contentsline {section}{\numberline {20.16}Available Work Is Consumed by Use}{255}{section.20.16}%
+\contentsline {section}{\numberline {20.17}No Perpetual Cosmic Engine}{255}{section.20.17}%
+\contentsline {section}{\numberline {20.18}The Exergy View}{256}{section.20.18}%
+\contentsline {section}{\numberline {20.19}Cosmological Exergy Is Scale-Dependent}{256}{section.20.19}%
+\contentsline {section}{\numberline {20.20}Gradient Engines and Distinction}{257}{section.20.20}%
+\contentsline {section}{\numberline {20.21}Reachability Determines Usefulness}{257}{section.20.21}%
+\contentsline {section}{\numberline {20.22}Stars Expand the Reachable Set}{258}{section.20.22}%
+\contentsline {section}{\numberline {20.23}A Connection to Emergent Gravity}{258}{section.20.23}%
+\contentsline {section}{\numberline {20.24}A Connection to Cosmological Simplicity}{259}{section.20.24}%
+\contentsline {section}{\numberline {20.25}The Structured Epoch as a Conversion Network}{259}{section.20.25}%
+\contentsline {section}{\numberline {20.26}The Cosmic Gradient Budget}{259}{section.20.26}%
+\contentsline {section}{\numberline {20.27}The Decline Begins Before the Stars Are Gone}{260}{section.20.27}%
+\contentsline {section}{\numberline {20.28}Gradient Engines and Cosmic Memory}{260}{section.20.28}%
+\contentsline {section}{\numberline {20.29}From Stars to Chemistry}{261}{section.20.29}%
+\contentsline {section}{\numberline {20.30}What This Chapter Does Not Claim}{261}{section.20.30}%
+\contentsline {section}{\numberline {20.31}Summary}{262}{section.20.31}%
+\contentsline {chapter}{\numberline {21}Planets, Chemistry and Life}{263}{chapter.21}%
+\contentsline {section}{\numberline {21.1}From Stellar Products to Planetary Matter}{263}{section.21.1}%
+\contentsline {section}{\numberline {21.2}Condensation Creates Boundaries}{264}{section.21.2}%
+\contentsline {section}{\numberline {21.3}Planetary Differentiation}{265}{section.21.3}%
+\contentsline {section}{\numberline {21.4}Chemical Potential as a Driver}{265}{section.21.4}%
+\contentsline {section}{\numberline {21.5}Equilibrium Is a Restriction of Reachability}{266}{section.21.5}%
+\contentsline {section}{\numberline {21.6}Reaction Networks}{266}{section.21.6}%
+\contentsline {section}{\numberline {21.7}Catalysis Alters Reachability}{266}{section.21.7}%
+\contentsline {section}{\numberline {21.8}Timescale Is Part of Reachability}{267}{section.21.8}%
+\contentsline {section}{\numberline {21.9}Nonequilibrium Steady States}{267}{section.21.9}%
+\contentsline {section}{\numberline {21.10}Dissipative Structures}{268}{section.21.10}%
+\contentsline {section}{\numberline {21.11}Life as Maintained Disequilibrium}{268}{section.21.11}%
+\contentsline {section}{\numberline {21.12}Repair Is Different from Passive Stability}{269}{section.21.12}%
+\contentsline {section}{\numberline {21.13}A Minimal Repair Equation}{269}{section.21.13}%
+\contentsline {section}{\numberline {21.14}Repair Converts Work into Persistence}{270}{section.21.14}%
+\contentsline {section}{\numberline {21.15}Organization as Constraint}{270}{section.21.15}%
+\contentsline {section}{\numberline {21.16}Constraint Can Increase Effective Reachability}{271}{section.21.16}%
+\contentsline {section}{\numberline {21.17}Recursive Repair}{271}{section.21.17}%
+\contentsline {section}{\numberline {21.18}Identity as a Dynamical Attractor}{272}{section.21.18}%
+\contentsline {section}{\numberline {21.19}Life Is Not Required for the Principle}{272}{section.21.19}%
+\contentsline {section}{\numberline {21.20}Information Becomes Operational}{272}{section.21.20}%
+\contentsline {section}{\numberline {21.21}Memory Requires a Persistent Difference}{273}{section.21.21}%
+\contentsline {section}{\numberline {21.22}Biological Memory as Active Persistence}{273}{section.21.22}%
+\contentsline {section}{\numberline {21.23}Replication and Persistence}{274}{section.21.23}%
+\contentsline {section}{\numberline {21.24}Selection as Differential Persistence}{274}{section.21.24}%
+\contentsline {section}{\numberline {21.25}Evolution Changes the Repair Map}{274}{section.21.25}%
+\contentsline {section}{\numberline {21.26}The Structured Epoch Produces New Timescales}{275}{section.21.26}%
+\contentsline {section}{\numberline {21.27}Unistochastic Dynamics and the Quantum Substrate}{275}{section.21.27}%
+\contentsline {section}{\numberline {21.28}Quantum Possibility Is Not Chemical Reachability}{276}{section.21.28}%
+\contentsline {section}{\numberline {21.29}Life as a Cosmological Phenomenon}{276}{section.21.29}%
+\contentsline {section}{\numberline {21.30}No Violation of the Second Law}{277}{section.21.30}%
+\contentsline {section}{\numberline {21.31}The Meaning of ``Temporary''}{277}{section.21.31}%
+\contentsline {section}{\numberline {21.32}From Persistence to Memory}{278}{section.21.32}%
+\contentsline {section}{\numberline {21.33}Repair Beyond Biology}{278}{section.21.33}%
+\contentsline {section}{\numberline {21.34}Repair Has a Cost}{278}{section.21.34}%
+\contentsline {section}{\numberline {21.35}The Repair Horizon}{279}{section.21.35}%
+\contentsline {section}{\numberline {21.36}A Spectrum of Persistence}{279}{section.21.36}%
+\contentsline {section}{\numberline {21.37}The Biological Case and the Cosmological Case}{280}{section.21.37}%
+\contentsline {section}{\numberline {21.38}The Direction of the Argument}{280}{section.21.38}%
+\contentsline {section}{\numberline {21.39}A Preview of the Late Universe}{281}{section.21.39}%
+\contentsline {section}{\numberline {21.40}What This Chapter Has Established}{281}{section.21.40}%
+\contentsline {section}{\numberline {21.41}What This Chapter Has Not Established}{281}{section.21.41}%
+\contentsline {section}{\numberline {21.42}Conclusion}{282}{section.21.42}%
+\contentsline {chapter}{\numberline {22}Repair Preserves Difference}{283}{chapter.22}%
+\contentsline {section}{\numberline {22.1}Persistence Is Not Stasis}{284}{section.22.1}%
+\contentsline {section}{\numberline {22.2}A Distinction Requires a Boundary}{284}{section.22.2}%
+\contentsline {section}{\numberline {22.3}Boundaries Are Dynamical}{285}{section.22.3}%
+\contentsline {section}{\numberline {22.4}Perturbation and Return}{285}{section.22.4}%
+\contentsline {section}{\numberline {22.5}Passive Stability}{286}{section.22.5}%
+\contentsline {section}{\numberline {22.6}Active Restoration}{286}{section.22.6}%
+\contentsline {section}{\numberline {22.7}Repair as a Map}{286}{section.22.7}%
+\contentsline {section}{\numberline {22.8}The Repair Inequality}{287}{section.22.8}%
+\contentsline {section}{\numberline {22.9}Repair Requires Detectable Error}{287}{section.22.9}%
+\contentsline {section}{\numberline {22.10}Repair Requires a Reference}{288}{section.22.10}%
+\contentsline {section}{\numberline {22.11}A Lyapunov Description}{288}{section.22.11}%
+\contentsline {section}{\numberline {22.12}Repair Does Not Reverse Entropy}{289}{section.22.12}%
+\contentsline {section}{\numberline {22.13}Equivalence Under Repair}{289}{section.22.13}%
+\contentsline {section}{\numberline {22.14}The Ship Without the Paradox}{290}{section.22.14}%
+\contentsline {section}{\numberline {22.15}Recursive Repair}{290}{section.22.15}%
+\contentsline {section}{\numberline {22.16}The Repair Graph}{290}{section.22.16}%
+\contentsline {section}{\numberline {22.17}Repair Capacity}{291}{section.22.17}%
+\contentsline {section}{\numberline {22.18}The Basin of Repair}{291}{section.22.18}%
+\contentsline {section}{\numberline {22.19}Repair and Reachability}{292}{section.22.19}%
+\contentsline {section}{\numberline {22.20}Resources Restrict the Repair Basin}{292}{section.22.20}%
+\contentsline {section}{\numberline {22.21}Repair and Information}{293}{section.22.21}%
+\contentsline {section}{\numberline {22.22}Error Correction as Physical Repair}{293}{section.22.22}%
+\contentsline {section}{\numberline {22.23}Memory Is Repaired Difference}{293}{section.22.23}%
+\contentsline {section}{\numberline {22.24}Records Need Not Be Intentional}{294}{section.22.24}%
+\contentsline {section}{\numberline {22.25}Difference Can Survive Transformation}{294}{section.22.25}%
+\contentsline {section}{\numberline {22.26}Repair Is Not Conservation}{294}{section.22.26}%
+\contentsline {section}{\numberline {22.27}Repair Is Not Reversibility}{295}{section.22.27}%
+\contentsline {section}{\numberline {22.28}Repair Is Not Optimization}{295}{section.22.28}%
+\contentsline {section}{\numberline {22.29}Repair and Redundancy}{296}{section.22.29}%
+\contentsline {section}{\numberline {22.30}Repair and Degeneracy}{296}{section.22.30}%
+\contentsline {section}{\numberline {22.31}Hierarchical Repair}{296}{section.22.31}%
+\contentsline {section}{\numberline {22.32}Persistence Through Turnover}{297}{section.22.32}%
+\contentsline {section}{\numberline {22.33}The Persistence Functional}{297}{section.22.33}%
+\contentsline {section}{\numberline {22.34}A Stronger Repair-Sensitive Measure}{298}{section.22.34}%
+\contentsline {section}{\numberline {22.35}Repair Failure}{298}{section.22.35}%
+\contentsline {section}{\numberline {22.36}Repair and the Arrow of Time}{299}{section.22.36}%
+\contentsline {section}{\numberline {22.37}Difference Is Expensive to Maintain}{299}{section.22.37}%
+\contentsline {section}{\numberline {22.38}The Cosmological Significance of Repair}{299}{section.22.38}%
+\contentsline {section}{\numberline {22.39}Smoothing Meets Resistance}{300}{section.22.39}%
+\contentsline {section}{\numberline {22.40}Formation and Smoothing Are Simultaneous}{300}{section.22.40}%
+\contentsline {section}{\numberline {22.41}The Turnover Surface}{300}{section.22.41}%
+\contentsline {section}{\numberline {22.42}Repair Delays Smoothing but Does Not Abolish It}{301}{section.22.42}%
+\contentsline {section}{\numberline {22.43}Repair and Cosmological Memory}{301}{section.22.43}%
+\contentsline {section}{\numberline {22.44}A Hierarchy of Memory}{302}{section.22.44}%
+\contentsline {section}{\numberline {22.45}Persistence Under Transformation}{302}{section.22.45}%
+\contentsline {section}{\numberline {22.46}From Repair to Identity}{302}{section.22.46}%
+\contentsline {section}{\numberline {22.47}Limits of the Principle}{303}{section.22.47}%
+\contentsline {section}{\numberline {22.48}A Predictive Requirement}{303}{section.22.48}%
+\contentsline {section}{\numberline {22.49}The Connection to Reknotting}{303}{section.22.49}%
+\contentsline {section}{\numberline {22.50}Two Failures That Must Not Be Confused}{304}{section.22.50}%
+\contentsline {section}{\numberline {22.51}What This Chapter Has Established}{304}{section.22.51}%
+\contentsline {section}{\numberline {22.52}What Remains Open}{305}{section.22.52}%
+\contentsline {section}{\numberline {22.53}Conclusion}{305}{section.22.53}%
+\contentsline {chapter}{\numberline {23}Cosmological Memory}{307}{chapter.23}%
+\contentsline {section}{\numberline {23.1}Memory as Physical Dependence}{307}{section.23.1}%
+\contentsline {section}{\numberline {23.2}Records Are Distinctions}{308}{section.23.2}%
+\contentsline {section}{\numberline {23.3}Memory Without Reconstruction}{309}{section.23.3}%
+\contentsline {section}{\numberline {23.4}A Memory Kernel}{310}{section.23.4}%
+\contentsline {section}{\numberline {23.5}Primordial Tidal Fields and Galactic Spin}{311}{section.23.5}%
+\contentsline {section}{\numberline {23.6}Nonlinear Evolution Does Not Imply Erasure}{311}{section.23.6}%
+\contentsline {section}{\numberline {23.7}Memory and Coarse-Graining}{312}{section.23.7}%
+\contentsline {section}{\numberline {23.8}Repair as a Memory Mechanism}{313}{section.23.8}%
+\contentsline {section}{\numberline {23.9}Forgetting Is Also Physical}{313}{section.23.9}%
+\contentsline {section}{\numberline {23.10}The Destruction of Cosmic Archives}{314}{section.23.10}%
+\contentsline {section}{\numberline {23.11}Local Memory Does Not Prove Global Persistence}{315}{section.23.11}%
+\contentsline {section}{\numberline {23.12}Memory and the Persistence Postulate}{316}{section.23.12}%
+\contentsline {section}{\numberline {23.13}Memory, Capacity, and Organization}{316}{section.23.13}%
+\contentsline {section}{\numberline {23.14}The Direction of Cosmic Memory}{317}{section.23.14}%
+\contentsline {section}{\numberline {23.15}Toward Runaway Smoothing}{317}{section.23.15}%
+\contentsline {part}{V\hspace {1em}Runaway Smoothing}{319}{part.5}%
+\contentsline {chapter}{\numberline {24}The Exhaustion of Stars}{321}{chapter.24}%
+\contentsline {section}{\numberline {24.1}Stars Exist Because Equilibrium Has Not Been Reached}{321}{section.24.1}%
+\contentsline {section}{\numberline {24.2}Nuclear Burning as Gradient Consumption}{322}{section.24.2}%
+\contentsline {section}{\numberline {24.3}The Finite Fuel Condition}{323}{section.24.3}%
+\contentsline {section}{\numberline {24.4}Iron and the End of Exothermic Fusion}{323}{section.24.4}%
+\contentsline {section}{\numberline {24.5}Stellar Death Does Not Mean Immediate Smoothness}{324}{section.24.5}%
+\contentsline {section}{\numberline {24.6}The Decline of Star Formation}{325}{section.24.6}%
+\contentsline {section}{\numberline {24.7}Reachability of Stellar States}{325}{section.24.7}%
+\contentsline {section}{\numberline {24.8}Available Work and Stellar Activity}{326}{section.24.8}%
+\contentsline {section}{\numberline {24.9}The Exergy View}{327}{section.24.9}%
+\contentsline {section}{\numberline {24.10}Long-Lived Remnants}{327}{section.24.10}%
+\contentsline {section}{\numberline {24.11}Gravitational Relaxation}{328}{section.24.11}%
+\contentsline {section}{\numberline {24.12}Isolation as Exhaustion}{329}{section.24.12}%
+\contentsline {section}{\numberline {24.13}The Stellar Era as a Temporary Network}{329}{section.24.13}%
+\contentsline {section}{\numberline {24.14}Entropy Production During Exhaustion}{330}{section.24.14}%
+\contentsline {section}{\numberline {24.15}No Sudden Beginning of Heat Death}{330}{section.24.15}%
+\contentsline {section}{\numberline {24.16}The Last Stars Are Not the Last Structures}{331}{section.24.16}%
+\contentsline {section}{\numberline {24.17}From Stellar Exhaustion to the Last Knots}{331}{section.24.17}%
+\contentsline {chapter}{\numberline {25}Black Holes as the Last Knots}{333}{chapter.25}%
+\contentsline {section}{\numberline {25.1}Survival by Migration Is Not Indefinite Persistence}{334}{section.25.1}%
+\contentsline {section}{\numberline {25.2}The Deep Future Begins After the Familiar Universe}{335}{section.25.2}%
+\contentsline {section}{\numberline {25.3}Black Holes as Extreme Localization}{335}{section.25.3}%
+\contentsline {section}{\numberline {25.4}Could Organization Retreat into Black Holes?}{336}{section.25.4}%
+\contentsline {section}{\numberline {25.5}The Exterior Eventually Becomes Colder}{336}{section.25.5}%
+\contentsline {section}{\numberline {25.6}Postponement Is Not Escape}{337}{section.25.6}%
+\contentsline {section}{\numberline {25.7}The Boundary Condition for Organized Structure}{338}{section.25.7}%
+\contentsline {section}{\numberline {25.8}The Last Question Is a Physical Question}{338}{section.25.8}%
+\contentsline {section}{\numberline {25.9}No Object Needs to Survive the Boundary}{339}{section.25.9}%
+\contentsline {section}{\numberline {25.10}From Evaporation to Instability}{339}{section.25.10}%
+\contentsline {section}{\numberline {25.11}Lamphrodynamic Redifferentiation}{340}{section.25.11}%
+\contentsline {section}{\numberline {25.12}The Three Gates Remain}{341}{section.25.12}%
+\contentsline {section}{\numberline {25.13}The Last Knots Are Not the Next Beginning}{341}{section.25.13}%
+\contentsline {section}{\numberline {25.14}A Universe Beyond Engineering}{342}{section.25.14}%
+\contentsline {section}{\numberline {25.15}The Reversal of the Question}{343}{section.25.15}%
+\contentsline {chapter}{\numberline {26}Hawking Evaporation}{345}{chapter.26}%
+\contentsline {section}{\numberline {26.1}A Horizon Has a Temperature}{345}{section.26.1}%
+\contentsline {section}{\numberline {26.2}Cooling the Exterior}{346}{section.26.2}%
+\contentsline {section}{\numberline {26.3}Negative Heat Capacity}{347}{section.26.3}%
+\contentsline {section}{\numberline {26.4}The Evaporation Law}{348}{section.26.4}%
+\contentsline {section}{\numberline {26.5}The Universe After Trillions of Years}{349}{section.26.5}%
+\contentsline {section}{\numberline {26.6}Localization Does Not Decrease Monotonically}{349}{section.26.6}%
+\contentsline {section}{\numberline {26.7}The Horizon-Entropy Phase Transition}{350}{section.26.7}%
+\contentsline {section}{\numberline {26.8}Mergers Delay the End}{350}{section.26.8}%
+\contentsline {section}{\numberline {26.9}Merger, Evaporation, and Accessibility}{351}{section.26.9}%
+\contentsline {section}{\numberline {26.10}Evaporation as Delocalization}{352}{section.26.10}%
+\contentsline {section}{\numberline {26.11}Information Is the Harder Problem}{353}{section.26.11}%
+\contentsline {section}{\numberline {26.12}The Persistence Postulate Meets Its Strongest Test}{353}{section.26.12}%
+\contentsline {section}{\numberline {26.13}Why This Does Not Stop the Smoothing Argument}{354}{section.26.13}%
+\contentsline {section}{\numberline {26.14}Radiation Can Remember What Structure Cannot}{355}{section.26.14}%
+\contentsline {section}{\numberline {26.15}The Last Radiation Bath}{355}{section.26.15}%
+\contentsline {section}{\numberline {26.16}Evaporation Does Not Produce Nothing}{356}{section.26.16}%
+\contentsline {section}{\numberline {26.17}No Known Permanent Knot}{357}{section.26.17}%
+\contentsline {section}{\numberline {26.18}From the Last Black Hole to the Last Gradient}{357}{section.26.18}%
+\contentsline {section}{\numberline {26.19}The End of the Black-Hole Era}{358}{section.26.19}%
+\contentsline {chapter}{\numberline {27}The Last Gradient}{359}{chapter.27}%
+\contentsline {section}{\numberline {27.1}Energy Is Not the Resource}{359}{section.27.1}%
+\contentsline {section}{\numberline {27.2}A Generalized Gradient}{360}{section.27.2}%
+\contentsline {section}{\numberline {27.3}Exergy and the Environment}{361}{section.27.3}%
+\contentsline {section}{\numberline {27.4}The Resource Ladder}{362}{section.27.4}%
+\contentsline {section}{\numberline {27.5}Why Moving Does Not Solve Exhaustion}{362}{section.27.5}%
+\contentsline {section}{\numberline {27.6}The Earth as Stored Gravitational History}{363}{section.27.6}%
+\contentsline {section}{\numberline {27.7}Stored Difference Eventually Leaks}{364}{section.27.7}%
+\contentsline {section}{\numberline {27.8}Could Technology Climb the Ladder Forever?}{364}{section.27.8}%
+\contentsline {section}{\numberline {27.9}Even a Black-Hole Substrate Has an Exterior}{365}{section.27.9}%
+\contentsline {section}{\numberline {27.10}The Difference Between Long and Infinite}{366}{section.27.10}%
+\contentsline {section}{\numberline {27.11}Why \emph {The Last Question} Is Still Fiction}{366}{section.27.11}%
+\contentsline {section}{\numberline {27.12}The Last Gradient Is Not Necessarily Local}{367}{section.27.12}%
+\contentsline {section}{\numberline {27.13}A Reachability Definition of Exhaustion}{368}{section.27.13}%
+\contentsline {section}{\numberline {27.14}Distinction Without Exploitability}{368}{section.27.14}%
+\contentsline {section}{\numberline {27.15}The Approach to the Boundary}{369}{section.27.15}%
+\contentsline {section}{\numberline {27.16}The Temptation to Declare the Story Finished}{369}{section.27.16}%
+\contentsline {section}{\numberline {27.17}Local Equilibrium Does Not Guarantee Global Stability}{370}{section.27.17}%
+\contentsline {section}{\numberline {27.18}The Fracture Analogy}{371}{section.27.18}%
+\contentsline {section}{\numberline {27.19}Lamphrodynamic Interpretation}{371}{section.27.19}%
+\contentsline {section}{\numberline {27.20}The Three Gates Appear}{372}{section.27.20}%
+\contentsline {section}{\numberline {27.21}Two Ways the Boundary Can Fail}{373}{section.27.21}%
+\contentsline {section}{\numberline {27.22}Why the Last Gradient Matters to Reknotting}{373}{section.27.22}%
+\contentsline {section}{\numberline {27.23}Not a Vacuum Fluctuation Story}{374}{section.27.23}%
+\contentsline {section}{\numberline {27.24}No Rescue by Metaphor}{374}{section.27.24}%
+\contentsline {section}{\numberline {27.25}The Last Inherited Difference}{375}{section.27.25}%
+\contentsline {section}{\numberline {27.26}A Boundary, Not Yet a Beginning}{376}{section.27.26}%
+\contentsline {chapter}{\numberline {28}Runaway Smoothness}{377}{chapter.28}%
+\contentsline {section}{\numberline {28.1}Smoothing as a Dynamical Regime}{377}{section.28.1}%
+\contentsline {section}{\numberline {28.2}Formation and Destruction Coexist}{378}{section.28.2}%
+\contentsline {section}{\numberline {28.3}The Turnover Surface}{379}{section.28.3}%
+\contentsline {section}{\numberline {28.4}Why There Is No Single Cosmic Turnover}{379}{section.28.4}%
+\contentsline {section}{\numberline {28.5}Runaway Does Not Mean Monotonic}{380}{section.28.5}%
+\contentsline {section}{\numberline {28.6}The Expansion of the Smoothing Domain}{381}{section.28.6}%
+\contentsline {section}{\numberline {28.7}The Shrinking Inventory of Gradient Engines}{381}{section.28.7}%
+\contentsline {section}{\numberline {28.8}The Timescale Ladder}{382}{section.28.8}%
+\contentsline {section}{\numberline {28.9}Survival Through Redistribution}{382}{section.28.9}%
+\contentsline {section}{\numberline {28.10}Persistence Is Not Immortality}{383}{section.28.10}%
+\contentsline {section}{\numberline {28.11}The Cost of Maintaining a Boundary}{384}{section.28.11}%
+\contentsline {section}{\numberline {28.12}Black Holes at the Edge of the Argument}{385}{section.28.12}%
+\contentsline {section}{\numberline {28.13}The Weyl-Curvature Trap}{385}{section.28.13}%
+\contentsline {section}{\numberline {28.14}Black-Hole Formation as a Phase Change in Accessibility}{386}{section.28.14}%
+\contentsline {section}{\numberline {28.15}Three Late-Time Competitors}{386}{section.28.15}%
+\contentsline {section}{\numberline {28.16}The Accessibility Horizon}{387}{section.28.16}%
+\contentsline {section}{\numberline {28.17}A Universe Can Become Simpler Without Becoming Empty}{387}{section.28.17}%
+\contentsline {section}{\numberline {28.18}Runaway Smoothness and Information}{388}{section.28.18}%
+\contentsline {section}{\numberline {28.19}The Persistence Postulate Reappears}{388}{section.28.19}%
+\contentsline {section}{\numberline {28.20}The Terminal State as an Equivalence Class}{389}{section.28.20}%
+\contentsline {section}{\numberline {28.21}Why Maximum Entropy Can Look Simple}{390}{section.28.21}%
+\contentsline {section}{\numberline {28.22}Runaway Smoothness as Loss of Historical Address}{390}{section.28.22}%
+\contentsline {section}{\numberline {28.23}The Smooth Boundary}{391}{section.28.23}%
+\contentsline {section}{\numberline {28.24}Scale-Relative Smoothness}{391}{section.28.24}%
+\contentsline {section}{\numberline {28.25}The TARTAN Preview}{392}{section.28.25}%
+\contentsline {section}{\numberline {28.26}Approaching the Terminal Background}{392}{section.28.26}%
+\contentsline {section}{\numberline {28.27}The Stability Question Cannot Be Avoided}{393}{section.28.27}%
+\contentsline {section}{\numberline {28.28}The Paradox Becomes Sharp}{393}{section.28.28}%
+\contentsline {section}{\numberline {28.29}What Runaway Smoothness Does Not Claim}{394}{section.28.29}%
+\contentsline {section}{\numberline {28.30}From Runaway to Turnover}{394}{section.28.30}%
+\contentsline {chapter}{Interlude: The Turnover of Cosmic Distinction}{397}{chapter*.3}%
+\contentsline {part}{VI\hspace {1em}When Maximum Entropy Resembles Minimum Entropy}{403}{part.6}%
+\contentsline {chapter}{\numberline {29}The Crystal Paradox}{405}{chapter.29}%
+\contentsline {section}{\numberline {29.1}The Four Modes of Simplicity}{405}{section.29.1}%
+\contentsline {section}{\numberline {29.2}The Crystal as a Conceptual Bridge}{407}{section.29.2}%
+\contentsline {section}{\numberline {29.3}The Obsoletion of the Microscopic Label}{407}{section.29.3}%
+\contentsline {section}{\numberline {29.4}Gravitational Entropy and the Fallacy of the Monotonic Scalar}{408}{section.29.4}%
+\contentsline {section}{\numberline {29.5}Algorithmic Compression at the Terminal Boundary}{409}{section.29.5}%
+\contentsline {section}{\numberline {29.6}The Dual-Smoothness Boundary}{409}{section.29.6}%
+\contentsline {chapter}{\numberline {30}Entropy Without Observers, Clocks or Rulers}{411}{chapter.30}%
+\contentsline {section}{\numberline {30.1}The Physical Elimination of the Observer}{411}{section.30.1}%
+\contentsline {section}{\numberline {30.2}Clockless and Rulerless Thermodynamics}{412}{section.30.2}%
+\contentsline {section}{\numberline {30.3}The Operational Equivalence Relation \(\sim _{\mathcal {A}}\)}{413}{section.30.3}%
+\contentsline {section}{\numberline {30.4}The Physical Equivalence Derivation}{413}{section.30.4}%
+\contentsline {section}{\numberline {30.5}Conditional Nature of the Boundary}{414}{section.30.5}%
+\contentsline {chapter}{\numberline {31}The Disappearance of Scale}{417}{chapter.31}%
+\contentsline {section}{\numberline {31.1}The Physical Meaninglessness of Unreferenced Scale}{417}{section.31.1}%
+\contentsline {section}{\numberline {31.2}The Dilational Quotient Space}{418}{section.31.2}%
+\contentsline {section}{\numberline {31.3}Comparison with Barbour's Relational Physics}{418}{section.31.3}%
+\contentsline {section}{\numberline {31.4}Conformal Cyclic Cosmology vs. RSVP Relational Scale}{419}{section.31.4}%
+\contentsline {section}{\numberline {31.5}The Unification of the End and the Beginning}{420}{section.31.5}%
+\contentsline {chapter}{\numberline {32}Heat Death as Boundary Condition}{421}{chapter.32}%
+\contentsline {section}{\numberline {32.1}Reinterpreting Heat Death}{421}{section.32.1}%
+\contentsline {section}{\numberline {32.2}The Three Stability Regimes of the Terminal State}{422}{section.32.2}%
+\contentsline {section}{\numberline {32.3}The Critical Distinction: Assumption vs.\ Derivation}{424}{section.32.3}%
+\contentsline {section}{\numberline {32.4}Synthesis of Part VII}{425}{section.32.4}%
+\contentsline {part}{VII\hspace {1em}Recurrence Without Repetition}{427}{part.7}%
+\contentsline {chapter}{\numberline {33}Poincar\'e Recurrence}{429}{chapter.33}%
+\contentsline {section}{\numberline {33.1}The Theorem}{429}{section.33.1}%
+\contentsline {section}{\numberline {33.2}Almost Every Point Returns Infinitely Often}{430}{section.33.2}%
+\contentsline {section}{\numberline {33.3}Recurrence Times Can Be Astronomically Long}{430}{section.33.3}%
+\contentsline {section}{\numberline {33.4}Why This Does Not Settle Cosmological Recurrence}{431}{section.33.4}%
+\contentsline {section}{\numberline {33.5}What Poincar\'e Recurrence Would Actually Claim}{431}{section.33.5}%
+\contentsline {section}{\numberline {33.6}Ergodicity Would Not Rescue the Argument Either}{432}{section.33.6}%
+\contentsline {section}{\numberline {33.7}The Positive Lesson}{432}{section.33.7}%
+\contentsline {section}{\numberline {33.8}What the Next Chapter Must Do}{433}{section.33.8}%
+\contentsline {chapter}{\numberline {34}Equivalence Recurrence}{435}{chapter.34}%
+\contentsline {section}{\numberline {34.1}Recalling the Target}{435}{section.34.1}%
+\contentsline {section}{\numberline {34.2}Bounded Observers, Fixed Independently}{436}{section.34.2}%
+\contentsline {section}{\numberline {34.3}The Definition}{436}{section.34.3}%
+\contentsline {section}{\numberline {34.4}Equivalence Recurrence Is Weaker Than State Recurrence}{437}{section.34.4}%
+\contentsline {section}{\numberline {34.5}The Vacuous Case}{437}{section.34.5}%
+\contentsline {section}{\numberline {34.6}Equivalence Recurrence Does Not Require the Persistence Postulate}{438}{section.34.6}%
+\contentsline {section}{\numberline {34.7}Comparison with Data-Processing Bounds}{438}{section.34.7}%
+\contentsline {section}{\numberline {34.8}What Equivalence Recurrence Does Not Establish}{439}{section.34.8}%
+\contentsline {section}{\numberline {34.9}Looking Ahead}{439}{section.34.9}%
+\contentsline {chapter}{\numberline {35}The End Becomes a Beginning}{441}{chapter.35}%
+\contentsline {section}{\numberline {35.1}What Convergence of Observables Requires}{441}{section.35.1}%
+\contentsline {section}{\numberline {35.2}The Vacuous-Case Check, Applied}{442}{section.35.2}%
+\contentsline {section}{\numberline {35.3}Equivalence Recurrence Alone Is Not Enough}{442}{section.35.3}%
+\contentsline {section}{\numberline {35.4}Two States That Look Alike for Different Reasons}{443}{section.35.4}%
+\contentsline {section}{\numberline {35.5}What Must Still Be Shown}{443}{section.35.5}%
+\contentsline {section}{\numberline {35.6}Why the Title Is Still Earned as a Question}{443}{section.35.6}%
+\contentsline {section}{\numberline {35.7}From Appearance to Mechanism}{444}{section.35.7}%
+\contentsline {chapter}{\numberline {36}Reknotting}{445}{chapter.36}%
+\contentsline {section}{\numberline {36.1}Two Independent Thresholds}{445}{section.36.1}%
+\contentsline {section}{\numberline {36.2}Four Modal Regimes}{446}{section.36.2}%
+\contentsline {section}{\numberline {36.3}Two Routes into the Active Cell}{446}{section.36.3}%
+\contentsline {section}{\numberline {36.4}Recursive Accessibility and TARTAN}{447}{section.36.4}%
+\contentsline {section}{\numberline {36.5}Gate III: Nonlinear Persistence}{448}{section.36.5}%
+\contentsline {section}{\numberline {36.6}The Full Criterion}{448}{section.36.6}%
+\contentsline {section}{\numberline {36.7}What the Criterion Does Not Establish}{449}{section.36.7}%
+\contentsline {section}{\numberline {36.8}Why the Criterion Is Still Progress}{449}{section.36.8}%
+\contentsline {chapter}{\numberline {37}No First Cycle}{451}{chapter.37}%
+\contentsline {section}{\numberline {37.1}What a Successful Reknotting Would Imply}{451}{section.37.1}%
+\contentsline {section}{\numberline {37.2}Why the Labeled Index Is Misleading}{452}{section.37.2}%
+\contentsline {section}{\numberline {37.3}This Is Not a Claim About Infinite Regress}{452}{section.37.3}%
+\contentsline {section}{\numberline {37.4}The Past Hypothesis, Revisited}{453}{section.37.4}%
+\contentsline {section}{\numberline {37.5}Cosmic Time Loses Its Privileged Origin}{453}{section.37.5}%
+\contentsline {section}{\numberline {37.6}What Survives Across the Sequence}{454}{section.37.6}%
+\contentsline {chapter}{\numberline {38}The Arrow Across Recurrence}{455}{chapter.38}%
+\contentsline {section}{\numberline {38.1}The Arrow Within One Epoch}{455}{section.38.1}%
+\contentsline {section}{\numberline {38.2}Does Reknotting Require Entropy to Decrease?}{455}{section.38.2}%
+\contentsline {section}{\numberline {38.3}The Global Entropy Question Is Not Settled Here}{456}{section.38.3}%
+\contentsline {section}{\numberline {38.4}What Resets Is Accessibility, Not Fundamental Entropy}{456}{section.38.4}%
+\contentsline {section}{\numberline {38.5}Why This Is Not the Boltzmann-Brain Problem}{457}{section.38.5}%
+\contentsline {section}{\numberline {38.6}A Caveat This Book Does Not Suppress}{458}{section.38.6}%
+\contentsline {section}{\numberline {38.7}Summary}{458}{section.38.7}%
+\contentsline {section}{\numberline {38.8}Three Meanings of Recurrence}{458}{section.38.8}%
+\contentsline {section}{\numberline {38.9}What Recurs Is Capacity}{459}{section.38.9}%
+\contentsline {section}{\numberline {38.10}No Cosmic Reset Button}{459}{section.38.10}%
+\contentsline {section}{\numberline {38.11}A Recurrence of Rules Rather Than Events}{460}{section.38.11}%
+\contentsline {section}{\numberline {38.12}The Full Distinction Trajectory}{460}{section.38.12}%
+\contentsline {part}{VIII\hspace {1em}A Cosmology of Distinction}{461}{part.8}%
+\contentsline {chapter}{\numberline {39}Distinction Before Substance}{463}{chapter.39}%
+\contentsline {section}{\numberline {39.1}A Difference Must Be Physical}{464}{section.39.1}%
+\contentsline {section}{\numberline {39.2}Difference Is Relational}{464}{section.39.2}%
+\contentsline {section}{\numberline {39.3}From Gradients to Things}{465}{section.39.3}%
+\contentsline {section}{\numberline {39.4}Boundaries Are Dynamical}{466}{section.39.4}%
+\contentsline {section}{\numberline {39.5}Substance as a Persistence Class}{467}{section.39.5}%
+\contentsline {section}{\numberline {39.6}Matter as Exceptionally Persistent Distinction}{467}{section.39.6}%
+\contentsline {section}{\numberline {39.7}Distinction Is Scale Dependent}{468}{section.39.7}%
+\contentsline {section}{\numberline {39.8}Distinction Is Also Historical}{468}{section.39.8}%
+\contentsline {section}{\numberline {39.9}Assembly Index and Historical Constraint}{469}{section.39.9}%
+\contentsline {section}{\numberline {39.10}Distinction and Information}{470}{section.39.10}%
+\contentsline {section}{\numberline {39.11}Correlation as Distinction Across Separation}{471}{section.39.11}%
+\contentsline {section}{\numberline {39.12}The Carrier of a Distinction}{471}{section.39.12}%
+\contentsline {section}{\numberline {39.13}Distinction Can Be Destroyed}{472}{section.39.13}%
+\contentsline {section}{\numberline {39.14}The Empty State Is Not Nothing}{472}{section.39.14}%
+\contentsline {section}{\numberline {39.15}Distinction Before Geometry}{473}{section.39.15}%
+\contentsline {section}{\numberline {39.16}Distinction Before Substance Is Not Idealism}{474}{section.39.16}%
+\contentsline {section}{\numberline {39.17}Nor Is Distinction a New Substance}{474}{section.39.17}%
+\contentsline {section}{\numberline {39.18}The Distinction Graph}{475}{section.39.18}%
+\contentsline {section}{\numberline {39.19}From Difference to Organization}{475}{section.39.19}%
+\contentsline {section}{\numberline {39.20}The First Appearance of Repair}{476}{section.39.20}%
+\contentsline {section}{\numberline {39.21}Cosmological History as the Accumulation of Distinctions}{477}{section.39.21}%
+\contentsline {section}{\numberline {39.22}The Ontology of the Reachable}{477}{section.39.22}%
+\contentsline {section}{\numberline {39.23}What This Chapter Has and Has Not Claimed}{478}{section.39.23}%
+\contentsline {chapter}{\numberline {40}Repair and Persistence}{481}{chapter.40}%
+\contentsline {section}{\numberline {40.1}Persistence Is Not State Equality}{482}{section.40.1}%
+\contentsline {section}{\numberline {40.2}The Persistence Basin}{483}{section.40.2}%
+\contentsline {section}{\numberline {40.3}Repair as Projection Toward an Admissible Set}{483}{section.40.3}%
+\contentsline {section}{\numberline {40.4}Passive Stability and Active Repair}{484}{section.40.4}%
+\contentsline {section}{\numberline {40.5}Repair Need Not Restore the Past}{485}{section.40.5}%
+\contentsline {section}{\numberline {40.6}Repair Preserves Difference}{486}{section.40.6}%
+\contentsline {section}{\numberline {40.7}Repair Requires Resources}{486}{section.40.7}%
+\contentsline {section}{\numberline {40.8}Persistence and the Second Law}{487}{section.40.8}%
+\contentsline {section}{\numberline {40.9}Repair as a Rate Competition}{488}{section.40.9}%
+\contentsline {section}{\numberline {40.10}Persistence Has a Timescale}{488}{section.40.10}%
+\contentsline {section}{\numberline {40.11}Deep Time Changes the Meaning of Stability}{489}{section.40.11}%
+\contentsline {section}{\numberline {40.12}No Material Is Absolutely Durable}{489}{section.40.12}%
+\contentsline {section}{\numberline {40.13}Hierarchies of Repair}{490}{section.40.13}%
+\contentsline {section}{\numberline {40.14}Recursive Repair}{491}{section.40.14}%
+\contentsline {section}{\numberline {40.15}Recursive Repair and Identity}{491}{section.40.15}%
+\contentsline {section}{\numberline {40.16}Repair and Memory}{492}{section.40.16}%
+\contentsline {section}{\numberline {40.17}Repair and Error Correction}{492}{section.40.17}%
+\contentsline {section}{\numberline {40.18}Repair Warrant}{493}{section.40.18}%
+\contentsline {section}{\numberline {40.19}Repair Preserves Reachability}{493}{section.40.19}%
+\contentsline {section}{\numberline {40.20}Repair and Assembly History}{494}{section.40.20}%
+\contentsline {section}{\numberline {40.21}Irreversibility and the Loss of Repair Paths}{495}{section.40.21}%
+\contentsline {section}{\numberline {40.22}Cosmological Repair}{495}{section.40.22}%
+\contentsline {section}{\numberline {40.23}The Three Gates Revisited}{496}{section.40.23}%
+\contentsline {section}{\numberline {40.24}Repair Does Not Imply Recurrence}{497}{section.40.24}%
+\contentsline {section}{\numberline {40.25}Persistence Without a Permanent Substrate}{497}{section.40.25}%
+\contentsline {section}{\numberline {40.26}The Limits of the Repair Concept}{498}{section.40.26}%
+\contentsline {section}{\numberline {40.27}From Persistence to Identity}{498}{section.40.27}%
+\contentsline {chapter}{\numberline {41}Identity as Recurrent Reconstruction}{501}{chapter.41}%
+\contentsline {section}{\numberline {41.1}The Failure of Material Identity}{502}{section.41.1}%
+\contentsline {section}{\numberline {41.2}The Failure of Pure Pattern Identity}{502}{section.41.2}%
+\contentsline {section}{\numberline {41.3}Identity as a Relation Across Time}{503}{section.41.3}%
+\contentsline {section}{\numberline {41.4}The Reconstruction Chain}{504}{section.41.4}%
+\contentsline {section}{\numberline {41.5}Recurrent Reconstruction}{504}{section.41.5}%
+\contentsline {section}{\numberline {41.6}Identity Has Assembly Depth}{505}{section.41.6}%
+\contentsline {section}{\numberline {41.7}A Fourteen-Billion-Year Universe Cannot Contain Arbitrary Histories}{506}{section.41.7}%
+\contentsline {section}{\numberline {41.8}Identity as Compressed History}{507}{section.41.8}%
+\contentsline {section}{\numberline {41.9}Repair Conserves Assembly Investment}{507}{section.41.9}%
+\contentsline {section}{\numberline {41.10}The Problem of Duplication}{508}{section.41.10}%
+\contentsline {section}{\numberline {41.11}Interruption and Reconstruction}{509}{section.41.11}%
+\contentsline {section}{\numberline {41.12}Causal Ancestry}{509}{section.41.12}%
+\contentsline {section}{\numberline {41.13}Identity Is Scale Dependent}{510}{section.41.13}%
+\contentsline {section}{\numberline {41.14}The Identity Window}{510}{section.41.14}%
+\contentsline {section}{\numberline {41.15}Identity and Information}{511}{section.41.15}%
+\contentsline {section}{\numberline {41.16}The Ship Without a Metaphysical Plank}{511}{section.41.16}%
+\contentsline {section}{\numberline {41.17}Identity Without Consciousness}{512}{section.41.17}%
+\contentsline {section}{\numberline {41.18}Cosmic Identity}{512}{section.41.18}%
+\contentsline {section}{\numberline {41.19}What Does Not Have to Survive}{513}{section.41.19}%
+\contentsline {section}{\numberline {41.20}The Universe Does Not Need to Remember in Order to Continue}{514}{section.41.20}%
+\contentsline {section}{\numberline {41.21}Assembly Index Prevents Arbitrary Recurrence}{515}{section.41.21}%
+\contentsline {section}{\numberline {41.22}The Persistence Postulate Must Remain Separate}{515}{section.41.22}%
+\contentsline {section}{\numberline {41.23}Identity Is Not Immortality}{516}{section.41.23}%
+\contentsline {section}{\numberline {41.24}Identity as a Constraint on Future Reachability}{516}{section.41.24}%
+\contentsline {section}{\numberline {41.25}From Identity to Cosmic History}{517}{section.41.25}%
+\contentsline {chapter}{\numberline {42}Reachability and Cosmic History}{519}{chapter.42}%
+\contentsline {section}{\numberline {42.1}Kinematical State Space and Dynamical Reachability}{519}{section.42.1}%
+\contentsline {section}{\numberline {42.2}A Universe Has a History Budget}{520}{section.42.2}%
+\contentsline {section}{\numberline {42.3}Assembly Index as a Reachability Constraint}{521}{section.42.3}%
+\contentsline {section}{\numberline {42.4}Everywhere Means Everywhere}{522}{section.42.4}%
+\contentsline {section}{\numberline {42.5}Parallelism and Sequential Depth}{522}{section.42.5}%
+\contentsline {section}{\numberline {42.6}The Reachability Cone}{523}{section.42.6}%
+\contentsline {section}{\numberline {42.7}Energy Reachability}{523}{section.42.7}%
+\contentsline {section}{\numberline {42.8}Reachability Can Contract}{524}{section.42.8}%
+\contentsline {section}{\numberline {42.9}Reachability and Available Work}{525}{section.42.9}%
+\contentsline {section}{\numberline {42.10}Reachability Is Not Probability}{525}{section.42.10}%
+\contentsline {section}{\numberline {42.11}Why Infinite Time Does Not Solve Every Problem}{526}{section.42.11}%
+\contentsline {section}{\numberline {42.12}History Is a Filter}{527}{section.42.12}%
+\contentsline {section}{\numberline {42.13}Backward Reachability}{527}{section.42.13}%
+\contentsline {section}{\numberline {42.14}Cosmological Memory as Restricted Ancestry}{528}{section.42.14}%
+\contentsline {section}{\numberline {42.15}Forgetting as Expansion of the Backward Equivalence Class}{528}{section.42.15}%
+\contentsline {section}{\numberline {42.16}The Universe Can Lose Its Age}{529}{section.42.16}%
+\contentsline {section}{\numberline {42.17}The Reachable Future of Heat Death}{530}{section.42.17}%
+\contentsline {section}{\numberline {42.18}Route A and Route B as Reachability Changes}{530}{section.42.18}%
+\contentsline {section}{\numberline {42.19}The Active Quadrant}{531}{section.42.19}%
+\contentsline {section}{\numberline {42.20}History Constrains Reknotting}{532}{section.42.20}%
+\contentsline {section}{\numberline {42.21}No Requirement of Historical Repetition}{532}{section.42.21}%
+\contentsline {section}{\numberline {42.22}The Reachability Arrow}{533}{section.42.22}%
+\contentsline {section}{\numberline {42.23}Reachability and the Second Law}{534}{section.42.23}%
+\contentsline {section}{\numberline {42.24}Reachability and the Persistence Postulate}{534}{section.42.24}%
+\contentsline {section}{\numberline {42.25}The Reachability Spectrum}{535}{section.42.25}%
+\contentsline {section}{\numberline {42.26}From Local Modes to Historical Worlds}{535}{section.42.26}%
+\contentsline {section}{\numberline {42.27}The Cosmic History Functional}{536}{section.42.27}%
+\contentsline {section}{\numberline {42.28}The Future Is Smaller Than Possibility}{536}{section.42.28}%
+\contentsline {section}{\numberline {42.29}A Universe Is Not a Random State}{537}{section.42.29}%
+\contentsline {section}{\numberline {42.30}From Reachability to Continuation}{537}{section.42.30}%
+\contentsline {chapter}{\numberline {43}The Universe as Continuation}{539}{chapter.43}%
+\contentsline {section}{\numberline {43.1}Continuation, Applied to Everything}{539}{section.43.1}%
+\contentsline {section}{\numberline {43.2}The Same Question, Twice}{540}{section.43.2}%
+\contentsline {section}{\numberline {43.3}Why the Ontological Route Was Necessary}{540}{section.43.3}%
+\contentsline {section}{\numberline {43.4}What Remains Undecided}{541}{section.43.4}%
+\contentsline {section}{\numberline {43.5}From Ontology to Mathematics}{541}{section.43.5}%
+\contentsline {part}{IX\hspace {1em}Mathematical Development}{543}{part.9}%
+\contentsline {chapter}{\numberline {44}State Space of the Plenum}{545}{chapter.44}%
+\contentsline {section}{\numberline {44.1}From a Field Tuple to a Configuration Space}{546}{section.44.1}%
+\contentsline {section}{\numberline {44.2}Constraints and the Physical State Space}{547}{section.44.2}%
+\contentsline {section}{\numberline {44.3}Admissible Variations}{548}{section.44.3}%
+\contentsline {section}{\numberline {44.4}A Local Geometry on Configuration Space}{549}{section.44.4}%
+\contentsline {section}{\numberline {44.5}Kinematical Possibility and Dynamical Reachability}{549}{section.44.5}%
+\contentsline {section}{\numberline {44.6}Assembly-Constrained State Space}{550}{section.44.6}%
+\contentsline {section}{\numberline {44.7}Closed and Open Dynamical Sectors}{551}{section.44.7}%
+\contentsline {section}{\numberline {44.8}The Variational Traceability Principle}{552}{section.44.8}%
+\contentsline {section}{\numberline {44.9}Why Traceability Matters for Cosmology}{553}{section.44.9}%
+\contentsline {section}{\numberline {44.10}Functionals on the Plenum State Space}{553}{section.44.10}%
+\contentsline {section}{\numberline {44.11}State-Space Flow and Observable Projection}{554}{section.44.11}%
+\contentsline {section}{\numberline {44.12}The Smooth Submanifold}{555}{section.44.12}%
+\contentsline {section}{\numberline {44.13}Linearization About a Background}{556}{section.44.13}%
+\contentsline {section}{\numberline {44.14}The Difference Between a Hessian and a Stability Operator}{556}{section.44.14}%
+\contentsline {section}{\numberline {44.15}State Space Does Not Solve the Closure Problem}{557}{section.44.15}%
+\contentsline {section}{\numberline {44.16}The Mathematical Program Now Defined}{558}{section.44.16}%
+\contentsline {section}{\numberline {44.17}What Has and Has Not Been Established}{558}{section.44.17}%
+\contentsline {chapter}{\numberline {45}Measures of Smoothness}{561}{chapter.45}%
+\contentsline {section}{\numberline {45.1}Smoothness Is Necessarily Scale Dependent}{561}{section.45.1}%
+\contentsline {section}{\numberline {45.2}Amplitude Variance}{563}{section.45.2}%
+\contentsline {section}{\numberline {45.3}Gradient Smoothness}{564}{section.45.3}%
+\contentsline {section}{\numberline {45.4}Spectral Smoothness}{564}{section.45.4}%
+\contentsline {section}{\numberline {45.5}Correlation Smoothness}{565}{section.45.5}%
+\contentsline {section}{\numberline {45.6}Geometric Smoothness}{566}{section.45.6}%
+\contentsline {section}{\numberline {45.7}Velocity and Flow Smoothness}{566}{section.45.7}%
+\contentsline {section}{\numberline {45.8}Entropy-Field Smoothness}{567}{section.45.8}%
+\contentsline {section}{\numberline {45.9}Localization Is Not the Same as Roughness}{568}{section.45.9}%
+\contentsline {section}{\numberline {45.10}Void Smoothness and Mass Smoothness}{569}{section.45.10}%
+\contentsline {section}{\numberline {45.11}Algorithmic Smoothness}{569}{section.45.11}%
+\contentsline {section}{\numberline {45.12}Smoothness as a Vector of Diagnostics}{570}{section.45.12}%
+\contentsline {section}{\numberline {45.13}The Turnover Surface}{570}{section.45.13}%
+\contentsline {section}{\numberline {45.14}Why No Measure Is Yet a Lyapunov Functional}{571}{section.45.14}%
+\contentsline {section}{\numberline {45.15}Operational Smoothness}{572}{section.45.15}%
+\contentsline {section}{\numberline {45.16}A Necessary Separation of Three Claims}{573}{section.45.16}%
+\contentsline {section}{\numberline {45.17}From Smoothness to Distinction}{573}{section.45.17}%
+\contentsline {chapter}{\numberline {46}Scale-Dependent Distinction}{575}{chapter.46}%
+\contentsline {section}{\numberline {46.1}The Distinction Spectrum}{576}{section.46.1}%
+\contentsline {section}{\numberline {46.2}Minimal Requirements on \(D\)}{577}{section.46.2}%
+\contentsline {section}{\numberline {46.3}Distinction as a Diagnostic Independent of RSVP}{578}{section.46.3}%
+\contentsline {section}{\numberline {46.4}A Minimal Matter-Sector Realization}{578}{section.46.4}%
+\contentsline {section}{\numberline {46.5}The Smooth--Structured--Smooth Trajectory}{579}{section.46.5}%
+\contentsline {section}{\numberline {46.6}The Turnover Surface}{580}{section.46.6}%
+\contentsline {section}{\numberline {46.7}The Domain of Net Differentiation}{580}{section.46.7}%
+\contentsline {section}{\numberline {46.8}Assembly-Constrained Reachability}{581}{section.46.8}%
+\contentsline {section}{\numberline {46.9}Distinction Capacity of a Finite Cosmic History}{582}{section.46.9}%
+\contentsline {section}{\numberline {46.10}Distinction Production and Distinction Persistence}{583}{section.46.10}%
+\contentsline {section}{\numberline {46.11}A Continuity Equation in Scale Space}{584}{section.46.11}%
+\contentsline {section}{\numberline {46.12}Integrated Distinction}{584}{section.46.12}%
+\contentsline {section}{\numberline {46.13}The Primordial Boundary}{585}{section.46.13}%
+\contentsline {section}{\numberline {46.14}The Terminal Boundary}{585}{section.46.14}%
+\contentsline {section}{\numberline {46.15}Distinction and Available Work}{586}{section.46.15}%
+\contentsline {section}{\numberline {46.16}Distinction and Persistence}{587}{section.46.16}%
+\contentsline {section}{\numberline {46.17}Observable Estimators}{587}{section.46.17}%
+\contentsline {section}{\numberline {46.18}A Falsifiable Multiscale Claim}{588}{section.46.18}%
+\contentsline {section}{\numberline {46.19}What Has Been Established}{588}{section.46.19}%
+\contentsline {chapter}{\numberline {47}Localization}{591}{chapter.47}%
+\contentsline {section}{\numberline {47.1}From Distinction to Spatial Concentration}{591}{section.47.1}%
+\contentsline {section}{\numberline {47.2}A Localization Functional}{592}{section.47.2}%
+\contentsline {section}{\numberline {47.3}Localization Is Not Merely Density}{593}{section.47.3}%
+\contentsline {section}{\numberline {47.4}Localized Structures as Excursions from Background}{594}{section.47.4}%
+\contentsline {section}{\numberline {47.5}Localization Across Scale}{595}{section.47.5}%
+\contentsline {section}{\numberline {47.6}Localization and Gravitational Structure Formation}{595}{section.47.6}%
+\contentsline {section}{\numberline {47.7}Localization Does Not Imply Lower Thermodynamic Entropy}{596}{section.47.7}%
+\contentsline {section}{\numberline {47.8}Black Holes as Localization Extrema}{597}{section.47.8}%
+\contentsline {section}{\numberline {47.9}Localization and the Long Future}{598}{section.47.9}%
+\contentsline {section}{\numberline {47.10}Localization as Boundary Maintenance}{598}{section.47.10}%
+\contentsline {section}{\numberline {47.11}Persistence Requires More Than Localization}{599}{section.47.11}%
+\contentsline {section}{\numberline {47.12}Localization and Assembly Index}{600}{section.47.12}%
+\contentsline {section}{\numberline {47.13}The Localization--Delocalization Arc}{600}{section.47.13}%
+\contentsline {section}{\numberline {47.14}Localization Turnover}{601}{section.47.14}%
+\contentsline {section}{\numberline {47.15}Terminal Delocalization}{602}{section.47.15}%
+\contentsline {section}{\numberline {47.16}The Relation to Reknotting}{602}{section.47.16}%
+\contentsline {section}{\numberline {47.17}Variational Status}{603}{section.47.17}%
+\contentsline {section}{\numberline {47.18}What Localization Adds}{603}{section.47.18}%
+\contentsline {chapter}{\numberline {48}Void Fraction and Concentration}{605}{chapter.48}%
+\contentsline {section}{\numberline {48.1}Why the Mean Density Is Insufficient}{605}{section.48.1}%
+\contentsline {section}{\numberline {48.2}Density Contrast}{606}{section.48.2}%
+\contentsline {section}{\numberline {48.3}The Void Excursion Set}{607}{section.48.3}%
+\contentsline {section}{\numberline {48.4}Mass Fraction and Volume Fraction}{607}{section.48.4}%
+\contentsline {section}{\numberline {48.5}A Concentration Functional}{608}{section.48.5}%
+\contentsline {section}{\numberline {48.6}A Two-Phase Approximation}{609}{section.48.6}%
+\contentsline {section}{\numberline {48.7}Void Growth as Differentiation}{609}{section.48.7}%
+\contentsline {section}{\numberline {48.8}Hierarchical Voids}{610}{section.48.8}%
+\contentsline {section}{\numberline {48.9}Percolation}{611}{section.48.9}%
+\contentsline {section}{\numberline {48.10}The Cosmic Web as a Complementary Geometry}{611}{section.48.10}%
+\contentsline {section}{\numberline {48.11}Void--Knot Duality}{612}{section.48.11}%
+\contentsline {section}{\numberline {48.12}The Maximum-Differentiation Regime}{612}{section.48.12}%
+\contentsline {section}{\numberline {48.13}Void Growth Is Not the Terminal Limit}{613}{section.48.13}%
+\contentsline {section}{\numberline {48.14}The Dissolution of the Void Concept}{613}{section.48.14}%
+\contentsline {section}{\numberline {48.15}The Void Turnover Surface}{614}{section.48.15}%
+\contentsline {section}{\numberline {48.16}A Joint Structural State Vector}{615}{section.48.16}%
+\contentsline {section}{\numberline {48.17}Void Statistics as an Observational Test}{615}{section.48.17}%
+\contentsline {section}{\numberline {48.18}Assembly Constraints on Void Structure}{616}{section.48.18}%
+\contentsline {section}{\numberline {48.19}The Deep-Future Reversal}{616}{section.48.19}%
+\contentsline {section}{\numberline {48.20}Variational Status}{617}{section.48.20}%
+\contentsline {section}{\numberline {48.21}From Structural Diagnostics to a Smoothing Functional}{617}{section.48.21}%
+\contentsline {chapter}{\numberline {49}A Smoothing Functional}{619}{chapter.49}%
+\contentsline {section}{\numberline {49.1}The State to Be Smoothed}{619}{section.49.1}%
+\contentsline {section}{\numberline {49.2}Deviation from the Smooth Sector}{620}{section.49.2}%
+\contentsline {section}{\numberline {49.3}A Quadratic Smoothing Functional}{621}{section.49.3}%
+\contentsline {section}{\numberline {49.4}Component Form}{621}{section.49.4}%
+\contentsline {section}{\numberline {49.5}Spectral Representation}{622}{section.49.5}%
+\contentsline {section}{\numberline {49.6}Connection to Scale-Dependent Distinction}{623}{section.49.6}%
+\contentsline {section}{\numberline {49.7}The Turnover Surface Reappears}{624}{section.49.7}%
+\contentsline {section}{\numberline {49.8}Why Void Formation Does Not Count as Smoothing}{624}{section.49.8}%
+\contentsline {section}{\numberline {49.9}The Time Derivative}{625}{section.49.9}%
+\contentsline {section}{\numberline {49.10}Variational and Transport Contributions}{626}{section.49.10}%
+\contentsline {section}{\numberline {49.11}Available Work and the Smoothing Rate}{626}{section.49.11}%
+\contentsline {section}{\numberline {49.12}Persistent Frozen Structure}{627}{section.49.12}%
+\contentsline {section}{\numberline {49.13}Integrated Smoothness Across Scale}{628}{section.49.13}%
+\contentsline {section}{\numberline {49.14}Accessibility and the Moving Spectral Window}{628}{section.49.14}%
+\contentsline {section}{\numberline {49.15}The Active Quadrant}{629}{section.49.15}%
+\contentsline {section}{\numberline {49.16}Two Ways the Smooth State Can Lose Stability}{630}{section.49.16}%
+\contentsline {section}{\numberline {49.17}A Candidate Lyapunov Criterion}{631}{section.49.17}%
+\contentsline {section}{\numberline {49.18}Why Global Monotonicity Would Be Wrong}{631}{section.49.18}%
+\contentsline {section}{\numberline {49.19}A Local Late-Time Lyapunov Hypothesis}{632}{section.49.19}%
+\contentsline {section}{\numberline {49.20}The Smooth Boundary as a Zero Set}{632}{section.49.20}%
+\contentsline {section}{\numberline {49.21}Degeneracy of the Zero Set}{633}{section.49.21}%
+\contentsline {section}{\numberline {49.22}The Assembly Constraint}{633}{section.49.22}%
+\contentsline {section}{\numberline {49.23}Variational Traceability Audit}{634}{section.49.23}%
+\contentsline {section}{\numberline {49.24}What the Functional Must Eventually Survive}{635}{section.49.24}%
+\contentsline {section}{\numberline {49.25}From Smoothing to Fixed Points}{635}{section.49.25}%
+\contentsline {chapter}{\numberline {50}Fixed Points and Smooth Boundaries}{637}{chapter.50}%
+\contentsline {section}{\numberline {50.1}Fixed Points of the Full Dynamics}{637}{section.50.1}%
+\contentsline {section}{\numberline {50.2}The Smooth Fixed-Point Set}{638}{section.50.2}%
+\contentsline {section}{\numberline {50.3}Fixed-Point Manifolds}{639}{section.50.3}%
+\contentsline {section}{\numberline {50.4}Operational Fixed Points}{640}{section.50.4}%
+\contentsline {section}{\numberline {50.5}Coarse-Graining as a Transformation}{640}{section.50.5}%
+\contentsline {section}{\numberline {50.6}The TARTAN Fixed-Point Condition}{641}{section.50.6}%
+\contentsline {section}{\numberline {50.7}What Is Still Open About \(I_X\)}{642}{section.50.7}%
+\contentsline {section}{\numberline {50.8}Fixed Points of Repair}{642}{section.50.8}%
+\contentsline {section}{\numberline {50.9}Attractors}{643}{section.50.9}%
+\contentsline {section}{\numberline {50.10}Smooth Boundaries Need Not Be Attractors}{644}{section.50.10}%
+\contentsline {section}{\numberline {50.11}The Accessible Tangent Cone}{645}{section.50.11}%
+\contentsline {section}{\numberline {50.12}Stable, Marginal, and Unstable Fixed Points}{645}{section.50.12}%
+\contentsline {section}{\numberline {50.13}Lyapunov Stability}{646}{section.50.13}%
+\contentsline {section}{\numberline {50.14}LaSalle-Type Terminal Sets}{647}{section.50.14}%
+\contentsline {section}{\numberline {50.15}The Smooth Boundary and Coarse-Grained Identity}{647}{section.50.15}%
+\contentsline {section}{\numberline {50.16}The Disappearance of Structure Under Renormalization}{648}{section.50.16}%
+\contentsline {section}{\numberline {50.17}Two Different Fixed-Point Questions}{648}{section.50.17}%
+\contentsline {section}{\numberline {50.18}The Primordial Boundary Revisited}{649}{section.50.18}%
+\contentsline {section}{\numberline {50.19}Same Coarse State, Different Tangent Dynamics}{650}{section.50.19}%
+\contentsline {section}{\numberline {50.20}Fixed Points and the Active Quadrant}{650}{section.50.20}%
+\contentsline {section}{\numberline {50.21}A Fixed Point Can Be a Saddle}{651}{section.50.21}%
+\contentsline {section}{\numberline {50.22}Metastability}{652}{section.50.22}%
+\contentsline {section}{\numberline {50.23}Fixed Points and Assembly History}{652}{section.50.23}%
+\contentsline {section}{\numberline {50.24}The Fixed-Point Interpretation of Identity}{653}{section.50.24}%
+\contentsline {section}{\numberline {50.25}Smooth Boundaries as Loss of Internal Scale}{653}{section.50.25}%
+\contentsline {section}{\numberline {50.26}The Smooth Boundary Is a Question, Not a Conclusion}{654}{section.50.26}%
+\contentsline {section}{\numberline {50.27}Variational Traceability Audit}{654}{section.50.27}%
+\contentsline {section}{\numberline {50.28}The Question Passed to the Stability Analysis}{655}{section.50.28}%
+\contentsline {chapter}{\numberline {51}Instability of Perfect Smoothness}{657}{chapter.51}%
+\contentsline {section}{\numberline {51.1}The Terminal Background}{657}{section.51.1}%
+\contentsline {section}{\numberline {51.2}The Spectral Problem}{659}{section.51.2}%
+\contentsline {section}{\numberline {51.3}Constraint Reduction Before Stability}{659}{section.51.3}%
+\contentsline {section}{\numberline {51.4}The Hessian Is Not Automatically the Stability Operator}{660}{section.51.4}%
+\contentsline {section}{\numberline {51.5}The Active Quadrant}{661}{section.51.5}%
+\contentsline {section}{\numberline {51.6}Route A: Accessibility Crossing}{662}{section.51.6}%
+\contentsline {section}{\numberline {51.7}Route B: Spectral Sign Crossing}{663}{section.51.7}%
+\contentsline {section}{\numberline {51.8}Route A and Route B Must Remain Distinct}{664}{section.51.8}%
+\contentsline {section}{\numberline {51.9}The Accessibility Boundary Is Not a Metaphor}{664}{section.51.9}%
+\contentsline {section}{\numberline {51.10}Time-Dependent Terminal Backgrounds}{664}{section.51.10}%
+\contentsline {section}{\numberline {51.11}Transient Growth in Non-Normal Systems}{665}{section.51.11}%
+\contentsline {section}{\numberline {51.12}From Linear Growth to Physical Distinction}{666}{section.51.12}%
+\contentsline {section}{\numberline {51.13}The Deep-Time Scale}{666}{section.51.13}%
+\contentsline {section}{\numberline {51.14}Why Migration Does Not Solve the Boundary Problem}{667}{section.51.14}%
+\contentsline {section}{\numberline {51.15}Every Existing Structure Has an Assembly History}{668}{section.51.15}%
+\contentsline {section}{\numberline {51.16}Why Reknotting Is Not Random Resampling}{668}{section.51.16}%
+\contentsline {section}{\numberline {51.17}Black Holes as the Last Extreme Knots}{669}{section.51.17}%
+\contentsline {section}{\numberline {51.18}The Localization Maximum}{670}{section.51.18}%
+\contentsline {section}{\numberline {51.19}The Weyl-Curvature Problem}{670}{section.51.19}%
+\contentsline {section}{\numberline {51.20}Horizon Entropy Does Not Rescue Geometric Monotonicity}{671}{section.51.20}%
+\contentsline {section}{\numberline {51.21}The Last Knots Do Not Prove the Next Knots}{671}{section.51.21}%
+\contentsline {section}{\numberline {51.22}Nonlinear Persistence}{672}{section.51.22}%
+\contentsline {section}{\numberline {51.23}Persistence as Positive Distinction at Late Nonlinear Time}{673}{section.51.23}%
+\contentsline {section}{\numberline {51.24}The Complete Reknotting Criterion}{673}{section.51.24}%
+\contentsline {section}{\numberline {51.25}Four Possible Numerical Outcomes}{674}{section.51.25}%
+\contentsline {section}{\numberline {51.26}Failure Must Be Allowed}{674}{section.51.26}%
+\contentsline {section}{\numberline {51.27}The Our-Universe Constraint}{675}{section.51.27}%
+\contentsline {section}{\numberline {51.28}Assembly Index as a Second Constraint}{675}{section.51.28}%
+\contentsline {section}{\numberline {51.29}Why Fourteen Billion Years Matters}{676}{section.51.29}%
+\contentsline {section}{\numberline {51.30}Cosmological Memory Without Exact Repetition}{676}{section.51.30}%
+\contentsline {section}{\numberline {51.31}No Persistence Postulate Is Required}{677}{section.51.31}%
+\contentsline {section}{\numberline {51.32}The Empty Active Quadrant}{677}{section.51.32}%
+\contentsline {section}{\numberline {51.33}A Nonempty Active Quadrant Is Not Yet Success}{678}{section.51.33}%
+\contentsline {section}{\numberline {51.34}The Variational Traceability Ledger}{678}{section.51.34}%
+\contentsline {section}{\numberline {51.35}What This Chapter Has Established}{679}{section.51.35}%
+\contentsline {section}{\numberline {51.36}The Mathematical Development Ends at a Gate}{679}{section.51.36}%
+\contentsline {part}{X\hspace {1em}Contact with Observational Cosmology}{681}{part.10}%
+\contentsline {part}{XI\hspace {1em}Comparisons and Precedents}{683}{part.11}%
+\contentsline {part}{XII\hspace {1em}Consequences}{685}{part.12}%
+\contentsline {part}{XIII\hspace {1em}Limits, Tests, and Open Problems}{687}{part.13}%

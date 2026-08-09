@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2026.7.24)  9 AUG 2026 16:52
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2026.7.24)  9 AUG 2026 17:20
  restricted system commands enabled.
 **interface-analysis.tex
 (./interface-analysis.tex
@@ -434,12 +434,16 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 16.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 16.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 29.
+<images/stars-ui-kulu.png, id=20, 642.4pt x 481.8pt>
+File: images/stars-ui-kulu.png Graphic file (type png)
+<use images/stars-ui-kulu.png>
+Package luatex.def Info: images/stars-ui-kulu.png  used on input line 29.
+(luatex.def)             Requested size: 469.75502pt x 352.32861pt.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./interface-analysis.
-aux)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2<./images/stars-ui-kulu.p
+ng>]
+(./interface-analysis.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -449,25 +453,24 @@ Package rerunfilecheck Info: File `interface-analysis.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 11540 strings out of 476553
+ 11542 strings out of 476553
  100000,1977958 words of node,token memory allocated
  421 words of node memory still in use:
    3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 4 attribute, 51 glue_spec,
  4 attribute_list, 1 write nodes
-   avail lists: 1:1,2:262,3:151,4:8,5:154,6:42,7:3305,8:1,9:238,10:7,11:251
- 33366 multiletter control sequences out of 65536+600000
- 37 fonts using 2711719 bytes
- 79i,7n,89p,319b,332s stack positions out of 10000i,1000n,20000p,200000b,200000s
+   avail lists: 1:1,2:272,3:188,4:6,5:228,6:47,7:5111,8:1,9:221,10:5,11:441
+ 33365 multiletter control sequences out of 65536+600000
+ 33 fonts using 2398943 bytes
+ 79i,6n,89p,319b,338s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/opentype/public/lm/lmroman10-bold.otf></usr/share/texmf/
-fonts/opentype/public/lm/lmmono10-regular.otf></usr/share/texmf/fonts/opentype/p
-ublic/lm/lmroman10-italic.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman
-10-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman12-bold.otf></u
-sr/share/texmf/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/texmf/
-fonts/opentype/public/lm/lmroman17-regular.otf>
-Output written on interface-analysis.pdf (2 pages, 28283 bytes).
+fonts/opentype/public/lm/lmroman10-italic.otf></usr/share/texmf/fonts/opentype/p
+ublic/lm/lmroman10-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmroma
+n12-bold.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman12-regular.otf></
+usr/share/texmf/fonts/opentype/public/lm/lmroman17-regular.otf>
+Output written on interface-analysis.pdf (2 pages, 39818 bytes).
 
-PDF statistics: 86 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+PDF statistics: 81 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  8 named destinations out of 1000 (max. 131072)
  33 words of extra memory for PDF output out of 10000 (max. 100000000)
 

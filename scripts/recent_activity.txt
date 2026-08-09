@@ -1,0 +1,233 @@
+COMMIT 8c0243e
+DATE   2026-08-09
+AUTHOR standardgalactic
+SUBJECT Theory Development
+A	The_Smoothness_Paradox.pdf
+A	Why_the_End_Forgets_the_Beginning.json
+A	Why_the_End_Forgets_the_Beginning.mp3
+A	Why_the_End_Forgets_the_Beginning.srt
+A	Why_the_End_Forgets_the_Beginning.tsv
+A	Why_the_End_Forgets_the_Beginning.txt
+A	Why_the_End_Forgets_the_Beginning.vtt
+A	experiments/python/README.md
+A	experiments/python/experiment.py
+A	experiments/python/requirements.txt
+A	experiments/rust/.gitignore
+A	experiments/rust/Cargo.lock
+A	experiments/rust/Cargo.toml
+A	experiments/rust/README.md
+A	experiments/rust/src/main.rs
+A	images/stars-ui-kulu.png
+M	interface-analysis.aux
+M	interface-analysis.log
+M	interface-analysis.pdf
+M	smoothness-paradox.aux
+M	smoothness-paradox.log
+M	smoothness-paradox.out
+M	smoothness-paradox.pdf
+M	smoothness-paradox.tex
+M	smoothness-paradox.toc
+
+COMMIT ddf8db0
+DATE   2026-08-09
+AUTHOR standardgalactic
+SUBJECT Theory Development
+M	README.md
+A	interface-analysis.aux
+A	interface-analysis.log
+A	interface-analysis.out
+A	interface-analysis.pdf
+A	interface-analysis.tex
+A	smoothness-paradox.aux
+A	smoothness-paradox.log
+A	smoothness-paradox.out
+A	smoothness-paradox.pdf
+A	smoothness-paradox.tex
+A	smoothness-paradox.toc
+
+COMMIT 40e52a8
+DATE   2026-07-24
+AUTHOR standardgalactic
+SUBJECT Minor Note
+M	working/admissibility-interface.aux
+M	working/admissibility-interface.log
+M	working/admissibility-interface.out
+M	working/admissibility-interface.pdf
+M	working/admissibility-interface.tex
+M	working/admissibility-interface.toc
+
+COMMIT bca8aa9
+DATE   2026-06-23
+AUTHOR standardgalactic
+SUBJECT Theory Development
+A	working/One_equation_for_galaxies_and_bureaucracies.json
+A	working/One_equation_for_galaxies_and_bureaucracies.mp3
+A	working/One_equation_for_galaxies_and_bureaucracies.srt
+A	working/One_equation_for_galaxies_and_bureaucracies.tsv
+A	working/One_equation_for_galaxies_and_bureaucracies.txt
+A	working/One_equation_for_galaxies_and_bureaucracies.vtt
+A	working/README.md
+A	working/The_Projection_Interface.pdf
+A	working/The_Quadratic_Gravity_Interface.pdf
+A	working/The_RSVP_Plenum-notes.pdf
+A	working/The_RSVP_physics_of_fluid_reality.json
+A	working/The_RSVP_physics_of_fluid_reality.mp3
+A	working/The_RSVP_physics_of_fluid_reality.srt
+A	working/The_RSVP_physics_of_fluid_reality.tsv
+A	working/The_RSVP_physics_of_fluid_reality.txt
+A	working/The_RSVP_physics_of_fluid_reality.vtt
+A	working/The_accounting_error_behind_string_theory.json
+A	working/The_accounting_error_behind_string_theory.mp3
+A	working/The_accounting_error_behind_string_theory.srt
+A	working/The_accounting_error_behind_string_theory.tsv
+A	working/The_accounting_error_behind_string_theory.txt
+A	working/The_accounting_error_behind_string_theory.vtt
+A	working/admissibility-interface.aux
+A	working/admissibility-interface.log
+A	working/admissibility-interface.out
+A	working/admissibility-interface.pdf
+A	working/admissibility-interface.tex
+A	working/admissibility-interface.toc
+A	working/corrections.log
+A	working/distinction-geometry-core.aux
+A	working/distinction-geometry-core.log
+A	working/distinction-geometry-core.out
+A	working/distinction-geometry-core.pdf
+A	working/distinction-geometry-core.tex
+A	working/distinction-geometry-core.toc
+A	working/distinction-geometry.png
+A	working/fix_transcription_errors.sh
+A	working/flyxion-frameworks.pdf
+A	working/flyxion-frameworks.tex
+A	working/index.html
+A	working/resource-geometry.pdf
+A	working/resource-geometry.tex
+
+COMMIT 122a6eb
+DATE   2026-05-30
+AUTHOR standardgalactic
+SUBJECT Cleaning Up
+D	Document_Physics.pdf
+M	"El_Universo_Se_Relaja_Sin_Energ\303\255a_Oscura.json"
+M	"El_Universo_Se_Relaja_Sin_Energ\303\255a_Oscura.srt"
+M	"El_Universo_Se_Relaja_Sin_Energ\303\255a_Oscura.tsv"
+M	"El_Universo_Se_Relaja_Sin_Energ\303\255a_Oscura.txt"
+M	"El_Universo_Se_Relaja_Sin_Energ\303\255a_Oscura.vtt"
+M	README.md
+D	The_Geometry_of_Document_Rewriting.json
+D	The_Geometry_of_Document_Rewriting.mp3
+D	The_Geometry_of_Document_Rewriting.srt
+D	The_Geometry_of_Document_Rewriting.tsv
+D	The_Geometry_of_Document_Rewriting.txt
+D	The_Geometry_of_Document_Rewriting.vtt
+M	The_Universe_Is_Just_Relaxing.json
+M	The_Universe_Is_Just_Relaxing.srt
+M	The_Universe_Is_Just_Relaxing.tsv
+M	The_Universe_Is_Just_Relaxing.txt
+M	The_Universe_Is_Just_Relaxing.vtt
+D	docperturb.aux
+D	docperturb.log
+D	docperturb.out
+D	docperturb.pdf
+D	docperturb.tex
+D	docperturb.toc
+D	docperturb/README.md
+D	docperturb/docperturb_cli.py
+D	docperturb/docperturb_paper.tex
+D	docperturb/mutation_profiles.py
+D	docperturb/perturbation_engine.py
+D	docperturb/semantic_budget.py
+D	docperturb/synonym_engine.py
+D	docperturb/synonym_randomizer.py
+D	docperturb/synonym_randomizer_ui.jsx
+D	file-list.txt
+A	fix_transcription_errors.py
+M	index.html
+
+COMMIT ab7b55a
+DATE   2026-05-29
+AUTHOR standardgalactic
+SUBJECT Deploying Page
+M	README.md
+
+COMMIT 8b323cb
+DATE   2026-05-29
+AUTHOR standardgalactic
+SUBJECT Deploying Page
+M	"El_Universo_Se_Relaja_Sin_Energ\303\255a_Oscura.mp3"
+M	README.md
+M	The_Geometry_of_Document_Rewriting.mp3
+M	The_Universe_Is_Just_Relaxing.mp3
+
+COMMIT 0a740f4
+DATE   2026-05-29
+AUTHOR standardgalactic
+SUBJECT Deploying Page
+A	01 - Great Mistake.png
+A	02 - Saddle.png
+A	03 - Plenum.png
+A	04 - Accessibility Landscape.png
+A	05 - Fall of Space.png
+A	06 - Depth-Two Secret.png
+A	07 - Smoking Gun.png
+A	08 - RSVP Universe.png
+A	Document_Physics.pdf
+A	"El_Universo_Se_Relaja_Sin_Energ\303\255a_Oscura.json"
+A	"El_Universo_Se_Relaja_Sin_Energ\303\255a_Oscura.mp3"
+A	"El_Universo_Se_Relaja_Sin_Energ\303\255a_Oscura.srt"
+A	"El_Universo_Se_Relaja_Sin_Energ\303\255a_Oscura.tsv"
+A	"El_Universo_Se_Relaja_Sin_Energ\303\255a_Oscura.txt"
+A	"El_Universo_Se_Relaja_Sin_Energ\303\255a_Oscura.vtt"
+A	README.md
+A	RSVP-cheatsheet.png
+A	RSVP-revolution.png
+A	The_Geometry_of_Document_Rewriting.json
+A	The_Geometry_of_Document_Rewriting.mp3
+A	The_Geometry_of_Document_Rewriting.srt
+A	The_Geometry_of_Document_Rewriting.tsv
+A	The_Geometry_of_Document_Rewriting.txt
+A	The_Geometry_of_Document_Rewriting.vtt
+A	The_RSVP_Blueprint.pdf
+A	The_RSVP_Revolution.pdf
+A	The_Universe_Is_Just_Relaxing.json
+A	The_Universe_Is_Just_Relaxing.mp3
+A	The_Universe_Is_Just_Relaxing.srt
+A	The_Universe_Is_Just_Relaxing.tsv
+A	The_Universe_Is_Just_Relaxing.txt
+A	The_Universe_Is_Just_Relaxing.vtt
+A	accessibility-relaxation.aux
+A	accessibility-relaxation.log
+A	accessibility-relaxation.out
+A	accessibility-relaxation.pdf
+A	accessibility-relaxation.tex
+A	accessibility-relaxation.toc
+A	birth-of-the-cosmos.png
+A	docperturb.aux
+A	docperturb.log
+A	docperturb.out
+A	docperturb.pdf
+A	docperturb.tex
+A	docperturb.toc
+A	docperturb/README.md
+A	docperturb/docperturb_cli.py
+A	docperturb/docperturb_paper.tex
+A	docperturb/mutation_profiles.py
+A	docperturb/perturbation_engine.py
+A	docperturb/semantic_budget.py
+A	docperturb/synonym_engine.py
+A	docperturb/synonym_randomizer.py
+A	docperturb/synonym_randomizer_ui.jsx
+A	file-list.txt
+A	house-of-water.png
+A	index.html
+A	notebooks/01_friedmann_saddle.html
+A	notebooks/02_accessibility_landscape.html
+A	notebooks/03_depth_two_closure.html
+A	notebooks/04_redshift_comparison.html
+A	notebooks/05_lamphrodyne_relaxation.html
+A	notebooks/06_entropy_vorticity_birefringence.html
+A	notebooks/07_rsvp_universe.html
+A	notebooks/index.html
+A	origins-01.png
+A	origins-02.png
+A	orphic-mystery.png
