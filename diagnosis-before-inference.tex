@@ -1,0 +1,211 @@
+\documentclass[11pt]{article}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage{titling}
+
+% ---- Notation macros (aligned with RSVP Cosmology monograph) ----
+\newcommand{\RGam}{R_\Gamma}
+\newcommand{\ddep}{\delta_{\mathrm{dep}}}
+\newcommand{\Ddep}{\Delta_{\mathrm{dep}}}
+\newcommand{\Repobj}{J}
+\newcommand{\dobs}{\delta_{\mathrm{dep}}^{\mathrm{obs}}}
+\newcommand{\dadm}{\delta_{\mathrm{dep}}^{\mathrm{adm}}}
+
+\title{Diagnosis Before Inference: The Initial Power Spectrum as an Admissibility Certificate in Cosmological Reconstruction}
+\author{Flyxion \\ \small Independent Researcher}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}\footnote{This essay is part of the RSVP Cosmology research program. The formal development of the admissibility and repair apparatus used here is presented in \emph{RSVP Cosmology: Field Equations, Admissibility, and the Geometry of Distinction} (Flyxion, 2026).}
+Hoellinger and Leclercq \cite{hoellinger2024diagnosing} address a narrow but consequential problem in field-based cosmological inference: a forward model of a galaxy survey can be subtly misspecified in ways that bias the inferred cosmological parameters by more than two standard deviations, while remaining almost invisible in the raw simulated summary statistics. Their solution is to interpose a diagnostic stage between the survey data and the cosmological posterior, using the inferred initial matter power spectrum as a sensitive, theoretically well-understood proxy on which misspecification can be checked before it propagates. This essay reads that two-step architecture through the vocabulary of admissibility and repair developed elsewhere in this research program: a fixed reference class supplied by prior information external to the damaged inference, a scalar structural-distance functional that measures departure from that class, and a decision to proceed with or refuse an inference according to whether that distance falls inside a tolerable region. The paper's own results --- unbiased posteriors under correct specification, Mahalanobis-distance excursions under misspecified galaxy bias, extinction, redshifts, and gravity solvers, and an explicit warning that a large distance need not indicate a worse model --- turn out to instantiate, independently and in a working numerical pipeline, several claims that the admissibility framework states abstractly: that diagnosis should precede commitment, that the reference class must have provenance independent of the object being checked, and that any observable diagnostic is a projection which can understate an unobservable structural effect. A short closing section notes a structurally similar pattern in an unrelated numerical setting --- vorticity confinement corrections for discontinuous Galerkin fluid solvers --- where an explicit anti-dissipative term is added specifically to keep a distinguishable feature reachable across a simulation's evolution, illustrating that the diagnose-then-decide-whether-to-intervene pattern recurs wherever a computed trajectory can silently drift out of the region its own theory calls admissible.
+\end{abstract}
+
+\section{Two kinds of failure in forward-modelled inference}
+
+Stage-IV galaxy surveys such as DESI, Euclid, and LSST are approaching a regime in which their statistical power exceeds the accuracy of the forward models used to interpret them. Once a survey's uncertainty budget is dominated by systematics rather than shot noise, an inference pipeline can produce a posterior that is both precise and wrong: tight credible intervals around cosmological parameters that miss the true values because some component of the simulator --- a bias parameter, a selection function, a treatment of dust extinction, the number of time steps in the gravity solver --- was not quite right. The trouble is structural rather than accidental. Implicit-likelihood methods, which compare simulated and observed summary statistics without ever writing down an explicit likelihood, are attractive precisely because they can absorb simulators too complex or too opaque for closed-form treatment; but that same opacity means a misspecified component has no natural place to announce itself. The summary statistics themselves --- galaxy count power spectra, in Hoellinger and Leclercq's setup --- can look statistically unremarkable under both a correct and an incorrect model, differing only at the percent level, while the cosmological parameters recovered downstream differ by more than two standard deviations in the $(\Omega_m,\sigma_8)$ plane.
+
+This is a failure of diagnosability, not merely of accuracy. A pipeline that only reports a posterior on cosmological parameters has no mechanism for distinguishing ``this posterior is narrow because the data were informative'' from ``this posterior is narrow because the model quietly discarded the possibilities that would have widened it.'' The paper's proposed remedy is to route inference through an intermediate object that is, in a precise sense, more diagnosable than the final target: the initial matter power spectrum $\theta$. Unlike the cosmological parameters $\omega$, which are entangled with the full non-linear, non-Gaussian, systematics-laden machinery of the survey, $\theta$ is a linear-regime quantity with a well-understood theoretical shape and a tight, independently motivated prior from cosmic microwave background experiments. Reconstructing $\theta$ from the same simulations used for the cosmological inference, and checking that reconstruction against the prior, is cheap relative to the cosmological inference itself and sensitive to nearly every systematic effect considered in the paper. The two-step SELFI/ABC-PMC pipeline they build is, in effect, a diagnostic stage inserted before a decision stage.
+
+\section{The vocabulary of admissibility and repair}
+
+Elsewhere in this research program, the same architectural move --- diagnose against an independently sourced reference class before committing to an intervention or an inference --- has been developed abstractly, under the headings of admissibility and repair. We state the relevant apparatus formally before mapping it to the cosmological inference case.
+
+\subsection{Formal definitions}
+
+\begin{definition}[Reference class]
+Given an object $h$ under evaluation, a governing constraint structure $\Gamma_h$, and boundary data $B(h)$, the reference class $\RGam(h)$ is the set of configurations satisfying $\Gamma_h$ and consistent with $B(h)$, where:
+\begin{enumerate}
+\item $\Gamma_h$ has provenance independent of $h$ itself (typically from theory or prior experiments);
+\item $B(h)$ consists of data the evaluation is not entitled to revise;
+\item $\RGam(h)$ must not be constructed from $h$'s own evolution or internal structure.
+\end{enumerate}
+\end{definition}
+
+The independence requirement (condition 3) prevents the diagnostic from becoming circular: a reference class built from the object being checked cannot detect that object's own pathologies.
+
+\begin{definition}[Structural distance]
+A structure-sensitive distance functional $\ddep: \mathcal{H} \times \mathcal{R} \to \mathbb{R}_{\geq 0}$ measures departure of configuration $h$ from reference class $\RGam(h)$. The functional must:
+\begin{enumerate}
+\item Use the reference class's own metric structure (not an arbitrary norm);
+\item Aggregate high-dimensional discrepancies into a scalar measure;
+\item Vanish if and only if $h \in \RGam(h)$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Repair-warrant objective]
+An intervention $a$ on configuration $h$ is warranted relative to refusal (the null action) if the repair objective is negative:
+\[
+\Repobj(a\mid h) = E(a\mid h) + \lambda R(a\mid h) + \mu \Ddep(a\mid h, \RGam(h)) - \nu M(a\mid h) < 0,
+\]
+where $E$ is expected cost, $R$ regularizes against over-intervention, $\Ddep$ is the marginal change in structural distance, $M$ is the marginal improvement in the target quantity, and $\lambda, \mu, \nu > 0$ are calibration weights.
+\end{definition}
+
+The key implication: intervention is justified only when it improves the structural-distance term enough to overcome its own cost and regularization penalty.
+
+\begin{definition}[Observable versus admissible projections]
+Any diagnostic actually computed from observations is a projection $\dobs$ of the true admissibility-level distance $\dadm$. In general:
+\[
+\dobs(h, \RGam(h)) \neq \dadm(h, \RGam(h)),
+\]
+and the relationship between them depends on the interface through which $h$ is observed.
+\end{definition}
+
+\begin{proposition}[Non-implication of projections]
+Constraint satisfaction under an observable projection does not imply admissibility at the underlying level:
+\[
+\dobs(h, \RGam(h)) = 0 \not\Rightarrow \dadm(h, \RGam(h)) = 0.
+\]
+Conversely, a large observable distance does not certify the magnitude of the underlying structural departure.
+\end{proposition}
+
+\subsection{Application to cosmological inference}
+
+Read cold, this is abstract to the point of vacancy. Hoellinger and Leclercq's paper is useful here precisely because it is not abstract: it is a working pipeline, with published numbers, that independently arrived at close analogues of every piece of this apparatus while solving a concrete measurement problem.
+
+\section{The mapping}
+
+The correspondence is close enough to state term by term.
+
+\subsection{Identification of the object and reference class}
+
+\begin{align*}
+h &\equiv \gamma \quad \text{(SELFI posterior mean for initial power spectrum)} \\
+\RGam(h) &\equiv P(\theta) \quad \text{(prior on $\theta$ from Boltzmann solver + CMB data)} \\
+\Gamma_h &\equiv \text{linearized cosmology + Planck constraints} \\
+B(h) &\equiv \theta_0 = \mathcal{T}(\omega_0) \quad \text{(fiducial cosmological parameters)}
+\end{align*}
+
+The object under evaluation, $h = \gamma$, is the SELFI posterior mean for the initial power spectrum --- the reconstruction obtained from a given (possibly misspecified) forward model of the survey. The reference class $\RGam(h) = P(\theta)$ is the prior, Equation~6 in their paper: a Gaussian distribution with mean $\hat\theta_\omega$ and covariance $S$, obtained by propagating samples from the cosmological-parameter prior $P(\omega)$ through the Boltzmann solver $\mathcal{T}$.
+
+This satisfies the independence requirement of Definition 1: the prior is built from theory and from prior experiments (Planck), not from the hidden-box survey simulator whose specification is in question, so it cannot simply inherit whatever the damaged reconstruction wants to say about itself. The governing constraint structure $\Gamma_h$ is linearized cosmological perturbation theory plus CMB-informed priors on $\omega$; $\theta_0 \equiv \mathcal{T}(\omega_0)$, the expansion point at fiducial cosmological parameters, plays the role of the boundary data $B(h)$ the reconstruction is not entitled to simply overwrite.
+
+\subsection{The structural distance functional}
+
+The structural distance $\ddep(h, \RGam(h))$ is realized concretely as the Mahalanobis distance:
+\[
+d_M(\gamma,\theta_0\mid S) \equiv \sqrt{(\gamma-\theta_0)^\top S^{-1} (\gamma-\theta_0)},
+\]
+Equation~24 in their paper. This is a scalar, computable quantity that aggregates a high-dimensional discrepancy between reconstruction and reference class into a single number calibrated against the reference class's own covariance $S$ --- structurally identical to the structure-sensitive distance functional of Definition 2, right down to using the reference class's own metric ($S^{-1}$) rather than an arbitrary one.
+
+The paper does not stop at defining the distance; it calibrates what counts as an alarming value empirically. Let $\{\theta_n\}_{n=1}^{5000}$ be samples drawn from the prior $P(\theta)$. The distribution of
+\[
+\{d_M(\theta_n,\theta_0\mid S)\}_{n=1}^{5000}
+\]
+establishes the null expectation: what distance the reference class already expects from ordinary sampling variation. An observed reconstruction $\gamma$ with
+\[
+d_M(\gamma,\theta_0\mid S) \gg \langle d_M(\theta_n,\theta_0\mid S) \rangle
+\]
+(specifically, lying outside the 95th percentile of the null distribution) raises a flag for further investigation.
+
+This is the diagnostic equivalent of asking not merely ``is the distance nonzero'' but ``is the distance larger than what the reference class already expects'' --- exactly the discipline the abstract framework's refusal criterion requires: an intervention, or here a red flag, is warranted only relative to what the null case already produces.
+
+The two-step architecture itself --- infer $\theta$, check it, only then infer $\omega$ --- is the diagnose-before-commit ordering the repair-warrant apparatus insists on. 
+
+\subsection{The repair-warrant objective in the cosmological case}
+
+Let $a$ denote the action ``proceed with full ABC-PMC cosmological inference under the current forward model.'' The repair-warrant objective becomes:
+\begin{align*}
+\Repobj(a\mid \gamma) &= E(a\mid \gamma) + \lambda R(a\mid \gamma) + \mu \Ddep(a\mid \gamma, P(\theta)) - \nu M(a\mid \gamma) \\
+E(a\mid \gamma) &= \text{computational cost of ABC-PMC inference} \\
+R(a\mid \gamma) &= \text{epistemic cost of false precision} \\
+\Ddep(a\mid \gamma, P(\theta)) &= \text{marginal change in } d_M(\gamma, \theta_0 \mid S) \\
+M(a\mid \gamma) &= \text{expected information gain about } \omega.
+\end{align*}
+
+If $d_M(\gamma, \theta_0 \mid S)$ is large (reconstruction lies far from the reference class), then $\Ddep \ll 0$ (the discrepancy is not repaired by proceeding) while $E$ and $R$ remain large, so $\Repobj(a\mid \gamma) > 0$: refusal dominates commitment. Conversely, if $d_M(\gamma, \theta_0 \mid S)$ is consistent with the null distribution, $\Ddep \approx 0$ and the information gain $M$ can justify the action.
+
+Hoellinger and Leclercq are explicit that this ordering is the point: their stated goal is to diagnose systematic effects \emph{prior to} inferring cosmological parameters, using a single, comparatively cheap set of $N$-body simulations, precisely because re-running the full cosmological inference under many candidate misspecifications would be prohibitively expensive. Their diagnostic stage is a cheap evaluation of the $\Ddep$ term that is used to decide whether the expensive action $a$ is warranted at all, before that action is taken.
+
+\section{What the paper's own caveats confirm}
+
+Two features of the paper's discussion are worth dwelling on because they are not simplifications the admissibility framework imposes from outside; they are conclusions the authors were forced to state on independent numerical grounds, and they match the framework's own stated limitations rather than its idealized claims.
+
+First, the paper explicitly warns that ``a larger distance does not necessarily imply a worse model, but hints at the presence of systematic effects.'' This is the Mahalanobis distance functioning as an alarm rather than a verdict --- a signal that further investigation is warranted, not a certified measurement of how wrong the model is. That is exactly the distinction the framework draws between an observed projection $\delta_{\mathrm{dep}}^{\mathrm{obs}}$ and an inaccessible admissibility-level quantity $\delta_{\mathrm{dep}}^{\mathrm{adm}}$: the diagnostic available at the interface of galaxy count power spectra is real evidence, but it is evidence under a specific compression (power spectra of three galaxy populations, itself already a lossy summary of the full $5{,}123^3$-cell density fields), and a discrepancy detected there licenses suspicion, not a proof of which underlying mechanism is at fault. The paper's own follow-up work --- Section~IV.A.4, disentangling which of several candidate systematic effects best explains an observed excursion by matching characteristic scales in $k$-space --- is diagnosis of the second, harder kind the framework anticipates: determining not merely that $\delta_{\mathrm{dep}}^{\mathrm{obs}} \neq 0$, but where in the space of possible interventions the responsible structure actually sits.
+
+Second, the paper reports that some systematic effects it tested --- misspecifying the number of masked point sources, for instance --- have a negligible effect on the reconstructed power spectrum, while others --- inaccurate light-cone treatment, or halving the number of gravity-solver time steps --- produce large, sometimes counterintuitive effects: an inverse error in the diagnostic quantity that exceeds the forward error in the raw summary statistics by a wide margin. This is precisely the failure mode the abstract framework worries about under its non-implication propositions: constraint satisfaction at one level (the galaxy count power spectra look fine, forward error under one percent) does not imply admissibility at the level that matters (the initial power spectrum reconstruction is biased by more than one standard deviation). Passing a check phrased at the wrong level of the system offers no assurance about the level the inference actually depends on. The paper's finding that pure second-order Lagrangian perturbation theory, adequate-looking in the summary statistics, produces a nearly two-sigma rejection of the ground truth in the diagnostic quantity is a clean empirical instance of exactly that gap.
+
+\section{A structural aside: repair as anti-dissipation}
+
+A second, unrelated paper --- Hoellinger, Chapelier, and Manueco's vorticity confinement correction for discontinuous Galerkin fluid solvers \cite{hoellinger2025vorticity} --- offers a brief but suggestive cross-domain echo, worth noting for what it shares with the cosmology paper rather than for any direct connection between the two physical problems. Discontinuous Galerkin schemes, like most discretizations of the Navier-Stokes equations, introduce numerical dissipation that exceeds the fluid's physical viscosity; a vortex that should persist for a long distance is instead smoothed away by the discretization itself, well before physics would have dissipated it. The correction the authors introduce adds an explicit term to the momentum equation, aligned with the local vorticity field and vanishing in the continuous limit, whose sole purpose is to counteract that artificial dissipation near vortex cores while leaving the mass and energy equations untouched.
+
+What makes this worth mentioning here is the shape of the intervention rather than its content. The correction is switched on only in regions diagnosed as vortical by an independent criterion (the Q-criterion, thresholded to separate rotation-dominated from strain-dominated flow) rather than applied uniformly; it is scaled to match the leading-order truncation error of the specific discretization order in use, rather than fixed at some arbitrary strength; and its authors are explicit that an overly strong correction can itself destabilize the simulation, so the intervention is bounded and monitored rather than applied without limit. In the vocabulary used above, the Q-criterion functions as a cheap diagnostic that a distinguishable structure (a vortex core) is present and at risk of falling out of the class of admissibly-preserved features under the discretization's own dissipative dynamics; the confinement term is an intervention $a$ applied only where and to the degree that diagnostic warrants, calibrated against the specific numerical damage mechanism responsible, and deliberately capped short of a strength that would introduce its own instability. The paper's own results make the same point the cosmology paper makes from the other side: leaving the correction off, the DG scheme's baseline vortex is not obviously broken at early times, only gradually and increasingly attenuated, so that whether an intervention was needed is only apparent after enough time has passed to watch the diagnosed structure decay --- an argument, again, for diagnosing continuously rather than checking once and moving on.
+
+Neither paper uses this vocabulary, and neither needs to; the point of assembling them side by side is only that a pattern this specific --- diagnose against an independently grounded reference before deciding whether and how to intervene, using a cheap proxy sensitive to the damage in question rather than checking the expensive final product directly --- recurs across domains that share no subject matter, which is some evidence that the pattern is tracking something real about how computed structures fail rather than something specific to cosmological inference.
+
+\section{Discussion}
+
+None of this is a claim that Hoellinger and Leclercq, or Hoellinger, Chapelier, and Manueco, were doing admissibility theory under another name; the mapping offered here is a reading imposed after the fact, useful to the extent it clarifies what their diagnostic machinery is doing and where its limits sit, not a claim about the authors' own framing. 
+
+\subsection{What the Case Study Establishes}
+
+What the case study adds to the abstract apparatus developed elsewhere in this program is something the abstract apparatus cannot supply on its own: a demonstration, with published numbers rather than illustrative examples, that a reference class with independent provenance, a calibrated structural-distance functional, and a diagnose-before-commit ordering are not merely theoretically motivated but operationally load-bearing --- the difference, in this instance, between a $2\sigma$-biased cosmological posterior that would have looked unremarkable at the level of its own summary statistics, and one flagged for further investigation before a survey collaboration spent its inference budget on it.
+
+\subsection{What Remains Genuinely Open}
+
+The paper's remaining open question --- what happens when a systematic effect biases the cosmological parameters without leaving a detectable trace in the initial power spectrum reconstruction, a possibility the authors note lies outside their framework's current scope --- is also, read this way, the sharpest open question for the admissibility framework: not every damage mechanism has a proxy sensitive enough to diagnose it before the fact, and knowing in advance which mechanisms escape a given diagnostic interface remains, for both the cosmological pipeline and the abstract theory, unsolved.
+
+\subsection{Honest Flagging of Non-Implications}
+
+Three non-implications are confirmed by the Hoellinger-Leclercq case study rather than imposed from theory:
+
+\begin{proposition}[Observable agreement does not imply structural correctness]
+\[
+\dobs(h, \RGam(h)) < \epsilon \not\Rightarrow \dadm(h, \RGam(h)) < C\epsilon
+\]
+for any finite constant $C$. The galaxy count power spectra can agree to within 1\%, yet the initial power spectrum is biased by $2\sigma$.
+\end{proposition}
+
+\begin{proposition}[Diagnostic discrepancy does not imply unique diagnosis]
+\[
+\dobs(h, \RGam(h)) > \epsilon \not\Rightarrow |\{D : \text{defect } D \text{ produces discrepancy}\}| = 1.
+\]
+Multiple systematic effects (galaxy bias, light-cone approximation, gravity-solver time steps) produce similar Mahalanobis distances. Distinguishing among them requires additional analysis (scale matching in $k$-space, Section IV.A.4 of their paper).
+\end{proposition}
+
+\begin{proposition}[Diagnostic discrepancy does not imply unique repair]
+\[
+\dobs(h, \RGam(h)) > \epsilon \not\Rightarrow \exists! a : \Repobj(a \mid h) < 0.
+\]
+Detection alone does not determine intervention. The repair-warrant objective $\Repobj(a \mid h)$ provides a selection criterion among a \emph{given} candidate set $\mathcal{A}(h)$, but generating that candidate set with attributable, disentangled effects is the hard unsolved part. The Hoellinger-Leclercq scale-matching procedure is a rare tractable case, not a general solution.
+\end{proposition}
+
+\begin{thebibliography}{9}
+
+\bibitem{hoellinger2024diagnosing}
+T.~Hoellinger and F.~Leclercq,
+\emph{Diagnosing systematic effects using the inferred initial power spectrum},
+arXiv:2412.04443 [astro-ph.CO] (2024).
+
+\bibitem{hoellinger2025vorticity}
+T.~Hoellinger, J.-B.~Chapelier, and L.~Manueco,
+\emph{A Vorticity Confinement correction for discontinuous Galerkin schemes applied to fluid flow problems},
+International Journal of Numerical Methods for Heat and Fluid Flow (2025).
+
+\end{thebibliography}
+
+\end{document}

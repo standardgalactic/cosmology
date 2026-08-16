@@ -1,0 +1,455 @@
+% ============================================================
+% DIAGNOSIS BEFORE COMMITMENT - EXPANDED SECTION
+% For insertion into monograph.tex or diagnosis paper
+% Flyxion — August 2026
+% ============================================================
+
+\section{Diagnosis Before Commitment}
+
+The central architectural move of the repair-warrant framework is to interpose a diagnostic stage between observation and intervention. This section develops that architecture formally, establishes its limitations, and works through the cosmological inference case as a concrete instantiation.
+
+\subsection{Retention, Observation, and Inferential Access}
+
+\begin{definition}[Retained structure]
+A configuration $x$ retains a past configuration $x_0$ with respect to observable $O$ and reconstruction procedure $\mathcal{R}$ if the mutual information satisfies
+\[
+I(x_0; O(x) \mid \mathcal{R}) > \epsilon
+\]
+for some threshold $\epsilon > 0$. The retained structure is the set
+\[
+\mathrm{Ret}_{\mathcal{R}}(x) = \{x_0 : I(x_0; O(x) \mid \mathcal{R}) > \epsilon\}.
+\]
+\end{definition}
+
+Retention is distinct from causality: $x$ may be causally influenced by $x_0$ (lie in its future light cone) yet not retain $x_0$ if the intervening dynamics have erased the relevant correlations below threshold.
+
+\begin{definition}[Observational access]
+An observable $O: \mathcal{X} \to \mathcal{O}$ provides observational access to a property $P$ of configuration $x$ if there exists a measurable function $f: \mathcal{O} \to \{0,1\}$ such that
+\[
+\mathbb{P}(f(O(x)) = \mathbf{1}_P(x)) > 1 - \delta
+\]
+for some error tolerance $\delta > 0$, where $\mathbf{1}_P(x)$ is the indicator function for property $P$.
+\end{definition}
+
+Not all retained structure is observationally accessible: $x$ may retain $x_0$ in the sense that $I(x_0; x) > \epsilon$, yet no available observable $O$ provides access to the relevant correlations.
+
+\begin{proposition}[Inference gap]
+There exist configurations $x, x_0$ and observables $O_1, O_2$ such that:
+\begin{enumerate}
+\item $I(x_0; x) > \epsilon$ (retained structure);
+\item $I(x_0; O_1(x)) < \epsilon$ (not accessible via $O_1$);
+\item $I(x_0; O_2(x)) > \epsilon$ (accessible via $O_2$).
+\end{enumerate}
+\end{proposition}
+
+The choice of observable matters: different observables access different subsets of the retained structure.
+
+
+\subsection{The Admissible--Observable Distinction}
+
+The admissibility manifold hierarchy distinguishes levels at which structure can be evaluated:
+
+\begin{definition}[Three-level hierarchy]
+\begin{align*}
+\Mad &= \text{space of all configurations satisfying the field equations} \\
+\Mproj &= \Mad / \sim_{\mathrm{gauge}} \text{ (quotient by gauge redundancy)} \\
+\Mobs &= \pi(\Mproj) \text{ (projection to observables)}
+\end{align*}
+where $\pi: \Mproj \to \Mobs$ is the measurement map.
+\end{definition}
+
+Critically, $\pi$ is neither injective nor surjective in general:
+\begin{itemize}
+\item Not injective: distinct admissible configurations can yield identical observable predictions (underdetermination);
+\item Not surjective: not every element of $\Mobs$ corresponds to an admissible configuration (over-parameterization).
+\end{itemize}
+
+\begin{definition}[Admissible-level distance]
+For $x, y \in \Mad$, the admissible-level distance is
+\[
+\dadm(x, y) = \inf_{\gamma} \int_0^1 \sqrt{g_{\Mad}(\dot\gamma, \dot\gamma)} \, dt,
+\]
+the infimum over all curves $\gamma: [0,1] \to \Mad$ with $\gamma(0) = x$, $\gamma(1) = y$, where $g_{\Mad}$ is the natural metric on the admissibility manifold induced by the field equations.
+\end{definition}
+
+\begin{definition}[Observable-level distance]
+For $O(x), O(y) \in \Mobs$, the observable-level distance is
+\[
+\dobs(O(x), O(y)) = \|O(x) - O(y)\|_{\Mobs},
+\]
+where $\|\cdot\|_{\Mobs}$ is a chosen norm on the observable space (e.g., $L^2$ distance between summary statistics).
+\end{definition}
+
+
+\subsection{Observable Agreement Does Not Imply Structural Correctness}
+
+\begin{theorem}[Non-implication of structural correctness]
+Let $x_{\mathrm{true}}, x_{\mathrm{model}} \in \Mad$ be the true and modeled configurations. Then
+\[
+\dobs(O(x_{\mathrm{true}}), O(x_{\mathrm{model}})) < \epsilon \not\Rightarrow \dadm(x_{\mathrm{true}}, x_{\mathrm{model}}) < C\epsilon
+\]
+for any finite constant $C$.
+\end{theorem}
+
+\begin{proof}
+The measurement map $\pi$ is a projection, not an isometry. Let $\ker(\pi) = \{x \in \Mproj : \pi(x) = 0\}$ be the kernel of the projection. For any $x_{\mathrm{model}}$ and $k \in \ker(\pi)$, we have
+\[
+O(x_{\mathrm{model}} + k) = O(x_{\mathrm{model}}),
+\]
+so $\dobs(O(x_{\mathrm{true}}), O(x_{\mathrm{model}} + k)) = \dobs(O(x_{\mathrm{true}}), O(x_{\mathrm{model}}))$, yet $\dadm(x_{\mathrm{model}}, x_{\mathrm{model}} + k)$ can be arbitrarily large for $k \in \ker(\pi)$ with $\|k\|$ large. $\qed$
+\end{proof}
+
+\textbf{Cosmological example:} Galaxy count power spectra (the observable) can agree to within 1\% while the underlying initial power spectrum (admissible-level structure) is biased by $2\sigma$ --- exactly the scenario Hoellinger and Leclercq (2024) document.
+
+
+\subsection{Observable Discrepancy Does Not Imply a Unique Diagnosis}
+
+\begin{proposition}[Non-uniqueness of diagnosis]
+Let $\dobs(O(x_{\mathrm{true}}), O(x_{\mathrm{model}})) > \epsilon$ be a detected discrepancy. There exist distinct defect mechanisms $D_1, D_2 \subset \Mad$ such that:
+\begin{enumerate}
+\item Both produce the same observable discrepancy: $\dobs(O(x_{\mathrm{true}}), O(x_{D_1})) = \dobs(O(x_{\mathrm{true}}), O(x_{D_2}))$;
+\item They are structurally distinct: $\dadm(x_{D_1}, x_{D_2}) > \delta$ for some $\delta \gg \epsilon$;
+\item They require different repairs.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+The preimage $\pi^{-1}(\{O(x)\})$ is generically not a singleton. Any two elements of this fiber produce identical observable predictions yet may differ arbitrarily at the admissible level. Different defects in the fiber require different structural repairs even though they produce the same observable signature. $\qed$
+\end{proof}
+
+\textbf{Cosmological example:} Hoellinger and Leclercq's Section IV.A.4 shows that multiple systematic effects (galaxy bias, light-cone approximation, gravity-solver time steps) can produce similar Mahalanobis distances. Diagnosing \emph{which} defect is responsible requires matching characteristic scales in $k$-space, not merely measuring the scalar distance.
+
+
+\subsection{Independent Reference Classes as Diagnostic Coordinates}
+
+\begin{definition}[Reference class with independent provenance]
+A reference class $\RGam(h)$ for object $h$ has independent provenance if:
+\begin{enumerate}
+\item $\RGam(h)$ is constructed from a constraint structure $\Gamma_h$ specified by theory or prior experiments;
+\item The boundary data $B(h)$ defining $\RGam(h)$ is not derived from $h$'s own evolution or internal structure;
+\item $\RGam(h) \cap \{h'\}$ is measurable for any candidate configuration $h'$.
+\end{enumerate}
+\end{definition}
+
+Independence prevents circularity: a reference class built from the object being diagnosed cannot detect that object's pathologies. The reference class must come from \emph{outside} the system under evaluation.
+
+\begin{example}[CMB-informed prior as reference class]
+In the cosmological case:
+\begin{align*}
+\Gamma_h &= \text{linearized Boltzmann evolution} \\
+B(h) &= \text{Planck CMB constraints on } \omega \\
+\RGam(h) &= \{\theta : \theta = \mathcal{T}(\omega), \, \omega \sim P_{\mathrm{Planck}}(\omega)\}
+\end{align*}
+The prior $P(\theta)$ is constructed from CMB data and theory, independent of the galaxy survey whose reconstruction is being diagnosed.
+\end{example}
+
+
+\subsection{Proxy Substitution and the Delegation of Inferential Authority}
+
+\begin{definition}[Diagnostic proxy]
+An intermediate quantity $\theta$ is a diagnostic proxy for a target quantity $\omega$ if:
+\begin{enumerate}
+\item $\theta$ is cheaper to reconstruct than $\omega$;
+\item $\theta$ has a well-understood reference class $\RGam(\theta)$ with independent provenance;
+\item Discrepancies in $\theta$ are sensitive to systematic effects that bias $\omega$.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Proxy delegation theorem]
+Let $\theta$ be a diagnostic proxy for $\omega$. If the reconstruction $\hat\theta$ satisfies $\ddep(\hat\theta, \RGam(\theta)) > \epsilon_{\mathrm{alarm}}$, then proceeding to infer $\omega$ is warranted only if:
+\[
+\mathbb{E}[\mathrm{bias}(\hat\omega \mid \hat\theta)] \cdot \mathrm{cost}(\hat\omega) < \mathrm{value}(\hat\omega) - \mathrm{cost}(\mathrm{repair}(\hat\theta)).
+\]
+\end{proposition}
+
+The proxy delegates inferential authority: we trust $\hat\theta$'s diagnostic verdict about whether the pipeline is working correctly, and suspend inference on $\omega$ if $\hat\theta$ raises an alarm.
+
+
+\subsection{The Initial Power Spectrum as a Diagnostic Proxy}
+
+\subsubsection{Construction of the Reference Class}
+
+The initial matter power spectrum $\theta$ is a linear-regime quantity with a well-understood theoretical shape. The reference class is constructed by:
+
+\begin{enumerate}
+\item Specifying a prior $P(\omega)$ on cosmological parameters, informed by CMB experiments;
+\item Propagating samples $\{\omega_n\}_{n=1}^N \sim P(\omega)$ through a Boltzmann solver $\mathcal{T}$;
+\item Defining the reference class as the Gaussian approximation to the induced distribution:
+\[
+\RGam(\theta) = \mathcal{N}(\hat\theta_\omega, S),
+\]
+where $\hat\theta_\omega = \mathbb{E}_{\omega \sim P(\omega)}[\mathcal{T}(\omega)]$ and $S = \mathrm{Cov}_{\omega \sim P(\omega)}[\mathcal{T}(\omega)]$.
+\end{enumerate}
+
+The reference class has independent provenance: it is built from CMB data and linearized perturbation theory, not from the galaxy survey forward model being diagnosed.
+
+\subsubsection{Observable Structural Distance}
+
+The structural distance is the Mahalanobis distance:
+\[
+d_M(\gamma, \theta_0 \mid S) = \sqrt{(\gamma - \theta_0)^\top S^{-1} (\gamma - \theta_0)},
+\]
+where:
+\begin{itemize}
+\item $\gamma$ is the SELFI posterior mean (the reconstructed initial power spectrum);
+\item $\theta_0 = \mathcal{T}(\omega_0)$ is the fiducial reference point;
+\item $S$ is the covariance of the reference class.
+\end{itemize}
+
+The Mahalanobis distance uses the reference class's own metric ($S^{-1}$), satisfying Definition 2's requirement.
+
+\subsubsection{Calibration by Mahalanobis Distance}
+
+To establish what counts as an alarming distance, Hoellinger and Leclercq draw $N = 5000$ samples $\{\theta_n\}_{n=1}^N$ from the prior and compute the null distribution:
+\[
+\{d_M(\theta_n, \theta_0 \mid S)\}_{n=1}^{5000}.
+\]
+
+Let $F_{\mathrm{null}}$ be the empirical cumulative distribution function of this sample. The alarm threshold is set at the 95th percentile:
+\[
+\epsilon_{\mathrm{alarm}} = F_{\mathrm{null}}^{-1}(0.95).
+\]
+
+A reconstruction $\gamma$ with $d_M(\gamma, \theta_0 \mid S) > \epsilon_{\mathrm{alarm}}$ is flagged as inconsistent with the reference class.
+
+\subsubsection{Detection of the Two-Sigma Bias}
+
+Under correct model specification, the reconstructed $\gamma$ satisfies $d_M(\gamma, \theta_0 \mid S) \sim F_{\mathrm{null}}$, and the inferred cosmological parameters are unbiased:
+\[
+|\hat\Omega_m - \Omega_{m,\mathrm{true}}| < \sigma_{\Omega_m}, \quad |\hat\sigma_8 - \sigma_{8,\mathrm{true}}| < \sigma_{\sigma_8}.
+\]
+
+Under misspecification (e.g., halved gravity-solver time steps), the diagnostic detects:
+\begin{align*}
+d_M(\gamma, \theta_0 \mid S) &> \epsilon_{\mathrm{alarm}} \quad \text{(alarm raised)} \\
+|\hat\Omega_m - \Omega_{m,\mathrm{true}}| &> 2\sigma_{\Omega_m} \quad \text{(cosmological bias)}
+\end{align*}
+while the raw galaxy count power spectra differ by only $\sim 1\%$ from the correct case. The diagnostic catches a $2\sigma$ bias that is nearly invisible at the observable level.
+
+\subsubsection{What the Diagnostic Does Not Establish}
+
+The Mahalanobis distance is an alarm, not a verdict. It does \emph{not} certify:
+\begin{enumerate}
+\item The magnitude of the true admissible-level defect (only the observable projection $\dobs$);
+\item Which systematic effect is responsible (multiple defects can produce similar $d_M$);
+\item Whether the defect can be repaired without re-running the forward model.
+\end{enumerate}
+
+As Hoellinger and Leclercq state explicitly: ``a larger distance does not necessarily imply a worse model, but hints at the presence of systematic effects.''
+
+
+\subsection{From Diagnostic Discrepancy to Repair}
+
+\subsubsection{Marginal Repair Effects}
+
+Let $a$ be a proposed repair action (e.g., re-run the forward model with corrected galaxy bias). The marginal effect on structural distance is:
+\[
+\Ddep(a \mid h, \RGam(h)) = \ddep(h + a, \RGam(h)) - \ddep(h, \RGam(h)).
+\]
+
+A repair is structurally effective if $\Ddep(a \mid h, \RGam(h)) < 0$: it reduces the distance to the reference class.
+
+\subsubsection{The Repair Objective}
+
+The full repair-warrant objective is:
+\begin{align}
+\Repobj(a \mid h) &= E(a \mid h) + \lambda R(a \mid h) + \mu \Ddep(a \mid h, \RGam(h)) - \nu M(a \mid h), \label{eq:repair-objective} \\
+E(a \mid h) &= \text{expected cost of action } a \\
+R(a \mid h) &= \text{regularization penalty (guards against over-intervention)} \\
+\Ddep(a \mid h, \RGam(h)) &= \text{marginal change in structural distance} \\
+M(a \mid h) &= \text{marginal improvement in the target quantity}
+\end{align}
+
+\begin{theorem}[Repair-warrant criterion]
+Action $a$ is warranted relative to refusal (the null action $a_0$) if and only if
+\[
+\Repobj(a \mid h) < \Repobj(a_0 \mid h).
+\]
+\end{theorem}
+
+\subsubsection{Null Intervention and the Burden of Repair}
+
+The null action $a_0$ is ``suspend inference and flag for investigation.'' Its objective is:
+\begin{align*}
+\Repobj(a_0 \mid h) &= 0 + 0 + 0 - 0 = 0 \quad \text{(by definition)}.
+\end{align*}
+
+Any repair $a \neq a_0$ must satisfy $\Repobj(a \mid h) < 0$ to be preferred over suspension. This places the burden on repair: the default is to \emph{not} proceed when the diagnostic raises an alarm.
+
+
+\subsection{Diagnosis Under Partial Observability}
+
+In practice, we never observe $\dadm$ directly; we observe only a projection $\dobs$.
+
+\begin{proposition}[Projection inequality]
+For any observable projection $\pi: \Mad \to \Mobs$,
+\[
+\dobs(\pi(x), \pi(y)) \leq \dadm(x, y),
+\]
+with equality only if $\pi$ is an isometry (which it generically is not).
+\end{proposition}
+
+\begin{proof}
+The projection $\pi$ is Lipschitz continuous with Lipschitz constant $L \leq 1$ (measurement does not amplify distances). By the Lipschitz property,
+\[
+\dobs(\pi(x), \pi(y)) \leq L \cdot \dadm(x, y) \leq \dadm(x, y). \qed
+\]
+\end{proof}
+
+\textbf{Consequence:} A small $\dobs$ does not imply a small $\dadm$. The admissible-level defect can be large even when the observable signature is small.
+
+
+\subsection{Non-Identifiability of the Underlying Defect}
+
+\begin{theorem}[Defect non-identifiability]
+Let $\mathcal{D} = \{D_1, D_2, \ldots, D_k\}$ be a set of possible defect mechanisms. Given only observable data $O(x)$, the defect responsible for a discrepancy is not identifiable if
+\[
+|\{D \in \mathcal{D} : \dobs(O(x_{\mathrm{true}}), O(x_D)) > \epsilon\}| > 1.
+\]
+\end{theorem}
+
+Multiple defects can produce the same observable signature. Distinguishing among them requires additional information (e.g., characteristic scales, auxiliary observables, or direct inspection of the forward model).
+
+
+\subsection{Multiple Repairs Compatible with the Same Diagnostic}
+
+\begin{proposition}[Repair non-uniqueness]
+Let $d = \dobs(O(x_{\mathrm{true}}), O(x_{\mathrm{model}}))$ be the observed diagnostic discrepancy. There exist distinct repairs $a_1, a_2$ such that:
+\begin{enumerate}
+\item Both reduce the observable distance: $\dobs(O(x_{\mathrm{true}}), O(x + a_i)) < d$ for $i = 1, 2$;
+\item They have different admissible-level effects: $\dadm(x + a_1, x_{\mathrm{true}}) \neq \dadm(x + a_2, x_{\mathrm{true}})$;
+\item One may worsen the admissible-level error while improving the observable agreement.
+\end{enumerate}
+\end{proposition}
+
+This is the overfitting danger: a repair can make the observables look better while actually moving further from the true admissible configuration.
+
+
+\subsection{Diagnostic Coordinates as Projections}
+
+Diagnostic coordinates are the subset of degrees of freedom that are both:
+\begin{enumerate}
+\item Accessible via available observables;
+\item Sensitive to the class of defects under consideration.
+\end{enumerate}
+
+\begin{definition}[Diagnostic coordinate map]
+A diagnostic coordinate map is a function $\psi: \Mad \to \mathbb{R}^d$ such that:
+\begin{enumerate}
+\item $\psi$ is computable from observables: $\psi(x) = f(O(x))$ for some measurable $f$;
+\item $\psi$ is sensitive to defects: $\|\psi(x_{\mathrm{true}}) - \psi(x_D)\| > \epsilon$ for defects $D \in \mathcal{D}$;
+\item $d \ll \dim(\Mad)$ (dimensionality reduction).
+\end{enumerate}
+\end{definition}
+
+The initial power spectrum $\theta$ functions as a diagnostic coordinate: it is lower-dimensional than the full forward model, computable from the same simulations, and sensitive to most systematic effects.
+
+
+\subsection{Failure of Scalar Diagnostic Sufficiency}
+
+\begin{proposition}[Insufficiency of scalar diagnostics]
+Let $d = \dobs(O(x_{\mathrm{true}}), O(x_{\mathrm{model}}))$ be a scalar diagnostic. There exist defects $D_1, D_2$ such that:
+\begin{enumerate}
+\item $d(x_{D_1}) = d(x_{D_2})$ (same scalar distance);
+\item $\psi(x_{D_1}) \neq \psi(x_{D_2})$ (different diagnostic coordinates);
+\item The optimal repairs differ: $\arg\min_{a} \Repobj(a \mid x_{D_i})$ depends on $i$.
+\end{enumerate}
+\end{proposition}
+
+A scalar distance collapses information. Hoellinger and Leclercq's follow-up analysis (matching characteristic $k$-scales) uses the full vector $\gamma$, not just $d_M$, to distinguish defect mechanisms.
+
+
+\subsection{Robustness Across Diagnostic Interfaces}
+
+\begin{definition}[Robust diagnostic]
+A diagnostic $\psi$ is robust across observables $\{O_1, \ldots, O_m\}$ if
+\[
+\psi(f_i(O_i(x))) \approx \psi(f_j(O_j(x))) \quad \text{for all } i, j,
+\]
+where $f_i, f_j$ are the extraction functions for each observable.
+\end{definition}
+
+The initial power spectrum is robust: it can be reconstructed from multiple observables (galaxy clustering, weak lensing, CMB lensing) with consistent results, increasing confidence that detected discrepancies reflect real defects rather than artifacts of a single observable choice.
+
+
+\subsection{When Diagnostic Evidence Warrants Intervention}
+
+\begin{theorem}[Intervention warrant]
+Diagnostic evidence $\dobs(O(x), O(x_{\mathrm{ref}})) > \epsilon$ warrants intervention $a$ if:
+\begin{enumerate}
+\item The intervention reduces the distance: $\Ddep(a \mid x, \RGam(x)) < -\delta$ for $\delta > 0$;
+\item The cost-benefit inequality holds: $\Repobj(a \mid x) < 0$;
+\item No cheaper diagnostic is available: $\min_{a' \in \mathcal{A}} \Repobj(a' \mid x) = \Repobj(a \mid x)$.
+\end{enumerate}
+\end{theorem}
+
+
+\subsection{When Diagnostic Evidence Warrants Suspension of Inference}
+
+\begin{theorem}[Suspension warrant]
+Diagnostic evidence warrants suspension of inference (refusal to proceed) if:
+\begin{enumerate}
+\item $\dobs(O(x), O(x_{\mathrm{ref}})) > \epsilon_{\mathrm{alarm}}$;
+\item For all candidate repairs $a \in \mathcal{A}$, either:
+   \begin{enumerate}
+   \item $\Repobj(a \mid x) > 0$ (all repairs fail cost-benefit), or
+   \item $\mathbb{E}[\dadm(x + a, x_{\mathrm{true}})] > \dadm(x, x_{\mathrm{true}})$ (expected worsening).
+   \end{enumerate}
+\end{enumerate}
+\end{theorem}
+
+When the diagnostic raises an alarm but no affordable repair is available, the correct action is to suspend inference and flag the result as unreliable.
+
+
+\subsection{Limits of Diagnosis Before Inference}
+
+\begin{proposition}[Diagnostic escape]
+There exist defect mechanisms $D$ such that:
+\begin{enumerate}
+\item $D$ biases the target quantity: $|\hat\omega_D - \omega_{\mathrm{true}}| > 2\sigma$;
+\item $D$ leaves no detectable trace in the diagnostic: $\dobs(\psi(x_D), \psi(x_{\mathrm{true}})) < \epsilon$.
+\end{enumerate}
+\end{proposition}
+
+Not every damage mechanism has a proxy sensitive enough to diagnose it before the fact. Hoellinger and Leclercq note this explicitly: systematic effects that bias $\omega$ without affecting $\theta$ lie outside their framework's current scope. This is an open problem for both the cosmological pipeline and the abstract theory.
+
+
+\subsection{Relation to the Admissibility Manifold Hierarchy}
+
+The diagnosis-before-inference architecture maps onto the admissibility hierarchy as:
+\begin{align*}
+\Mad &\longleftrightarrow \text{full RSVP field configuration space} \\
+\Mproj &\longleftrightarrow \text{initial power spectrum } \theta \text{ (gauge-invariant proxy)} \\
+\Mobs &\longleftrightarrow \text{galaxy count power spectra, summary statistics}
+\end{align*}
+
+Diagnosis happens at the $\Mproj$ level: we check $\theta$ against its reference class before committing to inference at the $\Mad$ level. The diagnostic is cheaper than full admissibility evaluation but more sensitive than raw observable agreement.
+
+
+\subsection{Relation to the Broader RSVP Research Program}
+
+The repair-warrant apparatus developed here is one instance of a pattern recurring throughout the RSVP framework:
+\begin{itemize}
+\item \textbf{Admissible evolution (Chapter 4):} configurations are admissible only if reachable via field equations + boundary conditions;
+\item \textbf{Persistence cones (Chapter 6):} primordial distinctions persist only if retained above threshold in current observables;
+\item \textbf{Repair warrants (this chapter):} interventions are warranted only if they improve structural distance at acceptable cost.
+\end{itemize}
+
+In each case, the pattern is: evaluate against an independently sourced reference class, measure structural distance, and proceed only if a threshold criterion is met.
+
+
+\subsection{Open Problems in Diagnostic Admissibility}
+
+\begin{enumerate}
+\item \textbf{Characterizing diagnostic escape:} Which classes of defects can bias target quantities while leaving chosen diagnostics unaffected? Can we bound the size of the ``escape set'' for a given diagnostic?
+
+\item \textbf{Optimal diagnostic design:} Given a set of possible defects $\mathcal{D}$ and a computational budget, what is the optimal diagnostic coordinate map $\psi$ that maximizes sensitivity per unit cost?
+
+\item \textbf{Sequential diagnostics:} When a single diagnostic is insufficient, how should we design a sequence $\psi_1, \psi_2, \ldots$ to narrow the space of candidate defects?
+
+\item \textbf{Admissible-level certification:} Under what conditions can we certify that $\dobs < \epsilon \Rightarrow \dadm < C\epsilon$ for some known constant $C$?
+
+\item \textbf{Multi-model diagnosis:} When multiple forward models $M_1, M_2, \ldots$ are available, how should diagnostic evidence be aggregated?
+\end{enumerate}
+
+These remain open both for the cosmological inference case and for the general repair-warrant framework.

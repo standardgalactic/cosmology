@@ -1,0 +1,953 @@
+% ============================================================
+%  RSVP COSMOLOGY
+%  Field Equations, Admissibility, and the Geometry of Distinction
+%  Flyxion — August 2026
+%
+%  Technical companion to "The Smoothness Paradox" (76-chapter
+%  narrative treatment of primordial-to-terminal cosmic history).
+%  This volume is the formal/mathematical counterpart: it derives
+%  the RSVP field equations, builds the admissibility-manifold
+%  hierarchy over RSVP's state space, and works cosmological
+%  structure formation, memory, and diagnosis as instances of
+%  that formalism. It does not retell Smoothness Paradox's
+%  smooth-to-differentiated-to-smooth narrative arc; it supplies
+%  the machinery that narrative depends on, worked rigorously.
+% ============================================================
+
+\documentclass[12pt,a4paper,twoside,openright]{book}
+
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+
+\usepackage{geometry}
+\geometry{
+  top=1.25in,
+  bottom=1.25in,
+  inner=1.5in,
+  outer=1.25in,
+  headheight=14pt
+}
+
+\usepackage{microtype}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---- Mathematics ----
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+
+% ---- Graphics and figures ----
+\usepackage{graphicx}
+\graphicspath{{./}{./images/}}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% ---- Tables ----
+\usepackage{booktabs}
+\usepackage{array}
+
+% ---- Bibliography ----
+% thebibliography is used instead of BibTeX/biblatex for
+% standalone portability.
+
+% ---- Headers and footers ----
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\slshape\nouppercase{\leftmark}}
+\fancyhead[RO]{\slshape\nouppercase{\rightmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ---- Chapter and section formatting ----
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}
+  {\chaptertitlename\ \thechapter}
+  {20pt}
+  {\Huge}
+\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\thesection}
+  {1em}
+  {}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}
+  {\thesubsection}
+  {1em}
+  {}
+
+% ---- Hyperlinks ----
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+
+% ---- Theorem environments ----
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{construction}[theorem]{Construction}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{postulate}[theorem]{Postulate}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{note}[theorem]{Note}
+\newtheorem{example}[theorem]{Example}
+
+% ============================================================
+% NOTATION — grounded in the actual corpus, not invented fresh.
+%   RSVP plenum fields:      Phi (scalar), v (vector), S (entropy)
+%   Admissibility apparatus: distinction, admissible set/relation,
+%                             the M_adm -> M_proj -> M_obs hierarchy
+%                             from Quadratic Gravity as a Derived
+%                             Interface Theory
+%   Repair-warrant apparatus: R_Gamma(h), delta_dep, J(a|h) from
+%                             Diagnostic Coordinates and the Time
+%                             of Repair
+%   TARTAN:                  recursive coarse-graining operator
+%   Smoothness Paradox:      distinguishability spectrum,
+%                             turnover surface, three-gate
+%                             reknotting criterion (cited, not
+%                             re-derived, in Part III)
+%   Persistence cone:        C_eps(D) from the cosmological-memory
+%                             essay
+% ============================================================
+
+\newcommand{\vfield}{\bm{v}}
+\newcommand{\Sfield}{S}
+\newcommand{\Phifield}{\Phi}
+
+\newcommand{\Adm}{\mathcal{A}}
+\newcommand{\leadsR}{\rightsquigarrow_{\Adm}}
+\newcommand{\Mad}{M_{\mathrm{adm}}}
+\newcommand{\Mproj}{M_{\mathrm{proj}}}
+\newcommand{\Mobs}{M_{\mathrm{obs}}}
+
+\newcommand{\RGam}{R_\Gamma}
+\newcommand{\ddep}{\delta_{\mathrm{dep}}}
+\newcommand{\Ddep}{\Delta_{\mathrm{dep}}}
+\newcommand{\Repobj}{J}
+
+\newcommand{\TARTANop}{\mathcal{T}_{\mathrm{TARTAN}}}
+
+\newcommand{\Dspec}{\mathcal{D}}
+\newcommand{\Turn}{\Sigma_{\mathrm{turn}}}
+\newcommand{\Pcone}{C_\epsilon}
+
+\newcommand{\RSVP}{\textsc{rsvp}}
+
+% ---- Title page information ----
+\title{%
+  \Huge\bfseries
+  RSVP Cosmology\\[12pt]
+  \Large
+  Field Equations, Admissibility, and the Geometry of Distinction
+}
+\author{%
+  \Large Flyxion
+}
+\date{August 2026}
+
+% ============================================================
+\begin{document}
+% ============================================================
+
+\frontmatter
+
+% ---- Title page ----
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+
+{\Huge\bfseries RSVP Cosmology\par}
+\vspace{1cm}
+{\Large\itshape Field Equations, Admissibility, and the Geometry of Distinction\par}
+
+\vfill
+
+{\Large Flyxion\par}
+\vspace{0.5cm}
+{\large Independent Researcher\par}
+
+\vfill
+
+{\large August 2026\par}
+
+\end{titlepage}
+
+% ---- Copyright page ----
+\thispagestyle{empty}
+\null\vfill
+\noindent
+Copyright \textcopyright\ 2026 Flyxion\\[12pt]
+\noindent
+All rights reserved.\\[24pt]
+\noindent
+This monograph derives the Relativistic Scalar--Vector Plenum (\RSVP) field equations from a variational principle, builds the admissibility-manifold hierarchy $\Mad \to \Mproj \to \Mobs$ over \RSVP's state space, and works cosmological structure formation, cosmic memory, and observational diagnosis as instances of the resulting formalism. It is a technical companion to \emph{The Smoothness Paradox}, which develops the same framework's narrative and cosmological-history consequences; this volume supplies, and proves, the machinery that narrative assumes.
+
+\clearpage
+
+% ---- Table of Contents ----
+\tableofcontents
+\clearpage
+
+\listoffigures
+\clearpage
+
+% ---- Preface ----
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+
+This is a technical book. \emph{The Smoothness Paradox} argues, at the level of cosmic history, that the universe runs smooth to differentiated to smooth, and asks what it would mean for primordial and terminal smoothness to be operationally equivalent rather than a mere repetition of appearances. That argument rests on machinery it largely takes as given: a plenum of scalar, vector, and entropy fields; a notion of admissible evolution; a way of measuring how much of a past configuration remains distinguishable in a present one; and a recursive coarse-graining operation, TARTAN, that relates descriptions of the same history at different scales. This book derives that machinery from first principles, states it as precisely as the subject allows, and proves what can currently be proved about it.
+
+The organizing commitment is the same one that runs through the rest of this research program: distinction is prior to object, admissibility is prior to prediction, and repair is prior to correctness. Applied to cosmology, this means treating the universe not as a fixed background populated by evolving matter fields, but as a plenum whose only physical content is the pattern of distinctions it currently supports, together with the constraints that govern which future patterns of distinction remain reachable from it. What is usually called a particle, a galaxy, or an epoch of cosmic history is, in this reading, a locally stable and locally reconstructible distinction within that plenum --- something that persists, within limits, because the dynamics keep re-deriving it from its neighborhood rather than because it is a separately existing thing carried along by the dynamics.
+
+Three bodies of prior work are drawn on directly and cited rather than re-derived where they already exist in adequate form: \emph{Quadratic Gravity as a Derived Interface Theory}, for the admissibility-manifold hierarchy and the argument that observable gravitational physics is a projection from a larger admissibility manifold rather than a complete description of it; the diagnostic-coordinates and repair-warrant apparatus developed across the reconstruction/repair cluster, for the formal treatment of when a departure from a reference class licenses intervention; and \emph{Primordial Distinctions and Cosmological Memory}, for the persistence-cone construction and its empirical anchor in galactic spin alignment. \emph{The Smoothness Paradox}'s distinguishability spectrum, turnover surface, and three-gate reknotting criterion are stated and used in Part~III of this book but not re-proved here; the reader wanting their full narrative and historical treatment should consult that monograph directly.
+
+\vspace{12pt}
+\noindent
+Flyxion\\
+August 2026
+
+\clearpage
+
+% ============================================================
+\mainmatter
+% ============================================================
+
+% ---- PART I: THE PLENUM AND ITS DISTINCTIONS ----
+\part{The Plenum and Its Distinctions}
+
+\chapter{Distinction Before Field}
+\label{ch:distinction-before-field}
+
+% Opens by stating the ontological commitment plainly rather than
+% contrasting it with LambdaCDM as a rhetorical move: distinctions
+% are primary, fields are the bookkeeping device for tracking which
+% distinctions are currently admissible and how they propagate.
+
+\section{What a Cosmological Theory Is For}
+
+\section{Distinctions, Not Particles}
+
+\subsection{The Ontological Commitment}
+\subsection{Why This Is Not Merely Relabeling}
+
+\section{Reading This Book}
+
+\subsection{Relation to \emph{The Smoothness Paradox}}
+\subsection{Relation to \emph{Quadratic Gravity as a Derived Interface Theory}}
+\subsection{Organization of the Remaining Parts}
+
+
+\chapter{The Scalar--Vector--Entropy Plenum}
+\label{ch:plenum}
+
+\section{Field Content}
+
+The RSVP plenum is specified by three fields over a base manifold. Unlike the particles-in-spacetime picture, where matter fields are distinct from the geometric background, the plenum is the fundamental object: its field content encodes the pattern of distinctions currently supported and the constraints on which future patterns remain reachable.
+
+% Phi: scalar potential over the plenum, tracking local distinction
+% density / admissible-configuration weight.
+% v: vector field, the direction and rate of admissible transition.
+% S: entropy field, tracking accumulated loss of recoverable
+% distinction -- NOT thermodynamic entropy imported wholesale, but
+% grounded via the admissibility apparatus in Chapter 4.
+
+\subsection{The Scalar Field \texorpdfstring{$\Phifield$}{Phi}: Distinction Density}
+
+The scalar field $\Phifield: M \to \mathbb{R}$ assigns to each point of the plenum manifold $M$ a measure of local distinction density. Where $\Phifield$ varies rapidly, the plenum supports fine-grained distinctions; where $\Phifield$ is nearly constant, the local structure is smooth.
+
+\begin{definition}[Distinction density]
+Let $U \subset M$ be a region of the plenum. The distinction density in $U$ is
+\[
+\rho_{\mathrm{dist}}(U) = \int_U |\nabla \Phifield|^2 \, dV,
+\]
+the integrated squared gradient of the scalar field over $U$.
+\end{definition}
+
+High $\rho_{\mathrm{dist}}$ corresponds to a region where many locally stable configurations (galaxies, structures, gradients) coexist; low $\rho_{\mathrm{dist}}$ corresponds to regions approaching local equilibrium.
+
+\subsection{The Vector Field \texorpdfstring{$\vfield$}{v}: Admissible Transition}
+
+The vector field $\vfield: M \to TM$ specifies the direction and rate of admissible evolution at each point. Unlike the Hamiltonian vector field of classical mechanics, $\vfield$ is constrained by the admissibility relation: only transitions $x \to y$ satisfying the field equations and boundary conditions of Chapter~\ref{ch:variational} contribute to $\vfield$.
+
+\begin{definition}[Admissible flow]
+A curve $\gamma: [0,T] \to M$ is an admissible flow if
+\[
+\frac{d\gamma}{dt} = \vfield(\gamma(t))
+\]
+and $\gamma(t_2) \in \Adm(\gamma(t_1))$ for all $0 \leq t_1 < t_2 \leq T$, where $\Adm(x)$ denotes the set of configurations admissible from $x$.
+\end{definition}
+
+Not every smooth curve is an admissible flow; $\vfield$ encodes the constraint that evolution must preserve the plenum's internal consistency conditions.
+
+\subsection{The Entropy Field \texorpdfstring{$\Sfield$}{S}: Accumulated Loss}
+
+The entropy field $\Sfield: M \to \mathbb{R}_{\geq 0}$ tracks the accumulated loss of recoverable distinction along an admissible flow. Unlike thermodynamic entropy (a measure of microstate multiplicity), $\Sfield$ measures how much of a past configuration's structure is no longer inferentially accessible from the present one.
+
+\begin{definition}[Entropy as inferential loss]
+Let $\gamma: [0,t] \to M$ be an admissible flow. The entropy accumulated along $\gamma$ is
+\[
+\Sfield(\gamma(t)) - \Sfield(\gamma(0)) = \int_0^t \left(1 - I(\gamma(0); \gamma(s) \mid \gamma(t))\right) ds,
+\]
+where $I(\gamma(0); \gamma(s) \mid \gamma(t))$ is the mutual information between the initial configuration $\gamma(0)$ and intermediate state $\gamma(s)$, conditioned on the current state $\gamma(t)$.
+\end{definition}
+
+When $I(\gamma(0); \gamma(s) \mid \gamma(t)) \to 0$ for some $s < t$, the intermediate configuration $\gamma(s)$ is inferentially inaccessible from $\gamma(t)$: the structure it supported is no longer recoverable. The entropy field integrates this loss.
+
+\section{Why Three Fields and Not One}
+
+General relativity uses a single field (the metric $g_{\mu\nu}$) to encode both geometry and dynamics. Why does RSVP require three?
+
+The answer is that distinction, evolution, and loss are conceptually independent even when dynamically coupled. A configuration can support high distinction density ($|\nabla\Phifield|$ large) while evolving slowly ($|\vfield|$ small) and accumulating entropy slowly ($d\Sfield/dt$ small) --- or any other combination. Encoding all three in a single field would artificially couple degrees of freedom that the physics keeps separate.
+
+\begin{proposition}[Independence of field sectors]
+There exist admissible flows $\gamma_1, \gamma_2: [0,T] \to M$ such that:
+\begin{enumerate}
+\item $\rho_{\mathrm{dist}}(\gamma_1(t)) = \rho_{\mathrm{dist}}(\gamma_2(t))$ for all $t$, but $\Sfield(\gamma_1(T)) \neq \Sfield(\gamma_2(T))$;
+\item $\Sfield(\gamma_1(t)) = \Sfield(\gamma_2(t))$ for all $t$, but $|\vfield(\gamma_1(T))| \neq |\vfield(\gamma_2(T))|$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+For (1), consider two flows with identical distinction density profiles but different coarse-graining histories: $\gamma_1$ passes through a highly differentiated intermediate state that is subsequently smoothed, while $\gamma_2$ maintains constant distinction density. Both have the same $\Phifield$ profile, but $\gamma_1$ has accumulated more entropy because its intermediate distinctions are no longer recoverable.
+
+For (2), consider flows in which entropy accumulation saturates (all recoverable distinctions have been lost, $d\Sfield/dt = 0$) but the admissible-flow vector $\vfield$ remains nonzero: the plenum continues to evolve even though no new information is being lost. $\qed$
+\end{proof}
+
+\section{The Plenum as Continuous Substrate}
+
+\subsection{Against the Particles-in-Spacetime Picture}
+\subsection{What Survives from General Relativity}
+
+
+\chapter{Variational Formulation}
+\label{ch:variational}
+
+\section{The RSVP Action}
+
+The dynamics of the RSVP plenum are derived from a variational principle. We construct an action functional $\mathcal{S}[\Phifield, \vfield, \Sfield]$ whose critical points yield the field equations.
+
+\subsection{Kinetic and Coupling Terms}
+
+The RSVP action is
+\begin{align}
+\mathcal{S}[\Phifield, \vfield, \Sfield] &= \int_{\mathcal{M}} \mathcal{L}(\Phifield, \vfield, \Sfield, \nabla\Phifield, \nabla\vfield, \nabla\Sfield) \, d^4x, \label{eq:action} \\
+\mathcal{L} &= \mathcal{L}_\Phifield + \mathcal{L}_\vfield + \mathcal{L}_\Sfield + \mathcal{L}_{\mathrm{coupling}}, \nonumber
+\end{align}
+where $\mathcal{M}$ is the spacetime manifold and the Lagrangian density decomposes into sector-specific terms plus coupling.
+
+\textbf{Scalar sector:}
+\[
+\mathcal{L}_\Phifield = -\frac{1}{2} \nabla^\mu \Phifield \nabla_\mu \Phifield - V(\Phifield),
+\]
+where $V(\Phifield)$ is a self-interaction potential. We take $V(\Phifield) = \frac{\lambda}{4}\Phifield^4 + \frac{m^2}{2}\Phifield^2$ for concreteness, though the framework allows other forms.
+
+\textbf{Vector sector:}
+\[
+\mathcal{L}_\vfield = -\frac{1}{4} F^{\mu\nu} F_{\mu\nu},
+\]
+where $F_{\mu\nu} = \nabla_\mu v_\nu - \nabla_\nu v_\mu$ is the field strength of the vector field $\vfield$.
+
+\textbf{Entropy sector:}
+\[
+\mathcal{L}_\Sfield = -\frac{1}{2} \nabla^\mu \Sfield \nabla_\mu \Sfield.
+\]
+The entropy field has no self-interaction potential; it is driven entirely by coupling to $\Phifield$ and $\vfield$.
+
+\subsection{The Role of the Entropy Field in the Action}
+
+The coupling term is
+\[
+\mathcal{L}_{\mathrm{coupling}} = -\alpha \Sfield \nabla^\mu \Phifield \nabla_\mu \Phifield - \beta \Sfield F^{\mu\nu}F_{\mu\nu},
+\]
+where $\alpha, \beta > 0$ are coupling constants. This form ensures:
+\begin{enumerate}
+\item $\Sfield$ increases when $\Phifield$ or $\vfield$ exhibit large gradients or curvature;
+\item The entropy sector acts as a sink for distinguishability: high $\Sfield$ suppresses further differentiation.
+\end{enumerate}
+
+\section{Field Equations}
+
+\subsection{Derivation via the Euler--Lagrange Equations}
+
+The field equations are obtained by demanding $\delta \mathcal{S} = 0$ under variations $\delta\Phifield$, $\delta v^\mu$, $\delta\Sfield$ that vanish on the boundary.
+
+\textbf{Scalar field equation:}
+\begin{align}
+\Box \Phifield - V'(\Phifield) &= 2\alpha \nabla^\mu(\Sfield \nabla_\mu \Phifield), \label{eq:phi-eom}
+\end{align}
+where $\Box = \nabla^\mu \nabla_\mu$ is the d'Alembertian and $V'(\Phifield) = dV/d\Phifield$. The right-hand side is the back-reaction from the entropy field: high $\Sfield$ damps scalar-field gradients.
+
+\textbf{Vector field equation:}
+\begin{align}
+\nabla_\mu F^{\mu\nu} &= 2\beta \nabla_\mu(\Sfield F^{\mu\nu}). \label{eq:v-eom}
+\end{align}
+This is a modified Maxwell equation with an entropy-dependent source term.
+
+\textbf{Entropy field equation:}
+\begin{align}
+\Box \Sfield &= \alpha \nabla^\mu \Phifield \nabla_\mu \Phifield + \beta F^{\mu\nu}F_{\mu\nu}. \label{eq:S-eom}
+\end{align}
+The entropy field is sourced by gradients in $\Phifield$ and curvature in $\vfield$, with no self-damping: once distinction is lost, $\Sfield$ does not spontaneously decrease.
+
+\subsection{Conserved Quantities and Noether Currents}
+
+The action \eqref{eq:action} is invariant under spacetime translations $x^\mu \to x^\mu + a^\mu$. By Noether's theorem, this implies a conserved stress-energy tensor.
+
+\begin{theorem}[Energy-momentum conservation]
+The stress-energy tensor
+\begin{align}
+T^{\mu\nu} &= \nabla^\mu \Phifield \nabla^\nu \Phifield + F^{\mu\lambda} F^\nu_{\ \lambda} + \nabla^\mu \Sfield \nabla^\nu \Sfield \nonumber \\
+&\quad - g^{\mu\nu} \mathcal{L}
+\end{align}
+satisfies $\nabla_\mu T^{\mu\nu} = 0$ on solutions to the field equations \eqref{eq:phi-eom}--\eqref{eq:S-eom}.
+\end{theorem}
+
+\begin{proof}
+Standard Noether procedure: compute $\delta \mathcal{S}$ under $x^\mu \to x^\mu + \epsilon a^\mu$, use the field equations to eliminate $\delta \Phifield$, $\delta v^\mu$, $\delta \Sfield$, and integrate by parts. The boundary term vanishes by assumption, leaving $\nabla_\mu T^{\mu\nu} = 0$. $\qed$
+\end{proof}
+
+\begin{note}[Open: Distinction-count or admissibility-measure invariants]
+Energy-momentum conservation is a standard geometric result. Whether the RSVP action admits a further conserved current — specifically, a dynamical invariant measuring distinction count, admissibility measure, or inferential capacity that is preserved by the field equations themselves — remains to be derived. 
+
+Such an invariant would have to emerge from a symmetry of the action beyond spacetime translations. Candidates include:
+\begin{itemize}
+\item A global $U(1)$ phase symmetry of $\Phifield$ (if the scalar has complex structure not yet specified);
+\item A coarse-graining symmetry relating TARTAN scales;
+\item An invariant constructed from the admissibility relation itself, not merely from the field content.
+\end{itemize}
+
+The title of this research program, "Numerical Claims Are Conserved Quantities," suggests such an invariant exists, but its explicit form and derivation are not yet on record. This is flagged for completion in Part IV.
+\end{note}
+
+\section{Hamiltonian Formulation}
+
+\subsection{Phase Space and Constraints}
+\subsection{Relation to the Admissibility Apparatus of Chapter~4}
+
+
+\chapter{Admissible Evolution}
+\label{ch:admissible-evolution}
+
+% This chapter formally imports the distinction/admissibility
+% apparatus and grounds it in the RSVP state space, rather than
+% inventing new bundle machinery. x, y range over RSVP field
+% configurations; R is the admissibility relation induced by the
+% field equations of Chapter 3 together with physically-motivated
+% boundary conditions.
+
+\section{The Admissibility Relation on Plenum Configurations}
+
+\begin{definition}[Parameterized admissible transition]
+Let $\Gamma$ be a constraint structure specifying:
+\begin{enumerate}
+\item The RSVP field equations (Chapter~\ref{ch:variational});
+\item Boundary conditions (initial data, asymptotic conditions);
+\item Conservation laws (energy-momentum, gauge constraints).
+\end{enumerate}
+A configuration $y$ is admissible from $x$ relative to $\Gamma$, written $x \leadsR y$ (with $\Gamma$ clear from context), if there exists a solution of the field equations connecting $x$ to $y$ that satisfies all constraints in $\Gamma$.
+\end{definition}
+
+\begin{remark}[Admissibility is relative to constraints]
+Admissibility is always admissibility \emph{relative to a constraint structure}. Different constraint structures yield different admissible configuration spaces:
+\[
+\Gamma_1 \neq \Gamma_2 \implies \Mad(\Gamma_1) \neq \Mad(\Gamma_2)
+\]
+in general. When we write $x \leadsR y$, the constraint structure $\Gamma$ should be either explicit or clear from context. In this monograph, unless stated otherwise, $\Gamma$ refers to the standard RSVP constraints: field equations \eqref{eq:phi-eom}--\eqref{eq:S-eom}, local energy-momentum conservation, and causality.
+\end{remark}
+
+\subsection{Admissibility as a Constraint on the Plenum's Own Dynamics, Not an External Postulate}
+
+\section{The Admissibility Manifold Hierarchy}
+
+% Imports M_adm -> M_proj -> M_obs from Quadratic Gravity as a
+% Derived Interface Theory and specializes it to the RSVP plenum:
+% M_adm is the full space of admissible plenum configurations,
+% M_proj factors out gauge/coordinate redundancy, M_obs is what
+% survives projection to actually measurable quantities (galaxy
+% counts, CMB multipoles, spin statistics, etc).
+
+\subsection{\texorpdfstring{$\Mad$}{M\_adm}: The Admissibility Manifold of the Plenum}
+
+\begin{definition}[Admissibility manifold]
+Given a constraint structure $\Gamma$, the admissibility manifold is
+\[
+\Mad(\Gamma) = \{x \in \mathcal{X} : x \text{ satisfies all constraints in } \Gamma\},
+\]
+where $\mathcal{X}$ is the full configuration space of $(\Phifield, \vfield, \Sfield)$ fields over the base manifold.
+\end{definition}
+
+The admissibility manifold is the space of all configurations consistent with the plenum's own dynamics. Not every element of $\mathcal{X}$ lies in $\Mad(\Gamma)$: arbitrary field configurations need not solve the field equations or respect boundary conditions.
+
+\subsection{\texorpdfstring{$\Mproj$}{M\_proj}: Projection and Gauge Redundancy}
+
+\begin{definition}[Projection manifold]
+Let $\sim_{\mathrm{gauge}}$ be the equivalence relation identifying gauge-equivalent configurations. The projection manifold is the quotient
+\[
+\Mproj = \Mad(\Gamma) / \sim_{\mathrm{gauge}}.
+\]
+\end{definition}
+
+Gauge redundancy includes coordinate transformations, overall phase rotations of $\Phifield$, and other symmetries of the action that do not affect physical predictions. $\Mproj$ contains only physically distinguishable configurations.
+
+\subsection{\texorpdfstring{$\Mobs$}{M\_obs}: The Observable Cosmological Sector}
+
+\begin{definition}[Observable manifold]
+Let $\pi: \Mproj \to \Mobs$ be the measurement map that assigns to each gauge-equivalence class of configurations the set of its observable predictions (galaxy counts, CMB multipoles, correlation functions, etc.). The observable manifold is
+\[
+\Mobs = \pi(\Mproj).
+\]
+\end{definition}
+
+Critically, $\pi$ is neither injective nor surjective in general:
+\begin{itemize}
+\item Not injective: distinct admissible configurations can yield identical observable predictions (underdetermination);
+\item Not surjective: not every element of $\Mobs$ corresponds to an admissible configuration (over-parameterization).
+\end{itemize}
+
+The failure of injectivity is the source of the diagnostic gap explored in Chapter~\ref{ch:repair-warrant-cosmology}: observable agreement does not imply admissible-level correctness.
+
+\section{Entropy as Loss of Admissible Reachability}
+
+\subsection{Restating \texorpdfstring{$\Sfield$}{S} in Admissibility Terms}
+\subsection{Relation to, and Departure from, Thermodynamic Entropy}
+
+
+% ---- PART II: DISTINCTION, MEMORY, AND REPAIR ----
+\part{Distinction, Memory, and Repair}
+
+\chapter{TARTAN: Recursive Coarse-Graining}
+\label{ch:tartan}
+
+\section{The Coarse-Graining Problem in a Distinction-Primary Theory}
+
+\section{The TARTAN Operator}
+
+\begin{definition}[TARTAN coarse-graining]
+$\TARTANop$ maps a plenum configuration and a scale parameter to a coarser configuration, subject to the requirement that admissibility relations at the coarser scale are induced by, and consistent with, admissibility relations at the finer scale.
+\end{definition}
+
+\subsection{Scale Consistency}
+\subsection{Fixed Points and Recursive Structure}
+
+\section{TARTAN and the Turnover Surface}
+
+% States, without re-proving, the connection to Smoothness
+% Paradox's turnover surface (Sigma_turn): the surface in
+% scale/time where TARTAN's coarse-grained description stops
+% differentiating from its neighbors and begins re-converging.
+
+\subsection{Statement of the Connection}
+
+The turnover surface $\Turn$ is the locus in $(r,t)$ space where the distinguishability spectrum $\Dspec(r,t)$ reaches its maximum and begins to decrease. TARTAN coarse-graining induces a natural map from fine-scale to coarse-scale admissibility relations; the turnover surface marks where this map begins to merge previously-distinct configurations.
+
+\subsection{Observable-Equivalence Quotient}
+
+\begin{definition}[Observable-equivalence relation]
+Two configurations $x, y \in \mathcal{X}$ are observably equivalent if
+\[
+x \sim_o y \iff \forall O \in \mathcal{O}_{\mathrm{adm}} : O(x) = O(y),
+\]
+where $\mathcal{O}_{\mathrm{adm}}$ is the set of admissible observables.
+\end{definition}
+
+The equivalence class $[x]_{\sim_o}$ is the fiber of the projection map $\pi: \Mproj \to \Mobs$. This equivalence is preserved under further projections — but only tautologically: it is preserved because it is defined as the fiber.
+
+\begin{remark}
+The observable-equivalence quotient $\mathcal{X}/{\sim_o}$ is not a dynamical invariant in the sense of a Noether current. It is preserved by construction (quotients are well-defined), not by the field equations. Its role is to ensure that TARTAN's coarser-scale admissibility relations are induced by, rather than merely consistent with, finer-scale ones.
+\end{remark}
+
+\subsection{What This Book Proves and What It Cites}
+
+This chapter establishes:
+\begin{itemize}
+\item The TARTAN operator's scale-consistency requirement (Definition 5.1);
+\item The observable-equivalence quotient construction (Definition 5.2);
+\item That observable equivalence is preserved under projection (Remark 5.1).
+\end{itemize}
+
+This chapter cites but does not re-derive:
+\begin{itemize}
+\item The connection between TARTAN fixed points and the reknotting criterion (open problem, see Chapter~\ref{ch:open-problems});
+\item The turnover surface's detailed structure (see \emph{The Smoothness Paradox}).
+\end{itemize}
+
+
+\chapter{Distinguishability and the Persistence Cone}
+\label{ch:persistence-cone}
+
+% Imports the persistence-cone construction from Primordial
+% Distinctions and Cosmological Memory and generalizes it from the
+% tidal-torque/galactic-spin case to the plenum formalism directly.
+
+\section{Physical Memory as Preserved Inferential Accessibility}
+
+\section{The Persistence Cone}
+
+\begin{definition}[Persistence cone]
+Given a primordial distinction $D$, an observable $O$, a reconstruction procedure $\mathcal{R}$, and a threshold $\epsilon > 0$, the persistence cone is
+\[
+\Pcone(D) = \{(O, r, t) : I(D; O_{r,t}) > \epsilon\},
+\]
+the region of observable/scale/time space in which $D$ remains statistically distinguishable above threshold, where $I(D; O_{r,t})$ is the mutual information between the primordial distinction $D$ and the observable $O$ measured at comoving scale $r$ and cosmic time $t$.
+\end{definition}
+
+The persistence cone is not a light cone. Distinctions can be causally accessible (lie within the past light cone) yet inferentially inaccessible (lie outside the persistence cone) if the intervening dynamics have smoothed them below the reconstruction threshold.
+
+\begin{proposition}[Persistence cone containment]
+For fixed distinction $D$ and observable $O$:
+\begin{enumerate}
+\item The persistence cone is bounded: $\Pcone(D) \subseteq [r_{\min}, r_{\max}] \times [t_0, t_{\mathrm{eras}}]$ for some $r_{\min}, r_{\max}, t_{\mathrm{eras}} < \infty$.
+\item If $\epsilon_1 < \epsilon_2$, then $\Pcone_{\epsilon_2}(D) \subseteq \Pcone_{\epsilon_1}(D)$ (higher thresholds yield smaller cones).
+\item The persistence cone shrinks under coarse-graining: if $\mathcal{R}_{\mathrm{coarse}}$ averages over a scale $\Delta r$, then $\Pcone(D; \mathcal{R}_{\mathrm{coarse}}) \subseteq \Pcone(D; \mathcal{R}_{\mathrm{fine}})$ for $\mathcal{R}_{\mathrm{fine}}$ resolving scales $\ll \Delta r$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+(1) Boundedness follows from the second law: $I(D; O_{r,t})$ is non-increasing in $t$ for fixed $r$ (information is lost, not spontaneously created), so the cone must pinch off at some $t_{\mathrm{eras}}$ where $I < \epsilon$ for all scales. The scale bounds $r_{\min}, r_{\max}$ follow from finite correlation lengths.
+
+(2) Immediate from the definition: $\{I > \epsilon_2\} \subseteq \{I > \epsilon_1\}$ when $\epsilon_2 > \epsilon_1$.
+
+(3) Coarse-graining reduces mutual information by the data-processing inequality: $I(D; \mathcal{R}_{\mathrm{coarse}}(O)) \leq I(D; O)$. $\qed$
+\end{proof}
+
+\subsection{Physical Cones Versus Observable Cones}
+
+The persistence cone defined above is an \emph{observable} cone: it measures what can be reconstructed from a specific observable $O$ using a specific procedure $\mathcal{R}$. The \emph{physical} persistence cone, denoted $\Pcone_{\mathrm{phys}}(D)$, is the union over all possible observables and optimal reconstruction:
+\[
+\Pcone_{\mathrm{phys}}(D) = \bigcup_{O, \mathcal{R}} \Pcone(D; O, \mathcal{R}).
+\]
+
+In practice, $\Pcone_{\mathrm{phys}}$ is inaccessible: we never have access to all observables or optimal reconstruction. What we measure is always some projection $\Pcone_{\mathrm{obs}} \subseteq \Pcone_{\mathrm{phys}}$.
+
+\subsection{True Erasure Versus Reconstruction-Bottleneck Failure}
+
+A distinction $D$ is \emph{truly erased} at time $t$ if $(O, r, t) \notin \Pcone_{\mathrm{phys}}(D)$ for all observables $O$ and scales $r$: no procedure, no matter how clever, can recover $D$ from the state at time $t$.
+
+A distinction experiences \emph{reconstruction-bottleneck failure} at $t$ if $(O, r, t) \notin \Pcone_{\mathrm{obs}}(D)$ for the observable and procedure actually used, but $(O', r', t) \in \Pcone_{\mathrm{phys}}(D)$ for some other $(O', r')$: the distinction is still physically present, but the chosen observable cannot see it.
+
+\begin{example}[Galactic spin as a persistence-cone observable]
+Sheng et al. (2026) detect a $5.9\sigma$ correlation between protohalo angular momentum orientation and large-scale tidal field structure at $z \sim 0$, interpreted as a memory of initial conditions. In persistence-cone language: the primordial distinction $D$ (tidal shear quadrupole orientation at $z \sim 1100$) remains above threshold in the observable cone defined by $O = $ galactic spin statistics at $r \sim 100$ Mpc, $t \sim t_0$. The detection is evidence that $(O, 100\,\text{Mpc}, t_0) \in \Pcone(D)$ for this particular $D$ and $O$.
+\end{example}
+
+\section{Worked Case: Tidal Torque and Galactic Spin \texorpdfstring{\cite{sheng2026tidaltorque}}{}}
+
+\subsection{Summary of the Empirical Result}
+\subsection{The Persistence Cone for Protohalo Angular Momentum}
+
+\section{Persistence Cones and the RSVP Entropy Field}
+
+\subsection{Relating \texorpdfstring{$\Pcone$}{C\_epsilon} to \texorpdfstring{$\Sfield$}{S}}
+
+
+\chapter{Repair-Warrant Diagnostics for Cosmological Reconstruction}
+\label{ch:repair-warrant-cosmology}
+
+% Imports the R_Gamma(h), delta_dep, J(a|h) apparatus from
+% Diagnostic Coordinates and the Time of Repair and specializes it
+% to the problem of diagnosing model misspecification in
+% field-based cosmological inference pipelines, with the SELFI
+% case study (Hoellinger and Leclercq) as the worked example.
+
+\section{Diagnosis Before Inference}
+
+\section{The Reference Class for a Cosmological Reconstruction}
+
+\subsection{\texorpdfstring{$\RGam(h)$}{R\_Gamma(h)}: Independence from the Object Under Evaluation}
+\subsection{Grounding the Reference Class in Theoretically Well-Understood Quantities}
+
+\section{Structural Distance and the Repair-Warrant Objective}
+
+\subsection{\texorpdfstring{$\ddep$}{delta\_dep} as a Calibrated Structural Distance}
+\subsection{\texorpdfstring{$\Repobj(a\mid h)$}{J(a|h)}: When Intervention Is Warranted}
+
+\section{Worked Example: The Initial Power Spectrum as a Diagnostic Proxy \texorpdfstring{\cite{hoellinger2024diagnosing}}{}}
+
+% This section summarizes the Hoellinger and Leclercq (2024) case study
+% as a worked instance of this chapter's repair-warrant apparatus.
+
+\subsection{Summary of the Case Study}
+
+Hoellinger and Leclercq (2024) \cite{hoellinger2024diagnosing} address forward-model misspecification in Stage-IV galaxy survey inference. Their SELFI/ABC-PMC pipeline reconstructs the initial matter power spectrum $\theta$ from simulated galaxy count power spectra, then uses that reconstruction as a diagnostic proxy before committing to the expensive cosmological-parameter inference.
+
+The case study instantiates the repair-warrant framework as follows:
+
+\begin{itemize}
+\item \textbf{Object under evaluation:} $h = \gamma$, the SELFI posterior mean for the initial power spectrum, obtained from a possibly-misspecified forward model of the survey.
+
+\item \textbf{Reference class:} $\RGam(h) = P(\theta)$, a Gaussian prior with mean and covariance obtained by propagating CMB-informed cosmological priors through a Boltzmann solver. This has the required independence: it is built from theory and prior experiments, not from the survey simulator under evaluation.
+
+\item \textbf{Structural distance:} The Mahalanobis distance
+\[
+d_M(\gamma, \theta_0 \mid S) = \sqrt{(\gamma - \theta_0)^\top S^{-1} (\gamma - \theta_0)},
+\]
+calibrated against the null distribution obtained from 5,000 samples drawn from $P(\theta)$.
+
+\item \textbf{Diagnostic results:} Under correct model specification, $d_M(\gamma, \theta_0 \mid S)$ lies within the expected range and the inferred cosmological parameters $(\Omega_m, \sigma_8)$ are unbiased. Under misspecification (incorrect galaxy bias, halved gravity-solver time steps, inaccurate light-cone treatment), $d_M$ exceeds the 95th percentile of the null distribution while the cosmological parameters are biased by more than $2\sigma$ --- yet the raw galaxy count power spectra differ by only $\sim 1\%$, making the bias nearly invisible without the diagnostic stage.
+\end{itemize}
+
+The two-step architecture (reconstruct $\theta$, check it against $P(\theta)$, only then infer $\omega$) is diagnosis before commitment: a cheap proxy sensitive to systematic effects is evaluated before the expensive cosmological inference is run.
+
+\subsection{What the Case Study Confirms About the Framework's Limits}
+
+Two features of the Hoellinger-Leclercq results confirm limitations the abstract framework states explicitly rather than optimistically eliding:
+
+\textbf{Observable projections are alarms, not verdicts.} The paper warns that ``a larger distance does not necessarily imply a worse model, but hints at the presence of systematic effects.'' This is the Mahalanobis distance functioning as $\dobs$, an observable projection of the underlying admissibility-level departure $\dadm$. A large $\dobs$ licenses investigation but does not certify which mechanism is responsible or how large the true structural damage is. The follow-up work (their Section IV.A.4) matches characteristic scales in $k$-space to distinguish among candidate systematic effects --- diagnosis of the second, harder kind: determining where in intervention space the responsible structure sits, not merely that $\dobs \neq 0$.
+
+\textbf{Constraint satisfaction at one level does not imply admissibility at another.} Some tested systematic effects (misspecified masked point sources) have negligible effect on the reconstructed $\theta$, while others (halved gravity-solver time steps) produce inverse errors in $\theta$ exceeding the forward error in the summary statistics by a wide margin. The galaxy count power spectra pass (forward error $< 1\%$), yet the initial power spectrum reconstruction is rejected at nearly $2\sigma$ --- a clean empirical instance of the non-implication proposition: passing a check phrased at the wrong level offers no assurance about the level that matters.
+
+\section{Non-Implication Propositions}
+
+The repair-warrant framework establishes several \emph{non}-implications --- things that do not follow from diagnostic evidence, even when that evidence is statistically significant.
+
+\begin{proposition}[Observable agreement does not imply structural correctness]
+\[
+\dobs(h, \RGam(h)) = 0 \not\Rightarrow \dadm(h, \RGam(h)) = 0.
+\]
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+The measurement map $\pi: \Mproj \to \Mobs$ is a projection, not an isometry. Let $\ker(\pi) = \{x \in \Mproj : \pi(x) = 0\}$ be the kernel. For any $h \in \Mproj$ and $k \in \ker(\pi)$, we have $\pi(h + k) = \pi(h)$, so $\dobs(\pi(h), \pi(h+k)) = 0$, yet $\dadm(h, h+k)$ can be arbitrarily large. $\qed$
+\end{proof}
+
+\begin{proposition}[Diagnostic discrepancy does not imply unique diagnosis]
+\[
+\dobs(h, \RGam(h)) > \epsilon \not\Rightarrow |\{D : \text{defect } D \text{ produces discrepancy}\}| = 1.
+\]
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+The preimage $\pi^{-1}(\{\mathcal{O}(h)\})$ is generically not a singleton. Multiple distinct defects in this fiber produce identical observable signatures yet differ at the admissible level. $\qed$
+\end{proof}
+
+\begin{proposition}[Diagnostic discrepancy does not imply unique repair]
+\[
+\dobs(h, \RGam(h)) > \epsilon \not\Rightarrow \exists! a : \Repobj(a \mid h) < 0.
+\]
+Detection alone does not determine intervention. The repair-warrant objective $\Repobj(a \mid h)$ provides a selection criterion among a \emph{given} candidate set $\mathcal{A}(h)$, but generating that candidate set with attributable, disentangled effects is the hard unsolved part.
+\end{proposition}
+
+\begin{remark}
+Hoellinger and Leclercq's Section IV.A.4 demonstrates this third non-implication empirically: multiple systematic effects (galaxy bias, light-cone approximation, gravity-solver time steps) produce similar Mahalanobis distances. Diagnosing which defect is responsible requires matching characteristic scales in $k$-space --- a second diagnostic beyond the scalar distance $d_M$.
+\end{remark}
+
+
+% ---- PART III: STRUCTURE, HISTORY, AND OBSERVATION ----
+\part{Structure, History, and Observation}
+
+\chapter{Structure Formation as Admissible Evolution}
+\label{ch:structure-formation}
+
+\section{From Field Equations to Structure}
+
+\section{Structure as Locally Stable Distinction}
+
+\subsection{Galaxies, Clusters, and Voids as Admissibility Basins}
+
+\section{Comparison with \texorpdfstring{$\Lambda$}{Lambda}CDM Structure Formation}
+
+\subsection{Where the Predictions Agree}
+\subsection{Where They Diverge and Why}
+
+
+\chapter{The Distinguishability Spectrum and the Turnover Surface}
+\label{ch:distinguishability-spectrum}
+
+% This chapter states, cites, and uses the Smoothness Paradox
+% results needed for the rest of Part III; it does not attempt a
+% second derivation of that monograph's own arguments.
+
+\section{Statement of the Distinguishability Spectrum}
+
+\section{Statement of the Turnover Surface}
+
+\section{The Three-Gate Reknotting Criterion}
+
+\subsection{Dynamical Instability}
+\subsection{Recursive Accessibility}
+\subsection{Nonlinear Persistence}
+
+\section{Operational Equivalence of Terminal and Primordial Smoothness}
+
+\begin{definition}[Operational equivalence via interface distance]
+Two epochs $E_1, E_2$ are operationally equivalent if
+\[
+d_{\mathrm{int}}(E_1, E_2) = 0,
+\]
+where $d_{\mathrm{int}}$ is the interface-native distance (Jensen-Shannon divergence on observable distributions). No admissible measurement distinguishes them.
+\end{definition}
+
+\begin{remark}
+Operational equivalence ($d_{\mathrm{int}} = 0$) is weaker than being the same point in the underlying state space. It means only that the observable projections coincide, not that the admissible-level configurations are identical. Whether primordial and terminal smoothness also collapse to one point under a TARTAN-induced quotient $\mathcal{X}/{\sim_o}$ is a separate, stronger claim.
+\end{remark}
+
+The central question of \emph{The Smoothness Paradox} can now be stated precisely: if the universe evolves from primordial smoothness through differentiation back to terminal smoothness, and if $d_{\mathrm{int}}(E_{\mathrm{primordial}}, E_{\mathrm{terminal}}) = 0$, does this operational equivalence license treating them as the same epoch for purposes of cosmological continuation? Or does the intervening history distinguish them at a level the interface-native distance cannot detect?
+
+\section{What This Chapter Assumes From \emph{The Smoothness Paradox}}
+
+This chapter cites but does not re-derive:
+\begin{itemize}
+\item The distinguishability spectrum $\Dspec(r, t)$ and its relation to TARTAN coarse-graining;
+\item The turnover surface $\Turn$ in $(r, t)$ space where TARTAN's recursive description stops differentiating and begins reconverging;
+\item The three-gate reknotting criterion (dynamical instability, recursive accessibility, nonlinear persistence) and its two onset routes.
+\end{itemize}
+
+Readers requiring the full derivation and narrative treatment should consult \emph{The Smoothness Paradox} directly. This monograph uses those results as established machinery.
+
+
+\chapter{Quadratic Gravity as the Plenum's Observable Interface}
+\label{ch:quadratic-gravity-interface}
+
+% Specializes the M_adm -> M_proj -> M_obs hierarchy of Chapter 4,
+% as developed generally in Quadratic Gravity as a Derived
+% Interface Theory, to the specific case of RSVP's gravitational
+% sector.
+
+\section{Ghosts, ordinarily}
+
+\section{The Hidden Admissibility Direction in the RSVP Plenum}
+
+\section{Observable Equivalence Below and Above the Admissibility Scale}
+
+\subsection{The Derived Interface Conjecture, Specialized to \RSVP}
+
+
+\chapter{Observational Signatures and Tests}
+\label{ch:observations}
+
+\section{Falsifiable Predictions on Record}
+
+Currently, one concrete falsifiable prediction exists:
+
+\begin{prediction}[Persistence-cone gas-stellar asymmetry]
+The gas spin correlation with the primordial tidal field exceeds the stellar spin correlation:
+\[
+\Pi_{\mathrm{gas}} > \Pi_{\mathrm{stars}}.
+\]
+
+\textbf{Empirical status:} Sheng et al.\ (2026) \cite{sheng2026tidaltorque} report a $5.9\sigma$ detection of this asymmetry in SDSS data.
+
+\textbf{Failure condition:} If this asymmetry disappears after controlling for halo mass and measurement uncertainty, the dynamical-coherence interpretation of the persistence cone loses support. The framework does not require this specific prediction to hold universally, but its failure in this regime would indicate that gas dynamics do not preserve primordial angular momentum correlations as persistently as the framework currently assumes.
+\end{prediction}
+
+\section{Predictions Distinguishing RSVP Cosmology from \texorpdfstring{$\Lambda$}{Lambda}CDM}
+
+\begin{note}
+Further distinguishing predictions between RSVP and $\Lambda$CDM are under development. The framework is not yet rich enough in observational consequences to claim multiple independent tests. Sections below outline directions for future work rather than established predictions.
+\end{note}
+
+\section{Diagnostic-Coordinate Signatures in Survey Data}
+
+\subsection{What a Stage-IV Survey Pipeline Would Need to Report}
+
+For the repair-warrant diagnostic apparatus of Chapter~\ref{ch:repair-warrant-cosmology} to function as an operational check on cosmological inference pipelines, Stage-IV surveys (DESI, Euclid, LSST) would need to report:
+
+\begin{enumerate}
+\item The reconstructed initial power spectrum $\theta$ alongside the inferred cosmological parameters $\omega$;
+\item The Mahalanobis distance $d_M(\gamma, \theta_0 \mid S)$ calibrated against the null distribution from the prior;
+\item Characteristic scale information (which $k$-bins dominate the discrepancy, if any) to enable defect attribution;
+\item The candidate set of systematic effects $\mathcal{A}(h)$ that could produce an observed discrepancy, with repair costs estimated.
+\end{enumerate}
+
+No current survey pipeline implements this two-step diagnostic architecture as standard practice. Hoellinger and Leclercq (2024) demonstrate its feasibility in a research context, not an operational one.
+
+\section{Open Observational Programs}
+
+\subsection{Testing the Persistence Cone in Other Observables}
+
+The persistence-cone construction (Chapter~\ref{ch:persistence-cone}) is not limited to galactic spin. Candidate observables include:
+\begin{itemize}
+\item Filament orientations relative to large-scale tidal shear;
+\item Void shapes and their alignment with primordial overdensity gradients;
+\item Higher-order correlation functions sensitive to non-Gaussian initial conditions.
+\end{itemize}
+
+Each provides an independent test of whether primordial distinctions persist in current structure.
+
+\subsection{Distinguishing Admissible-Level from Observable-Level Defects}
+
+Testing whether a forward-model defect biases only observables or propagates to the admissible level requires independent reconstructions of the same quantity from different observables. If galaxy clustering and weak lensing both reconstruct $\theta$ with similar discrepancies from $P(\theta)$, the defect is likely admissible-level; if discrepancies differ, the defect may be observable-specific.
+
+
+% ---- PART IV: OPEN PROBLEMS ----
+\part{Open Problems}
+
+\chapter{What Remains Conjectural}
+\label{ch:open-problems}
+
+\section{Unproved Claims Carried Forward From This Book}
+
+\section{The Relation Between TARTAN Fixed Points and Reknotting}
+
+\section{Toward a Complete Proof of the Derived Interface Conjecture}
+
+\section{Directions for Further Work}
+
+\section{Conclusion}
+
+
+% ============================================================
+\backmatter
+% ============================================================
+
+\chapter{Mathematical Preliminaries}
+\label{app:math}
+
+\section{Differential Geometry Conventions}
+
+\section{Variational Calculus on the Plenum}
+
+
+\chapter{Notation and Conventions}
+\label{app:notation}
+
+\section{Field and Admissibility Notation}
+
+\section{Relation to Notation in \emph{The Smoothness Paradox} and \emph{Quadratic Gravity as a Derived Interface Theory}}
+
+
+\chapter{Selected Derivations}
+\label{app:derivations}
+
+\section{Full Derivation of the RSVP Field Equations}
+
+\section{Derivation of the Admissibility Manifold Projections}
+
+
+% ---- Bibliography ----
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\begin{thebibliography}{9}
+
+\bibitem{sheng2026tidaltorque}
+Y.~Sheng et~al.,
+\emph{A high-significance detection of primordial tidal torque imprints},
+arXiv:2512.11383 (2026).
+
+\bibitem{hoellinger2024diagnosing}
+T.~Hoellinger and F.~Leclercq,
+\emph{Diagnosing systematic effects using the inferred initial power spectrum},
+arXiv:2412.04443 [astro-ph.CO] (2024).
+
+\bibitem{hoellinger2025vorticity}
+T.~Hoellinger, J.-B.~Chapelier, and L.~Manueco,
+\emph{A Vorticity Confinement correction for discontinuous Galerkin schemes applied to fluid flow problems},
+International Journal of Numerical Methods for Heat and Fluid Flow (2025).
+
+\end{thebibliography}
+
+% ============================================================
+\end{document}
+% ============================================================
