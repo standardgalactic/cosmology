@@ -6,7 +6,7 @@ LATEX = pdflatex
 BIBTEX = bibtex
 LATEXFLAGS = -interaction=nonstopmode -file-line-error
 
-.PHONY: all clean cleanall view
+.PHONY: all clean cleanall view reknotting-test
 
 all: $(MAIN).pdf
 
@@ -21,6 +21,10 @@ quick: $(MAIN).tex
 
 view: $(MAIN).pdf
 	xdg-open $(MAIN).pdf &
+
+reknotting-test:
+	cd experiments/python && python3 -m unittest -v test_reknotting_model.py
+	cd experiments/python && python3 reknotting_model.py --output reknotting-output
 
 clean:
 	rm -f $(MAIN).aux $(MAIN).log $(MAIN).out $(MAIN).toc $(MAIN).lof $(MAIN).lot

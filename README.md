@@ -30,3 +30,22 @@ A cosmology in which matter, galaxies, stars, life, and other complex structures
 ![](08%20-%20RSVP%20Universe.png)
 
 [Interface Analysis](https://standardgalactic.github.io/cosmology/interface-analysis.pdf)
+
+## Reknotting status and experiments
+
+The authoritative [Chapter 72 dependency ledger](chapter-72-dependency-ledger.md)
+records the frozen assumptions, repairs, and unresolved dependencies preceding
+the numerical program. In particular, the Persistence Postulate remains an
+explicit hypothesis and the RSVP Closure Problem remains open.
+
+The first [generic reduced-mode experiment](experiments/python/README.md)
+implements the three independent gates—dynamical instability, recursive
+accessibility, and nonlinear persistence—and distinguishes accessibility-driven
+from background-driven onset. It is a proof of concept for the diagnostic
+architecture, not a calculation of the terminal state `S_*`.
+
+Run its positive cases, negative controls, and timestep-refinement test with:
+
+```bash
+make reknotting-test
+```
