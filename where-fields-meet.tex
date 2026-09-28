@@ -1,0 +1,913 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1.1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[sc]{mathpazo}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{tikz-cd}
+\usepackage{enumitem}
+\usepackage{booktabs,longtable,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+
+\setlist{itemsep=2pt,topsep=4pt}
+\linespread{1.08}
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{construction}{Proposed construction}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\usepackage{centernot}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\Stab}{\operatorname{Stab}}
+\newcommand{\Hol}{\operatorname{Hol}}
+\newcommand{\JSD}{\operatorname{JSD}}
+
+\newcommand{\F}{\mathcal F}
+\newcommand{\G}{\mathcal G}
+\newcommand{\R}{\mathcal R}
+\newcommand{\Cont}{\operatorname{Cont}}
+\newcommand{\Diff}{\mathrm{Diff}}
+
+\title{\textbf{Where Fields Meet}\\[4pt]
+\large Dressing, Relational Invariance, and the Disappearance of the Manifold}
+\author{Flyxion\\ \small Independent Researcher}
+\date{September 28, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+The dressing field method, developed by Jordan François and Lucrezia Ravera, is a systematic procedure for extracting invariant variables from general-relativistic gauge field theories without conventional gauge fixing. A dressing field, drawn from the theory's own field content, transforms so as to compensate the local symmetry, and the composite variables it forms with the remaining fields are invariant by construction. Ravera and François read these composites relationally: fields co-define one another through point coincidences, and physical spacetime is the network of such coincidences rather than a set of independently labelled manifold points. This essay reconstructs the method and its relational interpretation and then asks a further question that the method raises but does not by itself settle. Invariance tells us which distinctions a dressing removes. It does not tell us whether removing them was safe. The essay proposes that a dressing should be evaluated as an interface: its adequacy depends on whether configurations it identifies support the same admissible continuations under the operations the theory declares physical, including couplings, subsystem splittings, boundary data, and quantization. Under this reading the manifold ``disappears'' in a precise and limited sense, relationalism is distinguished from general covariance, residual ``transformations of the second kind'' become the physically meaningful changes of relational frame, and the failure of local dressings to glue into a global one appears as a reconstruction obstruction carried by gauge-invariant transition data. A continuation-adequacy criterion is stated and a sufficient condition for it is proved.
+\end{abstract}
+
+\tableofcontents
+\bigskip
+
+%===========================================================
+\section{Introduction: Where Fields Meet}
+%===========================================================
+
+Near the end of a long interview on the \emph{Theories of Everything} channel, Lucrezia Ravera is asked what she sees when she looks around a room. The walls and the kitchen, she answers, as anyone would. Only when she stops to think does the other picture arrive: there are fields everywhere, physical spacetime is where those fields meet, and this is both marvellous and a little unsettling \cite{toe}. Earlier in the same conversation she had put the technical version more starkly. When the physics is written in terms of fields on fields, the time variable $t$ and the space variable $x$ drop out of the physical picture, and the manifold ``is not there anymore.''
+
+These two statements frame a real puzzle. General relativity and the gauge theories of the Standard Model are written on a differentiable manifold. Fields are sections of bundles over it, connections live on it, and the local symmetries of the theory act on it and on everything defined over it. Yet the physical content of the theory, according to a line of argument running from Einstein through Bergmann, Stachel and Rovelli, is insensitive to which manifold point carries which field value. The manifold is indispensable to the presentation of the theory and apparently absent from what the theory says about the world.
+
+The mismatch can be written down in two lines. Let $S[\phi]=\int_M\mathcal L(\phi,d\phi,\dots)$ be an action on a space $\F$ of field configurations, invariant under a group $\G$ of local transformations (internal gauge transformations, diffeomorphisms, or both):
+\begin{equation}
+S[\phi^\gamma]=S[\phi],\qquad \gamma\in\G .
+\end{equation}
+Then, for generic $\gamma$,
+\begin{equation}\label{eq:mismatch}
+\phi\neq\phi^\gamma\ \text{ in } \F,
+\qquad\text{while}\qquad
+[\phi]_\G=[\phi^\gamma]_\G\ \text{ in } \F/\G .
+\end{equation}
+The formalism distinguishes what the dynamics cannot. The opening question in its bare form is therefore: which distinctions in $\F$ survive as physical distinctions in $\F/\G$?
+
+The question this essay pursues is the following.
+
+\begin{quote}
+\emph{What operation converts a theory written on a manifold into a physical description in which independently labelled manifold points no longer matter, and what must that operation preserve for the resulting description to count as physically sufficient?}
+\end{quote}
+
+The first half of the question has a technical answer, and it is the one Ravera and François have been developing: the dressing field method (DFM) \cite{ravera-notes,fr-grf,fr-meaning}. A dressing field is a field built from the theory's own variables that transforms so as to absorb the local symmetry. Composites formed from it and the remaining fields are invariant under that symmetry by construction. In the diffeomorphism case the composites are the values of some fields expressed at the locations picked out by the values of other fields, which is Einstein's point-coincidence argument turned into a formula.
+
+The second half of the question is less often asked. A dressing removes distinctions. It declares that configurations differing only along the directions it absorbs are to be treated as one. Whether that declaration is correct is not settled by the invariance of the result, because invariance is a property of what survives, not a certificate about what was discarded. The thesis of this essay is:
+
+\begin{quote}
+\emph{Dressing makes relational structure operationally available by projecting away distinctions that carry no invariant physical consequence. Its physical adequacy, however, requires more than invariance. It must preserve the admissible continuations, compositions, and recoverable distinctions that make up the theory's physical organization.}
+\end{quote}
+
+Schematically, the essay studies the chain
+\begin{equation}\label{eq:chain}
+\F\xrightarrow{\;q\;}\F/\G\xrightarrow{\;C\;}\F_{\mathrm{dress}}\xrightarrow{\;\Pi\;}\mathcal O,
+\end{equation}
+where $q$ is the orbit projection, $C$ a coordinatisation of the quotient by dressed variables, and $\Pi$ the further map to what particular operational procedures register. Each arrow forgets or reorganises distinctions. The criterion the essay adds, previewed here and developed in Section~\ref{sec:interface}, is that a dressing map $D_u$ is legitimate only if
+\begin{equation}\label{eq:preview}
+D_u(\phi)=D_u(\phi')\quad\Longrightarrow\quad\Cont_\R(\phi)\simeq\Cont_\R(\phi'),
+\end{equation}
+where $\Cont_\R(\phi)$ is the structure of admissible continuations of $\phi$ under a declared family $\R$ of physical operations.
+
+A note on provenance, since the essay mixes two kinds of mathematics. The gauge transformation laws, the dressed composites and their invariance, transformations of the second kind, the dressed BRST algebra, Gribov copies, Singer's theorem, and the edge-mode decomposition of Hilbert spaces are standard material or are due to François, Ravera and collaborators, and are cited as such. The continuation structures $\Cont_\R$, the adequacy criterion \eqref{eq:preview} and its bisimulation strengthening, the loss functional, the relational holonomy reading of dressing transitions, the defects $\epsilon_D$, $\delta_{\mathrm{rec}}$, $\delta_{\mathrm{cont}}$, and the tuple formulation of a relational quantum field theory are this essay's proposals. They are set off as \emph{Proposed constructions} where they first appear, and none of them should be read as part of the dressing field formalism itself.
+
+This is not a defence of relationalism in general, and it is not an objection to the dressing program. Ravera and François already treat the relational reading as something to be earned in each application, and much of their published work consists in showing, case by case, that familiar gauge-fixing conditions were dressings all along \cite{fr-rs,fr-unconv,fr-offshell}. The concern here is narrower: the passage from theories that are \emph{tacitly} relational to descriptions that are \emph{manifestly} relational, and the conditions under which nothing physically relevant is lost in that passage.
+
+The essay proceeds as follows. Sections~\ref{sec:bare}--\ref{sec:redundancy} set out the distinction between a theory's bare presentation and its physical content, reconstruct the point-coincidence argument, separate relativity from relationalism, and examine what it means to call a transformation redundant. Section~\ref{sec:dfm} gives the method itself. Section~\ref{sec:interface} states the essay's main proposal, a continuation criterion for dressing adequacy. Sections~\ref{sec:rqm}--\ref{sec:locality} test the proposal against relational quantum mechanics, Gribov--Singer obstructions, invariant path integrals, and locality. Sections~\ref{sec:osr}--\ref{sec:method} turn to structural realism, rival quantum-gravity programs, the prospects for a relational quantum field theory, and a brief methodological coda. The appendices collect background, a formal comparison of reduction procedures, a proof of the adequacy criterion's sufficient condition and a concordance to the interview, followed by the references.
+
+%===========================================================
+\section{Bare Presentation and Physical Content}\label{sec:bare}
+%===========================================================
+
+Modern field theory is conducted in \emph{field space}. Let $M$ be a spacetime manifold and $P\to M$ a principal bundle with structure group $H$. The kinematical variables are a connection $A$ on $P$, matter fields $\varphi$ that are sections of associated bundles, and, in the gravitational case, a metric or tetrad. Collect them as $\phi=(A,\varphi,g,\dots)$ and write $\F$ for the space of all such configurations. The local symmetries act on $\F$: the gauge group $\G$ of vertical automorphisms of $P$ (locally, $H$-valued functions $\gamma$ on $M$) and the diffeomorphism group $\Diff(M)$, or together the full automorphism group of $P$. On a free stratum $\F^*\subseteq\F$, and under the usual functional-analytic qualifications, the projection $\F^*\to\F^*/\G$ has the structure of an infinite-dimensional principal $\G$-bundle \cite{fr-grf,ravera-notes}. The full field space is generally stratified by stabiliser type rather than forming a principal bundle globally. Each point of $\F$ is an entire field configuration, and each fibre over the free stratum is an orbit of configurations related by a local symmetry.
+
+Three levels need to be kept apart:
+\begin{equation}
+\F, \qquad \F/\G, \qquad \mathcal O_{\mathrm{inv}}.
+\end{equation}
+The first is the space of configurations as written. The second is the space of orbits, sometimes called the moduli space, whose points are the candidate physical states. The third is a set of invariant quantities, functions on $\F$ constant along orbits, which may or may not be rich enough to separate the points of $\F/\G$.
+
+Write the gauge action as $R_\gamma:\F\to\F$, $\phi\mapsto\phi^\gamma$. The orbit and stabiliser of a configuration are
+\begin{equation}
+[\phi]_\G=\{\phi^\gamma:\gamma\in\G\},\qquad \Stab(\phi)=\{\gamma\in\G:\phi^\gamma=\phi\},
+\end{equation}
+and the quotient map is $q:\F\to\mathcal M:=\F/\G$, $q(\phi)=[\phi]_\G$. Stabilisers matter: configurations with nontrivial stabilisers (reducible connections, metrics with isometries) are where $\mathcal M$ fails to be a manifold, and, as Section~\ref{sec:gribov} shows, they also directly obstruct any equivariant group-valued dressing. An observable $O:\F\to\mathbb R$ is invariant when $O(\phi^\gamma)=O(\phi)$, and every invariant observable factors through the quotient,
+\begin{equation}\label{eq:factor}
+O=\overline O\circ q,\qquad \overline O:\mathcal M\to\mathbb R .
+\end{equation}
+The factorisation \eqref{eq:factor} is the exact content of the phrase ``the observable ignores gauge directions.''
+
+The richness of $\F$ is not automatically physical richness. Two configurations related by $\gamma\in\G$ are formally distinct points of $\F$, yet the theory's dynamics cannot tell them apart from initial data alone (Section~\ref{sec:pc}). That observation is the whole motivation for gauge fixing, for quotienting, and for dressing.
+
+It helps to state the observation in the vocabulary of distinctions. A representational difference is \emph{physically consequential} only when it survives an admissible operational projection, that is, when some procedure the theory counts as physical can register it. Gauge directions are candidates for directions of zero consequential distinction. Relative to a family $\mathfrak O$ of admitted observables, define observational equivalence and its fibre:
+\begin{equation}\label{eq:simphys}
+\phi\sim_{\mathfrak O}\phi'
+\ \Longleftrightarrow\
+O(\phi)=O(\phi')\ \ \forall O\in\mathfrak O,
+\qquad
+[\phi]_{\mathfrak O}=\bigcap_{O\in\mathfrak O}O^{-1}\big(O(\phi)\big).
+\end{equation}
+If every admitted observable is invariant, gauge equivalence implies observational equivalence, $\phi\sim_\G\phi'\Rightarrow\phi\sim_{\mathfrak O}\phi'$, so that $[\phi]_\G\subseteq[\phi]_{\mathfrak O}$. The converse fails whenever $\mathfrak O$ is incomplete:
+\begin{equation}
+\phi\sim_{\mathfrak O}\phi'\ \centernot\Longrightarrow\ \phi\sim_\G\phi' .
+\end{equation}
+A graded version is available when configurations induce outcome distributions. If $P_\phi$ is the distribution over outcomes of some admitted procedure, set
+\begin{equation}
+d_{\mathrm{obs}}(\phi,\phi')=\JSD(P_\phi,P_{\phi'}),
+\end{equation}
+or any other operational divergence. Gauge directions should then satisfy $d_{\mathrm{obs}}(\phi,\phi^\gamma)=0$. This is offered as an operational test that gauge directions must pass, not as a definition of gauge symmetry: a direction can pass the test for one family of procedures and fail it for a richer one.
+
+The relation \eqref{eq:simphys} is deliberately marked as provisional. It makes physical identity relative to a chosen set of observables, and agreement on every observable currently admitted does not guarantee agreement on what the two configurations can become. Two configurations may agree on every bulk invariant and differ in how they couple to a boundary, or in how they behave after a subsystem is cut out. The rest of the essay replaces \eqref{eq:simphys} with a criterion stated in terms of continuations rather than present values (Section~\ref{sec:interface}).
+
+%===========================================================
+\section{Point Coincidence and the Disappearance of the Manifold}\label{sec:pc}
+%===========================================================
+
+The argument that gives the manifold its ambiguous status is the dialectic between Einstein's hole argument and his point-coincidence argument \cite{einstein1916,earman-norton,norton-sep}. Ravera's reconstruction in the interview follows the standard lines. Take a diffeomorphism $\psi$ that is the identity everywhere except inside a region $\mathcal H$, the hole. If $\phi$ solves generally covariant field equations, so does $\psi^*\phi$. The two solutions agree outside $\mathcal H$ and differ inside it. If manifold points inside $\mathcal H$ were physically individuated, the theory would fail to determine what happens there from data outside: an ill-posed Cauchy problem. Einstein briefly concluded that general covariance had to be abandoned. His eventual reply was that what is physical is the system of coincidences among field values, and those coincidences are the same in $\phi$ and $\psi^*\phi$. A coincidence can be dragged around by $\psi$, but it does not change under it.
+
+Three claims are often run together at this point, and it is worth separating them:
+\begin{enumerate}[label=(\roman*)]
+\item Coordinate labels have no direct physical significance.
+\item Bare manifold points have no independent physical individuation.
+\item No spacetime structure exists apart from physical relations among fields.
+\end{enumerate}
+The point-coincidence argument establishes (i) outright and motivates (ii) strongly: a point individuated only by its position in $M$ cannot be distinguished from its image under a diffeomorphism that respects every coincidence. Claim (iii) is a further ontological thesis. It requires, at a minimum, that the relational network of fields be rich enough to individuate every event that physics needs, and that nothing essential to the theory (a topology, a differentiable structure, a signature) is being supplied silently by the manifold that the relational network does not reproduce. The dressing program bears on (ii) directly and on (iii) only through a series of construction-by-construction checks.
+
+With that distinction in place, the coincidence argument can be given its cleanest mathematical form. Let $X^\mu:M\to\mathbb R$, $\mu=0,\dots,d-1$, be scalar fields that will serve as a material reference system, and let $\psi:M\to V$ be another field. Where $X=(X^0,\dots,X^{d-1}):M\to\mathbb R^d$ is locally invertible, define the relational observable
+\begin{equation}\label{eq:relobs}
+\Psi:=\psi\circ X^{-1},\qquad \Psi(\xi)=\psi(x)\ \text{ for the } x \text{ with } X^\mu(x)=\xi^\mu .
+\end{equation}
+Instead of asking for the value of $\psi$ at an independently labelled point, $\Psi$ asks for its value where the reference fields take the values $\xi$. Under a diffeomorphism $f:M\to M$ acting on scalars by $X^\mu\mapsto X^\mu\circ f^{-1}$ and $\psi\mapsto\psi\circ f^{-1}$,
+\begin{equation}
+(\psi\circ f^{-1})\circ(X\circ f^{-1})^{-1}=\psi\circ f^{-1}\circ f\circ X^{-1}=\psi\circ X^{-1}.
+\end{equation}
+The composite is invariant. Collecting all the fields in play into a single \emph{event map}
+\begin{equation}
+\chi:M\to\mathcal V,\qquad \chi(x)=\big(X^0(x),\dots,X^{d-1}(x),\psi_1(x),\dots,\psi_n(x)\big),
+\end{equation}
+two points $x,y\in M$ are physically indistinguishable relative to these fields when $\chi(x)=\chi(y)$, and physical events inhabit the image $\chi(M)\subseteq\mathcal V$ rather than $M$ itself. The informal statement is
+\begin{equation}\label{eq:event}
+\begin{gathered}
+\text{physical event}\;\neq\; x\in M,\\
+\text{physical event}\;=\;\big[\text{coinciding field values and their relations}\big].
+\end{gathered}
+\end{equation}
+The construction has a built-in limitation that will matter later. $X$ need not be globally invertible. It can have critical points, where $\det(\partial X^\mu/\partial x^\nu)=0$, and it can fold, so that $X(x)=X(y)$ for $x\neq y$. At such places $\Psi$ is undefined or multivalued, and the reference system fails to individuate events. This is the first appearance of the local-versus-global problem treated in Section~\ref{sec:gribov}.
+
+Ravera's phrase for the manifold is a \emph{scaffold}: something used to build the theory and then withdrawn from the physical picture \cite{toe}. The image is accurate if it is read with care. Scaffolding is removed after construction; the building then stands on its own members. The corresponding claim is that the dressed description stands on field relations alone. Whether it does is the question of whether the dressed variables carry every distinction the physics needs.
+
+There is a way of stating the same point that connects to a broader view of identity. An entity, on this view, is not an unchanging substrate that persists underneath its changes but a distinction that is maintained through them: something that can be picked out again after interactions and transformations, and whose picking-out does not depend on an arbitrary label. A manifold point, stripped of the fields that coincide at it, has no such criterion of re-identification. Nothing distinguishes it from its image under a hole diffeomorphism, and so nothing about it can be carried forward into a physical history. A field coincidence, by contrast, has a continuation criterion: the same coincidence can be located again in any diffeomorphic presentation.
+
+The title claim of the interview, ``take away the fields and spacetime disappears,'' should therefore be read as follows. What disappears is the independent physical individuation of manifold points. The mathematical manifold is still used in writing down the theory, in defining smoothness and integration, and in comparing configurations. What is withdrawn is its standing as a carrier of physical distinctions of its own.
+
+%===========================================================
+\section{Relativity Is Not Yet Relationalism}\label{sec:relativity}
+%===========================================================
+
+Curt Jaimungal asks in the interview whether ``relativity'' and ``relationalism'' are different things. Ravera's answer draws a clean line. Galilean and special relativity concern the equivalence of inertial observers and rest on rigid, global symmetry groups. General relativity replaces these with local transformations, diffeomorphisms, and the decisive step is covariance under \emph{active} diffeomorphisms, which move fields over the manifold rather than merely relabelling coordinates. Passive covariance, general coordinate invariance, is a property of any theory written in tensor language and carries no physical lesson on its own. Active covariance is what sets the hole argument in motion and so leads to relationality \cite{toe,fr-meaning}.
+
+The general lesson is that
+\begin{equation}
+\text{covariant formulation}\quad\neq\quad\text{manifestly relational formulation}.
+\end{equation}
+Relativity, in the sense relevant here, concerns how descriptions transform. Relationalism concerns what the physical variables describe and how their identities are fixed. A theory can be generally covariant while presenting its content through variables, such as $g_{\mu\nu}(x)$, whose relational character is entirely hidden: the metric at a coordinate point is not an observable, and nothing in its notation says so.
+
+The three notions in play can be separated formally. A law, represented by an operator $E:\F\to\mathcal E$ into a space of equations, is \emph{covariant} (equivariant) when
+\begin{equation}
+E(\phi^\gamma)=\rho(\gamma)\,E(\phi),\qquad\text{so that}\qquad E(\phi)=0\ \Rightarrow\ E(\phi^\gamma)=0,
+\end{equation}
+with $\rho$ the induced action on $\mathcal E$. Transformed configurations satisfy correspondingly transformed equations. An observable is \emph{invariant} when $O(\phi^\gamma)=O(\phi)$. A formulation is \emph{manifestly relational} when its principal variables are themselves functions on the reduced space, $\overline\phi:\F/\G\to\mathcal V$, or equivalently when the composites $\overline\phi\circ q$ it computes with are invariant. The difference between tacit and manifest relationality is a difference in where the factorisation
+\begin{equation}
+\F\xrightarrow{\;q\;}\F/\G\xrightarrow{\;\overline O\;}\mathbb R
+\end{equation}
+is used. In the tacit presentation one computes on $\F$ and establishes invariance afterward. In the manifest presentation the variables already live on, or coordinatise, $\F/\G$.
+
+Ravera's vocabulary for this is \emph{tacit} versus \emph{manifest} relationality. A theory with local symmetries is tacitly relational: its covariance guarantees that only relations among fields can be physical. A dressed formulation is manifestly relational: its variables are those relations. The interview describes the two as dual pictures, a bare theory with manifest covariance and tacit relationality, and a dressed theory with manifest invariance and explicit relationality, and compares the situation to other dualities where a quantity easy to compute on one side is hard on the other \cite{toe}.
+
+This can be sharpened into three grades of availability for a given structure:
+\begin{itemize}
+\item \emph{Encoded}: the structure is determined by $\phi$, in the sense that it could in principle be extracted.
+\item \emph{Recoverable}: an invariant map $D$ extracting it is known (symmetry analysis, constraint solving, the construction of complete observables).
+\item \emph{Manifest}, or naturally available: the theory is formulated directly in terms of $D(\phi)$, so the structure is carried by the variables one computes with.
+\end{itemize}
+Relational content is encoded in any generally covariant theory, recoverable in principle through the construction of complete observables \cite{rovelli-partial,dittrich}, and naturally available only after dressing. The main interpretive contribution of this section follows from the grading. Dressing need not change what the theory contains. It changes how the theory's invariant content becomes available for calculation, for interpretation, and above all for quantization, where a formulation that carries invariance in its variables avoids the bookkeeping that a covariant formulation must perform to recover it.
+
+The grading also marks the limit of the claim. A move from ``encoded'' to ``naturally available'' is a reformulation, and reformulations can fail to be faithful. The question of what a dressing must preserve is exactly the question of whether this move loses anything on the way.
+
+%===========================================================
+\section{Gauge Redundancy, Symmetry, and Physical Difference}\label{sec:redundancy}
+%===========================================================
+
+The interviewer offers an analogy: a recipe for macaroni and cheese can be scaled in many ways, only the ratios matter, and gauge fixing corresponds to setting the milk to 500 ml so that one recipe is singled out. Ravera resists it. She does not regard gauge symmetry as merely a redundancy, and she notes that the gauge principle has been productive in physics (it led to the prediction of new particles) in a way that pure notational slack would not be. Her counter-image is closer to cooking from the ingredients on hand without importing anything from outside: an externally imposed dressing, an ingredient brought in ad hoc, would spoil the relational recipe \cite{toe}.
+
+Both halves of this deserve attention. The first is the refusal to define a gauge transformation as one that ``changes nothing.'' A gauge transformation changes the representative. Whether that change matters depends on what else is in view. In the bulk of a closed system it may be invisible to every invariant. At a boundary it may not be: transformations that do not vanish at the boundary can carry nonzero charges and act on the physical phase space, as the literature on edge modes and boundary charges shows \cite{donnelly-freidel}. Ravera's own earlier work on supergravity with boundaries, in the geometric (group-manifold) approach, found that restoring supersymmetry invariance in the presence of a boundary required adding topological boundary terms or boundary fields that behave as auxiliary fields for the bulk theory \cite{andrianopoli-ravera}. The same formal group action can thus be redundancy in one setting and physical in another.\footnote{François and Ravera have since argued that, once relationality is made manifest, the so-called boundary problem, the claim that spacetime boundaries break gauge and diffeomorphism symmetry, dissolves \cite{fr-mech}. That is a claim about how boundaries should be described in a relational framework, not a denial that boundary data can carry physical information.}
+
+The formal difference between redundancy and physical symmetry is clean. A gauge transformation acts trivially on the reduced space, $q(\phi^\gamma)=q(\phi)$. A physical symmetry induces a map $\overline s:\F/\G\to\F/\G$ that preserves the action or the equations of motion but in general moves reduced states, $\overline s([\phi])\neq[\phi]$. The set-theoretic quotient $\F/\G$ is, however, too blunt an instrument for the cases that matter here, because it forgets stabilisers and the ways in which configurations are identified. The \emph{action groupoid} $\F/\!/\G$, whose objects are configurations and whose arrows are gauge transformations $\phi\xrightarrow{\gamma}\phi^\gamma$, retains that information. Two configurations with the same image in $\F/\G$ can differ in their automorphisms, and that difference is exactly what boundaries and subsystem cuts can expose.
+
+Boundaries give the standard example. On a region with boundary, let
+\begin{equation}
+\G_0=\{\gamma\in\G:\gamma|_{\partial M}=e\},\qquad \G_\partial=\G/\G_0 .
+\end{equation}
+Transformations in $\G_0$ are redundancies. The quotient $\G_\partial$ may act nontrivially on boundary data. In Hamiltonian form the generator of a gauge transformation with parameter $\epsilon$ typically reads
+\begin{equation}
+G[\epsilon]=\int_\Sigma\epsilon^a\,\mathcal C_a+Q_{\partial\Sigma}[\epsilon].
+\end{equation}
+On the constraint surface $\mathcal C_a\approx0$, but the boundary term need not vanish, $Q_{\partial\Sigma}[\epsilon]\neq0$, when $\epsilon$ does not vanish at $\partial\Sigma$. A transformation that is redundant in the bulk can therefore carry a boundary charge. This is the precise sense in which ``gauge'' cannot always be equated with ``physically idle everywhere.''
+
+To keep these cases apart, two equivalence relations are useful:
+\begin{align}
+\phi\sim_{\mathrm{rep}}\phi' &\quad\text{when } \phi'=\phi^\gamma \text{ for some } \gamma \text{ in the stipulated gauge group},\\
+\phi\sim_{\mathrm{cont}}\phi' &\quad\text{when } \phi,\phi' \text{ support the same admissible continuations}\notag\\
+&\quad\text{under the theory's declared operations}.
+\end{align}
+The first is fixed by a choice of group. The second is fixed by the physics: by the dynamics together with the set of operations (couplings, measurements, subsystem cuts, boundary conditions) the theory treats as available. It would be a mistake to assume that these coincide. The essay's working hypothesis is that they coincide when the stipulated group acts trivially on everything the declared operations can register, and Section~\ref{sec:interface} and Appendix~\ref{app:cont} turn that hypothesis into a precise sufficient condition.
+
+The second half of Ravera's analogy, the prohibition on importing ingredients, is equally important and will return in Section~\ref{sec:dfm}. A dressing built from an external, non-dynamical reference would achieve invariance trivially and at the price of reintroducing a background. The relational reading is available only when the dressing field is drawn from the theory's own degrees of freedom.
+
+%===========================================================
+\section{The Dressing Field Method}\label{sec:dfm}
+%===========================================================
+
+The method originates in François's work on gauge-invariant composite fields \cite{ffl2014} and has been developed jointly with Ravera into a general framework for general-relativistic gauge field theory \cite{fr-grf,fr-diff,ravera-notes}. The core construction is short.
+
+\paragraph{Internal gauge symmetry.} Let the gauge group $\G$ act on a connection and a matter field by
+\begin{equation}
+A^\gamma=\gamma^{-1}A\gamma+\gamma^{-1}d\gamma,\qquad \varphi^\gamma=\rho(\gamma)^{-1}\varphi.
+\end{equation}
+A \emph{dressing field} is a field $u$, valued in a group $G$ containing $H$ or in $H$ itself, whose gauge transformation is
+\begin{equation}\label{eq:udress}
+u^\gamma=\gamma^{-1}u .
+\end{equation}
+The dressed variables are
+\begin{equation}\label{eq:dressed}
+A^u := u^{-1}Au+u^{-1}du,\qquad \varphi^u := \rho(u)^{-1}\varphi .
+\end{equation}
+A one-line computation gives $(A^u)^\gamma = (\gamma^{-1}u)^{-1}A^\gamma(\gamma^{-1}u)+(\gamma^{-1}u)^{-1}d(\gamma^{-1}u)=A^u$, and similarly $(\varphi^u)^\gamma=\varphi^u$. The curvature $F=dA+A\wedge A$, with $F^\gamma=\gamma^{-1}F\gamma$, dresses to $F^u=u^{-1}Fu$, which is the curvature of $A^u$ and is likewise invariant. The dressed fields are invariant.
+
+Define the dressing map $D_u:\F\to\F_u$, $D_u(A,\varphi)=(A^u,\varphi^u)$. Since $D_u(\phi^\gamma)=D_u(\phi)$, it factors through the quotient,
+\begin{equation}\label{eq:Dfactor}
+D_u=\overline D_u\circ q,\qquad \overline D_u:\F/\G\to\F_u .
+\end{equation}
+Where $\overline D_u$ is regular and injective on a stratum of $\F/\G$, the dressed variables coordinatise that part of the moduli space. Whether it is injective, and on how much of the quotient it is defined, are separate questions that return in Sections~\ref{sec:interface} and~\ref{sec:gribov}.
+
+The formula for $A^u$ looks exactly like a gauge transformation of $A$ by $u$, but $u$ is not a gauge transformation as a field-space object. A gauge transformation $\gamma\in\G$ transforms under $\G$ by conjugation, $\gamma\mapsto\eta^{-1}\gamma\eta$, whereas the dressing field transforms by left multiplication as in \eqref{eq:udress}; in this sense $u\notin\G$ \cite{ffl2014,ravera-notes}. When $u$ is $H$-valued on a trivial bundle, however, $A^u$ may coincide numerically with the gauge transform of $A$ by the function $u[\phi]$, and hence with a representative on the gauge orbit. What differs is the construction: gauge fixing selects that representative, whereas dressing treats the same expression as a composite invariant functional of the original fields. When $u$ takes values outside $H$, even this numerical correspondence need not hold. This is why Ravera, in the interview, insists that the method is ``not truly converting'' gauge-variant objects: the bare fields remain gauge-variant, and invariant composites are built alongside them \cite{toe}.
+
+\paragraph{Field-dependent dressing.} The relational reading requires more than the existence of some $u$ with the right transformation law. It requires that $u$ be a functional of the fields already present, $u=u[\phi]$, with $u[\phi^\gamma]=\gamma^{-1}u[\phi]$. The equation defining such a functional often looks like a gauge condition, and much of the recent literature consists in recognising that familiar gauge conditions are in fact such ``dressing functional constraints.'' The Rarita--Schwinger and gravitino cases are one example: solving the constraint realises these fields as nonlocal relational variables rather than as gauge-fixed objects \cite{fr-rs}. The matter ansatz of unconventional supersymmetry is another \cite{fr-unconv}.
+
+\paragraph{Diffeomorphisms and point coincidence.} For diffeomorphisms the dressing is a map $\upsilon[\phi]:U\subset M\to\upsilon(U)\subset\mathbb R^n$ built from the fields, for instance from $n$ scalar fields used as coordinates, with the transformation law
+\begin{equation}
+\upsilon[\psi^*\phi]=\upsilon[\phi]\circ\psi,\qquad \psi\in\Diff(M).
+\end{equation}
+The dressed field is the pullback by the inverse,
+\begin{equation}\label{eq:diffdress}
+\phi^\upsilon := (\upsilon[\phi]^{-1})^*\phi,
+\end{equation}
+a field on $\upsilon(U)$ rather than on $M$. Invariance follows from $(\upsilon[\psi^*\phi]^{-1})^*(\psi^*\phi)=((\upsilon\circ\psi)^{-1})^*\psi^*\phi=(\upsilon^{-1})^*(\psi^{-1})^*\psi^*\phi=(\upsilon^{-1})^*\phi$. Read physically, \eqref{eq:diffdress} expresses the value of each field at the place where the reference fields take given values. This is Einstein's coincidence argument written as a construction: the argument $x\in M$ has been replaced by values of other fields, and the manifold no longer appears in the dressed variables \cite{fr-diff,fr-grf}.
+
+\paragraph{Three neighbouring procedures.} The method is best understood by contrast:
+\begin{itemize}
+\item \emph{Gauge fixing} selects one representative from each orbit by imposing a condition on $\phi$. It stays inside $\F$ and inherits the global problems of choosing a section (Section~\ref{sec:gribov}).
+\item \emph{Quotienting} passes to $\F/\G$ directly. It is conceptually clean but gives no coordinates on the quotient, which is generally not a manifold.
+\item \emph{Dressing} constructs invariant composites that coordinatise, locally or globally, the reduced physical content. In the bundle picture of field space, a dressing field realises the projection from $\F$ to the space of orbits rather than a section of it \cite{toe,fr-grf}.
+\end{itemize}
+A related procedure, the Stueckelberg trick, is formally similar but runs in the opposite direction: it introduces a compensating field to \emph{implement} a symmetry where none was manifest, whereas dressing \emph{reduces} a manifest symmetry \cite{stueckelberg,toe}.
+
+\paragraph{Reduction, not breaking.} Ravera describes the method as symmetry \emph{reduction}. The symmetry is not broken in the sense of a dynamical selection of a vacuum. It is absent from the dressed variables because the dressing has absorbed it. The standard reinterpretation of the electroweak Higgs mechanism in these terms, where the polar decomposition of the Higgs doublet supplies an $SU(2)$ dressing and the massive vector bosons appear as invariant composites, is the best-known example and involves no symmetry breaking at all \cite{berghofer-elements}.
+
+\paragraph{Residual transformations.} A dressing field is rarely unique, and a dressing may reduce $H$ only to a subgroup. If $u$ is a dressing, so is $u'=u\,\xi$ for any $\xi$ taking values in a group $K$ compatible with the construction, and $\xi$ itself is gauge-invariant. The dressed fields then transform as
+\begin{equation}\label{eq:second}
+A^{u'}=\xi^{-1}A^u\xi+\xi^{-1}d\xi,\qquad \varphi^{u'}=\rho(\xi)^{-1}\varphi^u .
+\end{equation}
+François and Ravera call these \emph{transformations of the second kind} \cite{fr-grf,ravera-notes}. They are not gauge transformations; they act on invariant variables and relate one relational description to another. When the dressing fields are physical reference systems, \eqref{eq:second} is a change of physical reference frame. Dressing can therefore reduce a symmetry without eliminating every transformation: what remains is a transformation between frames rather than a redundancy within one. This observation will carry much of the weight in what follows.
+
+%===========================================================
+\section{Dressing as an Admissible Interface}\label{sec:interface}
+%===========================================================
+
+This section states the essay's main proposal. A dressing construction is a map
+\begin{equation}
+D_u:\F\longrightarrow\F_u,\qquad \phi\longmapsto\phi^u,
+\end{equation}
+into a space of dressed configurations. By construction $D_u$ is constant along gauge orbits: it collapses the distinctions that $\G$ generates. The adequacy criterion asks when the representational mismatch in \eqref{eq:mismatch} is physically idle, namely whether the collapsed distinctions are irrelevant to what the configurations can become.
+
+To make ``what they can become'' precise, fix a declared operational signature $\R$ rather than an unspecified collection of whatever an observer happens to perform. At a minimum it contains evolution under the field equations. In realistic settings it also contains coupling to other systems, the imposition of boundary data, the splitting of a region into subsystems, instantaneous probes, and quantization. Schematically,
+\begin{equation}\label{eq:opsig}
+\R=\operatorname{Cl}\!\left(\R_{\mathrm{dyn}}\cup\R_{\mathrm{couple}}\cup\R_{\mathrm{boundary}}\cup\R_{\mathrm{split}}\cup\R_{\mathrm{probe}}\right),
+\end{equation}
+where $\operatorname{Cl}$ closes the primitive operations under identities, admissible composition, and the restrictions supported by the theory. The signature is theory-relative and must be stated as part of an adequacy claim; it is not uniquely fixed by formalism alone, since different boundary conditions, subsystem structures, and effective regimes may support different operations. Everything from here to the end of the section is proposed by this essay and is not part of the dressing field formalism.
+
+\begin{construction}[Continuation category]\label{con:cat}
+Let $\mathsf C$ be a category (or, less structured, a labelled transition system) whose objects are field configurations and whose arrows $a:\phi\to\phi'$ are continuations admissible under $\R$: dynamical evolutions, couplings, boundary impositions, subsystem restrictions, and their composites. For each $\phi$ set
+\begin{equation}
+\Cont_\R(\phi)=\{a:\phi\to\phi'\mid a \text{ admissible under } \R\},
+\end{equation}
+regarded as the under-category $\phi/\mathsf C$, so that it carries not only the reachable configurations but the ways of reaching them and the maps among those ways. If continuations carry weights (actions, amplitudes, probabilities, costs, causal labels), these are part of the structure.
+\end{construction}
+
+A dressing is \emph{continuation-respecting} if it extends to a functor $\mathsf D_u:\mathsf C\to\mathsf C_u$ into a category of dressed configurations, with $\mathsf D_u(a):D_u(\phi)\to D_u(\phi')$, $\mathsf D_u(\mathrm{id}_\phi)=\mathrm{id}_{D_u(\phi)}$ and $\mathsf D_u(b\circ a)=\mathsf D_u(b)\circ\mathsf D_u(a)$, and, where weights are present, $w(a)=w(\mathsf D_u(a))$ up to a declared equivalence. Functoriality is the minimal requirement that dressing commute with doing things to the system.
+
+\begin{definition}[Continuation adequacy, proposed]\label{def:adequacy}
+A dressing $D_u$ is \emph{adequate relative to $\R$} if
+\begin{equation}\label{eq:adequacy}
+D_u(\phi)=D_u(\phi')\quad\Longrightarrow\quad \Cont_\R(\phi)\simeq\Cont_\R(\phi'),
+\end{equation}
+where $\simeq$ is an equivalence preserving every structure that $\R$ can register.
+\end{definition}
+
+The criterion says that a distinction may be forgotten when forgetting it does not change the admissible future. It strengthens the provisional relation \eqref{eq:simphys}: two configurations are physically the same not merely when they agree on a fixed list of present observables, but when nothing in the declared operational signature can pull them apart. Observational adequacy is recovered as the zero-duration special case. If $\R_{\mathrm{inst}}(\mathfrak O)$ contains only identity continuations carrying the registered values of the observables $O\in\mathfrak O$, then
+\begin{equation}\label{eq:instobs}
+\Cont_{\R_{\mathrm{inst}}(\mathfrak O)}(\phi)\simeq
+\Cont_{\R_{\mathrm{inst}}(\mathfrak O)}(\phi')
+\quad\Longleftrightarrow\quad
+O(\phi)=O(\phi')\quad\forall O\in\mathfrak O.
+\end{equation}
+
+Definition~\ref{def:adequacy} is weak in one respect: an abstract equivalence of the two continuation categories need not match continuations to continuations step by step. A stronger version borrows the notion of bisimulation from the theory of transition systems.
+
+\begin{construction}[Continuation completeness]\label{con:bisim}
+A relation $B$ on configurations is a \emph{continuation bisimulation} if whenever $\phi\,B\,\phi'$ and $\phi\xrightarrow{a}\eta$ in $\mathsf C$, there is $\phi'\xrightarrow{a'}\eta'$ with $\eta\,B\,\eta'$ and $w(a)=w(a')$, and conversely. The dressing is \emph{continuation-complete} if equality of dressed states induces such a bisimulation:
+\begin{equation}
+D_u(\phi)=D_u(\phi')\ \Longrightarrow\ \phi\,B\,\phi' .
+\end{equation}
+\end{construction}
+
+\begin{construction}[Continuation loss]\label{con:loss}
+Given a metric or divergence $d_{\mathrm{cont}}$ on continuation structures (for instance a divergence between the outcome distributions of matched continuations), the loss of a dressing is
+\begin{equation}\label{eq:loss}
+\Delta_{\mathrm{cont}}(D_u)=\sup_{D_u(\phi)=D_u(\phi')} d_{\mathrm{cont}}\big(\Cont_\R(\phi),\Cont_\R(\phi')\big),
+\end{equation}
+and a dressing is an \emph{exact interface} when $\Delta_{\mathrm{cont}}(D_u)=0$.
+\end{construction}
+
+The loss functional turns adequacy from a yes-or-no property into a quantity, which matters for the approximate and perturbative dressings used in practice: a dressing valid to a given order in perturbation theory, or away from a small singular set, can be assessed by how much continuation structure it fails to preserve rather than simply declared adequate or not.
+
+Two features of the definition deserve comment. First, adequacy is relative to $\R$. A dressing adequate for a closed system evolving under its own dynamics may fail to be adequate once $\R$ is enlarged to include subsystem cuts or boundary couplings, because the gauge directions it collapses may then carry charges (Section~\ref{sec:redundancy}). This dependence obeys a useful monotonicity law:
+\begin{equation}\label{eq:monotoneR}
+\R\subseteq\R'
+\quad\Longrightarrow\quad
+\operatorname{Adeq}_{\R'}(D_u)\Longrightarrow\operatorname{Adeq}_{\R}(D_u).
+\end{equation}
+The implication requires two bookkeeping conventions, both natural: each arrow of $\Cont_\R$ is labelled by the primitive operations that generate it, and the equivalences in \eqref{eq:adequacy} are required to preserve those labels; and the quantities registered under $\R$ are among those registered under $\R'$. A label-preserving equivalence of the $\R'$-structures then restricts to an equivalence of the $\R$-substructures, since $\Cont_\R(\phi)$ is the subcategory generated by the $\R$-labelled arrows. Without label preservation an abstract equivalence of the larger categories need not carry $\R$-arrows to $\R$-arrows, and the implication can fail. Enlarging the operational signature can invalidate an adequacy verdict but cannot create one. A deliberately narrow signature therefore yields a correspondingly weak, visible claim rather than an unrestricted certificate. Second, the criterion is a condition on the dressing, not on the gauge group. Two dressings of the same theory can differ in adequacy if one of them is only locally defined or singular on a set of configurations the physics cannot exclude.
+
+A sufficient condition for adequacy is proved in Appendix~\ref{app:cont}.
+
+\begin{proposition}\label{prop:suff}
+Suppose (a) $D_u$ separates orbits, so that $D_u(\phi)=D_u(\phi')$ implies $\phi'=\phi^\gamma$ for some $\gamma\in\G$; (b) every operation in $\R$ is $\G$-covariant; and (c) every quantity registered by $\R$ is $\G$-invariant. Then $D_u$ is adequate relative to $\R$.
+\end{proposition}
+
+The conditions show where adequacy can fail. Condition (a) fails when a defined dressing collapses more than gauge orbits. A distinct domain failure occurs when an admissible continuation leaves the region on which $D_u$ is defined, for example by reaching a zero or degeneracy of the field from which the dressing is built; global adequacy is then undefined rather than false. One may represent this failure by adjoining an object $\bot$ to $\F_u$ and extending $D_u(\phi)=\bot$ on the singular set, after which its contribution to $\Delta_{\mathrm{cont}}$ can be measured. Condition (b) fails when an operation, such as cutting out a subsystem, is not covariant under the full group but only under transformations supported away from the cut. Condition (c) fails when $\R$ registers boundary charges on which $\G$ acts nontrivially. In each case the failure is not a defect of the invariance of $\phi^u$ on its domain; what fails is the claim that nothing was lost.
+
+This strengthens the dressing program rather than opposing it. The method supplies a candidate physical interface between the redundant presentation and the invariant content. The continuation criterion supplies a test of whether that interface is sufficient. The two answer different questions, and the relational reading of any particular dressing needs both.
+
+It is also worth placing dressing in a larger hierarchy of projections,
+\begin{equation}
+M_{\mathrm{adm}}\xrightarrow{\;\Pi\;}M_{\mathrm{proj}}\xrightarrow{\;O\;}M_{\mathrm{obs}},
+\end{equation}
+from the space of admissible configurations, through a reduced description, to what a particular instrument or observer records. Dressing participates in $\Pi$. It is tempting to identify dressed variables with observables, and Ravera does describe them as complete or Dirac observables \cite{toe}. But the map $O$ is a further step: an actual measuring system, or an actual subsystem acting as reference frame, picks out a further projection of the dressed description. Different physical frames induce different such projections, related by transformations of the second kind. Dressed variables are what every frame can agree to talk about. They are not yet what any given frame sees.
+
+%===========================================================
+\section{Relational Quantum Mechanics and Relational Mechanics}\label{sec:rqm}
+%===========================================================
+
+Asked which of Rovelli's relationalisms hers is, the classical one of the early 1990s \cite{rovelli-observable} or the quantum one of 1996 \cite{rovelli-rqm}, Ravera answers: the classical one \cite{toe}. The answer is informative because the two programmes start from different problems. Rovelli's relational quantum mechanics concerns the relativity of physical facts to interacting systems: a quantity has a value relative to a system that has interacted with it, and not absolutely. The dressing program starts from gauge geometry: it is a method for constructing invariant composites when a theory has local symmetries. Both reject observer-independent bare values. They do not solve the same problem, and a result in one does not transfer automatically to the other.
+
+What the dressing program offers is a way of exporting classical relationality into quantum theory without first adopting an interpretation. The clearest example is François and Ravera's bundle-geometric reformulation of nonrelativistic quantum mechanics \cite{fr-qm}, together with their treatment of point-particle mechanics as a one-dimensional general-relativistic gauge field theory \cite{fr-mech}. In the second paper the time reparametrisation of mechanics plays the role of the diffeomorphism group, and choosing a clock variable as the dressing field reproduces the standard textbook formulation. The textbook description of mechanics is, in other words, already a dressed description in which the choice of dressing has been made silently.
+
+For a system of $n$ particles the interview describes the upshot. Using one particle's position as dressing field, the dressed Schr\"odinger equation and dressed wave function describe the others relative to it. The reading Ravera draws is that no quantum state can meaningfully be assigned to a single particle on its own; the quantum character appears when it is put in relation to the rest of the system \cite{toe}. Changing which particle serves as reference is a transformation of the second kind, and it relates the relational descriptions by an explicit map. This is what Ravera calls physical frame covariance, and it is closely related to the quantum reference frame programme \cite{giacomini}, which the interview lists among the notions the dressing method unifies.
+
+The elementary skeleton of this is worth writing out, because it already displays the composition law that a relational theory must respect. Let $N$ particles have positions $q_i\in\mathbb R^d$, with global translations $q_i\mapsto q_i+a$. Relative coordinates $r_{ij}=q_i-q_j$ are invariant, and choosing particle $k$ as material reference gives
+\begin{equation}
+r_i^{(k)}=q_i-q_k,\qquad r_{ij}+r_{jk}+r_{ki}=0 .
+\end{equation}
+Changing reference from $k$ to $l$ is the map $T_{k\to l}$, $r_i^{(l)}=r_i^{(k)}-r_l^{(k)}$, and these maps compose, $T_{l\to m}\circ T_{k\to l}=T_{k\to m}$, with $T_{k\to k}=\mathrm{id}$. In quantum mechanics a translation-invariant wave function, $\Psi(q_1+a,\dots,q_N+a)=\Psi(q_1,\dots,q_N)$, can be written as $\widetilde\Psi(r^{(k)}_1,\dots,r^{(k)}_N)$ with the reference particle's own (vanishing) coordinate dropped. More generally the physical Hilbert space is carved out by constraints, $\widehat C_a\ket{\Psi_{\mathrm{phys}}}=0$, or built by group averaging, $\eta(\psi)=\int_\G d\mu(\gamma)\,U(\gamma)\psi$. The dressing approach does something different from both: it constructs the relational variables before or alongside the reduction, as composite fields with a geometric meaning, rather than beginning from observer-relative statements about measurement or from a constraint surface.\footnote{Translation symmetry is global, not local, so this toy model is a skeleton rather than an instance of the method. The François--Ravera treatment works with the local (reparametrisation and configuration-space) symmetries of the bundle-geometric formulation \cite{fr-qm,fr-mech}; the composition law is the feature being illustrated.}
+
+In the vocabulary of this essay, a physical reference frame is not a coordinate chart. It is an internal system whose coupling to the rest makes certain distinctions available. A particle used as reference turns positions into relative positions: it does not supply a label, it supplies a contrast. The adequacy question then has a concrete form. When the reference particle is changed, do the two relational descriptions support the same continuations? Physical frame covariance says they do, provided the map of the second kind is invertible on the configurations the physics admits. For translations that proviso is always met: the map $r_i^{(l)}=r_i^{(k)}-r_l^{(k)}$ is defined everywhere, including when $q_k=q_l$. Singularities arise only when the chosen reference variables fail to coordinatise the relevant state space: when they are degenerate, when the reference configuration has an isotropy that leaves part of the symmetry unfixed, when the dressing data vanish, or when the reference map is not invertible. There the relational descriptions cease to be equivalent, and the choice of frame starts to matter physically.
+
+Jaimungal presses the point with the measurement problem, and Ravera declines to overreach: measurement, she says, is ``next level'' and belongs to the interpretation of quantum mechanics \cite{toe}. That restraint is correct. Physical frame covariance tells us how relational descriptions relative to different subsystems are related. It does not tell us why a particular outcome occurs. The dressing method reorganises the question of measurement without answering it.
+
+%===========================================================
+\section{Gribov--Singer Obstructions and the Limits of Reduction}\label{sec:gribov}
+%===========================================================
+
+Conventional gauge fixing is the attempt to choose one representative from each orbit. A gauge condition $\chi(\phi)=0$ is meant to define a section of the orbit projection $q:\F\to\F/\G$, and a perfect condition would meet every orbit exactly once:
+\begin{equation}
+\#\big([\phi]_\G\cap\chi^{-1}(0)\big)=1\qquad\text{for all }\phi .
+\end{equation}
+A \emph{Gribov copy} is a pair $\phi\neq\phi^\gamma$ with $\chi(\phi)=\chi(\phi^\gamma)=0$. Infinitesimally, local uniqueness is controlled by the Faddeev--Popov operator
+\begin{equation}
+\mathcal M_\phi=\frac{\delta\chi(\phi^\gamma)}{\delta\gamma}\Big|_{\gamma=e},
+\end{equation}
+and its zero modes, $\det\mathcal M_\phi=0$, mark where the condition ceases to single out a representative even locally. Gribov found such copies for the Coulomb gauge in non-Abelian Yang--Mills theory \cite{gribov}. Singer then showed that the problem is not a defect of particular conditions: for non-Abelian compact structure groups over compact base manifolds such as $S^3$ or $S^4$, the bundle of irreducible connections over its orbit space is nontrivial, so no continuous global gauge condition exists at all \cite{singer}. In the interview Ravera puts it plainly: a perfect gauge fixing does not exist \cite{toe}.
+
+Her claim for the dressing method is carefully hedged. In the bundle picture of field space a dressing field realises a projection onto the space of orbits rather than a section of it; it coordinatises the moduli space where physical degrees of freedom live, so the problem of selecting representatives does not arise in the same form. The method, she says, may circumvent Gribov obstructions without solving them, and the remaining difficulty is to find a well-defined global dressing, since a field-dependent dressing becomes singular where the field it is built from vanishes \cite{toe}.
+
+That hedge is exactly right, and it can be sharpened. The following observation is elementary, and it is worth stating explicitly because it fixes the exact scope of the hedge.
+
+\begin{proposition}\label{prop:singer}
+Let $\G$ act smoothly and freely on the right of a stratum $\F^*\subseteq\F$, and suppose $u:\F^*\to\G$ is a smooth field-dependent dressing defined on all of $\F^*$ with $u[\phi^\gamma]=\gamma^{-1}u[\phi]$. Then $s([\phi]):=\phi^{u[\phi]}$ is a well-defined smooth global section of $q:\F^*\to\F^*/\G$.
+\end{proposition}
+
+\begin{proof}
+Numerically, $u[\phi]$ is an element of $\G$, and the dressing formulas \eqref{eq:dressed} coincide with the gauge action of that element on $\phi$. So $\phi^{u[\phi]}$ lies on the orbit $[\phi]_\G$. By the invariance of dressed fields, $(\phi^\gamma)^{u[\phi^\gamma]}=\phi^{u[\phi]}$, so the value depends only on the orbit. Smoothness is inherited from $u$.
+\end{proof}
+
+The restriction to $\F^*$ is not a technicality, and it is where Singer's theorem itself lives: his result concerns the bundle of irreducible connections over its orbit space. It is also forced by the dressing law directly. Suppose $\phi$ has a nontrivial stabiliser, $\phi^h=\phi$ with $h\neq e$. Equivariance would then require
+\begin{equation}\label{eq:stabobstruct}
+u[\phi]=u[\phi^h]=h^{-1}u[\phi],
+\end{equation}
+which is impossible for an ordinary group-valued $u$ unless $h=e$. Stabilisers are therefore not merely the places where the quotient $\F/\G$ ceases to be a manifold (Section~\ref{sec:bare}). They directly obstruct the existence of an equivariant group-valued dressing at those configurations, whatever group $u$ takes values in. A field-dependent dressing of the full gauge group can at most live on the free stratum, and at a reducible configuration only the quotient of $\G$ by the stabiliser can be dressed away.
+
+The conceptual point that $u$ is ``not an element of $\G$,'' because its transformation law is not conjugation (Section~\ref{sec:dfm}), is true and important for interpretation. It does not change the topology. Under Singer's hypotheses, therefore, no smooth group-valued field-dependent dressing of the full gauge group exists on the whole free stratum. The dressing method escapes the obstruction only in one of three ways:
+\begin{enumerate}[label=(\alph*)]
+\item the dressing is defined on an open dense subset of $\F^*$, excluding a further singular set, typically where the field from which it is built vanishes or degenerates;
+\item the dressing takes values outside the gauge group, for example in a larger group $G\supsetneq H$, or, for diffeomorphisms, in maps $M\to\mathbb R^n$, so that $\phi^u$ is not a point on the orbit and no section is produced;
+\item the dressing is local, defined on patches that must then be related by transition data.
+\end{enumerate}
+Route (a) is what Ravera's remark that physically realistic fields are not exactly zero amounts to. It is a physically reasonable restriction, and it should be stated as one: the singular set is excised by an assumption about which configurations the physics admits. In the terms of Section~\ref{sec:interface}, this is a claim that $\R$ never produces continuations that pass through the singular set, and it can be checked. Route (b) avoids Proposition~\ref{prop:singer} but not the stabiliser obstruction \eqref{eq:stabobstruct}, nor automatically every topological obstruction, and has to be examined case by case. Route (c) leads to the most interesting structure.
+
+The upshot is that dressing does not abolish global obstruction. It relocates it: into the domain on which a dressing exists, the singular strata it must exclude, the residual bundle it leaves behind, and the invariant data needed to glue local dressings together.
+
+Three questions should be kept apart:
+\begin{enumerate}[label=(\roman*)]
+\item Does a local dressing exist?
+\item Can the local dressings be glued into a global one?
+\item Does the resulting description, glued or not, preserve all the physical structure required?
+\end{enumerate}
+
+Cover the relevant space (field space, the moduli space, or spacetime itself, depending on the construction) by patches $\{U_i\}$ carrying dressings $u_i$. Assume first that the local dressings take values in a common group $G$ with a common residual subgroup $K$; constructions with different local target groups require additional comparison homomorphisms and are not considered here. On overlaps set
+\begin{equation}\label{eq:transition}
+u_j=u_i\,k_{ij},\qquad k_{ij}:=u_i^{-1}u_j .
+\end{equation}
+Because both $u_i$ and $u_j$ transform by left multiplication by $\gamma^{-1}$, the transition functions are gauge-invariant: $k_{ij}^\gamma=u_i^{-1}\gamma\gamma^{-1}u_j=k_{ij}$. They are physical data, not bookkeeping. On triple overlaps the cocycle condition $k_{ij}k_{jk}k_{ki}=e$ holds automatically, since $u_i^{-1}u_j\,u_j^{-1}u_k\,u_k^{-1}u_i=e$. The dressed fields on overlapping patches are related by transformations of the second kind \eqref{eq:second} with $\xi=k_{ij}$: passing from one local relational description to its neighbour is a change of physical frame.
+
+The local dressings glue into a global one exactly when there are gauge-invariant $g_i$ with $k_{ij}=g_i g_j^{-1}$, since then $u_i g_i=u_j g_j$ on overlaps. Otherwise the class
+\begin{equation}
+[k_{ij}]\in\check H^1(\mathcal M,\mathcal K)
+\end{equation}
+is nontrivial, where $\mathcal K$ is the sheaf of $K$-valued invariant functions, and it records structure that no single chart carries.
+
+The Čech class is the correct invariant of the \emph{gluing} problem. It is not yet a holonomy. At a common point of a triple overlap the product $k_{ij}k_{jk}k_{ki}$ telescopes to $e$, and transition functions evaluated at different points along a loop cannot be multiplied canonically: their values lie in fibres over different points, and comparing them requires parallel transport. Holonomy therefore needs one more ingredient, a connection on the residual $K$-bundle defined by the cocycle $\{k_{ij}\}$.
+
+\begin{construction}[Relational holonomy]\label{con:hol}
+Let $a_i$ be local $\mathfrak k$-valued connection forms on the patches $U_i$, related on overlaps by
+\begin{equation}\label{eq:resconn}
+a_j=k_{ij}^{-1}a_i\,k_{ij}+k_{ij}^{-1}dk_{ij},
+\end{equation}
+so that the $a_i$ define a connection on the residual $K$-bundle with transition functions $k_{ij}$. For a closed path $c$ based at $p_0$, divide it into segments $c_m\subset U_{i_m}$, $m=0,\dots,n-1$, with crossing points $p_{m+1}\in U_{i_m}\cap U_{i_{m+1}}$ and $i_n=i_0$. With $\mathcal P_{c_m}=\mathcal P\exp\!\big(-\!\int_{c_m}a_{i_m}\big)$ the path-ordered transport within each patch, set
+\begin{equation}
+\Hol_c=\mathcal P_{c_0}\,k_{i_0i_1}(p_1)\,\mathcal P_{c_1}\,k_{i_1i_2}(p_2)\cdots\mathcal P_{c_{n-1}}\,k_{i_{n-1}i_0}(p_n)\in K ,
+\end{equation}
+with the transition function inserted at each patch crossing. Subdivision does not alter the result: inserting an extra point $p$ within a segment $c_m$ replaces $\mathcal P_{c_m}$ by $\mathcal P_{c_{m,1}}k_{i_mi_m}(p)\mathcal P_{c_{m,2}}=\mathcal P_{c_{m,1}}\mathcal P_{c_{m,2}}=\mathcal P_{c_m}$. Together with \eqref{eq:resconn}, this also gives independence from the placement of patch crossings. The element $\Hol_c$ changes by conjugation under a change of local trivialisation or based frame. Thus for non-Abelian $K$ the invariant physical datum is the conjugacy class $[\Hol_c]_{\mathrm{conj}}\in K/\!\operatorname{Ad}K$, not a preferred element of $K$. If this class is nontrivial, carrying a system around $c$ through a sequence of local relational descriptions returns it with an altered relational presentation.
+\end{construction}
+
+Where do the $a_i$ come from? In the most important case they are already present. When a dressing reduces $H$ only to a residual subgroup $K$, the dressed connections $A^{u_i}$ (or their $\mathfrak k$-components) transform on overlaps by the second-kind law \eqref{eq:second} with $\xi=k_{ij}$, which is exactly \eqref{eq:resconn}. The residual connection is then the dressed field itself, and its holonomy is physical. For patches on field space or moduli space rather than on spacetime, no such connection is supplied automatically; one must be specified, and the holonomy is only as meaningful as that choice.
+
+Two invariants must therefore be kept distinct. The Čech class $[k_{ij}]$ measures the topological obstruction to gluing local dressings into a global one. The holonomy measures geometric path dependence, and can be nontrivial even when the class is trivial (through curvature of the residual connection) or trivial along contractible loops when the connection is flat. Define the \emph{distinction holonomy} of the relational description to be the assignment
+\begin{equation}\label{eq:disthol}
+\operatorname{DHol}:[c]\longmapsto[\Hol_c]_{\mathrm{conj}}
+\end{equation}
+from based closed paths (up to the equivalence appropriate to the connection) to conjugacy classes of residual transformations. A reduction is path-dependent when $\operatorname{DHol}([c])$ is nontrivial, so that transport around a closed sequence of local descriptions returns the system to the same nominal state with altered relational data. The Čech class instead supplies a \emph{reconstruction obstruction}: when it is nontrivial the physical content cannot be recovered from any single relational frame, and the invariant transition data are part of that content.
+
+None of this counts against the dressing program. Its structural advantage over gauge fixing is real: it separates interpretation from representative selection, it places the transition data among the invariants, and it makes clear that what obstructs a global description is information, not arbitrariness. What it does not do is guarantee globality. Existence and gluing remain substantive questions in each theory.
+
+%===========================================================
+\section{Invariant Path Integrals and Quantum Continuation}\label{sec:pathint}
+%===========================================================
+
+The unreduced path integral,
+\begin{equation}
+Z=\int_\F\mathcal D\phi\;e^{iS[\phi]/\hbar},
+\end{equation}
+integrates over entire orbits and overcounts by the (infinite) volume of $\G$. The conventional repair inserts a gauge condition together with its Faddeev--Popov determinant \cite{faddeev-popov},
+\begin{equation}
+Z=\int_\F\mathcal D\phi\;\delta[\chi(\phi)]\,\det\mathcal M_\phi\;e^{iS[\phi]/\hbar},
+\end{equation}
+and, in its more powerful cohomological form, rewrites the gauge algebra through the BRST operator $s$ with ghost $v$, $sA=-Dv$, $sv=-v^2$, implementing the gauge condition dynamically in the Lagrangian \cite{brs,henneaux-teitelboim}. Both constructions inherit the Gribov problem of Section~\ref{sec:gribov}.
+
+Ravera and François asked what happens when the BRST algebra itself is dressed \cite{fr-susy-rel,ravera-notes}. The dressing field transforms as $su=-vu$, the infinitesimal form of \eqref{eq:udress}, and the dressed ghost is
+\begin{equation}
+v^u=u^{-1}vu+u^{-1}su=u^{-1}vu-u^{-1}vu=0 .
+\end{equation}
+When the symmetry is fully reduced, the dressed ghost vanishes and the dressed BRST algebra trivialises. The bare ghost does not vanish; its dressed counterpart does, which is the algebraic signature of having reached invariant variables. When only a subgroup is reduced, a residual dressed ghost remains, valued in the Lie algebra of the residual group, and the dressed theory still carries a (smaller) BRST structure \cite{toe,fr-susy-rel}. This is the precise sense in which dressing and gauge fixing are different operations: gauge fixing keeps the ghosts and uses them; dressing makes them disappear.
+
+A 2026 preprint proposes building the path integral directly in dressed variables \cite{fr-pathint}. Schematically,
+\begin{equation}\label{eq:Zdress}
+Z_{\mathrm{dress}}=\int_{\F_u}\mathcal D\phi^u\;J_u[\phi^u]\;e^{iS_u[\phi^u]/\hbar},
+\end{equation}
+where $J_u$ is the Jacobian of the change to dressed and gauge variables. Locally one seeks a decomposition $\mathcal D\phi=J_u[\phi^u,\gamma]\,\mathcal D\phi^u\,\mathcal D\gamma$, after which dividing by the gauge-group volume gives
+\begin{equation}
+\frac{1}{\mathrm{Vol}(\G)}\int_\F\mathcal D\phi\;\leadsto\;\int_{\F_u}\mathcal D\phi^u\,J_u .
+\end{equation}
+The interview reports two consequences \cite{toe}. For mechanics treated as a one-dimensional general-relativistic gauge theory, the dressed path integral is the standard Feynman path integral of quantum mechanics: the familiar object turns out to be a dressed description in disguise. For general-relativistic gauge field theory, the dressed path integral is manifestly invariant and carries an automatic anomaly-cancellation mechanism, which, the 2026 preprint argues, encompasses Bardeen--Wess--Zumino counterterms and is amenable to lattice implementation \cite{fr-pathint}. Ravera is explicit about the limits: the measure remains formal, as it does in every path integral, and dressing does not change that.
+
+An anomaly arises when the action is invariant but the measure is not,
+\begin{equation}
+S[\phi^\gamma]=S[\phi],\qquad \mathcal D\phi^\gamma=\mathcal D\phi\;e^{i\mathcal A[\gamma,\phi]},
+\end{equation}
+with the anomaly functional constrained by the Wess--Zumino consistency condition \cite{wess-zumino}, infinitesimally
+\begin{equation}
+\delta_{\epsilon_1}\mathcal A(\epsilon_2)-\delta_{\epsilon_2}\mathcal A(\epsilon_1)=\mathcal A([\epsilon_1,\epsilon_2]).
+\end{equation}
+Where the anomaly carries physical information, Ravera notes, it has to reappear somewhere in the dressed theory, and it does so through the transformations of the second kind that encode physical frame covariance \cite{toe}. In the language of this essay: a classical symmetry is anomalous when its redundancy fails to survive quantization. A successful dressed construction preserves the invariant structure through the passage from classical to quantum, and it relocates whatever the anomaly encoded from a failure of redundancy to a relation between frames.
+
+The continuation reading of \eqref{eq:Zdress} is direct. A path $\phi:[t_i,t_f]\to\F$ is a candidate continuation, and dressing acts pointwise, $(D_u\phi)(t)=D_u(\phi(t))$. The path integral aggregates weighted continuations. For the dressed integral to be complete, the induced map on physical path classes must neither omit nor multiply admissible histories, and it must preserve their weights:
+\begin{equation}\label{eq:pathclasses}
+\bigl(\operatorname{Path}_{\mathrm{phys}}(\F)/\G,W\bigr)
+\;\simeq\;
+\bigl(\operatorname{Path}(\F_u),W_u\bigr),
+\qquad W_u(D_u\circ\phi)=J_u[D_u\circ\phi]W(\phi).
+\end{equation}
+Here $W$ must be constant on gauge orbits of paths for the left-hand side to be well defined, which holds when both the action and the measure are invariant; an anomalous measure is exactly a failure of this condition. This is the adequacy criterion \eqref{eq:adequacy} with $\R$ enlarged to quantum evolution, and it generates four concrete verification questions. Does the dressed measure represent every physical sector of the original theory? Is the bare-to-dressed map globally valid, or are paths through the singular set of Section~\ref{sec:gribov} silently dropped? Does $J_u$ become singular? Are topological sectors and boundary or residual degrees of freedom preserved? Equation \eqref{eq:pathclasses} is a claim to be proved in particular models. It is not an automatic consequence of writing the integrand in invariant variables.
+
+%===========================================================
+\section{Lorentz Dressing, Locality, and Subsystems}\label{sec:locality}
+%===========================================================
+
+Jaimungal asks whether dressing trades ghosts for nonlocality. Ravera's answer is that it can but need not \cite{toe}. The contrast between cases is instructive.
+
+\paragraph{Local dressings.} In first-order gravity the tetrad $e=e^a{}_\mu$ transforms under local Lorentz transformations as $e\mapsto\Lambda^{-1}e$, which is the dressing law \eqref{eq:udress}. Using it as a dressing field for the spin connection gives
+\begin{equation}
+\Gamma=e^{-1}\omega\, e+e^{-1}de,
+\end{equation}
+the $GL$-valued linear connection whose torsion-free, metric-compatible version is the Levi-Civita connection. The familiar passage from the tetrad-and-spin-connection formulation to the metric-and-affine-connection formulation is a dressing, often not recognised as one, and it is local \cite{toe,ravera-notes}. The electroweak reformulation, where the Higgs doublet's polar decomposition supplies the $SU(2)$ dressing, is also local \cite{berghofer-elements}, and so are scalar coordinatisations of the kind in \eqref{eq:relobs}, as in cosmological models where dust modelled by scalar fields provides a material frame.
+
+\paragraph{Nonlocal dressings.} Dirac's gauge-invariant electron is the classic counterexample \cite{dirac1955}. In QED, with $A_i\mapsto A_i+\partial_i\alpha$ and $\psi\mapsto e^{ie\alpha}\psi$, the field $u=\exp\!\big(ie\,\nabla^{-2}\partial_iA_i\big)$ satisfies $u\mapsto u\,e^{ie\alpha}$, and
+\begin{equation}
+\psi^u=\exp\!\big(-ie\,\nabla^{-2}\partial_iA_i\big)\,\psi
+\end{equation}
+is invariant. The inverse Laplacian is the Coulomb kernel: the dressed electron carries its field to spatial infinity. The Rarita--Schwinger and gravitino dressings are likewise nonlocal \cite{fr-rs}. In such cases dressing enlarges support, $\mathrm{supp}(\phi^u)\supsetneq\mathrm{supp}(\phi)$, and gauge invariance comes apart from strict localisation.
+
+Several notions of locality are in play and should not be conflated: manifold locality (support at a point of $M$), algebraic locality or microcausality, causal locality (dependence on data in a past light cone), and what may be called relational accessibility (whether the distinctions a variable carries can be accessed and acted on within given causal and resource constraints). Let $\mathfrak A(\mathcal O)$ be the algebra of observables of a region $\mathcal O$. Microcausality requires $[A,B]=0$ for $A\in\mathfrak A(\mathcal O_1)$, $B\in\mathfrak A(\mathcal O_2)$ with $\mathcal O_1$ and $\mathcal O_2$ spacelike separated. For dressed algebras $\mathfrak A_u$, the failure can be measured by
+\begin{equation}
+\lambda_u(\mathcal O_1,\mathcal O_2)=\sup_{\substack{A^u\in\mathfrak A_u(\mathcal O_1),\ \|A^u\|\le1\\ B^u\in\mathfrak A_u(\mathcal O_2),\ \|B^u\|\le1}}\big\|[A^u,B^u]\big\|,
+\end{equation}
+with microcausal dressed variables requiring $\lambda_u=0$ at spacelike separation, and by the support defect $L_u(\mathcal O)=\mathrm{supp}(D_u\phi)\setminus\mathcal O$ for fields initially supported in $\mathcal O$. Invariance by itself settles neither. Dirac's dressed electrons at spacelike separation need not commute, for instance, because each carries a Coulomb tail through the other's region.
+
+Proposed here is that locality be read through admissible interfaces: a variable is \emph{operationally local} when the distinctions it carries can be registered and acted upon within the relevant causal and resource constraints. That need not coincide exactly with support at a coordinate point. For dressing adequacy this is the governing notion, while manifold support, microcausality, and causal dependence become additional registered structures whenever the declared signature $\R$ requires them. A dressing fails operational locality when it identifies states or continuations that an operation confined to the declared region can distinguish, or when reproducing a supposedly local continuation requires access outside the allowed causal or resource domain. A Coulomb-dressed charge is nonlocal in support but its total charge is operationally accessible at the boundary of any region enclosing it, which is Gauss's law read as an interface condition.
+
+\paragraph{Subsystems.} The strongest pressure comes from dividing a system. In gauge theories the physical Hilbert space of a region does not factorise across a cut,
+\begin{equation}
+\mathcal H\neq\mathcal H_A\otimes\mathcal H_B,
+\end{equation}
+because the constraints couple boundary data. A refined decomposition sums over boundary sectors,
+\begin{equation}\label{eq:sectors}
+\mathcal H_{\mathrm{phys}}\simeq\bigoplus_q\mathcal H_A^{(q)}\otimes\mathcal H_B^{(-q)},
+\end{equation}
+with $q$ labelling matched flux, charge, or edge data \cite{donnelly-freidel,casini}. For the adequacy criterion this is decisive. A dressing adequate for a closed system can fail when $\R$ is enlarged to include the operation of cutting it, because the dressing may collapse precisely the boundary labels $q$ that the cut exposes. Adequacy requires more than retaining their names: the dressed description must reproduce the sector decomposition and the admissible transitions within and between sectors, schematically
+\begin{equation}\label{eq:dressedsectors}
+D_u:\bigoplus_q\mathcal H_A^{(q)}\otimes\mathcal H_B^{(-q)}
+\longrightarrow
+\bigoplus_q\mathcal H_{u,A}^{(q)}\otimes\mathcal H_{u,B}^{(-q)}.
+\end{equation}
+A dressing that erases $q$, merges operationally inequivalent sectors, or changes their continuation structure is inadequate for any signature containing the subsystem cut. Relational dressing and subsystem boundaries must therefore be studied together. The François--Ravera claim that the boundary problem dissolves once relationality is manifest \cite{fr-mech} is best read as the claim that a dressing using the right fields as reference carries this sector structure as relational data rather than discarding it as gauge. Whether a given dressing does so is exactly an adequacy check.
+
+%===========================================================
+\section{Structural Realism Without Empty Relations}\label{sec:osr}
+%===========================================================
+
+Jaimungal presses Ravera on what lies underneath: if fields co-define one another, is there no ground floor? Her answer has two parts \cite{toe}. If the ground floor is meant to be the manifold, there is none physically; it is present only mathematically. But there is a ground floor made of fields on fields, to borrow Rovelli's phrase \cite{rovelli-qg}. Asked about structural realism, she distinguishes eliminative from non-eliminative versions and places the dressing program with the latter: objects and relations are co-extensive, and neither is prior. She associates this view with Eddington, who knew group theory and for whom a group element is a good example: it cannot be defined without its composition relations to the other elements \cite{eddington,ladyman}. In the philosophical literature the position is close to what Esfeld and Lam call moderate structural realism \cite{esfeld-lam}.
+
+The formula ``only relations exist'' should be avoided. Relations without relata are as obscure as substances without relations. A more usable formulation represents a physical structure as
+\begin{equation}
+\mathfrak S=\big(X,\{R_\alpha\},\mathsf T\big),
+\end{equation}
+where $X$ is a collection of relata, $R_\alpha$ are relations on them, and $\mathsf T$ is a transition or continuation structure. An automorphism of $\mathfrak S$ is a bijection $f:X\to X$ with $R_\alpha(x_1,\dots,x_n)\Leftrightarrow R_\alpha(fx_1,\dots,fx_n)$ for all $\alpha$ that also preserves admissible transitions. Pure structural individuation identifies elements only up to automorphism: $x$ and $y$ are discernible when some invariant relation distinguishes them.
+
+The addition of $\mathsf T$ is the essay's point. For an element with history $h_x=(x_t)_{t\in I}$, write $x_t\equiv_{\mathrm{cont}}x_{t'}$ when there is an admissible continuation $a_{t,t'}:x_t\to x_{t'}$ preserving a declared invariant family $I$, $I(x_{t'})=I(x_t)$ or equality up to an admitted equivalence. A maintained object is then a diagram
+\begin{equation}
+X_{t_0}\xrightarrow{\;a_0\;}X_{t_1}\xrightarrow{\;a_1\;}X_{t_2}\xrightarrow{\;a_2\;}\cdots
+\end{equation}
+whose arrows preserve $I$, and identity is associated with a compatible family of continuations rather than with numerical sameness at every time. A structural equivalence between realisations $\mathfrak S$ and $\mathfrak S'$ is correspondingly a map $F:\mathfrak S\to\mathfrak S'$ preserving relations and composition of continuations, $F(b\circ a)=F(b)\circ F(a)$.
+
+The proposed alternative to both substantivalism and eliminativism can be stated in a sentence:
+\begin{quote}
+\emph{Objects are relatively stable nodes of maintained distinction within structures of admissible continuation.}
+\end{quote}
+Continuation adequacy is the formal counterpart of this structural claim. If an object is individuated by a maintained pattern of distinctions across admissible transformations, then a reduction preserves that object only when it preserves the continuation structure supporting its individuation. The proposal in Section~\ref{sec:interface} therefore states, at the level of transformations between descriptions, what the present account states at the level of ontology.
+An object need not be an independent substance to possess identity. Its identity consists in the continuation of a distinguishable organisation through transformations, interactions and changes of presentation. This fits dressing-field relationalism well. Dressing does not erase objects. It reconstructs them as invariant relational organisations rather than as occupants of labelled manifold points. And the account avoids the familiar weakness of structural descriptions that reduce physics to a static graph: physical structure includes possible transitions, the repair of disturbed configurations, causal order, and the conditions under which distinctions remain recoverable. Section~\ref{sec:gribov}'s transition data $k_{ij}$ are an example of structure that a static graph of relations at an instant would miss.
+
+%===========================================================
+\section{Competing Programs in Quantum Gravity}\label{sec:qg}
+%===========================================================
+
+The interview's brief comparison of loop quantum gravity and string theory should be used sparingly. Ravera describes relationality as foundational in loop quantum gravity, with its spin networks and background independence \cite{rovelli-smolin}, while cautioning that she is not an expert there and that background independence and relationality are not the same thing. In string theory, she says, relationality is rarely named, perhaps in part because of the rivalry between the communities. Since string theory must reproduce general-relativistic physics in an appropriate limit, relationality must be present tacitly, and applying the dressing method to string theory is part of her stated programme \cite{toe}.
+
+The point worth extracting is not a verdict between programmes. It is that relationality underdetermines dynamics. A background-dependent theory fixes a geometry $g_0$ and quantises fields over it,
+\begin{equation}
+Z[g_0]=\int\mathcal D\phi\;e^{iS[\phi;g_0]/\hbar}.
+\end{equation}
+A background-independent gravitational path integral formally includes geometry among the variables,
+\begin{equation}
+Z=\int\frac{\mathcal Dg\,\mathcal D\phi}{\Diff(M)}\;e^{iS[g,\phi]/\hbar},
+\end{equation}
+and canonical approaches impose the constraints $\widehat{\mathcal H}\Psi=0$, $\widehat{\mathcal H}_i\Psi=0$. Programmes that agree in rejecting a fixed $g_0$ can still assign different primitive variables and different continuation laws to a broadly relational state description $\mathcal S$:
+\begin{equation}
+(\mathcal S,\mathsf T_1)\not\simeq(\mathcal S,\mathsf T_2).
+\end{equation}
+Relational ontology constrains the form of physical description; the dynamics must be supplied separately,
+\begin{equation}
+\mathcal S_{\mathrm{rel}}+\mathsf T\;\longrightarrow\;\text{physical theory}.
+\end{equation}
+Nothing in the dressing-field mathematics yet supplies a complete quantum-gravitational $\mathsf T$, and the programme does not claim otherwise. What it offers is a uniform way of making whichever theory is proposed manifestly relational, and so a common language in which rival dynamics can be compared.
+
+%===========================================================
+\section{Toward Relational Quantum Field Theory}\label{sec:rqft}
+%===========================================================
+
+Ravera's stated aim is to rewrite fundamental theoretical physics in a manifestly relational way and to converge on what she calls a relational quantum field theory, treating quantum gravity as a sub-problem of the larger open problem of giving quantum field theory coherent mathematical and conceptual foundations \cite{toe}. A relational QFT in this sense would not append relational language to a gauge-fixed formalism. Its variables, state spaces, transition amplitudes and subsystem relations would be formulated through invariant relational quantities from the start.
+
+It is possible to say fairly exactly what such a theory would owe. The following is proposed as a schema.
+
+\begin{construction}[Relational QFT as a structured tuple]\label{con:rqft}
+A candidate relational QFT is a tuple
+\begin{equation}
+\mathfrak Q_{\mathrm{rel}}=\big(\F_u,\ \mathfrak A_u,\ \omega_u,\ \mathsf T_u,\ \R_u\big),
+\end{equation}
+consisting of a dressed configuration space $\F_u$; a $*$-algebra $\mathfrak A_u$ of dressed observables, invariant under the gauge action, $\alpha_\gamma(A^u)=A^u$; a state $\omega_u:\mathfrak A_u\to\mathbb C$, positive and normalised, $\omega_u(A^*A)\ge0$, $\omega_u(\mathbf 1)=1$; a dynamics or transition structure $\mathsf T_u$ with evolution maps $U_t$; and a family $\R_u$ of changes of relational frame, represented by algebra isomorphisms $T_{a\to b}:\mathfrak A^{(a)}_u\to\mathfrak A^{(b)}_u$.
+\end{construction}
+
+The obligations are then equations.
+\begin{enumerate}
+\item \emph{Invariance.} Every variable is invariant under the redundancies the theory claims to remove: $\alpha_\gamma(A^u)=A^u$.
+\item \emph{Coherent frame changes.} $T_{a\to a}=\mathrm{id}$, $T_{a\to b}^{-1}=T_{b\to a}$, and $T_{b\to c}\circ T_{a\to b}=T_{a\to c}$. If composition holds only up to a transformation, $T_{b\to c}\circ T_{a\to b}=\Omega_{abc}\circ T_{a\to c}$, then $\Omega_{abc}$ records residual relational curvature, the algebraic counterpart of the residual curvature whose holonomy is Construction~\ref{con:hol}, and must itself be accounted for as physical data.
+\item \emph{Covariant dynamics.} Evolution intertwines with frame changes: $T_{a\to b}\circ U^{(a)}_t=U^{(b)}_t\circ T_{a\to b}$. This is physical frame covariance lifted to the quantum level.
+\item \emph{Continuation completeness.} The dressed theory reproduces the physical transition structure of the unreduced one, modulo explicitly declared equivalences: $\mathsf C_{\mathrm{phys}}\simeq\mathsf C_u$. Quantisation preserves the physical sectors and residual structures, in the sense of \eqref{eq:pathclasses} and \eqref{eq:sectors}.
+\end{enumerate}
+These obligations turn ``manifest relationality'' from a philosophical label into a research programme that can succeed or fail in specific constructions. Ravera describes the programme as proceeding slowly but surely, through supergravity, string theory, electroweak physics, lattice computation, cosmological perturbation theory and condensed matter \cite{toe}. Each of those applications is, on the present reading, a test of the four conditions in a particular setting.
+
+%===========================================================
+\section{Foundations, Truth-Seeking, and First Principles}\label{sec:method}
+%===========================================================
+
+The last third of the interview turns to the conditions of research. Ravera names the scarcity of permanent positions, the pressure of bibliometric indicators that stop measuring well once they become targets, and the difficulty of publishing genuinely interdisciplinary work that joins mathematical physics, theoretical physics and philosophy of physics. Her advice to students is to ask questions, including the question of what one has failed to understand, and to try to be a first-principles thinker \cite{toe}.
+
+The connection to the argument of this essay is the refusal to treat inherited representational structure as ontologically compulsory. Manifolds, coordinates, gauges and bare fields are to be evaluated by the physical distinctions they carry, not by their familiarity. That refusal can be disciplined. Suppose a reduction $D:\F\to\F_{\mathrm{red}}$ is proposed. Predictions should commute with it over its declared domain, $P_{\mathrm{red}}\circ D=P_{\mathrm{bare}}$. Three defects measure the ways in which it can fail:
+\begin{align}
+\epsilon_D(\phi)&=d_Y\big(P_{\mathrm{bare}}(\phi),\,P_{\mathrm{red}}(D\phi)\big) &&\text{(prediction)},\\
+\delta_{\mathrm{rec}}(\phi)&=d_{\F/\G}\big([\phi],\,R(D\phi)\big) &&\text{(reconstruction, for a map } R:\F_{\mathrm{red}}\to\F/\G),\\
+\delta_{\mathrm{cont}}(\phi)&=d_{\mathsf C}\big(\Cont_\R(\phi),\,\Cont_{\R_u}(D\phi)\big) &&\text{(continuation)}.
+\end{align}
+A verified reduction satisfies $\sup_{\phi\in\mathcal A}\epsilon_D(\phi)\le\varepsilon$ over an admissible domain $\mathcal A$, and exactly or approximately $\delta_{\mathrm{rec}}\approx0$ and $\delta_{\mathrm{cont}}\approx0$. These are proposed diagnostics, not results of the dressing literature. They make the essay's thesis operational: conceptual reduction requires verified structural preservation.
+
+Ravera's remarks on AI belong here and only here. She regards it as a useful tool for learning quickly and checking prose, and worries about its use to mass-produce papers \cite{toe}. The formal point is narrow. A system that produces fluent technical text can generate an invariant-looking expression without establishing that $\epsilon_D$, $\delta_{\mathrm{rec}}$ and $\delta_{\mathrm{cont}}$ vanish. Writing $A^u$ is easy; showing that the dressing is global, nonsingular on the admitted configurations, and continuation-complete is not. Automated formal manipulation therefore raises, rather than lowers, the need for external invariance, reconstruction and continuation tests.
+
+%===========================================================
+\section{Conclusion: What Remains When the Scaffold Is Removed}\label{sec:conclusion}
+%===========================================================
+
+Ravera's opening sentence, that physical spacetime is where fields meet, can now be read at full strength and within its limits. Taking away the fields does not reveal a bare spacetime waiting underneath. It removes the coincidences, clocks, rods, reference systems and relational contrasts through which spacetime is physically articulated. The layered result is
+\begin{equation}
+M\xrightarrow{\text{fields}}\F\xrightarrow{\;q\;}\F/\G\xrightarrow{\;\overline D_u\;}\F_u\xrightarrow{\;\Pi\;}\mathcal O,
+\end{equation}
+and each arrow forgets or reorganises distinctions. For any map $f:X\to Y$, write $x\sim_f x'$ when $f(x)=f(x')$. The general condition of legitimacy for such a forgetting, proposed in this essay, is
+\begin{equation}
+x\sim_f x'\ \Longrightarrow\ \Cont(x)\simeq\Cont(x').
+\end{equation}
+Applied to dressing it is the adequacy criterion \eqref{eq:adequacy}. Applied to point coincidence it says that $\chi(x)=\chi(y)$ implies $x\sim_{\mathrm{phys}}y$ relative to the admitted fields and observables, which is Einstein's argument with its relativity to a field content made explicit. Applied to spacetime itself it gives, schematically,
+\begin{equation}
+\text{physical spacetime}\;\cong\;\frac{\text{field-supported event and continuation structure}}{\text{physically idle redescription}}.
+\end{equation}
+The quotient notation should not suggest a static set of equivalence classes. Its content includes relational dynamics, causal order, possible continuations, and the obstructions to reconstructing them globally, which, as Section~\ref{sec:gribov} showed, are themselves carried by invariant data.
+
+The manifold's disappearance is therefore not a deletion from the mathematics. It is the withdrawal of independent physical significance from structures that do not survive the invariant relational interface. The dressing field method is the most systematic tool yet developed for carrying out that withdrawal, and its relational interpretation is well founded. What the method does not supply on its own is the proof that nothing was lost in the process, and that proof has a definite form. The principle can be put in one line:
+\begin{equation}
+\text{admissible reduction}\;=\;\text{distinction collapse}\;+\;\text{continuation preservation}.
+\end{equation}
+A successful dressing does not merely hide redundancy. It demonstrates that the distinctions it removes were unnecessary to the continuation of the physical world the theory describes.
+
+%===========================================================
+\appendix
+\section{Minimal Bundle-Geometric Background}\label{app:bundle}
+%===========================================================
+
+\paragraph{Principal bundles.} A principal $H$-bundle $\pi:P\to M$ is a manifold $P$ with a free right action $R_h$ of a Lie group $H$ whose orbits are the fibres $\pi^{-1}(x)$, locally trivial as $U\times H$. Local sections $\sigma:U\to P$ exist; a global section exists iff $P$ is trivial.
+
+\paragraph{Associated bundles and matter.} For a representation $\rho:H\to GL(V)$, matter fields are equivalently sections of $P\times_\rho V$ or $\rho$-equivariant maps $\varphi:P\to V$, $R_h^*\varphi=\rho(h)^{-1}\varphi$.
+
+\paragraph{Connections and curvature.} A connection is an $\mathfrak h$-valued 1-form $\omega$ on $P$ with $R_h^*\omega=\mathrm{Ad}_{h^{-1}}\omega$ that reproduces the generators of the action on vertical vectors. Pulled back by a local section it gives the gauge potential $A=\sigma^*\omega$. The curvature is $\Omega=d\omega+\tfrac12[\omega,\omega]$, locally $F=dA+A\wedge A$. The covariant derivative of matter is $D\varphi=d\varphi+\rho_*(A)\varphi$.
+
+\paragraph{Gauge group.} The gauge group $\G$ consists of vertical automorphisms of $P$, equivalently maps $\gamma:P\to H$ with $R_h^*\gamma=h^{-1}\gamma h$. Locally these are $H$-valued functions acting by
+\begin{equation}
+A^\gamma=\gamma^{-1}A\gamma+\gamma^{-1}d\gamma,\qquad F^\gamma=\gamma^{-1}F\gamma,\qquad\varphi^\gamma=\rho(\gamma)^{-1}\varphi .
+\end{equation}
+The full symmetry group of general-relativistic gauge field theory is the automorphism group $\mathrm{Aut}(P)$, which fits into $1\to\G\to\mathrm{Aut}(P)\to\Diff(M)$.
+
+\paragraph{Field space.} The space $\F$ of all configurations carries the right action of $\G$ (and of $\mathrm{Aut}(P)$). Restricted to configurations with trivial stabilisers, $\F\to\F/\G$ is, under suitable functional-analytic conditions, an infinite-dimensional principal bundle with structure group $\G$ \cite{singer,fr-grf}. The François--Ravera framework develops the geometry of this bundle systematically, including field-dependent gauge transformations and the variational bicomplex on field space.
+
+\paragraph{Dressing field, formally.} A dressing field for $H$ is a map $u:P\to G$, with $H\subseteq G$, satisfying $R_h^*u=h^{-1}u$. It induces the transformation $u^\gamma=\gamma^{-1}u$. The equivariance $R_h^*u=h^{-1}u$ (rather than $h^{-1}uh$) is what prevents $u$ from belonging to $\G$ and makes $\omega^u:=u^{-1}\omega u+u^{-1}du$ a basic, hence projectable, form on $P$: the dressed connection lives on $M$ without reference to a choice of section \cite{ffl2014,ravera-notes}. Local triviality of $P$ supplies local sections, and hence field-independent local dressings, but it does not supply a field-dependent dressing constructed from the dynamical variables; whether one exists, and where, depends on the field content. The existence of a global dressing with $G=H$ implies the triviality of $P$. At a configuration with nontrivial stabiliser $h$, the relation $u[\phi]=u[\phi^h]=h^{-1}u[\phi]$ rules out any equivariant group-valued dressing, so field-dependent dressings of the full gauge group live on the free stratum (Section~\ref{sec:gribov}).
+
+%===========================================================
+\section{Gauge Fixing, Quotients, BRST, and Dressing}\label{app:compare}
+%===========================================================
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.1cm}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{3.3cm}@{}}
+\toprule
+Procedure & Output & Global status & Relational reading \\
+\midrule
+Gauge fixing & A representative on each orbit, $\chi(\phi)=0$ & Section of $\F\to\F/\G$; Gribov copies; obstructed globally by Singer & None intrinsic; the condition is chosen, not derived from fields\\[3pt]
+Quotient & Points of $\F/\G$ & Always exists as a set; generally not a manifold; no coordinates supplied & Implicit: identifies what differs by gauge, but supplies no relational variables\\[3pt]
+BRST/BV & Cohomology of $s$; gauge-fixed action with ghosts & Ghosts track redundancy; global issues inherited from the gauge condition & Invariance recovered as cohomology, not built into variables\\[3pt]
+Dressing & Invariant composites $\phi^u$; dressed ghost $v^u=0$ & Local where suitable dressing data exist; only on the free stratum, and global only if a regular global $u$ exists (Proposition~\ref{prop:singer}); transition data $k_{ij}$ invariant & Manifest when $u=u[\phi]$ is built from the theory's own fields\\[3pt]
+Stueckelberg & Enlarged theory with compensating field & Introduces a symmetry rather than reducing one & Formally dual to dressing; implements rather than removes\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent Two points from the table deserve emphasis. First, when a field-dependent dressing takes values in the gauge group itself, solving the dressing functional constraint and imposing the corresponding gauge condition give numerically identical composites. The difference between the two procedures in that case is interpretive: the dressing reading identifies the result as a relational variable built from specified fields, and it identifies the ambiguity in the choice of $u$ as a transformation of the second kind between physical frames rather than as residual gauge freedom. Second, when the dressing takes values in a larger group, or is a diffeomorphism dressing valued in maps to $\mathbb R^n$, the composite is not on the original orbit at all, and the correspondence with gauge fixing ceases even numerically.
+
+%===========================================================
+\section{Continuation-Preserving Dressing}\label{app:cont}
+%===========================================================
+
+This appendix is entirely the essay's proposal.
+
+\paragraph{Setting.} Let $\mathsf C$ be a category whose objects are configurations in $\F$ and whose arrows are the continuations admissible under a family $\R$ of operations, as in Construction~\ref{con:cat}. Let $\mathsf W$ be a set of \emph{registered quantities}: functions on objects and arrows of $\mathsf C$ (weights, amplitudes, outcome distributions, charges) that the operations in $\R$ can detect. For each $\phi$, $\Cont_\R(\phi)$ is the under-category $\phi/\mathsf C$, with objects the arrows $a:\phi\to\eta$ and morphisms the commuting triangles.
+
+\begin{definition}
+Two continuation structures are \emph{equivalent}, $\Cont_\R(\phi)\simeq\Cont_\R(\phi')$, if there is an isomorphism of categories $\Phi:\phi/\mathsf C\to\phi'/\mathsf C$ such that $w(\Phi(a))=w(a)$ for every $w\in\mathsf W$ and every arrow $a$, and $w(\mathrm{cod}\,\Phi(a))=w(\mathrm{cod}\,a)$ for every $w\in\mathsf W$ defined on objects.
+\end{definition}
+
+\paragraph{Hypotheses.} The conditions of Proposition~\ref{prop:suff} read:
+\begin{enumerate}[label=(\alph*)]
+\item \emph{Orbit separation}: $D_u(\phi)=D_u(\phi')$ implies $\phi'=\phi^\gamma$ for some $\gamma\in\G$.
+\item \emph{Covariance of operations}: each $\gamma\in\G$ extends to an automorphism $\widehat R_\gamma$ of $\mathsf C$ acting on objects by $\phi\mapsto\phi^\gamma$ and sending admissible arrows to admissible arrows. With the right-action convention $(\phi^\gamma)^{\gamma'}=\phi^{\gamma\gamma'}$, these obey $\widehat R_{\gamma\gamma'}=\widehat R_{\gamma'}\circ\widehat R_\gamma$.
+\item \emph{Invariance of registered quantities}: $w\circ\widehat R_\gamma=w$ for all $w\in\mathsf W$ and $\gamma\in\G$.
+\end{enumerate}
+
+\begin{proof}[Proof of Proposition~\ref{prop:suff}]
+Let $D_u(\phi)=D_u(\phi')$. By (a), $\phi'=\phi^\gamma$. By (b), $\widehat R_\gamma$ restricts to a functor $\Phi:\phi/\mathsf C\to\phi^\gamma/\mathsf C$, $a\mapsto\widehat R_\gamma(a)$, with inverse induced by $\widehat R_{\gamma^{-1}}$; it is therefore an isomorphism of categories. By (c), $w(\Phi(a))=w(a)$ for all registered $w$ on arrows and on codomains. Hence $\Cont_\R(\phi)\simeq\Cont_\R(\phi')$.
+\end{proof}
+
+\begin{remark}[Completeness]
+Under the same hypotheses the orbit relation $B=\{(\phi,\phi^\gamma)\}$ is a continuation bisimulation in the sense of Construction~\ref{con:bisim}: given $\phi\xrightarrow{a}\eta$, the arrow $\widehat R_\gamma(a):\phi^\gamma\to\eta^\gamma$ matches it with $\eta\,B\,\eta^\gamma$ and equal weights. So the dressing is continuation-complete and $\Delta_{\mathrm{cont}}(D_u)=0$.
+\end{remark}
+
+\paragraph{Where each hypothesis fails.} The proposition is useful mainly as a map of failure modes.
+\begin{itemize}
+\item \emph{(a) fails} when a defined $D_u$ identifies configurations from different orbits. If instead an admitted continuation exits the domain of $D_u$, global adequacy is undefined. To quantify that domain failure using $\Delta_{\mathrm{cont}}$, one must first enlarge $\F_u$ by a failure object $\bot$ and extend $D_u$ to send the singular set to $\bot$.
+\item \emph{(b) fails} when $\R$ contains an operation that is covariant only under a subgroup, such as restriction to a subregion, which commutes with $\widehat R_\gamma$ only for $\gamma$ supported away from the cut, or boundary impositions, which commute only with $\G_0$.
+\item \emph{(c) fails} when $\R$ registers quantities on which $\G$ acts, such as boundary charges $Q_{\partial\Sigma}[\epsilon]$ transforming under $\G_\partial$. A dressing that reduces all of $\G$ then identifies configurations whose charges differ, and those configurations are distinguishable by an admitted operation.
+\end{itemize}
+In each case the dressed variables remain invariant. The failure is of the claim that the identification made by $D_u$ was physically idle.
+
+\paragraph{Local dressings.} For a family of local dressings $u_i$ on patches $U_i$, adequacy can be checked patchwise with $\R$ restricted to continuations remaining in $U_i$. Global adequacy additionally requires that continuations passing between patches be matched, which holds when the transition data $k_{ij}$ are carried as part of the dressed description. If the dressed description retains only the local composites $\phi^{u_i}$ and discards $k_{ij}$, continuations that pass between patches cannot be matched, and wherever a residual connection is present, continuations around a loop $c$ with $\Hol_c\neq e$ are not reproduced; in either case $\Delta_{\mathrm{cont}}>0$.
+
+%===========================================================
+\section{Interview Concordance}\label{app:concord}
+%===========================================================
+
+Timestamps refer to the published video \cite{toe} and are approximate to within a few seconds. Entries are paraphrases or short quotations.
+
+\begin{small}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}p{5.0cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{3.3cm}@{}}
+\toprule
+Time & Content & Sections & Verification sources\\
+\midrule
+\endhead
+00:00--00:20 & Spacetime is where fields meet; wave function as a cocyclic object & 1, 8 & \cite{fr-qm}\\
+00:20--01:10 & $t$ and $x$ disappear; the manifold is no longer there & 1, 3 & \cite{fr-diff,fr-grf}\\
+05:30--08:20 & Local symmetries motivate DFM; dressing yields invariant composites and complete (Dirac) observables & 2, 6 & \cite{ravera-notes,rovelli-partial,dittrich}\\
+08:20--10:40 & DFM unifies Stueckelberg, edge modes, quantum reference frames, scalar coordinatisation; fields co-define each other & 6, 8, 11 & \cite{stueckelberg,donnelly-freidel,giacomini}\\
+10:40--14:30 & Tablecloth image; hole and point-coincidence arguments & 3 & \cite{einstein1916,earman-norton,norton-sep}\\
+14:00--14:30 & Manifold as scaffold; ``fields on fields'' & 3, 12 & \cite{rovelli-qg}\\
+14:30--16:45 & Galilean, special, general relativity; active versus passive diffeomorphisms & 4 & \cite{fr-meaning}\\
+16:45--18:40 & DFM implements point coincidence; bare (tacit) and dressed (manifest) dual pictures & 4, 6 & \cite{fr-grf}\\
+18:40--22:50 & Recipe analogy; gauge symmetry not mere redundancy; no ad hoc external dressing & 5, 6 & \cite{fr-meaning,berghofer-elements}\\
+25:20--26:30 & Classical versus quantum relationalism (Rovelli 1991, 1996) & 8 & \cite{rovelli-observable,rovelli-rqm}\\
+26:30--30:50 & $N$-particle system; particle positions as reference frames; transformations of the second kind & 8 & \cite{fr-qm,fr-mech}\\
+30:50--32:05 & Measurement ``next level''; physical frame covariance & 8 & \cite{giacomini}\\
+32:05--33:52 & Dressing does not convert bare fields; composites are built alongside & 6 & \cite{ffl2014}\\
+33:52--38:00 & Gribov--Singer; dressing as projection to moduli space; circumvent, not solve & 9 & \cite{gribov,singer}\\
+38:00--41:00 & Relational (invariant) quantization; Feynman path integral as dressed & 10 & \cite{fr-mech,fr-pathint}\\
+41:00--42:56 & Dressed BRST; dressed ghosts vanish; residual ghosts for partial reduction & 10 & \cite{fr-susy-rel,brs}\\
+45:05--47:05 & Locality: electroweak, scalar coordinatisation, Lorentz dressing all local & 11 & \cite{berghofer-elements,ravera-notes}\\
+52:10--56:00 & Ground floor of fields on fields; eliminative versus non-eliminative OSR; Eddington & 12 & \cite{eddington,ladyman,esfeld-lam}\\
+56:00--57:15 & Is an invariant substrate needed beneath dressed descriptions? & 12, 14 & \cite{fr-grf}\\
+57:15--1:00:40 & Loop quantum gravity versus string theory & 13 & \cite{rovelli-smolin}\\
+1:00:40--1:02:00 & Tacit versus manifest relationality & 4 & \cite{fr-grf}\\
+1:02:00--1:03:40 & Aim: relational QFT; quantum gravity as sub-problem & 14 & \cite{fr-pathint}\\
+1:03:40--1:04:50 & Time: clock fields replace the time variable & 3, 14 & \cite{fr-mech}\\
+1:04:50--1:08:00 & Research conditions; metrics as targets; interdisciplinarity & 15 & \\
+1:09:30--1:11:00 & Path integral well-defined? Measure still formal; anomaly cancellation & 10 & \cite{fr-pathint,wess-zumino}\\
+1:11:00--1:13:40 & Reception and programme: supergravity, strings, electroweak, lattice, cosmology & 14 & \cite{fr-rs,fr-unconv,fr-offshell}\\
+1:14:30--1:17:40 & AI as tool; risk of mass-produced papers & 15 & \\
+1:18:00--1:25:30 & Advice: ask questions, first-principles thinking & 15 & \\
+\bottomrule
+\end{longtable}
+\end{small}
+
+%===========================================================
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{References}
+\begin{thebibliography}{99}
+\small
+
+\bibitem{toe} C.~Jaimungal (host), interview with L.~Ravera, ``Take Away the Fields and Spacetime Disappears,'' \emph{Theories of Everything}, video podcast, 2026.
+
+\bibitem{ravera-notes} L.~Ravera, ``Lecture notes on symmetry reduction via the dressing field method,'' preprint, arXiv:2603.29505 (2026).
+
+\bibitem{fr-grf} J.~François and L.~Ravera, ``Geometric relational framework for general-relativistic gauge field theories,'' \emph{Fortschr. Phys.} \textbf{73} (2025) 2400149.
+
+\bibitem{fr-meaning} J.~François and L.~Ravera, ``On the meaning of local symmetries: epistemic-ontological dialectics,'' \emph{Found. Phys.} \textbf{55} (2025) 38.
+
+\bibitem{fr-rs} J.~François and L.~Ravera, ``Dressing fields for supersymmetry: the cases of the Rarita--Schwinger and gravitino fields,'' \emph{JHEP} \textbf{07} (2024) 041.
+
+\bibitem{fr-unconv} J.~François and L.~Ravera, ``Unconventional supersymmetry via the dressing field method,'' \emph{Phys. Rev. D} \textbf{111} (2025) 125022.
+
+\bibitem{fr-offshell} J.~François and L.~Ravera, ``Off-shell supersymmetry via manifest invariance,'' \emph{Phys. Lett. B} \textbf{868} (2025) 139633.
+
+\bibitem{fr-susy-rel} J.~François and L.~Ravera, ``Relational supersymmetry via the dressing field method and matter-interaction supergeometric framework,'' \emph{Ann. Phys. (Berlin)} (2025) e00121; arXiv:2503.19077.
+
+\bibitem{fr-qm} J.~François and L.~Ravera, ``Relational bundle geometric formulation of non-relativistic quantum mechanics,'' \emph{Fortschr. Phys.} (2025) e70040; arXiv:2501.02046.
+
+\bibitem{fr-mech} J.~François and L.~Ravera, ``Mechanics as a general-relativistic gauge field theory, and relational quantization,'' preprint, arXiv:2510.19845 (2025).
+
+\bibitem{fr-pathint} J.~François and L.~Ravera, ``Invariant path-integral quantization and anomaly cancellation,'' preprint, arXiv:2604.21004 (2026).
+
+\bibitem{fr-diff} J.~François, ``The dressing field method for diffeomorphisms: a relational framework,'' \emph{J. Phys. A} \textbf{57} (2024), no.~30.
+
+\bibitem{ffl2014} C.~Fournel, J.~François, S.~Lazzarini and T.~Masson, ``Gauge invariant composite fields out of connections, with examples,'' \emph{Int. J. Geom. Methods Mod. Phys.} \textbf{11} (2014) 1450016.
+
+\bibitem{andrianopoli-ravera} L.~Andrianopoli and L.~Ravera, ``On the geometric approach to the boundary problem in supergravity,'' \emph{Universe} \textbf{7} (2021) 463.
+
+\bibitem{berghofer-elements} P.~Berghofer, J.~François, S.~Friederich, H.~Gomes, G.~Hetzroni, A.~Maas and R.~Sondenheimer, \emph{Gauge Symmetries, Symmetry Breaking, and Gauge-Invariant Approaches}, Cambridge Elements in the Foundations of Contemporary Physics, Cambridge University Press, 2023.
+
+\bibitem{einstein1916} A.~Einstein, ``Die Grundlage der allgemeinen Relativitätstheorie,'' \emph{Ann. Phys.} \textbf{49} (1916) 769--822.
+
+\bibitem{earman-norton} J.~Earman and J.~Norton, ``What price spacetime substantivalism? The hole story,'' \emph{Brit. J. Phil. Sci.} \textbf{38} (1987) 515--525.
+
+\bibitem{norton-sep} J.~D.~Norton, ``The hole argument,'' \emph{Stanford Encyclopedia of Philosophy}.
+
+\bibitem{rovelli-observable} C.~Rovelli, ``What is observable in classical and quantum gravity?,'' \emph{Class. Quantum Grav.} \textbf{8} (1991) 297--316.
+
+\bibitem{rovelli-rqm} C.~Rovelli, ``Relational quantum mechanics,'' \emph{Int. J. Theor. Phys.} \textbf{35} (1996) 1637--1678.
+
+\bibitem{rovelli-partial} C.~Rovelli, ``Partial observables,'' \emph{Phys. Rev. D} \textbf{65} (2002) 124013.
+
+\bibitem{dittrich} B.~Dittrich, ``Partial and complete observables for canonical general relativity,'' \emph{Class. Quantum Grav.} \textbf{23} (2006) 6155--6184.
+
+\bibitem{rovelli-qg} C.~Rovelli, \emph{Quantum Gravity}, Cambridge University Press, 2004.
+
+\bibitem{rovelli-smolin} C.~Rovelli and L.~Smolin, ``Spin networks and quantum gravity,'' \emph{Phys. Rev. D} \textbf{52} (1995) 5743--5759.
+
+\bibitem{donnelly-freidel} W.~Donnelly and L.~Freidel, ``Local subsystems in gauge theory and gravity,'' \emph{JHEP} \textbf{09} (2016) 102.
+
+\bibitem{casini} H.~Casini, M.~Huerta and J.~A.~Rosabal, ``Remarks on entanglement entropy for gauge fields,'' \emph{Phys. Rev. D} \textbf{89} (2014) 085012.
+
+\bibitem{giacomini} F.~Giacomini, E.~Castro-Ruiz and \v{C}.~Brukner, ``Quantum mechanics and the covariance of physical laws in quantum reference frames,'' \emph{Nat. Commun.} \textbf{10} (2019) 494.
+
+\bibitem{gribov} V.~N.~Gribov, ``Quantization of non-Abelian gauge theories,'' \emph{Nucl. Phys. B} \textbf{139} (1978) 1--19.
+
+\bibitem{singer} I.~M.~Singer, ``Some remarks on the Gribov ambiguity,'' \emph{Commun. Math. Phys.} \textbf{60} (1978) 7--12.
+
+\bibitem{faddeev-popov} L.~D.~Faddeev and V.~N.~Popov, ``Feynman diagrams for the Yang--Mills field,'' \emph{Phys. Lett. B} \textbf{25} (1967) 29--30.
+
+\bibitem{brs} C.~Becchi, A.~Rouet and R.~Stora, ``Renormalization of gauge theories,'' \emph{Ann. Phys.} \textbf{98} (1976) 287--321; I.~V.~Tyutin, Lebedev Institute preprint 39 (1975).
+
+\bibitem{henneaux-teitelboim} M.~Henneaux and C.~Teitelboim, \emph{Quantization of Gauge Systems}, Princeton University Press, 1992.
+
+\bibitem{wess-zumino} J.~Wess and B.~Zumino, ``Consequences of anomalous Ward identities,'' \emph{Phys. Lett. B} \textbf{37} (1971) 95--97.
+
+\bibitem{dirac1955} P.~A.~M.~Dirac, ``Gauge-invariant formulation of quantum electrodynamics,'' \emph{Can. J. Phys.} \textbf{33} (1955) 650--660.
+
+\bibitem{stueckelberg} E.~C.~G.~Stueckelberg, ``Die Wechselwirkungskräfte in der Elektrodynamik und in der Feldtheorie der Kernkräfte,'' \emph{Helv. Phys. Acta} \textbf{11} (1938) 225--244.
+
+\bibitem{eddington} A.~S.~Eddington, \emph{The Philosophy of Physical Science}, Cambridge University Press, 1939.
+
+\bibitem{ladyman} J.~Ladyman, ``What is structural realism?,'' \emph{Stud. Hist. Phil. Sci.} \textbf{29} (1998) 409--424.
+
+\bibitem{esfeld-lam} M.~Esfeld and V.~Lam, ``Moderate structural realism about space-time,'' \emph{Synthese} \textbf{160} (2008) 27--46.
+
+\end{thebibliography}
+
+
+\end{document}
