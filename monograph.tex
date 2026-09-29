@@ -638,12 +638,19 @@ A distinction $D$ is \emph{truly erased} at time $t$ if $(O, r, t) \notin \Pcone
 A distinction experiences \emph{reconstruction-bottleneck failure} at $t$ if $(O, r, t) \notin \Pcone_{\mathrm{obs}}(D)$ for the observable and procedure actually used, but $(O', r', t) \in \Pcone_{\mathrm{phys}}(D)$ for some other $(O', r')$: the distinction is still physically present, but the chosen observable cannot see it.
 
 \begin{example}[Galactic spin as a persistence-cone observable]
-Sheng et al. (2026) detect a $5.9\sigma$ correlation between protohalo angular momentum orientation and large-scale tidal field structure at $z \sim 0$, interpreted as a memory of initial conditions. In persistence-cone language: the primordial distinction $D$ (tidal shear quadrupole orientation at $z \sim 1100$) remains above threshold in the observable cone defined by $O = $ galactic spin statistics at $r \sim 100$ Mpc, $t \sim t_0$. The detection is evidence that $(O, 100\,\text{Mpc}, t_0) \in \Pcone(D)$ for this particular $D$ and $O$.
+Sheng et al.~\cite{sheng2026tidaltorque} compare projected spin directions of present-day central galaxies, measured from integral-field velocity maps (MaNGA), with directions predicted from a primordial tidal field reconstructed by the ELUCID constrained simulation. Their strongest sample, gas in 781 central elliptical galaxies, shows a weighted mean directional correlation of $0.13$ at a smoothing scale of $3.4\,h^{-1}\,\mathrm{Mpc}$. The significance against a null that shuffles observed spins within halo-mass bins is $7.0\sigma$ when the smoothing scale is optimized for the data only, $6.3\sigma$ at a fixed scale, and $5.9\sigma$ when each null realization also optimizes its scale.
+
+In persistence-cone language: the primordial distinction $D$ (the orientation structure of the tidal field acting on a protohalo, as reconstructed from the initial conditions) remains recoverable above threshold in the observable $O=$ projected galaxy spin direction, read out through the reconstruction procedure $\mathcal{R}$ of the ELUCID pipeline. The detection is evidence that this $(O,\mathcal{R})$ lies in the cone for this $D$. It is evidence at the level of the ensemble. With a correlation of order $0.1$, the observed spin of an individual galaxy leaves most of the uncertainty about its own primordial environment in place, so the result establishes persistence of statistical information and not recoverability of individual states.
 \end{example}
 
 \section{Worked Case: Tidal Torque and Galactic Spin \texorpdfstring{\cite{sheng2026tidaltorque}}{}}
 
 \subsection{Summary of the Empirical Result}
+
+The data are MaNGA integral-field velocity maps for central galaxies inside the volume where the ELUCID constrained simulation supplies initial conditions. Kinematic position angles are fitted separately for ionized gas and stars, giving projected spin directions. The predicted direction for each galaxy is computed from the reconstructed tidal field acting on its protohalo, after Lagrangian-space remapping. The correlation statistic is a weighted mean of the cosine between observed and predicted directions, with weights favoring protohaloes whose tidal twist is strong. The strongest signal is gas in the 781 central ellipticals ($0.13$ at $3.4\,h^{-1}\,\mathrm{Mpc}$). Central spirals (815 with reliable gas spins) show much weaker correlations, and stellar spins are generally less well correlated than gas spins in both morphologies.
+
+The significance is reported three ways ($7.0\sigma$, $6.3\sigma$, $5.9\sigma$, see the example above), all against a null that permutes observed spins within halo-mass bins. The lowest mass bin, where reconstruction and remapping errors dominate, is excluded from the combined figures, and the authors describe the combined values as approximate because weak covariance between bins may remain. The paper attributes the elliptical-spiral difference to several contributors acting together: higher host masses, gas position angles measured with smaller uncertainty than stellar ones, and a residual difference at fixed halo mass whose origin it leaves open. It does not show that ellipticals conserve primordial angular momentum more faithfully.
+
 \subsection{The Persistence Cone for Protohalo Angular Momentum}
 
 \section{Persistence Cones and the RSVP Entropy Field}
@@ -836,9 +843,9 @@ The gas spin correlation with the primordial tidal field exceeds the stellar spi
 \Pi_{\mathrm{gas}} > \Pi_{\mathrm{stars}}.
 \]
 
-\textbf{Empirical status:} Sheng et al.\ (2026) \cite{sheng2026tidaltorque} report a $5.9\sigma$ detection of this asymmetry in SDSS data.
+\textbf{Empirical status:} Sheng et al.\ \cite{sheng2026tidaltorque} find, for both central ellipticals and central spirals, that stellar spins are generally less well correlated with the reconstructed tidal field than gas spins. This is a qualitative pattern in their correlation curves. The paper does not report a separate significance for the gas-stellar difference. The $5.9$--$7.0\sigma$ figures quoted there measure the gas correlation in central ellipticals against a shuffled null, not the asymmetry. The paper also notes that gas position angles are fitted with systematically smaller uncertainties than stellar ones, which by itself could produce part of the pattern. The prediction is therefore consistent with the data but not yet tested against the failure condition below.
 
-\textbf{Failure condition:} If this asymmetry disappears after controlling for halo mass and measurement uncertainty, the dynamical-coherence interpretation of the persistence cone loses support. The framework does not require this specific prediction to hold universally, but its failure in this regime would indicate that gas dynamics do not preserve primordial angular momentum correlations as persistently as the framework currently assumes.
+\textbf{Failure condition:} If the asymmetry disappears after controlling for halo mass and for the difference in position-angle measurement uncertainty between gas and stellar tracers, the dynamical-coherence interpretation of the persistence cone loses support. The framework does not require this specific prediction to hold universally, but its failure in this regime would indicate that gas dynamics do not preserve primordial angular momentum correlations as persistently as the framework currently assumes.
 \end{prediction}
 
 \section{Predictions Distinguishing RSVP Cosmology from \texorpdfstring{$\Lambda$}{Lambda}CDM}
@@ -932,9 +939,10 @@ Testing whether a forward-model defect biases only observables or propagates to 
 \begin{thebibliography}{9}
 
 \bibitem{sheng2026tidaltorque}
-Y.~Sheng et~al.,
+M.-J.~Sheng, H.-R.~Yu, M.~Bao, B.-H.~Chen, F.-N.~Shao, Q.~Guo, Y.-M.~Chen, H.~Wang, U.-L.~Pen, J.~Wang, and X.~Yang,
 \emph{A high-significance detection of primordial tidal torque imprints},
-arXiv:2512.11383 (2026).
+Nature Astronomy (2026), accepted 14 July 2026,
+doi:10.1038/s41550-026-02948-w; arXiv:2512.11383.
 
 \bibitem{hoellinger2024diagnosing}
 T.~Hoellinger and F.~Leclercq,
