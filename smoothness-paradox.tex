@@ -19424,6 +19424,36 @@ with each arrow representing a physical transformation rather than an identity.
 
 This is precisely the kind of persistence the present framework needs to distinguish from exact preservation. The original configuration need not remain present as an intact object. Its causal consequences remain encoded in later structure.
 
+\subsection*{A Measured Case}
+
+The chain in \cref{eq:tidal-memory-chain} is no longer only a theoretical schematic. Sheng and collaborators~\cite{sheng2026} compare projected spin directions, measured from present-day gas or stellar velocity fields, with directions predicted from a reconstructed primordial tidal field. The strongest sample is ionized gas in central elliptical galaxies, where 781 galaxies pass the selection and measurement cuts. The weighted mean directional correlation peaks at
+\begin{equation}
+\bar\rho \simeq 0.13
+\quad\text{at a smoothing scale}\quad
+r_{\rm opt}\simeq 3.4\ h^{-1}\,\mathrm{Mpc}.
+\label{eq:sheng-peak-correlation}
+\end{equation}
+The null test permutes observed spins within halo-mass bins, which preserves the mass distribution of the sample while breaking the proposed correspondence between each galaxy and its primordial environment.
+
+The headline significance depends on how the smoothing scale is treated. The fiducial procedure selects the best scale within a physically motivated range for each mass bin and yields \(7.0\sigma\). Fixing the scale at a simulation-motivated value gives \(6.3\sigma\). Allowing each shuffled realization to optimize its own scale as well gives \(5.9\sigma\). The authors describe these as approximate combined significances, because weak covariance between mass bins may remain. The ladder \(7.0\to 6.3\to 5.9\) is the appropriate object to cite, since the last rung removes the advantage that scale selection gives the observed sample over its nulls.
+
+\subsection*{Statistical Recoverability Is Not State Recoverability}
+
+Two claims must be kept apart. The first is that the ensemble of present spins carries information about the ensemble of primordial tidal fields. The second is that a given galaxy's present spin fixes its primordial configuration. The measurement supports the first and says little about the second.
+
+For a single galaxy, let \(X_0\) denote the primordial tidal configuration and \(L\) the observed projected spin direction. The result is a statement that
+\begin{equation}
+I(X_0;L)>0
+\label{eq:ensemble-information-positive}
+\end{equation}
+with high confidence, not that the conditional uncertainty \(H(X_0\mid L)\) is small compared with \(H(X_0)\). A directional correlation of about \(0.13\) leaves most of the uncertainty about any one galaxy's primordial environment in place. The detection is significant because it is accumulated over hundreds of galaxies, not because any single one of them is informative.
+
+In the vocabulary of this chapter, the survival of memory is real at the level of the distribution and weak at the level of the individual state. The map from primordial configuration to present spin is many-to-one after collapse, mergers, accretion, and measurement error, so it has no unique inverse. Recoverable statistical information can survive nonlinear evolution while recoverable state does not. This is the distinction between causal inheritance and recoverable distinction in \cref{eq:memory-survival-decomposition}, now with a measured magnitude attached.
+
+\subsection*{What the Morphology Contrast Does and Does Not Show}
+
+Central spiral galaxies show a much weaker correlation than central ellipticals, and the difference persists in a comparison at fixed halo mass. The paper lists several contributors: tidal-field reconstruction and remapping work better for larger haloes, gas and stars trace spin differently, and gas position angles are measured more precisely in the elliptical sample. It does not demonstrate that elliptical galaxies conserve primordial angular momentum more faithfully. For present purposes the contrast is best read as a reminder that memory has a channel-dependent resolution structure, as in \cref{eq:scale-dependent-memory}, and that the measured value of \(M\) depends on the observable used to read it out as well as on the physics that carries it.
+
 \section{Nonlinear Evolution Does Not Imply Erasure}
 
 It is tempting to assume that sufficiently nonlinear evolution destroys memory. This is not generally true. Nonlinearity destroys simple superposition, but it does not by itself imply statistical independence between initial and final conditions.
@@ -29791,6 +29821,15 @@ Memory is therefore not merely information stored somewhere. It is a narrowing o
 This interpretation is particularly useful when the memory channel is nonlinear. Galactic angular momentum, chemical abundance patterns, orbital resonances, or large-scale tidal alignments need not preserve a literal image of their initial conditions. They preserve constraints on ancestry.
 
 The universe remembers insofar as its present state excludes possible pasts.
+
+The restriction in \cref{eq:memory-restricts-ancestry} can hold in two different strengths, and the distinction matters for what an observed correlation licenses. Write \(\mu_0\) for the ensemble measure on primordial configurations and \(\mu_0(\,\cdot\mid O_t=o)\) for the measure conditioned on one observed value. A \emph{sharp} restriction excludes a definite region of \(\mathscr{X}_0\) for a given \(o\). A \emph{distributional} restriction excludes nothing outright and only shifts weight:
+\begin{equation}
+\mu_0(\,\cdot\mid O_t=o)\neq\mu_0,
+\qquad
+\operatorname{supp}\mu_0(\,\cdot\mid O_t=o)=\operatorname{supp}\mu_0 .
+\label{eq:distributional-ancestral-restriction}
+\end{equation}
+Positive mutual information, \cref{eq:memory-mutual-information-ch42}, guarantees only the second. The measured correlation between reconstructed primordial tidal fields and present galactic spin directions~\cite{sheng2026}, about \(0.13\) at its peak, is an example. It establishes a distributional restriction on the ensemble of ancestries. For any one galaxy it leaves nearly the whole ancestral set admissible, so the sharper reading of \cref{eq:memory-restricts-ancestry} is not supported by that measurement. The passage above should be read at the distributional strength unless a channel is shown to be sharp. The fuller discussion is in \Cref{chap:cosmological-memory}.
 
 \section{Forgetting as Expansion of the Backward Equivalence Class}
 
@@ -42476,6 +42515,8 @@ can survive despite billions of years of nonlinear evolution. This provides a co
 
 Yet some correlation can remain.
 
+That correlation has now been measured. Sheng and collaborators~\cite{sheng2026} find a weighted mean directional correlation of about \(0.13\) between reconstructed primordial tidal fields and present gas spin directions in central elliptical galaxies, at a significance between \(5.9\sigma\) and \(7.0\sigma\) depending on how the smoothing scale is treated. The effect is an ensemble statement, not a per-galaxy reconstruction. The interpretation of this result as statistical rather than state-level memory is developed in \Cref{chap:cosmological-memory}, which also gives the significance ladder in full. The tidal-torque relation is stated here only as the dynamical input that makes such a correlation possible.
+
 \section{Persistence Through Transformation}
 
 This suggests a more general formulation. Let
@@ -51981,6 +52022,8 @@ Each of these is a genuine instance of \(R\) satisfying
 \cref{eq:ch70-age-record-requirement} during the structured epoch. None of
 them is claimed by this book to persist indefinitely.
 
+A further candidate belongs to a different class, because it records the primordial tidal environment and not elapsed time directly. The correlation between reconstructed primordial tidal fields and present galactic spin directions~\cite{sheng2026} is a record with a measured strength, and it comes with a measured decorrelation regime: the signal weakens for haloes below roughly \(10^{12.5}\,M_\odot\), where reconstruction is poor, and it depends on the tracer used, gas or stars. Two points carry over to the argument of this chapter. First, whether the record is legible depends on the reader, here the reconstruction and remapping pipeline, as much as on the physics that carries it. Second, the record is statistical. It survives in the ensemble and is not recoverable galaxy by galaxy, so even during the structured epoch it satisfies \cref{eq:ch70-age-record-requirement} only in a distributional sense. Erasure of such a record proceeds through loss of the reader's access to the ensemble as well as through destruction of the carriers.
+
 \section{The Three Mechanisms, Applied to Age-Encoding Structures}
 
 \Cref{chap:three-modes-smoothing} distinguished physical smoothing, mixing
@@ -53892,6 +53935,21 @@ O_{\mathrm{future}}
 
 before the measurement exists. If subsequent observations fall persistently outside the interval after known systematic effects are incorporated, the corresponding model is rejected. The objective is not theatrical ``prediction'' for its own sake. It is the elimination of interpretive degrees of freedom.
 
+\section{Analysis Freedom Must Be Reported Beside the Result}
+
+A statistic that is tuned over a free parameter can look stronger than it is. Recent observational work on primordial tidal torque imprints~\cite{sheng2026} offers a compact model of how to report against this. The measured correlation is evaluated at the smoothing scale that maximizes it within a physically motivated range. The authors then give three significances for the same data. In the fiducial case only the observed sample optimizes its scale, giving \(7.0\sigma\). With the scale fixed at a simulation-motivated value the result is \(6.3\sigma\). With each shuffled null allowed to optimize its own scale as well, it is \(5.9\sigma\). The last rung removes the advantage that scale selection gives the observed sample over its nulls, and it is the one that answers the question a skeptical reader would ask.
+
+The same rule applies to the numerical program of this book. Let \(\theta\) be a free analysis parameter, such as a smoothing scale or a threshold for the accessibility gate, and let \(S(\theta)\) be a reported statistic. Then a result should be stated as three quantities:
+\begin{equation}
+S(\theta_{\rm fid}),
+\qquad
+S(\theta_{\rm fixed}),
+\qquad
+S_{\rm null}^{\rm reopt},
+\label{eq:analysis-freedom-ledger}
+\end{equation}
+namely the value at a pre-declared scale, the value at a scale fixed before the data are seen, and the null distribution in which every null realization receives the same optimization the observed run received. An entry in the falsification ledger that reports only the first is incomplete. This applies with particular force to the reknotting growth-rate calculation, where the choice of perturbation amplitude and averaging scale can be tuned after the fact.
+
 \section{The Theory Must Be Allowed to Lose}
 
 The strongest methodological commitment of Part~XIV can now be stated. RSVP must be allowed to lose. If precision cosmology excludes the redshift mechanism, the strong replacement claim must be abandoned. If void statistics follow standard structure formation with no residual RSVP signature, the proposed discriminating void phenomenology loses support.
@@ -54785,6 +54843,22 @@ A reknotting event should generate a new region in which
 \end{equation}
 
 over a nonzero interval of scales. This provides an independent macroscopic diagnostic of renewed differentiation. Again, it is not itself Gate III.
+
+\section{Measuring the Memory Functional}
+
+The scale-dependent memory functional \(M(\ell;t_1,t_0)\) introduced in \Cref{chap:cosmological-memory} is stated there as a schematic and is not yet proposed as a unique observable. A numerical program can decide whether it deserves that status. The first calculation is concrete. Take a constrained simulation in which the primordial field is known, and estimate
+\begin{equation}
+\widehat M(\ell)
+=
+\widehat I\!\left(
+\mathcal R_\ell X(t_0);
+\mathcal R_\ell X(t_1)
+\right)
+\label{eq:estimated-memory-functional}
+\end{equation}
+between the smoothed initial tidal field and a late-time vector observable such as halo or galaxy spin direction, over a range of \(\ell\). Observational work on primordial tidal torque imprints~\cite{sheng2026} finds a correlation that peaks near a smoothing scale of \(3.4\,h^{-1}\,\mathrm{Mpc}\) and weakens in low-mass haloes. Whether \(\widehat M(\ell)\) reproduces a peak at a comparable scale, and whether its location shifts with halo mass in the way the reconstruction limits suggest, is a test of whether \(M\) tracks something physical or only restates a correlation coefficient.
+
+Three controls belong in the first run. The estimator must be checked against a null in which late-time vectors are permuted within halo-mass bins, so that the mass distribution is preserved and the correspondence to the initial field is broken. The scale must be handled under the reporting rule of \cref{eq:analysis-freedom-ledger}. And the difference between ensemble information and per-object recoverability should be computed explicitly, by comparing \(\widehat M\) with a conditional-entropy estimate for individual haloes, since these can differ by orders of magnitude.
 
 \section{Assembly Index as a Reachability Constraint}
 
@@ -58231,6 +58305,12 @@ Rien van de Weygaert and Erwin Platen,
 ``Cosmic Voids: Structure, Dynamics and Galaxies,''
 \emph{International Journal of Modern Physics: Conference Series}
 \textbf{1} (2011), 41--66.
+
+\bibitem{sheng2026}
+Ming-Jie Sheng, Hao-Ran Yu, Min Bao, Bing-Hang Chen, Fang-Na Shao, Qi Guo,
+Yan-Mei Chen, Huiyuan Wang, Ue-Li Pen, Jie Wang, and Xiaohu Yang,
+``A High-Significance Detection of Primordial Tidal Torque Imprints,''
+\emph{Nature Astronomy} (2026), accepted 14 July 2026; https://doi.org/10.1038/s41550-026-02948-w; preprint arXiv:2512.11383.
 
 % ---------------------------------------------------------------------------
 % INFLATION AND THE EARLY UNIVERSE
