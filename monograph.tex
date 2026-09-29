@@ -245,6 +245,11 @@ August 2026
 \section{Reading This Book}
 
 \subsection{Relation to \emph{The Smoothness Paradox}}
+
+\emph{The Smoothness Paradox} is the narrative treatment. It follows cosmic history from primordial regularity through structure formation and runaway smoothing to the question of whether terminal and primordial smoothness are operationally equivalent, and it does so in prose with supporting derivations. This book is the formal counterpart. It derives the \RSVP{} field equations from a variational principle, builds the admissibility hierarchy $\Mad \to \Mproj \to \Mobs$, and develops the coarse-graining operator TARTAN and the persistence cone (Part~II), which the narrative uses as vocabulary. It does not retell the smooth-to-differentiated-to-smooth arc.
+
+The division of labor is deliberate and has one exception to note. The distinguishability spectrum, the turnover surface, and the three-gate reknotting criterion are stated and used in Part~III of this book but are not re-proved here. Their full development belongs to the narrative volume, and Chapter~\ref{ch:persistence-cone} and the closing chapters list what they assume from it. In the other direction, the memory chapters of the narrative volume rely on the persistence cone defined here. Both volumes hold to the same reading of what a surviving correlation licenses. The persistence cone is defined through mutual information $I(D;O_{r,t})$, so membership in the cone is a statement about statistical distinguishability of an ensemble. It is not a statement that an individual primordial configuration can be recovered from a present observation, and the worked case of galactic spin in Chapter~\ref{ch:persistence-cone} is presented in that light.
+
 \subsection{Relation to \emph{Quadratic Gravity as a Derived Interface Theory}}
 \subsection{Organization of the Remaining Parts}
 
@@ -652,6 +657,18 @@ The data are MaNGA integral-field velocity maps for central galaxies inside the 
 The significance is reported three ways ($7.0\sigma$, $6.3\sigma$, $5.9\sigma$, see the example above), all against a null that permutes observed spins within halo-mass bins. The lowest mass bin, where reconstruction and remapping errors dominate, is excluded from the combined figures, and the authors describe the combined values as approximate because weak covariance between bins may remain. The paper attributes the elliptical-spiral difference to several contributors acting together: higher host masses, gas position angles measured with smaller uncertainty than stellar ones, and a residual difference at fixed halo mass whose origin it leaves open. It does not show that ellipticals conserve primordial angular momentum more faithfully.
 
 \subsection{The Persistence Cone for Protohalo Angular Momentum}
+
+To place the measurement in the cone $\Pcone(D)=\{(O,r,t): I(D;O_{r,t})>\epsilon\}$ the four ingredients must be identified. The primordial distinction $D$ is the orientation structure of the tidal field acting on the protohalo, summarized by the eigenframe of the tidal tensor and the associated tidal twist. The observable $O$ is the projected spin direction of the central galaxy, read separately from the gas and the stellar velocity fields, which gives two observables $O_{\mathrm{gas}}$ and $O_{\mathrm{stars}}$ with different cones. The reconstruction procedure $\mathcal{R}$ is the ELUCID reconstruction of the initial conditions together with Lagrangian-space remapping. The scale coordinate $r$ is the smoothing scale applied to the reconstructed field, whose optimum is reported to scale with the halo's Lagrangian radius above roughly $10^{12.5}\,M_\odot$, and the time coordinate is the present.
+
+Three statements follow, each at the strength the data support.
+
+\begin{enumerate}
+\item \textbf{Membership.} For gas in central ellipticals, $(O_{\mathrm{gas}}, r_{\mathrm{opt}}, t_0)$ is in the cone at the ensemble level. The measured quantity is a weighted mean directional correlation, not a mutual information, so the threshold $\epsilon$ is not fixed by the data. Converting the correlation to $I(D;O)$ requires a model of the joint distribution of predicted and observed directions.
+\item \textbf{Low-mass haloes.} In the lowest halo-mass bin the paper finds little or no excess correlation and attributes this to reconstruction and remapping errors. In the vocabulary of the previous section this is consistent with reconstruction-bottleneck failure. The data cannot separate it from true erasure, because both produce no detectable correlation through the same pipeline.
+\item \textbf{Gas versus stars.} A smaller correlation for $O_{\mathrm{stars}}$ than for $O_{\mathrm{gas}}$ would suggest nested cones, $\Pcone(D;O_{\mathrm{stars}})\subseteq\Pcone(D;O_{\mathrm{gas}})$. The paper reports the ordering qualitatively and notes that gas position angles are fitted with smaller uncertainties, so measurement noise alone could reproduce part of it. Nesting is therefore a hypothesis here, not a result.
+\end{enumerate}
+
+What the example cannot supply is the state-level converse. Membership of $(O,r,t_0)$ in $\Pcone(D)$ says the ensemble of spins carries information about the ensemble of tidal environments. It does not say that a single galaxy's spin narrows its own primordial environment appreciably, and a correlation of order $0.1$ leaves that narrowing weak.
 
 \section{Persistence Cones and the RSVP Entropy Field}
 
