@@ -7,8 +7,8 @@
 \contentsline {subsection}{\numberline {1.2.2}Why This Is Not Merely Relabeling}{3}{subsection.1.2.2}%
 \contentsline {section}{\numberline {1.3}Reading This Book}{3}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}Relation to \emph {The Smoothness Paradox}}{3}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Relation to \emph {Quadratic Gravity as a Derived Interface Theory}}{3}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Organization of the Remaining Parts}{3}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.2}Relation to \emph {Quadratic Gravity as a Derived Interface Theory}}{4}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Organization of the Remaining Parts}{4}{subsection.1.3.3}%
 \contentsline {chapter}{\numberline {2}The Scalar--Vector--Entropy Plenum}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Field Content}{5}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}The Scalar Field $\Phi $: Distinction Density}{5}{subsection.2.1.1}%
@@ -55,65 +55,65 @@
 \contentsline {subsection}{\numberline {6.2.2}True Erasure Versus Reconstruction-Bottleneck Failure}{22}{subsection.6.2.2}%
 \contentsline {section}{\numberline {6.3}Worked Case: Tidal Torque and Galactic Spin \cite {sheng2026tidaltorque}}{23}{section.6.3}%
 \contentsline {subsection}{\numberline {6.3.1}Summary of the Empirical Result}{23}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}The Persistence Cone for Protohalo Angular Momentum}{23}{subsection.6.3.2}%
-\contentsline {section}{\numberline {6.4}Persistence Cones and the RSVP Entropy Field}{23}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Relating $C_\epsilon $ to $S$}{23}{subsection.6.4.1}%
-\contentsline {chapter}{\numberline {7}Repair-Warrant Diagnostics for Cosmological Reconstruction}{25}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Diagnosis Before Inference}{25}{section.7.1}%
-\contentsline {section}{\numberline {7.2}The Reference Class for a Cosmological Reconstruction}{25}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}$R_\Gamma (h)$: Independence from the Object Under Evaluation}{25}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Grounding the Reference Class in Theoretically Well-Understood Quantities}{25}{subsection.7.2.2}%
-\contentsline {section}{\numberline {7.3}Structural Distance and the Repair-Warrant Objective}{25}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}$\delta _{\mathrm {dep}}$ as a Calibrated Structural Distance}{25}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}$J(a\mid h)$: When Intervention Is Warranted}{25}{subsection.7.3.2}%
-\contentsline {section}{\numberline {7.4}Worked Example: The Initial Power Spectrum as a Diagnostic Proxy \cite {hoellinger2024diagnosing}}{25}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Summary of the Case Study}{25}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}What the Case Study Confirms About the Framework's Limits}{26}{subsection.7.4.2}%
-\contentsline {section}{\numberline {7.5}Non-Implication Propositions}{27}{section.7.5}%
-\contentsline {part}{III\hspace {1em}Structure, History, and Observation}{29}{part.3}%
-\contentsline {chapter}{\numberline {8}Structure Formation as Admissible Evolution}{31}{chapter.8}%
-\contentsline {section}{\numberline {8.1}From Field Equations to Structure}{31}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Structure as Locally Stable Distinction}{31}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Galaxies, Clusters, and Voids as Admissibility Basins}{31}{subsection.8.2.1}%
-\contentsline {section}{\numberline {8.3}Comparison with $\Lambda $CDM Structure Formation}{31}{section.8.3}%
-\contentsline {subsection}{\numberline {8.3.1}Where the Predictions Agree}{31}{subsection.8.3.1}%
-\contentsline {subsection}{\numberline {8.3.2}Where They Diverge and Why}{31}{subsection.8.3.2}%
-\contentsline {chapter}{\numberline {9}The Distinguishability Spectrum and the Turnover Surface}{33}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Statement of the Distinguishability Spectrum}{33}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Statement of the Turnover Surface}{33}{section.9.2}%
-\contentsline {section}{\numberline {9.3}The Three-Gate Reknotting Criterion}{33}{section.9.3}%
-\contentsline {subsection}{\numberline {9.3.1}Dynamical Instability}{33}{subsection.9.3.1}%
-\contentsline {subsection}{\numberline {9.3.2}Recursive Accessibility}{33}{subsection.9.3.2}%
-\contentsline {subsection}{\numberline {9.3.3}Nonlinear Persistence}{33}{subsection.9.3.3}%
-\contentsline {section}{\numberline {9.4}Operational Equivalence of Terminal and Primordial Smoothness}{33}{section.9.4}%
-\contentsline {section}{\numberline {9.5}What This Chapter Assumes From \emph {The Smoothness Paradox}}{34}{section.9.5}%
-\contentsline {chapter}{\numberline {10}Quadratic Gravity as the Plenum's Observable Interface}{35}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Ghosts, ordinarily}{35}{section.10.1}%
-\contentsline {section}{\numberline {10.2}The Hidden Admissibility Direction in the RSVP Plenum}{35}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Observable Equivalence Below and Above the Admissibility Scale}{35}{section.10.3}%
-\contentsline {subsection}{\numberline {10.3.1}The Derived Interface Conjecture, Specialized to \textsc {rsvp}}{35}{subsection.10.3.1}%
-\contentsline {chapter}{\numberline {11}Observational Signatures and Tests}{37}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Falsifiable Predictions on Record}{37}{section.11.1}%
-\contentsline {section}{\numberline {11.2}Predictions Distinguishing RSVP Cosmology from $\Lambda $CDM}{37}{section.11.2}%
-\contentsline {section}{\numberline {11.3}Diagnostic-Coordinate Signatures in Survey Data}{38}{section.11.3}%
-\contentsline {subsection}{\numberline {11.3.1}What a Stage-IV Survey Pipeline Would Need to Report}{38}{subsection.11.3.1}%
-\contentsline {section}{\numberline {11.4}Open Observational Programs}{38}{section.11.4}%
-\contentsline {subsection}{\numberline {11.4.1}Testing the Persistence Cone in Other Observables}{38}{subsection.11.4.1}%
-\contentsline {subsection}{\numberline {11.4.2}Distinguishing Admissible-Level from Observable-Level Defects}{39}{subsection.11.4.2}%
-\contentsline {part}{IV\hspace {1em}Open Problems}{41}{part.4}%
-\contentsline {chapter}{\numberline {12}What Remains Conjectural}{43}{chapter.12}%
-\contentsline {section}{\numberline {12.1}Unproved Claims Carried Forward From This Book}{43}{section.12.1}%
-\contentsline {section}{\numberline {12.2}The Relation Between TARTAN Fixed Points and Reknotting}{43}{section.12.2}%
-\contentsline {section}{\numberline {12.3}Toward a Complete Proof of the Derived Interface Conjecture}{43}{section.12.3}%
-\contentsline {section}{\numberline {12.4}Directions for Further Work}{43}{section.12.4}%
-\contentsline {section}{\numberline {12.5}Conclusion}{43}{section.12.5}%
-\contentsline {chapter}{Mathematical Preliminaries}{45}{chapter*.4}%
-\contentsline {section}{\numberline {12.6}Differential Geometry Conventions}{45}{section.12.6}%
-\contentsline {section}{\numberline {12.7}Variational Calculus on the Plenum}{45}{section.12.7}%
-\contentsline {chapter}{Notation and Conventions}{47}{chapter*.5}%
-\contentsline {section}{\numberline {12.8}Field and Admissibility Notation}{47}{section.12.8}%
-\contentsline {section}{\numberline {12.9}Relation to Notation in \emph {The Smoothness Paradox} and \emph {Quadratic Gravity as a Derived Interface Theory}}{47}{section.12.9}%
-\contentsline {chapter}{Selected Derivations}{49}{chapter*.6}%
-\contentsline {section}{\numberline {12.10}Full Derivation of the RSVP Field Equations}{49}{section.12.10}%
-\contentsline {section}{\numberline {12.11}Derivation of the Admissibility Manifold Projections}{49}{section.12.11}%
-\contentsline {chapter}{Bibliography}{51}{section*.7}%
+\contentsline {subsection}{\numberline {6.3.2}The Persistence Cone for Protohalo Angular Momentum}{24}{subsection.6.3.2}%
+\contentsline {section}{\numberline {6.4}Persistence Cones and the RSVP Entropy Field}{25}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Relating $C_\epsilon $ to $S$}{25}{subsection.6.4.1}%
+\contentsline {chapter}{\numberline {7}Repair-Warrant Diagnostics for Cosmological Reconstruction}{27}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Diagnosis Before Inference}{28}{section.7.1}%
+\contentsline {section}{\numberline {7.2}The Reference Class for a Cosmological Reconstruction}{28}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}$R_\Gamma (h)$: Independence from the Object Under Evaluation}{28}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Grounding the Reference Class in Theoretically Well-Understood Quantities}{28}{subsection.7.2.2}%
+\contentsline {section}{\numberline {7.3}Structural Distance and the Repair-Warrant Objective}{28}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}$\delta _{\mathrm {dep}}$ as a Calibrated Structural Distance}{28}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}$J(a\mid h)$: When Intervention Is Warranted}{28}{subsection.7.3.2}%
+\contentsline {section}{\numberline {7.4}Worked Example: The Initial Power Spectrum as a Diagnostic Proxy \cite {hoellinger2024diagnosing}}{28}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Summary of the Case Study}{28}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}What the Case Study Confirms About the Framework's Limits}{29}{subsection.7.4.2}%
+\contentsline {section}{\numberline {7.5}Non-Implication Propositions}{30}{section.7.5}%
+\contentsline {part}{III\hspace {1em}Structure, History, and Observation}{33}{part.3}%
+\contentsline {chapter}{\numberline {8}Structure Formation as Admissible Evolution}{35}{chapter.8}%
+\contentsline {section}{\numberline {8.1}From Field Equations to Structure}{35}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Structure as Locally Stable Distinction}{35}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Galaxies, Clusters, and Voids as Admissibility Basins}{35}{subsection.8.2.1}%
+\contentsline {section}{\numberline {8.3}Comparison with $\Lambda $CDM Structure Formation}{35}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Where the Predictions Agree}{35}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Where They Diverge and Why}{35}{subsection.8.3.2}%
+\contentsline {chapter}{\numberline {9}The Distinguishability Spectrum and the Turnover Surface}{37}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Statement of the Distinguishability Spectrum}{37}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Statement of the Turnover Surface}{37}{section.9.2}%
+\contentsline {section}{\numberline {9.3}The Three-Gate Reknotting Criterion}{37}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}Dynamical Instability}{37}{subsection.9.3.1}%
+\contentsline {subsection}{\numberline {9.3.2}Recursive Accessibility}{37}{subsection.9.3.2}%
+\contentsline {subsection}{\numberline {9.3.3}Nonlinear Persistence}{37}{subsection.9.3.3}%
+\contentsline {section}{\numberline {9.4}Operational Equivalence of Terminal and Primordial Smoothness}{37}{section.9.4}%
+\contentsline {section}{\numberline {9.5}What This Chapter Assumes From \emph {The Smoothness Paradox}}{38}{section.9.5}%
+\contentsline {chapter}{\numberline {10}Quadratic Gravity as the Plenum's Observable Interface}{39}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Ghosts, ordinarily}{39}{section.10.1}%
+\contentsline {section}{\numberline {10.2}The Hidden Admissibility Direction in the RSVP Plenum}{39}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Observable Equivalence Below and Above the Admissibility Scale}{39}{section.10.3}%
+\contentsline {subsection}{\numberline {10.3.1}The Derived Interface Conjecture, Specialized to \textsc {rsvp}}{39}{subsection.10.3.1}%
+\contentsline {chapter}{\numberline {11}Observational Signatures and Tests}{41}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Falsifiable Predictions on Record}{41}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Predictions Distinguishing RSVP Cosmology from $\Lambda $CDM}{42}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Diagnostic-Coordinate Signatures in Survey Data}{42}{section.11.3}%
+\contentsline {subsection}{\numberline {11.3.1}What a Stage-IV Survey Pipeline Would Need to Report}{42}{subsection.11.3.1}%
+\contentsline {section}{\numberline {11.4}Open Observational Programs}{43}{section.11.4}%
+\contentsline {subsection}{\numberline {11.4.1}Testing the Persistence Cone in Other Observables}{43}{subsection.11.4.1}%
+\contentsline {subsection}{\numberline {11.4.2}Distinguishing Admissible-Level from Observable-Level Defects}{43}{subsection.11.4.2}%
+\contentsline {part}{IV\hspace {1em}Open Problems}{45}{part.4}%
+\contentsline {chapter}{\numberline {12}What Remains Conjectural}{47}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Unproved Claims Carried Forward From This Book}{47}{section.12.1}%
+\contentsline {section}{\numberline {12.2}The Relation Between TARTAN Fixed Points and Reknotting}{47}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Toward a Complete Proof of the Derived Interface Conjecture}{47}{section.12.3}%
+\contentsline {section}{\numberline {12.4}Directions for Further Work}{47}{section.12.4}%
+\contentsline {section}{\numberline {12.5}Conclusion}{47}{section.12.5}%
+\contentsline {chapter}{Mathematical Preliminaries}{49}{chapter*.4}%
+\contentsline {section}{\numberline {12.6}Differential Geometry Conventions}{49}{section.12.6}%
+\contentsline {section}{\numberline {12.7}Variational Calculus on the Plenum}{49}{section.12.7}%
+\contentsline {chapter}{Notation and Conventions}{51}{chapter*.5}%
+\contentsline {section}{\numberline {12.8}Field and Admissibility Notation}{51}{section.12.8}%
+\contentsline {section}{\numberline {12.9}Relation to Notation in \emph {The Smoothness Paradox} and \emph {Quadratic Gravity as a Derived Interface Theory}}{51}{section.12.9}%
+\contentsline {chapter}{Selected Derivations}{53}{chapter*.6}%
+\contentsline {section}{\numberline {12.10}Full Derivation of the RSVP Field Equations}{53}{section.12.10}%
+\contentsline {section}{\numberline {12.11}Derivation of the Admissibility Manifold Projections}{53}{section.12.11}%
+\contentsline {chapter}{Bibliography}{55}{section*.7}%
