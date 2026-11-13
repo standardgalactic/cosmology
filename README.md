@@ -16,7 +16,7 @@ A cosmology in which matter, galaxies, stars, life, and other complex structures
 
 * [Audio Overviews](https://standardgalactic.github.io/cosmology/reading-room.html)
 
-
+<!--
 ![](01%20-%20Great%20Mistake.png)
 
 ![](02%20-%20Saddle.png)
@@ -32,7 +32,7 @@ A cosmology in which matter, galaxies, stars, life, and other complex structures
 ![](07%20-%20Smoking%20Gun.png)
 
 ![](08%20-%20RSVP%20Universe.png)
-
+-->
 [Interface Analysis](https://standardgalactic.github.io/cosmology/interface-analysis.pdf)
 
 ## Reknotting status and experiments
