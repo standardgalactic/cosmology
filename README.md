@@ -1,5 +1,9 @@
 # Numerical Claims Are Conserved Quantities
 
+[Where Fields Meet](https://standardgalactic.github.io/cosmology/where-fields-meet.pdf)
+
+* [Physics Without a Spacetime Grid](https://standardgalactic.github.io/cosmology/)
+
 [The Smoothness Paradox](https://standardgalactic.github.io/cosmology/smoothness-paradox.pdf)
 
 A cosmology in which matter, galaxies, stars, life, and other complex structures arise as localized distinctions within a continuous physical plenum and persist through ongoing processes of repair and reconstruction. Cosmic evolution is understood as a changing balance between differentiation and smoothing, with entropy corresponding to the progressive loss of recoverable distinctions and usable gradients. As structure is exhausted toward heat death, the theory asks whether the disappearance of scale, records, and other physical differences could make cosmological continuation possible without requiring the universe to repeat its previous history.
@@ -10,7 +14,7 @@ A cosmology in which matter, galaxies, stars, life, and other complex structures
 
 * [The RSVP Blueprint](https://standardgalactic.github.io/cosmology/The_RSVP_Blueprint.pdf)
 
-* [Audio Overviews](https://standardgalactic.github.io/cosmology/)
+* [Audio Overviews](https://standardgalactic.github.io/cosmology/reading-room.html)
 
 
 ![](01%20-%20Great%20Mistake.png)
